@@ -468,3 +468,49 @@ Replay each canonical-facts.jsonl using scripts/evaluate.py and ownership files
 news/v9c-ownership.jsonl, mango/v9d-ownership.jsonl and ctrip/v4e-ownership.jsonl.
 Retained environment records identify every frozen jar. Earlier v9a/b Mango scores use the old
 oracle; compare v8-mango-nft-v2-evaluation.json with v9d-mango-evaluation.json for equal scope.
+
+## v10 development — generated ViewBinding constructor captures
+
+The first change recognizes actual implementations of androidx.viewbinding.ViewBinding as
+constructor-capture carriers, including generated bindings holding ordinary custom Views rather
+than direct WebView fields. It reuses allocation-local constructor argument materialization;
+it does not seed arbitrary field objects or enumerate all View subclasses.
+A regression fixture with two separately returned Binding allocations failed before the change
+and passes afterward, preserving the exact two supplied custom-View identities. Existing
+capabilitySelfTest and shadowJar checks passed. Frozen v10a runs and Sol review are pending;
+no recovery or acceptance claim is made from the synthetic case alone.
+
+Final v10 frozen artifact: v10a. Fresh serial runs took104.31/79.58/130.76s (news/Mango/Ctrip),
+peak RSS8198432/8480168/7927456KiB, each8 CPUs and16GiB JVM heap. No previous analysis
+result was reused. These remain development runs, not final three-repeat acceptance tests.
+
+| App | Bridge | Settings | Callbacks | Emitted hosts | Wrong + unresolved upper bound |
+|---|---|---|---|---|---|
+| News |1288/1385 (93.00%)|303/366 (82.79%)|205/240 (85.42%)|43|1/43 (2.33%)|
+| Mango |1137/1153 (98.61%)|574/574 (100%)|597/597 (100%)|89|5/89 (5.62%)|
+| Ctrip |3666/3666 (100%)|233/233 (100%)|299/299 (100%)|55|1/55 (1.82%)|
+
+Sol independently verifies the48 restored NFT settings and6 registration/member facts; the
+five NFT hosts now resolve real XML objects. MgNftPreview's two groups are two actual XML
+MgNftViewer instances. All89 Mango hosts retain84 valid and5 uncertain verdicts. News/Ctrip
+fact comparison (excluding evidence, raw arguments, binding_status and conditional) finds no
+changes, including receiver IDs, values and full member signatures; this delta is not a new
+source audit. Mango ownership review is v10a-ownership.jsonl.
+
+A material limitation remains: six player hosts gain real reachable framework capabilities,
+but raw fact growth includes multiple aliases for the same ServiceWebView/PageWebView.
+Sol checked the shared source chains and found no cross-host association in these cases;
+raw counts must not be interpreted as separate capabilities or WebViews. Antique's settings
+union is still labeled WebSettings while callbacks show its underlying WebView alternatives.
+This needs receiver normalization and alias repair, not deletion of failures. Evidence and
+repeatable audit: mango/v10a-validation.{json,md}, mango/audit_v10a.py.
+
+News still misses systemically: AdCore wrappers, long-video controller/provider chains and QQ
+console-message bridges. Mango still misses Rainbow reflection endpoints. Final held-out tests,
+output capability precision and repeated performance acceptance remain pending. All reports
+are partial; v10 does not pass overall acceptance.
+
+Reproduction: ./gradlew capabilitySelfTest shadowJar --offline --console=plain;
+python3 scripts/benchmark.py --label v10a --jar test/runs/v10a.jar;
+python3 scripts/evaluate.py with each canonical-facts.jsonl and news/v9c-ownership.jsonl,
+mango/v10a-ownership.jsonl or ctrip/v4e-ownership.jsonl. The evaluator's8 tests also passed.

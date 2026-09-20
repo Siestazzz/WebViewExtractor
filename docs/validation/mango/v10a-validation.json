@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "report": "test/runs/v10a/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "status": "partial",
+  "wall_seconds": 78.409981303,
+  "host_counts": {
+    "v9d": 89,
+    "v10a": 89
+  },
+  "added_hosts": [],
+  "removed_hosts": [],
+  "ownership_counts": {
+    "valid": 84,
+    "uncertain": 5
+  },
+  "nft": {
+    "com.mgsz.detail.ui.AntiqueDetailActivity": {
+      "facts": 20,
+      "settings": 16,
+      "callback_registrations": 1,
+      "callback_members": 3,
+      "webview_ids": [
+        "{\"id\": \"union:47aeb8ec-8880-3465-b1ca-b94ea7dc35d8\", \"type\": \"android.webkit.WebView\"}",
+        "{\"id\": \"union:89916b1a-b0e2-3dc4-b6e1-15162453ffa5\", \"type\": \"android.webkit.WebSettings\"}"
+      ],
+      "constructor_parameter_in_scored_facts": false
+    },
+    "com.mgtv.digital.ui.DigitalDetailActivity": {
+      "facts": 19,
+      "settings": 16,
+      "callback_registrations": 1,
+      "callback_members": 3,
+      "webview_ids": [
+        "{\"id\": \"entry_parameter/view:2131823477/view:2131828667/view:2131834272\", \"type\": \"android.webkit.WebView\"}"
+      ],
+      "constructor_parameter_in_scored_facts": false
+    },
+    "com.mgtv.digital.ui.DigitalModelViewActivity": {
+      "facts": 19,
+      "settings": 16,
+      "callback_registrations": 1,
+      "callback_members": 3,
+      "webview_ids": [
+        "{\"id\": \"entry_parameter/view:2131828664/view:2131828667/view:2131834272\", \"type\": \"android.webkit.WebView\"}"
+      ],
+      "constructor_parameter_in_scored_facts": false
+    },
+    "com.mgtv.digital.ui.DigitalBelongActivity": {
+      "facts": 19,
+      "settings": 16,
+      "callback_registrations": 1,
+      "callback_members": 3,
+      "webview_ids": [
+        "{\"id\": \"entry_parameter/view:2131823477/view:2131828667/view:2131834272\", \"type\": \"android.webkit.WebView\"}"
+      ],
+      "constructor_parameter_in_scored_facts": false
+    },
+    "com.mgtv.digital.ui.MgNftPreviewActivity": {
+      "facts": 38,
+      "settings": 32,
+      "callback_registrations": 2,
+      "callback_members": 6,
+      "webview_ids": [
+        "{\"id\": \"entry_parameter/view:2131824364/view:2131828667/view:2131834272\", \"type\": \"android.webkit.WebView\"}",
+        "{\"id\": \"entry_parameter/view:2131828664/view:2131828667/view:2131834272\", \"type\": \"android.webkit.WebView\"}"
+      ],
+      "constructor_parameter_in_scored_facts": false
+    }
+  },
+  "nft_gold_recovery": {
+    "settings": "48/48",
+    "callback_registrations": "3/3",
+    "required_callback_members": "3/3",
+    "object_identity": "no constructor_parameter in restored scored facts"
+  },
+  "nft_notes": [
+    "Antique settings use a WebSettings union identity while registration uses the backing WebView union; both evidence paths read the same ShNftWebviewLayoutBinding.webview and getSettings receiver.",
+    "MgNftPreview has two actual XML MgNftViewer objects (E=nftViewer and F=h5Viewer), hence two initialization surfaces."
+  ],
+  "player_family": {
+    "com.imgo.vodgames.LandVodGameRoomActivity": {
+      "v9d": {
+        "facts": 74,
+        "webviews": 2,
+        "kinds": {
+          "bridge_removal": 10,
+          "bridge": 6,
+          "callback": 8,
+          "setting": 36,
+          "webview_operation": 14
+        }
+      },
+      "v10a": {
+        "facts": 221,
+        "webviews": 15,
+        "kinds": {
+          "bridge_removal": 40,
+          "bridge": 15,
+          "callback": 19,
+          "global_setting": 1,
+          "setting": 94,
+          "webview_operation": 52
+        }
+      },
+      "assessment": "valid Diana MiniApp ownership; raw growth includes multiple real Page/Service WebViews plus path aliases, so fact-count growth is not an independent-capability count"
+    },
+    "com.imgo.vodgames.VodGameRoomActivity": {
+      "v9d": {
+        "facts": 74,
+        "webviews": 2,
+        "kinds": {
+          "bridge_removal": 10,
+          "bridge": 6,
+          "callback": 8,
+          "setting": 36,
+          "webview_operation": 14
+        }
+      },
+      "v10a": {
+        "facts": 222,
+        "webviews": 16,
+        "kinds": {
+          "bridge_removal": 40,
+          "bridge": 15,
+          "callback": 19,
+          "global_setting": 1,
+          "setting": 94,
+          "webview_operation": 53
+        }
+      },
+      "assessment": "valid Diana MiniApp ownership; raw growth includes multiple real Page/Service WebViews plus path aliases, so fact-count growth is not an independent-capability count"
+    },
+    "com.mgtv.diana.vodgames.LandVodGameRoomActivity": {
+      "v9d": {
+        "facts": 74,
+        "webviews": 2,
+        "kinds": {
+          "bridge_removal": 10,
+          "bridge": 6,
+          "callback": 8,
+          "setting": 36,
+          "webview_operation": 14
+        }
+      },
+      "v10a": {
+        "facts": 221,
+        "webviews": 15,
+        "kinds": {
+          "bridge_removal": 40,
+          "bridge": 15,
+          "callback": 19,
+          "global_setting": 1,
+          "setting": 94,
+          "webview_operation": 52
+        }
+      },
+      "assessment": "valid Diana MiniApp ownership; raw growth includes multiple real Page/Service WebViews plus path aliases, so fact-count growth is not an independent-capability count"
+    },
+    "com.mgtv.diana.vodgames.VodGameRoomActivity": {
+      "v9d": {
+        "facts": 74,
+        "webviews": 2,
+        "kinds": {
+          "bridge_removal": 10,
+          "bridge": 6,
+          "callback": 8,
+          "setting": 36,
+          "webview_operation": 14
+        }
+      },
+      "v10a": {
+        "facts": 222,
+        "webviews": 16,
+        "kinds": {
+          "bridge_removal": 40,
+          "bridge": 15,
+          "callback": 19,
+          "global_setting": 1,
+          "setting": 94,
+          "webview_operation": 53
+        }
+      },
+      "assessment": "valid Diana MiniApp ownership; raw growth includes multiple real Page/Service WebViews plus path aliases, so fact-count growth is not an independent-capability count"
+    },
+    "com.mgtv.litevod.LiteVodActivity": {
+      "v9d": {
+        "facts": 74,
+        "webviews": 2,
+        "kinds": {
+          "bridge_removal": 10,
+          "bridge": 6,
+          "callback": 8,
+          "setting": 36,
+          "webview_operation": 14
+        }
+      },
+      "v10a": {
+        "facts": 222,
+        "webviews": 16,
+        "kinds": {
+          "bridge_removal": 40,
+          "bridge": 15,
+          "callback": 19,
+          "global_setting": 1,
+          "setting": 94,
+          "webview_operation": 53
+        }
+      },
+      "assessment": "valid Diana MiniApp ownership; raw growth includes multiple real Page/Service WebViews plus path aliases, so fact-count growth is not an independent-capability count"
+    },
+    "com.mgtv.ui.player.VodPlayerPageActivity": {
+      "v9d": {
+        "facts": 658,
+        "webviews": 34,
+        "kinds": {
+          "bridge_removal": 44,
+          "bridge": 7,
+          "callback_removal": 9,
+          "callback": 42,
+          "global_setting": 2,
+          "message_bridge": 140,
+          "setting": 257,
+          "webview_operation": 157
+        }
+      },
+      "v10a": {
+        "facts": 838,
+        "webviews": 46,
+        "kinds": {
+          "bridge_removal": 74,
+          "bridge": 20,
+          "callback_removal": 9,
+          "callback": 56,
+          "global_setting": 2,
+          "message_bridge": 140,
+          "setting": 336,
+          "webview_operation": 201
+        }
+      },
+      "assessment": "valid Diana MiniApp ownership; raw growth includes multiple real Page/Service WebViews plus path aliases, so fact-count growth is not an independent-capability count"
+    }
+  },
+  "player_alias_findings": [
+    "ServiceWebView created by AppService.createJsEngine appears under entry_parameter and entry_parameter/view:2131828340 identities; these are aliases of the same construction path.",
+    "PageWebView appears as direct allocation/path identity and PageWebViewWrapper.mWebView field identity; wrapper-field facts are aliases, not additional independent WebViews.",
+    "VodPlayerPageActivity also reaches a conditional GamePage PageWebView path, which is a distinct real construction path absent from the five room/lite hosts."
+  ],
+  "verdict": "NFT constructor capture is correct and restores the intended facts. No ownership regression. Player-family ownership expansion is source-valid, but raw fact counts are inflated by unresolved aliases and must not be treated as unique capability counts."
+}

@@ -104,3 +104,8 @@ keeps callback members as separate evidence, and reports WebView operations and 
 recall independently. Operation matches cannot inflate the three capability categories. The
 expanded NFT development oracle demonstrates why an unchanged old score cannot establish that
 an entire framework's capability surface was retained.
+
+Generated classes implementing androidx.viewbinding.ViewBinding retain allocation-local
+constructor argument captures through bind/inflate returns, including nested custom Views.
+This does not infer an object from a field declaration. View aliases across entry parameters,
+layout roots and holder fields can still duplicate a single WebView; see OPEN_GAPS.json.

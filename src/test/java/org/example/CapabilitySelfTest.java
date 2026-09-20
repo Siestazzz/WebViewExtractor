@@ -109,6 +109,7 @@ public final class CapabilitySelfTest {
    obfuscatedLazyFixture();
    customCallbackFixture();
    nestedLayoutFixture();
+   returnedViewBindingFixture();
    platformHierarchyFixture();
    viewContractDispatchFixture();
    System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints, registered services, nullable receivers, composed receivers, helper/callback entry isolation, abstract-class handlers");
@@ -333,6 +334,23 @@ public final class CapabilitySelfTest {
     var captured=engine.eval(DexFlow.expr("return","test.CapturedView",CapabilityIndex.key(factory),List.of(view)),job,host,0,new HashSet<>());
     var resolved=engine.eval(DexFlow.expr("field","android.webkit.WebView",CapabilityIndex.field(field),List.of(captured)),job,host,0,new HashSet<>());
     check(resolved.equals(view),"Factory-returned object's constructor capture was unresolved or mixed with another WebView");
+   }
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void returnedViewBindingFixture()throws Exception {
+  String W="Ltest/CustomLayout;"; String box="Ltest/GeneratedBinding;";var field=new ImmutableField(box,"view",W,1,null,Set.of(),Set.of());
+  var ctor=method(box,"<init>",List.of(W),1,2,List.of(new ImmutableInstruction22c(Opcode.IPUT_OBJECT,1,0,new ImmutableFieldReference(box,"view",W)),end()),false);
+  var body=method(H,"capture",List.of(W),9,2,List.of(make(0,box),invoke(Opcode.INVOKE_DIRECT,box,"<init>",List.of(W),"V",0,1),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var factory=new ImmutableMethod(H,"capture",body.getParameters(),box,9,Set.of(),Set.of(),body.getImplementation());
+  Path path=Files.createTempFile("wv-return-capture-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(H,"Ljava/lang/Object;",factory),new ImmutableClassDef(box,1,"Ljava/lang/Object;",List.of("Landroidx/viewbinding/ViewBinding;"),null,Set.of(),List.of(field),List.of(ctor)))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("test.AppActivity");var job=new CapabilityEngine.Job(factory,List.of(),List.of(),false);
+   for(String id:List.of("first-view","second-view")){
+    var view=DexFlow.V.of("object","test.CustomLayout",id);
+    var captured=engine.eval(DexFlow.expr("return","test.GeneratedBinding",CapabilityIndex.key(factory),List.of(view)),job,host,0,new HashSet<>());
+    var resolved=engine.eval(DexFlow.expr("field","test.CustomLayout",CapabilityIndex.field(field),List.of(captured)),job,host,0,new HashSet<>());
+    check(resolved.equals(view),"Generated ViewBinding constructor lost or mixed actual custom View captures");
    }
   }finally{Files.deleteIfExists(path);}
  }

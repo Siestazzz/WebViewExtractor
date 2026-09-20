@@ -1,0 +1,112 @@
+{
+  "apk": "com.tencent.news",
+  "version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "status": "source_and_dex_verified",
+  "blind_holdout_used": false,
+  "activities": [
+    {
+      "activity": "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity",
+      "entry": "Lcom/tencent/news/video/detail/longvideo/LongVideoDetailActivity;->onViewCreated(Lcom/tencent/news/video/detail/longvideo/a;Landroid/view/View;)V",
+      "view_origin": "check-cast of view lookup to Lcom/tencent/news/video/TNVideoView;",
+      "owned_service_constructor": "Lcom/tencent/news/video/detail/longvideo/services/e;-><init>(Landroid/content/Context;Lcom/tencent/news/video/TNVideoView;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/tencent/news/share/p;Lkotlin/jvm/functions/a;Lcom/tencent/news/kkvideo/detail/longvideo/l;Lcom/tencent/news/video/detail/longvideo/n0;Lcom/tencent/news/video/interceptor/o;Z)V",
+      "tn_video_view_parameter_index": 1,
+      "registration": "Lcom/tencent/news/video/detail/longvideo/a;->ʼ()Lcom/tencent/news/ui/listitem/n0; then Lcom/tencent/news/ui/listitem/n0;->ʽ(Ljava/lang/Class;Ljava/lang/Object;)V with n.class and service-e",
+      "source": "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/LongVideoDetailActivity.java:111-124"
+    },
+    {
+      "activity": "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity",
+      "entry": "Lcom/tencent/news/video/detail/longvideo/TvLongVideoDetailActivity;->onViewCreated(Lcom/tencent/news/video/detail/longvideo/a;Landroid/view/View;)V",
+      "view_origin": "check-cast of view lookup to Lcom/tencent/news/video/TNVideoView;",
+      "owned_service_constructor": "Lcom/tencent/news/video/detail/longvideo/services/p;-><init>(Landroid/content/Context;Lcom/tencent/news/video/TNVideoView;Lcom/tencent/news/kkvideo/detail/longvideo/l;Ljava/lang/String;Ljava/lang/String;)V",
+      "tn_video_view_parameter_index": 1,
+      "registration": "Lcom/tencent/news/video/detail/longvideo/a;->ʼ()Lcom/tencent/news/ui/listitem/n0; then Lcom/tencent/news/ui/listitem/n0;->ʽ(Ljava/lang/Class;Ljava/lang/Object;)V with n.class and service-p",
+      "source": "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/TvLongVideoDetailActivity.java:163-178"
+    }
+  ],
+  "binding_steps": [
+    {
+      "step": 1,
+      "relation": "constructor_forward",
+      "from": ["services.e parameter 1", "services.p parameter 1"],
+      "to": "Lcom/tencent/news/video/detail/longvideo/services/i;-><init>(Landroid/content/Context;ILcom/tencent/news/video/TNVideoView;Lcom/tencent/news/kkvideo/detail/longvideo/l;ILkotlin/jvm/internal/n;)V parameter 2",
+      "detail": "Both concrete services call the Kotlin default-argument i constructor with the identical TNVideoView value."
+    },
+    {
+      "step": 2,
+      "relation": "factory_argument_and_field",
+      "from": "services.i parameter 2",
+      "to": [
+        "Lcom/tencent/news/qnplayer/i0;-><init>(ILcom/tencent/news/video/TNVideoView;)V parameter 1",
+        "Lcom/tencent/news/qnplayer/i0;->ʼ(Landroid/content/Context;)Lcom/tencent/news/video/ui/e;",
+        "Lcom/tencent/news/video/ui/j;->ʻ(Landroid/content/Context;ILcom/tencent/news/video/TNVideoView;)Lcom/tencent/news/video/ui/e;",
+        "Lcom/tencent/news/video/ui/c;->ˏˏ:Lcom/tencent/news/video/TNVideoView;",
+        "Lcom/tencent/news/video/ui/e;->getPlayerView()Lcom/tencent/news/video/TNVideoView;"
+      ],
+      "detail": "i passes new i0(0, sameView) to h0. i0 retains it and supplies it to ui.j; the resulting i3 superclass ui.c assigns the same argument to field ˏˏ and i3.getPlayerView returns that field."
+    },
+    {
+      "step": 3,
+      "relation": "factory_return_then_field_return",
+      "from": "Lcom/tencent/news/qnplayer/h0;-><init>(Landroid/content/Context;Lcom/tencent/news/qnplayer/o;)V",
+      "to": [
+        "Lcom/tencent/news/qnplayer/o;->ʻ(Landroid/content/Context;)Lcom/tencent/news/video/b1;",
+        "Lcom/tencent/news/video/b1;->ʻ:Lcom/tencent/news/video/n2;",
+        "Lcom/tencent/news/video/b1;->ʾ()Lcom/tencent/news/video/n2;",
+        "Lcom/tencent/news/qnplayer/h0;->ˊˊ:Lcom/tencent/news/video/n2;",
+        "Lcom/tencent/news/qnplayer/h0;->ˆˑ()Lcom/tencent/news/video/n2;"
+      ],
+      "detail": "h0 stores o.ʻ(context)'s b1 result, invokes b1.ʾ(), stores the returned n2 in h0.ˊˊ, and its final accessor returns that exact field."
+    },
+    {
+      "step": 4,
+      "relation": "controller_factory_and_manager_backlink",
+      "from": "Lcom/tencent/news/video/b1;-><init>(Landroid/content/Context;Lcom/tencent/news/video/VideoPlayManager;Lcom/tencent/news/video/c1$c;)V",
+      "to": [
+        "Lcom/tencent/news/video/factory/c;->ʻ(Landroid/content/Context;Lcom/tencent/news/video/c1$c;)Lcom/tencent/news/video/n2;",
+        "Lcom/tencent/news/video/n2;-><init>(Landroid/content/Context;Lcom/tencent/news/video/c1$c;)V",
+        "Lcom/tencent/news/video/n2;->ˎˎ:Lcom/tencent/news/video/VideoPlayManager;",
+        "Lcom/tencent/news/video/n2;->setVideoParams(Lcom/tencent/news/model/pojo/VideoParams;)V",
+        "Lcom/tencent/news/video/VideoPlayManager;->attachVideoPlayController(Lcom/tencent/news/video/n2;)V",
+        "Lcom/tencent/news/video/VideoPlayManager;->ʼـ:Lcom/tencent/news/video/n2;"
+      ],
+      "detail": "factory.c returns new n2. On setVideoParams the same controller obtains a manager into n2.ˎˎ, then attaches itself; manager stores that receiver in field ʼـ before manager.setVideoParams is called."
+    },
+    {
+      "step": 5,
+      "relation": "service_factory_return",
+      "from": "Lcom/tencent/news/video/VideoPlayManager;->setVideoParams(Lcom/tencent/news/model/pojo/VideoParams;)V",
+      "to": [
+        "Lcom/tencent/news/ysp/b;->ʻ()Lcom/tencent/news/ysp/a;",
+        "Lcom/tencent/news/ysp/YspPlayerService;->ʻ()Lcom/tencent/news/ysp/a;",
+        "Lcom/tencent/news/ysp/YspMediaPlayer;-><init>()V",
+        "Lcom/tencent/news/video/VideoPlayManager;->ᵎᵎ:Lcom/tencent/news/ysp/a;",
+        "Lcom/tencent/news/video/VideoPlayManager;->ᵔᵔ:Lcom/tencent/qqlive/tvkplayer/api/ITVKMediaPlayer;"
+      ],
+      "condition": "VideoParams.isYspPlayer() and YSP service is available",
+      "detail": "Services.call(b) returns the provider; provider.ʻ returns new YspMediaPlayer. Manager writes the same result to its YSP field and active-player field."
+    },
+    {
+      "step": 6,
+      "relation": "same_controller_to_same_container_to_webview",
+      "from": "Lcom/tencent/news/video/VideoPlayManager;->ʿʼ(Ljava/lang/String;J)V",
+      "to": [
+        "Lcom/tencent/news/video/n2;->getPlayerView()Lcom/tencent/news/video/TNVideoView;",
+        "Lcom/tencent/news/ysp/a;->ʽ(Landroid/content/Context;Landroid/view/ViewGroup;)V parameter 1",
+        "Lcom/tencent/news/ysp/YspMediaPlayer;->ʽ(Landroid/content/Context;Landroid/view/ViewGroup;)V",
+        "Lcom/tencent/news/ysp/YspMediaPlayer;->ʻ:Lcom/tencent/news/webview/BaseWebView;",
+        "Lcom/tencent/news/ysp/YspMediaPlayer;->ʼ:Landroid/view/ViewGroup;"
+      ],
+      "detail": "Manager reads its stored n2 backlink, calls getPlayerView, and passes that exact TNVideoView as the ViewGroup argument to the stored YSP object. YspMediaPlayer stores the group, creates one BaseWebView into field ʻ if null, configures that field, and inserts the same field value into that exact group."
+    }
+  ],
+  "first_analyzer_gap": {
+    "category": "returned_factory_object_stored_then_exposed_by_inherited_accessor",
+    "earliest_edge": "h0.<init>: o.ʻ(context) return -> h0.ˋˋ (b1), followed by b1.ʾ() return -> h0.ˊˊ (n2)",
+    "required_rule": "For an Activity-owned concrete allocation, preserve receiver identity through superclass constructors; model interface factory return-to-field writes and a field-returning accessor on that same receiver. Then follow n2's manager field/backlink rather than joining objects by declared type.",
+    "why_first": "The Activity-to-concrete-service constructor edge is direct. The first nontrivial loss is the nested interface factory return and field-return sequence inside inherited h0 construction, before YSP provider resolution."
+  },
+  "same_webview_identity_conclusion": "The WebView is not the Activity's TNVideoView. It is the unique BaseWebView held in the selected YspMediaPlayer. Ownership is proven by the exact chain Activity lookup TNVideoView -> same constructor argument -> ui.c.ˏˏ -> n2.getPlayerView -> manager YSP attach ViewGroup argument -> YspMediaPlayer.ʼ container, with YspMediaPlayer.ʻ created, configured, and inserted into that container.",
+  "dex_symbol_source": "test/runs/symbols/news.jsonl"
+}

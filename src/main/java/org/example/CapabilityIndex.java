@@ -64,6 +64,9 @@ final class CapabilityIndex {
             if(type.startsWith("kotlin.")&&shapes.contains("getValue()Ljava/lang/Object;")&&shapes.contains("isInitialized()Z"))lazyContracts.add(type);
             if(type.startsWith("kotlin.jvm.functions.")&&shapes.contains("invoke()Ljava/lang/Object;"))function0Contracts.add(type);
         }
+        // Generated bindings can hold nested custom Views rather than a direct WebView.
+        // Keep their actual allocation-local constructor captures through bind/inflate returns.
+        for(String type:classes.keySet())if(subtype(type,"androidx.viewbinding.ViewBinding"))bindingObjects.add(type);
         for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
         for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&(webview(cls(m.getReturnType()))||function0Type(cls(m.getDefiningClass()))))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
