@@ -514,3 +514,71 @@ Reproduction: ./gradlew capabilitySelfTest shadowJar --offline --console=plain;
 python3 scripts/benchmark.py --label v10a --jar test/runs/v10a.jar;
 python3 scripts/evaluate.py with each canonical-facts.jsonl and news/v9c-ownership.jsonl,
 mango/v10a-ownership.jsonl or ctrip/v4e-ownership.jsonl. The evaluator's8 tests also passed.
+
+## v11 development — settings receiver alternatives and keyed object registries
+
+A union of Settings objects now unwraps each branch to the underlying WebView before grouping.
+The reproducing synthetic fixture failed before this change and passed afterward, preserving both
+separate view IDs and the configured value. Frozen settings-only v11a ran three Apps in
+104.91/78.51/130.99s; canonical recall is unchanged from v10. These are development timings:
+builds and a bounded news debug probe on CPUs8-15 overlapped parts of the run.
+
+Added object-local Map.put/get propagation with exact Class/literal keys, factory-returned Map
+contents, separate instance identities and explicit diagnostics for dynamic keys, mutations,
+ambiguous replacement order and entry budgets. Class-keyed registry wrappers are recognized by
+actual parameter stores/reads through the same Map field, not names. They are not global
+capability seeds. Actual registration calls propagate through inherited constructors and
+interface dispatch. Two independent registries using the same key retain distinct plugin objects;
+Class keys do not match same-name Strings. Unknown Map receiver parameters do not establish
+an invented shared Map instance (guard added after frozen v11b).
+
+Source follow-up corrected the earlier presumed long-video break: the existing analyzer already
+materializes h0's b1 and n2 returns. Sol identifies the subsequent service registry flow and its
+same-object/Class-key requirement (news/v11-longvideo-service-dispatch.{json,md}). Frozen v11b
+still does not recover either long-video host; this remains a real failure, not a completed repair.
+A bounded heap probe is checking the remaining registry-receiver/callback argument provenance.
+
+Frozen v11b completed118.19/85.29/150.37s,43/89/55 hosts, all reports partial. Sol confirms
+Mango's NFT settings/client now share the same underlying WebView alternatives. Two live-player
+Settings unions resolve their actual views; nine Pangle hosts lose only redundant unknown bridge
+implementation rows, retaining the concrete registrations/members. News adds174 raw VerticalVideo
+rows but zero semantic capabilities: this is alias expansion and remains an open precision issue.
+No new or removed hosts were observed. The long-video first unresolved relation is now documented
+as inherited onCreate -> createPage/setPage/getPage -> subclass onViewCreated(page,view), before
+Class-keyed registration. See news/v11b-validation.md. Subsequent implementation must preserve
+that actual virtual-call argument, not expand every implementation of the page interface.
+
+Final v11 artifact is **v11c**, which additionally refuses to merge opaque Map receivers into a
+shared object. All three Apps have exactly the same compared fact sets and host sets as v11b
+(receiver IDs, member signatures, values included; raw arguments/evidence/status excluded).
+Each per-App v11c-report-delta.json records its precise comparison scope and both report hashes.
+Sol's v11b ownership and object audits therefore remain applicable within that documented scope.
+
+| App | Total seconds | Peak RSS KiB | Bridge recall | Settings recall | Callback recall | Hosts / conservative owner error |
+|---|---:|---:|---|---|---|---|
+| News |120.42|8351364|1288/1385 (93.00%)|303/366 (82.79%)|205/240 (85.42%)|43 /1 uncertain (2.33%)|
+| Mango |83.99|8475528|1137/1153 (98.61%)|574/574 (100%)|597/597 (100%)|89 /5 uncertain (5.62%)|
+| Ctrip |142.21|7188456|3666/3666 (100%)|233/233 (100%)|299/299 (100%)|55 /1 wrong (1.82%)|
+
+All are fresh JVM runs with8 CPUs and16GiB heap; no prior analysis results were reused. A bounded
+news lifecycle probe on CPUs8-15 overlapped development measurements. These are not final isolated
+three-repeat performance acceptance runs. All reports remain partial.
+
+Validation: capabilitySelfTest and shadowJar passed, including two-registry instance isolation,
+Class/String key separation, unknown-key alternatives, opaque-receiver isolation, ambiguous-update
+diagnostics and Settings receiver alternatives. The final jar matches the built jar. The1s
+supervisor regression exited in1.274s with57 readable atomic snapshots and explicit timeout
+diagnostics (v11c-deadline-check.json).
+
+A separate known-failing LifecycleFixture is deliberately retained under validation/regressions.
+It reproduces the missing concrete page argument across inherited lifecycle -> setter/getter ->
+subclass callback. This is not counted as a passing test. The next repair must pass it and recover
+the real source-verified long-video chain. News's quality gate, raw-object alias precision, Rainbow
+and QQ/AdCore gaps, final sealed samples, final repeated timings and on-demand Soot fallback remain
+unfinished; v11 does not pass acceptance.
+
+Reproduction: ./gradlew capabilitySelfTest shadowJar --offline --console=plain;
+python3 scripts/benchmark.py --label v11c --jar test/runs/v11c.jar;
+canonical evaluate.py replays using news/v11b-ownership.jsonl, mango/v11b-ownership.jsonl,
+ctrip/v4e-ownership.jsonl. report_delta.py compares selected report fields without claiming source
+correctness. Known-failing fixture reproduction is in regressions/README.md.

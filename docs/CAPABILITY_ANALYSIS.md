@@ -109,3 +109,11 @@ Generated classes implementing androidx.viewbinding.ViewBinding retain allocatio
 constructor argument captures through bind/inflate returns, including nested custom Views.
 This does not infer an object from a field declaration. View aliases across entry parameters,
 layout roots and holder fields can still duplicate a single WebView; see OPEN_GAPS.json.
+
+Settings unions are grouped by their underlying WebView alternatives. Keyed Map summaries
+retain actual instance identity and Class/literal-key distinctions, including returned Map
+contents. Class-keyed registration wrappers require a matching read/write of the same Map field
+and exact argument positions. Registrations are followed at actual calls, never used as global
+capability seeds. Opaque Map parameters do not create a shared instance. Dynamic keys and
+mutation/replacement ordering remain unresolved diagnostics; the model reports possible
+registrations rather than proving a final runtime Map state.

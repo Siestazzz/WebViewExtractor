@@ -95,12 +95,15 @@ public final class CapabilitySelfTest {
    check(flow.refined==refinements,"Repeated type guard was decoded instead of cached");
    messageFixture();
    collectionFixture();
+   keyedMapFixture();
+   keyedRegistryFixture();
    installedProviderFixture();
    privateDispatchFixture();
    unknownBridgeFixture();
    reflectiveEndpointFixture();
    registeredServiceFixture();
    nullableReceiverFixture();
+   settingsAlternativesFixture();
    composedReceiverFixture();
    componentHelperFixture();
    callbackEntryIsolationFixture();
@@ -420,6 +423,23 @@ public final class CapabilitySelfTest {
   }finally{Files.deleteIfExists(path);}
  }
 
+ static void settingsAlternativesFixture(){
+  long deadline=System.nanoTime()+5_000_000_000L;var idx=new CapabilityIndex();var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);
+  var host=engine.new Host("test.AppActivity");var method=method(A,"configure",List.of(),1,1,List.of(end()),false);
+  var job=new CapabilityEngine.Job(method,List.of(),List.of("test.AppActivity"),false);
+  var first=DexFlow.V.of("object","android.webkit.WebView","first");var second=DexFlow.V.of("object","android.webkit.WebView","second");
+  var s1=DexFlow.expr("settings","android.webkit.WebSettings","settings-first",List.of(first));
+  var s2=DexFlow.expr("settings","android.webkit.WebSettings","settings-second",List.of(second));
+  var both=DexFlow.union(s1,s2);var value=DexFlow.V.literal("number","1");
+  var call=new DexFlow.Call(S+"->setJavaScriptEnabled(Z)V",0,List.of(both,value),false,false,false);
+  engine.emit(host,job,call,List.of(both,value),"setting",true);
+  var fact=host.facts.values().iterator().next();
+  @SuppressWarnings("unchecked")var views=(List<Map<String,Object>>)fact.get("webview_alternatives");
+  check(views.stream().allMatch(v->"android.webkit.WebView".equals(v.get("type"))),"Settings alternatives were reported as WebView objects");
+  check(views.stream().map(v->v.get("id")).collect(java.util.stream.Collectors.toSet()).equals(Set.of("first","second")),"Settings alternatives lost their two original WebView identities");
+  check("true".equals(fact.get("value")),"Receiver normalization changed the configured value");
+ }
+
  static void nullableReceiverFixture(){
   var idx=new CapabilityIndex();var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,System.nanoTime()+10_000_000_000L);var h=engine.new Host("test.AppActivity");
   var entry=method(A,"onCreate",List.of(),1,1,List.of(end()),false);var job=new CapabilityEngine.Job(entry,List.of(),List.of("test.AppActivity"),false);
@@ -491,6 +511,53 @@ public final class CapabilitySelfTest {
    @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
    check(facts.stream().anyMatch(f->"installed".equals(f.get("registration_name"))),"Installed provider capability missing");
    check(facts.stream().noneMatch(f->"unused".equals(f.get("registration_name"))),"Uninstalled provider subtype leaked into host");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void keyedRegistryFixture()throws Exception {
+  String base="Ltest/RegistryBase;",child="Ltest/Registry;",contract="Ltest/RegistryApi;",map="Ljava/util/HashMap;",klass="Ljava/lang/Class;",object="Ljava/lang/Object;",first="Ltest/FirstPlugin;",second="Ltest/SecondPlugin;";
+  var field=new ImmutableField(base,"entries",map,0x11,null,Set.of(),Set.of());
+  var ctor=method(base,"<init>",List.of(),1,2,List.of(make(0,map),new ImmutableInstruction22c(Opcode.IPUT_OBJECT,0,1,new ImmutableFieldReference(base,"entries",map)),end()),false);
+  var childCtor=method(child,"<init>",List.of(),1,1,List.of(invoke(Opcode.INVOKE_DIRECT,base,"<init>",List.of(),"V",0),end()),false);
+  var put=method(base,"register",List.of(klass,object),1,4,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(base,"entries",map)),invoke(Opcode.INVOKE_VIRTUAL,map,"put",List.of(object,object),object,0,2,3),end()),false);
+  var getBody=method(base,"lookup",List.of(klass),1,3,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(base,"entries",map)),invoke(Opcode.INVOKE_VIRTUAL,map,"get",List.of(object),object,0,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var get=new ImmutableMethod(base,"lookup",getBody.getParameters(),object,1,Set.of(),Set.of(),getBody.getImplementation());
+  var putApi=new ImmutableMethod(contract,"register",put.getParameters(),"V",0x401,Set.of(),Set.of(),null);var getApi=new ImmutableMethod(contract,"lookup",get.getParameters(),object,0x401,Set.of(),Set.of(),null);
+  List<Instruction> ins=new ArrayList<>(List.of(make(0,W),new ImmutableInstruction21c(Opcode.CONST_CLASS,3,new ImmutableTypeReference(B))));
+  int r=1;for(String plugin:List.of(first,second)){ins.add(make(r,child));ins.add(invoke(Opcode.INVOKE_DIRECT,child,"<init>",List.of(),"V",r));ins.add(make(4,plugin));ins.add(invoke(Opcode.INVOKE_INTERFACE,contract,"register",List.of(klass,object),"V",r,3,4));r++;}
+  for(int receiver:List.of(1,2)){ins.add(invoke(Opcode.INVOKE_INTERFACE,contract,"lookup",List.of(klass),object,receiver,3));ins.add(new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,6));ins.add(str(5,"registry"+receiver));ins.add(invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of(object,"Ljava/lang/String;"),"V",0,6,5));}ins.add(end());
+  var entry=method(A,"onCreate",List.of(),1,8,ins,false);Path path=Files.createTempFile("wv-keyed-registry-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(child,base,childCtor),new ImmutableClassDef(base,1,object,List.of(contract),null,Set.of(),List.of(field),List.of(ctor,put,get)),new ImmutableClassDef(contract,0x601,object,List.of(),null,Set.of(),List.of(),List.of(putApi,getApi)),clazz(first,object,method(first,"first",List.of(),1,1,List.of(end()),true)),clazz(second,object,method(second,"second",List.of(),1,1,List.of(end()),true)))));long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);
+   check(idx.keyedRegistryWrites.contains(CapabilityIndex.key(put)),"Exact class-keyed registry writer not recognized");check(!idx.seeds.contains(CapabilityIndex.key(put)),"Registry registration incorrectly became a global capability seed");
+   var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   for(var pair:List.of(List.of("registry1","test.FirstPlugin"),List.of("registry2","test.SecondPlugin"))){var matches=facts.stream().filter(f->pair.get(0).equals(f.get("registration_name"))).toList();check(matches.size()==1&&pair.get(1).equals(matches.get(0).get("implementation")),"Registry receiver identity lost across inherited constructor/interface dispatch: "+matches);}
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void keyedMapFixture()throws Exception {
+  String map="Ljava/util/HashMap;",first="Ltest/FirstPlugin;",second="Ltest/SecondPlugin;";
+  var body=method(H,"registry",List.of("Ljava/lang/Object;"),9,4,List.of(make(0,map),new ImmutableInstruction21c(Opcode.CONST_CLASS,1,new ImmutableTypeReference(first)),invoke(Opcode.INVOKE_VIRTUAL,map,"put",List.of("Ljava/lang/Object;","Ljava/lang/Object;"),"Ljava/lang/Object;",0,1,3),new ImmutableInstruction21c(Opcode.CONST_CLASS,1,new ImmutableTypeReference(second)),make(2,second),invoke(Opcode.INVOKE_VIRTUAL,map,"put",List.of("Ljava/lang/Object;","Ljava/lang/Object;"),"Ljava/lang/Object;",0,1,2),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var factory=new ImmutableMethod(H,"registry",body.getParameters(),map,9,Set.of(),Set.of(),body.getImplementation());
+  Path path=Files.createTempFile("wv-keyed-map-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(H,"Ljava/lang/Object;",factory),clazz(first,"Ljava/lang/Object;"),clazz(second,"Ljava/lang/Object;"))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("test.AppActivity");var job=new CapabilityEngine.Job(factory,List.of(),List.of(),false);
+   var key=DexFlow.V.of("class","test.FirstPlugin","test.FirstPlugin");List<DexFlow.V> registries=new ArrayList<>();
+   for(String id:List.of("first-instance","second-instance")){
+    var plugin=DexFlow.V.of("object","test.FirstPlugin",id);
+    var registry=engine.eval(DexFlow.expr("return","java.util.HashMap",CapabilityIndex.key(factory),List.of(plugin)),job,host,0,new HashSet<>());registries.add(registry);
+    var read=engine.eval(DexFlow.expr("return","java.lang.Object",map+"->get(Ljava/lang/Object;)Ljava/lang/Object;",List.of(registry,key)),job,host,0,new HashSet<>());
+    check(read.equals(plugin),"Class-keyed map lookup lost the registered instance or included another key");
+   }
+   check(!registries.get(0).id().equals(registries.get(1).id()),"Independent registry allocations collapsed");
+   var missing=engine.mapLookup(host,registries.get(0),DexFlow.V.literal("java.lang.String","test.FirstPlugin"),"java.lang.Object");
+   check(missing.kind().equals("unknown"),"Class key conflated with a same-name String key");
+   var dynamic=engine.mapLookup(host,registries.get(0),DexFlow.UNKNOWN,"java.lang.Object");
+   check(DexFlow.alternatives(dynamic).size()==2&&host.gaps.stream().anyMatch(g->g.startsWith("unresolved_map_lookup_key:")),"Unknown map key silently discarded alternatives or uncertainty");
+   var opaque=DexFlow.V.of("unknown","java.util.Map","parameter");engine.applyWrite(host,"$map_entry",opaque,DexFlow.expr("map_entry",null,"entry",List.of(key,DexFlow.V.of("object","test.FirstPlugin","opaque-value"))));
+   check(engine.mapLookup(host,opaque,key,"java.lang.Object").kind().equals("unknown")&&host.gaps.stream().anyMatch(g->g.startsWith("unresolved_map_receiver:")),"Opaque Map parameters were merged into an invented shared instance");
+   var replacement=DexFlow.V.of("object","test.FirstPlugin","replacement");engine.applyWrite(host,"$map_entry",registries.get(0),DexFlow.expr("map_entry",null,"entry",List.of(key,replacement)));
+   check(DexFlow.alternatives(engine.mapLookup(host,registries.get(0),key,"java.lang.Object")).size()==2&&host.gaps.stream().anyMatch(g->g.startsWith("map_update_order_unresolved:")),"Repeated registration claimed a final value without order evidence");
   }finally{Files.deleteIfExists(path);}
  }
 

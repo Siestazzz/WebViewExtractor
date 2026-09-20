@@ -26,6 +26,7 @@ final class CapabilityEngine {
         final String activity;
         final Map<String,V> heap=new HashMap<>();
         final Map<String,Set<V>> contents=new HashMap<>();
+        final Map<String,Map<String,V>> maps=new HashMap<>();
         final Map<String,V> bridgeViews=new HashMap<>();
         final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
         final Map<String,Object> serviceEvidence=new TreeMap<>();
@@ -57,21 +58,22 @@ final class CapabilityEngine {
                     Method target=idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
                     boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
+                    boolean registryWrite=target!=null&&(idx.keyedRegistryWrites.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.keyedRegistryWrites.contains(CapabilityIndex.key(m))));
                     boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
-                    if(kind==null&&!lifecycle&&!relevant)continue;
+                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite)continue;
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());continue;}
                     if(target!=null){
                         boolean virtual=!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&!args.isEmpty();
                         if(!virtual){
-                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle)enqueue(h,target,args,job.path,job.candidate||summary.branched());
+                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle||registryWrite)enqueue(h,target,args,job.path,job.candidate||summary.branched());
                         }else{
                             int dispatched=0;
                             for(V receiver:alternatives(args.get(0))){
                                 if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
                                 Method concrete=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
                                 if(concrete==null||concrete.getImplementation()==null){h.gaps.add("unresolved_receiver_dispatch:"+call.method());continue;}
-                                if(!idx.relevant.contains(CapabilityIndex.key(concrete)))continue;
+                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete)))continue;
                                 if(dispatched++>=64){h.gaps.add("dispatch_budget:"+call.method());break;}
                                 enqueue(h,concrete,specializeReceiver(args,receiver),job.path,job.candidate||summary.branched()||args.get(0).kind().equals("union"));
                             }
@@ -187,6 +189,7 @@ final class CapabilityEngine {
         if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
         if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?job.args.get(i):V.of("unknown",v.type(),"parameter");}
         if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));for(V element:v.args())applyWrite(h,"$contents",array,eval(element,job,h,depth+1,new HashSet<>(visiting)));return array;}
+        if(v.kind().equals("map_entry"))return new V("map_entry",null,"entry",null,v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList());
         if(v.kind().equals("array_element"))return elements(h,eval(v.args().get(0),job,h,depth+1,visiting),v.type());
         if(v.kind().equals("new")){
             V object=V.of("object",v.type(),v.id()+"|"+allocationContext(job));
@@ -264,6 +267,7 @@ final class CapabilityEngine {
                     for(Method invoke:idx.byClass.getOrDefault(initializer.type(),List.of()))if(invoke.getName().equals("invoke")&&invoke.getParameterTypes().isEmpty()&&invoke.getImplementation()!=null)result=union(result,eval(expr("return",CapabilityIndex.cls(invoke.getReturnType()),CapabilityIndex.key(invoke),List.of(initializer)),job,h,depth+1,new HashSet<>(visiting)));
                 if(result!=null)return result;
             }
+            if(idx.map(owner(v.id()))&&name.equals("get")&&args.size()==2&&v.id().endsWith("(Ljava/lang/Object;)Ljava/lang/Object;"))return mapLookup(h,args.get(0),args.get(1),v.type());
             if(!args.isEmpty()&&name.equals("asList")&&"java.util.Arrays".equals(owner(v.id())))return args.get(0);
             if(!args.isEmpty()&&name.equals("singletonList")&&"java.util.Collections".equals(owner(v.id()))){V container=V.of("object","java.util.List","singleton:"+args.get(0).id());applyWrite(h,"$contents",container,args.get(0));return container;}
             if(!args.isEmpty()&&name.equals("iterator")&&idx.collection(owner(v.id())))return expr("iterator","java.util.Iterator","iterator:"+args.get(0).id(),List.of(args.get(0)));
@@ -283,7 +287,7 @@ final class CapabilityEngine {
             }
             for(Method actual:targets)if(visiting.add(CapabilityIndex.key(actual))){
                 Job nested=new Job(actual,args,job.path,true);Summary summary=flow.summary(actual,v0->guardValue(v0,nested,h,0));
-                if(idx.collection(CapabilityIndex.cls(actual.getReturnType())))for(Write w:summary.writes()){
+                if(idx.collection(CapabilityIndex.cls(actual.getReturnType()))||idx.map(CapabilityIndex.cls(actual.getReturnType())))for(Write w:summary.writes()){
                     V receiver=eval(w.receiver(),nested,h,depth+1,new HashSet<>(visiting));V value=eval(w.value(),nested,h,depth+1,new HashSet<>(visiting));applyWrite(h,w.field(),receiver,value);
                 }
                 for(V ret:summary.returns())result=union(result,eval(ret,nested,h,depth+1,new HashSet<>(visiting)));
@@ -341,12 +345,46 @@ final class CapabilityEngine {
         return result;
     }
     void applyWrite(Host h,String field,V receiver,V value){
+        if(field.startsWith("$map_mutation:")){h.gaps.add("map_mutation_order_unresolved:"+field.substring(14));return;}
+        if(field.equals("$map_entry")){
+            if(!value.kind().equals("map_entry")||value.args().size()!=2){h.gaps.add("unresolved_map_entry");return;}
+            for(V recv:alternatives(receiver)){
+                if(!recv.kind().equals("object")){h.gaps.add("unresolved_map_receiver:"+recv.id());continue;}
+                Map<String,V> entries=h.maps.computeIfAbsent(recv.id(),k->new LinkedHashMap<>());
+                for(V key:alternatives(value.args().get(0))){
+                    String identity=mapKey(key);if(identity==null){identity="*";h.gaps.add("unresolved_map_key:"+recv.id());}
+                    V prior=entries.get(identity),next=value.args().get(1);
+                    if(prior!=null&&!prior.equals(next))h.gaps.add("map_update_order_unresolved:"+recv.id());
+                    if(entries.size()>=256&&!entries.containsKey(identity)){h.gaps.add("map_entry_budget:"+recv.id());entries.put("*",UNKNOWN);continue;}
+                    entries.put(identity,union(prior,next));
+                }
+            }return;
+        }
+
         if(field.equals("$contents")||field.equals("$contentsAll")||field.startsWith("$element:")){
             for(V recv:alternatives(receiver)){Set<V> values=h.contents.computeIfAbsent(recv.id(),k->new LinkedHashSet<>());
                 for(V val:alternatives(value))if(field.equals("$contentsAll"))values.addAll(h.contents.getOrDefault(val.id(),Set.of()));else values.add(val);
                 if(values.size()>256){h.gaps.add("collection_element_budget:"+recv.id());values.clear();values.add(UNKNOWN);}
             }
         }else for(V alternative:alternatives(receiver)){String key=heapKey(field,alternative);h.heap.put(key,union(h.heap.get(key),value));}
+    }
+    static String mapKey(V key){
+        if(key.kind().equals("class"))return "class:"+key.type();
+        if(key.kind().equals("literal"))return "literal:"+key.type()+":"+key.literal();
+        return null;
+    }
+    V mapLookup(Host h,V receiver,V key,String type){
+        V result=null;
+        for(V recv:alternatives(receiver)){
+            Map<String,V> entries=h.maps.getOrDefault(recv.id(),Map.of());
+            for(V choice:alternatives(key)){
+                String identity=mapKey(choice);
+                if(identity==null){h.gaps.add("unresolved_map_lookup_key:"+recv.id());for(V value:entries.values())result=union(result,value);}
+                else result=union(result,entries.get(identity));
+                result=union(result,entries.get("*"));
+            }
+        }
+        return result==null?V.of("unknown",type,"unresolved_map_lookup:"+receiver.id()+":"+key.id()):result;
     }
     V elements(Host h,V collection,String type){
         Set<V> values=new LinkedHashSet<>();for(V recv:alternatives(collection))values.addAll(h.contents.getOrDefault(recv.id(),Set.of()));
@@ -376,7 +414,12 @@ final class CapabilityEngine {
     }
     void emit(Host h,Job job,Call call,List<V> args,String kind,boolean conditional){
         String site=CapabilityIndex.key(job.method)+"@"+call.offset();boundSites.add(site);
-        V recv=args.isEmpty()?UNKNOWN:args.get(0);if(kind.equals("setting")&&recv.kind().equals("settings"))recv=recv.args().get(0);
+        V recv=args.isEmpty()?UNKNOWN:args.get(0);
+        if(kind.equals("setting")){
+            V views=null;
+            for(V alternative:alternatives(recv))views=union(views,alternative.kind().equals("settings")?alternative.args().get(0):alternative);
+            recv=views==null?UNKNOWN:views;
+        }
         if(kind.equals("message_bridge")&&h.bridgeViews.containsKey(recv.id()))recv=h.bridgeViews.get(recv.id());
         // A nullable receiver describes a condition, never an additional WebView object.
         boolean nullable=false;V live=null;

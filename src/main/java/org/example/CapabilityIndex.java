@@ -25,6 +25,7 @@ final class CapabilityIndex {
     final Map<String,Set<String>> registryHandlerShapes=new HashMap<>();
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
+    final Set<String> keyedRegistryWrites=new HashSet<>();
     final Set<String> lazyContracts=new HashSet<>(Set.of("kotlin.Lazy")), function0Contracts=new HashSet<>(Set.of("kotlin.jvm.functions.Function0"));
     final Map<String,Set<String>> callbackEntries=new HashMap<>();
     record CustomCallback(String field,String contract,Set<String> dispatchedShapes){}
@@ -92,6 +93,7 @@ final class CapabilityIndex {
         for(var e:new ArrayList<>(calls.entrySet()))for(String ref:new ArrayList<>(e.getValue())){
             Method m=resolve(ref);if(m!=null){String target=key(m);e.getValue().add(target);callers.computeIfAbsent(target,k->new HashSet<>()).add(e.getKey());}
         }
+        discoverKeyedRegistries(deadline);
         discoverCustomCallbacks(deadline);
         services.index(this,deadline);
         discoverMessageRegistries(deadline);
@@ -186,6 +188,29 @@ final class CapabilityIndex {
             customCallbacks.put(entry.getKey(),new CustomCallback(candidate.field(),candidate.contract(),Set.copyOf(dispatched)));
             for(String caller:callers.getOrDefault(entry.getKey(),Set.of()))seeds.add(caller);
         }
+    }
+    void discoverKeyedRegistries(long deadline){
+        // Recognize Class-keyed registries by the actual Map field and parameter stores.
+        // No registration method is a global capability seed.
+        Map<String,Set<String>> readers=new HashMap<>(),writers=new HashMap<>();
+        DexFlow flow=new DexFlow(this,deadline);
+        for(Method method:methods.values()){
+            if(System.nanoTime()>deadline)throw new IllegalStateException("registry_index_deadline");
+            if(method.getImplementation()==null||(method.getAccessFlags()&8)!=0||method.getParameterTypes().isEmpty()||!method.getParameterTypes().get(0).equals("Ljava/lang/Class;"))continue;
+            if(!calls.getOrDefault(key(method),Set.of()).stream().anyMatch(c->c.endsWith("->get(Ljava/lang/Object;)Ljava/lang/Object;")||c.endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")))continue;
+            for(DexFlow.Call call:flow.summary(method).calls()){
+                if(!map(CapabilityEngine.owner(call.method()))||call.args().size()<2)continue;
+                var receiver=call.args().get(0);var argument=call.args().get(1);
+                if(!receiver.kind().equals("field")||!receiver.args().get(0).kind().equals("param")||!receiver.args().get(0).id().equals("0")||!argument.kind().equals("param")||!argument.id().equals("1"))continue;
+                if(call.method().endsWith("->get(Ljava/lang/Object;)Ljava/lang/Object;"))readers.computeIfAbsent(receiver.id(),k->new HashSet<>()).add(key(method));
+                if(call.method().endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")&&call.args().size()==3&&call.args().get(2).kind().equals("param")&&call.args().get(2).id().equals("2"))writers.computeIfAbsent(receiver.id(),k->new HashSet<>()).add(key(method));
+            }
+        }
+        Set<String> carriers=new HashSet<>();
+        for(String field:readers.keySet())if(writers.containsKey(field)){
+            keyedRegistryWrites.addAll(writers.get(field));carriers.add(CapabilityEngine.owner(field));
+        }
+        for(String type:classes.keySet())for(String carrier:carriers)if(subtype(type,carrier)){bindingObjects.add(type);break;}
     }
     void discoverMessageRegistries(long deadline){
         // Registries must share a Map with a JS or installed-client transport call chain.
@@ -288,6 +313,7 @@ final class CapabilityIndex {
     boolean function0Type(String t){return function0Contracts.stream().anyMatch(b->subtype(t,b));}
     boolean settings(String t){return subtype(t,"android.webkit.WebSettings")||subtype(t,"com.tencent.smtt.sdk.WebSettings")||subtype(t,"com.uc.webview.export.WebSettings");}
     boolean activity(String t){return Cfg.ACTIVITIES.stream().anyMatch(b->subtype(t,b));}
+    boolean map(String t){return t!=null&&(Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.util.TreeMap","java.util.concurrent.ConcurrentMap","java.util.concurrent.ConcurrentHashMap").contains(t)||subtype(t,"java.util.Map"));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
     boolean component(String t){return webview(t)||subtype(t,"android.app.Fragment")||subtype(t,"androidx.fragment.app.Fragment")||subtype(t,"android.support.v4.app.Fragment")||subtype(t,"android.view.View")||subtype(t,"android.app.Dialog");}

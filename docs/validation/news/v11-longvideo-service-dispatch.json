@@ -1,0 +1,91 @@
+{
+  "apk": "com.tencent.news",
+  "version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "status": "source_and_dex_verified",
+  "holdout_used": false,
+  "registry": {
+    "interface": "Lcom/tencent/news/ui/listitem/n0;",
+    "implementation": "Lcom/tencent/news/ui/listitem/y2;",
+    "map_field": "Lcom/tencent/news/ui/listitem/y2;->ˈˈ:Ljava/util/HashMap;",
+    "write": "Lcom/tencent/news/ui/listitem/y2;->ʽ(Ljava/lang/Class;Ljava/lang/Object;)V",
+    "read": "Lcom/tencent/news/ui/listitem/y2;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+    "key": "const-class Lcom/tencent/news/qnplayer/n;",
+    "semantics": "write executes HashMap.put(cls,obj); read executes the same field's HashMap.get(cls), so the returned value is the exact registered object when no later same-key replacement occurs"
+  },
+  "activity_writes": [
+    {
+      "activity": "Lcom/tencent/news/video/detail/longvideo/LongVideoDetailActivity;",
+      "method": "Lcom/tencent/news/video/detail/longvideo/LongVideoDetailActivity;->onViewCreated(Lcom/tencent/news/video/detail/longvideo/a;Landroid/view/View;)V",
+      "value_constructor": "Lcom/tencent/news/video/detail/longvideo/services/e;-><init>(Landroid/content/Context;Lcom/tencent/news/video/TNVideoView;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/tencent/news/share/p;Lkotlin/jvm/functions/a;Lcom/tencent/news/kkvideo/detail/longvideo/l;Lcom/tencent/news/video/detail/longvideo/n0;Lcom/tencent/news/video/interceptor/o;Z)V",
+      "ordering": "register n.class -> service-e, then call page.י(rootView, widgetHolder)"
+    },
+    {
+      "activity": "Lcom/tencent/news/video/detail/longvideo/TvLongVideoDetailActivity;",
+      "method": "Lcom/tencent/news/video/detail/longvideo/TvLongVideoDetailActivity;->onViewCreated(Lcom/tencent/news/video/detail/longvideo/a;Landroid/view/View;)V",
+      "value_constructor": "Lcom/tencent/news/video/detail/longvideo/services/p;-><init>(Landroid/content/Context;Lcom/tencent/news/video/TNVideoView;Lcom/tencent/news/kkvideo/detail/longvideo/l;Ljava/lang/String;Ljava/lang/String;)V",
+      "ordering": "register n.class -> service-p, then call page.י(rootView,null)"
+    }
+  ],
+  "same_registry_carrier": {
+    "page_accessor": "Lcom/tencent/news/video/detail/longvideo/a;->ʼ()Lcom/tencent/news/ui/listitem/n0;",
+    "concrete_page_accessor": "Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->ʼ()Lcom/tencent/news/ui/listitem/n0;",
+    "concrete_return_field": "Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->ˋˋ:Lcom/tencent/news/kkvideo/detail/longvideo/j;",
+    "page_context_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/m;-><init>(Landroid/content/Context;Lcom/tencent/news/kkvideo/detail/longvideo/j;Ljava/lang/String;Lcom/tencent/news/model/pojo/Item;)V",
+    "page_context_accessor": "Lcom/tencent/news/kkvideo/detail/longvideo/m;->ʾ()Lcom/tencent/news/kkvideo/detail/longvideo/j;",
+    "typed_lookup_accessor": "Lcom/tencent/news/kkvideo/detail/longvideo/j;->ʽˈ()Lcom/tencent/news/qnplayer/n;",
+    "detail": "AbsLongVideoDetailPage owns one final j (which extends y2). Both the Activity write accessor and the page-context/presenter read path return this same j. j.ʽˈ calls getService(n.class) and casts the exact map value to qnplayer.n."
+  },
+  "dispatch_construction": [
+    {
+      "variant": "tv",
+      "page_factory": "Lcom/tencent/news/kkvideo/detail/longvideo/tv/TvLongVideoDetailPage;->ˋˋ(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)Lkotlin/Pair;",
+      "presenter_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;-><init>(Lcom/tencent/news/kkvideo/detail/longvideo/m;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/d;)V",
+      "lookup": "pageContext.ʾ().ʽˈ() -> qnplayer.n",
+      "stored_service_field": "Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;->יי:Lcom/tencent/news/qnplayer/n;",
+      "dispatcher_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;-><init>(Lcom/tencent/news/qnplayer/n;Ljava/lang/String;Landroid/content/Context;ZLcom/tencent/news/kkvideo/detail/longvideo/player/l;Lcom/tencent/news/kkvideo/playlogic/mute/d;ILkotlin/jvm/internal/n;)V",
+      "dispatcher_service_field": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ˈˈ:Lcom/tencent/news/qnplayer/n;"
+    },
+    {
+      "variant": "ip",
+      "page_factory": "Lcom/tencent/news/kkvideo/detail/longvideo/ip/IpLongVideoDetailPage;->ˋˋ(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)Lkotlin/Pair;",
+      "presenter_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;-><init>(Lcom/tencent/news/kkvideo/detail/longvideo/m;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)V",
+      "lookup": "pageContext.ʾ().ʽˈ() -> qnplayer.n",
+      "stored_service_field": "Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;->ˑˑ:Lcom/tencent/news/qnplayer/n;",
+      "dispatcher_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;-><init>(Lcom/tencent/news/qnplayer/n;Ljava/lang/String;Landroid/content/Context;ZLcom/tencent/news/kkvideo/detail/longvideo/player/l;Lcom/tencent/news/kkvideo/playlogic/mute/d;ILkotlin/jvm/internal/n;)V",
+      "dispatcher_service_field": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ˈˈ:Lcom/tencent/news/qnplayer/n;"
+    }
+  ],
+  "lifecycle_and_action_chain": {
+    "setup_entry": "Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->י(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)V",
+    "setup_behavior": "after the Activity registry write, synchronously calls the variant page factory, whose presenter constructor performs the n.class lookup; it then starts the page lifecycle",
+    "tv_initial_trigger": "Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;->onPageCreateView()V invokes its episode-selection method; model completion and user selection also enter the same presenter/player dispatcher",
+    "ip_selection_trigger": "Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;->ˉ(Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)Z invokes player.g selection for item zero when episode data is ready",
+    "common_selection": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻʼ(Lcom/tencent/news/kkvideo/playlist/c;)Z",
+    "common_apply_item": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻˈ(Lcom/tencent/news/model/pojo/Item;ZLjava/util/List;)V",
+    "interface_dispatch": "Lcom/tencent/news/qnplayer/n;->ʾˏ(Lcom/tencent/news/qnplayer/f;)V",
+    "implementation_dispatch": "Lcom/tencent/news/qnplayer/h0;->ʾˏ(Lcom/tencent/news/qnplayer/f;)V",
+    "data_source_write": "Lcom/tencent/news/video/b1;->ˆ(Lcom/tencent/news/kkvideo/config/VideoDataSource;)V",
+    "terminal": "Lcom/tencent/news/video/n2;->setVideoParams(Lcom/tencent/news/model/pojo/VideoParams;)V",
+    "direct_chain": "player.g.ʻʼ(selection) -> player.g.ʻˈ(item,autoplay,extras) -> its exact field ˈˈ.ʾˏ(new qnplayer.u(item)) -> h0.ʾˏ -> h0 converts u to VideoDataSource -> b1.ˆ -> its exact n2 field ʻ.setVideoParams(videoDataSource.getVideoParams())"
+  },
+  "first_required_analyzer_relation": {
+    "category": "class_keyed_service_registry_identity_and_later_lookup",
+    "edge": "Activity call n0.ʽ(n.class, concrete service) -> y2.ˈˈ HashMap entry -> later j.ʽˈ()/getService(n.class) return -> player.g constructor argument",
+    "rule": "Track (registry-instance, exact Class constant) writes and reads. Propagate the written object only when both the registry receiver identity and class key match. Continue through the returned object's store in player.g and its interface dispatch.",
+    "reason": "The h0/b1/n2 factory chain is already present. Without connecting the later n.class lookup to the Activity's prior write, the player.g call is seen only on an abstract qnplayer.n value and never reconnects to the Activity-owned e/p instance."
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/ui/listitem/y2.java:10-45",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/j.java:74-77",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage.java:224-251,366-386",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/LongVideoDetailActivity.java:111-125",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/TvLongVideoDetailActivity.java:163-176",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/tv/m.java:620-670,855-880,1228-1240",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/ip/v.java:480-525,733-758",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/player/g.java:417-558",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/qnplayer/h0.java:266-279",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/b1.java:132-160"
+  ]
+}
