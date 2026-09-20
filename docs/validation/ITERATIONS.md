@@ -195,3 +195,39 @@
   Activity hosts. No final holdout or three-repeat acceptance run yet. QUALITY ACCEPTANCE NOT MET.
 - Reproduce with the documented build, `scripts/benchmark.py --label v5 --jar test/runs/v5.jar`,
   then the three canonical evaluator commands. Benchmark JSON preserves exact commands/hashes.
+
+## v6 — asynchronous registries and removal of unsupported subtype inference
+
+- Removed native and reflective Bridge implementation enumeration based solely on a declared
+  receiver type. Unresolved native implementations retain the registration and declared contract,
+  explicitly mark implementation unknown and record a diagnostic. No v6 app emits the old
+  `type_compatible_bridge_implementation` inference. Ctrip keeps full development recall without it.
+- Registry discovery follows allocated String-result callbacks and custom client adapter helper
+  methods. Transport budgets now count unique visited methods and emit exhaustion diagnostics.
+  Added executable fixtures for async registry map reads and unknown Bridge retention without an
+  unallocated subtype. Scoped SDK override propagation excludes generic platform ancestors.
+- All JVM fixtures pass. Serial fresh-JVM measurements: news76.71s, mango81.96s, ctrip121.09s.
+  No output is labelled complete; these are development runs, not final repeats.
+- Current Mango recall: Bridge1136/1153 (98.53%), Settings519/526 (98.67%), Callbacks584/591
+  (98.82%). Sol independently verifies all44 newly matched message endpoints (25 mgadplus,
+  19 mglive) by registration, host and exact DEX member, not by tool counts. Ownership is77 valid,
+  5 uncertain,0 wrong across82 outputs; two previously verified channel hosts are recovered.
+- Negative check: WebContainer has108 facts but ZERO programmatic Imgo handler registrations.
+  The XML constructor path keeps its separate native transport. The checkUpdate endpoint remains
+  a real miss: its known handler's downstream business reflection must not erase that handler.
+- Ctrip: Bridge3666/3666, Settings233/233, Callbacks299/299; emitted Activity identities match the
+  previously reviewed55. Bound-object precision and final fresh cases remain pending.
+- News public source coverage was expanded from23 to28 deep positive hosts (1931 canonical rows).
+  Same-oracle v5/v6 replay is1252/1365 Bridge,221/338 Settings,181/228 Callbacks. The old23-host
+  replay is retained separately.28 public positives does NOT satisfy the minimum30 gate; merge
+  final sealed cases and verify the count or add further evidence before acceptance. An unbound
+  QADetailPage remains in activity-null evidence rather than being assigned by module/name.
+- Source-verified next edges: QNRouter generated Class-key/APIMeta providers returning YSP players;
+  AdCore page and system-wrapper factory identity; AdCore prompt annotation protocol; Loading static
+  class prompt registry. Mango's Loading14+dynamic1 remains a systemic miss despite aggregate95%.
+  New verified evidence lives under news/ysp-provider-binding and adcore-wrapper-factory.
+- Still pending: those framework fixes, lower callback/settings gaps, all-output capability
+  precision, final new samples, full synthetic matrix, Soot fallback and three isolated repeats.
+  QUALITY ACCEPTANCE NOT MET; no all-APK completeness claim.
+- Reproduce with the documented build, frozen v6 jar and benchmark script; run the three canonical
+  evaluators. News uses v6-news-development-v2-evaluation.json for the expanded current oracle.

@@ -1,0 +1,53 @@
+{
+  "service_interface": "Lcom/tencent/news/ysp/b;",
+  "implementation": "Lcom/tencent/news/ysp/YspPlayerService;",
+  "product_interface": "Lcom/tencent/news/ysp/a;",
+  "product_implementation": "Lcom/tencent/news/ysp/YspMediaPlayer;",
+  "binding_kind": "generated_class_key_map",
+  "implementation_key": "_default_impl_",
+  "registration": {
+    "entry": "Lcom/tencent/news/L4qnplayer/RouterEntry;->init()V",
+    "generated_method": "Lcom/tencent/news/qnrouter/service/ServiceMapGenL4qnplayer;->init()V",
+    "api": "Lcom/tencent/news/qnrouter/service/ServiceMap;->autoRegister(Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APIMeta;)V",
+    "map_field": "Lcom/tencent/news/qnrouter/service/ServiceMap;->ʻ:Ljava/util/concurrent/ConcurrentHashMap;",
+    "outer_key": "com.tencent.news.ysp.b",
+    "inner_key": "_default_impl_",
+    "singleton_service": true
+  },
+  "lookup": [
+    "Lcom/tencent/news/qnrouter/service/Services;->call(Ljava/lang/Class;)Ljava/lang/Object;",
+    "Lcom/tencent/news/qnrouter/service/Services;->get(Ljava/lang/Class;)Ljava/lang/Object;",
+    "Lcom/tencent/news/qnrouter/service/Services;->get(Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APICreator;)Ljava/lang/Object;"
+  ],
+  "factory_method": "Lcom/tencent/news/ysp/YspPlayerService;->ʻ()Lcom/tencent/news/ysp/a;",
+  "factory_default_return": "new Lcom/tencent/news/ysp/YspMediaPlayer;",
+  "attach_interface": "Lcom/tencent/news/ysp/a;->ʽ(Landroid/content/Context;Landroid/view/ViewGroup;)V",
+  "attach_target": "Lcom/tencent/news/ysp/YspMediaPlayer;->ʽ(Landroid/content/Context;Landroid/view/ViewGroup;)V",
+  "shortest_chain": [
+    "RouterEntry.init",
+    "ServiceMapGenL4qnplayer.init",
+    "ServiceMap.autoRegister(b.class, _default_impl_, APIMeta(YspPlayerService,true))",
+    "Services.call/get(b.class)",
+    "ServiceMap.sImplMap[b.name][_default_impl_]",
+    "APIMeta default reflective creator -> YspPlayerService.<init>",
+    "YspPlayerService.ʻ -> new YspMediaPlayer",
+    "a.ʽ -> YspMediaPlayer.ʽ"
+  ],
+  "conditions": [
+    "generated L4qnplayer router entry initialized",
+    "default service mapping present",
+    "QFix redirector absent for the default new-YspMediaPlayer path",
+    "caller selects YSP playback mode",
+    "attach target ViewGroup is non-null"
+  ],
+  "evidence": [
+    "sources/com/tencent/news/qnrouter/service/ServiceMapGenL4qnplayer.java:21-30",
+    "sources/com/tencent/news/L4qnplayer/RouterEntry.java:18-24",
+    "sources/com/tencent/news/qnrouter/service/ServiceMap.java:28-32,90-96",
+    "sources/com/tencent/news/qnrouter/service/Services.java:34-38,185-238,331-373",
+    "sources/com/tencent/news/qnrouter/service/APIMeta.java:9-15,33-62",
+    "sources/com/tencent/news/ysp/YspPlayerService.java:19-23",
+    "sources/com/tencent/news/video/VideoPlayManager.java:3284-3297,3955-3972",
+    "sources/com/tencent/news/live/player/v.java:1165-1179,1191-1196"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "report": "test/runs/v6/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "webcontainer": {
+    "activity": "com.mgsz.h5.WebContainerActivity",
+    "result": "pass-no-imgo-handler-misbinding",
+    "total_facts": 108,
+    "imgo_register_handler_facts": 0,
+    "imgo_programmatic_registration_names_emitted": 0,
+    "xml_receiver": {
+      "type": "com.mgsz.h5.ImgoWebView",
+      "id": "Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;/view:2131834272",
+      "constructor": "Lcom/mgsz/h5/ImgoWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+      "state": "K0 remains null; registerWebHandler returns at its null guard"
+    },
+    "programmatic_interface_constructor": "Lcom/mgsz/h5/ImgoWebView;-><init>(Landroid/content/Context;Lcom/mgsz/h5/callback/ImgoWebJavascriptInterface;)V",
+    "other_dex_constructors": [
+      "Lcom/mgsz/h5/ImgoWebView;-><init>(Landroid/content/Context;)V",
+      "Lcom/mgsz/h5/ImgoWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V"
+    ],
+    "legitimate_bridge": {
+      "site": "Lcom/mgsz/h5/jsbridge/BridgeWebView;->init()V@57",
+      "receiver_type": "com.mgsz.h5.ImgoWebView",
+      "registration_name": "jsobj",
+      "implementation": "com.mgsz.h5.jsbridge.BridgeWebView$b",
+      "member": "Lcom/mgsz/h5/jsbridge/BridgeWebView$b;->callNative(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+      "note": "This addJavascriptInterface transport is unrelated to the guarded K0 Imgo handler list."
+    }
+  },
+  "mglive_check_update": {
+    "registration_site": "Lcom/mgtv/ui/live/mglive/webview/a;->p(Landroid/content/Context;Lcom/mgtv/ui/live/mglive/h5/jsbridge/BridgeWebView;Lcom/mgtv/ui/live/mglive/share/ShareProxy;Lcom/mgtv/ui/live/mglive/webview/a$a0;)V@137",
+    "registration_name": "checkUpdate",
+    "target_class": "Lcom/mgtv/ui/live/mglive/webview/a$j;",
+    "target_constructor": "Lcom/mgtv/ui/live/mglive/webview/a$j;-><init>(Landroid/content/Context;)V",
+    "exposed_interface_member": "Lcom/mgtv/ui/live/mglive/webview/a$j;->a(Ljava/lang/String;Lcn0/d;)V",
+    "v6_status": "registered-target-unknown",
+    "v6_members": [],
+    "explanation": "The registration target and interface member are statically known in source and DEX. The member body then performs Class.forName/getMethod/invoke on om.mgtv.live.play.app.utils.CheckUpdateHelper; that downstream reflective business call does not make the registry endpoint unknown. v6 conservatively loses the member at this dynamically reflective target, so this remains an extractor miss."
+  },
+  "holdout_read": false
+}

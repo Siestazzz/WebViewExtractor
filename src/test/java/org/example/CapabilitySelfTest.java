@@ -83,6 +83,7 @@ public final class CapabilitySelfTest {
    collectionFixture();
    installedProviderFixture();
    privateDispatchFixture();
+   unknownBridgeFixture();
    reflectiveEndpointFixture();
    System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints");
   }finally{Files.deleteIfExists(file);}
@@ -120,6 +121,27 @@ public final class CapabilitySelfTest {
    var urlIndex=new CapabilityIndex();urlIndex.read(path,System.nanoTime()+20_000_000_000L);
    check(urlIndex.messageRegistries.containsKey(CapabilityIndex.key(register)),"URL callback message registry not found");
    check(!urlIndex.messageRegistries.containsKey(CapabilityIndex.key(fake)),"URL transport turned headers into registry");
+   String async="Ltest/AsyncResult;";
+   var callbackDecl=new ImmutableMethod(async,"onCallBack",List.of(new ImmutableMethodParameter("Ljava/lang/String;",Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+   var queueCallback=new ImmutableMethod(transport,"onCallBack",dispatch.getParameters(),"V",1,Set.of(),Set.of(),dispatch.getImplementation());
+   var asyncTransport=new ImmutableClassDef(transport,1,"Ljava/lang/Object;",List.of(async),null,Set.of(),List.of(transportField),List.of(queueCallback));
+   var schedule=method(H,"schedule",List.of(async),9,2,List.of(str(0,"queue"),invoke(Opcode.INVOKE_INTERFACE,async,"onCallBack",List.of("Ljava/lang/String;"),"V",1,0),end()),false);
+   var asyncEntry=method(client,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,4,List.of(make(0,transport),invoke(Opcode.INVOKE_STATIC,H,"schedule",List.of(async),"V",0),end()),false);
+   DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(wc,asyncTransport,hc,clazz(client,"Landroid/webkit/WebViewClient;",asyncEntry),clazz(H,"Ljava/lang/Object;",schedule),new ImmutableClassDef(async,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(callbackDecl)))));
+   var asyncIndex=new CapabilityIndex();asyncIndex.read(path,System.nanoTime()+20_000_000_000L);
+   check(asyncIndex.messageRegistries.containsKey(CapabilityIndex.key(register)),"Map read in allocated async callback was missed");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void unknownBridgeFixture()throws Exception {
+  String unused="Ltest/NeverAllocatedBridge;";var field=new ImmutableField(A,"unresolved",B,1,null,Set.of(),Set.of());
+  var entry=method(A,"onCreate",List.of(),1,4,List.of(make(0,W),new ImmutableInstruction22c(Opcode.IGET_OBJECT,1,3,new ImmutableFieldReference(A,"unresolved",B)),str(2,"unknown-object"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
+  Path path=Files.createTempFile("wv-unknown-bridge-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(new ImmutableClassDef(A,1,"Landroid/app/Activity;",List.of(),null,Set.of(),List.of(field),List.of(entry)),clazz(B,"Ljava/lang/Object;"),clazz(unused,B,method(unused,"extra",List.of(),1,1,List.of(end()),true)))));
+   long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   check(facts.stream().anyMatch(f->"unknown-object".equals(f.get("registration_name"))&&"unknown".equals(f.get("implementation"))),"Unknown bridge registration lost or falsely concretized");
+   check(facts.stream().noneMatch(f->"test.NeverAllocatedBridge".equals(f.get("implementation"))),"Unallocated bridge subtype inferred from field declaration");
   }finally{Files.deleteIfExists(path);}
  }
 

@@ -99,6 +99,13 @@ final class CapabilityIndex {
             for(String caller:callers.getOrDefault(callee,Set.of()))if(relevant.add(caller))queue.add(caller);
             Method cm=methods.get(callee);
             if(cm!=null){String owner=cls(cm.getDefiningClass());
+                if(carriers.contains(owner)&&!component(owner)&&!activity(owner)&&!cm.getName().startsWith("<"))
+                    for(Method declaration:byShape.getOrDefault(shape(cm),List.of())){
+                        String base=cls(declaration.getDefiningClass());
+                        // Generic platform listeners do not identify a concrete SDK carrier.
+                        if(base.startsWith("java.")||base.startsWith("android.")||base.startsWith("androidx.")||base.startsWith("kotlin."))continue;
+                        if(!base.equals(owner)&&subtype(owner,base))for(String caller:callers.getOrDefault(key(declaration),Set.of()))if(relevant.add(caller))queue.add(caller);
+                    }
                 boolean callback=seedDistance.getOrDefault(callee,99)<=2&&!cm.getName().startsWith("<")&&(cm.getAccessFlags()&8)==0&&!component(owner)&&!activity(owner)&&byShape.getOrDefault(shape(cm),List.of()).stream().anyMatch(declaration->declaration.getImplementation()==null&&subtype(owner,cls(declaration.getDefiningClass())));
                 if(callback)callbackEntries.computeIfAbsent(owner,k->new HashSet<>()).add(key(cm));
                 if(callback||component(owner)||scheduled(owner)&&(cm.getName().equals("run")||cm.getName().equals("call")))for(Method init:byClass.getOrDefault(owner,List.of()))if(init.getName().equals("<init>")&&relevant.add(key(init)))queue.add(key(init));
@@ -111,11 +118,24 @@ final class CapabilityIndex {
         for(Method m:methods.values())if(m.getAnnotations().stream().anyMatch(a->a.getType().endsWith("/JavascriptInterface;"))||clientTransport(m)){
             bindingObjects.add(cls(m.getDefiningClass()));
             Set<String> seen=new HashSet<>();ArrayDeque<String> q=new ArrayDeque<>();q.add(key(m));int budget=150;
-            while(!q.isEmpty()&&budget-->0){String id=q.remove();if(!seen.add(id))continue;
+            while(!q.isEmpty()&&budget>0){String id=q.remove();if(!seen.add(id))continue;budget--;
                 transportFields.addAll(referencedFields.getOrDefault(id,Set.of()));transportCalls.addAll(calls.getOrDefault(id,Set.of()));
                 for(String target:calls.getOrDefault(id,Set.of()))if(methods.containsKey(target))q.add(target);
-                for(String type:allocations.getOrDefault(id,Set.of()))if(scheduled(type))for(Method callback:byClass.getOrDefault(type,List.of()))if(callback.getName().equals("run")||callback.getName().equals("call"))q.add(key(callback));
+                for(String type:allocations.getOrDefault(id,Set.of()))for(Method callback:byClass.getOrDefault(type,List.of())){
+                    boolean async=scheduled(type)&&(callback.getName().equals("run")||callback.getName().equals("call"));
+                    if(!async&&!callback.getName().startsWith("<")&&!callback.getParameterTypes().isEmpty()&&callback.getParameterTypes().get(0).equals("Ljava/lang/String;"))
+                        async=byShape.getOrDefault(shape(callback),List.of()).stream().anyMatch(declaration->declaration.getImplementation()==null&&subtype(type,cls(declaration.getDefiningClass())));
+                    if(async)q.addFirst(key(callback));
+                }
+                // Custom client adapters delegate framework callbacks into overridable helper methods.
+                for(String target:calls.getOrDefault(id,Set.of())){Method helper=methods.get(target);if(helper==null)continue;String owner=cls(helper.getDefiningClass());
+                    if(owner.startsWith("android.")||owner.startsWith("com.tencent.smtt.sdk."))continue;
+                    if(!subtype(owner,"android.webkit.WebViewClient")&&!subtype(owner,"com.tencent.smtt.sdk.WebViewClient"))continue;
+                    if(helper.getParameterTypes().stream().noneMatch(t->webview(cls(t.toString()))))continue;
+                    for(Method implementation:byShape.getOrDefault(shape(helper),List.of()))if(implementation.getImplementation()!=null&&subtype(cls(implementation.getDefiningClass()),owner))q.addFirst(key(implementation));
+                }
             }
+            if(!q.isEmpty())diagnostics.add("transport_discovery_budget:"+key(m));
             Set<List<String>> shapes=new HashSet<>();boolean annotationGate=false;
             for(String id:seen){Method dispatch=methods.get(id);if(dispatch==null)continue;
                 if(!calls.getOrDefault(id,Set.of()).stream().anyMatch(c->c.startsWith("Ljava/lang/Class;->getMethod(")||c.startsWith("Ljava/lang/reflect/Method;->getAnnotation(")||c.startsWith("Ljava/lang/reflect/Method;->isAnnotationPresent(")))continue;

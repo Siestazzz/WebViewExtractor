@@ -1,0 +1,74 @@
+{
+  "factory": {
+    "two_arg": "Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;->create(Landroid/content/Context;Z)Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;",
+    "three_arg": "Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;->create(Landroid/content/Context;ZI)Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;",
+    "x5_class_name": "com.tencent.adwebview.appwebview.AppWebViewWrapperImpl",
+    "system_class": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;",
+    "constructor": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;-><init>(Landroid/content/Context;Z)V",
+    "selection": {
+      "0": "AdCoreConfig.useX5, with system fallback",
+      "1": "request X5, with system fallback",
+      "2": "force system"
+    },
+    "x5_presence_in_apk": false
+  },
+  "system_alias": {
+    "helper_parameter_index": 0,
+    "helper": "Lcom/tencent/ams/adcore/view/AdCoreWebViewHelper;->setJsWebChromeClient(Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;Lcom/tencent/ams/adcore/js/AdCoreJsBridge;Ljava/lang/Object;)V",
+    "wrapper_receiver": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;",
+    "native_field": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;->a:Landroid/webkit/WebView;",
+    "field_allocation": "new Lcom/tencent/ams/adwebview/adapter/view/AdWebView;(Landroid/content/Context;Z)",
+    "getter": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;->getWebview()Landroid/view/View;",
+    "setter": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;->setWebChromeClient(Ljava/lang/Object;)V",
+    "identity": "getWebview return == setWebChromeClient native receiver == wrapper field a"
+  },
+  "client_selection": {
+    "explicit_third_argument": "used when non-null",
+    "system_default": "Lcom/tencent/ams/adcore/view/AdCoreWebViewHelper;->createAdCoreJsWebChromeClient(Lcom/tencent/ams/adcore/js/AdCoreJsBridge;)Ljava/lang/Object;",
+    "system_client": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;",
+    "x5_client_class_name": "com.tencent.adwebview.appwebview.AppJsWebChromeClient",
+    "conditions": [
+      "wrapper parameter 0 is non-null",
+      "either explicit client is non-null or bridge is non-null",
+      "system native WebView field is non-null",
+      "system selected client is android.webkit.WebChromeClient"
+    ]
+  },
+  "host_factory_edge": {
+    "host": "Lcom/tencent/ads/landing/AdLandingPageActivity;",
+    "host_entry": "Lcom/tencent/ads/landing/AdLandingPageActivity;->onCreate(Landroid/os/Bundle;)V",
+    "wrapper_field": "Lcom/tencent/ads/landing/AdLandingPageActivity;->adLandingPageWrapper:Lcom/tencent/ads/landing/AdLandingPageWrapper;",
+    "wrapper_constructor": "Lcom/tencent/ads/landing/AdLandingPageWrapper;-><init>(Landroid/app/Activity;Lcom/tencent/ads/landing/AdLandingPageWrapper$AdLandingPageListener;)V",
+    "listener_concrete_type": "Lcom/tencent/ads/landing/AdLandingPageActivity$1;",
+    "listener_field": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->mAdLandingPageListener:Lcom/tencent/ads/landing/AdLandingPageWrapper$AdLandingPageListener;",
+    "declared_factory_method": "Lcom/tencent/ads/landing/AdLandingPageWrapper$AdLandingPageListener;->createAdPage(Landroid/content/Context;Lcom/tencent/ams/adcore/view/AdCorePageListener;ZZLcom/tencent/ads/view/AdServiceHandler;)Lcom/tencent/ams/adcore/view/AdCorePage;",
+    "concrete_factory_method": "Lcom/tencent/ads/landing/AdLandingPageActivity$1;->createAdPage(Landroid/content/Context;Lcom/tencent/ams/adcore/view/AdCorePageListener;ZZLcom/tencent/ads/view/AdServiceHandler;)Lcom/tencent/ams/adcore/view/AdCorePage;",
+    "normal_return_type": "Lcom/tencent/ads/view/AdPage;",
+    "normal_return_constructor": "Lcom/tencent/ads/view/AdPage;-><init>(Landroid/content/Context;Lcom/tencent/ams/adcore/view/AdCorePageListener;ZZLcom/tencent/ams/adcore/view/AdCoreServiceHandler;)V",
+    "declared_return_type": "Lcom/tencent/ams/adcore/view/AdCorePage;",
+    "page_field": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->mAdPage:Lcom/tencent/ams/adcore/view/AdCorePage;",
+    "async_boundary": {
+      "post_site": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->onCreate(Landroid/os/Bundle;)V",
+      "runnable": "Lcom/tencent/ads/landing/AdLandingPageWrapper$2;->run()V",
+      "accessor": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->access$200(Lcom/tencent/ads/landing/AdLandingPageWrapper;)V",
+      "target": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->delayLoad()V",
+      "relative_to_host_onCreate": "asynchronous",
+      "within_runnable": "factory call, return assignment, attach, and load are synchronous and ordered"
+    },
+    "initialization_calls": [
+      "Lcom/tencent/ams/adcore/view/AdCorePage;->attachToCurrentActivity()V",
+      "Lcom/tencent/ams/adcore/view/AdCorePage;->loadWebView(Ljava/lang/String;)V"
+    ],
+    "required_flow": "mAdLandingPageListener.createAdPage(...) return -> mAdPage -> attachToCurrentActivity() -> loadWebView(String)",
+    "condition": "packaged fallback path; QFix redirectors can replace method bodies"
+  },
+  "evidence": [
+    "sources/com/tencent/ams/adcore/webview/AdWebViewWrapper.java:31-32,109-169",
+    "sources/com/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl.java:18-22,87-90,283-306",
+    "sources/com/tencent/ams/adcore/view/AdCoreWebViewHelper.java:14-24,85-105",
+    "sources/com/tencent/ads/landing/AdLandingPageActivity.java:85-103,129-132",
+    "sources/com/tencent/ads/landing/AdLandingPageWrapper.java:51-53,85-92,146-147,264-281,588-617",
+    "sources/com/tencent/ads/view/AdPage.java:14-21",
+    "sources/com/tencent/ams/adcore/view/AdCorePage.java:494-512,772-809"
+  ]
+}

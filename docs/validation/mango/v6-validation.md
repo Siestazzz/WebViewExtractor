@@ -1,0 +1,9 @@
+# v6 Mango focused validation
+
+The 44 newly matched message-handler members are supported by source and independent DEX evidence, rather than by the aggregate score. `CustomWebActivity` owns field `E: ImgoAdWebView`; its initialization reaches `ImgoAdWebView.J()`, which passes 25 concrete anonymous handlers to `BridgeWebView.t(String, jsbridge.a)`. Each emitted member is the concrete class implementation of `jsbridge.a.handler(String, d)`, and each exact owner/name/descriptor exists in `mango.jsonl`. The one source constant, `MgtvMethodChannel.L`, has DEX value `getUserInfo`.
+
+`mglive.webview.WebViewActivity` directly owns the mglive `BridgeWebView` and calls helper `webview.a.p(...)`. That helper passes 19 concrete handlers to `BridgeWebView.n(String, cn0.a)`. Every newly matched member is the corresponding implementation of `cn0.a.a(String, cn0.d)`, confirmed by exact DEX descriptors. The twentieth registration, `checkUpdate`, remains missing because its target is still unresolved in v6; it was not counted among the 19 verified gains.
+
+The report still contains 31 residual rows. Loading is the largest systematic gap: 14 concrete `JSCommondMethod` message-handler methods plus one dynamic method-class registration fact. The other groups are seven mgadplus callbacks, four WebContainer settings, three Pangle settings, one mglive `checkUpdate` handler, one OPOS dynamic bridge registration, and the Loading dynamic registration. The 98.53% aggregate bridge recall therefore does not establish Loading framework coverage.
+
+Ownership has 82 outputs: 77 valid and five uncertain. Relative to v5, `ChannelBackyardActivity` and `ChannelSecondIndexActivity` return with their independently verified v4d ownership chains; no Activity is removed and no retained verdict changes. Detailed residual rows and machine-checkable validation results are in `v6-validation.json`; ownership rows are in `v6-ownership.jsonl`.

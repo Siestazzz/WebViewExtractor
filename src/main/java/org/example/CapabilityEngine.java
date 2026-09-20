@@ -298,12 +298,13 @@ final class CapabilityEngine {
                 if(obj.kind().equals("literal")&&"0".equals(obj.literal()))continue;
                 h.bridgeViews.put(obj.id(),union(h.bridgeViews.get(obj.id()),recv));
                 List<String> types=new ArrayList<>();if(obj.type()!=null)types.add(obj.type());
-                if(obj.kind().equals("unknown")||obj.kind().equals("field_object"))for(String type:idx.possibleTypes(obj.type()))
-                    if(!types.contains(type)&&!bridgeMembers(type).isEmpty())types.add(type);
+                if(obj.kind().equals("unknown")||obj.kind().equals("field_object"))h.gaps.add("unresolved_bridge_implementation:"+site);
                 if(types.isEmpty())types.add("unknown");
                 for(String type:types){
                     Map<String,Object> b=new LinkedHashMap<>(base);b.put("implementation",type);b.put("members",bridgeMembers(type));
-                    if(!type.equals(obj.type())){b.put("binding_status","candidate");b.put("resolution","type_compatible_bridge_implementation");}
+                    if(obj.kind().equals("unknown")||obj.kind().equals("field_object")){
+                        b.put("binding_status","candidate");b.put("resolution","declared_bridge_contract_only");b.put("declared_type",type);b.put("implementation","unknown");
+                    }
                     if(b.get("registration_name").equals("unknown")){
                         for(Call reflect:flow.summary(job.method).calls())if(name(reflect.method()).equals("getField")&&reflect.args().size()>1){
                             V fieldName=eval(reflect.args().get(1),job,h,0,new HashSet<>());
@@ -368,7 +369,7 @@ final class CapabilityEngine {
             }
             for(var entry:targets.entrySet())for(V target:entry.getValue()){
                 List<String> types=target.type()==null?List.of():List.of(target.type());
-                if(target.kind().equals("unknown")||target.kind().equals("field_object"))types=idx.possibleTypes(target.type());
+                if(target.kind().equals("unknown")||target.kind().equals("field_object"))h.gaps.add("unresolved_reflective_receiver:"+entry.getKey());
                 for(String impl:types){
                     List<Map<String,Object>> members=new ArrayList<>();
                     for(Method m:idx.hierarchyMethods(impl))if((m.getAccessFlags()&1)!=0&&!m.getName().startsWith("<"))members.add(Map.of("signature",CapabilityIndex.key(m),"display",CapabilityIndex.display(m),"resolution","public_reflective_dispatch"));
