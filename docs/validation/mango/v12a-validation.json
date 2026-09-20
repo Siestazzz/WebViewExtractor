@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "report": "test/runs/v12a/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "status": "partial",
+  "wall_seconds": 83.943496979,
+  "hosts": 89,
+  "added_hosts": [],
+  "removed_hosts": [],
+  "ownership_counts": {
+    "valid": 84,
+    "uncertain": 5
+  },
+  "total_facts": {
+    "v11c": 20666,
+    "v12a": 20582
+  },
+  "changed_hosts": [
+    {
+      "activity": "com.mgtv.erlang.ErlangLiveActivity",
+      "v11c": 4050,
+      "v12a": 4030,
+      "delta": -20,
+      "removed_by_kind": {
+        "message_bridge": 20
+      }
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "v11c": 485,
+      "v12a": 421,
+      "delta": -64,
+      "removed_by_kind": {
+        "bridge_removal": 10,
+        "bridge": 3,
+        "callback": 8,
+        "setting": 35,
+        "webview_operation": 8
+      }
+    }
+  ],
+  "stable_families": {
+    "nft": {
+      "com.mgsz.detail.ui.AntiqueDetailActivity": [
+        20,
+        20
+      ],
+      "com.mgtv.digital.ui.DigitalDetailActivity": [
+        19,
+        19
+      ],
+      "com.mgtv.digital.ui.DigitalModelViewActivity": [
+        19,
+        19
+      ],
+      "com.mgtv.digital.ui.DigitalBelongActivity": [
+        19,
+        19
+      ],
+      "com.mgtv.digital.ui.MgNftPreviewActivity": [
+        38,
+        38
+      ]
+    },
+    "reviewed_player_family": {
+      "com.imgo.vodgames.LandVodGameRoomActivity": [
+        221,
+        221
+      ],
+      "com.imgo.vodgames.VodGameRoomActivity": [
+        222,
+        222
+      ],
+      "com.mgtv.diana.vodgames.LandVodGameRoomActivity": [
+        221,
+        221
+      ],
+      "com.mgtv.diana.vodgames.VodGameRoomActivity": [
+        222,
+        222
+      ],
+      "com.mgtv.litevod.LiteVodActivity": [
+        222,
+        222
+      ],
+      "com.mgtv.ui.player.VodPlayerPageActivity": [
+        838,
+        838
+      ]
+    }
+  },
+  "erlang_assessment": {
+    "removed": 20,
+    "verdict": "correct alias pruning",
+    "evidence": "ErlangSingClashH5Fragment does not set INTENT_WEB_USE_NESTED; WebUIFragment defaults it false and constructs ImgoWebView, so the removed NestedImgoWebView alternative was infeasible. The same 20 registrations remain on its actual ImgoWebView."
+  },
+  "mg_video_assessment": {
+    "removed": 64,
+    "removed_by_kind": {
+      "setting": 35,
+      "webview_operation": 8,
+      "callback": 8,
+      "bridge_removal": 10,
+      "bridge": 3
+    },
+    "verdict": "real attribution regression",
+    "valid_chain": [
+      "MGVideoPlayActivity event branch -> y9().showMiniApp(String)",
+      "NBFloatFragmentHelper.showMiniApp aspect closure -> F1(helper,String,joinPoint)",
+      "MiniAppFragment.newInstance(Bundle)",
+      "helper.n1(Fragment)",
+      "n1 writes this.f88165h=fragment",
+      "helper.O0 reads same f88165h and invokes MiniAppFragment.onBackPressed",
+      "MiniAppFragment.onViewCreated -> DianaView -> GamePage/ServiceWebView"
+    ],
+    "earliest_lost_edge": "actual showMiniApp/F1 -> n1(field setter) write is no longer joined to the same helper instance read by O0; synthetic AspectJ closure is the likely boundary.",
+    "object_notes": [
+      "Removed GamePage PageWebView is a real conditional object.",
+      "Removed ServiceWebView identity still ended in constructor_parameter in v11c, but the underlying ServiceWebView is real; provenance weakness does not justify deleting the entire capability surface."
+    ]
+  },
+  "verdict": "Mixed: instance propagation correctly prunes one impossible Erlang nested-WebView alias, but regresses the valid MGVideoPlayActivity MiniApp/Diana capability surface. NFT and previously reviewed six-player family are stable."
+}

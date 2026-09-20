@@ -1,0 +1,26 @@
+{
+  "before": "test/runs/v11c/com.tencent.news/0/output/capabilities.json",
+  "after": "test/runs/v12a/com.tencent.news/0/output/capabilities.json",
+  "before_sha256": "2b0f8b639f254561133de273162dd2b16a0b6da22410493e7f011dfe036b3146",
+  "after_sha256": "eb62b670a42e2ffb7c8e4a7d40f9cca227dce996735a18c3a04f39603f3c156b",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "excluded_fact_fields": [
+    "arguments",
+    "binding_status",
+    "conditional",
+    "evidence"
+  ],
+  "added_hosts": [],
+  "removed_hosts": [],
+  "changed_hosts": {
+    "com.tencent.news.ui.NewsDetailActivity": {
+      "added": 8,
+      "removed": 8
+    },
+    "com.tencent.news.ui.PushDetailActivity": {
+      "added": 8,
+      "removed": 8
+    }
+  },
+  "note": "Report delta only, not independent source verification. Compared fields include receiver identities, values, implementation types and full member signatures. Excluded evidence/arguments/status fields require separate review."
+}

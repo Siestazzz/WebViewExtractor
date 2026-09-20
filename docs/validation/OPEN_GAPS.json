@@ -32,9 +32,9 @@
     {
       "id": "news_longvideo",
       "app": "news",
-      "status": "open",
-      "cause": "Inherited onCreate visits factory-created pages, but interface-typed setPage/getPage are excluded from relevance. Its subclass callback loses the actual page argument before the Class-keyed service registry step. A generic isolated fixture reproduces the missing bridge.",
-      "evidence": "regressions/README.md"
+      "status": "partially_fixed_v12_development",
+      "cause": "Actual setter/getter page arguments, Class-keyed registry and receiver-specific virtual helpers now reach real player.g construction. Source/DEX verification identifies downstream instance collection registration -> iterator -> presenter lifecycle callback, then model/event selection as the next missing chain. No full long-video recovery is claimed.",
+      "evidence": "news/v12c-longvideo-event-dispatch.json"
     },
     {
       "id": "news_ysp_namespace",
@@ -147,6 +147,69 @@
       "status": "open",
       "cause": "Map summaries preserve possible values monotonically; unknown keys, repeated puts and remove/clear/compute/merge do not prove final state. Diagnostics remain explicit; opaque receiver IDs do not establish shared maps.",
       "evidence": "../CAPABILITY_ANALYSIS.md"
+    },
+    {
+      "id": "mango_mgvideo_diana_regression",
+      "app": "mango",
+      "status": "fixed_v12i_v12j_source_verified",
+      "cause": "All 81 source-constrained Diana facts recovered on PageWebView/ServiceWebView; remaining host budgets and aliases are not resolved.",
+      "evidence": "mango/v12j-validation.md"
+    },
+    {
+      "id": "aspectj_profile_limits",
+      "app": "all",
+      "status": "open_v12_development",
+      "cause": "No-arg linked closure state propagation is implemented and tested; proceed(args) flag/index rewriting remains unsupported, capture/array update order and deep allocation aliases can remain ambiguous, runtime structural contract is assumed. Independent Sol implementation audit retained; not APK-wide complete.",
+      "evidence": "mango/aspectj-profile-implementation-audit.json"
+    },
+    {
+      "id": "scorer_cross_webview_matching",
+      "app": "all",
+      "status": "type_constraints_fixed_v5_exact_identity_pending",
+      "cause": "All three canonical sets now have source-authored concrete receiver type constraints. Same-type object alias precision still requires independent audit; all earlier unconstrained scores are superseded.",
+      "evidence": "v12-oracle-constraints.json"
+    },
+    {
+      "id": "evidence_depth_reachability",
+      "app": "all",
+      "status": "fixed_v12j_with_performance_regression",
+      "cause": "72-call/Fragment fixture passes. All three Apps audited; Mango adds source-valid VideoSquare host, Ctrip restores two QQ loadUrl operations. Mango runtime rises to 355.49s; context and alias gaps persist.",
+      "evidence": "ITERATIONS.md"
+    },
+    {
+      "id": "xml_concrete_receiver",
+      "app": "news",
+      "status": "open",
+      "cause": "Layout-created views retain declared SDK/cast types instead of actual XML subclass. Must bind layout roots and nested inflation; resource IDs are reused across layouts.",
+      "evidence": "news/xml-webview-identity-bindings.json"
+    },
+    {
+      "id": "mango_300_second_target",
+      "app": "mango",
+      "status": "open",
+      "cause": "v12j took 355.49 seconds: fails preferred 300s target; final three-repeat measurements remain pending.",
+      "evidence": "v12j-benchmark.json"
+    },
+    {
+      "id": "mango_xweb_replay",
+      "app": "mango",
+      "status": "open",
+      "cause": "v12j recovers 20 operations but still has 65 fewer XWeb facts than v12a; independent audit retains unresolved loss.",
+      "evidence": "mango/v12j-validation.md"
+    },
+    {
+      "id": "ctrip_hotel_map_operations",
+      "app": "ctrip",
+      "status": "open",
+      "cause": "Two source-real CGoogleMapView executeJSAction/loadUrl operations remain missing after v12i.",
+      "evidence": "ctrip/v12j-validation.md"
+    },
+    {
+      "id": "news_pending_development_hosts",
+      "app": "news",
+      "status": "open",
+      "cause": "288 retained component facts have unproven host bindings. Actual selectors 3/4 do not establish Capture 107 or Feedback 1021 branches. Not positive acceptance facts and not proven regressions.",
+      "evidence": "news/v12h-development-host-binding-audit.md"
     }
   ]
 }

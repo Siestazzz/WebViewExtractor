@@ -17,6 +17,7 @@ final class CapabilityEngine {
     final Map<String,V> constants=new HashMap<>();
     final Map<String,List<Map<String,Object>>> callbackCache=new HashMap<>();
     final Map<String,Set<Integer>> lazyFactoryParameters=new HashMap<>();
+    final Map<String,Boolean> objectFieldSetters=new HashMap<>(), receiverRelevance=new HashMap<>();
     Runnable checkpoint=()->{};
     Host currentHost;
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
@@ -26,12 +27,13 @@ final class CapabilityEngine {
         final String activity;
         final Map<String,V> heap=new HashMap<>();
         final Map<String,Set<V>> contents=new HashMap<>();
-        final Map<String,Map<String,V>> maps=new HashMap<>();
-        final Map<String,V> bridgeViews=new HashMap<>();
+        final Map<String,Map<String,V>> maps=new HashMap<>(), arrays=new HashMap<>();
+        final Map<String,V> bridgeViews=new HashMap<>(), linkedClosures=new HashMap<>();
+        final Map<String,Long> arrayLengths=new HashMap<>();
         final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
         final Map<String,Object> serviceEvidence=new TreeMap<>();
-        final ArrayDeque<Job> queue=new ArrayDeque<>();
-        final Set<String> visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
+        final ContextQueue queue=new ContextQueue();
+        final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
         final Set<String> gaps=new LinkedHashSet<>();
         Host(String a){activity=a;}
@@ -40,13 +42,13 @@ final class CapabilityEngine {
         Host h=new Host(activity);currentHost=h;V self=V.of("host",activity,"activity:"+activity);
         seed(h,activity,self,List.of(activity),false);
         for(int phase=0;phase<2;phase++){
-            if(phase==1){h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();seed(h,activity,self,List.of(activity),false);}
+            if(phase==1){h.queue.clear();h.pending.clear();h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();seed(h,activity,self,List.of(activity),false);}
             while(!h.queue.isEmpty()){
                 if(System.nanoTime()>deadline){h.gaps.add("global_deadline");break;}
                 if(h.visited.size()>12000){h.gaps.add("host_context_budget");break;}
                 checkpoint.run();
                 Job job=h.queue.remove();String id=CapabilityIndex.key(job.method);
-                String context=id+"|"+job.args;if(!h.visited.add(context))continue;
+                String context=id+"|"+job.args;h.pending.remove(context);if(!h.visited.add(context))continue;
                 Summary summary;
                 try{summary=flow.summary(job.method,v->guardValue(v,job,h,0));}catch(RuntimeException ex){h.gaps.add("decode_failed:"+id+":"+ex.getClass().getSimpleName());continue;}
                 if(summary.truncated())h.gaps.add("flow_budget:"+id);
@@ -58,22 +60,48 @@ final class CapabilityEngine {
                     Method target=idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
                     boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
+                    boolean fieldSetter=target!=null&&objectFieldSetter(target);
                     boolean registryWrite=target!=null&&(idx.keyedRegistryWrites.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.keyedRegistryWrites.contains(CapabilityIndex.key(m))));
                     boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
-                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite)continue;
+                    boolean receiverRelevant=false;
+                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&target!=null&&!call.isStatic()&&!call.args().isEmpty()){
+                        V hint=dispatchHint(call.args().get(0),job,h,0);
+                        for(V receiver:alternatives(hint)){
+                            Method concrete=call.isDirect()||call.isSuper()?target:receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
+                            if(concrete!=null&&relevantOnReceiver(concrete,receiver,h)){receiverRelevant=true;break;}
+                        }
+                    }
+                    boolean proceedArguments=idx.closureProceedArguments(call.method());
+                    boolean closureCall=idx.closureLink(call.method())||idx.closureProceed(call.method())||proceedArguments;
+                    boolean carriesJoinPoint=false;
+                    if(target!=null&&target.getParameterTypes().stream().anyMatch(t->idx.joinPoint(CapabilityIndex.cls(t.toString()))))
+                        for(V arg:call.args())if(alternatives(eval(arg,job,h,0,new HashSet<>())).stream().anyMatch(x->x.kind().equals("aspectj_joinpoint")||h.linkedClosures.containsKey(x.id()))){carriesJoinPoint=true;break;}
+                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!closureCall&&!carriesJoinPoint)continue;
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());continue;}
+                    if(idx.closureProceed(call.method())&&!args.isEmpty()){
+                        boolean linked=false;
+                        for(V point:alternatives(linkedJoinPoint(h,args.get(0))))if(point.kind().equals("aspectj_joinpoint")){
+                            V closure=point.args().get(0),state=point.args().get(1);
+                            Method run=idx.resolve(desc(closure.type())+"->run([Ljava/lang/Object;)Ljava/lang/Object;");
+                            if(run!=null&&idx.relevant.contains(CapabilityIndex.key(run))){enqueue(h,run,List.of(closure,state),extend(job.path,"aspectj_proceed:"+call.method()),true);linked=true;}
+                        }
+                        if(!linked)h.gaps.add("aspectj_unresolved_proceed:"+call.method());
+                        continue;
+                    }
+                    if(idx.closureLink(call.method())){linkClosure(h,job,args,CapabilityIndex.cls(target.getReturnType()),0,new HashSet<>());continue;}
+                    if(proceedArguments){h.gaps.add("aspectj_proceed_arguments_not_modeled:"+call.method());continue;}
                     if(target!=null){
                         boolean virtual=!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&!args.isEmpty();
                         if(!virtual){
-                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle||registryWrite)enqueue(h,target,args,job.path,job.candidate||summary.branched());
+                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle||registryWrite||fieldSetter||receiverRelevant||carriesJoinPoint)enqueue(h,target,args,job.path,job.candidate||summary.branched());
                         }else{
                             int dispatched=0;
                             for(V receiver:alternatives(args.get(0))){
                                 if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
                                 Method concrete=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
                                 if(concrete==null||concrete.getImplementation()==null){h.gaps.add("unresolved_receiver_dispatch:"+call.method());continue;}
-                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete)))continue;
+                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete))&&!objectFieldSetter(concrete)&&!relevantOnReceiver(concrete,receiver,h)&&!carriesJoinPoint)continue;
                                 if(dispatched++>=64){h.gaps.add("dispatch_budget:"+call.method());break;}
                                 enqueue(h,concrete,specializeReceiver(args,receiver),job.path,job.candidate||summary.branched()||args.get(0).kind().equals("union"));
                             }
@@ -90,9 +118,49 @@ final class CapabilityEngine {
         currentHost=null;
         if(!h.gaps.isEmpty())diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
     }
+    V dispatchHint(V value,Job job,Host h,int depth){
+        if(depth>6)return UNKNOWN;
+        if(value.kind().equals("param")){int i=Integer.parseInt(value.id());return i<job.args.size()?job.args.get(i):UNKNOWN;}
+        if(value.kind().equals("cast"))return dispatchHint(value.args().get(0),job,h,depth+1);
+        if(value.kind().equals("field")){V owner=dispatchHint(value.args().get(0),job,h,depth+1);V result=null;for(V receiver:alternatives(owner))result=union(result,h.heap.get(heapKey(value.id(),receiver)));return result==null?UNKNOWN:result;}
+        return value;
+    }
+    boolean relevantOnReceiver(Method method,V receiver,Host h){
+        if(!Set.of("object","new","host","view").contains(receiver.kind())||receiver.type()==null||!idx.subtype(receiver.type(),CapabilityIndex.cls(method.getDefiningClass())))return false;
+        String key=CapabilityIndex.key(method)+"|"+receiver.type();Boolean cached=receiverRelevance.get(key);if(cached!=null)return cached;
+        boolean result=relevantOnReceiver(method,receiver.type(),h,new HashSet<>(),0);receiverRelevance.put(key,result);return result;
+    }
+    boolean relevantOnReceiver(Method method,String type,Host h,Set<String> visited,int depth){
+        String id=CapabilityIndex.key(method);if(idx.relevant.contains(id))return true;
+        if(method.getImplementation()==null||!visited.add(id))return false;
+        if(depth>3||visited.size()>32){h.gaps.add("receiver_relevance_budget:"+id);return false;}
+        int count=0;for(var instruction:method.getImplementation().getInstructions())if(++count>512){h.gaps.add("receiver_relevance_body_budget:"+id);return false;}
+        for(Call call:flow.summary(method).calls()){
+            if(call.isStatic()||call.args().isEmpty())continue;
+            V self=call.args().get(0);while(self.kind().equals("cast")&&!self.args().isEmpty())self=self.args().get(0);
+            if(!self.kind().equals("param")||!self.id().equals("0"))continue;
+            Method declared=idx.resolve(call.method());if(declared==null||name(call.method()).startsWith("<"))continue;
+            Method actual=call.isDirect()||call.isSuper()?declared:idx.resolve(desc(type)+"->"+CapabilityIndex.shape(declared));
+            if(actual!=null&&relevantOnReceiver(actual,type,h,visited,depth+1))return true;
+        }
+        return false;
+    }
+    boolean objectFieldSetter(Method method){
+        String id=CapabilityIndex.key(method);Boolean cached=objectFieldSetters.get(id);if(cached!=null)return cached;
+        boolean found=false;
+        if(method.getImplementation()!=null&&(method.getAccessFlags()&8)==0&&!method.getName().startsWith("<")&&method.getReturnType().equals("V")&&method.getParameterTypes().size()==1&&method.getParameterTypes().get(0).toString().startsWith("L")){
+            int count=0;boolean objectStore=false;
+            for(var instruction:method.getImplementation().getInstructions()){if(++count>256)break;if(instruction.getOpcode()==org.jf.dexlib2.Opcode.IPUT_OBJECT)objectStore=true;}
+            if(count<=256&&objectStore)for(Write write:flow.summary(method).writes()){
+                V value=write.value();while(value.kind().equals("cast")&&!value.args().isEmpty())value=value.args().get(0);
+                if(!write.field().startsWith("$")&&write.receiver().kind().equals("param")&&write.receiver().id().equals("0")&&value.kind().equals("param")&&value.id().equals("1")){found=true;break;}
+            }
+        }
+        objectFieldSetters.put(id,found);return found;
+    }
     void seed(Host h,String type,V self,List<String> path,boolean candidate){
         if(Cfg.WEBVIEWS.contains(type))return;
-        if(path.size()>16){h.gaps.add("component_depth:"+type);return;}
+        if(h.components.size()>=12000){h.gaps.add("component_instance_budget:"+type);return;}
         if(h.expanding.contains(type)||!h.components.add(type+"|"+self.id()))return;
         h.expanding.add(type);
         List<Method> hierarchy=idx.hierarchyMethods(type);
@@ -144,14 +212,22 @@ final class CapabilityEngine {
         h.expanding.remove(type);
     }
     void enqueue(Host h,Method m,List<V> args,List<String> path,boolean candidate){
-        if(path.size()>24){h.gaps.add("call_depth:"+CapabilityIndex.key(m));return;}
+        String context=CapabilityIndex.key(m)+"|"+args;if(h.visited.contains(context)||h.pending.contains(context))return;
+        if(path.contains("[earlier evidence steps omitted]"))h.gaps.add("evidence_path_truncated");
         if(h.queue.size()>6000){h.gaps.add("queue_budget");return;}
+        h.pending.add(context);
         h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate||args.stream().anyMatch(v->alternatives(v).stream().anyMatch(a->a.id().startsWith("registered_service:")))));
     }
     static List<V> specializeReceiver(List<V> args,V receiver){
         V original=args.get(0);return args.stream().map(v->v.equals(original)?receiver:v).toList();
     }
-    static List<String> extend(List<String> path,String s){var p=new ArrayList<>(path);p.add(s);return List.copyOf(p);}
+    static List<String> extend(List<String> path,String s){
+        var p=new ArrayList<>(path);p.add(s);
+        // Evidence presentation length must not decide reachability. Actual work is bounded
+        // by visited contexts, component instances, queue size, summary depth and deadline.
+        if(p.size()>64){var compact=new ArrayList<>(p.subList(0,8));compact.add("[earlier evidence steps omitted]");compact.addAll(p.subList(p.size()-55,p.size()));return List.copyOf(compact);}
+        return List.copyOf(p);
+    }
     Set<Integer> lazyInitializerParameters(Method factory){
         String key=CapabilityIndex.key(factory);Set<Integer> cached=lazyFactoryParameters.get(key);if(cached!=null)return cached;
         Set<Integer> result=new HashSet<>();lazyFactoryParameters.put(key,result);
@@ -180,7 +256,12 @@ final class CapabilityEngine {
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args.size()?job.args.get(index):UNKNOWN;}
         if(value.kind().equals("cast"))return guardValue(value.args().get(0),job,h,depth+1);
-        if(value.kind().equals("field")){V receiver=guardValue(value.args().get(0),job,h,depth+1);return h.heap.getOrDefault(heapKey(value.id(),receiver),UNKNOWN);}
+        if(value.kind().equals("field")){
+            // A mutable field's observed heap value is not proof that other lifecycle writes
+            // cannot occur. Keep both guard branches unless the field is immutable.
+            if(!idx.finalFields.contains(value.id()))return V.of("unknown",value.type(),"mutable_field_guard");
+            V receiver=guardValue(value.args().get(0),job,h,depth+1);return h.heap.getOrDefault(heapKey(value.id(),receiver),UNKNOWN);
+        }
         if(value.kind().startsWith("return"))return UNKNOWN;
         return value;
     }
@@ -188,11 +269,16 @@ final class CapabilityEngine {
         if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return V.of("unknown",v.type(),"global_deadline");}
         if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
         if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?job.args.get(i):V.of("unknown",v.type(),"parameter");}
-        if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));for(V element:v.args())applyWrite(h,"$contents",array,eval(element,job,h,depth+1,new HashSet<>(visiting)));return array;}
+        if(v.kind().equals("array_new")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));Long size=number(eval(v.args().get(0),job,h,depth+1,visiting));if(size!=null&&size>=0)h.arrayLengths.put(array.id(),size);return array;}
+        if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));h.arrayLengths.put(array.id(),(long)v.args().size());for(int i=0;i<v.args().size();i++)applyWrite(h,"$element:"+i,array,eval(v.args().get(i),job,h,depth+1,new HashSet<>(visiting)));return array;}
         if(v.kind().equals("map_entry"))return new V("map_entry",null,"entry",null,v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList());
-        if(v.kind().equals("array_element"))return elements(h,eval(v.args().get(0),job,h,depth+1,visiting),v.type());
+        if(v.kind().equals("array_element"))return arrayElement(h,eval(v.args().get(0),job,h,depth+1,new HashSet<>(visiting)),v.args().size()>1?eval(v.args().get(1),job,h,depth+1,new HashSet<>(visiting)):UNKNOWN,v.type());
         if(v.kind().equals("new")){
-            V object=V.of("object",v.type(),v.id()+"|"+allocationContext(job));
+            String allocation=allocationContext(job);
+            // Runtime join-point factories take the static part first and the actual this/target
+            // later. First-argument-only allocation conflates captures of distinct receivers.
+            if(idx.joinPoint(v.type()))allocation+="|joinpoint_args:"+UUID.nameUUIDFromBytes(job.args.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            V object=V.of("object",v.type(),v.id()+"|"+allocation);
             for(Call ctor:flow.summary(job.method).calls())if(name(ctor.method()).equals("<init>")&&!ctor.args().isEmpty()&&ctor.args().get(0).equals(v)){
                 Method target=idx.resolve(ctor.method());
                 if(target!=null&&(idx.component(v.type())||idx.bindingObjects.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
@@ -247,6 +333,7 @@ final class CapabilityEngine {
         }
         if(v.kind().startsWith("return")){
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
+            if(idx.closureLink(v.id())&&!args.isEmpty())return linkClosure(h,job,args,v.type(),depth,visiting);
             String serviceContext=CapabilityIndex.key(job.method)+"|"+allocationContext(job);
             V service=idx.services.lookup(v.id(),args,serviceContext);if(service!=null){
                 var registrations=idx.services.matchingBindings(v.id(),args,serviceContext);
@@ -362,11 +449,55 @@ final class CapabilityEngine {
         }
 
         if(field.equals("$contents")||field.equals("$contentsAll")||field.startsWith("$element:")){
-            for(V recv:alternatives(receiver)){Set<V> values=h.contents.computeIfAbsent(recv.id(),k->new LinkedHashSet<>());
+            for(V recv:alternatives(receiver)){
+                if(field.startsWith("$element:")){
+                    String slot=field.substring(9);if(!slot.matches("[0-9]+"))slot="*";
+                    Map<String,V> entries=h.arrays.computeIfAbsent(recv.id(),k->new LinkedHashMap<>());
+                    if(entries.size()>=256&&!entries.containsKey(slot)){h.gaps.add("array_element_budget:"+recv.id());entries.put("*",UNKNOWN);}
+                    else {V prior=entries.get(slot);if(prior!=null&&!prior.equals(value))h.gaps.add("array_update_order_unresolved:"+recv.id());entries.put(slot,union(prior,value));}
+                }
+                Set<V> values=h.contents.computeIfAbsent(recv.id(),k->new LinkedHashSet<>());
                 for(V val:alternatives(value))if(field.equals("$contentsAll"))values.addAll(h.contents.getOrDefault(val.id(),Set.of()));else values.add(val);
                 if(values.size()>256){h.gaps.add("collection_element_budget:"+recv.id());values.clear();values.add(UNKNOWN);}
             }
         }else for(V alternative:alternatives(receiver)){String key=heapKey(field,alternative);h.heap.put(key,union(h.heap.get(key),value));}
+    }
+    V linkedJoinPoint(Host h,V receiver){
+        V result=null;
+        for(V point:alternatives(receiver))result=union(result,point.kind().equals("aspectj_joinpoint")?point:h.linkedClosures.getOrDefault(point.id(),point));
+        return result==null?UNKNOWN:result;
+    }
+    V linkClosure(Host h,Job job,List<V> args,String type,int depth,Set<String> visiting){
+        V linked=null;
+        for(V closure:alternatives(args.get(0)))if(closure.kind().equals("object")&&idx.aroundClosure(closure.type())&&idx.bindingObjects.contains(closure.type())){
+            String base=idx.aroundClosureBases.stream().filter(t->idx.subtype(closure.type(),t)).findFirst().orElseThrow();
+            V state=eval(expr("field","java.lang.Object[]",desc(base)+"->state:[Ljava/lang/Object;",List.of(closure)),job,h,depth+1,new HashSet<>(visiting));
+            V points=null;
+            for(V array:alternatives(state)){
+                Long length=h.arrayLengths.get(array.id());
+                if(length!=null&&length>0)points=union(points,arrayElement(h,array,V.literal("number",String.valueOf(length-1)),type));
+            }
+            if(points==null)points=V.of("unknown",type,"unresolved_joinpoint:"+closure.id());
+            for(V point:alternatives(points)){
+                boolean concrete=point.kind().equals("object")&&idx.joinPoint(point.type());
+                if(!concrete)h.gaps.add("aspectj_joinpoint_alias_unresolved:"+closure.type());
+                V marker=expr("aspectj_joinpoint",type,concrete?point.id():"linked:"+closure.id(),List.of(closure,state));
+                if(concrete){V previous=h.linkedClosures.get(point.id());if(previous!=null&&!previous.equals(marker))h.gaps.add("aspectj_closure_replacement_order_unresolved:"+point.id());h.linkedClosures.put(point.id(),union(previous,marker));}
+                linked=union(linked,marker);
+            }
+        }
+        if(linked!=null)return linked;
+        h.gaps.add("aspectj_unresolved_link");return V.of("unknown",type,"aspectj_unresolved_link");
+    }
+    V arrayElement(Host h,V array,V index,String type){
+        V result=null;
+        for(V recv:alternatives(array))for(V slot:alternatives(index)){
+            Long n=number(slot);
+            if(n==null){h.gaps.add("dynamic_array_index:"+recv.id());result=union(result,elements(h,recv,type));continue;}
+            Map<String,V> entries=h.arrays.getOrDefault(recv.id(),Map.of());
+            result=union(result,entries.get(String.valueOf(n)));result=union(result,entries.get("*"));
+        }
+        return result==null?V.of("unknown",type,"unresolved_array_element"):result;
     }
     static String mapKey(V key){
         if(key.kind().equals("class"))return "class:"+key.type();

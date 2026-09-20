@@ -1,0 +1,2581 @@
+{
+  "schema_version": 1,
+  "baseline": "v12i",
+  "candidate": "v12j",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "wall_seconds": {
+    "v12i": 122.43341518,
+    "v12j": 190.70784374
+  },
+  "hosts": {
+    "v12i": 44,
+    "v12j": 44,
+    "added": [],
+    "removed": []
+  },
+  "raw_facts": {
+    "v12i": 5677,
+    "v12j": 6333
+  },
+  "semantic_key_fields": [
+    "kind",
+    "name",
+    "site",
+    "api",
+    "value",
+    "registration_name",
+    "implementation",
+    "member signatures",
+    "webview.type"
+  ],
+  "activities": [
+    {
+      "activity": "com.tencent.news.basebiz.ShellActivity",
+      "raw_before": 74,
+      "raw_after": 103,
+      "semantic_before": 72,
+      "semantic_after": 91,
+      "semantic_added": 19,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 7,
+        "webview_operation": 12
+      },
+      "removed_by_kind": {},
+      "classification": "pending_host_ownership",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/ysp/f;->ˎ()V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@481",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@484",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@487",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@571",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@574",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@577",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ysp/f;->ʿ(Lcom/tencent/news/ysp/f;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@31",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "raw_before": 86,
+      "raw_after": 103,
+      "semantic_before": 78,
+      "semantic_after": 91,
+      "semantic_added": 13,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 1,
+        "webview_operation": 12
+      },
+      "removed_by_kind": {},
+      "classification": "source_consistent_receiver_method_expansion",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/ysp/f;->ˎ()V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ysp/f;->ʿ(Lcom/tencent/news/ysp/f;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@31",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+      "raw_before": 86,
+      "raw_after": 103,
+      "semantic_before": 78,
+      "semantic_after": 91,
+      "semantic_added": 13,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 1,
+        "webview_operation": 12
+      },
+      "removed_by_kind": {},
+      "classification": "source_consistent_receiver_method_expansion",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/ysp/f;->ˎ()V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ysp/f;->ʿ(Lcom/tencent/news/ysp/f;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@31",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.shortvideo.VisitVerticalVideoActivity",
+      "raw_before": 88,
+      "raw_after": 108,
+      "semantic_before": 46,
+      "semantic_after": 54,
+      "semantic_added": 8,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "webview_operation": 8
+      },
+      "removed_by_kind": {},
+      "classification": "source_consistent_receiver_method_expansion",
+      "added": [
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.kkvideo.shortvideov2.view.tips.PendantWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.kkvideo.shortvideov2.view.tips.PendantWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.kkvideo.shortvideov2.view.tips.PendantWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.kkvideo.shortvideov2.view.tips.PendantWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.login.module.LoginActivity",
+      "raw_before": 86,
+      "raw_after": 87,
+      "semantic_before": 60,
+      "semantic_after": 61,
+      "semantic_added": 1,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "webview_operation": 1
+      },
+      "removed_by_kind": {},
+      "classification": "source_confirmed_auth_dialog_receiver",
+      "added": [
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient$1;->run()V@26",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.login.module.LoginWithBackgroundActivity",
+      "raw_before": 29,
+      "raw_after": 87,
+      "semantic_before": 29,
+      "semantic_after": 61,
+      "semantic_added": 32,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 6,
+        "callback": 2,
+        "setting": 17,
+        "webview_operation": 7
+      },
+      "removed_by_kind": {},
+      "classification": "source_confirmed_auth_dialog_receiver",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/open/d/b;->a()V@15",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/open/d/b;->a()V@3",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/open/d/b;->a()V@9",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/open/web/a;->b(Landroid/webkit/WebView;)V@15",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/open/web/a;->b(Landroid/webkit/WebView;)V@3",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/open/web/a;->b(Landroid/webkit/WebView;)V@9",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@23",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": "com.tencent.connect.auth.AuthDialog$LoginWebViewClient",
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@33",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": "android.webkit.WebChromeClient",
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabasePath",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@115",
+          "api": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+          "value": "unknown",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@118",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "value": "true",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setSaveFormData",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@77",
+          "api": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@81",
+          "api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "value": "-1",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setNeedInitialFocus",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@84",
+          "api": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@88",
+          "api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "value": "true",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@91",
+          "api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "value": "true",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setRenderPriority",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@96",
+          "api": "Landroid/webkit/WebSettings;->setRenderPriority(Landroid/webkit/WebSettings$RenderPriority;)V",
+          "value": "HIGH",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@99",
+          "api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "value": "true",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "site": "Lcom/tencent/open/d/b;->destroy()V@11",
+          "api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "value": "true",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "site": "Lcom/tencent/open/d/b;->destroy()V@19",
+          "api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "site": "Lcom/tencent/open/d/b;->onAttachedToWindow()V@14",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowUniversalAccessFromFileURLs",
+          "site": "Lcom/tencent/open/web/a;->a(Landroid/webkit/WebSettings;)V@10",
+          "api": "Landroid/webkit/WebSettings;->setAllowUniversalAccessFromFileURLs(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "site": "Lcom/tencent/open/web/a;->a(Landroid/webkit/WebSettings;)V@1",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "site": "Lcom/tencent/open/web/a;->a(Landroid/webkit/WebSettings;)V@4",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccessFromFileURLs",
+          "site": "Lcom/tencent/open/web/a;->a(Landroid/webkit/WebSettings;)V@7",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "site": "Lcom/tencent/open/web/a;->b(Landroid/webkit/WebSettings;)V@1",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "value": "true",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient$1;->run()V@26",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V@160",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z@186",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z@213",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->callJs(Ljava/lang/String;Ljava/lang/String;)V@52",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog;->d()V@155",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/open/web/security/c;->b(Ljava/lang/String;)V@83",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "android.webkit.WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.login.module.LoginWithPhoneNumActivity",
+      "raw_before": 82,
+      "raw_after": 87,
+      "semantic_before": 59,
+      "semantic_after": 61,
+      "semantic_added": 2,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "setting": 1,
+        "webview_operation": 1
+      },
+      "removed_by_kind": {},
+      "classification": "source_confirmed_auth_dialog_receiver",
+      "added": [
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "site": "Lcom/tencent/open/d/b;->onAttachedToWindow()V@14",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient$1;->run()V@26",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.login.module.LoginWithPhoneNumTransparentActivity",
+      "raw_before": 82,
+      "raw_after": 87,
+      "semantic_before": 59,
+      "semantic_after": 61,
+      "semantic_added": 2,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "setting": 1,
+        "webview_operation": 1
+      },
+      "removed_by_kind": {},
+      "classification": "source_confirmed_auth_dialog_receiver",
+      "added": [
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "site": "Lcom/tencent/open/d/b;->onAttachedToWindow()V@14",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "value": "false",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient$1;->run()V@26",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.login.module.LoginWithVerCodeActivity",
+      "raw_before": 86,
+      "raw_after": 87,
+      "semantic_before": 60,
+      "semantic_after": 61,
+      "semantic_added": 1,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "webview_operation": 1
+      },
+      "removed_by_kind": {},
+      "classification": "source_confirmed_auth_dialog_receiver",
+      "added": [
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/connect/auth/AuthDialog$LoginWebViewClient$1;->run()V@26",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.open.d.d"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+      "raw_before": 96,
+      "raw_after": 103,
+      "semantic_before": 88,
+      "semantic_after": 91,
+      "semantic_added": 3,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "webview_operation": 3
+      },
+      "removed_by_kind": {},
+      "classification": "source_consistent_receiver_method_expansion",
+      "added": [
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.ui.NewsDetailActivity",
+      "raw_before": 661,
+      "raw_after": 833,
+      "semantic_before": 223,
+      "semantic_after": 238,
+      "semantic_added": 15,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "setting": 2,
+        "webview_operation": 13
+      },
+      "removed_by_kind": {},
+      "classification": "mixed_valid_and_unresolved_receiver",
+      "added": [
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->setDomStorageEnabled(Z)V@25",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+          "value": "unknown",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->setNoCache()V@26",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+          "value": "2",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/managers/audio/d;->stop()V@70",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.NewsWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/module/webdetails/webpage/viewmanager/d;->ˋ(Ljava/lang/Object;)V@46",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.NewsWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ui/view/H5CellMonitorManager$a;->ʻ(Ljava/lang/String;)V@16",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell$f;->ˊ(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/news/font/api/b;)V@82",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->callJavascript(Ljava/lang/String;)V@50",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->callJavascript(Ljava/lang/String;)V@50",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->evaluateJavaScript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V@20",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->loadBlank()V@19",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/news/webview/api/pool/RecycledWebViewPool;->recycle(Lcom/tencent/news/webview/api/RecyclableWebView;Ljava/lang/String;)Z@44",
+          "api": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/selection/TextSelectionSupportUtil;->longClick$lambda$4$lambda$3(Lcom/tencent/news/webview/BaseWebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@32",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.ui.PushDetailActivity",
+      "raw_before": 661,
+      "raw_after": 833,
+      "semantic_before": 223,
+      "semantic_after": 238,
+      "semantic_added": 15,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "setting": 2,
+        "webview_operation": 13
+      },
+      "removed_by_kind": {},
+      "classification": "mixed_valid_and_unresolved_receiver",
+      "added": [
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->setDomStorageEnabled(Z)V@25",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+          "value": "unknown",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->setNoCache()V@26",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+          "value": "2",
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/managers/audio/d;->stop()V@70",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.NewsWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/module/webdetails/webpage/viewmanager/d;->ˋ(Ljava/lang/Object;)V@46",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.NewsWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ui/view/H5CellMonitorManager$a;->ʻ(Ljava/lang/String;)V@16",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell$f;->ˊ(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/news/font/api/b;)V@82",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->callJavascript(Ljava/lang/String;)V@50",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->callJavascript(Ljava/lang/String;)V@50",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->evaluateJavaScript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V@20",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/view/WebViewForCell;->loadBlank()V@19",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/news/webview/api/pool/RecycledWebViewPool;->recycle(Lcom/tencent/news/webview/api/RecyclableWebView;Ljava/lang/String;)Z@44",
+          "api": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/selection/TextSelectionSupportUtil;->longClick$lambda$4$lambda$3(Lcom/tencent/news/webview/BaseWebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@32",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "unknown"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.ui.UserHomeActivity",
+      "raw_before": 49,
+      "raw_after": 103,
+      "semantic_before": 49,
+      "semantic_after": 91,
+      "semantic_added": 42,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 14,
+        "bridge": 2,
+        "callback_removal": 2,
+        "webview_operation": 24
+      },
+      "removed_by_kind": {},
+      "classification": "valid_ysp_object_with_polymorphic_alias_noise",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/webview/api/RecyclableWebView;->hardReset()V@23",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/ysp/f;->ˎ()V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@481",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@481",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@484",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@484",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@487",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@487",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@571",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@571",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@574",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@574",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@577",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@577",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": "DTJsBridgeInterface",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": "dtBridge",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "callback_removal",
+          "name": "setWebChromeClient",
+          "site": "Lcom/tencent/news/webview/api/RecyclableWebView;->softReset()V@36",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->setWebChromeClient(Lcom/tencent/smtt/sdk/WebChromeClient;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "callback_removal",
+          "name": "setWebViewClient",
+          "site": "Lcom/tencent/news/webview/api/RecyclableWebView;->softReset()V@55",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->setWebViewClient(Lcom/tencent/smtt/sdk/WebViewClient;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->access$001(Lcom/tencent/news/webview/BaseWebView;Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V@14",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->access$301(Lcom/tencent/news/webview/BaseWebView;Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V@14",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->innerLoadUrl(Ljava/lang/String;)V@40",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->innerLoadUrl(Ljava/lang/String;)V@48",
+          "api": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->innerLoadUrl(Ljava/lang/String;)V@88",
+          "api": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@32",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@34",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->preloadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@18",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ysp/f;->ʿ(Lcom/tencent/news/ysp/f;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@31",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/WebViewCompatHelper;->loadUrl(Ljava/lang/Object;Ljava/lang/String;)V@16",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.smtt.sdk.WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/WebViewCompatHelper;->loadUrl(Ljava/lang/Object;Ljava/lang/String;)V@6",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "android.webkit.WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.ui.UserSearchActivity",
+      "raw_before": 49,
+      "raw_after": 103,
+      "semantic_before": 49,
+      "semantic_after": 91,
+      "semantic_added": 42,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 14,
+        "bridge": 2,
+        "callback_removal": 2,
+        "webview_operation": 24
+      },
+      "removed_by_kind": {},
+      "classification": "valid_ysp_object_with_polymorphic_alias_noise",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/webview/api/RecyclableWebView;->hardReset()V@23",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/ysp/f;->ˎ()V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@481",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@481",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@484",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@484",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@487",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@487",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@571",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@571",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@574",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@574",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@577",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@577",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": "DTJsBridgeInterface",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": "dtBridge",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "callback_removal",
+          "name": "setWebChromeClient",
+          "site": "Lcom/tencent/news/webview/api/RecyclableWebView;->softReset()V@36",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->setWebChromeClient(Lcom/tencent/smtt/sdk/WebChromeClient;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "callback_removal",
+          "name": "setWebViewClient",
+          "site": "Lcom/tencent/news/webview/api/RecyclableWebView;->softReset()V@55",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->setWebViewClient(Lcom/tencent/smtt/sdk/WebViewClient;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->access$001(Lcom/tencent/news/webview/BaseWebView;Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V@14",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->access$301(Lcom/tencent/news/webview/BaseWebView;Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V@14",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->innerLoadUrl(Ljava/lang/String;)V@40",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->innerLoadUrl(Ljava/lang/String;)V@48",
+          "api": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/BaseWebView;->innerLoadUrl(Ljava/lang/String;)V@88",
+          "api": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@32",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@34",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->preloadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@18",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ysp/f;->ʿ(Lcom/tencent/news/ysp/f;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@31",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/WebViewCompatHelper;->loadUrl(Ljava/lang/Object;Ljava/lang/String;)V@16",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.smtt.sdk.WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/WebViewCompatHelper;->loadUrl(Ljava/lang/Object;Ljava/lang/String;)V@6",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "android.webkit.WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "activity": "com.tencent.news.ui.read24hours.Read24HoursActivity",
+      "raw_before": 74,
+      "raw_after": 103,
+      "semantic_before": 72,
+      "semantic_after": 91,
+      "semantic_added": 19,
+      "semantic_removed": 0,
+      "added_by_kind": {
+        "bridge_removal": 7,
+        "webview_operation": 12
+      },
+      "removed_by_kind": {},
+      "classification": "source_consistent_receiver_method_expansion",
+      "added": [
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/news/ysp/f;->ˎ()V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@481",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@484",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@487",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@571",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@574",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "site": "Lcom/tencent/smtt/sdk/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;ILjava/util/Map;Z)V@577",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "evaluateJavascript",
+          "site": "Lcom/tencent/news/ysp/f;->ʿ(Lcom/tencent/news/ysp/f;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@31",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->evaluateJavascript(Ljava/lang/String;Lcom/tencent/smtt/sdk/ValueCallback;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.webview.BaseWebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V@0",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+          "value": null,
+          "registration_name": null,
+          "implementation": null,
+          "webview_type": "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView"
+        }
+      ],
+      "removed": []
+    }
+  ],
+  "capture_feedback_selector_audit": {
+    "capture_detail_page_sites_added": 0,
+    "video_error_feedback_dialog_sites_added": 0,
+    "verdict": "not_reintroduced",
+    "note": "No v12j semantic addition has a CaptureDetailPage or VideoErrorFeedbackDialog site. The known TLVideoCompleteView selector 3/4 break remains."
+  }
+}

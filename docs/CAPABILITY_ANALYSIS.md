@@ -117,3 +117,32 @@ and exact argument positions. Registrations are followed at actual calls, never 
 capability seeds. Opaque Map parameters do not create a shared instance. Dynamic keys and
 mutation/replacement ordering remain unresolved diagnostics; the model reports possible
 registrations rather than proving a final runtime Map state.
+
+Scoring revision 5 enforces explicit `webview_constraint: {"types": [...]}` from independent
+source facts. An identical API/value/member on a different WebView type in the same Activity
+cannot satisfy that expectation. A reported union may satisfy the constraint through one of its
+explicit alternatives, so the result remains candidate-inclusive. `webview_constraint_coverage`
+exposes facts still scored only at Activity level. Concrete type agreement does not establish
+exact allocation identity. Source mappings and pre-migration oracle snapshots are versioned;
+historical scores must be replayed on the same constraints before comparing versions.
+
+Small actual object-field setter calls preserve their argument even when not globally relevant.
+Virtual helper lookahead is bounded and uses the actual receiver subtype; it does not enumerate
+unallocated sibling implementations. Mutable fields do not provide closed-world negative type
+proofs for pruning other conditional branches. Captured arrays retain bounded indexed cells as
+well as collection contents; unknown indices/updates are conservative and diagnosed.
+
+The AspectJ adapter recognizes runtime closure contracts, captures actual constructor state,
+links the concrete closure to its join point, and dispatches no-argument `proceed` to that closure's
+`run`. Construction or linking alone does not execute the closure. Original join-point aliases
+are retained when resolved. Different event captures can still alias under bounded allocation
+contexts, and repeated attachment is conservative rather than a proof of final order.
+`proceed(Object[])` state/flag rewriting remains unsupported and explicitly diagnosed; no App
+Activity names are hardcoded into this adapter.
+
+Pending contexts are deduplicated and scheduled round-robin by method, preventing one widely
+parameterized helper from occupying the whole worklist. Traversal is limited by context,
+component, queue, summary/evaluation and external time budgets. The presentation length of an
+evidence path does not stop traversal: paths longer than 64 steps retain the root and tail with
+an omission marker and `evidence_path_truncated`. Such an abbreviated path alone is not a complete
+binding proof; inspect retained source/DEX evidence and limitations when auditing it.

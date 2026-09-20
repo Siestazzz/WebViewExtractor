@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "dataset": "mango-v12j-independent-validation",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "report": {
+    "path": "test/runs/v12j/com.hunantv.imgo.activity/0/output/capabilities.json",
+    "sha256": "4deee420b4b853816759e27523f6185e917828dbf76bc78893adccffc9db6bb8",
+    "status": "partial",
+    "wall_seconds": 355.49,
+    "hosts": 92
+  },
+  "host_delta": {
+    "v12i": 91,
+    "v12j": 92,
+    "added": [
+      "com.mgtv.ui.videosquare.VideoSquareActivity"
+    ],
+    "removed": []
+  },
+  "changed_host_count": 31,
+  "evaluation_v3_type_constraints": {
+    "setting": {
+      "expected": 608,
+      "matched": 608,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 1163,
+      "matched": 1147,
+      "explicit_matched": 0,
+      "unscorable": 2,
+      "recall": 0.9862424763542562,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 634,
+      "matched": 634,
+      "explicit_matched": 15,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.02365930599369085
+    },
+    "webview_operation": {
+      "expected": 3,
+      "matched": 3,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing_count": [
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "webview": "com.hunantv.imgo.h5.browser.MoWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "<dynamic-jsInterfaceMap>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "controlNativeTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->controlNativeTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "getClientContext",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getClientContext(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "getHeaderJson",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getHeaderJson(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "getToken",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getToken(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "onDomLoadFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onDomLoadFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "onFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->openBrowser(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "refresh",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->refresh(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "setClientTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setClientTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "setWebViewHeight",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setWebViewHeight(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "showClientDialog",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showClientDialog(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "showToast",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showToast(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "startActivity",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->startActivity(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "statisticsDCS",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->statisticsDCS(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "<dynamic-method-class-names>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    }
+  ],
+  "xweb": {
+    "v12a": 322,
+    "v12i": 237,
+    "v12j": 257,
+    "recovered_from_v12i": 20,
+    "recovery_kind": "webview_operation only",
+    "remaining_deficit_vs_v12a": 65,
+    "remaining_by_kind": {
+      "setting": 38,
+      "webview_operation": 6,
+      "bridge_removal": 11,
+      "callback": 6,
+      "callback_removal": 3,
+      "bridge": 1
+    }
+  },
+  "mgvideo": {
+    "v12j_facts": 1774,
+    "net_vs_v12i": 80,
+    "oracle_81": "all matched under source-authored PageWebView/ServiceWebView constraints",
+    "warning": "large add/remove churn means net growth is not 80 new capabilities"
+  },
+  "new_host": {
+    "activity": "com.mgtv.ui.videosquare.VideoSquareActivity",
+    "facts": 1339,
+    "verdict": "valid_conditional",
+    "warning": "shared conditional channel carrier expansion; facts are candidates, not 1339 independently source-proven new APIs"
+  },
+  "android_webview_label_audit": {
+    "rows": 18,
+    "true_platform_rows": 10,
+    "mislabelled_subclass_rows": 8,
+    "platform_hosts": {
+      "com.mgtv.ui.other.BackDoorWebActivity": 4,
+      "com.mgtv.diana.sdk.api.pay.WechatWapPayRouterActivity": 6
+    },
+    "subclass_host": {
+      "com.ccb.ccbnetpay.H5PayActivity": 8
+    },
+    "ccb_actual_type": "com.hunantv.imgo.h5.browser.MoWebView",
+    "evidence": [
+      "activity_backdoor_web.xml:5-8 <WebView>",
+      "WechatWapPayRouterActivity.java:110-122 new WebView(this)",
+      "H5PayActivity.java:137-139 new MoWebView(this); F field declared WebView"
+    ]
+  },
+  "constraint_migration": {
+    "dataset": "mango-source-authored-webview-type-map-v3",
+    "candidate_sha256": "8dc251199b3790f265d6b8a1ea7f897cfaa5bc6d54e14d46d110fbd1f5f9776d",
+    "selector_rows": 16,
+    "canonical_overwritten": false
+  },
+  "residual": {
+    "bridge_missing": 16,
+    "loading_static_message_handlers": 14,
+    "dynamic_unscorable": 2,
+    "settings_missing": 0,
+    "callbacks_missing": 0,
+    "note": "The 7 popup callbacks and CCB 3 bridge/5 callback mismatches under v2 were type-map errors and are corrected by source selectors, without widening types."
+  },
+  "limitations": [
+    "report status is partial and exceeded 300-second target",
+    "ownership validates host reachability, not every emitted candidate alias",
+    "large candidate churn in 31 hosts is not equivalent to new source-confirmed capability"
+  ]
+}

@@ -1,0 +1,13 @@
+# Mango v12j independent validation
+
+The final report is `partial`, contains 92 output hosts, and took 355.49 seconds. It adds `com.mgtv.ui.videosquare.VideoSquareActivity` and removes no v12i host. The new host is source-reachable through `VideoSquareActivity.onInitializeUI()` → `VideoSquareFragment.wc()` → `VideoSquareFragment.uc()` → `VideoSquareHeaderFragment.ui()`. Its inherited channel-content path reaches the audited WebView carrier conditionally, so ownership is **valid conditional**. Its 1,339 emitted facts are shared carrier candidates, not 1,339 independently new APIs.
+
+XWeb improves from 237 to 257 facts, but all 20 recovered facts are `webview_operation`. Settings, callbacks, bridge registrations, and removal facts do not recover. Compared with v12a's 322 facts, 65 remain absent: 38 settings, 6 operations, 11 bridge removals, 6 callbacks, 3 callback removals, and 1 bridge. This is a partial recovery.
+
+MGVideoPlayActivity grows from 1,694 to 1,774 facts. The 81 source-authored Diana PageWebView/ServiceWebView facts all match with their exact type constraints. The raw host delta contains 429 added and 349 removed semantic facts, so the net +80 is substantial alias/candidate churn and cannot be described as 80 new verified capabilities. Across the report, 31 hosts changed.
+
+The 18 facts labelled `android.webkit.WebView` split into two receiver classes. BackDoorWebActivity's four facts use the literal `<WebView>` XML tag; WechatWapPayRouterActivity's six use `new WebView(this)`. CCB H5PayActivity's eight facts use a field declared `WebView`, but `f()` stores `new MoWebView(this)` in it and `g()` performs all settings/client/bridge calls on that field. The v3 source map therefore uses a host selector for CCB rather than widening the platform type. Seven popup callbacks likewise run on the `MoWebView` child created in `ImgoWebView$3.onCreateWindow`, rather than the parent `ImgoWebView`.
+
+Replaying v12j against the v3 candidate gives 608/608 settings, 634/634 callbacks, 1,147/1,163 bridges, and 3/3 operations. The 16 bridge misses are the known 14 Loading/Rainbow handlers and two unscorable dynamic registrations. The previous v2 CCB bridge/callback and popup callback misses were mapping errors; v3 fixes the receiver constraints without changing capability facts or broadening allowed types.
+
+Ownership reuses the 91 independently reviewed v12i decisions and adds the conditional VideoSquare chain. The report remains partial and exceeded its 300-second target. Large emitted-fact changes, known aliases, and conditional carriers remain candidate evidence rather than proof that each object identity and branch executes in every host instance.

@@ -7,6 +7,13 @@ actual={x['activity']:x['facts'] for x in r['activities']}
 if len(actual)!=len(r['activities']):raise SystemExit('Duplicate Activity entries in report')
 stats=collections.defaultdict(lambda:dict(expected=0,matched=0,explicit_matched=0,unscorable=0));failures=[]
 def match(g,f):
+ constraint=g.get('webview_constraint')
+ if constraint is not None:
+  # Source-authored concrete type constraints are independent of report allocation IDs.
+  # They prevent cross-WebView matches but do not prove exact instance identity.
+  if not isinstance(constraint,dict) or set(constraint)!={'types'} or not isinstance(constraint['types'],list) or not constraint['types'] or not all(isinstance(t,str) and t for t in constraint['types']):return None
+  views=[f.get('webview',{})]+f.get('webview_alternatives',[])
+  if not any(v.get('type') in constraint['types'] for v in views):return False
  k=g['kind']; signature=g.get('normalized_signature'); api=g.get('normalized_api') or g.get('normalized_signature');name=g['name']
  if k=='setting':
   if f['kind']!='setting':return False
@@ -56,38 +63,44 @@ def match(g,f):
 # Deduplicate semantic expectations, keeping every source row in the versioned oracle.
 unique={};duplicate_rows=0
 for g in truth:
- key=tuple(json.dumps(g.get(k),sort_keys=True) for k in ('activity','webview','kind','registration_name','name','normalized_signature','normalized_api','implementation','value','value_kind','binding_status'))
+ key=tuple(json.dumps(g.get(k),sort_keys=True) for k in ('activity','webview','kind','registration_name','name','normalized_signature','normalized_api','implementation','value','value_kind','binding_status','webview_constraint','positive_acceptance'))
  if key in unique:duplicate_rows+=1
  else:unique[key]=g
 submetrics=collections.defaultdict(lambda:dict(expected=0,matched=0))
-unknown_surfaces=[]
+unknown_surfaces=[];unconfirmed_oracle=[]
 for g in unique.values():
  if g['kind']=='activity_binding' or g.get('activity') is None:continue
  if g.get('apk_sha256')!=r.get('apk_sha256'):raise SystemExit('APK hash mismatch; cannot compare')
+ if g.get('positive_acceptance') is False:
+  unconfirmed_oracle.append(dict(activity=g['activity'],webview=g.get('webview'),kind=g['kind'],name=g['name'],status=g.get('binding_status'),reason='source_host_binding_not_confirmed'));continue
  category='bridge' if g['kind'].startswith('bridge') or g['kind']=='message_handler' else 'callback' if g['kind']=='callback_registration' else g['kind'];s=stats[category];s['expected']+=1
  unknown='unknown' in g.get('binding_status','')
  if unknown:unknown_surfaces.append(dict(activity=g['activity'],name=g['name'],status=g['binding_status']))
  grain=('bridge_member' if g['kind'] in ('bridge_method','message_handler') or g.get('normalized_signature') and category=='bridge' else 'bridge_registration') if category=='bridge' else ('callback_registration' if g['kind']=='callback_registration' else 'callback_member') if category=='callback' else category
  submetrics[grain]['expected']+=1
  candidates=actual.get(g['activity'],[]);outcomes=[match(g,f) for f in candidates];matches=[f for f,m in zip(candidates,outcomes) if m is True]
- submetrics[grain]['matched']+=int(bool(matches))
  if unknown:matches=[]
+ submetrics[grain]['matched']+=int(bool(matches))
  if matches:
   s['matched']+=1;s['explicit_matched']+=int(any(f.get('binding_status')=='explicit' for f in matches))
  else:
   unscorable=unknown or any(x is None for x in outcomes) or (g['kind'] in ('setting','callback','bridge_method') and not g.get('normalized_signature') and not g.get('normalized_api'))
-  s['unscorable']+=int(unscorable);failures.append(dict(activity=g['activity'],kind=g['kind'],name=g['name'],signature=g.get('normalized_signature',g.get('signature')),reason='unscorable_oracle' if unscorable else 'not_matched'))
+  s['unscorable']+=int(unscorable);failures.append(dict(activity=g['activity'],webview=g.get('webview'),webview_constraint=g.get('webview_constraint'),kind=g['kind'],name=g['name'],signature=g.get('normalized_signature',g.get('signature')),reason='unscorable_oracle' if unscorable else 'not_matched'))
 for s in submetrics.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None
 for s in stats.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None;s['explicit_recall']=s['explicit_matched']/s['expected'] if s['expected'] else None
 out=dict(oracle_sha256=hashlib.sha256(pathlib.Path(a.oracle).read_bytes()).hexdigest(),report_sha256=hashlib.sha256(pathlib.Path(a.report).read_bytes()).hexdigest(),unassigned_oracle_facts=sum(g.get('activity') is None for g in truth),oracle_file=a.oracle,apk_sha256=r.get('apk_sha256'),report_status=r['status'],metrics=stats,missing=failures,emitted_activities=len(actual),acceptance='unproven',note='Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required.')
-out['scoring_version']=4
-expected_hosts={g['activity'] for g in unique.values() if g.get('activity') and g['kind']!='activity_binding'}
+out['scoring_version']=5
+scored=[g for g in unique.values() if g.get('activity') and g['kind']!='activity_binding' and g.get('positive_acceptance') is not False]
+constrained=sum(g.get('webview_constraint') is not None for g in scored)
+out['webview_constraint_coverage']=dict(expected=len(scored),with_source_type_constraint=constrained,activity_only=len(scored)-constrained,exact_instance_identity_verified=False)
+expected_hosts={g['activity'] for g in unique.values() if g.get('activity') and g['kind']!='activity_binding' and g.get('positive_acceptance') is not False}
 out['positive_host_recall']=dict(expected=len(expected_hosts),matched=len(expected_hosts&actual.keys()),missing=sorted(expected_hosts-actual.keys()),recall=len(expected_hosts&actual.keys())/len(expected_hosts) if expected_hosts else None)
 out['duplicate_oracle_rows']=duplicate_rows
 out['capability_granularity']=submetrics
 out['unknown_target_surfaces']=unknown_surfaces
+out['unconfirmed_source_facts']=unconfirmed_oracle
 out['binding_identity_verified']=False
-out['note']='Deduplicated candidate-inclusive Activity-level recall; unknown targets count as unresolved misses in aggregate coverage. Registration-only matches are shown separately and do not prove endpoint coverage. WebView object identity requires independent review.'
+out['note']='Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.'
 reviews={}
 if a.ownership:
  for line in pathlib.Path(a.ownership).read_text().splitlines():

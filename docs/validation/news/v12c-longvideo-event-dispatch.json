@@ -1,0 +1,92 @@
+{
+  "apk":"com.tencent.news",
+  "version":"7.9.50",
+  "apk_sha256":"c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator":"GPT-5.6 Sol",
+  "status":"source_and_dex_verified",
+  "holdout_used":false,
+  "precondition":"v12c heap probe reaches both player.g constructors with parameter 0 equal to the Activity-created services.e/p on the real branch",
+  "pair_and_lifecycle":[
+    {
+      "method":"Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->י(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)V",
+      "factory_dispatch":"Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->ˋˋ(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)Lkotlin/Pair;",
+      "pair_behavior":"getSecond() is cast to Lcom/tencent/news/kkvideo/detail/longvideo/e; and stored in AbsLongVideoDetailPage.ˎˎ",
+      "lifecycle_call":"Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʼ()V",
+      "ordering":"variant presenter construction and self-registration happen before Pair return; Pair unwrapping happens before lifecycle.ʼ()"
+    },
+    {
+      "registry_field":"Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʻ:Ljava/util/ArrayList;",
+      "register":"Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʻ(Lcom/tencent/news/kkvideo/detail/longvideo/g;)V",
+      "dispatch":"Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʼ()V",
+      "target":"Lcom/tencent/news/list/framework/lifecycle/o;->onPageCreateView()V",
+      "behavior":"register adds the exact presenter to the ArrayList when non-null and absent; dispatch iterates that same field, casts each element to longvideo.g, and invokes onPageCreateView"
+    }
+  ],
+  "variant_registration":[
+    {
+      "variant":"tv",
+      "constructor":"Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;-><init>(Lcom/tencent/news/kkvideo/detail/longvideo/m;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/d;)V",
+      "self_registration":"pageContext.ʾ().getService(longvideo.l.class).ʻ(this)",
+      "event_entry":"Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;->onPageCreateView()V",
+      "first_action":"Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;->ˉ(Lcom/tencent/news/kkvideo/detail/longvideo/pojo/d;Z)V with initial episode and true",
+      "condition":"normal branch; model callback must return playable list/item before player selection"
+    },
+    {
+      "variant":"ip",
+      "constructor":"Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;-><init>(Lcom/tencent/news/kkvideo/detail/longvideo/m;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)V",
+      "self_registration":"pageContext.ʾ().getService(longvideo.l.class).ʻ(this)",
+      "event_entry":"Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;->onPageCreateView()V",
+      "first_action":"Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;->ˊˊ(Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)V",
+      "model_callback":"Lcom/tencent/news/kkvideo/detail/longvideo/ip/v$c;->ʽ(Ljava/util/List;Lcom/tencent/news/model/pojo/Item;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)V",
+      "explicit_selection":"Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;->ˉ(Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)Z -> player.g.ʻʽ(0,false)",
+      "condition":"model callback supplies non-empty episode/module lists; explicit episode selection or a registered list/viewholder click selects a valid position"
+    }
+  ],
+  "common_player_chain":[
+    {
+      "step":1,
+      "method":"Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻʽ(IZ)Z",
+      "behavior":"wraps position/autoplay into playlist.f and calls the same receiver's ʻʼ(playlist.c)"
+    },
+    {
+      "step":2,
+      "method":"Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻʼ(Lcom/tencent/news/kkvideo/playlist/c;)Z",
+      "behavior":"requires requested position to differ from current and to index an item in g.ˑˑ:List; for the selected item calls g.ʻˈ(item, c. autoplay flag, c.extras)"
+    },
+    {
+      "step":3,
+      "method":"Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻˈ(Lcom/tencent/news/model/pojo/Item;ZLjava/util/List;)V",
+      "receiver_field":"Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ˈˈ:Lcom/tencent/news/qnplayer/n;",
+      "argument":"new Lcom/tencent/news/qnplayer/u; constructed from selected Item, then populated with source/autoplay/current-item/extras flags",
+      "call":"Lcom/tencent/news/qnplayer/n;->ʾˏ(Lcom/tencent/news/qnplayer/f;)V",
+      "identity":"the receiver is exactly constructor parameter 0 stored in final field ˈˈ; on the real v12c branch it is services.e/p"
+    },
+    {
+      "step":4,
+      "method":"Lcom/tencent/news/qnplayer/h0;->ʾˏ(Lcom/tencent/news/qnplayer/f;)V",
+      "behavior":"stores f; if it is qnplayer.b/u, converts it to VideoDataSource and calls the same h0 receiver's b1 field"
+    },
+    {
+      "step":5,
+      "method":"Lcom/tencent/news/video/b1;->ˆ(Lcom/tencent/news/kkvideo/config/VideoDataSource;)V",
+      "controller_field":"Lcom/tencent/news/video/b1;->ʻ:Lcom/tencent/news/video/n2;",
+      "terminal":"Lcom/tencent/news/video/n2;->setVideoParams(Lcom/tencent/news/model/pojo/VideoParams;)V"
+    }
+  ],
+  "first_missing_relation":{
+    "category":"instance_collection_registration_to_lifecycle_callback_dispatch",
+    "edge":"presenter this -> longvideo.l.ʻ ArrayList element -> longvideo.l.ʼ iterator element -> interface onPageCreateView on the same concrete tv.m/ip.v",
+    "why":"v12c already reaches and constructs player.g with the correct service but never visits n2.setVideoParams. The earliest mandatory post-construction trigger is the lifecycle ArrayList dispatch; Pair is not the object carrier for player.g or qnplayer.n.",
+    "secondary_async_edge":"after onPageCreateView, model callback/list selection must populate g.ˑˑ and call g.ʻʽ/ʻʼ; model data availability is a real execution condition"
+  },
+  "pair_conclusion":"Pair wrapping is not required to preserve the qnplayer.n identity. The presenter constructor has already registered this with longvideo.l before the Pair is returned. Pair.getSecond only stores the presenter for page delegation. It is relevant for page ownership/control but not the first missing playback event edge.",
+  "source_evidence":[
+    "AbsLongVideoDetailPage.java:56-70,366-386",
+    "longvideo/l.java:11-48",
+    "tv/m.java:620-670,870-879,1079-1122",
+    "ip/v.java:280-463,480-525,607-615,733-758,777-813",
+    "player/g.java:125-165,417-558",
+    "qnplayer/h0.java:266-279",
+    "video/b1.java:132-160"
+  ]
+}

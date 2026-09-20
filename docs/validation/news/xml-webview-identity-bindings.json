@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "app_version": "7.9.50",
+  "validator": "GPT-5.6 Sol",
+  "basis": "source_xml_and_dex_resource_constants_only",
+  "bindings": [
+    {
+      "label": "privacy_web",
+      "hosts": ["com.tencent.news.startup.privacy.PrivacyWebActivity", "com.tencent.news.startup.privacy.PrivacyWebItemActivity"],
+      "activity_base": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+      "layout": {"dex_id": 2131493563, "hex_id": "0x7f0c02bb", "xml_name": "init_web_browser_layout", "selection": "PrivacyAbsWebActivity.onCreate -> setContentView(com.tencent.news.privacy.f.f91788)"},
+      "view": {"dex_id": 2131303140, "hex_id": "0x7f091ae4", "xml_id": "web_detail_webview", "xml_tag": "com.tencent.news.webview.api.X5WrapperWebView"},
+      "lookup_chain": [
+        "PrivacyAbsWebActivity.onCreate calls findViewById(com.tencent.news.res.g.De)",
+        "the result is first held as android.view.View",
+        "Kotlin check/cast narrows it to com.tencent.smtt.sdk.WebView",
+        "the object is stored in field PrivacyAbsWebActivity.webView:Lcom/tencent/smtt/sdk/WebView;"
+      ],
+      "declared_storage_type": "com.tencent.smtt.sdk.WebView",
+      "runtime_concrete_type": "com.tencent.news.webview.api.X5WrapperWebView",
+      "parent_chain": ["com.tencent.news.webview.api.X5WrapperWebView", "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView", "com.tencent.smtt.sdk.WebView"],
+      "downcast_after_inflate": false,
+      "type_loss_point": "findViewById result is explicitly cast only to com.tencent.smtt.sdk.WebView before field storage; the concrete type exists only in the selected XML tag",
+      "same_id_scope": "web_detail_webview is reused across layouts; only init_web_browser_layout is admissible because onCreate selects layout 0x7f0c02bb"
+    },
+    {
+      "label": "support_web",
+      "hosts": ["com.tencent.news.ui.SupportActivity"],
+      "layout": {"dex_id": 2131493004, "hex_id": "0x7f0c008c", "xml_name": "activity_support", "selection": "SupportActivity.onCreate -> setContentView(com.tencent.news.p0.f90509)"},
+      "view": {"dex_id": 2131303125, "hex_id": "0x7f091ad5", "xml_id": "webView", "xml_tag": "com.tencent.news.webview.BaseWebView"},
+      "lookup_chain": [
+        "SupportActivity.init/m135947 calls findViewById(com.tencent.news.res.g.ze)",
+        "the result is cast to com.tencent.smtt.sdk.WebView",
+        "the object is stored in field SupportActivity.f109620:Lcom/tencent/smtt/sdk/WebView;"
+      ],
+      "declared_storage_type": "com.tencent.smtt.sdk.WebView",
+      "runtime_concrete_type": "com.tencent.news.webview.BaseWebView",
+      "parent_chain": ["com.tencent.news.webview.BaseWebView", "com.tencent.news.webview.api.RecyclableWebView", "com.tencent.news.webview.api.X5WrapperWebView", "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtX5WebView", "com.tencent.smtt.sdk.WebView"],
+      "downcast_after_inflate": false,
+      "type_loss_point": "Java source casts and stores only the X5 parent type; BaseWebView identity comes from the Activity-selected XML tag",
+      "same_id_scope": "webView 0x7f091ad5 is interpreted only inside activity_support selected by this Activity"
+    },
+    {
+      "label": "novel_web",
+      "hosts": ["com.tencent.news.tad.business.novel.WebNovelActivity"],
+      "layout": {"dex_id": 2131495279, "hex_id": "0x7f0c096f", "xml_name": "web_novel_layout", "selection": "WebNovelActivity.onCreate -> setContentView(m125784()); normal m125784 returns com.tencent.news.tad.g.f105386"},
+      "outer_view": {"dex_id": 2131303127, "hex_id": "0x7f091ad7", "xml_id": "web_advert_view", "xml_tag": "com.tencent.news.tad.business.novel.NovelWebView", "stored_field": "WebNovelActivity.f101616:Lcom/tencent/news/tad/business/novel/NovelWebView;"},
+      "nested_layout_1": {"dex_id": 2131495274, "hex_id": "0x7f0c096a", "xml_name": "web_advert_view_layout_novel", "selection": "NovelWebView.init -> inflate(com.tencent.news.tad.g.f105384,this,true)"},
+      "nested_view_1": {"dex_id": 2131299735, "hex_id": "0x7f090d97", "xml_id": "loading_webview", "xml_tag": "com.tencent.news.tad.business.novel.NovelLoadingWebView", "stored_field": "NovelWebView.mLoadingWebView:Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;"},
+      "nested_layout_2": {"dex_id": 2131493047, "hex_id": "0x7f0c00b7", "xml_name": "ad_loading_web_view_novel", "selection": "NovelLoadingWebView.initialize -> inflate(com.tencent.news.tad.g.f105201,this,true)"},
+      "receiver_view": {"dex_id": 2131303140, "hex_id": "0x7f091ae4", "xml_id": "web_detail_webview", "xml_tag": "com.tencent.news.tad.business.ui.landing.AdWebView"},
+      "lookup_chain": [
+        "NovelLoadingWebView.initialize finds web_detail_webview and casts it to BaseSysWebView",
+        "it stores the object in NovelLoadingWebView.mWebView:Lcom/tencent/news/webview/BaseSysWebView;",
+        "NovelWebView.init calls NovelLoadingWebView.getWebView and stores the same object in NovelWebView.mWebView:Lcom/tencent/news/webview/BaseSysWebView;",
+        "WebNovelActivity.initView calls f101616.getLoadingWebView().getWebView and stores the same object in f101623:Lcom/tencent/news/webview/BaseSysWebView;",
+        "clients, settings and WebViewBridge are applied through f101623"
+      ],
+      "declared_storage_type": "com.tencent.news.webview.BaseSysWebView",
+      "runtime_concrete_type": "com.tencent.news.tad.business.ui.landing.AdWebView",
+      "parent_chain": ["com.tencent.news.tad.business.ui.landing.AdWebView", "com.tencent.news.webview.BaseSysWebView", "com.tencent.qqlive.module.videoreport.inject.webview.dtwebview.DtWebView", "android.webkit.WebView"],
+      "downcast_after_inflate": false,
+      "type_loss_point": "the innermost findViewById immediately casts the XML AdWebView to BaseSysWebView and every getter/field thereafter retains only BaseSysWebView",
+      "same_id_scope": "web_detail_webview 0x7f091ae4 is reused broadly; only the ordered host layout -> NovelWebView layout -> NovelLoadingWebView layout chain is admissible"
+    }
+  ],
+  "implementation_rule": "Bind an XML concrete type only after resolving the host's selected layout and every nested inflate edge to the matching resource id. Preserve the concrete allocation type while allowing fields/locals to carry a superclass; never join views solely by a globally reused numeric id."
+}

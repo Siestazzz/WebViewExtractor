@@ -17,7 +17,7 @@ final class CapabilityIndex {
     final Map<String,List<Method>> byClass=new HashMap<>();
     final Map<String,List<Method>> byShape=new HashMap<>();
     final Set<String> relevant=new HashSet<>(), seeds=new HashSet<>();
-    final Set<String> classLiterals=new HashSet<>();
+    final Set<String> classLiterals=new HashSet<>(), finalFields=new HashSet<>();
     final Map<String,Set<String>> referencedFields=new HashMap<>(), allocations=new HashMap<>(),fieldWriters=new HashMap<>();
     final Map<String,Set<String>> reflectionFields=new HashMap<>();
     final Map<String,String> messageRegistries=new HashMap<>();
@@ -26,6 +26,7 @@ final class CapabilityIndex {
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
     final Set<String> keyedRegistryWrites=new HashSet<>();
+    final Set<String> aroundClosureBases=new HashSet<>(), joinPointContracts=new HashSet<>(), proceedArgumentMethods=new HashSet<>();
     final Set<String> lazyContracts=new HashSet<>(Set.of("kotlin.Lazy")), function0Contracts=new HashSet<>(Set.of("kotlin.jvm.functions.Function0"));
     final Map<String,Set<String>> callbackEntries=new HashMap<>();
     record CustomCallback(String field,String contract,Set<String> dispatchedShapes){}
@@ -55,6 +56,7 @@ final class CapabilityIndex {
         var container=DexFileFactory.loadDexContainer(apk.toFile(),Opcodes.getDefault());
         for(String name:container.getDexEntryNames())for(ClassDef c:container.getEntry(name).getDexFile().getClasses()){
             classes.put(cls(c.getType()),c);
+            for(Field field:c.getFields())if((field.getAccessFlags()&16)!=0)finalFields.add(field(field));
             for(Method m:c.getMethods()){
                 methods.put(key(m),m); byClass.computeIfAbsent(cls(m.getDefiningClass()),k->new ArrayList<>()).add(m);
                 byShape.computeIfAbsent(shape(m),k->new ArrayList<>()).add(m);
@@ -93,6 +95,7 @@ final class CapabilityIndex {
         for(var e:new ArrayList<>(calls.entrySet()))for(String ref:new ArrayList<>(e.getValue())){
             Method m=resolve(ref);if(m!=null){String target=key(m);e.getValue().add(target);callers.computeIfAbsent(target,k->new HashSet<>()).add(e.getKey());}
         }
+        discoverAroundClosures(deadline);
         discoverKeyedRegistries(deadline);
         discoverCustomCallbacks(deadline);
         services.index(this,deadline);
@@ -155,12 +158,48 @@ final class CapabilityIndex {
                         if(base.startsWith("java.")||base.startsWith("android.")||base.startsWith("androidx.")||base.startsWith("kotlin."))continue;
                         if(!base.equals(owner)&&subtype(owner,base))for(String caller:callers.getOrDefault(key(declaration),Set.of()))if(relevant.add(caller))queue.add(caller);
                     }
-                boolean callback=seedDistance.getOrDefault(callee,99)<=2&&!cm.getName().startsWith("<")&&(cm.getAccessFlags()&8)==0&&!component(owner)&&!activity(owner)&&byShape.getOrDefault(shape(cm),List.of()).stream().anyMatch(declaration->declaration.getImplementation()==null&&subtype(owner,cls(declaration.getDefiningClass())));
+                boolean callback=!aroundClosure(owner)&&seedDistance.getOrDefault(callee,99)<=2&&!cm.getName().startsWith("<")&&(cm.getAccessFlags()&8)==0&&!component(owner)&&!activity(owner)&&byShape.getOrDefault(shape(cm),List.of()).stream().anyMatch(declaration->declaration.getImplementation()==null&&subtype(owner,cls(declaration.getDefiningClass())));
                 if(callback)callbackEntries.computeIfAbsent(owner,k->new HashSet<>()).add(key(cm));
                 if(callback||component(owner)||scheduled(owner)&&(cm.getName().equals("run")||cm.getName().equals("call")))for(Method init:byClass.getOrDefault(owner,List.of()))if(init.getName().equals("<init>")&&relevant.add(key(init)))queue.add(key(init));
             }
         }
+        for(String type:classes.keySet())if(aroundClosure(type)){Method run=resolve(CapabilityEngine.desc(type)+"->run([Ljava/lang/Object;)Ljava/lang/Object;");if(run!=null&&relevant.contains(key(run)))bindingObjects.add(type);}
     }
+    // AspectJ keeps these runtime member names even when class names are obfuscated.
+    // Discover contracts structurally inside the runtime namespace, never app host names.
+    void discoverAroundClosures(long deadline){
+        for(String type:classes.keySet())if(type.startsWith("org.aspectj.runtime.internal.")){
+            Method run=resolve(CapabilityEngine.desc(type)+"->run([Ljava/lang/Object;)Ljava/lang/Object;");
+            Method link=byClass.getOrDefault(type,List.of()).stream().filter(m->m.getName().equals("linkClosureAndJoinPoint")&&(m.getParameterTypes().equals(List.of("I"))||m.getParameterTypes().isEmpty())).findFirst().orElse(null);
+            boolean state=false;for(Field f:classes.get(type).getFields())if(f.getName().equals("state")&&f.getType().equals("[Ljava/lang/Object;"))state=true;
+            if(run!=null&&link!=null&&state){aroundClosureBases.add(type);joinPointContracts.add(cls(link.getReturnType()));}
+        }
+        if(aroundClosureBases.isEmpty())return;
+        for(Method method:methods.values())if(joinPoint(cls(method.getDefiningClass()))&&method.getParameterTypes().equals(List.of("[Ljava/lang/Object;"))&&method.getReturnType().equals("Ljava/lang/Object;")){
+            boolean runtimeDispatch=calls.getOrDefault(key(method),Set.of()).stream().anyMatch(id->id.endsWith("->run([Ljava/lang/Object;)Ljava/lang/Object;")&&aroundClosure(CapabilityEngine.owner(id)));
+            if(runtimeDispatch||method.getName().equals("proceed")){
+                proceedArgumentMethods.add(key(method));
+                for(Method declaration:byShape.getOrDefault(shape(method),List.of()))if(joinPoint(cls(declaration.getDefiningClass())))proceedArgumentMethods.add(key(declaration));
+            }
+        }
+        DexFlow flow=new DexFlow(this,deadline);
+        for(Method caller:methods.values()){
+            if(System.nanoTime()>deadline)throw new IllegalStateException("aspectj_index_deadline");
+            if(calls.getOrDefault(key(caller),Set.of()).stream().noneMatch(this::closureLink))continue;
+            // This is only a relevance edge. Execution still requires a linked concrete
+            // closure to flow into an actual proceed call in the host interpreter.
+            for(DexFlow.Call call:flow.summary(caller).calls())if(closureLink(call.method())&&!call.args().isEmpty())
+                for(DexFlow.V recv:DexFlow.alternatives(call.args().get(0)))if(recv.kind().equals("new")&&aroundClosure(recv.type())){
+                    Method run=resolve(CapabilityEngine.desc(recv.type())+"->run([Ljava/lang/Object;)Ljava/lang/Object;");
+                    if(run!=null)callers.computeIfAbsent(key(run),k->new HashSet<>()).add(key(caller));
+                }
+        }
+    }
+    boolean aroundClosure(String type){for(String base:aroundClosureBases)if(subtype(type,base))return true;return false;}
+    boolean joinPoint(String type){for(String contract:joinPointContracts)if(subtype(type,contract))return true;return false;}
+    boolean closureLink(String id){return (id.contains("->linkClosureAndJoinPoint(I)")||id.contains("->linkClosureAndJoinPoint()"))&&aroundClosure(CapabilityEngine.owner(id));}
+    boolean closureProceedArguments(String id){Method method=resolve(id);return proceedArgumentMethods.contains(id)||method!=null&&proceedArgumentMethods.contains(key(method));}
+    boolean closureProceed(String id){return joinPoint(CapabilityEngine.owner(id))&&id.endsWith("->proceed()Ljava/lang/Object;");}
     void discoverCustomCallbacks(long deadline){
         DexFlow flow=new DexFlow(this,deadline);Map<String,CustomCallback> candidates=new HashMap<>();Set<String> fields=new HashSet<>();
         for(Method setter:methods.values()){

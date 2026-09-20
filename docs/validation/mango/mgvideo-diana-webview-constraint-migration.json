@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "migration": "mgvideo-diana-development-v1-to-webview-type-constrained-v2",
+  "facts_before": 81,
+  "facts_after": 81,
+  "canonical_rows_before": 2508,
+  "canonical_rows_after": 2508,
+  "snapshot": "docs/validation/mango/canonical-facts-before-mgvideo-webview-constraint-v1.jsonl",
+  "snapshot_sha256": "4cd8f9da65c8c3f7c72972b8a1f432507fb3e79747048d4e21697b9658c300cd",
+  "canonical_sha256": "b22404aed295f50a3e14251da61e6e55b5068281833b13e289e375e35e39f8b2",
+  "development_facts_sha256": "92304b837d6e5dc2876384ca013e69a097dc168311e54750deccd3c25af8e1fc",
+  "constraints": {"com.mgtv.diana.sdk.page.view.PageWebView":51,"com.mgtv.diana.sdk.service.view.ServiceWebView":30},
+  "semantics": "webview_constraint restricts matching to the independently proven runtime WebView type. It does not assert object identity.",
+  "binding_chain_change": "inserted the raw-DEX-confirmed t.run -> H1 -> G1 -> F1 layer",
+  "rows_removed": 0,
+  "report_derived_types_added": false
+}

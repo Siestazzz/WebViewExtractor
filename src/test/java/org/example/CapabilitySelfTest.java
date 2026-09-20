@@ -68,6 +68,13 @@ public final class CapabilitySelfTest {
    var flow=new DexFlow(idx,deadline);var summary=flow.summary(moves);check(summary.calls().get(0).args().get(1).literal().equals("0"),"Stale constant survived move");
    var bitwise=method(H,"bitwise",List.of(),9,2,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction22b(Opcode.XOR_INT_LIT8,0,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setBlockNetworkImage",List.of("Z"),"V",1,0),end()),false);
    var bitValue=flow.summary(bitwise).calls().get(0).args().get(1);var arithmeticHost=engine.new Host("test.AppActivity");var arithmeticJob=new CapabilityEngine.Job(bitwise,List.of(),List.of(),false);
+   for(int duplicate=0;duplicate<7000;duplicate++)engine.enqueue(arithmeticHost,bitwise,List.of(),List.of(),false);
+   check(arithmeticHost.queue.size()==1&&!arithmeticHost.gaps.contains("queue_budget"),"Duplicate pending contexts exhausted queue budget");
+   var fairness=new ContextQueue();
+   for(int n=0;n<1000;n++)fairness.add(new CapabilityEngine.Job(bitwise,List.of(DexFlow.V.literal("number",String.valueOf(n))),List.of(),false));
+   fairness.add(new CapabilityEngine.Job(helper,List.of(),List.of(),false));
+   fairness.remove();check(fairness.remove().method().equals(helper),"Many contexts of one helper starved an independent capability chain");
+   check(fairness.size()==999,"Fair scheduling dropped pending contexts");
    check(engine.eval(bitValue,arithmeticJob,arithmeticHost,0,new HashSet<>()).literal().equals("0"),"Boolean XOR negation did not preserve value");
    for(int initial:List.of(0,1)){
     var config=DexFlow.V.of("object","test.Config","config:"+initial);engine.applyWrite(arithmeticHost,"Ltest/Config;->enabled:Z",config,DexFlow.V.literal("number",String.valueOf(initial)));
@@ -104,6 +111,11 @@ public final class CapabilitySelfTest {
    registeredServiceFixture();
    nullableReceiverFixture();
    settingsAlternativesFixture();
+   inheritedPageArgumentFixture();
+   mutableFieldGuardFixture();
+   receiverOverrideFixture();
+   AspectJFixture.run();
+   deepEvidenceFixture();
    composedReceiverFixture();
    componentHelperFixture();
    callbackEntryIsolationFixture();
@@ -421,6 +433,88 @@ public final class CapabilitySelfTest {
    var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");check(!engine.activities.isEmpty(),"Composed receiver lost Activity binding");
    @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");check(facts.stream().anyMatch(f->"composed".equals(f.get("registration_name"))),"Concrete constructor argument was lost across controller field");check(facts.stream().noneMatch(f->"unselected".equals(f.get("registration_name"))),"Unselected worker subtype leaked into controller");
   }finally{Files.deleteIfExists(path);}
+ }
+
+ static void deepEvidenceFixture()throws Exception {
+  String fragment="Ltest/DeepFragment;";List<ImmutableMethod> helpers=new ArrayList<>();
+  for(int i=0;i<72;i++)helpers.add(method(H,"hop"+i,List.of(W),9,3,List.of(invoke(Opcode.INVOKE_STATIC,H,"hop"+(i+1),List.of(W),"V",2),end()),false));
+  helpers.add(method(H,"hop72",List.of(W),9,3,List.of(make(0,B),str(1,"deep-direct"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,0,1),make(0,fragment),invoke(Opcode.INVOKE_DIRECT,fragment,"<init>",List.of(),"V",0),end()),false));
+  var entry=method(A,"onCreate",List.of(),1,2,List.of(make(0,W),invoke(Opcode.INVOKE_STATIC,H,"hop0",List.of(W),"V",0),end()),false);
+  var init=method(fragment,"<init>",List.of(),1,1,List.of(end()),false);
+  var view=method(fragment,"onCreateView",List.of(),1,4,List.of(make(0,W),make(1,B),str(2,"deep-fragment"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
+  Path path=Files.createTempFile("wv-long-evidence-",".dex");
+  try{
+   DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",helpers.toArray(ImmutableMethod[]::new)),clazz(fragment,"Landroid/app/Fragment;",init,view),clazz(B,"Ljava/lang/Object;",method(B,"exposed",List.of(),1,1,List.of(end()),true)))));
+   long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");
+   check(engine.activities.size()==1,"Evidence length incorrectly blocked deep capability chain");
+   @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   check(facts.stream().anyMatch(f->"deep-direct".equals(f.get("registration_name"))),"Deep direct capability lost");
+   check(facts.stream().anyMatch(f->"deep-fragment".equals(f.get("registration_name"))),"Deep actual Fragment initializer lost");
+   check(facts.stream().allMatch(f->((List<?>)f.get("evidence")).size()<=64),"Evidence presentation grew without bound");
+   check(engine.activities.get(0).get("limitations").toString().contains("evidence_path_truncated"),"Omitted evidence was not diagnosed");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void receiverOverrideFixture()throws Exception {
+  String base="Ltest/PageBase;",good="Ltest/SelectedPage;",bad="Ltest/UnusedPage;";
+  var baseBuild=method(base,"build",List.of(W),1,2,List.of(end()),false);
+  var initialize=method(base,"initialize",List.of(W),1,2,List.of(invoke(Opcode.INVOKE_VIRTUAL,base,"build",List.of(W),"V",0,1),end()),false);
+  var goodBuild=method(good,"build",List.of(W),1,2,List.of(invoke(Opcode.INVOKE_STATIC,H,"good",List.of(W),"V",1),end()),false);
+  var badBuild=method(bad,"build",List.of(W),1,2,List.of(invoke(Opcode.INVOKE_STATIC,H,"bad",List.of(W),"V",1),end()),false);
+  List<ImmutableMethod> helpers=new ArrayList<>();
+  for(String name:List.of("good","bad"))helpers.add(method(H,name,List.of(W),9,3,List.of(make(0,B),str(1,name),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,0,1),end()),false));
+  var entry=method(A,"onCreate",List.of(),1,4,List.of(make(0,W),str(2,"https://example.invalid"),invoke(Opcode.INVOKE_VIRTUAL,W,"loadUrl",List.of("Ljava/lang/String;"),"V",0,2),make(1,good),invoke(Opcode.INVOKE_VIRTUAL,base,"initialize",List.of(W),"V",1,0),end()),false);
+  Path path=Files.createTempFile("wv-actual-override-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(base,"Ljava/lang/Object;",baseBuild,initialize),clazz(good,base,goodBuild),clazz(bad,base,badBuild),clazz(H,"Ljava/lang/Object;",helpers.toArray(ImmutableMethod[]::new)),clazz(B,"Ljava/lang/Object;",method(B,"exposed",List.of(),1,1,List.of(end()),true)))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);check(!idx.relevant.contains(CapabilityIndex.key(initialize)),"Fixture no longer exercises actual-receiver relevance");var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   check(facts.stream().anyMatch(f->"good".equals(f.get("registration_name"))),"Concrete receiver override was skipped behind an irrelevant base helper");
+   check(facts.stream().noneMatch(f->"bad".equals(f.get("registration_name"))),"Unallocated sibling override was treated as an actual receiver");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void mutableFieldGuardFixture()throws Exception {
+  String base="Ltest/Fragment;",mini="Ltest/MiniFragment;",other="Ltest/OtherFragment;";
+  List<ImmutableField> fields=new ArrayList<>();List<ImmutableMethod> methods=new ArrayList<>();
+  for(String name:List.of("mutable","immutable")){
+   fields.add(new ImmutableField(A,name,base,name.equals("immutable")?0x11:1,null,Set.of(),Set.of()));
+   methods.add(method(A,"check"+name,List.of(),1,4,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,3,new ImmutableFieldReference(A,name,base)),new ImmutableInstruction22c(Opcode.INSTANCE_OF,1,0,new ImmutableTypeReference(mini)),new ImmutableInstruction21t(Opcode.IF_EQZ,1,5),invoke(Opcode.INVOKE_STATIC,H,"bridgeBranch",List.of(),"V"),end()),false));
+  }
+  Path path=Files.createTempFile("wv-mutable-guard-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(new ImmutableClassDef(A,1,"Landroid/app/Activity;",List.of(),null,Set.of(),fields,methods),clazz(base,"Ljava/lang/Object;"),clazz(mini,base),clazz(other,base))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("test.AppActivity");var self=DexFlow.V.of("host","test.AppActivity","activity:test.AppActivity");
+   for(int i=0;i<fields.size();i++){
+    var field=fields.get(i);engine.applyWrite(host,CapabilityIndex.field(field),self,DexFlow.V.of("object","test.OtherFragment","observed-other"));var job=new CapabilityEngine.Job(methods.get(i),List.of(self),List.of(),false);
+    var summary=engine.flow.summary(methods.get(i),v->engine.guardValue(v,job,host,0));
+    check(summary.calls().size()==(i==0?1:0),"Mutable lifecycle field was treated as closed-world type evidence, or final capture lost precision");
+   }
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void inheritedPageArgumentFixture()throws Exception {
+  String base="Ltest/BaseActivity;",page="Ltest/Page;",impl="Ltest/ConcretePage;",object="Ljava/lang/Object;";
+  var pageField=new ImmutableField(base,"page",page,1,null,Set.of(),Set.of());var viewField=new ImmutableField(impl,"view",W,1,null,Set.of(),Set.of());
+  var ctor=method(impl,"<init>",List.of(),1,4,List.of(make(0,W),new ImmutableInstruction22c(Opcode.IPUT_OBJECT,0,3,new ImmutableFieldReference(impl,"view",W)),invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,0),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),new ImmutableInstruction11n(Opcode.CONST_4,2,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",1,2),end()),false);
+  var configure=method(impl,"configureLeaf",List.of(),1,4,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,3,new ImmutableFieldReference(impl,"view",W)),make(1,B),str(2,"page-bridge"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of(object,"Ljava/lang/String;"),"V",0,1,2),end()),false);
+  var c2=method(impl,"configure2",List.of(),1,1,List.of(invoke(Opcode.INVOKE_VIRTUAL,impl,"configureLeaf",List.of(),"V",0),end()),false);
+  var c1=method(impl,"configure1",List.of(),1,1,List.of(invoke(Opcode.INVOKE_VIRTUAL,impl,"configure2",List.of(),"V",0),end()),false);
+  var entryConfigure=method(impl,"configure",List.of(),1,1,List.of(invoke(Opcode.INVOKE_VIRTUAL,impl,"configure1",List.of(),"V",0),end()),false);
+  var declaration=new ImmutableMethod(page,"configure",List.of(),"V",0x401,Set.of(),Set.of(),null);
+  var setter=method(base,"setPage",List.of(page),1,2,List.of(new ImmutableInstruction22c(Opcode.IPUT_OBJECT,1,0,new ImmutableFieldReference(base,"page",page)),end()),false);
+  var getterBody=method(base,"getPage",List.of(),1,2,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(base,"page",page)),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var getter=new ImmutableMethod(base,"getPage",List.of(),page,0x11,Set.of(),Set.of(),getterBody.getImplementation());
+  var factoryBody=method(base,"createPage",List.of(),1,2,List.of(make(0,impl),invoke(Opcode.INVOKE_DIRECT,impl,"<init>",List.of(),"V",0),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var factory=new ImmutableMethod(base,"createPage",List.of(),page,1,Set.of(),Set.of(),factoryBody.getImplementation());
+  var parentHook=new ImmutableMethod(base,"onReady",List.of(new ImmutableMethodParameter(page,Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var override=method(A,"onReady",List.of(page),1,2,List.of(invoke(Opcode.INVOKE_INTERFACE,page,"configure",List.of(),"V",1),end()),false);
+  var entry=method(base,"onCreate",List.of(),1,2,List.of(invoke(Opcode.INVOKE_VIRTUAL,base,"createPage",List.of(),page,1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),invoke(Opcode.INVOKE_VIRTUAL,base,"setPage",List.of(page),"V",1,0),invoke(Opcode.INVOKE_VIRTUAL,base,"getPage",List.of(),page,1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),invoke(Opcode.INVOKE_VIRTUAL,base,"onReady",List.of(page),"V",1,0),end()),false);
+  var defs=List.of(clazz(A,base,override),new ImmutableClassDef(base,0x401,"Landroid/app/Activity;",List.of(),null,Set.of(),List.of(pageField),List.of(entry,setter,getter,factory,parentHook)),new ImmutableClassDef(page,0x601,object,List.of(),null,Set.of(),List.of(),List.of(declaration)),new ImmutableClassDef(impl,1,object,List.of(page),null,Set.of(),List.of(viewField),List.of(ctor,configure,c1,c2,entryConfigure)),clazz(B,object,method(B,"exposed",List.of(),1,1,List.of(end()),true)));
+  Path dex=Files.createTempFile("wv-lifecycle-",".dex");
+  try{DexFileFactory.writeDexFile(dex.toString(),new ImmutableDexFile(Opcodes.getDefault(),defs));long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(dex,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+
+   check(facts.stream().anyMatch(f->"page-bridge".equals(f.get("registration_name"))),"Base lifecycle setter/getter lost concrete page argument to subclass override");
+  }finally{Files.deleteIfExists(dex);}
  }
 
  static void settingsAlternativesFixture(){

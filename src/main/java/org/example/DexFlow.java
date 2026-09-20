@@ -95,9 +95,9 @@ final class DexFlow {
             else if(op.equals("const-class")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("class",CapabilityIndex.cls(t.getType()),t.getType());
             else if(op.startsWith("const")&&in instanceof WideLiteralInstruction lit)output=V.literal("number",String.valueOf(lit.getWideLiteral()));
             else if(op.equals("new-instance")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("new",CapabilityIndex.cls(t.getType()),key+"@"+at);
-            else if(op.equals("new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("array",t.getType(),key+"@"+at);
+            else if(op.equals("new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=expr("array_new",t.getType(),key+"@"+at,List.of(s.getOrDefault(((TwoRegisterInstruction)in).getRegisterB(),UNKNOWN)));
             else if(op.startsWith("filled-new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t){List<V> values=registers(in).stream().map(n->s.getOrDefault(n,UNKNOWN)).toList();s.put(-1,expr("array",t.getType(),key+"@"+at,values));}
-            else if(op.startsWith("aget")&&in instanceof ThreeRegisterInstruction three)output=expr("array_element",null,"array_element",List.of(s.getOrDefault(three.getRegisterB(),UNKNOWN)));
+            else if(op.startsWith("aget")&&in instanceof ThreeRegisterInstruction three)output=expr("array_element",null,"array_element",List.of(s.getOrDefault(three.getRegisterB(),UNKNOWN),s.getOrDefault(three.getRegisterC(),UNKNOWN)));
             else if(op.startsWith("aput")&&in instanceof ThreeRegisterInstruction three)writes.add(new Write("$element:"+s.getOrDefault(three.getRegisterC(),UNKNOWN).literal(),s.getOrDefault(three.getRegisterB(),UNKNOWN),s.getOrDefault(a,UNKNOWN)));
             else if(op.equals("instance-of")&&in instanceof TwoRegisterInstruction two&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t){
                 V value=resolver.apply(s.getOrDefault(two.getRegisterB(),UNKNOWN));

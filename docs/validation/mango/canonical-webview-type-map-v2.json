@@ -1,0 +1,233 @@
+{
+  "schema_version": 2,
+  "dataset": "mango-source-authored-webview-type-map-v2",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "validator": "GPT-5.6 Sol independent source+DEX validation",
+  "semantics": "Constraint types are concrete runtime WebView classes proven by source construction, XML field type, or an already audited factory chain. Client, Fragment, Binding, and container labels are translated to the WebView they own. This does not prove object identity.",
+  "rules": [
+    {
+      "label": "com.hunantv.imgo.h5.ImgoWebView",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "concrete WebView class"
+    },
+    {
+      "label": "com.hunantv.imgo.h5.browser.RootWebChromeClient",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "client installed by ImgoWebView/WebViewFragment audited chain"
+    },
+    {
+      "label": "com.hunantv.imgo.h5.browser.RootWebViewClient",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "client installed by ImgoWebView/WebViewFragment audited chain"
+    },
+    {
+      "label": "com.hunantv.imgo.h5.jsbridge.BridgeWebView",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "runtime receiver is concrete ImgoWebView subclass"
+    },
+    {
+      "label": "com.mgtv.ui.browser.WebViewFragment",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "fragment field K and initWebView source"
+    },
+    {
+      "label": "com.mgtv.ui.login.widget.CaptureWebViewFragment",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "audited Capture fragment field chain"
+    },
+    {
+      "label": "com.hunantv.webui.WebUIFragment",
+      "types": [
+        "com.hunantv.imgo.h5.ImgoWebView"
+      ],
+      "basis": "INTENT_WEB_USE_NESTED false/default source path"
+    },
+    {
+      "label": "com.hunantv.imgo.h5.browser.MoWebView",
+      "types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "basis": "concrete SDK WebView class"
+    },
+    {
+      "label": "Alipay H5PayActivity web container",
+      "types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "basis": "audited Alipay widget factory chain"
+    },
+    {
+      "label": "OPOS BaseWebActivity web component",
+      "types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "basis": "audited OPOS BaseWebActivity component chain"
+    },
+    {
+      "label": "com.opos.cmn.module.ui.WebViewActivity",
+      "types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "basis": "module UI factory c produces its audited MoWebView receiver"
+    },
+    {
+      "label": "com.opos.cmn.module.ui.a",
+      "types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "basis": "obfuscated module UI container label; audited component holds MoWebView"
+    },
+    {
+      "label": "android.webkit.WebView",
+      "types": [
+        "android.webkit.WebView"
+      ],
+      "basis": "source new/XML platform WebView"
+    },
+    {
+      "label": "com.bytedance.sdk.component.widget.SSWebView",
+      "types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "basis": "SSWebView.java:34 FrameLayout wrapper; field vw:WebView at :91; constructor new MoWebView at :128; API methods delegate to vw/getWebView"
+    },
+    {
+      "label": "com.hunantv.imgo.xweb.web.XWebView",
+      "types": [
+        "com.hunantv.imgo.xweb.web.XWebView"
+      ],
+      "basis": "XWeb concrete view"
+    },
+    {
+      "label": "com.hunantv.imgo.xweb.XWebViewFragment",
+      "types": [
+        "com.hunantv.imgo.xweb.web.XWebView"
+      ],
+      "basis": "fragment owns concrete XWebView"
+    },
+    {
+      "label": "com.mgsz.h5.ImgoWebView",
+      "types": [
+        "com.mgsz.h5.ImgoWebView"
+      ],
+      "basis": "concrete WebView class"
+    },
+    {
+      "label": "com.mgsz.h5.WebViewFragment",
+      "types": [
+        "com.mgsz.h5.ImgoWebView"
+      ],
+      "basis": "fragment XML/field chain to concrete ImgoWebView"
+    },
+    {
+      "label": "com.mgadplus.brower.ImgoAdWebView",
+      "types": [
+        "com.mgadplus.brower.ImgoAdWebView"
+      ],
+      "basis": "concrete WebView class"
+    },
+    {
+      "label": "com.imgo.webbase.hybird.BaseWebView",
+      "types": [
+        "com.imgo.webbase.hybird.BaseWebView"
+      ],
+      "basis": "Land activity concrete WebView class"
+    },
+    {
+      "label": "com.mgtv.ui.live.mglive.h5.jsbridge.BridgeWebView",
+      "types": [
+        "com.mgtv.ui.live.mglive.h5.jsbridge.BridgeWebView"
+      ],
+      "basis": "mglive concrete BridgeWebView extends MoWebView"
+    },
+    {
+      "label": "com.mgtb.money.web.webview.ProgressWebView",
+      "types": [
+        "com.mgtb.money.web.webview.ProgressWebView"
+      ],
+      "basis": "wallet XML/construction concrete WebView"
+    },
+    {
+      "label": "com.huawei.petalpaysdk.widget.PaySafeWebView",
+      "types": [
+        "com.huawei.petalpaysdk.widget.PaySafeWebView"
+      ],
+      "basis": "Huawei concrete WebView"
+    },
+    {
+      "label": "com.ubix.ssp.ad.e.c0.c",
+      "types": [
+        "com.ubix.ssp.ad.e.c0.c"
+      ],
+      "basis": "source class directly extends android.webkit.WebView"
+    },
+    {
+      "label": "com.ubix.ssp.open.comm.widget.c",
+      "types": [
+        "com.ubix.ssp.ad.e.c0.c"
+      ],
+      "basis": "audited UBiX wrapper/factory owns concrete ad.e.c0.c WebView"
+    },
+    {
+      "label": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "types": [
+        "com.platform.oms.ui.widget.TimeoutCheckWebView"
+      ],
+      "basis": "FragmentWebLoadingBase.java field mWebView and new TimeoutCheckWebView at line 174"
+    },
+    {
+      "label": "com.hunantv.nft.databinding.NftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "types": [
+        "android.webkit.WebView"
+      ],
+      "basis": "ViewBinding findChildViewById cast and constructor field"
+    },
+    {
+      "label": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "types": [
+        "android.webkit.WebView"
+      ],
+      "basis": "shaded ViewBinding findChildViewById cast and constructor field"
+    },
+    {
+      "label": "com.mgtv.diana.sdk.page.view.PageWebView",
+      "types": [
+        "com.mgtv.diana.sdk.page.view.PageWebView"
+      ],
+      "basis": "Diana GamePage/Page factory and WebViewContainer init"
+    },
+    {
+      "label": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+      "types": [
+        "com.mgtv.diana.sdk.service.view.ServiceWebView"
+      ],
+      "basis": "Diana AppService.createJsEngine new ServiceWebView"
+    }
+  ],
+  "unresolved": [],
+  "supersedes": "canonical-webview-type-map-v1.json",
+  "corrections": [
+    {
+      "label": "com.bytedance.sdk.component.widget.SSWebView",
+      "v1_types": [
+        "com.bytedance.sdk.component.widget.SSWebView"
+      ],
+      "v2_types": [
+        "com.hunantv.imgo.h5.browser.MoWebView"
+      ],
+      "reason": "SSWebView extends SkinnableFrameLayout; constructor allocates new MoWebView into field vw and delegates settings/clients/bridges to that field"
+    }
+  ]
+}

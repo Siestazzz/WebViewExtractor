@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "review": "CapabilityIndex.discoverAroundClosures and CapabilityEngine AspectJ profile",
+  "runtime_contract": "docs/validation/mango/aspectj-runtime-contract.json",
+  "scope": "implementation contract audit; frozen report validation deferred",
+  "confirmed": [
+    "link return is modeled from the final captured-state slot",
+    "closure attachment is keyed by concrete join-point identity when resolved",
+    "only an observed linked no-argument proceed enqueues run",
+    "linked without proceed and unlinked closures do not execute",
+    "run receives closure receiver plus captured state",
+    "indexed filled arrays and their lengths are retained",
+    "join-point factory identity includes all evaluated factory arguments",
+    "proceed-with-arguments emits a diagnostic instead of claiming coverage"
+  ],
+  "findings": [
+    {
+      "id": "closure-allocation-capture-conflation",
+      "severity": "high",
+      "status": "limitation-with-false-positive-risk",
+      "evidence": "CapabilityEngine.eval(new) uses allocation site plus allocationContext(job); allocationContext derives from job.args[0] and closure allocations lack the joinpoint_args full-argument UUID",
+      "effect": "same closure site and receiver across different captured values can share closure/state-array identity and cross-pair values"
+    },
+    {
+      "id": "joinpoint-reattach-union",
+      "severity": "medium",
+      "status": "known-order-unresolved",
+      "evidence": "linkClosure stores union(previous,marker), while verified p61.h.g assigns closure field r",
+      "diagnostic": "aspectj_closure_replacement_order_unresolved",
+      "effect": "proceed can execute old and new closures instead of the runtime's last attached closure"
+    },
+    {
+      "id": "allocation-context-truncation",
+      "severity": "medium",
+      "status": "bounded-object-sensitivity",
+      "evidence": "allocationContext retains at most two pipe-delimited identity components",
+      "effect": "deep distinct carrier paths may silently collapse"
+    },
+    {
+      "id": "proceed-arguments-unimplemented",
+      "severity": "high",
+      "status": "diagnosed-false-negative",
+      "evidence": "one-Object[]/Object join-point method is diagnosed and skipped; verified flag/index state rewrite is not executed",
+      "diagnostic": "aspectj_proceed_arguments_not_modeled",
+      "effect": "capabilities reachable only through proceed(Object[]) are missed; shape may also capture unrelated methods"
+    },
+    {
+      "id": "runtime-discovery-portability",
+      "severity": "low",
+      "status": "explicit-scope-limit",
+      "evidence": "requires org.aspectj.runtime.internal namespace and exact state/run/linkClosureAndJoinPoint names",
+      "effect": "shaded, renamed, or linkStack variants are not recognized"
+    },
+    {
+      "id": "unverified-final-slot-convention",
+      "severity": "medium",
+      "status": "generic-profile-assumption",
+      "evidence": "discoverAroundClosures checks shape but linkClosure always reads array length minus one without inspecting link bytecode",
+      "effect": "a structurally similar runtime using another slot is mis-modeled"
+    },
+    {
+      "id": "relevance-gated-link",
+      "severity": "medium",
+      "status": "false-negative-risk",
+      "evidence": "linkClosure requires closure type in bindingObjects; around closure is added only when exact run is relevant",
+      "effect": "a missed generated-wrapper reverse edge blocks an otherwise observed link/proceed path"
+    },
+    {
+      "id": "host-context-budget",
+      "severity": "high",
+      "status": "current-MG-blocker",
+      "evidence": "analysis stops after visited.size > 12000 and emits host_context_budget",
+      "effect": "MGVideoPlayActivity currently stops before F1; absence of Diana facts is unresolved, not negative"
+    }
+  ],
+  "mango_chain_required": [
+    "t.run([Object])",
+    "H1(NBFloatFragmentHelper,String,org.aspectj.lang.c)",
+    "same join-point alias cast from c to d",
+    "G1(NBFloatFragmentHelper,String,c,MainAppAspect,d)",
+    "F1(NBFloatFragmentHelper,String,c)"
+  ],
+  "code_modified": false,
+  "facts_modified": false
+}

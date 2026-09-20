@@ -1,0 +1,48 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "baseline": "v12i",
+  "candidate": "v12j",
+  "status": "partial",
+  "wall_seconds": 190.70784374,
+  "host_count": 44,
+  "ownership": {"valid": 43, "uncertain": 1, "uncertain_hosts": ["com.tencent.news.basebiz.ShellActivity"]},
+  "semantic_delta": {"added": 227, "removed": 0, "changed_hosts": 15},
+  "source_findings": [
+    {
+      "group": "capture_and_feedback",
+      "verdict": "not_reintroduced",
+      "evidence": "No added semantic tuple has a CaptureDetailPage or VideoErrorFeedbackDialog site. The proven TLVideoCompleteView listeners still pass selector 3/4, not 107/1021."
+    },
+    {
+      "group": "shell_ysp_expansion",
+      "verdict": "pending",
+      "evidence": "The new sites are YSP/DtX5 inherited operations and removals, but ShellActivity remains an uncertain host. A longer report path does not close its lifecycle execution and concrete player binding."
+    },
+    {
+      "group": "kk_shortvideo_weibo_read_ysp_or_pendant",
+      "verdict": "source_consistent_with_alias_noise",
+      "evidence": "The source-owned YspMediaPlayer$attachTo$1 or PendantWebView already existed for these hosts. New facts are inherited X5/DtX5 operations and constructor removals on that receiver. Rows typed only as DtX5WebView/BaseWebView are polymorphic aliases, not distinct new WebViews."
+    },
+    {
+      "group": "login_auth_dialog",
+      "verdict": "source_confirmed",
+      "evidence": "Each login flow reaches Tencent/QQAuth and AuthDialog with the Activity. AuthDialog.d creates/configures its com.tencent.open.d.d WebView, installs both clients, applies the settings, and loads it. LoginWithBackground restores the full same-object group; sibling additions are inherited operations on that object."
+    },
+    {
+      "group": "news_and_push_detail",
+      "verdict": "mixed_pending_receiver_identity",
+      "evidence": "WebViewForCell and page-manager operations are source-reachable, but nine additions retain top-level unknown receiver type and three YSP superclass operations lack a newly proven same-object binding. They cannot all be accepted from path length alone."
+    },
+    {
+      "group": "user_home_and_search",
+      "verdict": "mixed_aliases",
+      "evidence": "Their tab fragments can create the video container and YSP object. The additions include valid inherited operations on YspMediaPlayer$attachTo$1, plus duplicate DtX5WebView aliases and mutually exclusive android.webkit/com.tencent.smtt helper branches. Host ownership remains valid, while not every added row is a distinct valid capability."
+    }
+  ],
+  "longvideo": {
+    "emitted": false,
+    "activities": ["com.tencent.news.video.detail.longvideo.LongVideoDetailActivity", "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity"],
+    "verdict": "recall_failure_unchanged"
+  },
+  "files": ["v12j-delta.json", "v12j-ownership.jsonl"]
+}

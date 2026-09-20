@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "app_version": "7.9.50",
+  "validator": "GPT-5.6 Sol",
+  "basis": "source_and_layout_only",
+  "canonical_labels": {
+    "custom_browser": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.BaseWebView"],
+      "evidence": ["resources/res/layout/custom_web_browser_layout.xml:19", "resources/res/layout/half_custom_web_browser_layout.xml:42", "CustomWebBrowserForItemActivity.java:166,2167-2174"]
+    },
+    "web_detail": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.NewsWebView"],
+      "evidence": ["resources/res/layout/web_detail_view_layout.xml:11", "WebDetailActivity.java:1288"]
+    },
+    "privacy_web": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.api.X5WrapperWebView"],
+      "evidence": ["PrivacyAbsWebActivity.java:190-195", "resources/res/layout/init_web_browser_layout.xml:38"]
+    },
+    "security_ticket": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.api.X5WrapperWebView"],
+      "evidence": ["SecurityTicketActivity.java:48,242"]
+    },
+    "support_web": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.BaseWebView"],
+      "evidence": ["resources/res/layout/activity_support.xml:29", "SupportActivity.java:71,807"]
+    },
+    "editor_web": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.richeditor.REWebView"],
+      "evidence": ["resources/res/layout/activity_rich_editor.xml:125", "resources/res/layout/activity_qa_editor.xml:202", "REWebView.java:15", "BaseEditorActivity.java:1174"]
+    },
+    "novel_web": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.tad.business.ui.landing.AdWebView"],
+      "evidence": ["NovelWebView.java:53-64", "NovelLoadingWebView.java:45-50,74", "resources/res/layout/ad_loading_web_view_novel.xml:15"]
+    },
+    "advert_web": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.tad.business.ui.landing.AdWebView"],
+      "evidence": ["AdLoadingWebView.java:45-61,75", "WebAdvertActivity.java:1007"]
+    },
+    "ad_gyros_easter_egg": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.ams.adcore.interactive.toolbox.EasterEggWebView"],
+      "evidence": ["EasterEggWebView.java:16", "InteractiveEastEggController.java:36"]
+    },
+    "ad_mosaic_xijing": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.tad.business.ui.mosaic.e$a"],
+      "evidence": ["mosaic/e.java:31,57,102", "DEX parent e$a -> com.tencent.news.tad.business.ui.landing.AdWebView"]
+    },
+    "adcore_landing_page": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.ams.adwebview.adapter.view.AdWebView"],
+      "evidence": ["AdSysWebViewWrapperImpl.java:16-24,75-78", "AdWebView.java:12"]
+    },
+    "ysp_media_player": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.ysp.YspMediaPlayer$attachTo$1"],
+      "evidence": ["YspMediaPlayer.java:1202-1245", "DEX parent YspMediaPlayer$attachTo$1 -> com.tencent.news.webview.BaseWebView"]
+    },
+    "midas_pay_web": {
+      "status": "source_confirmed_multiple_runtime_backends",
+      "types": ["android.webkit.WebView", "com.tencent.smtt.sdk.WebView"],
+      "evidence": ["APWebJSBridgeActivity selects APSystemWebPage/APX5WebPage", "APWebView.java constructor field and InitWebView", "APX5WebView.java constructor field and InitWebView", "resources/res/layout/unipay_layout_activity_web.xml:18", "resources/res/layout/unipay_layout_activity_web_x5.xml:18"]
+    },
+    "Lcom/tencent/open/TDialog;->i:Lcom/tencent/open/d/b;": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.open.d.b"],
+      "evidence": ["TDialog.java field i and attached dialog initialization", "com/tencent/open/d/b.java:11"]
+    }
+  },
+  "development_labels": {
+    "capture_detail_page.webView": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.NewsWebView"],
+      "evidence": ["CaptureDetailPage.java:214-229,350-395"]
+    },
+    "video_error_feedback_dialog.webView": {
+      "status": "source_confirmed",
+      "types": ["com.tencent.news.webview.NewsWebView"],
+      "evidence": ["resources/res/layout/layout_dialog_video_feedback.xml:31", "VideoErrorFeedbackDialog.java:291-315"]
+    }
+  },
+  "unresolved": [],
+  "limitations": [
+    "Constraints identify the concrete WebView receiver class, not wrapper/container classes such as NovelWebView, AdLoadingWebView, APWebView, or APX5WebView.",
+    "midas_pay_web intentionally permits two concrete backend classes because the Activity selects system or X5 pages at runtime.",
+    "The mapping does not prove Activity ownership; it is applied only to facts whose ownership evidence was audited separately.",
+    "Subclass matching semantics are scorer-owned; every listed type is the exact source-created or XML-inflated runtime class known for this APK."
+  ]
+}

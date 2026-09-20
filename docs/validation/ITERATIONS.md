@@ -582,3 +582,131 @@ python3 scripts/benchmark.py --label v11c --jar test/runs/v11c.jar;
 canonical evaluate.py replays using news/v11b-ownership.jsonl, mango/v11b-ownership.jsonl,
 ctrip/v4e-ownership.jsonl. report_delta.py compares selected report fields without claiming source
 correctness. Known-failing fixture reproduction is in regressions/README.md.
+
+## v12 development — preserve actual object-field setter arguments
+
+Small instance methods storing their reference argument directly into a field of the same
+receiver now participate at actual reached call sites. Recognition uses the DEX store and
+parameter relation, not setter names or Activity names. It does not globally seed setters.
+A cheap IPUT_OBJECT prefilter precedes bounded summary inspection; the result is cached per
+method. This repairs the generic inherited lifecycle factory -> setter/getter -> override
+argument fixture retained in v11, now promoted to capabilitySelfTest. All existing tests and
+shadowJar pass. Frozen v12a three-App runs finished at 122.34 / 85.07 / 147.69 seconds
+(news / mango / ctrip). No actual long-video capability recovery is claimed yet.
+
+Independent Mango verification found a real MGVideo Diana regression hidden by the old oracle.
+Sol expanded the nonblind development set by 81 source/DEX facts (2,427 -> 2,508 raw rows),
+retaining the complete earlier snapshot. Replaying both versions on this same expanded set:
+v11c Bridge 1147/1163, Settings 608/608, callbacks 634/634; v12a Bridge 1137/1163,
+Settings 603/608, callbacks 598/634 (94.32%, below the callback gate). The v12a old-oracle
+evaluation is retained, explicitly superseded for MGVideo coverage by the mgvideo-v1 replay.
+Unknown names and the two unscorable Bridge rows remain visible.
+
+Development probes v12c through v12f are not full-App performance measurements. Receiver-specific
+base-helper dispatch reaches News player.g construction but still misses the downstream lifecycle
+collection and event chain. AspectJ captured-state execution is being repaired for Mango. The
+v12e probe reached the first closure but exhausted the host context budget before the inner
+closure/F1; this is an unresolved failure, not successful recovery. Sol confirmed the runtime
+contract independently; indexed arrays and linked-closure/no-proceed isolation fixtures pass.
+The iteration remains in development pending a final frozen three-App run and source audit.
+
+
+v12h full measurements (fresh serial JVMs, 8 CPUs / 16 GiB): News 119.27s / 8,017,612 KiB /
+44 hosts; Mango 227.20s / 9,555,620 KiB / 91 hosts; Ctrip 167.37s / 8,105,572 KiB / 55 hosts.
+All reports remain partial. News adds one source-confirmed inherited pendant host; Mango adds
+two source-confirmed conditional WebView hosts. Expanded ownership and removed-capability audits
+are stored per App. A disappearing fact is not automatically a true regression: source inspection
+must distinguish earlier over-approximation from actual loss. News's three suspected missing
+families have a separately retained 288-row development record. A subsequent reverse host audit
+found that actual listeners pass selector 3/4, not Capture 107 or Feedback 1021; Shell additionally
+lacks a proven lifecycle prefix. All 288 rows are therefore pending_host_binding with
+positive_acceptance=false, not positive oracle cases and not merged into canonical. Shared
+implementation existence and an earlier report path did not prove host association. No row was
+deleted. These are not sealed holdouts.
+
+Sol found a further scorer defect: the added MGVideo Diana facts could match unrelated WebViews
+within the same Activity. The apparent 29 settings + 1 callback matches in v12a/v12h were not
+Diana recovery. Scorer v5 enforces explicit source-authored `webview_constraint.types`, records
+constraint coverage and keeps unconstrained matches explicitly Activity-only. Exact allocation
+identity still requires independent review. Eleven black-box scorer tests pass, including the
+same-Activity/wrong-WebView negative for all three capability families, union alternatives,
+malformed constraints, and unresolved targets in both aggregate and granular scores. Historical
+v4 files are retained as superseded measurements, not acceptance evidence. Source agents are
+preparing independent constraint mappings; no mappings may be inferred from tool outputs.
+
+v12i freezes round-robin method work scheduling, retaining every pending context but preventing
+one registration helper's thousands of argument combinations from starving new method chains.
+It also recognizes obfuscated proceed(args) only through the actual runtime run-dispatch relation,
+or the standard proceed member, and diagnoses unsupported state rewriting. Array overwrite/order
+ambiguity is explicit. v12j additionally removes call/component evidence-path length as a
+reachability cutoff. Real work remains bounded by contexts, components, queue, symbolic-summary
+budgets and the external deadline; evidence presentation is capped at 64 steps with a visible
+omission marker and diagnostic. A 72-helper chain plus actual Fragment initialization fixture
+passes. Both frozen candidates are measured serially; their final outcomes and audits remain
+pending, and v12 has not passed acceptance.
+
+
+The v12i full runs finished at 123.01 / 236.83 / 180.82 seconds with 44 / 91 / 55 hosts.
+Independent MGVideo review confirms all 81 constrained Diana facts now match on their intended
+PageWebView/ServiceWebView types, with 124 of 130 concrete Diana report rows carrying the
+H1/G1/F1 chain. This repairs the actual closure regression, unlike v12h's cross-WebView matches.
+The host still has budget/alias limitations. Ctrip's three core categories are unchanged; two
+Hotel Map loadUrl operations remain a separate replay regression. News remains below quality gates.
+
+All three public canonical sets now carry source-authored WebView type constraints (1,991 /
+2,508 / 4,330 raw rows). An initial Mango mapping incorrectly used the SSWebView wrapper type;
+source reinspection proved its FrameLayout wrapper allocates MoWebView and delegates the actual
+APIs. The 159 affected constraints were corrected with before/after snapshots and unchanged
+capability facts; bound-v2 replay files retain this failed mapping experiment. News's corresponding
+X5Wrapper suspicion was disproved: it really inherits DtX5 -> smtt.WebView, so its strict type
+constraint was retained. Remaining type imprecision must be repaired in the extractor, not hidden
+by widening the oracle. Source-selected exact instance associations still require review beyond
+these type checks. Scorer tests now total 12, including retained unconfirmed-source cases which
+cannot inflate positive acceptance denominators.
+
+v12j News finishes at 191.36s (44 hosts), Mango at 355.49s (92 hosts). Mango misses the preferred
+300s performance target; being below the 600s hard limit does not pass that target or quality.
+News's source audit finds no reintroduction of the disallowed Capture/Feedback selector chains.
+Additional rows include real inherited operations, aliases, and unknown receiver alternatives;
+raw row growth is not reported as full capability recovery. The final audits are now complete; final results are below.
+
+
+### v12 final candidate v12j (acceptance NOT passed)
+
+The final source-only selector correction changes 16 Mango constraint rows: CCB's declared
+platform field actually contains MoWebView, and seven popup callbacks belong to separately
+created MoWebViews. Capability expectations are unchanged; all failed mappings remain versioned.
+Final scoring v5 uses `v12j-*-bound-v4-evaluation.json`; `bound-v4` identifies this replay round,
+not scorer version. The corresponding v11c replay uses the identical final oracle.
+
+| App | Seconds | Peak RSS KiB | Bridge | Settings | Callbacks | Emitted hosts |
+|---|---:|---:|---:|---:|---:|---:|
+| News | 191.36 | 8064384 | 1288/1385 (93.00%) | 271/366 (74.04%) | 182/240 (75.83%) | 44 |
+| Mango | 355.49 | 9182524 | 1147/1163 (98.62%) | 608/608 | 634/634 | 92 |
+| Ctrip | 202.02 | 7964432 | 3666/3666 | 233/233 | 299/299 | 55 |
+
+These are candidate-inclusive development-set scores, not blind or whole-APK completeness.
+Exact instance identity and false capability association remain unproven; all reports are partial.
+News fails all three 95% gates; Mango fails the 300-second target. Source ownership audit covers
+all output hosts: News 43 valid/1 uncertain, Mango 86 valid/1 conditional/5 uncertain, Ctrip 54 valid/1 wrong.
+Conservative wrong+uncertain bounds are 2.27%, 6.52%, and 1.82% (conditional hosts count conservatively as unresolved). This does not substitute for
+capability-level precision. Ctrip additionally retains 108 unassigned oracle facts.
+No final sealed samples or final three-repeat performance claims are made.
+
+Sol verified Mango's actual Diana closure recovery (81 facts), the additional VideoSquare host,
+and Ctrip's two QQ delayed loadUrl calls. The Hotel Map operation loss, Mango XWeb loss, News XML
+receiver identity, QQ/AdCore/long-video omissions, aliases and budgets remain in OPEN_GAPS.json.
+The 288 disputed News development facts remain pending host binding and excluded from positives.
+
+Validation: capabilitySelfTest/shadowJar pass; 12 evaluator black-box tests pass. The external
+one-second deadline test produced a valid atomic timeout report after 1.273 seconds, with
+57 observed snapshots. This checks report survival, not analysis quality. All three real runs use
+8 logical CPUs, 16 GiB heap and fresh serial JVMs; these are development runs, not final isolated repeats.
+
+Reproduce: `./gradlew capabilitySelfTest shadowJar --offline --console=plain`,
+`python3 scripts/test_evaluate.py`, then freeze the built jar and run
+`python3 scripts/benchmark.py --label v12j --jar test/runs/v12j.jar` in a fresh output location.
+Replay each report with `scripts/evaluate.py --report <capabilities.json> --oracle
+ docs/validation/<app>/canonical-facts.jsonl --ownership docs/validation/<app>/v12j-ownership.jsonl
+ --out <evaluation.json>`. Benchmark/environment JSON, source audits and individual missing facts
+are retained alongside this log.

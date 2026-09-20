@@ -1,0 +1,83 @@
+{
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "validator": "GPT-5.6 Sol independent source+DEX validation",
+  "class": "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;",
+  "parent": "Ljava/lang/Object;",
+  "fields": [
+    {
+      "dex_name": "a",
+      "descriptor": "Landroid/app/Activity;",
+      "source_name": "f88158a",
+      "role": "Diana start context"
+    },
+    {
+      "dex_name": "b",
+      "descriptor": "Landroidx/fragment/app/FragmentManager;",
+      "source_name": "f88159b",
+      "role": "fragment transaction owner"
+    },
+    {
+      "dex_name": "h",
+      "descriptor": "Landroidx/fragment/app/Fragment;",
+      "source_name": "f88165h",
+      "role": "primary floating fragment written by n1 and read by O0"
+    },
+    {
+      "dex_name": "i",
+      "descriptor": "Landroidx/fragment/app/Fragment;",
+      "source_name": "f88166i",
+      "role": "secondary floating fragment"
+    },
+    {
+      "dex_name": "P",
+      "descriptor": "Lorg/aspectj/lang/c$b;",
+      "role": "showMiniApp join-point static part"
+    }
+  ],
+  "methods": [
+    "Lcom/mgtv/ui/videoplay/MGVideoPlayActivity;->y9()Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;",
+    "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->showMiniApp(Ljava/lang/String;)V",
+    "Lcom/mgtv/ui/videoplay/helper/t;-><init>([Ljava/lang/Object;)V",
+    "Lcom/mgtv/ui/videoplay/helper/t;->run([Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->H1(Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;Ljava/lang/String;Lorg/aspectj/lang/c;)V",
+    "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->G1(Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;Ljava/lang/String;Lorg/aspectj/lang/c;Lcom/mgtv/aop/stable/MainAppAspect;Lorg/aspectj/lang/d;)Ljava/lang/Object;",
+    "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->F1(Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;Ljava/lang/String;Lorg/aspectj/lang/c;)V",
+    "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->n1(Landroidx/fragment/app/Fragment;)V",
+    "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->O0()V"
+  ],
+  "aspectj_closure_path": [
+    "showMiniApp(String) creates new t(Object[]{this, string, joinPoint})",
+    "LibTryCatchRuntimeAspect.excuteWithTryCatch(t.linkClosureAndJoinPoint(69648))",
+    "t.run(Object[]) loads this.state[0], state[1], state[2]",
+    "raw DEX t.run calls NBFloatFragmentHelper.H1(helper,string,joinPoint)",
+    "H1 obtains MainAppAspect.aspectOf(), casts the same joinPoint to org.aspectj.lang.d, and calls G1(helper,string,joinPoint,aspect,joinPoint)",
+    "H1 creates no second closure; G1 calls F1(helper,string,joinPoint) on all normal channel branches",
+    "F1 creates MiniAppFragment and calls helper.n1(fragment)",
+    "n1 writes helper.h; O0 later reads helper.h and dispatches MiniAppFragment.onBackPressed()"
+  ],
+  "closure_runtime": {
+    "parent": "Lorg/aspectj/runtime/internal/a;",
+    "captured_field": "Lorg/aspectj/runtime/internal/a;->state:[Ljava/lang/Object;",
+    "constructor": "Lorg/aspectj/runtime/internal/a;-><init>([Ljava/lang/Object;)V",
+    "link": "Lorg/aspectj/runtime/internal/a;->linkClosureAndJoinPoint(I)Lorg/aspectj/lang/d;",
+    "closure_entry": "Lorg/aspectj/runtime/internal/a;->run([Ljava/lang/Object;)Ljava/lang/Object;",
+    "join_point_attach": "Lorg/aspectj/lang/d;->g(Lorg/aspectj/runtime/internal/a;)V",
+    "proceed": "Lorg/aspectj/lang/d;->proceed()Ljava/lang/Object;",
+    "proceed_with_args": "Lorg/aspectj/lang/d;->a([Ljava/lang/Object;)Ljava/lang/Object;",
+    "advice_entry": "Lcom/mgtv/crashhandler/aop/LibTryCatchRuntimeAspect;->excuteWithTryCatch(Lorg/aspectj/lang/d;)Ljava/lang/Object;",
+    "state_mapping": [
+      "state[0] = NBFloatFragmentHelper instance",
+      "state[1] = String scheme",
+      "state[2] = org.aspectj.lang.c join point"
+    ],
+    "required_analysis_edge": "Propagate t and captured state through link/excute/proceed into t.run; bind state[0..2] at H1, preserve join-point identity through c-to-d cast, and traverse H1 -> G1 -> F1."
+  },
+  "source_evidence": [
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java:623",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java:706",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java:1810",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java:2049",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java:2139",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/t.java:13"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "app_version": "7.9.50",
+  "validator": "GPT-5.6 Sol",
+  "blind_status": "non_blind_development_audit",
+  "oracle_append": "v12h-disappeared-development-facts.jsonl",
+  "groups": [
+    {
+      "name": "capture_page_settings_clients",
+      "affected_activities": [
+        "com.tencent.news.basebiz.ShellActivity",
+        "com.tencent.news.ui.read24hours.Read24HoursActivity",
+        "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "com.tencent.news.ui.UserHomeActivity",
+        "com.tencent.news.ui.UserSearchActivity",
+        "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity"
+      ],
+      "representative": "com.tencent.news.basebiz.ShellActivity",
+      "representative_verdict": "component_source_confirmed_host_binding_pending",
+      "other_hosts_verdict": "pending_no_activity_acceptance",
+      "implementation_sites": [
+        "Lcom/tencent/news/ui/capture/webview/CaptureDetailPage;->initWebView(Landroidx/fragment/app/FragmentActivity;Lcom/tencent/news/model/pojo/Item;)V@45",
+        "Lcom/tencent/news/ui/capture/webview/CaptureDetailPage;->initWebView(Landroidx/fragment/app/FragmentActivity;Lcom/tencent/news/model/pojo/Item;)V@53",
+        "Lcom/tencent/news/ui/capture/webview/CaptureDetailPage;->initWebView(Landroidx/fragment/app/FragmentActivity;Lcom/tencent/news/model/pojo/Item;)V@82",
+        "Lcom/tencent/news/webview/NewsWebView;->initView(Landroid/content/Context;)V@37,@45,@62,@69,@76,@85,@92,@130,@137,@144",
+        "Lcom/tencent/news/webview/WebFontScaleKt;->adjustFontSize(Lcom/tencent/news/webview/NewsWebView;)V@35",
+        "Lcom/tencent/news/webview/WebView4File;->checkAllowFileAccess(Lcom/tencent/smtt/sdk/WebView;)V@34,@37"
+      ],
+      "reason": "Component implementation/site is source-confirmed, but the representative Activity path does not close to the required k2 selector. See v12h-development-host-binding-audit.json."
+    },
+    {
+      "name": "capture_page_native_bridge",
+      "affected_activities": [
+        "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity"
+      ],
+      "representative": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "representative_verdict": "component_source_confirmed_host_binding_pending",
+      "other_hosts_verdict": "pending_no_activity_acceptance",
+      "registration_name": "TencentNews",
+      "implementation": "com.tencent.news.ui.visitmode.webview.j",
+      "implementation_site": "Lcom/tencent/news/ui/capture/webview/CaptureDetailPage;->loadUrl(Lcom/tencent/news/newsdetail/render/u$b;Lcom/tencent/news/module/webdetails/webpage/viewmanager/e;Lcom/tencent/news/newsdetail/view/f;)V@127",
+      "factory": "Lcom/tencent/news/ui/visitmode/NewsDetailFloatViewJavaScriptServiceImpl;->ʼ(Ljava/lang/Object;Lcom/tencent/news/newsdetail/render/content/nativ/api/b;Lcom/tencent/news/newsdetail/view/f;)Lcom/tencent/news/detail/interfaces/e;",
+      "reason": "Component implementation/site is source-confirmed, but the representative Activity path does not close to the required k2 selector. See v12h-development-host-binding-audit.json."
+    },
+    {
+      "name": "feedback_dialog_client_bridge",
+      "affected_activities": [
+        "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity"
+      ],
+      "representative": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "representative_verdict": "component_source_confirmed_host_binding_pending",
+      "other_hosts_verdict": "pending_no_activity_acceptance",
+      "implementation_sites": [
+        "Lcom/tencent/news/video/view/VideoErrorFeedbackDialog;->initViews()V@83",
+        "Lcom/tencent/news/webview/api/WebViewBridge;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V@26"
+      ],
+      "client": "com.tencent.news.video.view.VideoErrorFeedbackDialog$c",
+      "native_transport": "com.tencent.news.webview.BridgeInterface",
+      "registration_name": "TencentNewsJsBridge",
+      "reason": "Component implementation/site is source-confirmed, but the representative Activity path does not close to the required k2 selector. See v12h-development-host-binding-audit.json."
+    }
+  ],
+  "unresolved": [
+    "All 288 append facts are pending Activity host binding and positive_acceptance=false; the confirmed source evidence begins only once the component is invoked.",
+    "Per-host source replay is still required before labeling every removed tuple on the six non-representative hosts a confirmed regression.",
+    "The v12a reflective message_bridge endpoint list for H5DialogScriptInterface mixed callable selectors with helper/public methods; only the annotated native BridgeInterface transport is included in the append oracle.",
+    "Removed webview_operation and bridge_removal tuples were not promoted by this bounded audit."
+  ],
+  "dex_check": {
+    "normalized_signatures": 271,
+    "missing_from_test_runs_symbols_news_jsonl": 0,
+    "capture_bridge_methods": 247,
+    "capture_bridge_methods_with_android_webkit_JavascriptInterface": 247
+  }
+}

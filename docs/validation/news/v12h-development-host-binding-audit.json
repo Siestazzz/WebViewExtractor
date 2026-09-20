@@ -1,0 +1,51 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "app_version": "7.9.50",
+  "validator": "GPT-5.6 Sol",
+  "result": "all_288_facts_retained_but_pending_host_binding",
+  "activities": [
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "verdict": "pending",
+      "source_confirmed_prefix": [
+        "KkAlbumDarkModeActivity inherits KkVideoDetailDarkModeActivity.onCreate(Bundle)",
+        "Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->onCreate(Landroid/os/Bundle;)V constructs VideoPlayerViewContainer(this), attaches it with setContentView, and calls initView(this,extras,false)",
+        "VideoPlayerViewContainer.initView creates/attaches KkVideoDetailDarkModeFragment to this FragmentActivity",
+        "KkVideoDetailDarkModeFragment.onCreate calls controller.o.ʻ(fragment,args), whose normal branch constructs mixed.p(fragment,args)",
+        "controller.g constructor assigns f76053 = fragment.getContext(), which is the hosting KkAlbumDarkModeActivity",
+        "mixed.p.ˈˏ constructs relatedvideo.i(f76053,parent,callback); i.ᵎᵎ constructs TLVideoCompleteView(f77387) and attaches its View to the player container",
+        "TLVideoCompleteView.init constructs sharedialog.n(mContext); n extends k2 and k2 constructor stores the same Context in WeakReference f98195",
+        "the two visible share click listeners call TLVideoCompleteView.doShare(3/4), which invokes k2.ᵎᵎ(int)"
+      ],
+      "first_unproven_edge": {
+        "from": "Lcom/tencent/news/kkvideo/view/TLVideoCompleteView;->doShare(I)V -> Lcom/tencent/news/share/k2;->ᵎᵎ(I)V with literal 3 or 4",
+        "to": "Lcom/tencent/news/share/k2;->ˆʾ(Lcom/tencent/news/model/pojo/Item;IZ)V switch case 107 or case 1021",
+        "reason": "The source-confirmed UI listeners supply 3/4. No source edge was found that transforms those calls into selector 107 (CaptureDetailPage) or 1021 (VideoErrorFeedbackDialog). The prior report path crossed a large shared dispatch method and does not establish branch feasibility."
+      },
+      "effect": "Neither the capture-page group nor feedback-dialog group is a positive Activity capability on this evidence alone."
+    },
+    {
+      "activity": "com.tencent.news.basebiz.ShellActivity",
+      "verdict": "pending",
+      "source_confirmed_prefix": [
+        "ShellActivity.getVideoPlayerViewContainer returns its root fragment container or calls VideoPlayerViewContainerCreatorImpl.create(this)",
+        "VideoPlayerViewContainerCreatorImpl.create(Context) normal branch constructs VideoPlayerViewContainer with the ShellActivity Context",
+        "VideoPlayerViewContainer.initView can create/attach KkVideoDetailDarkModeFragment to the supplied FragmentActivity",
+        "the fragment/controller/relatedvideo/TLVideoCompleteView chain is the same as above and preserves fragment.getContext() into sharedialog.n/k2.f98195",
+        "the concrete TLVideoCompleteView share listeners still call k2 with literal 3/4"
+      ],
+      "first_unproven_edge": {
+        "from": "ShellActivity.getVideoPlayerViewContainer() / created VideoPlayerViewContainer",
+        "to": "an executed Shell lifecycle path that initializes the mixed-detail fragment and reaches selector 107 or 1021",
+        "reason": "The getter and factory establish possible ownership, but this audit did not find a Shell source call that both executes the relevant mixed-detail completion path and selects either special k2 branch. Shell ownership was already uncertain, and the old report path is insufficient to close it."
+      },
+      "effect": "All Shell representative development facts remain pending and cannot be used for positive acceptance."
+    }
+  ],
+  "component_internal_status": {
+    "capture_detail_page": "source_confirmed_once_invoked",
+    "capture_native_bridge": "source_confirmed_once_invoked",
+    "video_error_feedback_dialog": "source_confirmed_once_invoked"
+  },
+  "facts_file": "v12h-disappeared-development-facts.jsonl"
+}

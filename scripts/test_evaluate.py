@@ -21,7 +21,7 @@ class EvaluationTest(unittest.TestCase):
  def test_unknown_target_is_not_complete_surface(self):
   g=dict(kind='bridge',name='api',registration_name='api',binding_status='registered-target-unknown')
   for facts in [[],[dict(kind='bridge',registration_name='api',members=[])]]:
-   r=self.replay([g],facts);self.assertEqual(r['metrics']['bridge']['matched'],0);self.assertEqual(r['metrics']['bridge']['unscorable'],1)
+   r=self.replay([g],facts);self.assertEqual(r['metrics']['bridge']['matched'],0);self.assertEqual(r['metrics']['bridge']['unscorable'],1);self.assertEqual(r['capability_granularity']['bridge_registration']['matched'],0)
  def test_proven_empty_surface_rejects_fabricated_member(self):
   g=dict(kind='bridge',name='api',registration_name='api',binding_status='registered-no-compatible-endpoint')
   f=dict(kind='message_bridge',registration_name='api',members=[dict(signature='LHandler;->dispatch()V')])
@@ -52,5 +52,30 @@ class EvaluationTest(unittest.TestCase):
   g=dict(kind='setting',name='setJavaScriptEnabled',normalized_api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',value='true',value_kind='literal')
   f=dict(kind='setting',api='Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V',values=['true'])
   self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],0)
+
+ def test_same_activity_wrong_webview_is_not_a_match(self):
+  pairs=[
+   (dict(kind='setting',name='setJavaScriptEnabled',normalized_api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',value='true',value_kind='literal'),dict(kind='setting',api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',values=['true']),'setting'),
+   (dict(kind='bridge',name='native',registration_name='native'),dict(kind='bridge',registration_name='native',members=[]),'bridge'),
+   (dict(kind='callback',name='onPageFinished',normalized_signature='LClient;->onPageFinished()V'),dict(kind='callback',members=[dict(signature='LClient;->onPageFinished()V')]),'callback')]
+  for g,f,category in pairs:
+   g['webview_constraint']=dict(types=['PageWebView']);f['webview']=dict(id='other',type='ServiceWebView')
+   r=self.replay([g],[f]);self.assertEqual(r['metrics'][category]['matched'],0);self.assertEqual(r['webview_constraint_coverage']['activity_only'],0)
+   f['webview']=dict(id='page',type='PageWebView')
+   self.assertEqual(self.replay([g],[f])['metrics'][category]['matched'],1)
+   f['webview']=dict(id='union',type='unknown');f['webview_alternatives']=[dict(id='page',type='PageWebView'),dict(id='other',type='ServiceWebView')]
+   r=self.replay([g],[f]);self.assertEqual(r['metrics'][category]['matched'],1);self.assertFalse(r['webview_constraint_coverage']['exact_instance_identity_verified'])
+ def test_unconstrained_gold_is_explicitly_activity_only(self):
+  g=dict(kind='bridge',name='native');f=dict(kind='bridge',registration_name='native',members=[])
+  r=self.replay([g],[f]);self.assertEqual(r['webview_constraint_coverage']['activity_only'],1);self.assertEqual(r['acceptance'],'unproven')
+ def test_malformed_webview_constraint_does_not_pass(self):
+  for constraint in [{},dict(types=[]),dict(types='PageWebView'),dict(unsupported='x')]:
+   g=dict(kind='bridge',name='native',webview_constraint=constraint);f=dict(kind='bridge',registration_name='native',members=[])
+   r=self.replay([g],[f]);self.assertEqual(r['metrics']['bridge']['matched'],0);self.assertEqual(r['metrics']['bridge']['unscorable'],1)
+
+ def test_unconfirmed_source_host_is_retained_without_inflating_positives(self):
+  g=dict(kind='bridge',name='native',positive_acceptance=False,binding_status='pending_host_binding')
+  f=dict(kind='bridge',registration_name='native',members=[])
+  r=self.replay([g],[f]);self.assertNotIn('bridge',r['metrics']);self.assertEqual(len(r['unconfirmed_source_facts']),1);self.assertEqual(r['positive_host_recall']['expected'],0)
 
 if __name__=='__main__':unittest.main()

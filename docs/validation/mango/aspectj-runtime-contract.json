@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "dataset": "mango-aspectj-runtime-nonblind-development",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "validator": "GPT-5.6 Sol independent source+DEX validation",
+  "evidence_status": "confirmed-source-and-dex",
+  "closure_class": {
+    "type": "Lorg/aspectj/runtime/internal/a;",
+    "fields": {
+      "state": "[Ljava/lang/Object;",
+      "preInitializationState": "[Ljava/lang/Object;",
+      "bitflags": "I"
+    },
+    "constructors": [
+      "Lorg/aspectj/runtime/internal/a;-><init>()V",
+      "Lorg/aspectj/runtime/internal/a;-><init>([Ljava/lang/Object;)V"
+    ],
+    "constructor_semantics": "The Object[] constructor assigns the input array reference directly to this.state. It does not clone the array.",
+    "run": "Lorg/aspectj/runtime/internal/a;->run([Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  "link_contract": {
+    "methods": [
+      "Lorg/aspectj/runtime/internal/a;->linkClosureAndJoinPoint()Lorg/aspectj/lang/d;",
+      "Lorg/aspectj/runtime/internal/a;->linkClosureAndJoinPoint(I)Lorg/aspectj/lang/d;"
+    ],
+    "semantics": [
+      "Read this.state[this.state.length - 1] and cast that existing object to org.aspectj.lang.d.",
+      "Invoke joinPoint.g(this), attaching the exact closure instance to the existing join-point object.",
+      "The int overload then writes the supplied value to this.bitflags.",
+      "Return the same join-point object that occupied the final state slot; no new join point is allocated by linkClosureAndJoinPoint."
+    ],
+    "attach_interface": "Lorg/aspectj/lang/d;->g(Lorg/aspectj/runtime/internal/a;)V",
+    "concrete_join_point": "Lp61/h;",
+    "concrete_attach": "Lp61/h;->g(Lorg/aspectj/runtime/internal/a;)V",
+    "attach_storage": "Lp61/h;->r:Lorg/aspectj/runtime/internal/a;"
+  },
+  "proceed_contract": {
+    "method": "Lp61/h;->proceed()Ljava/lang/Object;",
+    "semantics": "Read attached closure field r. Return null if it is null; otherwise call r.run(r.getState()). The run input is the closure's exact state array reference.",
+    "interface_method": "Lorg/aspectj/lang/d;->proceed()Ljava/lang/Object;"
+  },
+  "proceed_with_args_contract": {
+    "method": "Lp61/h;->a([Ljava/lang/Object;)Ljava/lang/Object;",
+    "null_closure_result": null,
+    "mutates_captured_state_in_place": true,
+    "flags": {
+      "0x10000": "z12",
+      "0x1000": "i13 = 1 when set, else 0",
+      "0x100": "i14 = 1 when set, else 0",
+      "0x10": "z13",
+      "0x1": "z14"
+    },
+    "exact_algorithm": [
+      "state = attachedClosure.getState()",
+      "destinationBase = i13 + ((!z13 || z12) ? 0 : 1)",
+      "sourceBase starts as 1",
+      "if i13 == 0 or i14 == 0, sourceBase = 0; otherwise state[0] = args[0]",
+      "if z13 and z14 and z12: sourceBase = i14 + 1; state[0] = args[i14]",
+      "if z13 and z14 and !z12: sourceBase = i13 + 1; state[i13] = args[i13]",
+      "for input index k from sourceBase to args.length-1: state[(k-sourceBase)+destinationBase] = args[k]",
+      "return attachedClosure.run(state)"
+    ],
+    "limits": "The bytecode proves this index transformation, but the semantic names of the five bit flags are not present in this obfuscated APK. A generic adapter should implement the transformation itself rather than infer source/target/this labels. Array bounds rely on compiler-generated flag and argument combinations."
+  },
+  "showMiniApp_instance": {
+    "closure": "Lcom/mgtv/ui/videoplay/helper/t;",
+    "parent": "Lorg/aspectj/runtime/internal/a;",
+    "captured_state_at_construction": [
+      "index 0: concrete NBFloatFragmentHelper instance",
+      "index 1: concrete String scheme",
+      "index 2 (last): concrete p61.h join point returned by p61.e.w(...)"
+    ],
+    "link_flags_decimal": 69648,
+    "link_flags_hex": "0x11010",
+    "set_flag_terms": [
+      "0x10000",
+      "0x1000",
+      "0x10"
+    ],
+    "normal_path": [
+      "new t(new Object[]{helper, scheme, joinPoint})",
+      "t.<init> delegates to a.<init>(Object[]) and retains that array",
+      "t.linkClosureAndJoinPoint(69648) retrieves state[2], attaches t to p61.h.r, sets bitflags, and returns state[2]",
+      "LibTryCatchRuntimeAspect.excuteWithTryCatch(joinPoint) directly invokes joinPoint.proceed() in both the debug/inter_google branch and the guarded production branch",
+      "p61.h.proceed calls t.run(t.state)",
+      "Raw DEX t.run reads captured this.state indices 0, 1, and 2 and invokes NBFloatFragmentHelper.H1(helper,string,joinPoint)",
+      "H1 obtains MainAppAspect.aspectOf(), casts the same org.aspectj.lang.c join point to org.aspectj.lang.d, and invokes G1(helper,string,joinPoint,aspect,proceedingJoinPoint)",
+      "H1 allocates no second closure or join point; G1 is the next around-advice body",
+      "G1 invokes F1 on every normal channel branch; F1 creates MiniAppFragment and invokes helper.n1(fragment)"
+    ],
+    "analysis_requirement": "Track closure/state/join-point attachment and proceed-to-run, then traverse t.run -> H1 -> G1 -> F1 while preserving the same join-point object through H1 c-to-d cast. Do not use global Fragment subtype expansion.",
+    "exact_helper_descriptors": [
+      "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->H1(Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;Ljava/lang/String;Lorg/aspectj/lang/c;)V",
+      "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->G1(Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;Ljava/lang/String;Lorg/aspectj/lang/c;Lcom/mgtv/aop/stable/MainAppAspect;Lorg/aspectj/lang/d;)Ljava/lang/Object;",
+      "Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->F1(Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;Ljava/lang/String;Lorg/aspectj/lang/c;)V"
+    ],
+    "jadx_discrepancy": "Decompiled t.java prints a direct G1 call, but the raw classes17.dex invoke instruction targets H1. DEX is authoritative."
+  },
+  "sources": [
+    "test/decompiled/com.hunantv.imgo.activity/sources/org/aspectj/runtime/internal/a.java:4",
+    "test/decompiled/com.hunantv.imgo.activity/sources/p61/h.java:96",
+    "test/decompiled/com.hunantv.imgo.activity/sources/p61/h.java:170",
+    "test/decompiled/com.hunantv.imgo.activity/sources/p61/h.java:195",
+    "test/decompiled/com.hunantv.imgo.activity/sources/p61/e.java:113",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/t.java:9",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java:2139",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/crashhandler/aop/LibTryCatchRuntimeAspect.java:41"
+  ]
+}
