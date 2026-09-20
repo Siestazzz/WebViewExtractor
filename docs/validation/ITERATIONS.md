@@ -366,3 +366,105 @@ layout/loading-wrapper getters assign a concrete constructed WebView into an Act
 The repair must follow that actual chain, not restore fabricated field-object seeds. The restored
 editor core settings and client share the same captured-host layout WebView; unrelated callback
 alternatives are not validated by that finding. See news/v8-settings-regressions.{json,md}.
+
+## v9 — stored listener callbacks, bitwise values and platform wrapper inheritance
+
+- Custom listener registrations require an instance WebView receiver, an exact argument-to-field
+  store, and a dispatch through that field. Member enumeration follows parent interfaces/classes;
+  concrete and inherited implementations retain full DEX signatures. Dispatch scans exact field
+  readers, including inner Client -> outer WebView -> listener chains, and normalizes inherited
+  interface method owners. No Activity-name rule was added.
+- `dispatch_status` is observed/unresolved. A declared registered override can exist without a
+  proven forwarding call; unresolved is not a negative result. Source review caught five omitted
+  parent-contract members and two inner-client dispatch gaps in v9a; both drove regression fixes.
+- Integer XOR/AND/OR expressions preserve per-instance operands and bounded branch alternatives;
+  unknown operands stay unknown. Sol's DEX check confirms Pangle e=true plus XOR yields false.
+  Earlier unknown output did NOT independently prove loss of configurator field state. The three
+  previously missed Pangle facts now match without fabricating a constant or app-specific value.
+- Added pure WebView/Settings/carrier getter dependencies and XML constructor seeding for ordinary
+  layout wrappers. v9a/b still miss the five news wrapper settings. The next diagnosed gap is
+  absent Android platform superclass definitions; SDK class headers provide those inheritance
+  edges without loading method bodies or a whole-program scene. Source confirms nested XML
+  inflation rather than application-level new/factory allocation in the two regression cases.
+- New synthetic cases cover stored versus ignored listener arguments, two independent WebViews,
+  inherited interface contracts, inner forwarding clients, unresolved dispatch, nested wrapper
+  constructor settings, SDK header inheritance and non-View namespace negatives, bitwise boolean
+  negation, branch alternatives, per-instance operands and explicit resolution-budget diagnostics.
+- v9a exploratory serial runs72.84/66.26/125.34s (news/mango/ctrip): Mango callbacks591/591;
+  v9b79.58/66.89/125.74s: Mango settings526/526, callbacks591/591, Bridge1137/1153.
+  News remains1288/1385 Bridge,298/366 settings,205/240 callbacks in v9a/b; Ctrip's canonical
+  Activity-level recall remains100%. These are development measurements, not final repeated
+  acceptance runs, and some exploratory builds overlap them.
+- Independently reviewed v9a custom listener facts: all seven mgadplus registrations have actual
+  same-object field binding; the additional WebContainer registration is real but initially had
+  incomplete parent-member and dispatch evidence, retained in the audit. v9b restores all five
+  parent members (18 ->23). Sol separately verifies all three Pangle false settings.
+
+- v9c fresh serial runs105.47/71.91/128.82s; SDK android-36 supplied4709 class-header
+  inheritance entries. News's five nested-wrapper settings are restored (303/366); Sol verifies
+  their actual XML object chain. News emits43 hosts:42 valid1 uncertain (Shell fallback attachment
+  not proven); all six new hosts are non-blind development cases, not final held-out samples.
+- v9c also exposed a real regression hidden by the old gold scope: three independently valid NFT
+  Activities disappeared. Their platform View classification hit an old reverse-dispatch exclusion
+  for components. The next change allows exact custom View carrier/interface dispatch while still
+  excluding Activity/WebView-wide dispatch expansion. A synthetic interface-dispatched View fixture
+  reproduces the missing host. Independent NFT capability facts are being added, retaining these
+  failures rather than relying on the unchanged aggregate score. Two other Mango hosts are new
+  and require independent ownership verdicts; candidate status does not exempt them.
+
+- The first broad View-carrier dispatch attempt (artifact label v9) was manually aborted after
+  251.42s during news; its reverse closure grew from11719 to24799 methods and pulled unrelated
+  concrete base UI initialization paths. The report remains valid with status failed. The batch
+  did not run its remaining two Apps, and the interrupted time wrapper left no usable RSS record.
+  This attempt is neither a completed performance measurement nor a quality pass. Its retained
+  record is v9-aborted-experiment.json. The replacement v9d narrows View/Fragment expansion to
+  interface/abstract declarations; a focused NFT probe restores its actual interface path.
+- NFT source auditing was itself corrected: an initial loadUrl-only inventory omitted unconditional
+  constructor -> initialize -> initWebview calls. Challenging that claim against the DEX index led
+  to48 settings,3 client registrations and3 callback-member facts being added, with the original3
+  operations retained. The public Mango set now has2427 raw rows. No failure was deleted;
+  canonical-facts-before-nft-v2.jsonl and schema migration records preserve the previous scope.
+- Evaluator revision4 separates client registration API+concrete type from callback members, and
+  reports WebView operations/positive-host recall separately. Eight black-box tests pass, including
+  wrong callback API/type rejection and operation isolation from three-category scoring. Replayed
+  v8 on expanded Mango:1137/1153 Bridge,523/574 settings,584/597 callbacks. v9c:1137/1153,
+  526/574,591/597, with all three NFT hosts absent. The former apparent100% settings did not hold
+  once this previously omitted framework surface was added.
+
+- Narrowed v9d restores all three NFT operation hosts, but expanded-oracle replay still misses
+  all48 constructor settings and6 Client/member facts. The restored Activity names alone are not
+  a successful repair. The remaining first binding issue is generated outer ViewBinding capture:
+  its NftWebviewLayout field resolves to constructor_parameter instead of the actual XML child.
+  Source follow-up is required before a generic binding-object fix. Two additional NFT-family
+  hosts are also emitted and require the same independent ownership review.
+
+Final v9 artifact is **v9d**, not the aborted exploratory artifact named v9. Its fresh serial
+8-CPU/16-GiB runs took102.92/74.71/130.85s, with peak RSS9002340/8152896/7443792KiB.
+All reports remain partial. Independent source ownership review is complete for every emitted
+Activity; unresolved owners count against the conservative bound.
+
+| App | Bridge recall | Settings recall | Callback recall | Valid / wrong / unresolved hosts | Conservative host error bound |
+|---|---|---|---|---|---|
+| News |1288/1385 (93.00%)|303/366 (82.79%)|205/240 (85.42%)|42 /0 /1|2.33%|
+| Mango |1137/1153 (98.61%)|526/574 (91.64%)|591/597 (98.99%)|84 /0 /5|5.62%|
+| Ctrip |3666/3666 (100%)|233/233 (100%)|299/299 (100%)|54 /1 /0|1.82%|
+
+Mango's three additional operation facts match3/3 and are excluded from capability-category
+recall. Sol confirms both additional NFT hosts and documents generated ViewBinding constructor
+captures in mango/v9d-nft-binding-break.md. The48 settings and6 callback facts remain missing.
+Ctrip's development recall does not establish correct WebView object partitioning: duplicated
+new-H5 receiver aliases remain open. Host bounds do not establish capability precision.
+
+Validation: capabilitySelfTest and shadowJar passed; eight evaluator black-box tests passed.
+The v9d short-deadline check exited in1.213462s with54 readable atomic snapshots and explicit
+index-not-finished/supervisor-hard-deadline diagnostics. Final sealed samples, isolated three-run
+performance series, complete capability precision auditing and on-demand Soot fallback remain
+unfinished. This iteration does not pass acceptance.
+
+Reproduction: ./gradlew capabilitySelfTest shadowJar --offline --console=plain;
+python3 scripts/test_evaluate.py;
+python3 scripts/benchmark.py --label v9d --jar test/runs/v9d.jar.
+Replay each canonical-facts.jsonl using scripts/evaluate.py and ownership files
+news/v9c-ownership.jsonl, mango/v9d-ownership.jsonl and ctrip/v4e-ownership.jsonl.
+Retained environment records identify every frozen jar. Earlier v9a/b Mango scores use the old
+oracle; compare v8-mango-nft-v2-evaluation.json with v9d-mango-evaluation.json for equal scope.

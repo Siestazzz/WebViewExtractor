@@ -22,6 +22,16 @@ def match(g,f):
    return val.lower() in [str(v).lower() for v in f.get('values',[])]
   if vk=='literal':return val.lower() in [str(v).lower() for v in f.get('values',[])]
   return None
+ if k=='callback_registration':
+  if f['kind']!='callback':return False
+  if not api or not g.get('implementation'):return None
+  return f.get('api')==api and f.get('implementation')==g['implementation']
+ if k=='webview_operation':
+  if f['kind']!='webview_operation':return False
+  if not api:return None
+  if f.get('api')!=api:return False
+  if g.get('value_kind') in ('dynamic','dynamic_string'):return len(f.get('arguments',[]))>=2
+  return str(g.get('value')) in [str(v.get('literal')) for v in f.get('arguments',[])[1:]]
  if k=='callback':
   if f['kind']!='callback':return False
   if not signature:return None
@@ -54,10 +64,10 @@ unknown_surfaces=[]
 for g in unique.values():
  if g['kind']=='activity_binding' or g.get('activity') is None:continue
  if g.get('apk_sha256')!=r.get('apk_sha256'):raise SystemExit('APK hash mismatch; cannot compare')
- category='bridge' if g['kind'].startswith('bridge') or g['kind']=='message_handler' else g['kind'];s=stats[category];s['expected']+=1
+ category='bridge' if g['kind'].startswith('bridge') or g['kind']=='message_handler' else 'callback' if g['kind']=='callback_registration' else g['kind'];s=stats[category];s['expected']+=1
  unknown='unknown' in g.get('binding_status','')
  if unknown:unknown_surfaces.append(dict(activity=g['activity'],name=g['name'],status=g['binding_status']))
- grain=('bridge_member' if g['kind'] in ('bridge_method','message_handler') or g.get('normalized_signature') and category=='bridge' else 'bridge_registration') if category=='bridge' else category
+ grain=('bridge_member' if g['kind'] in ('bridge_method','message_handler') or g.get('normalized_signature') and category=='bridge' else 'bridge_registration') if category=='bridge' else ('callback_registration' if g['kind']=='callback_registration' else 'callback_member') if category=='callback' else category
  submetrics[grain]['expected']+=1
  candidates=actual.get(g['activity'],[]);outcomes=[match(g,f) for f in candidates];matches=[f for f,m in zip(candidates,outcomes) if m is True]
  submetrics[grain]['matched']+=int(bool(matches))
@@ -70,7 +80,9 @@ for g in unique.values():
 for s in submetrics.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None
 for s in stats.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None;s['explicit_recall']=s['explicit_matched']/s['expected'] if s['expected'] else None
 out=dict(oracle_sha256=hashlib.sha256(pathlib.Path(a.oracle).read_bytes()).hexdigest(),report_sha256=hashlib.sha256(pathlib.Path(a.report).read_bytes()).hexdigest(),unassigned_oracle_facts=sum(g.get('activity') is None for g in truth),oracle_file=a.oracle,apk_sha256=r.get('apk_sha256'),report_status=r['status'],metrics=stats,missing=failures,emitted_activities=len(actual),acceptance='unproven',note='Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required.')
-out['scoring_version']=3
+out['scoring_version']=4
+expected_hosts={g['activity'] for g in unique.values() if g.get('activity') and g['kind']!='activity_binding'}
+out['positive_host_recall']=dict(expected=len(expected_hosts),matched=len(expected_hosts&actual.keys()),missing=sorted(expected_hosts-actual.keys()),recall=len(expected_hosts&actual.keys())/len(expected_hosts) if expected_hosts else None)
 out['duplicate_oracle_rows']=duplicate_rows
 out['capability_granularity']=submetrics
 out['unknown_target_surfaces']=unknown_surfaces

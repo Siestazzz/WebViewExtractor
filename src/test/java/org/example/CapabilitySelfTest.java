@@ -66,6 +66,20 @@ public final class CapabilitySelfTest {
    // Previous scorer retained stale constants after move; this must resolve false.
    var moves=method(H,"moves",List.of(),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction11n(Opcode.CONST_4,1,0),new ImmutableInstruction12x(Opcode.MOVE,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",2,0),end()),false);
    var flow=new DexFlow(idx,deadline);var summary=flow.summary(moves);check(summary.calls().get(0).args().get(1).literal().equals("0"),"Stale constant survived move");
+   var bitwise=method(H,"bitwise",List.of(),9,2,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction22b(Opcode.XOR_INT_LIT8,0,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setBlockNetworkImage",List.of("Z"),"V",1,0),end()),false);
+   var bitValue=flow.summary(bitwise).calls().get(0).args().get(1);var arithmeticHost=engine.new Host("test.AppActivity");var arithmeticJob=new CapabilityEngine.Job(bitwise,List.of(),List.of(),false);
+   check(engine.eval(bitValue,arithmeticJob,arithmeticHost,0,new HashSet<>()).literal().equals("0"),"Boolean XOR negation did not preserve value");
+   for(int initial:List.of(0,1)){
+    var config=DexFlow.V.of("object","test.Config","config:"+initial);engine.applyWrite(arithmeticHost,"Ltest/Config;->enabled:Z",config,DexFlow.V.literal("number",String.valueOf(initial)));
+    var read=DexFlow.expr("field","boolean","Ltest/Config;->enabled:Z",List.of(config));
+    var negated=DexFlow.expr("int_binary","number","xor",List.of(read,DexFlow.V.literal("number","1")));
+    check(engine.eval(negated,arithmeticJob,arithmeticHost,0,new HashSet<>()).literal().equals(String.valueOf(initial^1)),"Bitwise evaluation mixed configurator instance fields");
+   }
+   var unknownBit=DexFlow.expr("int_binary","number","xor",List.of(DexFlow.UNKNOWN,DexFlow.V.literal("number","1")));
+   check(engine.eval(unknownBit,arithmeticJob,arithmeticHost,0,new HashSet<>()).kind().equals("unknown"),"Unknown bitwise operand became a constant");
+   var choices=DexFlow.union(DexFlow.V.literal("number","0"),DexFlow.V.literal("number","1"));
+   check(DexFlow.alternatives(engine.eval(DexFlow.expr("int_binary","number","xor",List.of(choices,DexFlow.V.literal("number","1"))),arithmeticJob,arithmeticHost,0,new HashSet<>())).size()==2,"Conditional bitwise alternatives collapsed");
+   engine.eval(DexFlow.UNKNOWN,arithmeticJob,arithmeticHost,15,new HashSet<>());check(arithmeticHost.gaps.contains("resolve_depth"),"Resolution budget exhaustion lacked a diagnostic");
    // Arithmetic writes must invalidate a previous constant.
    var overwrite=method(H,"overwrite",List.of(),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction12x(Opcode.NEG_INT,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",2,0),end()),false);
    check(flow.summary(overwrite).calls().get(0).args().get(1).kind().equals("unknown"),"Arithmetic overwrite retained constant");
@@ -93,6 +107,10 @@ public final class CapabilitySelfTest {
    xmlConstructorReplayFixture();
    returnedCaptureFixture();
    obfuscatedLazyFixture();
+   customCallbackFixture();
+   nestedLayoutFixture();
+   platformHierarchyFixture();
+   viewContractDispatchFixture();
    System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints, registered services, nullable receivers, composed receivers, helper/callback entry isolation, abstract-class handlers");
   }finally{Files.deleteIfExists(file);}
  }
@@ -206,6 +224,69 @@ public final class CapabilitySelfTest {
    check(!engine.messageMembers("test.BusinessHandler","registeredName",job,host).reflective(),"Downstream business reflection erased known handler endpoint");
    var empty=engine.messageMembers("test.ReflectiveHandler","missing",job,host);check(empty.reflective()&&empty.resolved()&&empty.members().isEmpty(),"Known absent reflection endpoint not distinguished from unknown dispatcher");
    var present=engine.messageMembers("test.ReflectiveHandler","existing",job,host);check(present.members().size()==1&&present.members().get(0).get("signature").equals(CapabilityIndex.key(existing)),"Exact reflection endpoint missing");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void viewContractDispatchFixture()throws Exception {
+  String widget="Ltest/Widget;",contract="Ltest/WidgetContract;";
+  var declared=new ImmutableMethod(contract,"show",List.of(new ImmutableMethodParameter("Ljava/lang/String;",Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var implementation=method(widget,"show",List.of("Ljava/lang/String;"),1,3,List.of(make(0,W),invoke(Opcode.INVOKE_VIRTUAL,W,"loadUrl",List.of("Ljava/lang/String;"),"V",0,2),end()),false);
+  var entry=method(A,"onCreate",List.of(),1,3,List.of(make(0,widget),str(1,"https://example.invalid/"),invoke(Opcode.INVOKE_INTERFACE,contract,"show",List.of("Ljava/lang/String;"),"V",0,1),end()),false);
+  Path path=Files.createTempFile("wv-view-contract-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),new ImmutableClassDef(widget,1,"Landroid/view/View;",List.of(contract),null,Set.of(),List.of(),List.of(implementation)),new ImmutableClassDef(contract,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(declared)))));long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);check(idx.relevant.contains(CapabilityIndex.key(entry)),"View carrier's interface dispatch was excluded from relevance");
+   var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");check(!engine.activities.isEmpty(),"Activity lost WebView behind concrete View contract");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void platformHierarchyFixture()throws Exception {
+  Path jar=Files.createTempFile("wv-platform-headers-",".jar");
+  try{
+   try(var output=new java.util.jar.JarOutputStream(Files.newOutputStream(jar))){
+    for(var pair:List.of(List.of("android/widget/FrameLayout","android/view/ViewGroup"),List.of("android/view/ViewGroup","android/view/View"),List.of("android/widget/NonViewHelper","java/lang/Object"))){
+     var writer=new org.objectweb.asm.ClassWriter(0);writer.visit(52,1,pair.get(0),null,pair.get(1),null);writer.visitEnd();output.putNextEntry(new java.util.jar.JarEntry(pair.get(0)+".class"));output.write(writer.toByteArray());output.closeEntry();
+    }
+   }
+   var idx=new CapabilityIndex();idx.platformParents.putAll(PlatformHierarchy.read(jar,System.nanoTime()+5_000_000_000L));idx.classes.put("test.FrameWrapper",clazz("Ltest/FrameWrapper;","Landroid/widget/FrameLayout;"));
+   check(idx.component("test.FrameWrapper"),"SDK header hierarchy did not classify FrameLayout wrapper as View");check(!idx.component("android.widget.NonViewHelper"),"Widget namespace alone was treated as View hierarchy");check(!idx.webview("test.FrameWrapper"),"Ordinary SDK View was turned into WebView");
+  }finally{Files.deleteIfExists(jar);}
+ }
+
+ static void nestedLayoutFixture()throws Exception {
+  String wrapper="Ltest/LayoutWrapper;",inner="Ltest/InnerView;",context="Landroid/content/Context;",attrs="Landroid/util/AttributeSet;";
+  var field=new ImmutableField(wrapper,"web",inner,1,null,Set.of(),Set.of());
+  var init=method(inner,"<init>",List.of(context),1,4,List.of(invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),new ImmutableInstruction11n(Opcode.CONST_4,1,0),invoke(Opcode.INVOKE_VIRTUAL,S,"setMixedContentMode",List.of("I"),"V",0,1),end()),false);
+  var ctor=method(wrapper,"<init>",List.of(context,attrs),1,4,List.of(make(0,inner),invoke(Opcode.INVOKE_DIRECT,inner,"<init>",List.of(context),"V",0,2),new ImmutableInstruction22c(Opcode.IPUT_OBJECT,0,1,new ImmutableFieldReference(wrapper,"web",inner)),end()),false);
+  var getBody=method(wrapper,"getWeb",List.of(),1,2,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(wrapper,"web",inner)),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var getter=new ImmutableMethod(wrapper,"getWeb",List.of(),inner,1,Set.of(),Set.of(),getBody.getImplementation());
+  List<Instruction> body=new ArrayList<>();
+  for(int resource:List.of(1,2)){body.add(new ImmutableInstruction11n(Opcode.CONST_4,0,resource));body.add(invoke(Opcode.INVOKE_VIRTUAL,A,"findViewById",List.of("I"),"Landroid/view/View;",3,0));body.add(new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1));body.add(new ImmutableInstruction21c(Opcode.CHECK_CAST,1,new ImmutableTypeReference(wrapper)));body.add(invoke(Opcode.INVOKE_VIRTUAL,wrapper,"getWeb",List.of(),inner,1));body.add(new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1));body.add(str(0,"https://example.invalid/"));body.add(invoke(Opcode.INVOKE_VIRTUAL,W,"loadUrl",List.of("Ljava/lang/String;"),"V",1,0));}body.add(end());
+  var entry=method(A,"onCreate",List.of(),1,4,body,false);Path path=Files.createTempFile("wv-layout-wrapper-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(inner,W,init),new ImmutableClassDef(wrapper,1,"Landroid/view/View;",List.of(),null,Set.of(),List.of(field),List.of(ctor,getter)))));long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");var settings=facts.stream().filter(f->"setMixedContentMode".equals(f.get("name"))).toList();
+   check(idx.relevant.contains(CapabilityIndex.key(getter)),"Pure WebView getter excluded from field-writer relevance");
+   check(settings.size()==2,"Layout wrapper lost inner constructor settings or fabricated extra receiver");check(!settings.get(0).get("webview").equals(settings.get(1).get("webview")),"Separate layout wrappers shared the inner WebView");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void customCallbackFixture()throws Exception {
+  String view="Ltest/CustomView;",listener="Ltest/Listener;",parentListener="Ltest/ParentListener;",first="Ltest/FirstListener;",second="Ltest/SecondListener;";
+  var field=new ImmutableField(view,"listener",listener,1,null,Set.of(),Set.of());
+  var setter=method(view,"attach",List.of(listener),1,2,List.of(new ImmutableInstruction22c(Opcode.IPUT_OBJECT,1,0,new ImmutableFieldReference(view,"listener",listener)),end()),false);
+  var fake=method(view,"ignore",List.of(listener),1,2,List.of(end()),false);
+  var decl=new ImmutableMethod(parentListener,"onPageFinished",List.of(new ImmutableMethodParameter(W,Set.of(),null),new ImmutableMethodParameter("Ljava/lang/String;",Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var title=new ImmutableMethod(listener,"onTitle",List.of(new ImmutableMethodParameter("Ljava/lang/String;",Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  String forwarding="Ltest/CustomView$Forwarder;";var outer=new ImmutableField(forwarding,"outer",view,1,null,Set.of(),Set.of());
+  var dispatch=method(forwarding,"forward",List.of("Ljava/lang/String;"),1,4,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,1,2,new ImmutableFieldReference(forwarding,"outer",view)),new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(view,"listener",listener)),invoke(Opcode.INVOKE_INTERFACE,listener,"onPageFinished",List.of(W,"Ljava/lang/String;"),"V",0,1,3),end()),false);
+  var entry=method(A,"onCreate",List.of(),1,5,List.of(make(0,view),make(1,view),make(2,first),make(3,second),invoke(Opcode.INVOKE_VIRTUAL,view,"attach",List.of(listener),"V",0,2),invoke(Opcode.INVOKE_VIRTUAL,view,"attach",List.of(listener),"V",1,3),end()),false);
+  List<ImmutableClassDef> classes=new ArrayList<>(List.of(clazz(A,"Landroid/app/Activity;",entry),new ImmutableClassDef(view,1,W,List.of(),null,Set.of(),List.of(field),List.of(setter,fake)),new ImmutableClassDef(forwarding,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(outer),List.of(dispatch)),new ImmutableClassDef(listener,0x601,"Ljava/lang/Object;",List.of(parentListener),null,Set.of(),List.of(),List.of(title)),new ImmutableClassDef(parentListener,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(decl))));
+  for(String type:List.of(first,second))classes.add(new ImmutableClassDef(type,1,"Ljava/lang/Object;",List.of(listener),null,Set.of(),List.of(),List.of(method(type,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false),method(type,"onTitle",List.of("Ljava/lang/String;"),1,2,List.of(end()),false),method(type,"unrelated",List.of(),1,1,List.of(end()),false))));
+  Path path=Files.createTempFile("wv-custom-callback-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),classes));long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);
+   check(idx.customCallbacks.containsKey(CapabilityIndex.key(setter)),"Stored custom callback not discovered");check(!idx.customCallbacks.containsKey(CapabilityIndex.key(fake)),"Ignoring callback argument was treated as registration");
+   var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");var callbacks=facts.stream().filter(f->"callback".equals(f.get("kind"))).toList();
+   check(callbacks.size()==2,"Unexpected custom callback registrations");check(!callbacks.get(0).get("webview").equals(callbacks.get(1).get("webview")),"Custom callbacks merged across WebViews");
+   for(var fact:callbacks){@SuppressWarnings("unchecked")var members=(List<Map<String,Object>>)fact.get("members");check(members.size()==2,"Custom listener contract lost a method or included unrelated method");check(members.stream().filter(m->Boolean.TRUE.equals(m.get("dispatch_observed"))).count()==1,"Undispatched contract override falsely claimed observed dispatch");}
   }finally{Files.deleteIfExists(path);}
  }
 

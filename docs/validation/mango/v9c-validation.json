@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "report": "test/runs/v9c/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "host_counts": {
+    "v9b": 85,
+    "v9c": 84
+  },
+  "added": [
+    "com.bytedance.sdk.openadsdk.core.activity.base.TTDelegateActivity",
+    "com.mgtv.miniplay.MiniPlayActivity"
+  ],
+  "removed": [
+    "com.mgsz.detail.ui.AntiqueDetailActivity",
+    "com.mgtv.digital.ui.DigitalDetailActivity",
+    "com.mgtv.digital.ui.DigitalModelViewActivity"
+  ],
+  "removed_valid_regressions": {
+    "com.mgsz.detail.ui.AntiqueDetailActivity": "Activity.W -> AntiqueDetailFragment.E7 -> com.mgsz.hunantv.nft.MgNftViewer.setNftData -> NftWebviewLayout.setupData -> binding.webview.loadUrl",
+    "com.mgtv.digital.ui.DigitalDetailActivity": "Activity.x3 -> com.hunantv.nft.MgNftViewer.setNftData -> NftWebviewLayout.setupData -> binding.webview.loadUrl",
+    "com.mgtv.digital.ui.DigitalModelViewActivity": "Activity.U2 -> com.hunantv.nft.MgNftViewer.setNftData -> NftWebviewLayout.setupData -> binding.webview.loadUrl"
+  },
+  "earliest_common_break": "NftWebviewLayout is a FrameLayout carrier. The host reaches setupData and its Runnable; the missing edge is carrier/ViewBinding field mViewBinding.webview -> android.webkit.WebView before loadUrl, after platform-hierarchy/relevance filtering.",
+  "q0": {
+    "member_count": 23,
+    "observed": 13,
+    "unresolved": 10,
+    "members": [
+      {
+        "signature": "Lcom/mgsz/h5/WebViewFragment$b;->loadCustomScheme(Ljava/lang/String;)Z",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lcom/mgsz/h5/WebViewFragment$b;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lcom/mgsz/h5/WebViewFragment$b;->onProgressChanged(Landroid/webkit/WebView;I)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lcom/mgsz/h5/WebViewFragment$b;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lcom/mgsz/h5/WebViewFragment$b;->onTitle(Ljava/lang/String;)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->closeEntrance()V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->fragmentRemove()V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->hideStatusBar(Z)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->hideTitleBar(Z)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->isHalfWebview()Z",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->loadUrl(Ljava/lang/String;)V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->onActivityResult(IILandroid/content/Intent;Z)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->onCloseH5()V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->onDestroy()V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->onRenderProcessGone(Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "dispatch_status": "observed"
+      },
+      {
+        "signature": "Lkq/e;->onResume()V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->setActivity(Landroid/app/Activity;)V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->setCloseActivity(Z)V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->setH5LifeCycleCallback(Lkq/d;)V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->setH5PersonLineCallback(Lkq/h;)V",
+        "dispatch_status": "unresolved"
+      },
+      {
+        "signature": "Lkq/e;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "dispatch_status": "observed"
+      }
+    ]
+  },
+  "gold_unchanged_does_not_cover_nft": true
+}

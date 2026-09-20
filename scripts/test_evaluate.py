@@ -35,6 +35,19 @@ class EvaluationTest(unittest.TestCase):
   self.assertEqual(self.replay([g],[f])['metrics']['bridge']['matched'],1)
   for bad in [dict(f,registration_name='other-event'),dict(f,transport_bindings=[]),dict(f,transport_bindings=[dict(binding,registration_name='OtherNative')]),dict(f,webview=dict(id='other-view')),dict(f,transport_bindings=[dict(binding,bridge_object_id='')])]:
    self.assertEqual(self.replay([g],[bad])['metrics']['bridge']['matched'],0)
+ def test_callback_registration_requires_api_and_concrete_type(self):
+  g=dict(kind='callback_registration',name='setWebViewClient',normalized_api='Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V',implementation='Client')
+  f=dict(kind='callback',api=g['normalized_api'],implementation='Client',members=[])
+  r=self.replay([g],[f]);self.assertEqual(r['metrics']['callback']['matched'],1);self.assertEqual(r['capability_granularity']['callback_registration']['matched'],1)
+  for bad in [dict(f,implementation='OtherClient'),dict(f,api='LUnrelated;->setWebViewClient(Landroid/webkit/WebViewClient;)V')]:
+   self.assertEqual(self.replay([g],[bad])['metrics']['callback']['matched'],0)
+  member=dict(kind='callback',name='onPageFinished',normalized_signature='LClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V')
+  self.assertEqual(self.replay([g,member],[f])['metrics']['callback']['matched'],1)
+ def test_operation_is_separate_from_three_capability_categories(self):
+  g=dict(kind='webview_operation',name='loadUrl',normalized_signature='Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V',value_kind='dynamic_string')
+  f=dict(kind='webview_operation',api=g['normalized_signature'],arguments=[dict(id='view'),dict(kind='unknown')])
+  r=self.replay([g],[f]);self.assertEqual(r['metrics']['webview_operation']['matched'],1);self.assertNotIn('bridge',r['metrics']);self.assertEqual(r['positive_host_recall']['matched'],1)
+  self.assertEqual(self.replay([g],[dict(f,api='LWrong;->loadUrl(Ljava/lang/String;)V')])['metrics']['webview_operation']['matched'],0)
  def test_setting_owner_is_not_discarded(self):
   g=dict(kind='setting',name='setJavaScriptEnabled',normalized_api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',value='true',value_kind='literal')
   f=dict(kind='setting',api='Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V',values=['true'])

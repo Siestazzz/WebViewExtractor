@@ -105,6 +105,15 @@ final class DexFlow {
                 else if(Set.of("host","object","new","class").contains(value.kind())&&value.type()!=null)output=V.literal("number",idx.subtype(value.type(),CapabilityIndex.cls(t.getType()))?"1":"0");
             }
             else if(op.equals("check-cast")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=expr("cast",CapabilityIndex.cls(t.getType()),"cast",List.of(s.getOrDefault(a,UNKNOWN)));
+            else if(op.startsWith("xor-int")||op.startsWith("and-int")||op.startsWith("or-int")){
+                V left=UNKNOWN,right=UNKNOWN;
+                if(in instanceof ThreeRegisterInstruction three){left=s.getOrDefault(three.getRegisterB(),UNKNOWN);right=s.getOrDefault(three.getRegisterC(),UNKNOWN);}
+                else if(in instanceof TwoRegisterInstruction two){
+                    if(in instanceof NarrowLiteralInstruction literal){left=s.getOrDefault(two.getRegisterB(),UNKNOWN);right=V.literal("number",String.valueOf(literal.getNarrowLiteral()));}
+                    else{left=s.getOrDefault(a,UNKNOWN);right=s.getOrDefault(two.getRegisterB(),UNKNOWN);}
+                }
+                output=expr("int_binary","number",op.substring(0,op.indexOf('-')),List.of(left,right));
+            }
             else if(in instanceof ReferenceInstruction r&&r.getReference() instanceof FieldReference f){
                 String field=CapabilityIndex.field(f);V receiver=op.startsWith("s")?V.of("static",CapabilityIndex.cls(f.getDefiningClass()),f.getDefiningClass()):in instanceof TwoRegisterInstruction two?s.getOrDefault(two.getRegisterB(),UNKNOWN):UNKNOWN;
                 if(op.contains("get"))output=expr("field",CapabilityIndex.cls(f.getType()),field,List.of(receiver));

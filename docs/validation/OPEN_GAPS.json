@@ -11,9 +11,9 @@
     {
       "id": "news_nested_wrapper_constructor",
       "app": "news",
-      "status": "open_confirmed_regression",
-      "cause": "WebNovel3/WebAdvert2 are real misses: Activity layout wrapper -> loading wrapper -> getWebView -> explicit Activity field -> concrete BaseSysWebView/AdWebView constructor. Do not restore fabricated field-object seeds.",
-      "evidence": "news/v8-settings-regressions.json"
+      "status": "fixed_v9c_source_verified",
+      "cause": "Nested XML wrapper inheritance and getter/field initialization now resolve through SDK platform class headers. Sol verified all five recovered settings on the same actual layout-derived WebView.",
+      "evidence": "news/v9c-validation.md"
     },
     {
       "id": "news_qq_console",
@@ -53,16 +53,16 @@
     {
       "id": "mango_custom_callback",
       "app": "mango",
-      "status": "open",
-      "cause": "Custom setter stores listener in WebView field W; seven implemented callback signatures omitted. onProgressChanged dispatch remains unproven.",
-      "evidence": "mango/v8c-remaining-bindings.json"
+      "status": "fixed_v9c_source_dex_verified",
+      "cause": "Seven mgadplus callbacks and five inherited WebContainer contract members recovered. Sol confirms q0 23 members and inner-client forwarding evidence: 13 observed, 10 unresolved; unresolved does not mean impossible.",
+      "evidence": "mango/v9c-validation.json"
     },
     {
       "id": "mango_pangle",
       "app": "mango",
-      "status": "open",
-      "cause": "Fluent configurator instance default e=true lost through factory/return-this; three false-valued settings missed.",
-      "evidence": "mango/v8c-remaining-bindings.json"
+      "status": "fixed_v9b_source_dex_verified",
+      "cause": "Bitwise XOR expression was previously discarded. Object e=true and unrelated fluent fields now evaluate to false; no evidence that the original unknown independently proved lost field state.",
+      "evidence": "mango/v9b-settings-callback-audit.json"
     },
     {
       "id": "ctrip_old_h5_alias",
@@ -90,7 +90,7 @@
       "app": "mango",
       "status": "unresolved",
       "cause": "Five emitted Activity owners remain uncertain and count against conservative ownership bound.",
-      "evidence": "mango/v8a-ownership.jsonl"
+      "evidence": "mango/v9d-ownership.jsonl"
     },
     {
       "id": "global_settings_group",
@@ -112,6 +112,13 @@
       "status": "pending",
       "cause": "Final sealed new samples, wrong-capability audit, final isolated three-repeat benchmarks, full synthetic matrix, and on-demand Soot fallback remain.",
       "evidence": "ITERATIONS.md"
+    },
+    {
+      "id": "mango_nft_platform_dispatch_regression",
+      "app": "mango",
+      "status": "partially_fixed_v9d_operations_only",
+      "cause": "Exact abstract/interface reverse dispatch restores all three host operations, but expanded oracle still misses48 constructor settings and6 Client/member facts. Outer generated ViewBinding captures resolve to constructor_parameter; source-backed binding-chain repair remains required.",
+      "evidence": "mango/v9d-nft-binding-break.json"
     }
   ]
 }

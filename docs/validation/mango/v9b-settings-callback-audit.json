@@ -1,0 +1,41 @@
+{
+  "report": "test/runs/v9b/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "activity_count": 85,
+  "pangle": {
+    "result": "pass",
+    "activities": [
+      "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity"
+    ],
+    "api": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+    "site": "Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;->c(Landroid/webkit/WebView;)V@72",
+    "semantic_value_per_activity": false,
+    "raw_fact_copies_per_activity": 2,
+    "dex_evidence": [
+      "tn.<init>(Context) @0003 const/4 v0,1; @000e iput-boolean v0,this,tn.e:Z",
+      "tn.c(WebView) @0045 iget-boolean v3,this,tn.e:Z; @0047 xor-int/2addr v1,v3; @0048 WebSettings.setBlockNetworkImage(v1)",
+      "the source expression is true XOR e; e is true on these fresh configurators, so the argument is false"
+    ],
+    "path_state": "landing uses tn.c(context).c(true).c(webView); video uses tn.c(context).c(true).tn(false).c(webView); scroll inherits video. c(boolean) writes pb and tn(boolean) writes zx, not e.",
+    "historical_diagnosis": "v8c emitted the correct receiver and unknown argument. v9b's bitwise-value repair evaluates the xor expression. The old unknown does not independently prove that object-field state was lost."
+  },
+  "webcontainer_custom_callback": {
+    "result": "parent-contract-members-restored",
+    "registration_site": "Lcom/mgsz/h5/WebViewFragment;->nc()V@11",
+    "callback_field": "Lcom/mgsz/h5/ImgoWebView;->q0:Lkq/d;",
+    "implementation": "Lcom/mgsz/h5/WebViewFragment$b;",
+    "v9a_member_count": 18,
+    "v9b_member_count": 23,
+    "restored_members": [
+      "Lkq/e;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "Lcom/mgsz/h5/WebViewFragment$b;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "Lcom/mgsz/h5/WebViewFragment$b;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "Lkq/e;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "Lkq/e;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)V"
+    ],
+    "contract_rule": "kq.d extends kq.f; v9b now traverses the parent interface and resolves each signature to the effective concrete or inherited implementation",
+    "dispatch_scope": "v9b has not yet added synthetic inner-client this$0 -> outer.q0 scanning. Restored parent members are present but remain dispatch_observed=false. onProgressChanged and onRenderProcessGone also remain false despite direct DEX calls documented in v9a-custom-callback-audit.jsonl; false is unresolved rather than proof of no dispatch."
+  },
+  "holdout_read": false
+}

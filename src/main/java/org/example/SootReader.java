@@ -111,7 +111,7 @@ final class SootReader {
         }
     }
 
-    private static Path androidJars() throws IOException {
+    static Path androidJars() throws IOException {
         String sdk = firstNonBlank(System.getenv("ANDROID_HOME"), System.getenv("ANDROID_SDK_ROOT"));
         if (sdk == null) {
             Path propsFile = Path.of("local.properties").toAbsolutePath().normalize();

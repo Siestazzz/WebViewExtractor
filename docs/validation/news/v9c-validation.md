@@ -1,0 +1,13 @@
+# Tencent News v9c ownership validation
+
+The v9c report emits 43 Activities: the same 37 Activities reviewed in v8a/v8 plus six newly emitted hosts. Prior source ownership evidence was reused for the unchanged 37 and is marked as such in the JSONL. The six additions were selected from tool output and are nonblind development cases; they are not eligible as fresh holdout samples.
+
+Five additions have direct UI ownership evidence. `AlbumPreviewActivity` owns an `AlbumVideoContainer` which constructs and adds the player view. `LoginWithPhoneNumTransparentActivity` inherits the already verified phone-login flow whose Activity-bound SDK dialog is actually shown. `UserHomeActivity` and `UserSearchActivity` own their concrete `UserTabFragment` subclasses; the fragment creates the video container and calls `videoRoot.addView(container.getView())`. `Read24HoursActivity` explicitly invokes inherited detail initialization, which creates its video container with the Activity and adds its view to the Activity root.
+
+`ShellActivity` remains uncertain. It dynamically routes a root Fragment. Its container getter delegates to that Fragment when present; otherwise it creates a container with the Activity and registers a lifecycle observer. The fallback getter does not itself attach `container.getView()`. A routed Fragment or caller may attach it, but the report evidence stops before that point. This is retained as the single conservative-upper-bound candidate rather than being labeled valid from Context construction alone.
+
+Result: 42 source-valid Activities, one uncertain candidate, zero source-proven wrong Activities. The conservative possible-false-owner upper bound is 1/43 = 2.33%.
+
+The five previously missing wrapper settings now use the correct nested XML identity. For `WebNovelActivity`, mixed content, text zoom, and DOM storage all share WebView ID `activity:.../view:2131303127/view:2131299735/view:2131303140`; evidence is Activity `NovelWebView` field → `NovelWebView.mLoadingWebView` → `NovelLoadingWebView.mWebView` → the three `BaseSysWebView` methods. `WebAdvertActivity` uses the same three resource-level positions under its own Activity identity, with evidence Activity `WebAdvertView` field → `WebAdvertView.mLoadingWebView` → `AdLoadingWebView.mWebView` → `BaseSysWebView`. This matches the independently verified inflate/ViewStub construction chains. No `field_object`, redirect-result, entry-parameter, or unrelated union shadow is used by these restored facts.
+
+This audit did not open sealed holdout material. Since the new six were chosen after viewing v9c output, any overlap with a separately maintained sealed set must be replaced by the holdout custodian; this document neither checks nor discloses sealed identities or facts.

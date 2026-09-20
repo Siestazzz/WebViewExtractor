@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "migration": "nft-development-v1-to-canonical-compatible-v2",
+  "semantic_rows_before": 57,
+  "semantic_rows_after": 57,
+  "changes": [
+    "copied webview_identity to webview while retaining webview_identity",
+    "added normalized_api",
+    "mapped string/boolean/integer to literal and dynamic_string to dynamic; retained raw_value_kind",
+    "renamed callback setter fact to callback_registration and assigned instantiated client implementation",
+    "renamed callback_method to callback and retained its actual implementation class",
+    "retained all three webview_operation rows outside the three scored capability families"
+  ]
+}

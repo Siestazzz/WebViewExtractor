@@ -10,6 +10,8 @@ import org.jf.dexlib2.iface.instruction.*;
 /** One DEX pass for structure and call references. Bodies are decoded on demand. */
 final class CapabilityIndex {
     final Map<String,ClassDef> classes=new LinkedHashMap<>();
+    final Map<String,List<String>> platformParents=new HashMap<>();
+    String platformSource="unavailable";
     final Map<String,Method> methods=new LinkedHashMap<>();
     final Map<String,Set<String>> callers=new HashMap<>(), calls=new HashMap<>();
     final Map<String,List<Method>> byClass=new HashMap<>();
@@ -25,6 +27,8 @@ final class CapabilityIndex {
     final Set<String> bindingObjects=new HashSet<>();
     final Set<String> lazyContracts=new HashSet<>(Set.of("kotlin.Lazy")), function0Contracts=new HashSet<>(Set.of("kotlin.jvm.functions.Function0"));
     final Map<String,Set<String>> callbackEntries=new HashMap<>();
+    record CustomCallback(String field,String contract,Set<String> dispatchedShapes){}
+    final Map<String,CustomCallback> customCallbacks=new HashMap<>();
     final Map<String,Boolean> subtypeCache=new HashMap<>();
     final List<String> diagnostics=new ArrayList<>();
     long instructions;
@@ -35,6 +39,18 @@ final class CapabilityIndex {
     static String display(MethodReference m){return cls(m.getDefiningClass())+"."+m.getName()+"("+String.join(",",m.getParameterTypes().stream().map(Object::toString).toList())+"):"+m.getReturnType();}
     final FrameworkServices services=new FrameworkServices();
     void read(Path apk,long deadline) throws Exception {
+        try{
+            Path platforms=SootReader.androidJars();
+            if(platforms!=null){
+                try(var paths=java.nio.file.Files.list(platforms)){
+                    Path jar=paths.filter(p->p.getFileName().toString().matches("android-[0-9]+"))
+                        .sorted(Comparator.comparingInt((Path p)->Integer.parseInt(p.getFileName().toString().substring(8))).reversed())
+                        .map(p->p.resolve("android.jar")).filter(java.nio.file.Files::isRegularFile).findFirst().orElse(null);
+                    if(jar!=null){platformParents.putAll(PlatformHierarchy.read(jar,deadline));platformSource=jar.toString();}
+                }
+            }
+            if(platformParents.isEmpty())diagnostics.add("platform_hierarchy_unavailable");
+        }catch(java.io.IOException ex){diagnostics.add("platform_hierarchy_failed:"+ex.getClass().getSimpleName());}
         var container=DexFileFactory.loadDexContainer(apk.toFile(),Opcodes.getDefault());
         for(String name:container.getDexEntryNames())for(ClassDef c:container.getEntry(name).getDexFile().getClasses()){
             classes.put(cls(c.getType()),c);
@@ -73,6 +89,7 @@ final class CapabilityIndex {
         for(var e:new ArrayList<>(calls.entrySet()))for(String ref:new ArrayList<>(e.getValue())){
             Method m=resolve(ref);if(m!=null){String target=key(m);e.getValue().add(target);callers.computeIfAbsent(target,k->new HashSet<>()).add(e.getKey());}
         }
+        discoverCustomCallbacks(deadline);
         services.index(this,deadline);
         discoverMessageRegistries(deadline);
         for(var e:calls.entrySet())for(String ref:e.getValue())if(messageRegistries.containsKey(ref))seeds.add(e.getKey());
@@ -92,8 +109,8 @@ final class CapabilityIndex {
         // Resolve capability-carrier overrides only near a real registration/configuration site.
         // This includes concrete SDK adapter base methods, not only abstract declarations.
         for(var entry:seedDistance.entrySet())if(entry.getValue()<=2){Method implementation=methods.get(entry.getKey());if(implementation==null||implementation.getName().startsWith("<"))continue;
-            String owner=cls(implementation.getDefiningClass());if(!carriers.contains(owner)||component(owner)||activity(owner))continue;
-            for(Method declaration:byShape.getOrDefault(shape(implementation),List.of()))if(!declaration.getDefiningClass().equals(implementation.getDefiningClass())&&subtype(owner,cls(declaration.getDefiningClass())))
+            String owner=cls(implementation.getDefiningClass());if(!carriers.contains(owner)||webview(owner)||activity(owner))continue;
+            for(Method declaration:byShape.getOrDefault(shape(implementation),List.of()))if((!component(owner)||declaration.getImplementation()==null)&&!declaration.getDefiningClass().equals(implementation.getDefiningClass())&&subtype(owner,cls(declaration.getDefiningClass())))
                 for(String caller:callers.getOrDefault(key(declaration),Set.of()))callers.computeIfAbsent(key(implementation),k->new HashSet<>()).add(caller);
         }
         var queue=new ArrayDeque<>(seeds); relevant.addAll(seeds);
@@ -102,6 +119,12 @@ final class CapabilityIndex {
             Set<String> receiverOwners=new HashSet<>();
             for(String call:calls.getOrDefault(callee,Set.of())){
                 Method target=methods.get(call);
+                // A pure getter can carry a WebView without invoking any capability API.
+                // Follow only returned WebView/Settings/carrier objects, then discover their
+                // field writers through the same bounded relevance closure.
+                if(target!=null){String returned=cls(target.getReturnType());
+                    if((webview(returned)||settings(returned)||bindingObjects.contains(returned))&&relevant.add(call))queue.add(call);
+                }
                 if(relevant.contains(call)||target!=null&&target.getImplementation()==null&&byShape.getOrDefault(shape(target),List.of()).stream().anyMatch(m->relevant.contains(key(m))))receiverOwners.add(CapabilityEngine.owner(call));
             }
             for(String field:referencedFields.getOrDefault(callee,Set.of())){
@@ -117,8 +140,11 @@ final class CapabilityIndex {
             for(String caller:callers.getOrDefault(callee,Set.of()))if(relevant.add(caller))queue.add(caller);
             Method cm=methods.get(callee);
             if(cm!=null){String owner=cls(cm.getDefiningClass());
-                if(carriers.contains(owner)&&!component(owner)&&!activity(owner)&&!cm.getName().startsWith("<"))
+                if(carriers.contains(owner)&&!webview(owner)&&!activity(owner)&&!cm.getName().startsWith("<"))
                     for(Method declaration:byShape.getOrDefault(shape(cm),List.of())){
+                        // View/Fragment carriers need interface/abstract contracts. Expanding
+                        // every concrete base initializer links unrelated UI entrypoints.
+                        if(component(owner)&&declaration.getImplementation()!=null)continue;
                         String base=cls(declaration.getDefiningClass());
                         // Generic platform listeners do not identify a concrete SDK carrier.
                         if(base.startsWith("java.")||base.startsWith("android.")||base.startsWith("androidx.")||base.startsWith("kotlin."))continue;
@@ -128,6 +154,34 @@ final class CapabilityIndex {
                 if(callback)callbackEntries.computeIfAbsent(owner,k->new HashSet<>()).add(key(cm));
                 if(callback||component(owner)||scheduled(owner)&&(cm.getName().equals("run")||cm.getName().equals("call")))for(Method init:byClass.getOrDefault(owner,List.of()))if(init.getName().equals("<init>")&&relevant.add(key(init)))queue.add(key(init));
             }
+        }
+    }
+    void discoverCustomCallbacks(long deadline){
+        DexFlow flow=new DexFlow(this,deadline);Map<String,CustomCallback> candidates=new HashMap<>();Set<String> fields=new HashSet<>();
+        for(Method setter:methods.values()){
+            String owner=cls(setter.getDefiningClass());
+            if(!webview(owner)||(setter.getAccessFlags()&8)!=0||setter.getImplementation()==null||setter.getName().startsWith("<")||setter.getParameterTypes().size()!=1)continue;
+            String contract=cls(setter.getParameterTypes().get(0).toString());
+            if(contract==null||!classes.containsKey(contract)||subtype(contract,"android.webkit.WebViewClient")||subtype(contract,"android.webkit.WebChromeClient"))continue;
+            if(contractMethods(contract).stream().noneMatch(m->CapabilityEngine.CALLBACKS.contains(m.getName())&&m.getParameterTypes().stream().anyMatch(p->webview(cls(p.toString())))))continue;
+            if(System.nanoTime()>deadline)throw new IllegalStateException("custom_callback_index_deadline");
+            for(DexFlow.Write write:flow.summary(setter).writes())if(write.receiver().kind().equals("param")&&write.receiver().id().equals("0")&&write.value().kind().equals("param")&&write.value().id().equals("1")){
+                candidates.put(key(setter),new CustomCallback(write.field(),contract,Set.of()));fields.add(write.field());
+            }
+        }
+        Map<String,Set<String>> readers=new HashMap<>();
+        for(var entry:referencedFields.entrySet())for(String field:entry.getValue())if(fields.contains(field))readers.computeIfAbsent(field,k->new HashSet<>()).add(entry.getKey());
+        for(var entry:candidates.entrySet()){
+            CustomCallback candidate=entry.getValue();Set<String> dispatched=new HashSet<>();
+            for(String id:readers.getOrDefault(candidate.field(),Set.of())){
+                if(System.nanoTime()>deadline)throw new IllegalStateException("custom_callback_dispatch_deadline");
+                Method dispatch=methods.get(id);if(dispatch==null)continue;
+                for(DexFlow.Call call:flow.summary(dispatch).calls())if(!call.args().isEmpty()&&call.args().get(0).kind().equals("field")&&call.args().get(0).id().equals(candidate.field()))
+                    for(Method declaration:contractMethods(candidate.contract()))if(call.method().endsWith("->"+shape(declaration))&&subtype(candidate.contract(),CapabilityEngine.owner(call.method())))dispatched.add(shape(declaration));
+            }
+            if(dispatched.isEmpty())continue;
+            customCallbacks.put(entry.getKey(),new CustomCallback(candidate.field(),candidate.contract(),Set.copyOf(dispatched)));
+            for(String caller:callers.getOrDefault(entry.getKey(),Set.of()))seeds.add(caller);
         }
     }
     void discoverMessageRegistries(long deadline){
@@ -222,7 +276,7 @@ final class CapabilityIndex {
         var q=new ArrayDeque<String>();q.add(type);var seen=new HashSet<String>();boolean result=false;
         while(!q.isEmpty()){
             String t=q.remove();if(!seen.add(t))continue;if(t.equals(base)){result=true;break;}
-            ClassDef c=classes.get(t);if(c!=null){if(cls(c.getSuperclass())!=null)q.add(cls(c.getSuperclass()));for(String iface:c.getInterfaces())q.add(cls(iface));}
+            ClassDef c=classes.get(t);if(c!=null){if(cls(c.getSuperclass())!=null)q.add(cls(c.getSuperclass()));for(String iface:c.getInterfaces())q.add(cls(iface));}else q.addAll(platformParents.getOrDefault(t,List.of()));
         }
         subtypeCache.put(cache,result);return result;
     }
@@ -236,6 +290,7 @@ final class CapabilityIndex {
     boolean component(String t){return webview(t)||subtype(t,"android.app.Fragment")||subtype(t,"androidx.fragment.app.Fragment")||subtype(t,"android.support.v4.app.Fragment")||subtype(t,"android.view.View")||subtype(t,"android.app.Dialog");}
     String kind(MethodReference m){
         String owner=cls(m.getDefiningClass()),n=m.getName();var p=m.getParameterTypes();
+        if(customCallbacks.containsKey(key(m)))return "callback";
         if(webview(owner)){
             if((n.equals("loadUrl")||n.equals("loadData")||n.equals("loadDataWithBaseURL")||n.equals("evaluateJavascript"))&&!p.isEmpty()&&p.get(0).equals("Ljava/lang/String;"))return "webview_operation";
             if(n.equals("addJavascriptInterface")&&p.size()==2&&p.get(0).equals("Ljava/lang/Object;")&&p.get(1).equals("Ljava/lang/String;"))return "bridge";
@@ -255,6 +310,15 @@ final class CapabilityIndex {
             Method m=methods.get(c.getType()+"->"+tail);if(m!=null)return m;
             type=cls(c.getSuperclass());
         }return null;
+    }
+    List<Method> contractMethods(String type){
+        Map<String,Method> result=new LinkedHashMap<>();Set<String> seen=new HashSet<>();ArrayDeque<String> queue=new ArrayDeque<>();if(type!=null)queue.add(type);
+        while(!queue.isEmpty()){
+            String current=queue.remove();if(current.equals("java.lang.Object")||!seen.add(current))continue;
+            for(Method method:byClass.getOrDefault(current,List.of()))result.putIfAbsent(shape(method),method);
+            ClassDef definition=classes.get(current);if(definition==null)continue;
+            String parent=cls(definition.getSuperclass());if(parent!=null)queue.add(parent);for(String iface:definition.getInterfaces())queue.add(cls(iface));
+        }return List.copyOf(result.values());
     }
     List<Method> hierarchyMethods(String type){
         LinkedHashMap<String,Method> result=new LinkedHashMap<>();var seen=new HashSet<String>();

@@ -1,0 +1,102 @@
+{
+  "rule_id": "nested_xml_wrapper_construction_to_basesyswebview",
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "evidence_status": "source_verified_dex_symbols_verified",
+  "holdout_used": false,
+  "novel": {
+    "outer": {
+      "type": "Lcom/tencent/news/tad/business/novel/NovelWebView;",
+      "constructors": [
+        "Lcom/tencent/news/tad/business/novel/NovelWebView;-><init>(Landroid/content/Context;)V",
+        "Lcom/tencent/news/tad/business/novel/NovelWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V"
+      ],
+      "initializer": "Lcom/tencent/news/tad/business/novel/NovelWebView;->init(Landroid/content/Context;)V",
+      "fields": [
+        "Lcom/tencent/news/tad/business/novel/NovelWebView;->mLoadingWebView:Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;",
+        "Lcom/tencent/news/tad/business/novel/NovelWebView;->mWebView:Lcom/tencent/news/webview/BaseSysWebView;"
+      ],
+      "assignment": "Both constructors call init on the normal path. init inflates layout g.f105384 into this, assigns mLoadingWebView from this.findViewById(f.f105059), then assigns mWebView from mLoadingWebView.getWebView().",
+      "on_finish_inflate": false
+    },
+    "inner": {
+      "type": "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;",
+      "constructors": [
+        "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;-><init>(Landroid/content/Context;)V",
+        "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+        "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V"
+      ],
+      "constructor_delegation": "Context -> (Context,null) -> (Context,AttributeSet,0). Only the 3-argument constructor calls initialize on the normal path, so every overload reaches it exactly once.",
+      "initializer": "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;->initialize(Landroid/content/Context;)V",
+      "field": "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;->mWebView:Lcom/tencent/news/webview/BaseSysWebView;",
+      "getter": "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;->getWebView()Lcom/tencent/news/webview/BaseSysWebView;",
+      "assignment": "initialize inflates layout g.f105201 into this, then assigns mWebView = (BaseSysWebView)this.findViewById(g.De).",
+      "webview_creation": "The app code does not execute new BaseSysWebView here. LayoutInflater creates the BaseSysWebView declared in the inner XML before findViewById returns it. This is normal XML reflection through the platform inflater, not an app factory method.",
+      "on_finish_inflate": false
+    },
+    "earliest_trigger": "Inflating/constructing NovelWebView via either constructor triggers its init; inflation of g.f105384 constructs NovelLoadingWebView; that constructor inflates g.f105201, whose BaseSysWebView XML node invokes a BaseSysWebView XML constructor. BaseSysWebView constructor initialization and its three settings occur before NovelLoadingWebView.mWebView is assigned by findViewById."
+  },
+  "advert": {
+    "outer": {
+      "type": "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;",
+      "constructors": [
+        "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;-><init>(Landroid/content/Context;)V",
+        "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V"
+      ],
+      "initializer": "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;->init(Landroid/content/Context;)V",
+      "fields": [
+        "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;->mLoadingWebView:Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;",
+        "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;->mWebView:Lcom/tencent/news/tad/business/ui/landing/AdWebView;"
+      ],
+      "assignment": "Both constructors call init on the normal path. init inflates layout tad.g.f105382, assigns mLoadingWebView from findViewById(f.f105059), then assigns mWebView from mLoadingWebView.getWebView().",
+      "on_finish_inflate": false
+    },
+    "inner": {
+      "type": "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;",
+      "constructors": [
+        "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;-><init>(Landroid/content/Context;)V",
+        "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+        "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V"
+      ],
+      "constructor_delegation": "Context -> (Context,null) -> (Context,AttributeSet,0). Only the 3-argument constructor calls initialize on the normal path.",
+      "initializer": "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;->initialize(Landroid/content/Context;)V",
+      "field": "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;->mWebView:Lcom/tencent/news/tad/business/ui/landing/AdWebView;",
+      "getter": "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;->getWebView()Lcom/tencent/news/tad/business/ui/landing/AdWebView;",
+      "assignment_branches": [
+        "initialize inflates layout tad.g.f105200 and finds ViewStub f.f105170; if present, mWebView = (AdWebView)viewStub.inflate().",
+        "If the ViewStub is absent, mWebView = (AdWebView)this.findViewById(g.De)."
+      ],
+      "webview_creation": "Neither branch contains app-level new AdWebView. ViewStub.inflate uses XML LayoutInflater to construct the stub layout; the fallback obtains an AdWebView already created while inflating f105200. Both are platform XML construction paths, not a custom reflection factory.",
+      "on_finish_inflate": false
+    },
+    "webview_subtype": {
+      "type": "Lcom/tencent/news/tad/business/ui/landing/AdWebView;",
+      "parent": "Lcom/tencent/news/webview/BaseSysWebView;",
+      "constructors": [
+        "Lcom/tencent/news/tad/business/ui/landing/AdWebView;-><init>(Landroid/content/Context;)V",
+        "Lcom/tencent/news/tad/business/ui/landing/AdWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+        "Lcom/tencent/news/tad/business/ui/landing/AdWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+        "Lcom/tencent/news/tad/business/ui/landing/AdWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IZ)V"
+      ],
+      "super_constructor_requirement": "Every overload directly invokes the corresponding BaseSysWebView constructor. BaseSysWebView performs its init and shared settings before the AdWebView constructor body continues."
+    },
+    "earliest_trigger": "Inflating/constructing WebAdvertView triggers init and construction of AdLoadingWebView. AdLoadingWebView.initialize either immediately inflates an AdWebView from a ViewStub or obtains the AdWebView created during its inner layout inflation. The AdWebView super-constructor is the first setting trigger; it precedes assignment to AdLoadingWebView.mWebView."
+  },
+  "five_settings": [
+    "WebNovelActivity: BaseSysWebView setMixedContentMode(0)",
+    "WebNovelActivity: BaseSysWebView setTextZoom(100)",
+    "WebNovelActivity: BaseSysWebView setDomStorageEnabled(dynamic)",
+    "WebAdvertActivity: BaseSysWebView setMixedContentMode(0)",
+    "WebAdvertActivity: BaseSysWebView setTextZoom(100)"
+  ],
+  "modeling_implication": "The missing edge is nested XML construction and field assignment, not a generic field_object seed. A casted findViewById seed for the outer custom View must expand the outer constructor's synchronous inflate, bind inflated child custom-view constructors to that outer instance, process the child's synchronous inflate/ViewStub.inflate, and then connect the exact assigned child field/getter identity to the BaseSysWebView constructor effects.",
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/novel/NovelWebView.java:32-63,86-88,143-end",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/novel/NovelLoadingWebView.java:27-44,74-76,101-end",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/ui/landing/WebAdvertView.java:24-50,72-74,130-end",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/ui/landing/AdLoadingWebView.java:26-62,75-77,119-end",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/ui/landing/AdWebView.java:23-39,130-end",
+    "test/runs/symbols/news.jsonl"
+  ]
+}

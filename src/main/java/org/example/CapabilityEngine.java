@@ -32,7 +32,7 @@ final class CapabilityEngine {
         final ArrayDeque<Job> queue=new ArrayDeque<>();
         final Set<String> visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
-        final List<String> gaps=new ArrayList<>();
+        final Set<String> gaps=new LinkedHashSet<>();
         Host(String a){activity=a;}
     }
     void analyzeActivity(String activity){
@@ -183,8 +183,8 @@ final class CapabilityEngine {
         return value;
     }
     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
-        if(System.nanoTime()>deadline)return V.of("unknown",v.type(),"global_deadline");
-        if(depth>14)return V.of("unknown",v.type(),"resolve_depth");
+        if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return V.of("unknown",v.type(),"global_deadline");}
+        if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
         if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?job.args.get(i):V.of("unknown",v.type(),"parameter");}
         if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));for(V element:v.args())applyWrite(h,"$contents",array,eval(element,job,h,depth+1,new HashSet<>(visiting)));return array;}
         if(v.kind().equals("array_element"))return elements(h,eval(v.args().get(0),job,h,depth+1,visiting),v.type());
@@ -201,11 +201,19 @@ final class CapabilityEngine {
             return object;
         }
         if(v.kind().equals("union")){V result=null;for(V x:v.args())result=union(result,eval(x,job,h,depth+1,new HashSet<>(visiting)));return result==null?UNKNOWN:result;}
+        if(v.kind().equals("int_binary")){
+            V left=eval(v.args().get(0),job,h,depth+1,new HashSet<>(visiting)),right=eval(v.args().get(1),job,h,depth+1,new HashSet<>(visiting)),result=null;
+            for(V a:alternatives(left))for(V b:alternatives(right)){
+                Long x=number(a),y=number(b);if(x==null||y==null)return V.of("unknown","number","dynamic_int_"+v.id());
+                int value=switch(v.id()){case "xor"->x.intValue()^y.intValue();case "and"->x.intValue()&y.intValue();case "or"->x.intValue()|y.intValue();default->throw new IllegalStateException("unsupported_int_operator");};
+                result=union(result,V.literal("number",String.valueOf(value)));
+            }return result==null?UNKNOWN:result;
+        }
         if(v.kind().equals("cast")){
             V original=eval(v.args().get(0),job,h,depth+1,visiting);
             List<V> choices=new ArrayList<>();for(V alternative:alternatives(original)){
                 V cast=new V(alternative.kind(),alternative.kind().equals("object")?alternative.type():v.type(),alternative.id(),alternative.literal(),alternative.args());choices.add(cast);
-                if(alternative.kind().equals("view")&&idx.webview(v.type())&&!Cfg.WEBVIEWS.contains(v.type()))seed(h,v.type(),cast,job.path,true);
+                if(alternative.kind().equals("view")&&idx.component(v.type())&&!idx.activity(v.type())&&!Cfg.WEBVIEWS.contains(v.type()))seed(h,v.type(),cast,job.path,true);
             }
             return choices.size()==1?choices.get(0):new V("union",v.type(),original.id(),null,List.copyOf(choices));
         }
@@ -285,7 +293,9 @@ final class CapabilityEngine {
         return v;
     }
     void materializeConstructor(Method ctor,List<V> args,Job outer,Host h,int depth,Set<String> visiting){
-        if(depth>12||args.isEmpty()||System.nanoTime()>deadline)return;
+        if(args.isEmpty())return;
+        if(depth>12){h.gaps.add("constructor_capture_depth:"+CapabilityIndex.key(ctor));return;}
+        if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return;}
         String context=CapabilityIndex.key(ctor)+"|"+args;
         if(!h.materialized.add(context))return;
         if(h.materialized.size()>12000){h.gaps.add("constructor_materialization_budget");return;}
@@ -420,10 +430,13 @@ final class CapabilityEngine {
             }return;
         }
         if(kind.equals("callback")&&args.size()>=2){
+            Method setter=idx.resolve(call.method());var custom=idx.customCallbacks.get(setter==null?call.method():CapabilityIndex.key(setter));
+            if(custom!=null){base.put("callback_field",custom.field());base.put("callback_contract",custom.contract());base.put("resolution","receiver_field_stored_listener");}
             for(V client:alternatives(args.get(1))){
+                if(custom!=null)applyWrite(h,custom.field(),recv,client);
                 if(client.kind().equals("literal")&&"0".equals(client.literal())){Map<String,Object> reset=new LinkedHashMap<>(base);reset.put("kind","callback_removal");add(h,reset);continue;}
-                Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",callbackMembers(client.type()));add(h,b);
-                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if(CALLBACKS.contains(callback.getName())&&idx.relevant.contains(CapabilityIndex.key(callback))){
+                Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",custom==null?callbackMembers(client.type()):customCallbackMembers(client.type(),custom));add(h,b);
+                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if((custom==null?CALLBACKS.contains(callback.getName()):idx.contractMethods(custom.contract()).stream().anyMatch(m->CapabilityIndex.shape(m).equals(CapabilityIndex.shape(callback))))&&idx.relevant.contains(CapabilityIndex.key(callback))){
                     List<V> callbackArgs=new ArrayList<>();callbackArgs.add(client);
                     for(CharSequence p:callback.getParameterTypes())callbackArgs.add(idx.webview(CapabilityIndex.cls(p.toString()))?recv:V.of("unknown",CapabilityIndex.cls(p.toString()),"callback_parameter"));
                     enqueue(h,callback,callbackArgs,job.path,true);
@@ -535,6 +548,14 @@ final class CapabilityEngine {
             boolean annotated=m.getAnnotations().stream().anyMatch(a->a.getType().endsWith("/JavascriptInterface;"));
             if(annotated||apk.targetSdk>0&&apk.targetSdk<17)result.add(Map.of("signature",CapabilityIndex.key(m),"display",CapabilityIndex.display(m),"annotated",annotated));
         }return result;
+    }
+    List<Map<String,Object>> customCallbackMembers(String type,CapabilityIndex.CustomCallback custom){
+        if(type==null)return List.of();Set<String> shapes=new HashSet<>();
+        for(Method declaration:idx.contractMethods(custom.contract()))if((declaration.getAccessFlags()&8)==0&&!declaration.getName().startsWith("<"))shapes.add(CapabilityIndex.shape(declaration));
+        List<Map<String,Object>> result=new ArrayList<>();
+        for(Method method:idx.hierarchyMethods(type))if(method.getImplementation()!=null&&(method.getAccessFlags()&8)==0&&shapes.contains(CapabilityIndex.shape(method)))
+            result.add(Map.of("signature",CapabilityIndex.key(method),"display",CapabilityIndex.display(method),"name",method.getName(),"dispatch_observed",custom.dispatchedShapes().contains(CapabilityIndex.shape(method)),"dispatch_status",custom.dispatchedShapes().contains(CapabilityIndex.shape(method))?"observed":"unresolved"));
+        return result;
     }
     List<Map<String,Object>> callbackMembers(String type){
         if(type==null)return List.of();

@@ -42,6 +42,7 @@ public class Main {
         ApkInventory inventory=ApkInventory.read(apk);
         write(out.resolve("capabilities.json"),Map.of("schema_version",1,"status","indexing","apk_sha256",hash,"package",inventory.packageName,"version",inventory.version,"activities",List.of(),"unattributed",List.of(),"diagnostics",List.of("index_not_finished")));
         long t=System.nanoTime();CapabilityIndex idx=new CapabilityIndex();idx.read(apk,deadline);
+        metrics.put("platform_hierarchy_source",idx.platformSource);metrics.put("platform_hierarchy_classes",idx.platformParents.size());
         metrics.put("index_seconds",(System.nanoTime()-t)/1e9);metrics.put("classes",idx.classes.size());metrics.put("methods",idx.methods.size());metrics.put("instructions",idx.instructions);metrics.put("seed_methods",idx.seeds.size());metrics.put("relevant_methods",idx.relevant.size());metrics.put("manifest_activities",inventory.activities.size());
         System.out.println("Indexed: "+JSON.toJson(metrics));
         CapabilityEngine engine=new CapabilityEngine(idx,inventory,deadline);List<String> roots=new ArrayList<>(inventory.activities);

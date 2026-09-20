@@ -85,3 +85,22 @@ Kotlin delayed initialization recognizes standard or obfuscated Kotlin interface
 substituted per factory call; unrelated initializer implementations are not enumerated. Unknown
 initializers remain unresolved. Factory recognition is limited to Kotlin namespace static methods whose returned allocation
 passes the exact initializer parameter into a constructor field capture (including delegation).
+
+Custom callback setters are recognized structurally: the receiver is a WebView subtype, the
+listener argument is stored in an instance field, and that same field has a contract dispatch
+site. Inherited contract members are included. `callback_field`, `callback_contract` and
+`dispatch_status` describe the evidence. `observed` means a matching static dispatch site was
+found, not proof of runtime invocation; `unresolved` is not proof of absence.
+
+The default engine reads Android SDK class headers to resolve platform inheritance such as
+FrameLayout -> ViewGroup -> View. It selects the highest numbered installed SDK platform from
+ANDROID_HOME / ANDROID_SDK_ROOT or local.properties. `platform_hierarchy_source` and
+`platform_hierarchy_classes` record the selection. SDK methods are not loaded or traversed.
+Missing SDK metadata leaves an explicit index diagnostic. Pure WebView/carrier getters are
+included when determining required field writers and wrapper initialization.
+
+Scoring revision4 adds strict callback-registration checks (setter API and concrete Client type),
+keeps callback members as separate evidence, and reports WebView operations and positive-host
+recall independently. Operation matches cannot inflate the three capability categories. The
+expanded NFT development oracle demonstrates why an unchanged old score cannot establish that
+an entire framework's capability surface was retained.
