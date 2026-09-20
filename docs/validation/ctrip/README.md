@@ -14,6 +14,10 @@ For settings, `name` is the exact `setXXX` method parsed from `normalized_api`. 
 
 `v2-capability-ownership.jsonl` audits every v2b bridge candidate at the generic H5Plugin iterator site. Its Markdown companion explains why factory membership or a matching conditional provider return is required instead of expanding an unknown base type to every subtype. These files retain false candidates as regression cases.
 
+`v2d-missing-analysis.jsonl` and `.md` split the reported v2d misses into oracle errors and extractor gaps. `callback-binding-chains.md` gives exact DEX signatures and the concrete/superclass or SDK helper return chains. `container-element-flow.md` records the erased DEX list flow from `n.t()` through field `y`, iterator, cast, and bridge registration.
+
+`canonical-host-group-audit.jsonl` covers all 33 public positive Activities. Each shared-group row records per-family applicability, so Fragment-only Chrome callbacks can be excluded while settings, plugins, and WebViewClient remain valid for a direct H5WebView host. Activities without a reusable shared group have an explicit `group_id: null` decision. `v3-ownership.jsonl` and `.md` review every v3-emitted Activity from source and report a conservative wrong-or-uncertain upper bound.
+
 Evaluation tiers are `core_required` for both primary H5 registries, `conditional_required` for Bus-provided plugins, and `bypass_required` for RN/Flutter paths. Scores should be reported by tier before aggregation so success on simple direct WebViews cannot hide a missed main registry.
 
 Activity classifications have deliberately narrow meanings:

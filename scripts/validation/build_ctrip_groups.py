@@ -200,17 +200,19 @@ def main():
         if x['classification']!='positive': continue
         cls=x['activity']; p=src/(cls.replace('.','/')+'.java'); body=p.read_text(errors='replace') if p.exists() else ''
         gids=[]
-        binding_lines=[(i,l.strip()) for i,l in enumerate(body.splitlines(),1) if not l.lstrip().startswith('import ') and re.search(r'(?:new\s+(?:[\w.]*H5Fragment|[\w.]*H5WebView|CtripWebView)|extends\s+(?:[\w.]*H5Container)|\b(?:[\w.]*H5Fragment|[\w.]*H5WebView|CtripWebView)\s+\w+\b|\((?:[\w.]*H5Fragment|[\w.]*H5WebView|CtripWebView)\)\s*\w+)',l)]
-        has_binding=bool(binding_lines) or 'addJavascriptInterface' in body
-        if has_binding and ('ctrip.android.view.h5v2' in body or cls in ('ctrip.android.view.h5v2.view.H5Container','ctrip.android.view.h5v2.view.H5PreRender')):
+        binding_lines=[(i,l.strip()) for i,l in enumerate(body.splitlines(),1) if not l.lstrip().startswith('import ') and re.search(r'(?:new\s+(?:[\w.]*H5Fragment|[\w.]*H5WebView)|extends\s+(?:[\w.]*H5Container)|\b(?:[\w.]*H5Fragment|[\w.]*H5WebView)\s+\w+\b|\((?:[\w.]*H5Fragment|[\w.]*H5WebView)\)\s*\w+)',l)]
+        if binding_lines and ('ctrip.android.view.h5v2' in body or cls in ('ctrip.android.view.h5v2.view.H5Container','ctrip.android.view.h5v2.view.H5PreRender')):
             gids.append('ctrip-h5-v2')
-        if has_binding and ('ctrip.android.view.h5.view' in body or cls=='ctrip.android.view.h5.view.H5Container') and 'h5v2' not in body:
+        if binding_lines and ('ctrip.android.view.h5.view' in body or cls=='ctrip.android.view.h5.view.H5Container') and 'h5v2' not in body:
             gids.append('ctrip-h5-v1')
         if 'ctrip.business.crnwebview.RNCWebViewManager' in body: gids.append('rn-webview')
         if 'io.flutter.plugins.webviewflutter' in body: gids.append('flutter-webview')
         host_ev=([source_evidence(p,binding_lines[0][0],root)] if binding_lines and p.exists() else x['evidence'])
         for gid in dict.fromkeys(gids):
-            links.append({'activity':cls,'group_id':gid,'host_evidence':host_ev,'binding_mode':x['binding_mode'],'apk_sha256':APK_SHA})
+            link={'activity':cls,'group_id':gid,'host_evidence':host_ev,'binding_mode':x['binding_mode'],'apk_sha256':APK_SHA}
+            if cls=='ctrip.business.evaluation.EvaluateDialogActivity':
+                link['exclude_capabilities']=['webchrome_client']
+            links.append(link)
     with (out/'activity-groups.jsonl').open('w') as f:
         for x in links: f.write(json.dumps(x,ensure_ascii=False)+'\n')
     # Enrich the original hand-reviewed facts with strict comparison keys.

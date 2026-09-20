@@ -87,9 +87,9 @@ add("com.mgtv.ui.other.BackDoorWebActivity","android.webkit.WebView","setting","
 add("com.mgtv.ui.other.BackDoorWebActivity","android.webkit.WebView","callback","WebViewClient","BackDoorWebActivity.a","BackDoorWebActivity#onCreate","shouldOverrideUrlLoading(WebView,WebResourceRequest); shouldOverrideUrlLoading(WebView,String)","com/mgtv/ui/other/BackDoorWebActivity.java:69,92-105")
 add("com.mgtv.diana.sdk.api.pay.WechatWapPayRouterActivity","android.webkit.WebView","setting","setAllowFileAccess","false","WechatWapPayRouterActivity#init","void setAllowFileAccess(boolean)","com/mgtv/diana/sdk/api/pay/WechatWapPayRouterActivity.java:120")
 add("com.mgtv.diana.sdk.api.pay.WechatWapPayRouterActivity","android.webkit.WebView","callback","WebViewClient","anonymous MoWebViewClient","WechatWapPayRouterActivity#init","onRenderProcessGone(WebView,RenderProcessGoneDetail); shouldOverrideUrlLoading(WebView,WebResourceRequest); shouldOverrideUrlLoading(WebView,String)","com/mgtv/diana/sdk/api/pay/WechatWapPayRouterActivity.java:122-151")
-add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","bridge","javaObj","d","com.ccb.ccbnetpay.H5PayActivity.d","JavascriptInterface methods in inner class d (see inventory unknown note)","com/ccb/ccbnetpay/H5PayActivity.java:206", "partial-decompilation")
-add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","bridge","javaObj.sdkCallBack","registered","com.ccb.ccbnetpay.H5PayActivity.d#sdkCallBack","public void sdkCallBack(String str)","com/ccb/ccbnetpay/H5PayActivity.java:96-101")
-add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","bridge","javaObj.showFinish","registered","com.ccb.ccbnetpay.H5PayActivity.d#showFinish","public void showFinish()","com/ccb/ccbnetpay/H5PayActivity.java:114-115")
+add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","bridge","javaObj","object_registered","com.ccb.ccbnetpay.H5PayActivity$d","","com/ccb/ccbnetpay/H5PayActivity.java:206")
+add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","bridge","javaObj","sdkCallBack","com.ccb.ccbnetpay.H5PayActivity$d","public void sdkCallBack(String str)","com/ccb/ccbnetpay/H5PayActivity.java:96-101,206")
+add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","bridge","javaObj","showFinish","com.ccb.ccbnetpay.H5PayActivity$d","public void showFinish()","com/ccb/ccbnetpay/H5PayActivity.java:114-115,206")
 add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","callback","WebChromeClient.onProgressChanged","com.ccb.ccbnetpay.H5PayActivity.c","H5PayActivity direct client","onProgressChanged(WebView,int)","com/ccb/ccbnetpay/H5PayActivity.java:82-88")
 add("com.ccb.ccbnetpay.H5PayActivity","android.webkit.WebView","callback","WebViewClient","com.ccb.ccbnetpay.H5PayActivity.e","H5PayActivity direct client","onPageFinished(WebView,String); onPageStarted(WebView,String,Bitmap); onReceivedError(WebView,int,String,String); shouldOverrideUrlLoading(WebView,String)","com/ccb/ccbnetpay/H5PayActivity.java:274-311")
 for n,v,line in (("setAllowContentAccess","false",193),("setAllowFileAccess","false",195),("setAllowFileAccessFromFileURLs","false",198),("setMixedContentMode","2",205)):
@@ -110,15 +110,44 @@ impl_string_methods=set()
 for decl in impl.read_text(errors="replace").splitlines():
     dm=re.match(r'\s*public\s+void\s+(\w+)\s*\(\s*(?:@\w+\s+)?String\s+\w+\s*\)\s*\{',decl)
     if dm: impl_string_methods.add(dm.group(1))
+# Reflection at ImgoWebJavascriptImpl.java:752 requires this exact DEX shape.
+# Use the independent export rather than accepting an interface declaration.
+dex_impl_string_methods=set()
+with (ROOT / "test/runs/symbols/mango.jsonl").open(errors="replace") as dex_stream:
+    for dex_line in dex_stream:
+        dex_obj=json.loads(dex_line)
+        if dex_obj.get('type')=='Lcom/mgtv/h5/ImgoWebJavascriptImpl;':
+            suffix='(Ljava/lang/String;)V'
+            dex_impl_string_methods={m['name'] for m in dex_obj.get('methods',[]) if m.get('signature','').endswith(suffix)}
+            break
+if not dex_impl_string_methods:
+    raise SystemExit('missing ImgoWebJavascriptImpl DEX methods')
+constant_registration_names={
+    "AIDLConstants.FUN_NAME.CONFIRM_LOGIN":"confirmLogin",
+    "MgtvMethodChannel.L":"getUserInfo",
+    "t.f135638u":"feedback",
+    "DianaEventDefine.ON_USER_CAPTURE_SCREEN":"onUserCaptureScreen",
+    "JsApiPage.SHOW_TOAST":"showToast",
+    "AIDLConstants.FUN_NAME.SEND_COMMENT":"sendComment",
+    "AIDLConstants.FUN_NAME.SHOW_MANGO_KID":"showMangoKid",
+    "VideoInteractionEvent.f55356g":"VideoInteractionEvent",
+    "VideoSetPlayerMutedEvent.f55366f":"VideoSetPlayerMuted",
+}
 for lineno, line in enumerate(imgo.read_text(errors="replace").splitlines(), 1):
     m = re.search(r'registerHandler\(([^,]+),\s*this\)', line)
     if not m: continue
     expr=m.group(1).strip()
     literal=expr.startswith('"') and expr.endswith('"')
-    name=expr[1:-1] if literal else expr
-    sig=iface_sigs.get(name,"unresolved constant/name-to-interface signature")
+    name=expr[1:-1] if literal else constant_registration_names.get(expr,expr)
+    target_confirmed=name in dex_impl_string_methods
     for a in imgo_hosts:
-        add(a,"com.hunantv.imgo.h5.ImgoWebView","bridge",name,"registered","com.hunantv.imgo.h5.callback.ImgoWebJavascriptInterface / runtime implementation",sig,f"com/hunantv/imgo/h5/ImgoWebView.java:{lineno} -> com/hunantv/imgo/h5/callback/ImgoWebJavascriptInterface.java",("confirmed" if literal and name in iface_sigs else "unknown-signature" if literal else "unknown-constant"))
+        add(a,"com.hunantv.imgo.h5.ImgoWebView","bridge",name,"registered",
+            "com.mgtv.h5.ImgoWebJavascriptImpl" if target_confirmed else None,
+            f"void {name}(String str)" if target_confirmed else "",
+            f"com/hunantv/imgo/h5/ImgoWebView.java:{lineno} -> com/mgtv/h5/ImgoWebJavascriptImpl.java:732-758",
+            "confirmed" if target_confirmed else "registered-target-unknown")
+        facts[-1]['registration_name']=name
+        facts[-1]['registration_expression']=expr
 
 add("com.hunantv.imgo.xweb.XWebActivity","com.hunantv.imgo.xweb.jsbridge.BridgeWebView","bridge","jsobj","callNative","com.hunantv.imgo.xweb.jsbridge.JSInterface#callNative","public void callNative(String str, String str2, String str3)","com/hunantv/imgo/xweb/jsbridge/BridgeWebView.java:292 -> com/hunantv/imgo/xweb/jsbridge/JSInterface.java:18-19")
 
@@ -145,23 +174,29 @@ for x in facts:
         x['normalized_api']=x['name']
     elif x['kind']=='bridge':
         x['normalized_api']='WebView message bridge registration'
+        x.setdefault('registration_name',x['name'])
         if x['value']=='registered' and not x['name'].startswith('javaObj.'):
-            x['normalized_signature']='Lcom/hunantv/imgo/h5/callback/ImgoWebJavascriptInterface;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/ImgoWebView;)V'
-            if x['binding_status']=='confirmed' and x['name'] in iface_sigs and x['name'] in impl_string_methods:
+            x['registration_name']=x.get('registration_name',x['name'])
+            if x['binding_status']=='confirmed' and x['name'] in dex_impl_string_methods:
                 x['bridge_method']='Lcom/mgtv/h5/ImgoWebJavascriptImpl;->'+x['name']+'(Ljava/lang/String;)V'
-            elif x['binding_status']=='confirmed':
-                x['binding_status']='unknown-target-method'
+                x['normalized_signature']=x['bridge_method']
+            else:
+                x['normalized_signature']=''
+                x['bridge_method']=''
+                x['signature']=''
+                x['implementation']=None
+                x['binding_status']='registered-target-unknown'
         elif x['name']=='jsobj':
             ret='Ljava/lang/String;' if 'String callNative' in x['signature'] else 'V'
             owner='com/hunantv/imgo/h5/jsbridge/BridgeWebView$JsObject' if ret!='V' else 'com/hunantv/imgo/xweb/jsbridge/JSInterface'
             x['bridge_method']='L'+owner+';->callNative(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)'+ret
             x['normalized_signature']=x['bridge_method']
             x['implementation']=owner.replace('/','.')
-        elif x['name']=='javaObj.sdkCallBack':
+        elif x['name']=='javaObj' and x['value']=='sdkCallBack':
             x['bridge_method']='Lcom/ccb/ccbnetpay/H5PayActivity$d;->sdkCallBack(Ljava/lang/String;)V'
             x['normalized_signature']=x['bridge_method']
             x['implementation']='com.ccb.ccbnetpay.H5PayActivity$d'
-        elif x['name']=='javaObj.showFinish':
+        elif x['name']=='javaObj' and x['value']=='showFinish':
             x['bridge_method']='Lcom/ccb/ccbnetpay/H5PayActivity$d;->showFinish()V'
             x['normalized_signature']=x['bridge_method']
             x['implementation']='com.ccb.ccbnetpay.H5PayActivity$d'
@@ -216,7 +251,7 @@ for _,k,_,_ in activities: counts[k]=counts.get(k,0)+1
 
 - `com.hunantv.imgo.h5.jsbridge.BridgeWebView` registers JavaScript object `jsobj` at `{SRC}com/hunantv/imgo/h5/jsbridge/BridgeWebView.java:223`.
 - Complete annotated exposure in its registered object: `public String callNative(String str, String str2, String str3)` at lines 63–64. The bridge dispatches by the first argument to `messageHandlers`; `registerHandler(String, BridgeHandler)` is declared at line 413. This documents signatures and binding only.
-- `ImgoWebView` is the manager that registers named handlers through `registerWebHandler()` at lines 529–673. Every registration expression is represented in `facts.jsonl`; constant-backed names retain the expression with unknown status.
+- `ImgoWebView` registers 138 named handlers through `registerWebHandler()` at lines 529–673. `ImgoWebJavascriptImpl$e0.handler()` reflects `getDeclaredMethod(registrationName, String.class)` at `ImgoWebJavascriptImpl.java:732-758`. Constant-backed names are resolved to their source values; only exact DEX `(String)V` targets populate `bridge_method`.
 
 ## XWeb message bridge
 
@@ -232,7 +267,7 @@ for _,k,_,_ in activities: counts[k]=counts.get(k,0)+1
 
 ## Annotated third-party bridge
 
-- CCB registers `javaObj` at `{SRC}com/ccb/ccbnetpay/H5PayActivity.java:206`; complete annotated exposures are `public void sdkCallBack(String str)` and `public void showFinish()` at lines 100–115.
+- CCB registers object name `javaObj` at `{SRC}com/ccb/ccbnetpay/H5PayActivity.java:206`; its distinct annotated members are `sdkCallBack` and `showFinish` at lines 100–115.
 - Wallet DSBridge uses `_dsbridge`-family plumbing in `com.mgtb.money.web.dsbridge.DWebView`; its annotated signatures are held for the final holdout pass.
 ''')
 
@@ -249,9 +284,11 @@ Unknown means unknown. JADX failures, obfuscated constants, unresolved generated
 ''')
 
 complete=set(imgo_hosts)|{"com.mgtv.ui.other.BackDoorWebActivity","com.mgtv.diana.sdk.api.pay.WechatWapPayRouterActivity","com.ccb.ccbnetpay.H5PayActivity","com.sina.weibo.sdk.web.WebActivity"}
+expanded={"com.mgsz.h5.WebContainerActivity","com.hunantv.imgo.xweb.XWebActivity","com.mgtb.money.web.ThirdWebActivity","com.mgtb.money.web.ThirdFullWebActivity","com.alipay.sdk.app.H5AuthActivity","com.alipay.sdk.app.H5OpenAuthActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity","com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity","com.opos.mobad.ui.feedback.FeedBackWebViewActivity","com.opos.cmn.module.ui.WebViewActivity","com.platform.oms.ui.LoadingWebActivity"}
+complete|=expanded
 with (OUT/"coverage.jsonl").open("w") as f:
     for a,layer,w,ev in activities:
         state="complete" if a in complete else "partial-wrapper-or-obfuscated-factory"
-        f.write(json.dumps({"activity":a,"settings_scan":state,"client_override_scan":state,"bridge_scan":"complete" if a in set(imgo_hosts)|{"com.ccb.ccbnetpay.H5PayActivity","com.hunantv.imgo.xweb.XWebActivity"} else "not-established-or-partial","evidence":SRC+ev,"apk_sha256":SHA},ensure_ascii=False,separators=(",",":"))+"\n")
+        f.write(json.dumps({"activity":a,"settings_scan":state,"client_override_scan":state,"bridge_scan":"complete" if a in complete|{"com.hunantv.imgo.xweb.XWebActivity"} else "not-established-or-partial","evidence":SRC+ev,"apk_sha256":SHA},ensure_ascii=False,separators=(",",":"))+"\n")
 
 print(len(activities),len(facts),len(holdout))

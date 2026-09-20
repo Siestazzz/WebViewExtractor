@@ -17,6 +17,14 @@ for x in rows:
             elif raw.lstrip('-').isdigit(): x['value']=int(raw)
         elif raw in {'ON','ON_DEMAND'}:
             x['value_kind']='enum'; x['value']='android.webkit.WebSettings.PluginState.'+raw
+        elif x.get('name')=='setRenderPriority' and raw=='HIGH':
+            x['value_kind']='enum'; x['value']='android.webkit.WebSettings.RenderPriority.HIGH'
+        elif x.get('name')=='setDefaultZoom' and raw=='MEDIUM':
+            x['value_kind']='enum'; x['value']='android.webkit.WebSettings.ZoomDensity.MEDIUM'
+        elif x.get('name')=='setLayoutAlgorithm' and raw=='NARROW_COLUMNS':
+            x['value_kind']='enum'; x['value']='android.webkit.WebSettings.LayoutAlgorithm.NARROW_COLUMNS'
+        elif x.get('name')=='setTextSize' and raw=='NORMAL':
+            x['value_kind']='enum'; x['value']='android.webkit.WebSettings.TextSize.NORMAL'
         else:
             x['value_kind']='dynamic'; x['value']=None
 
@@ -34,13 +42,18 @@ with open(HERE.parents[2]/'test/runs/symbols/mango.jsonl',errors='replace') as f
             if s in targets: found.add(s)
 
 for x in rows:
+    if x['kind']=='bridge':
+        x.setdefault('registration_name',x.get('name',''))
     ns=x.get('normalized_signature',''); bm=x.get('bridge_method','')
-    x['symbol_status']=('external_api' if ns.startswith('Landroid/') else ('confirmed' if ns and ns in found else ('not_applicable' if not ns else 'unresolved')))
+    x['symbol_status']=('external_api' if ns.startswith(('Landroid/','Lcom/tencent/smtt/')) else ('confirmed' if ns and ns in found else ('not_applicable' if not ns else 'unresolved')))
     if x['kind']=='bridge' and x.get('value')=='registered':
         # Registration remains true, but only a symbol-confirmed reflected target
         # is an exposed member. registerHandler itself is never that member.
         if not bm or bm not in found:
+            x['normalized_signature']=''
             x['bridge_method']=''
+            x['signature']=''
+            x['implementation']=None
             x['binding_status']='registered-target-unknown'
 
 with (HERE/'canonical-facts.jsonl').open('w') as f:

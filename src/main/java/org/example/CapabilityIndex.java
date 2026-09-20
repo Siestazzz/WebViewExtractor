@@ -16,11 +16,13 @@ final class CapabilityIndex {
     final Map<String,List<Method>> byShape=new HashMap<>();
     final Set<String> relevant=new HashSet<>(), seeds=new HashSet<>();
     final Set<String> classLiterals=new HashSet<>();
-    final Map<String,Set<String>> referencedFields=new HashMap<>(), allocations=new HashMap<>();
+    final Map<String,Set<String>> referencedFields=new HashMap<>(), allocations=new HashMap<>(),fieldWriters=new HashMap<>();
     final Map<String,Set<String>> reflectionFields=new HashMap<>();
     final Map<String,String> messageRegistries=new HashMap<>();
+    final Map<String,Set<List<String>>> namespaceRegistries=new HashMap<>();
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
+    final Map<String,Set<String>> callbackEntries=new HashMap<>();
     final Map<String,Boolean> subtypeCache=new HashMap<>();
     final List<String> diagnostics=new ArrayList<>();
     long instructions;
@@ -45,7 +47,7 @@ final class CapabilityIndex {
             try {for(Instruction i:m.getImplementation().getInstructions()){
                 instructions++;
                 if(i instanceof ReferenceInstruction rr){
-                    if(rr.getReference() instanceof FieldReference f)fields.add(field(f));
+                    if(rr.getReference() instanceof FieldReference f){fields.add(field(f));if(i.getOpcode().name.startsWith("iput")||i.getOpcode().name.startsWith("sput"))fieldWriters.computeIfAbsent(field(f),k->new HashSet<>()).add(id);}
                     if(i.getOpcode()==Opcode.CONST_CLASS&&rr.getReference() instanceof TypeReference tr)classLiterals.add(cls(tr.getType()));
                     if(i.getOpcode()==Opcode.NEW_INSTANCE&&rr.getReference() instanceof TypeReference tr)allocations.computeIfAbsent(id,k->new HashSet<>()).add(cls(tr.getType()));
                 }
@@ -73,19 +75,28 @@ final class CapabilityIndex {
                     for(String caller:callers.getOrDefault(key(declaration),Set.of()))callers.computeIfAbsent(key(implementation),k->new HashSet<>()).add(caller);
             }
         }
+        Map<String,Integer> seedDistance=new HashMap<>();ArrayDeque<String> local=new ArrayDeque<>(seeds);for(String seed:seeds)seedDistance.put(seed,0);
+        while(!local.isEmpty()){String id=local.remove();int distance=seedDistance.get(id);if(distance>=3)continue;for(String caller:callers.getOrDefault(id,Set.of()))if(!seedDistance.containsKey(caller)){seedDistance.put(caller,distance+1);local.add(caller);}}
         var queue=new ArrayDeque<>(seeds); relevant.addAll(seeds);
         while(!queue.isEmpty()) {
             String callee=queue.remove();
+            for(String field:referencedFields.getOrDefault(callee,Set.of())){
+                String type=cls(field.substring(field.indexOf(':')+1));
+                boolean binding=webview(type)||settings(type)||bindingObjects.contains(type)||collection(type)&&(seeds.contains(callee)||webview(CapabilityEngine.owner(field)))||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");
+                if(binding)for(String writer:fieldWriters.getOrDefault(field,Set.of()))if(relevant.add(writer))queue.add(writer);
+            }
             for(String caller:callers.getOrDefault(callee,Set.of()))if(relevant.add(caller))queue.add(caller);
             Method cm=methods.get(callee);
             if(cm!=null){String owner=cls(cm.getDefiningClass());
-                if(component(owner)||scheduled(owner)&&(cm.getName().equals("run")||cm.getName().equals("call")))for(Method init:byClass.getOrDefault(owner,List.of()))if(init.getName().equals("<init>")&&relevant.add(key(init)))queue.add(key(init));
+                boolean callback=seedDistance.getOrDefault(callee,99)<=2&&!cm.getName().startsWith("<")&&(cm.getAccessFlags()&8)==0&&!component(owner)&&!activity(owner)&&byShape.getOrDefault(shape(cm),List.of()).stream().anyMatch(declaration->declaration.getImplementation()==null&&subtype(owner,cls(declaration.getDefiningClass())));
+                if(callback)callbackEntries.computeIfAbsent(owner,k->new HashSet<>()).add(key(cm));
+                if(callback||component(owner)||scheduled(owner)&&(cm.getName().equals("run")||cm.getName().equals("call")))for(Method init:byClass.getOrDefault(owner,List.of()))if(init.getName().equals("<init>")&&relevant.add(key(init)))queue.add(key(init));
             }
         }
     }
     void discoverMessageRegistries(long deadline){
         // A custom WebView registry must write a Map also read by an annotated JS transport.
-        Set<String> transportFields=new HashSet<>();
+        Set<String> transportFields=new HashSet<>();Map<String,Set<List<String>>> namespaceFields=new HashMap<>();
         for(Method m:methods.values())if(m.getAnnotations().stream().anyMatch(a->a.getType().endsWith("/JavascriptInterface;"))){
             bindingObjects.add(cls(m.getDefiningClass()));
             Set<String> seen=new HashSet<>();ArrayDeque<String> q=new ArrayDeque<>();q.add(key(m));int budget=150;
@@ -94,7 +105,21 @@ final class CapabilityIndex {
                 for(String target:calls.getOrDefault(id,Set.of()))if(methods.containsKey(target))q.add(target);
                 for(String type:allocations.getOrDefault(id,Set.of()))if(scheduled(type))for(Method callback:byClass.getOrDefault(type,List.of()))if(callback.getName().equals("run")||callback.getName().equals("call"))q.add(key(callback));
             }
+            Set<List<String>> shapes=new HashSet<>();boolean annotationGate=false;
+            for(String id:seen){Method dispatch=methods.get(id);if(dispatch==null)continue;
+                if(!calls.getOrDefault(id,Set.of()).stream().anyMatch(c->c.startsWith("Ljava/lang/Class;->getMethod(")||c.startsWith("Ljava/lang/reflect/Method;->getAnnotation(")||c.startsWith("Ljava/lang/reflect/Method;->isAnnotationPresent(")))continue;
+                var summary=new DexFlow(this,deadline).summary(dispatch);
+                for(var call:summary.calls()){
+                    if((call.method().contains("->getAnnotation(")||call.method().contains("->isAnnotationPresent("))&&call.args().stream().anyMatch(v->v.kind().equals("class")&&"android.webkit.JavascriptInterface".equals(v.type())))annotationGate=true;
+                    if(call.method().startsWith("Ljava/lang/Class;->getMethod(")&&call.args().size()==3){var array=call.args().get(2);TreeMap<Integer,String> params=new TreeMap<>();
+                        if(array.kind().equals("array"))for(int i=0;i<array.args().size();i++)if(array.args().get(i).kind().equals("class"))params.put(i,array.args().get(i).id());
+                        for(var write:summary.writes())if(write.receiver().equals(array)&&write.field().startsWith("$element:")&&write.value().kind().equals("class"))try{params.put(Integer.parseInt(write.field().substring(9)),write.value().id());}catch(NumberFormatException ignored){}
+                        if(!params.isEmpty())shapes.add(List.copyOf(params.values()));
+                    }
+                }
+            }
             boolean invokes=seen.stream().anyMatch(id->calls.getOrDefault(id,Set.of()).stream().anyMatch(c->c.startsWith("Ljava/lang/reflect/Method;->invoke(")));
+            if(invokes&&annotationGate&&!shapes.isEmpty())for(String id:seen)for(String field:referencedFields.getOrDefault(id,Set.of()))namespaceFields.computeIfAbsent(field,k->new HashSet<>()).addAll(shapes);
             if(invokes)for(String id:seen)if(calls.getOrDefault(id,Set.of()).stream().anyMatch(c->c.startsWith("Ljava/lang/Class;->getMethod("))){
                 Method resolver=methods.get(id);if(resolver==null)continue;
                 for(DexFlow.Call c:new DexFlow(this,deadline).summary(resolver).calls())if(c.method().endsWith("->getClass()Ljava/lang/Class;")&&!c.args().isEmpty()){
@@ -103,6 +128,14 @@ final class CapabilityIndex {
             }
         }
         for(Method m:methods.values()){
+            if(webview(cls(m.getDefiningClass()))&&m.getParameterTypes().equals(List.of("Ljava/lang/Object;","Ljava/lang/String;"))&&calls.getOrDefault(key(m),Set.of()).stream().anyMatch(c->c.contains("->put(Ljava/lang/Object;Ljava/lang/Object;)"))){
+                var summary=new DexFlow(this,deadline).summary(m);
+                for(var call:summary.calls())if(call.method().contains("->put(Ljava/lang/Object;Ljava/lang/Object;)")&&call.args().size()==3){var receiver=call.args().get(0);var name=call.args().get(1);var value=call.args().get(2);
+                    if(receiver.kind().equals("field")&&namespaceFields.containsKey(receiver.id())&&DexFlow.alternatives(name).stream().anyMatch(v->v.kind().equals("param")&&v.id().equals("2"))&&value.kind().equals("param")&&value.id().equals("1")){
+                        messageRegistries.put(key(m),receiver.id());namespaceRegistries.put(key(m),namespaceFields.get(receiver.id()));
+                    }
+                }
+            }
             if(!webview(cls(m.getDefiningClass()))||m.getParameterTypes().size()!=2||!m.getParameterTypes().get(0).equals("Ljava/lang/String;"))continue;
             String handler=cls(m.getParameterTypes().get(1).toString());ClassDef hc=classes.get(handler);
             if(hc==null||(hc.getAccessFlags()&0x200)==0)continue;
@@ -132,6 +165,7 @@ final class CapabilityIndex {
     boolean webview(String t){return Cfg.WEBVIEWS.stream().anyMatch(b->subtype(t,b));}
     boolean settings(String t){return subtype(t,"android.webkit.WebSettings")||subtype(t,"com.tencent.smtt.sdk.WebSettings")||subtype(t,"com.uc.webview.export.WebSettings");}
     boolean activity(String t){return Cfg.ACTIVITIES.stream().anyMatch(b->subtype(t,b));}
+    boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
     boolean component(String t){return webview(t)||subtype(t,"android.app.Fragment")||subtype(t,"androidx.fragment.app.Fragment")||subtype(t,"android.support.v4.app.Fragment")||subtype(t,"android.view.View")||subtype(t,"android.app.Dialog");}
     String kind(MethodReference m){

@@ -36,15 +36,17 @@ After regeneration, setting fact counts are:
 | SecurityTicketActivity | 5 | X5WrapperWebView has no additional per-instance WebSettings calls |
 | SupportActivity | 3 | raw X5 WebView path; no omitted Tencent base class |
 
-The expanded export has 164 setting facts and 1,578 total facts. The canonical
-export has 1,573 facts after a later callback dispatch audit removed five
+The expanded export initially had 164 setting facts and 1,578 total facts for
+the first 13 Activities. After all development-set Activities were added, it
+has 283 setting facts and 1,843 total facts. The canonical export has 1,838
+facts after the callback dispatch audit removed five
 shadowed superclass implementations; see `v2d-gap-analysis.md`. The larger
 total also reflects reuse of the same 242 routed H5 message handlers by each of
 the four custom-browser-family Activities, as proven in `message-routing.md`.
 Duplicate
 API names are retained when distinct initialization layers call them, because
 later calls may override earlier values and each call is independently present.
-All 315 normalized method facts still pass both APK DEX-table verification and
+All 383 distinct normalized method descriptors pass both APK DEX-table verification and
 the independent symbol export; settings retain their exact X5 or Android
 `normalized_api` owner.
 
@@ -54,4 +56,5 @@ source argument and a `value_kind`: `literal` uses a JSON boolean, integer, or
 string; `enum` retains the symbolic enum constant; `dynamic` uses `null` for
 `value`. `settings-value-verification.jsonl` independently checks the type and
 classification and requires the exact API name and expression on the cited
-source line.
+source line. The current 283 settings comprise 229 literals, nine enums, and
+45 dynamic expressions.

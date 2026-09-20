@@ -1,0 +1,40 @@
+{
+  "framework": "com.mgtb.money.web.dsbridge.DWebView",
+  "transport": {
+    "javascript_object": "_dsbridge",
+    "implementation": "com.mgtb.money.web.dsbridge.DWebView$InnerJavascriptInterface",
+    "entrypoint": "Lcom/mgtb/money/web/dsbridge/DWebView$InnerJavascriptInterface;->call(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+  },
+  "registry": {
+    "field": "javaScriptNamespaceInterfaces",
+    "registration": "Lcom/mgtb/money/web/dsbridge/DWebView;->addJavascriptObject(Ljava/lang/Object;Ljava/lang/String;)V",
+    "null_namespace": "",
+    "method_name_split": "last-dot"
+  },
+  "reflection": [
+    {
+      "mode": "async",
+      "required_shape": "public instance method (Object, com.mgtb.money.web.dsbridge.a)",
+      "descriptor_suffix": "(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)",
+      "required_annotation": "Landroid/webkit/JavascriptInterface;"
+    },
+    {
+      "mode": "sync",
+      "required_shape": "public instance method (Object)",
+      "descriptor_suffix": "(Ljava/lang/Object;)",
+      "required_annotation": "Landroid/webkit/JavascriptInterface;"
+    }
+  ],
+  "host_object_edges": [
+    {
+      "namespace": "_dsb",
+      "target": "com.mgtb.money.web.dsbridge.DWebView$1",
+      "construction": "DWebView.addInternalJavascriptObject()"
+    },
+    {
+      "namespace": "",
+      "target": "com.mgtb.money.web.webview.DefaultWebBridgeAPI",
+      "construction": "ProgressWebView.initProgress(): new DefaultWebBridgeAPI(mActivity, this)"
+    }
+  ]
+}

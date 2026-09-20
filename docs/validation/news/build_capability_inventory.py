@@ -32,7 +32,7 @@ for path in SRC.rglob("*.java"):
             rows.append({"record":"call","owner":owner,"operation":sm.group(1),"arguments":clean_args(sm.group(2)),"evidence":f"{rel}:{lineno}"})
     # Annotation surfaces, requiring the next declaration to be a public method.
     for i, line in enumerate(lines):
-        if "@JavascriptInterface" not in line:
+        if "@JavascriptInterface" not in line and "@AdJavascriptInterface" not in line:
             continue
         for j in range(i + 1, min(i + 8, len(lines))):
             stripped = lines[j].strip()
@@ -45,7 +45,7 @@ for path in SRC.rglob("*.java"):
     # Client subclasses plus every @Override public/protected declaration in their brace range.
     for cm in class_rx.finditer(text):
         base = cm.group(2)
-        if not (base.endswith("WebViewClient") or "ChromeClient" in base or base.endswith("CustomWebViewClient") or base == "ht"):
+        if not (base.endswith("WebViewClient") or "ChromeClient" in base or base.endswith("CustomWebViewClient") or base == "ht" or base == "com.tencent.news.tad.business.ui.activity.a"):
             continue
         brace = text.find("{", cm.end())
         if brace < 0:

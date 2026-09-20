@@ -42,6 +42,7 @@ def main():
         for link in links:
             g=groups[link['group_id']]
             for path,cap in walk(g['capabilities']):
+                if path and path[0] in link.get('exclude_capabilities',[]): continue
                 row={'activity':link['activity'],'group_id':g['group_id'],'family':g['family'],'evaluation_tier':g['evaluation_tier'],'capability_path':'.'.join(path),'capability':cap,'host_evidence':link['host_evidence'],'binding_mode':link['binding_mode'],'group_unknown':g.get('unknown',[]),'apk_sha256':g['apk_sha256']}
                 f.write(json.dumps(row,ensure_ascii=False)+'\n')
     canonical=[]
@@ -59,6 +60,7 @@ def main():
             for method in bridge.get('methods',[]):
                 canonical.append({**common,'kind':'bridge_method','name':re.search(r';->([^\(]+)',method['normalized_signature']).group(1),'registration_name':registration,'implementation':bridge.get('type'),'normalized_signature':method['normalized_signature'],'normalized_api':None,'value':None,'evidence':[method['evidence']]})
         for client_name in ('webview_client','webchrome_client'):
+            if client_name in link.get('exclude_capabilities',[]): continue
             client=g['capabilities'].get(client_name,{})
             for cb in client.get('overrides',[]):
                 canonical.append({**common,'kind':'callback','name':re.search(r';->([^\(]+)',cb['normalized_signature']).group(1),'registration_name':None,'implementation':client.get('type'),'normalized_signature':cb['normalized_signature'],'normalized_api':None,'value':None,'evidence':[cb['evidence']]})

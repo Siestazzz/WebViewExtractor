@@ -1,0 +1,59 @@
+# Activity capability analysis
+
+Build and run:
+
+```sh
+./gradlew capabilitySelfTest shadowJar --offline --console=plain
+java -Xmx16g -XX:ActiveProcessorCount=8 -jar build/libs/webview_extractor-1.0-SNAPSHOT-all.jar \
+  --apkpath app.apk --out output/app --target-seconds 300 --hard-seconds 600
+```
+
+`capabilities.json` is atomically replaced during analysis and when the supervisor ends.
+Every Activity contains `facts`, plus `webviews` grouping those facts by object identity;
+`capability_indices` indexes the enclosing Activity's facts without duplicating member lists.
+Facts include DEX signatures, registration names, implementation classes, settings values,
+client implementations, call/field evidence and explicit/candidate status. An explicit static
+binding is not proof of runtime execution. Settings describe observed operations, not final
+runtime state; conditional branches and later replacements can change the runtime result.
+
+`message_bridge` covers recognized shared registries and reflective dispatch surfaces.
+A namespace registration is separate from its injected transport. The empty namespace is
+represented by an empty string, not a fabricated registration name. Unknown names and
+objects are retained. Native bridge removal and client removal are separate operations.
+
+A report can be partial even when every Manifest Activity was visited: unresolved entries,
+flow/context limits, parser errors and unsupported dynamic behavior remain material limits.
+Check `status`, `diagnostics`, `index_diagnostics`, `manifest_diagnostics`, `unattributed` and
+per-Activity `limitations`. Empty output is not proof that no capability exists. The supervisor
+returns exit code 2 on worker failure/hard timeout while retaining the last valid snapshot.
+The output's `metrics` record index time, traversal progress, decoded summaries and budgets.
+
+The new engine indexes all DEX references and instantiates method summaries on demand.
+It does not initialize a whole-APK Soot scene. The original implementation and its original
+reports remain available with `--legacy`; they are not the quality acceptance oracle.
+A separate on-demand Soot fallback is still pending, not silently reported as implemented.
+
+## Reproduce validation
+
+Samples and hashes: `docs/validation/samples.json`. APKs and complete decompiled sources
+are intentionally excluded from Git. Reusable independent Sol source/DEX evidence lives
+under `docs/validation/{news,mango,ctrip}`. Never construct expected facts from extractor output.
+
+```sh
+python3 scripts/benchmark.py --label fresh-label --jar test/runs/frozen-version.jar
+python3 scripts/evaluate.py --report output/app/capabilities.json \
+  --oracle docs/validation/news/canonical-facts.jsonl --out replay.json
+python3 scripts/check_deadline.py --jar test/runs/frozen-version.jar \
+  --apk test/apks/com.tencent.news.apk
+```
+
+Each benchmark launches a fresh JVM, fixes eight logical CPUs and a 16 GiB maximum heap,
+and enforces an external 600-second limit. Use `--repeat 3` for repeat measurements; the OS
+page cache is not flushed, and the first launch is distinguished from subsequent launches.
+Benchmark and environment JSON record commands, APK/JAR hashes, peak RSS, phases and status.
+
+The evaluator reports both explicit-only and candidate-inclusive per-category fact recall.
+It does not establish complete APK coverage or correct WebView identity by itself. Acceptance
+also needs independent review of every emitted Activity, wrong-capability associations,
+unknown ownership, full framework coverage, held-out cases and isolated repeated timings.
+The current acceptance state and retained regressions are recorded in `validation/ITERATIONS.md`.

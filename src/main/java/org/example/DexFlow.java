@@ -13,7 +13,7 @@ final class DexFlow {
         static V of(String k,String t,String id){return new V(k,t,id,null,List.of());}
         static V literal(String t,String value){return new V("literal",t,value,value,List.of());}
     }
-    record Call(String method,int offset,List<V> args,boolean isStatic) {}
+    record Call(String method,int offset,List<V> args,boolean isStatic,boolean isSuper) {}
     record Write(String field,V receiver,V value) {}
     record Summary(List<Call> calls,List<Write> writes,List<V> returns,boolean branched,boolean truncated) {}
     static final V UNKNOWN=V.of("unknown",null,"unknown");
@@ -74,6 +74,8 @@ final class DexFlow {
             else if(op.startsWith("const")&&in instanceof WideLiteralInstruction lit)output=V.literal("number",String.valueOf(lit.getWideLiteral()));
             else if(op.equals("new-instance")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("new",CapabilityIndex.cls(t.getType()),key+"@"+at);
             else if(op.equals("new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("array",t.getType(),key+"@"+at);
+            else if(op.startsWith("filled-new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t){List<V> values=registers(in).stream().map(n->s.getOrDefault(n,UNKNOWN)).toList();s.put(-1,expr("array",t.getType(),key+"@"+at,values));}
+            else if(op.startsWith("aget")&&in instanceof ThreeRegisterInstruction three)output=expr("array_element",null,"array_element",List.of(s.getOrDefault(three.getRegisterB(),UNKNOWN)));
             else if(op.startsWith("aput")&&in instanceof ThreeRegisterInstruction three)writes.add(new Write("$element:"+s.getOrDefault(three.getRegisterC(),UNKNOWN).literal(),s.getOrDefault(three.getRegisterB(),UNKNOWN),s.getOrDefault(a,UNKNOWN)));
             else if(op.equals("check-cast")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=expr("cast",CapabilityIndex.cls(t.getType()),"cast",List.of(s.getOrDefault(a,UNKNOWN)));
             else if(in instanceof ReferenceInstruction r&&r.getReference() instanceof FieldReference f){
@@ -88,7 +90,11 @@ final class DexFlow {
                 }
                 String targetKey=CapabilityIndex.key(target);Call previous=calls.get(at);
                 if(previous!=null){for(int k=0;k<args.size();k++)args.set(k,union(previous.args.get(k),args.get(k)));}
-                calls.put(at,new Call(targetKey,at,List.copyOf(args),stat));
+                if(!stat&&idx.collection(CapabilityIndex.cls(target.getDefiningClass()))&&args.size()==2){
+                    if(target.getName().equals("add"))writes.add(new Write("$contents",args.get(0),args.get(1)));
+                    if(target.getName().equals("addAll"))writes.add(new Write("$contentsAll",args.get(0),args.get(1)));
+                }
+                calls.put(at,new Call(targetKey,at,List.copyOf(args),stat,op.startsWith("invoke-super")));
                 if(target.getName().equals("getSettings")&&idx.webview(CapabilityIndex.cls(target.getDefiningClass()))&&!args.isEmpty())s.put(-1,expr("settings",CapabilityIndex.cls(target.getReturnType()),"settings",List.of(args.get(0))));
                 else if(!target.getReturnType().equals("V"))s.put(-1,expr("return",CapabilityIndex.cls(target.getReturnType()),targetKey,args));
             }

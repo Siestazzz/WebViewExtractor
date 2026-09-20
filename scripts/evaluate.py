@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Strict replay of independent oracle facts; missing normalization is NOT a pass."""
 import argparse,collections,json,pathlib,re,hashlib
-p=argparse.ArgumentParser();p.add_argument('--report',required=True);p.add_argument('--oracle',required=True);p.add_argument('--out',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--report',required=True);p.add_argument('--oracle',required=True);p.add_argument('--out',required=True);p.add_argument('--ownership');a=p.parse_args()
 r=json.loads(pathlib.Path(a.report).read_text());truth=[json.loads(l) for l in pathlib.Path(a.oracle).read_text().splitlines() if l.strip()]
 actual={x['activity']:x['facts'] for x in r['activities']};stats=collections.defaultdict(lambda:dict(expected=0,matched=0,explicit_matched=0,unscorable=0));failures=[]
 def match(g,f):
@@ -26,7 +26,7 @@ def match(g,f):
   return any(m['signature']==signature for m in f.get('members',[]))
  if k in ('bridge','bridge_method','message_handler'):
   if f['kind'] not in ('bridge','message_bridge'):return False
-  registration=g.get('registration_name') or (name if k=='bridge' else None)
+  registration=g.get('registration_name',name if k=='bridge' else None)
   if registration is None:return None
   if f.get('registration_name')!=registration:return False
   if g.get('implementation') and f.get('implementation')!=g['implementation']:return False
@@ -47,4 +47,16 @@ for g in truth:
   s['unscorable']+=int(unscorable);failures.append(dict(activity=g['activity'],kind=g['kind'],name=g['name'],signature=g.get('normalized_signature',g.get('signature')),reason='unscorable_oracle' if unscorable else 'not_matched'))
 for s in stats.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None;s['explicit_recall']=s['explicit_matched']/s['expected'] if s['expected'] else None
 out=dict(oracle_sha256=hashlib.sha256(pathlib.Path(a.oracle).read_bytes()).hexdigest(),report_sha256=hashlib.sha256(pathlib.Path(a.report).read_bytes()).hexdigest(),unassigned_oracle_facts=sum(g.get('activity') is None for g in truth),oracle_file=a.oracle,apk_sha256=r.get('apk_sha256'),report_status=r['status'],metrics=stats,missing=failures,emitted_activities=len(actual),acceptance='unproven',note='Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required.')
+reviews={}
+if a.ownership:
+ for line in pathlib.Path(a.ownership).read_text().splitlines():
+  if not line.strip():continue
+  row=json.loads(line)
+  if row.get('apk_sha256')!=r.get('apk_sha256'):raise SystemExit('Ownership APK hash mismatch')
+  if row['activity'] in reviews:raise SystemExit('Duplicate ownership verdict for '+row['activity'])
+  reviews[row['activity']]=row['verdict']
+ownership=collections.Counter(reviews.get(activity,'unreviewed') for activity in actual)
+valid=ownership['valid'];wrong=ownership['wrong'];uncertain=len(actual)-valid-wrong
+out['activity_ownership']=dict(counts=ownership,emitted=len(actual),wrong=wrong,uncertain_or_unreviewed=uncertain,conservative_error_upper_bound=(wrong+uncertain)/len(actual) if actual else None)
+out['capability_precision']='Requires independent bound-object review; positive fact recall alone does not measure false capability associations.'
 pathlib.Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');print(json.dumps(dict(metrics=stats,missing=len(failures)),ensure_ascii=False))

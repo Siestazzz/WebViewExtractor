@@ -1,0 +1,305 @@
+{
+  "oracle_sha256": "a6c8e9379d6237fd8f3622e696073ff338d412774f5760b3aab83709d316818f",
+  "report_sha256": "9dbf00e00539294bf0cb37142a1f248b2ef4f345cbfcf9beac76ff3fbd8fcd48",
+  "unassigned_oracle_facts": 108,
+  "oracle_file": "docs/validation/ctrip/canonical-facts.jsonl",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 257,
+      "matched": 257,
+      "explicit_matched": 3,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.011673151750972763
+    },
+    "bridge": {
+      "expected": 3666,
+      "matched": 3659,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.9980905619203492,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 310,
+      "matched": 279,
+      "explicit_matched": 3,
+      "unscorable": 0,
+      "recall": 0.9,
+      "explicit_recall": 0.00967741935483871
+    }
+  },
+  "missing": [
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Lctrip/android/view/h5/view/f;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lctrip/android/view/h5/view/f;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lctrip/android/view/h5/view/f;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.myctrip.orderbiz.MyCtripOrderModalActivity",
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lctrip/android/view/h5/view/f;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lctrip/android/view/h5v2/view/g/a;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Lctrip/android/view/h5v2/view/f;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lctrip/android/view/h5v2/view/f;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lctrip/android/view/h5v2/view/f;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lctrip/android/view/h5v2/view/f;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge",
+      "name": "CMBSDK",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge_method",
+      "name": "backToApp",
+      "signature": "Lcmbapi/h;->backToApp()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge_method",
+      "name": "callback",
+      "signature": "Lcmbapi/h;->callback(Ljava/lang/String;Ljava/lang/String;)I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge_method",
+      "name": "getErrorUrl",
+      "signature": "Lcmbapi/h;->getErrorUrl()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge_method",
+      "name": "payCallback",
+      "signature": "Lcmbapi/h;->payCallback(Ljava/lang/String;Ljava/lang/String;)I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge_method",
+      "name": "reload",
+      "signature": "Lcmbapi/h;->reload()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "cmbapi.CMBApiEntryActivity",
+      "kind": "bridge_method",
+      "name": "setCallback",
+      "signature": "Lcmbapi/h;->setCallback(Ljava/lang/String;Ljava/lang/String;)I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ClientSdk8;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ClientSdk8;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ClientSdk8;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ClientSdk8;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ViewClientSdk8;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ViewClientSdk8;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ViewClientSdk8;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ViewClientSdk8;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.qmp.sdk.ui.activity.AuthActivity",
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/qmp/sdk/utils/WebViewHelper$WebViewHelperSdk8$ViewClientSdk8;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 55,
+  "acceptance": "unproven",
+  "note": "Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required."
+}

@@ -1,0 +1,697 @@
+{
+  "oracle_sha256": "1b4c7abbd23c88731a588f42dde7bf432b35e9227858c37f88672f305b5d518d",
+  "report_sha256": "7d064f55a06639a6a3d15f20df423168f537e654c9f0545c5f034a0f8a2ea065",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/mango/canonical-facts.jsonl",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 273,
+      "matched": 273,
+      "explicit_matched": 1,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.003663003663003663
+    },
+    "bridge": {
+      "expected": 1073,
+      "matched": 979,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.9123951537744641,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 322,
+      "matched": 322,
+      "explicit_matched": 3,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.009316770186335404
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->closePage(Ljava/lang/Object;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->disableJavascriptDialogBlock(Ljava/lang/Object;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->dsinit(Ljava/lang/Object;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->hasNativeMethod(Ljava/lang/Object;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->returnValue(Ljava/lang/Object;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->apiRequestEncrypt(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->apiResponseDecrypt(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->backToFront(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->callAppNativeMethod(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->clearWindowSecure(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->closeWebView(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->feedback(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getAppInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getContact(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getDeviceFingerprinting(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getDeviceInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getDeviceInfoForLoan(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getNetworkType(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getTopBarHeight(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getUserInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->goBackWebView(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->goHome(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->grade(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->jumpOtherApp(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->jumpPage(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->login(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->loginout(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->onUserCaptureScreen(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->openBrowser(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->recharge(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->refreshPage(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->refreshUserInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->reportData(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->savePicture(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->scanBankCard(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->scanFace(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->scanIdCard(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->sendPay(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->sendToClipboard(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->setWebview(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->setWebviewTitle(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->setWindowSecure(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->shareTo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->showShare(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->showShareMenus(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->showToast(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->withdraw(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->closePage(Ljava/lang/Object;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->disableJavascriptDialogBlock(Ljava/lang/Object;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->dsinit(Ljava/lang/Object;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->hasNativeMethod(Ljava/lang/Object;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "_dsb",
+      "signature": "Lcom/mgtb/money/web/dsbridge/DWebView$1;->returnValue(Ljava/lang/Object;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->apiRequestEncrypt(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->apiResponseDecrypt(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->backToFront(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->callAppNativeMethod(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->clearWindowSecure(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->closeWebView(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->feedback(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getAppInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getContact(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getDeviceFingerprinting(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getDeviceInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getDeviceInfoForLoan(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getNetworkType(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getTopBarHeight(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->getUserInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->goBackWebView(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->goHome(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->grade(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->jumpOtherApp(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->jumpPage(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->login(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->loginout(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->onUserCaptureScreen(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->openBrowser(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->recharge(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->refreshPage(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->refreshUserInfo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->reportData(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->savePicture(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->scanBankCard(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->scanFace(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->scanIdCard(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->sendPay(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->sendToClipboard(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->setWebview(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->setWebviewTitle(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->setWindowSecure(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->shareTo(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->showShare(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->showShareMenus(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->showToast(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "kind": "bridge",
+      "name": "<default>",
+      "signature": "Lcom/mgtb/money/web/webview/DefaultWebBridgeAPI;->withdraw(Ljava/lang/Object;Lcom/mgtb/money/web/dsbridge/a;)V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 79,
+  "acceptance": "unproven",
+  "note": "Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required."
+}

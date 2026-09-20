@@ -61,3 +61,42 @@
 - Reproduce: `./gradlew capabilitySelfTest shadowJar --offline --console=plain`, copy jar to a
   new immutable test/runs label, then `python3 scripts/benchmark.py --label LABEL --jar JAR`;
   `python3 scripts/evaluate.py --report REPORT --oracle docs/validation/APP/canonical-facts.jsonl --out RESULT`.
+
+## v3 — object field dependencies, namespaces, super callbacks, checkpoints (v3f)
+
+- Preserves explicit invoke-super callbacks without adding shadowed ancestors; models collection
+  factories, array/asList/addAll/iterator flow, concrete interface factory returns, constructor and
+  field-writer dependencies, DSBridge namespace registries and annotation/parameter-shape gates.
+- Added bounded callback-allocation expansion (within two reverse calls of a capability seed),
+  two-site allocation context, synthetic/static field exclusions and referenced-field host gating.
+- Added mid-Activity snapshots, grouped WebView capability indices, failed-worker diagnostics,
+  benchmark RSS/environment/JAR hashes and ownership-aware scoring. Cleaned generated pyc files.
+- Tests: helper/field binding, two-WebView isolation, instance TAG, annotated vs hidden bridge,
+  super vs uncalled ancestor callbacks, factory element isolation, branch join, loop convergence,
+  stale-register overwrite, API identity and registry/header distinction all pass.
+  `scripts/check_deadline.py` forced a 1-second limit: 1.303 s total, 57 parseable atomic snapshots,
+  final timeout report with index_not_finished/supervisor_hard_deadline diagnostics.
+- v3f three serial fresh processes, CPUs 0–7 / heap16GiB: news 38.00s (RSS 6.84GiB), mango
+  50.75s (7.43GiB), ctrip 27.85s (7.51GiB). Full commands/phases in v3f-benchmark.json.
+- On expanded source/DEX oracle at replay time: news Bridge1252/1338, Settings209/283,
+  Callbacks181/217; mango Bridge1085/1102, Settings464/505, Callbacks512/540;
+  ctrip Bridge3666/3666, Settings257/257, Callbacks299/299. Oracle/report SHA256 are recorded
+  in replay files. Counts are evidence assertions on the independent development set, not proof
+  of whole-APK completeness. New frameworks exposed genuine missed capabilities.
+- Ctrip emitted-host review:52 valid,1 wrong,2 uncertain; conservative3/55=5.5%. Original
+  uncertain hotel decisions were independently revisited along actual map/gallery/login paths.
+  Known wrong feedback Gallery path remains. Plugin fallback facts decreased2632→188 but
+  unconstrained subtype fallback still creates incorrect capability associations; not accepted.
+- Oracle corrections retain source/DEX evidence and prior Git versions: SimpleOversea was not a
+  general H5 host, EvaluateDialog had no Fragment Chrome client, news shadowed ancestor callbacks
+  were not executable, CMB's true writer is initJsInterface (constructor only writes null), and
+  mango message endpoint names/owners were independently normalized. No failed case was silently
+  converted into a pass. New canonical facts continue expanding the denominator.
+- Retained development regressions: v3b cast-driven expansion exhausted host context budgets;
+  v3c bounded object context recovered; v3e unrestricted callback closure reached56483 relevant
+  methods and was explicitly aborted (v3e-aborted.json; other apps not run in that experiment).
+  v3f narrows it to1840 methods for news. These are experiments, not successful acceptance runs.
+- Still unmet: news new SDK/player/prompt and editor surfaces; remaining mango SDK surfaces;
+  precision of unresolved plugin/host edges; complete all-output ownership/capability review;
+  held-out final validation; full synthetic suite and three final isolated repeats. QUALITY
+  ACCEPTANCE NOT MET. No whole-APK completeness or final performance claim.

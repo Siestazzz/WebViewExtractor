@@ -29,18 +29,24 @@ public final class CapabilitySelfTest {
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction11n(Opcode.CONST_4,1,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",0,1),
    str(1,"native"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,3,1),end()),false);
-  var entry=method(A,"onCreate",List.of(),1,6,List.of(make(0,W),make(1,W),make(2,B),make(3,C),
+  var savedBridge=new ImmutableField(A,"savedBridge",B,1,null,Set.of(),Set.of());
+  var prepare=method(A,"prepareBridge",List.of(),1,2,List.of(make(0,B),new ImmutableInstruction22c(Opcode.IPUT_OBJECT,0,1,new ImmutableFieldReference(A,"savedBridge",B)),end()),false);
+  var entry=method(A,"onCreate",List.of(),1,6,List.of(make(0,W),make(1,W),invoke(Opcode.INVOKE_VIRTUAL,A,"prepareBridge",List.of(),"V",5),new ImmutableInstruction22c(Opcode.IGET_OBJECT,2,5,new ImmutableFieldReference(A,"savedBridge",B)),make(3,C),
    invoke(Opcode.INVOKE_STATIC,H,"configure",List.of(W,B),"V",0,2),
    invoke(Opcode.INVOKE_VIRTUAL,W,"setWebViewClient",List.of("Landroid/webkit/WebViewClient;"),"V",1,3),end()),false);
   var bridge=method(B,"exposed",List.of("Ljava/lang/String;"),1,2,List.of(end()),true);
   var tagField=new ImmutableField(B,"TAG","Ljava/lang/String;",1,null,Set.of(),Set.of());
   var tagInit=method(B,"<init>",List.of(),1,2,List.of(str(0,"instanceTag"),new ImmutableInstruction22c(Opcode.IPUT_OBJECT,0,1,new ImmutableFieldReference(B,"TAG","Ljava/lang/String;")),end()),false);
   var hidden=method(B,"hidden",List.of(),1,1,List.of(end()),false);
-  var callback=method(C,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false);
-  var dex=new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",helper),new ImmutableClassDef(B,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(tagField),List.of(bridge,hidden,tagInit)),clazz(C,"Landroid/webkit/WebViewClient;",callback)));
+  var callback=method(C,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,3,List.of(invoke(Opcode.INVOKE_SUPER,"Ltest/ParentClient;","onPageFinished",List.of(W,"Ljava/lang/String;"),"V",0,1,2),end()),false);
+  var parentCallback=method("Ltest/ParentClient;","onPageFinished",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false);
+  var parentShadowed=method("Ltest/ParentClient;","onLoadResource",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false);
+  var shadow=method(C,"onLoadResource",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false);
+  var dex=new ImmutableDexFile(Opcodes.getDefault(),List.of(new ImmutableClassDef(A,1,"Landroid/app/Activity;",List.of(),null,Set.of(),List.of(savedBridge),List.of(entry,prepare)),clazz(H,"Ljava/lang/Object;",helper),new ImmutableClassDef(B,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(tagField),List.of(bridge,hidden,tagInit)),clazz(C,"Ltest/ParentClient;",callback,shadow),clazz("Ltest/ParentClient;","Landroid/webkit/WebViewClient;",parentCallback,parentShadowed)));
   Path file=Files.createTempFile("wv-regression-",".dex");DexFileFactory.writeDexFile(file.toString(),dex);
   try {
    long deadline=System.nanoTime()+30_000_000_000L;var idx=new CapabilityIndex();idx.read(file,deadline);
+   check(idx.relevant.contains(CapabilityIndex.key(prepare)),"Registration field-writer helper was excluded");
    var apk=new ApkInventory();apk.targetSdk=30;apk.activities.add("test.AppActivity");
    var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
    check(engine.activities.size()==1,"Activity missing");
@@ -54,7 +60,8 @@ public final class CapabilitySelfTest {
    check(bf.get("registration_name").equals("native"),"Bridge name lost through helper");
    check(bf.get("implementation").equals("test.Bridge"),"Bridge type lost through helper");
    check(((List<?>)bf.get("members")).size()==1,"Annotated bridge exposure wrong");
-   check(((List<?>)cf.get("members")).size()==1,"Callback signature missing");
+   check(((List<?>)cf.get("members")).size()==3,"Explicit super callback missing or shadowed ancestor incorrectly included");
+   check(!cf.get("members").toString().contains("ParentClient;->onLoadResource"),"Uncalled ancestor callback counted");
    check(sf.get("value").equals("true"),"Setting value missing");
    // Previous scorer retained stale constants after move; this must resolve false.
    var moves=method(H,"moves",List.of(),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction11n(Opcode.CONST_4,1,0),new ImmutableInstruction12x(Opcode.MOVE,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",2,0),end()),false);
@@ -63,8 +70,12 @@ public final class CapabilitySelfTest {
    var overwrite=method(H,"overwrite",List.of(),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction12x(Opcode.NEG_INT,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",2,0),end()),false);
    check(flow.summary(overwrite).calls().get(0).args().get(1).kind().equals("unknown"),"Arithmetic overwrite retained constant");
    check(idx.kind(new ImmutableMethodReference("Ltest/Unrelated;","setJavaScriptEnabled",List.of("Z"),"V"))==null,"Unrelated method matched by name");
+   var branch=method(H,"branch",List.of("Z"),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,0),new ImmutableInstruction21t(Opcode.IF_EQZ,2,3),new ImmutableInstruction11n(Opcode.CONST_4,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",1,0),end()),false);
+   var branchSummary=flow.summary(branch);check(branchSummary.branched(),"Branch not recorded");check(DexFlow.alternatives(branchSummary.calls().get(0).args().get(1)).size()==2,"Conditional setting alternatives collapsed");
+   var loop=method(H,"loop",List.of(),9,1,List.of(new ImmutableInstruction10t(Opcode.GOTO,0)),false);check(flow.summary(loop).calls().isEmpty(),"Empty loop should reach stable summary");
    messageFixture();
-   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection");
+   collectionFixture();
+   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence");
   }finally{Files.deleteIfExists(file);}
  }
  static void messageFixture()throws Exception {
@@ -91,6 +102,20 @@ public final class CapabilitySelfTest {
    var idx=new CapabilityIndex();idx.read(path,System.nanoTime()+20_000_000_000L);
    check(idx.messageRegistries.containsKey(CapabilityIndex.key(register)),"Annotated transport registry not found");
    check(!idx.messageRegistries.containsKey(CapabilityIndex.key(fake)),"HTTP header map incorrectly classified as message registry");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void collectionFixture()throws Exception {
+  String list="Ljava/util/ArrayList;",iter="Ljava/util/Iterator;",b1="Ltest/FirstBridge;",b2="Ltest/SecondBridge;",unused="Ltest/UnusedBridge;";
+  var body=method(H,"factory",List.of(),9,2,List.of(make(0,list),make(1,b1),invoke(Opcode.INVOKE_VIRTUAL,list,"add",List.of("Ljava/lang/Object;"),"Z",0,1),make(1,b2),invoke(Opcode.INVOKE_VIRTUAL,list,"add",List.of("Ljava/lang/Object;"),"Z",0,1),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var factory=new ImmutableMethod(H,"factory",List.of(),"Ljava/util/List;",9,Set.of(),Set.of(),body.getImplementation());
+  var entry=method(A,"onCreate",List.of(),1,5,List.of(make(0,W),invoke(Opcode.INVOKE_STATIC,H,"factory",List.of(),"Ljava/util/List;"),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),invoke(Opcode.INVOKE_INTERFACE,"Ljava/util/List;","iterator",List.of(),iter,1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),invoke(Opcode.INVOKE_INTERFACE,iter,"next",List.of(),"Ljava/lang/Object;",1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),new ImmutableInstruction21c(Opcode.CHECK_CAST,1,new ImmutableTypeReference(B)),str(2,"plugins"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
+  var dex=new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",factory),clazz(B,"Ljava/lang/Object;"),clazz(b1,B,method(b1,"one",List.of(),1,1,List.of(end()),true)),clazz(b2,B,method(b2,"two",List.of(),1,1,List.of(end()),true)),clazz(unused,B,method(unused,"unused",List.of(),1,1,List.of(end()),true))));
+  Path path=Files.createTempFile("wv-collection-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),dex);long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;apk.activities.add("test.AppActivity");var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   Set<Object> implementations=new HashSet<>();for(var f:facts)if(f.get("kind").equals("bridge"))implementations.add(f.get("implementation"));
+   check(implementations.equals(Set.of("test.FirstBridge","test.SecondBridge")),"Factory collection widened to unrelated subtype: "+implementations);
   }finally{Files.deleteIfExists(path);}
  }
 

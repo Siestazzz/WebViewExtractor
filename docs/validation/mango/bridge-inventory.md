@@ -4,7 +4,7 @@
 
 - `com.hunantv.imgo.h5.jsbridge.BridgeWebView` registers JavaScript object `jsobj` at `test/decompiled/com.hunantv.imgo.activity/sources/com/hunantv/imgo/h5/jsbridge/BridgeWebView.java:223`.
 - Complete annotated exposure in its registered object: `public String callNative(String str, String str2, String str3)` at lines 63–64. The bridge dispatches by the first argument to `messageHandlers`; `registerHandler(String, BridgeHandler)` is declared at line 413. This documents signatures and binding only.
-- `ImgoWebView` is the manager that registers named handlers through `registerWebHandler()` at lines 529–673. Every registration expression is represented in `facts.jsonl`; constant-backed names retain the expression with unknown status.
+- `ImgoWebView` registers 138 named handlers through `registerWebHandler()` at lines 529–673. `ImgoWebJavascriptImpl$e0.handler()` reflects `getDeclaredMethod(registrationName, String.class)` at `ImgoWebJavascriptImpl.java:732-758`. Constant-backed names are resolved to their source values; only exact DEX `(String)V` targets populate `bridge_method`.
 
 ## XWeb message bridge
 
@@ -20,5 +20,5 @@
 
 ## Annotated third-party bridge
 
-- CCB registers `javaObj` at `test/decompiled/com.hunantv.imgo.activity/sources/com/ccb/ccbnetpay/H5PayActivity.java:206`; complete annotated exposures are `public void sdkCallBack(String str)` and `public void showFinish()` at lines 100–115.
+- CCB registers object name `javaObj` at `test/decompiled/com.hunantv.imgo.activity/sources/com/ccb/ccbnetpay/H5PayActivity.java:206`; its distinct annotated members are `sdkCallBack` and `showFinish` at lines 100–115.
 - Wallet DSBridge uses `_dsbridge`-family plumbing in `com.mgtb.money.web.dsbridge.DWebView`; its annotated signatures are held for the final holdout pass.
