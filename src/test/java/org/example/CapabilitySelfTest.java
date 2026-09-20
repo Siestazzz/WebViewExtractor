@@ -33,15 +33,18 @@ public final class CapabilitySelfTest {
    invoke(Opcode.INVOKE_STATIC,H,"configure",List.of(W,B),"V",0,2),
    invoke(Opcode.INVOKE_VIRTUAL,W,"setWebViewClient",List.of("Landroid/webkit/WebViewClient;"),"V",1,3),end()),false);
   var bridge=method(B,"exposed",List.of("Ljava/lang/String;"),1,2,List.of(end()),true);
+  var tagField=new ImmutableField(B,"TAG","Ljava/lang/String;",1,null,Set.of(),Set.of());
+  var tagInit=method(B,"<init>",List.of(),1,2,List.of(str(0,"instanceTag"),new ImmutableInstruction22c(Opcode.IPUT_OBJECT,0,1,new ImmutableFieldReference(B,"TAG","Ljava/lang/String;")),end()),false);
   var hidden=method(B,"hidden",List.of(),1,1,List.of(end()),false);
   var callback=method(C,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false);
-  var dex=new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",helper),clazz(B,"Ljava/lang/Object;",bridge,hidden),clazz(C,"Landroid/webkit/WebViewClient;",callback)));
+  var dex=new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",helper),new ImmutableClassDef(B,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(tagField),List.of(bridge,hidden,tagInit)),clazz(C,"Landroid/webkit/WebViewClient;",callback)));
   Path file=Files.createTempFile("wv-regression-",".dex");DexFileFactory.writeDexFile(file.toString(),dex);
   try {
    long deadline=System.nanoTime()+30_000_000_000L;var idx=new CapabilityIndex();idx.read(file,deadline);
    var apk=new ApkInventory();apk.targetSdk=30;apk.activities.add("test.AppActivity");
    var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
    check(engine.activities.size()==1,"Activity missing");
+   check(engine.staticConstant("test.Bridge","TAG").literal().equals("instanceTag"),"Reflective instance TAG constructor constant missing");
    @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
    Map<String,Object> bf=facts.stream().filter(f->f.get("kind").equals("bridge")).findFirst().orElseThrow();
    Map<String,Object> cf=facts.stream().filter(f->f.get("kind").equals("callback")).findFirst().orElseThrow();
@@ -60,7 +63,35 @@ public final class CapabilitySelfTest {
    var overwrite=method(H,"overwrite",List.of(),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),new ImmutableInstruction12x(Opcode.NEG_INT,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",2,0),end()),false);
    check(flow.summary(overwrite).calls().get(0).args().get(1).kind().equals("unknown"),"Arithmetic overwrite retained constant");
    check(idx.kind(new ImmutableMethodReference("Ltest/Unrelated;","setJavaScriptEnabled",List.of("Z"),"V"))==null,"Unrelated method matched by name");
-   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner");
+   messageFixture();
+   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection");
   }finally{Files.deleteIfExists(file);}
  }
+ static void messageFixture()throws Exception {
+  String mw="Ltest/MessageWebView;",handler="Ltest/Handler;",transport="Ltest/Transport;",map="Ljava/util/Map;";
+  var field=new ImmutableField(mw,"handlers",map,1,null,Set.of(),Set.of());
+  var register=method(mw,"register",List.of("Ljava/lang/String;",handler),1,4,List.of(
+   new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(mw,"handlers",map)),
+   invoke(Opcode.INVOKE_INTERFACE,map,"put",List.of("Ljava/lang/Object;","Ljava/lang/Object;"),"Ljava/lang/Object;",0,2,3),end()),false);
+  var fake=method(mw,"loadUrl",List.of("Ljava/lang/String;",map),1,4,List.of(
+   new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(mw,"handlers",map)),
+   invoke(Opcode.INVOKE_INTERFACE,map,"put",List.of("Ljava/lang/Object;","Ljava/lang/Object;"),"Ljava/lang/Object;",0,2,3),end()),false);
+  var transportField=new ImmutableField(transport,"view",mw,1,null,Set.of(),Set.of());
+  var dispatch=method(transport,"dispatch",List.of("Ljava/lang/String;"),1,4,List.of(
+   new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,2,new ImmutableFieldReference(transport,"view",mw)),
+   new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,0,new ImmutableFieldReference(mw,"handlers",map)),
+   invoke(Opcode.INVOKE_INTERFACE,map,"get",List.of("Ljava/lang/Object;"),"Ljava/lang/Object;",0,3),end()),true);
+  var hm=new ImmutableMethod(handler,"handle",List.of(new ImmutableMethodParameter("Ljava/lang/String;",Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var wc=new ImmutableClassDef(mw,1,W,List.of(),null,Set.of(),List.of(field),List.of(register,fake));
+  var tc=new ImmutableClassDef(transport,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(transportField),List.of(dispatch));
+  var hc=new ImmutableClassDef(handler,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(hm));
+  Path path=Files.createTempFile("wv-message-",".dex");
+  try{
+   DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(wc,tc,hc)));
+   var idx=new CapabilityIndex();idx.read(path,System.nanoTime()+20_000_000_000L);
+   check(idx.messageRegistries.containsKey(CapabilityIndex.key(register)),"Annotated transport registry not found");
+   check(!idx.messageRegistries.containsKey(CapabilityIndex.key(fake)),"HTTP header map incorrectly classified as message registry");
+  }finally{Files.deleteIfExists(path);}
+ }
+
 }

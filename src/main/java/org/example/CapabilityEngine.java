@@ -14,6 +14,7 @@ final class CapabilityEngine {
     final List<Map<String,Object>> activities=new ArrayList<>();
     final Set<String> boundSites=new HashSet<>();
     final List<String> diagnostics=new ArrayList<>();
+    final Map<String,V> constants=new HashMap<>();
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
     CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=new DexFlow(idx,deadline);}
     record Job(Method method,List<V> args,List<String> path,boolean candidate){}
@@ -30,7 +31,7 @@ final class CapabilityEngine {
         Host h=new Host(activity);V self=V.of("host",activity,"activity:"+activity);
         seed(h,activity,self,List.of(activity),false);
         for(int phase=0;phase<2;phase++){
-            if(phase==1){h.visited.clear();h.components.clear();seed(h,activity,self,List.of(activity),false);}
+            if(phase==1){h.facts.clear();h.visited.clear();h.components.clear();seed(h,activity,self,List.of(activity),false);}
             while(!h.queue.isEmpty()){
                 if(System.nanoTime()>deadline){h.gaps.add("global_deadline");break;}
                 if(h.visited.size()>4000){h.gaps.add("host_context_budget");break;}
@@ -45,17 +46,31 @@ final class CapabilityEngine {
                 }
                 for(Call call:summary.calls()){
                     Method target=idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
-                    List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     String kind=kind(call.method());
+                    boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.scheduled(owner)||idx.bindingObjects.contains(owner));
+                    boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
+                    if(kind==null&&!lifecycle&&!relevant)continue;
+                    List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());continue;}
-                    if(target!=null&&idx.relevant.contains(CapabilityIndex.key(target))){
-                        Method actual=target;
+                    if(target!=null){
+                        Set<Method> targets=new LinkedHashSet<>();
+                        if(idx.relevant.contains(CapabilityIndex.key(target))||name.equals("<init>")&&idx.bindingObjects.contains(owner))targets.add(target);
                         if(!call.isStatic()&&!args.isEmpty()&&!name.equals("<init>")){
-                            for(V recv:alternatives(args.get(0)))if(recv.type()!=null){Method candidate=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(target));if(candidate!=null&&idx.relevant.contains(CapabilityIndex.key(candidate)))actual=candidate;}
+                            for(V recv:alternatives(args.get(0)))if(recv.type()!=null){
+                                Method concrete=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(target));
+                                if(concrete!=null&&idx.relevant.contains(CapabilityIndex.key(concrete)))targets.add(concrete);
+                                if(recv.kind().equals("unknown")||recv.kind().equals("field_object")||concrete==null||concrete.getImplementation()==null){
+                                    for(Method possible:idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()))
+                                        if(idx.relevant.contains(CapabilityIndex.key(possible))&&idx.subtype(CapabilityIndex.cls(possible.getDefiningClass()),recv.type()))targets.add(possible);
+                                }
+                            }
                         }
-                        enqueue(h,actual,args,job.path,job.candidate||summary.branched());
+                        if(targets.size()>64){h.gaps.add("dispatch_budget:"+call.method());}
+                        int dispatched=0;
+                        for(Method actual:targets){if(dispatched++>=64)break;enqueue(h,actual,args,job.path,job.candidate||summary.branched()||targets.size()>1);}
                     }
-                    if(name.equals("<init>")&&!args.isEmpty()&&idx.component(owner)&&!idx.activity(owner))seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);
+
+                    if(name.equals("<init>")&&!args.isEmpty()&&(idx.component(owner)||idx.scheduled(owner))&&!idx.activity(owner))seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);
                 }
             }
         }
@@ -65,11 +80,17 @@ final class CapabilityEngine {
         if(!h.gaps.isEmpty())diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
     }
     void seed(Host h,String type,V self,List<String> path,boolean candidate){
+        if(Cfg.WEBVIEWS.contains(type))return;
         if(path.size()>16){h.gaps.add("component_depth:"+type);return;}
         if(h.expanding.contains(type)||!h.components.add(type+"|"+self.id()))return;
         h.expanding.add(type);
-        for(Method m:idx.hierarchyMethods(type)){
+        List<Method> hierarchy=idx.hierarchyMethods(type);
+        Set<String> referencedShapes=new HashSet<>();
+        for(Method entry:hierarchy)if(CapabilityIndex.cls(entry.getDefiningClass()).equals(type)||entry.getName().startsWith("on"))
+            for(String call:idx.calls.getOrDefault(CapabilityIndex.key(entry),Set.of()))referencedShapes.add(call.substring(call.indexOf("->")+2));
+        for(Method m:hierarchy){
             if(!idx.relevant.contains(CapabilityIndex.key(m)))continue;
+            if(idx.activity(type)&&!CapabilityIndex.cls(m.getDefiningClass()).equals(type)&&!m.getName().startsWith("on")&&!referencedShapes.contains(CapabilityIndex.shape(m)))continue;
             List<V> args=new ArrayList<>();if((m.getAccessFlags()&8)==0)args.add(self);
             for(CharSequence p:m.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"entry_parameter"));
             enqueue(h,m,args,path,candidate);
@@ -81,12 +102,12 @@ final class CapabilityEngine {
             for(Field f:c.getFields()){
                 String ft=CapabilityIndex.cls(f.getType());
                 if(ft!=null&&idx.component(ft)&&!idx.activity(ft)&&!Cfg.WEBVIEWS.contains(ft)){
-                    V fv=V.of("field_object",ft,self.id()+"."+CapabilityIndex.field(f));
+                    V fv=h.heap.getOrDefault(heapKey(CapabilityIndex.field(f),self),V.of("field_object",ft,heapKey(CapabilityIndex.field(f),self)));
                     seed(h,ft,fv,extend(path,CapabilityIndex.field(f)),true);
                 }
             }
             current=CapabilityIndex.cls(c.getSuperclass());
-            if(current!=null&&(current.startsWith("android.")||current.startsWith("androidx.")))break;
+            if(current!=null&&(Cfg.WEBVIEWS.contains(current)||current.startsWith("android.")||current.startsWith("androidx.")))break;
         }
         h.expanding.remove(type);
     }
@@ -141,7 +162,7 @@ final class CapabilityEngine {
     static String owner(String id){int sep=id.indexOf("->");return sep<0?null:CapabilityIndex.cls(id.substring(0,sep));}
     static String name(String id){int p=id.indexOf("->"),e=id.indexOf('(',p);return p<0?"":id.substring(p+2,e<0?id.length():e);}
     static String desc(String cls){return "L"+cls.replace('.','/')+";";}
-    String kind(String method){Method m=idx.resolve(method);if(m!=null)return idx.kind(m);
+    String kind(String method){if(idx.messageRegistries.containsKey(method))return "message_bridge";Method m=idx.resolve(method);if(m!=null)return idx.messageRegistries.containsKey(CapabilityIndex.key(m))?"message_bridge":idx.kind(m);
         // Framework methods need not be packaged inside the APK.
         int sep=method.indexOf("->"),start=method.indexOf('(',sep),end=method.indexOf(')',start);
         if(start<0)return null;
@@ -164,15 +185,115 @@ final class CapabilityEngine {
         }
         if(kind.equals("bridge")&&args.size()>=3){
             base.put("registration_name",args.get(2).literal()==null?"unknown":args.get(2).literal());
-            for(V obj:alternatives(args.get(1))){Map<String,Object> b=new LinkedHashMap<>(base);b.put("implementation",obj.type()==null?"unknown":obj.type());b.put("members",bridgeMembers(obj.type()));add(h,b);}return;
+            for(V obj:alternatives(args.get(1))){
+                List<String> types=new ArrayList<>();if(obj.type()!=null)types.add(obj.type());
+                if(obj.kind().equals("unknown")||obj.kind().equals("field_object"))for(String type:idx.possibleTypes(obj.type()))
+                    if(!types.contains(type)&&!bridgeMembers(type).isEmpty())types.add(type);
+                if(types.isEmpty())types.add("unknown");
+                for(String type:types){
+                    Map<String,Object> b=new LinkedHashMap<>(base);b.put("implementation",type);b.put("members",bridgeMembers(type));
+                    if(!type.equals(obj.type())){b.put("binding_status","candidate");b.put("resolution","type_compatible_bridge_implementation");}
+                    if(b.get("registration_name").equals("unknown")){
+                        for(Call reflect:flow.summary(job.method).calls())if(name(reflect.method()).equals("getField")&&reflect.args().size()>1){
+                            V fieldName=eval(reflect.args().get(1),job,h,0,new HashSet<>());
+                            if(fieldName.literal()!=null){V tag=staticConstant(type,fieldName.literal());if(tag.literal()!=null){b.put("registration_name",tag.literal());b.put("name_resolution","reflective_public_field:"+fieldName.literal());}}
+                        }
+                    }
+                    add(h,b);
+                    reflectEndpoints(h,job,obj,type,b);
+                }
+            }return;
         }
         if(kind.equals("callback")&&args.size()>=2){
-            for(V client:alternatives(args.get(1))){Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",callbackMembers(client.type()));add(h,b);}return;
+            for(V client:alternatives(args.get(1))){
+                Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",callbackMembers(client.type()));add(h,b);
+                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if(CALLBACKS.contains(callback.getName())&&idx.relevant.contains(CapabilityIndex.key(callback))){
+                    List<V> callbackArgs=new ArrayList<>();callbackArgs.add(client);
+                    for(CharSequence p:callback.getParameterTypes())callbackArgs.add(idx.webview(CapabilityIndex.cls(p.toString()))?recv:V.of("unknown",CapabilityIndex.cls(p.toString()),"callback_parameter"));
+                    enqueue(h,callback,callbackArgs,job.path,true);
+                }
+            }return;
+        }
+        if(kind.equals("message_bridge")&&args.size()>=3&&registryField(call.method())!=null){
+            base.put("registration_name",args.get(1).literal()==null?"unknown":args.get(1).literal());
+            base.put("registry_field",registryField(call.method()));
+            for(V handler:alternatives(args.get(2))){
+                Map<String,Object> b=new LinkedHashMap<>(base);b.put("implementation",handler.type()==null?"unknown":handler.type());
+                List<Map<String,Object>> members=messageMembers(handler.type(),args.get(1).literal(),job,h);
+                b.put("members",members);b.put("resolution","annotated_transport_shared_registry");
+                if(!members.isEmpty())b.put("implementation",owner((String)members.get(0).get("signature")));
+                add(h,b);
+            }return;
         }
         add(h,base);
     }
+    void reflectEndpoints(Host h,Job job,V bridge,String type,Map<String,Object> base){
+        for(Method transport:idx.hierarchyMethods(type)){
+            Set<String> fields=idx.reflectionFields.getOrDefault(CapabilityIndex.key(transport),Set.of());
+            if(fields.isEmpty())continue;
+            // Follow only fields rooted at this injected bridge instance, never all objects in the Activity.
+            ArrayDeque<V> queue=new ArrayDeque<>();queue.add(bridge);Set<String> seen=new HashSet<>();int budget=40;
+            Map<String,V> targets=new LinkedHashMap<>();
+            while(!queue.isEmpty()&&budget-->0){V obj=queue.remove();if(!seen.add(obj.id()))continue;
+                for(var entry:h.heap.entrySet())if(entry.getKey().startsWith(obj.id()+"::")){
+                    String field=entry.getKey().substring(obj.id().length()+2);
+                    for(V value:alternatives(entry.getValue())){
+                        if(fields.contains(field))targets.put(field,value);
+                        else if(value.type()!=null&&idx.bindingObjects.contains(value.type()))queue.add(value);
+                    }
+                }
+            }
+            for(var entry:targets.entrySet()){
+                V target=entry.getValue();List<String> types=target.type()==null?List.of():List.of(target.type());
+                if(target.kind().equals("unknown")||target.kind().equals("field_object"))types=idx.possibleTypes(target.type());
+                for(String impl:types){
+                    List<Map<String,Object>> members=new ArrayList<>();
+                    for(Method m:idx.hierarchyMethods(impl))if((m.getAccessFlags()&1)!=0&&!m.getName().startsWith("<"))members.add(Map.of("signature",CapabilityIndex.key(m),"display",CapabilityIndex.display(m),"resolution","public_reflective_dispatch"));
+                    if(members.isEmpty())continue;
+                    Map<String,Object> fact=new LinkedHashMap<>(base);fact.put("kind","message_bridge");fact.put("implementation",impl);fact.put("members",members);fact.put("transport_signature",CapabilityIndex.key(transport));fact.put("router_field",entry.getKey());fact.put("resolution","injected_bridge_object_fields_to_reflective_receiver");fact.put("binding_status","candidate");add(h,fact);
+                }
+            }
+        }
+    }
+    String registryField(String method){Method m=idx.resolve(method);return idx.messageRegistries.get(m==null?method:CapabilityIndex.key(m));}
+    V staticConstant(String type,String name){
+        String cacheKey=type+"|"+name;if(constants.containsKey(cacheKey))return constants.get(cacheKey);
+        constants.put(cacheKey,UNKNOWN);
+        for(String t=type;t!=null;){ClassDef c=idx.classes.get(t);if(c==null)break;
+            for(Field f:c.getFields())if(f.getName().equals(name)){
+                if(f.getInitialValue()!=null){V v=encoded(f.getInitialValue());if(!v.equals(UNKNOWN)){constants.put(cacheKey,v);return v;}}
+                for(Method init:idx.byClass.getOrDefault(t,List.of()))if(init.getName().equals("<clinit>")||init.getName().equals("<init>")){
+                    Host host=new Host("static");Job job=new Job(init,List.of(),List.of(),true);
+                    for(Write write:flow.summary(init).writes())if(write.field().equals(CapabilityIndex.field(f))){V v=eval(write.value(),job,host,0,new HashSet<>());if(v.literal()!=null){constants.put(cacheKey,v);return v;}}
+                }
+            }
+            t=CapabilityIndex.cls(c.getSuperclass());
+        }return UNKNOWN;
+    }
+    List<Map<String,Object>> messageMembers(String type,String registered,Job outer,Host h){
+        if(type==null)return List.of();List<Map<String,Object>> result=new ArrayList<>();
+        for(Method method:idx.hierarchyMethods(type)){
+            if(method.getImplementation()==null||method.getName().startsWith("<"))continue;
+            Summary summary=flow.summary(method);
+            if(summary.calls().stream().noneMatch(c->c.method().startsWith("Ljava/lang/reflect/Method;->invoke(")))continue;
+            List<V> args=new ArrayList<>();if((method.getAccessFlags()&8)==0)args.add(V.of("unknown",type,"handler"));
+            for(CharSequence p:method.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"handler_parameter"));
+            Job job=new Job(method,args,outer.path,true);
+            for(Call ref:summary.calls())if(name(ref.method()).equals("getDeclaredMethod")&&ref.args().size()==3&&registered!=null){
+                V clazz=eval(ref.args().get(0),job,h,0,new HashSet<>());V array=ref.args().get(2);
+                if(!clazz.kind().equals("class"))continue;
+                TreeMap<Integer,String> params=new TreeMap<>();
+                for(Write w:summary.writes())if(w.field().startsWith("$element:")&&w.receiver().equals(array)){
+                    try{V p=eval(w.value(),job,h,0,new HashSet<>());if(p.kind().equals("class"))params.put(Integer.parseInt(w.field().substring(9)),p.id());}catch(NumberFormatException ignored){}
+                }
+                if(params.isEmpty())continue;
+                for(Method exposed:idx.byClass.getOrDefault(clazz.type(),List.of()))if(exposed.getName().equals(registered)&&exposed.getParameterTypes().equals(new ArrayList<>(params.values())))
+                    result.add(Map.of("signature",CapabilityIndex.key(exposed),"display",CapabilityIndex.display(exposed),"resolution","reflective_registered_handler","handler_signature",CapabilityIndex.key(method)));
+            }
+        }return result;
+    }
     void add(Host h,Map<String,Object> fact){
-        String key=fact.get("site")+"|"+fact.get("webview")+"|"+fact.get("implementation")+"|"+fact.get("registration_name")+"|"+fact.get("values");
+        String key=fact.get("kind")+"|"+fact.get("site")+"|"+fact.get("webview")+"|"+fact.get("implementation")+"|"+fact.get("registration_name")+"|"+fact.get("values");
         Map<String,Object> old=h.facts.get(key);if(old==null||fact.get("binding_status").equals("explicit"))h.facts.put(key,fact);
     }
     List<Map<String,Object>> bridgeMembers(String type){

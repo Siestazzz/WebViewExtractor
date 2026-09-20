@@ -1,0 +1,1020 @@
+{
+  "scope": "source oracle only; no extractor result read",
+  "core": {
+    "ctrip-h5-v1": {
+      "expected_unconditional_plugin_count": 34,
+      "actual_unconditional_plugin_count": 34,
+      "method_count": 222,
+      "plugins": [
+        {
+          "type": "ctrip.android.view.h5.plugin.H5UtilPlugin",
+          "registration_name": "Util_a",
+          "method_count": 48,
+          "inherited_method_count": 17,
+          "unique_signatures": 48,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 716,
+            "text": "H5UtilPlugin h5UtilPlugin = new H5UtilPlugin(h5WebView);"
+          },
+          "registry_text": "H5UtilPlugin h5UtilPlugin = new H5UtilPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5BusinessPlugin",
+          "registration_name": "Business_a",
+          "method_count": 28,
+          "inherited_method_count": 0,
+          "unique_signatures": 28,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 718,
+            "text": "H5BusinessPlugin h5BusinessPlugin = new H5BusinessPlugin(h5WebView);"
+          },
+          "registry_text": "H5BusinessPlugin h5BusinessPlugin = new H5BusinessPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5LocatePlugin",
+          "registration_name": "Locate_a",
+          "method_count": 12,
+          "inherited_method_count": 5,
+          "unique_signatures": 12,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 720,
+            "text": "H5LocatePlugin h5LocatePlugin = new H5LocatePlugin(h5WebView);"
+          },
+          "registry_text": "H5LocatePlugin h5LocatePlugin = new H5LocatePlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyBusinessPlugin",
+          "registration_name": "HyBusiness_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 722,
+            "text": "H5HyBusinessPlugin h5HyBusinessPlugin = new H5HyBusinessPlugin(h5WebView);"
+          },
+          "registry_text": "H5HyBusinessPlugin h5HyBusinessPlugin = new H5HyBusinessPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyToolPlugin",
+          "registration_name": "HyTool_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 724,
+            "text": "H5HyToolPlugin h5HyToolPlugin = new H5HyToolPlugin(h5WebView);"
+          },
+          "registry_text": "H5HyToolPlugin h5HyToolPlugin = new H5HyToolPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyAppPlugin",
+          "registration_name": "HyApp_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 726,
+            "text": "H5HyAppPlugin h5HyAppPlugin = new H5HyAppPlugin(h5WebView);"
+          },
+          "registry_text": "H5HyAppPlugin h5HyAppPlugin = new H5HyAppPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyGeoLocationPlugin",
+          "registration_name": "HyGeoLocation_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 728,
+            "text": "H5HyGeoLocationPlugin h5HyGeoLocationPlugin = new H5HyGeoLocationPlugin(h5WebView);"
+          },
+          "registry_text": "H5HyGeoLocationPlugin h5HyGeoLocationPlugin = new H5HyGeoLocationPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5NavBarPlugin",
+          "registration_name": "NavBar_a",
+          "method_count": 10,
+          "inherited_method_count": 0,
+          "unique_signatures": 10,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 730,
+            "text": "H5NavBarPlugin h5NavBarPlugin = new H5NavBarPlugin(h5WebView);"
+          },
+          "registry_text": "H5NavBarPlugin h5NavBarPlugin = new H5NavBarPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5LogPlugin",
+          "registration_name": "Log_a",
+          "method_count": 6,
+          "inherited_method_count": 0,
+          "unique_signatures": 6,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 732,
+            "text": "H5LogPlugin h5LogPlugin = new H5LogPlugin();"
+          },
+          "registry_text": "H5LogPlugin h5LogPlugin = new H5LogPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5UserPlugin",
+          "registration_name": "User_a",
+          "method_count": 9,
+          "inherited_method_count": 0,
+          "unique_signatures": 9,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 734,
+            "text": "H5UserPlugin h5UserPlugin = new H5UserPlugin();"
+          },
+          "registry_text": "H5UserPlugin h5UserPlugin = new H5UserPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5PipePlugin",
+          "registration_name": "Pipe_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 735,
+            "text": "H5PipePlugin h5PipePlugin = new H5PipePlugin();"
+          },
+          "registry_text": "H5PipePlugin h5PipePlugin = new H5PipePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5FilePlugin",
+          "registration_name": "File_a",
+          "method_count": 8,
+          "inherited_method_count": 0,
+          "unique_signatures": 8,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 736,
+            "text": "H5FilePlugin h5FilePlugin = new H5FilePlugin();"
+          },
+          "registry_text": "H5FilePlugin h5FilePlugin = new H5FilePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5DownloaderPlugin",
+          "registration_name": "Downloader_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 737,
+            "text": "H5DownloaderPlugin h5DownloaderPlugin = new H5DownloaderPlugin();"
+          },
+          "registry_text": "H5DownloaderPlugin h5DownloaderPlugin = new H5DownloaderPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5PagePlugin",
+          "registration_name": "Page_a",
+          "method_count": 13,
+          "inherited_method_count": 0,
+          "unique_signatures": 13,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 738,
+            "text": "H5PagePlugin h5PagePlugin = new H5PagePlugin();"
+          },
+          "registry_text": "H5PagePlugin h5PagePlugin = new H5PagePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5SharePlugin",
+          "registration_name": "Share_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 739,
+            "text": "H5SharePlugin h5SharePlugin = new H5SharePlugin();"
+          },
+          "registry_text": "H5SharePlugin h5SharePlugin = new H5SharePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5ImagePlugin",
+          "registration_name": "Image_a",
+          "method_count": 5,
+          "inherited_method_count": 4,
+          "unique_signatures": 5,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 740,
+            "text": "H5ImagePlugin h5ImagePlugin = new H5ImagePlugin();"
+          },
+          "registry_text": "H5ImagePlugin h5ImagePlugin = new H5ImagePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.plugin.h5.H5AlbumPlugin",
+          "registration_name": "Photo_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 741,
+            "text": "H5AlbumPlugin h5AlbumPlugin = new H5AlbumPlugin();"
+          },
+          "registry_text": "H5AlbumPlugin h5AlbumPlugin = new H5AlbumPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.videoupload.plugin.H5VideoUploadPlugin",
+          "registration_name": "VideoSplitUpload_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 742,
+            "text": "H5VideoUploadPlugin h5VideoUploadPlugin = new H5VideoUploadPlugin();"
+          },
+          "registry_text": "H5VideoUploadPlugin h5VideoUploadPlugin = new H5VideoUploadPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5StoragePlugin",
+          "registration_name": "Storage_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 743,
+            "text": "H5StoragePlugin h5StoragePlugin = new H5StoragePlugin();"
+          },
+          "registry_text": "H5StoragePlugin h5StoragePlugin = new H5StoragePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5EventPlugin",
+          "registration_name": "Event_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 744,
+            "text": "H5EventPlugin h5EventPlugin = new H5EventPlugin();"
+          },
+          "registry_text": "H5EventPlugin h5EventPlugin = new H5EventPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5UBTPlugin",
+          "registration_name": "UBT_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 745,
+            "text": "H5UBTPlugin h5UBTPlugin = new H5UBTPlugin();"
+          },
+          "registry_text": "H5UBTPlugin h5UBTPlugin = new H5UBTPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HySharePlugin",
+          "registration_name": "HyShare_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 746,
+            "text": "H5HySharePlugin h5HySharePlugin = new H5HySharePlugin();"
+          },
+          "registry_text": "H5HySharePlugin h5HySharePlugin = new H5HySharePlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyLogPlugin",
+          "registration_name": "HyLog_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 747,
+            "text": "H5HyLogPlugin h5HyLogPlugin = new H5HyLogPlugin();"
+          },
+          "registry_text": "H5HyLogPlugin h5HyLogPlugin = new H5HyLogPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyWebViewPlugin",
+          "registration_name": "HyWebView_a",
+          "method_count": 5,
+          "inherited_method_count": 0,
+          "unique_signatures": 5,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 748,
+            "text": "H5HyWebViewPlugin h5HyWebViewPlugin = new H5HyWebViewPlugin();"
+          },
+          "registry_text": "H5HyWebViewPlugin h5HyWebViewPlugin = new H5HyWebViewPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5HyNavigatorPlugin",
+          "registration_name": "HyNavigator_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 749,
+            "text": "H5HyNavigatorPlugin h5HyNavigatorPlugin = new H5HyNavigatorPlugin();"
+          },
+          "registry_text": "H5HyNavigatorPlugin h5HyNavigatorPlugin = new H5HyNavigatorPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5AdSdkPlugin",
+          "registration_name": "HybridAD_a",
+          "method_count": 15,
+          "inherited_method_count": 0,
+          "unique_signatures": 15,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 750,
+            "text": "H5AdSdkPlugin h5AdSdkPlugin = new H5AdSdkPlugin(h5WebView);"
+          },
+          "registry_text": "H5AdSdkPlugin h5AdSdkPlugin = new H5AdSdkPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5MapPlugin",
+          "registration_name": "Map_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 751,
+            "text": "H5MapPlugin h5MapPlugin = new H5MapPlugin();"
+          },
+          "registry_text": "H5MapPlugin h5MapPlugin = new H5MapPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5EncryptPlugin",
+          "registration_name": "Encrypt_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 752,
+            "text": "H5EncryptPlugin h5EncryptPlugin = new H5EncryptPlugin();"
+          },
+          "registry_text": "H5EncryptPlugin h5EncryptPlugin = new H5EncryptPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5PermissionPlugin",
+          "registration_name": "Permission_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 753,
+            "text": "H5PermissionPlugin h5PermissionPlugin = new H5PermissionPlugin();"
+          },
+          "registry_text": "H5PermissionPlugin h5PermissionPlugin = new H5PermissionPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.plugin.h5.calendar.H5CalendarPlugin",
+          "registration_name": "Calendar_a",
+          "method_count": 9,
+          "inherited_method_count": 0,
+          "unique_signatures": 9,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 754,
+            "text": "H5CalendarPlugin h5CalendarPlugin = new H5CalendarPlugin(h5WebView);"
+          },
+          "registry_text": "H5CalendarPlugin h5CalendarPlugin = new H5CalendarPlugin(h5WebView);",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5ScreenPlugin",
+          "registration_name": "Screen_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 756,
+            "text": "H5ScreenPlugin h5ScreenPlugin = new H5ScreenPlugin();"
+          },
+          "registry_text": "H5ScreenPlugin h5ScreenPlugin = new H5ScreenPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.plugin.h5.H5VideoPlugin",
+          "registration_name": "VideoPlayer_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 757,
+            "text": "H5VideoPlugin h5VideoPlugin = new H5VideoPlugin();"
+          },
+          "registry_text": "H5VideoPlugin h5VideoPlugin = new H5VideoPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5CtripApplicationPlugin",
+          "registration_name": "Application_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 758,
+            "text": "H5CtripApplicationPlugin h5CtripApplicationPlugin = new H5CtripApplicationPlugin();"
+          },
+          "registry_text": "H5CtripApplicationPlugin h5CtripApplicationPlugin = new H5CtripApplicationPlugin();",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5.plugin.H5NetworkPlugin",
+          "registration_name": "Network_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/m.java",
+            "line": 792,
+            "text": "H5NetworkPlugin h5NetworkPlugin = new H5NetworkPlugin();"
+          },
+          "registry_text": "H5NetworkPlugin h5NetworkPlugin = new H5NetworkPlugin();",
+          "all_method_evidence_annotated": true
+        }
+      ]
+    },
+    "ctrip-h5-v2": {
+      "expected_unconditional_plugin_count": 35,
+      "actual_unconditional_plugin_count": 35,
+      "method_count": 228,
+      "plugins": [
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5UtilPlugin",
+          "registration_name": "Util_a",
+          "method_count": 47,
+          "inherited_method_count": 15,
+          "unique_signatures": 47,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5BusinessPlugin",
+          "registration_name": "Business_a",
+          "method_count": 27,
+          "inherited_method_count": 0,
+          "unique_signatures": 27,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5LocatePlugin",
+          "registration_name": "Locate_a",
+          "method_count": 12,
+          "inherited_method_count": 5,
+          "unique_signatures": 12,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyBusinessPlugin",
+          "registration_name": "HyBusiness_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyToolPlugin",
+          "registration_name": "HyTool_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyAppPlugin",
+          "registration_name": "HyApp_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyGeoLocationPlugin",
+          "registration_name": "HyGeoLocation_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5NavBarPlugin",
+          "registration_name": "NavBar_a",
+          "method_count": 12,
+          "inherited_method_count": 0,
+          "unique_signatures": 12,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5LogPlugin",
+          "registration_name": "Log_a",
+          "method_count": 6,
+          "inherited_method_count": 0,
+          "unique_signatures": 6,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5UserPlugin",
+          "registration_name": "User_a",
+          "method_count": 9,
+          "inherited_method_count": 0,
+          "unique_signatures": 9,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5PipePlugin",
+          "registration_name": "Pipe_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5FilePlugin",
+          "registration_name": "File_a",
+          "method_count": 8,
+          "inherited_method_count": 0,
+          "unique_signatures": 8,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5DownloaderPlugin",
+          "registration_name": "Downloader_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5PagePlugin",
+          "registration_name": "Page_a",
+          "method_count": 14,
+          "inherited_method_count": 0,
+          "unique_signatures": 14,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5SharePlugin",
+          "registration_name": "Share_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5ImagePlugin",
+          "registration_name": "Image_a",
+          "method_count": 5,
+          "inherited_method_count": 4,
+          "unique_signatures": 5,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.plugin.h5.H5AlbumPluginV2",
+          "registration_name": "Photo_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.videoupload.plugin.H5VideoUploadPluginV2",
+          "registration_name": "VideoSplitUpload_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5StoragePlugin",
+          "registration_name": "Storage_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5EventPlugin",
+          "registration_name": "Event_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5UBTPlugin",
+          "registration_name": "UBT_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HySharePlugin",
+          "registration_name": "HyShare_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyLogPlugin",
+          "registration_name": "HyLog_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyWebViewPlugin",
+          "registration_name": "HyWebView_a",
+          "method_count": 6,
+          "inherited_method_count": 0,
+          "unique_signatures": 6,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5HyNavigatorPlugin",
+          "registration_name": "HyNavigator_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5AdSdkPlugin",
+          "registration_name": "HybridAD_a",
+          "method_count": 16,
+          "inherited_method_count": 0,
+          "unique_signatures": 16,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5MapPlugin",
+          "registration_name": "Map_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5EncryptPlugin",
+          "registration_name": "Encrypt_a",
+          "method_count": 3,
+          "inherited_method_count": 0,
+          "unique_signatures": 3,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5PermissionPlugin",
+          "registration_name": "Permission_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.plugin.h5.calendar.H5CalendarPluginV2",
+          "registration_name": "Calendar_a",
+          "method_count": 9,
+          "inherited_method_count": 0,
+          "unique_signatures": 9,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5ScreenPlugin",
+          "registration_name": "Screen_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5NetworkPlugin",
+          "registration_name": "Network_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.plugin.h5.H5VideoPluginV2",
+          "registration_name": "VideoPlayer_a",
+          "method_count": 4,
+          "inherited_method_count": 0,
+          "unique_signatures": 4,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.android.view.h5v2.plugin.H5CtripApplicationPlugin",
+          "registration_name": "Application_a",
+          "method_count": 1,
+          "inherited_method_count": 0,
+          "unique_signatures": 1,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        },
+        {
+          "type": "ctrip.business.evaluation.H5InvitePlugin",
+          "registration_name": "InstantSurvey_a",
+          "method_count": 2,
+          "inherited_method_count": 0,
+          "unique_signatures": 2,
+          "registry_evidence": {
+            "file": "sources/ctrip/base/init/n.java",
+            "line": 520,
+            "text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));"
+          },
+          "registry_text": "arrayList.addAll(Arrays.asList(new H5UtilPlugin(), new H5BusinessPlugin(), new H5LocatePlugin(), new H5HyBusinessPlugin(), new H5HyToolPlugin(), new H5HyAppPlugin(), new H5HyGeoLocationPlugin(), new H5NavBarPlugin(), new H5LogPlugin(), new ctrip.android.view.h5v2.plugin.H5UserPlugin(), new H5PipePlugin(), new H5FilePlugin(), new H5DownloaderPlugin(), new H5PagePlugin(), new H5SharePlugin(), new H5ImagePlugin(), new H5AlbumPluginV2(), new H5VideoUploadPluginV2(), new H5StoragePlugin(), new H5EventPlugin(), new H5UBTPlugin(), new H5HySharePlugin(), new H5HyLogPlugin(), new H5HyWebViewPlugin(), new H5HyNavigatorPlugin(), new H5AdSdkPlugin(), new H5MapPlugin(), new H5EncryptPlugin(), new H5PermissionPlugin(), new H5CalendarPluginV2(), new H5ScreenPlugin(), new H5NetworkPlugin(), new H5VideoPluginV2(), new H5CtripApplicationPlugin(), new H5InvitePlugin()));",
+          "all_method_evidence_annotated": true
+        }
+      ]
+    }
+  },
+  "conditional_host_links": [],
+  "errors": [],
+  "conditional_groups": {
+    "pay-common": {
+      "plugin_count": 4,
+      "unknown": [
+        "Registration is conditional on Bus route and non-null parameters"
+      ]
+    },
+    "liveness": {
+      "plugin_count": 2,
+      "unknown": [
+        "Registration is conditional on Bus route and valid parameters"
+      ]
+    },
+    "destination": {
+      "plugin_count": 3,
+      "unknown": [
+        "Registration is conditional on Bus route and valid parameters"
+      ]
+    },
+    "finance-v2": {
+      "plugin_count": 2,
+      "unknown": [
+        "Registration is conditional on Finance Bus route and valid WebView"
+      ]
+    },
+    "samsung-wallet": {
+      "plugin_count": 2,
+      "unknown": [
+        "Registration requires obj instanceof the matching H5Fragment generation"
+      ]
+    }
+  },
+  "ok": true
+}

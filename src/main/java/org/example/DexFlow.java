@@ -73,6 +73,8 @@ final class DexFlow {
             else if(op.equals("const-class")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("class",CapabilityIndex.cls(t.getType()),t.getType());
             else if(op.startsWith("const")&&in instanceof WideLiteralInstruction lit)output=V.literal("number",String.valueOf(lit.getWideLiteral()));
             else if(op.equals("new-instance")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("new",CapabilityIndex.cls(t.getType()),key+"@"+at);
+            else if(op.equals("new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=V.of("array",t.getType(),key+"@"+at);
+            else if(op.startsWith("aput")&&in instanceof ThreeRegisterInstruction three)writes.add(new Write("$element:"+s.getOrDefault(three.getRegisterC(),UNKNOWN).literal(),s.getOrDefault(three.getRegisterB(),UNKNOWN),s.getOrDefault(a,UNKNOWN)));
             else if(op.equals("check-cast")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=expr("cast",CapabilityIndex.cls(t.getType()),"cast",List.of(s.getOrDefault(a,UNKNOWN)));
             else if(in instanceof ReferenceInstruction r&&r.getReference() instanceof FieldReference f){
                 String field=CapabilityIndex.field(f);V receiver=op.startsWith("s")?V.of("static",CapabilityIndex.cls(f.getDefiningClass()),f.getDefiningClass()):in instanceof TwoRegisterInstruction two?s.getOrDefault(two.getRegisterB(),UNKNOWN):UNKNOWN;
