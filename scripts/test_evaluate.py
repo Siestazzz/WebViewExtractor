@@ -28,6 +28,13 @@ class EvaluationTest(unittest.TestCase):
   self.assertEqual(self.replay([g],[f])['metrics']['bridge']['matched'],0)
   f['members']=[]
   self.assertEqual(self.replay([g],[f])['metrics']['bridge']['matched'],1)
+ def test_handler_requires_selector_transport_and_same_view(self):
+  g=dict(kind='message_handler',name='event',registration_name='Native',implementation='Handler',normalized_signature='LHandler;->handle(Ljava/lang/String;)V')
+  binding=dict(registration_name='Native',webview=dict(id='view'),bridge_object_id='injected-object')
+  f=dict(kind='message_bridge',registration_name='event',implementation='Handler',webview=dict(id='view'),members=[dict(signature=g['normalized_signature'])],transport_bindings=[binding])
+  self.assertEqual(self.replay([g],[f])['metrics']['bridge']['matched'],1)
+  for bad in [dict(f,registration_name='other-event'),dict(f,transport_bindings=[]),dict(f,transport_bindings=[dict(binding,registration_name='OtherNative')]),dict(f,webview=dict(id='other-view')),dict(f,transport_bindings=[dict(binding,bridge_object_id='')])]:
+   self.assertEqual(self.replay([g],[bad])['metrics']['bridge']['matched'],0)
  def test_setting_owner_is_not_discarded(self):
   g=dict(kind='setting',name='setJavaScriptEnabled',normalized_api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',value='true',value_kind='literal')
   f=dict(kind='setting',api='Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V',values=['true'])

@@ -1,0 +1,75 @@
+{
+  "oracle_sha256": "5a5ad61d4185492331e672cec5cac03c9f1c41cca2dfae30b9859d0d8c0df1be",
+  "report_sha256": "c811735ff4007c3e9ce2f0ad9dc8a33a65f431ac06a784bd756624852088b61a",
+  "unassigned_oracle_facts": 108,
+  "oracle_file": "docs/validation/ctrip/canonical-facts.jsonl",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 233,
+      "matched": 233,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 3666,
+      "matched": 3666,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 299,
+      "matched": 299,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [],
+  "emitted_activities": 55,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive Activity-level recall; unknown targets count as unresolved misses in aggregate coverage. Registration-only matches are shown separately and do not prove endpoint coverage. WebView object identity requires independent review.",
+  "scoring_version": 3,
+  "duplicate_oracle_rows": 28,
+  "capability_granularity": {
+    "setting": {
+      "expected": 233,
+      "matched": 233,
+      "recall": 1.0
+    },
+    "bridge_registration": {
+      "expected": 489,
+      "matched": 489,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 3177,
+      "matched": 3177,
+      "recall": 1.0
+    },
+    "callback": {
+      "expected": 299,
+      "matched": 299,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "valid": 54,
+      "wrong": 1
+    },
+    "emitted": 55,
+    "wrong": 1,
+    "uncertain_or_unreviewed": 0,
+    "conservative_error_upper_bound": 0.01818181818181818
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

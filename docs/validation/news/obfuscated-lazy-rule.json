@@ -1,0 +1,79 @@
+{
+  "rule_id": "kotlin_obfuscated_lazy_factory",
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "evidence_status": "source_verified_dex_symbols_verified",
+  "holdout_used": false,
+  "interfaces": {
+    "lazy": {
+      "type": "Lkotlin/i;",
+      "methods": ["Lkotlin/i;->getValue()Ljava/lang/Object;", "Lkotlin/i;->isInitialized()Z"]
+    },
+    "initializer": {
+      "type": "Lkotlin/jvm/functions/a;",
+      "method": "Lkotlin/jvm/functions/a;->invoke()Ljava/lang/Object;"
+    }
+  },
+  "factory": {
+    "default": "Lkotlin/j;->ʼ(Lkotlin/jvm/functions/a;)Lkotlin/i;",
+    "mode_aware": "Lkotlin/j;->ʻ(Lkotlin/LazyThreadSafetyMode;Lkotlin/jvm/functions/a;)Lkotlin/i;",
+    "implementation": "The default factory constructs kotlin.SynchronizedLazyImpl with initializer argument 0; the mode-aware overload selects SynchronizedLazyImpl, SafePublicationLazyImpl, or UnsafeLazyImpl while preserving the initializer."
+  },
+  "editor_chain": {
+    "common_owner": "Lcom/tencent/news/activity/BaseEditorActivity;",
+    "concrete_hosts": ["Lcom/tencent/news/activity/RichEditorActivity;", "Lcom/tencent/news/activity/QAEditorActivity;"],
+    "constructor": "Lcom/tencent/news/activity/BaseEditorActivity;-><init>()V",
+    "initializer_allocation": "Lcom/tencent/news/activity/d;-><init>(Lcom/tencent/news/activity/BaseEditorActivity;)V",
+    "captured_host_field": "Lcom/tencent/news/activity/d;->ˈˈ:Lcom/tencent/news/activity/BaseEditorActivity;",
+    "initializer_invoke": "Lcom/tencent/news/activity/d;->invoke()Ljava/lang/Object;",
+    "typed_target": "Lcom/tencent/news/activity/BaseEditorActivity;->ˊˆ(Lcom/tencent/news/activity/BaseEditorActivity;)Lcom/tencent/news/richeditor/REWebView;",
+    "typed_target_normal_path": "captured BaseEditorActivity.findViewById(com.tencent.news.publish.p.f91997), cast to REWebView",
+    "lazy_field": "Lcom/tencent/news/activity/BaseEditorActivity;->ʻʼ:Lkotlin/i;",
+    "typed_accessor": "Lcom/tencent/news/activity/BaseEditorActivity;->ˊˏ()Lcom/tencent/news/richeditor/REWebView;",
+    "accessor_normal_path": "iget-object BaseEditorActivity.ʻʼ; invoke-interface kotlin.i.getValue(); check-cast REWebView",
+    "initialization_consumer": "Lcom/tencent/news/activity/BaseEditorActivity;->initView()V",
+    "consumer_flow": "typed accessor -> com.tencent.news.richeditor.l.ʻ(REWebView) settings initialization -> construct BaseEditorActivity$a with same REWebView -> setUserAgentString -> setWebChromeClient",
+    "host_binding": "Both concrete Activities inherit BaseEditorActivity's constructor and initView. The initializer object captures the actual concrete Activity instance through its BaseEditorActivity-typed constructor argument; findViewById therefore resolves the editor WebView in that Activity's inflated layout."
+  },
+  "recognition_rule": {
+    "required": [
+      "A factory method returns an interface with getValue()Object and accepts a zero-argument Object-returning initializer interface.",
+      "Factory body stores or forwards that exact initializer into a recognized lazy implementation; method shape alone is insufficient.",
+      "Factory result is stored into a stable host field.",
+      "A typed accessor loads that same field, invokes getValue()Object, and check-casts the result to a WebView subtype.",
+      "The initializer allocation captures the host and its invoke path returns the same typed WebView source, directly or through a synthetic typed helper.",
+      "Propagate identity from initializer capture through lazy field and typed accessor, preserving the concrete host receiver."
+    ],
+    "boundaries": [
+      "Do not classify every getValue()Object interface or every Function0-like invoke()Object as Lazy.",
+      "Do not attach every lazy field in the Activity to the WebView; require the field/accessor/initializer identity chain.",
+      "Do not merge initializer instances solely because they share interface kotlin.jvm.functions.a or factory kotlin.j.ʼ.",
+      "PatchRedirect return alternatives remain conditional unknowns; the ordinary fallthrough proves the layout-bound REWebView path.",
+      "Subclass ownership requires lifecycle reachability of the common initialization method and the captured receiver must be that subclass instance."
+    ]
+  },
+  "v8c_ownership_check": {
+    "activity_count": 37,
+    "same_activity_set_as_v8a": true,
+    "new_hosts": 0,
+    "removed_hosts": 0,
+    "reuse_result": "All v8a Activity-level ownership verdicts remain applicable. v8c changes capability recovery/evidence for existing hosts, especially the two editors; it does not introduce an ownership-set change.",
+    "editor_verdict": "valid",
+    "fact_scope_caution": "Activity ownership reuse does not validate every emitted alternative fact. Same-WebView identity still requires the lazy chain above."
+  },
+  "dex_symbol_verification": {
+    "source": "test/runs/symbols/news.jsonl",
+    "status": "all APK descriptors named in this rule found",
+    "note": "Source aliases m172914/m37976/m38000 correspond to DEX names kotlin.j.ʼ/BaseEditorActivity.ˊˆ/BaseEditorActivity.ˊˏ."
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/kotlin/i.java:4-7",
+    "test/decompiled/com.tencent.news/sources/kotlin/jvm/functions/a.java:4-6",
+    "test/decompiled/com.tencent.news/sources/kotlin/j.java:29-52",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/activity/BaseEditorActivity.java:461-494",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/activity/BaseEditorActivity.java:665-668",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/activity/BaseEditorActivity.java:889-912",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/activity/BaseEditorActivity.java:1173-1176"
+  ]
+}

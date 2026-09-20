@@ -1,0 +1,61 @@
+{
+  "report": "test/runs/v8c/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "activity_set": {"count": 85, "equals_v8a": true, "added": [], "removed": []},
+  "pangle_set_block_network_image": {
+    "activities": [
+      "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity"
+    ],
+    "api": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+    "call_site": "Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;->c(Landroid/webkit/WebView;)V@72",
+    "receiver_fields": {
+      "TTWebPageActivity": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTWebPageActivity;->f15161z:Lcom/bytedance/sdk/component/widget/SSWebView;",
+      "TTVideoWebPageActivity": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity;->f15095z:Lcom/bytedance/sdk/component/widget/SSWebView;",
+      "TTVideoScrollWebPageActivity": "inherited TTVideoWebPageActivity.f15095z"
+    },
+    "configurator_signatures": [
+      "Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;->c(Landroid/content/Context;)Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;",
+      "Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;->c(Z)Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;",
+      "Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;->tn(Z)Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;",
+      "Lcom/bytedance/sdk/openadsdk/core/widget/c/tn;->c(Landroid/webkit/WebView;)V"
+    ],
+    "value_source": "argument is true XOR tn.e; tn.e:Z is initialized true and neither fluent call on these paths writes e, so value is false",
+    "paths": {
+      "landing": "z.onPageStarted(WebView,...) -> tn.c(context).c(true).c(webView)",
+      "video": "TTVideoWebPageActivity onCreate -> tn.c(context).c(true).tn(false).c(f15095z.getWebView())",
+      "scroll": "TTVideoScrollWebPageActivity inherits the video onCreate/configuration path"
+    },
+    "first_break": "receiver binding reaches the correct SSWebView, but object-sensitive state for the factory-created/fluent-returned tn instance is lost at the read of field tn.e, producing value=unknown",
+    "generic_rule": "preserve allocation identity and instance-field defaults through static factory return values and return-this fluent setters; apply only setters on that alias, and retain unchanged defaults for fields those setters do not write"
+  },
+  "mgadplus_lifecycle_callback": {
+    "activity": "com.mgadplus.brower.CustomWebActivity",
+    "receiver_chain": [
+      "onCreate: E = (ImgoAdWebView)findViewById(R.id.webViewPage)",
+      "Lcom/mgadplus/brower/CustomWebActivity;->h(Ljava/lang/String;)V",
+      "E.setWebViewLifeCycleCallback(new CustomWebActivity$c())",
+      "Lcom/mgadplus/brower/ImgoAdWebView;->setWebViewLifeCycleCallback(Lcom/mgadplus/brower/g;)V stores parameter 0 in W",
+      "Lcom/mgadplus/brower/ImgoAdWebView;->W:Lcom/mgadplus/brower/g;"
+    ],
+    "first_break": "the non-Android custom callback setter/store is not modeled as callback installation, so new CustomWebActivity$c never becomes the concrete callback target on Activity field E",
+    "members": [
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->loadCustomScheme(Ljava/lang/String;)Z",
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "Lcom/mgadplus/brower/CustomWebActivity$c;->onTitle(Ljava/lang/String;)V"
+    ],
+    "dispatch_evidence": [
+      "ImgoAdWebView.loadCustomScheme -> W.loadCustomScheme",
+      "BridgeWebView$a page callbacks -> ImgoAdWebView.p/q -> W.onPageFinished/onPageStarted",
+      "BridgeWebView$a errors -> ImgoAdWebView.l/m -> W.onReceivedError/onReceivedHttpError",
+      "BridgeWebView$b title hook -> ImgoAdWebView.r/setWebTitle -> W.onTitle"
+    ],
+    "progress_limitation": "the target registers an onProgressChanged override, but no direct W.onProgressChanged forwarding call was found in the inspected decompiled dispatcher",
+    "generic_rule": "recognize custom listener setters that store a callback parameter into a receiver field; bind a concrete new-object argument through the Activity-owned receiver, then enumerate the concrete class overrides of the declared callback base/interface. Require the setter call on the bound WebView instance and do not globally attach every implementation class."
+  },
+  "holdout_read": false
+}

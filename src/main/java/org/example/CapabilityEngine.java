@@ -16,6 +16,7 @@ final class CapabilityEngine {
     final List<String> diagnostics=new ArrayList<>();
     final Map<String,V> constants=new HashMap<>();
     final Map<String,List<Map<String,Object>>> callbackCache=new HashMap<>();
+    final Map<String,Set<Integer>> lazyFactoryParameters=new HashMap<>();
     Runnable checkpoint=()->{};
     Host currentHost;
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
@@ -26,9 +27,10 @@ final class CapabilityEngine {
         final Map<String,V> heap=new HashMap<>();
         final Map<String,Set<V>> contents=new HashMap<>();
         final Map<String,V> bridgeViews=new HashMap<>();
+        final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
         final Map<String,Object> serviceEvidence=new TreeMap<>();
         final ArrayDeque<Job> queue=new ArrayDeque<>();
-        final Set<String> visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>();
+        final Set<String> visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
         final List<String> gaps=new ArrayList<>();
         Host(String a){activity=a;}
@@ -37,7 +39,7 @@ final class CapabilityEngine {
         Host h=new Host(activity);currentHost=h;V self=V.of("host",activity,"activity:"+activity);
         seed(h,activity,self,List.of(activity),false);
         for(int phase=0;phase<2;phase++){
-            if(phase==1){h.facts.clear();h.visited.clear();h.components.clear();seed(h,activity,self,List.of(activity),false);}
+            if(phase==1){h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();seed(h,activity,self,List.of(activity),false);}
             while(!h.queue.isEmpty()){
                 if(System.nanoTime()>deadline){h.gaps.add("global_deadline");break;}
                 if(h.visited.size()>12000){h.gaps.add("host_context_budget");break;}
@@ -97,7 +99,19 @@ final class CapabilityEngine {
             for(String call:idx.calls.getOrDefault(CapabilityIndex.key(entry),Set.of()))referencedShapes.add(call.substring(call.indexOf("->")+2));
         Set<String> usedFields=new HashSet<>();ArrayDeque<String> fieldMethods=new ArrayDeque<>();
         for(Method m:hierarchy){
-            if(m.getName().equals("<init>")&&!idx.activity(type)&&h.constructed.contains(self.id()))continue;
+            if(!m.getName().startsWith("<")){
+                if(!idx.activity(type)&&!idx.component(type)&&!idx.scheduled(type)&&!idx.callbackEntries.getOrDefault(type,Set.of()).contains(CapabilityIndex.key(m)))continue;
+                // A WebView-taking helper gets its receiver arguments from actual call sites.
+                // Seeding it with entry_parameter fabricates extra WebViews and merges capabilities.
+                if(!idx.activity(type)&&m.getParameterTypes().stream().anyMatch(p->idx.webview(CapabilityIndex.cls(p.toString()))||idx.settings(CapabilityIndex.cls(p.toString()))))continue;
+            }
+            if(m.getName().equals("<init>")&&!idx.activity(type)){
+                if(self.kind().equals("view")){
+                    // Lookup-derived views use the XML constructor contract, including replay.
+                    // Its initialization must survive the second analysis phase.
+                    if(!m.getParameterTypes().equals(List.of("Landroid/content/Context;","Landroid/util/AttributeSet;")))continue;
+                }else if(h.constructed.contains(self.id()))continue;
+            }
             if(!idx.relevant.contains(CapabilityIndex.key(m))&&!(idx.activity(type)&&m.getName().equals("<init>")))continue;
             if(idx.activity(type)&&!CapabilityIndex.cls(m.getDefiningClass()).equals(type)&&!m.getName().equals("<init>")&&!m.getName().startsWith("on")&&!referencedShapes.contains(CapabilityIndex.shape(m)))continue;
             fieldMethods.add(CapabilityIndex.key(m));
@@ -115,8 +129,11 @@ final class CapabilityEngine {
                 if((f.getAccessFlags()&(8|0x1000))!=0||!usedFields.contains(CapabilityIndex.field(f)))continue;
                 String ft=CapabilityIndex.cls(f.getType());
                 if(ft!=null&&idx.component(ft)&&!idx.activity(ft)&&!Cfg.WEBVIEWS.contains(ft)){
-                    V fv=h.heap.getOrDefault(heapKey(CapabilityIndex.field(f),self),V.of("field_object",ft,heapKey(CapabilityIndex.field(f),self)));
-                    seed(h,ft,fv,extend(path,CapabilityIndex.field(f)),true);
+                    V fv=h.heap.get(heapKey(CapabilityIndex.field(f),self));
+                    // A field declaration is not another allocation. Wait for a real object/view
+                    // origin; actual field dereferences still retain unresolved candidate facts.
+                    if(fv!=null)for(V origin:alternatives(fv))if(origin.kind().equals("object")||origin.kind().equals("view"))
+                        seed(h,origin.type()==null?ft:origin.type(),origin,extend(path,CapabilityIndex.field(f)),true);
                 }
             }
             current=CapabilityIndex.cls(c.getSuperclass());
@@ -133,6 +150,30 @@ final class CapabilityEngine {
         V original=args.get(0);return args.stream().map(v->v.equals(original)?receiver:v).toList();
     }
     static List<String> extend(List<String> path,String s){var p=new ArrayList<>(path);p.add(s);return List.copyOf(p);}
+    Set<Integer> lazyInitializerParameters(Method factory){
+        String key=CapabilityIndex.key(factory);Set<Integer> cached=lazyFactoryParameters.get(key);if(cached!=null)return cached;
+        Set<Integer> result=new HashSet<>();lazyFactoryParameters.put(key,result);
+        Summary summary=flow.summary(factory);
+        for(Call call:summary.calls())if(name(call.method()).equals("<init>")&&!call.args().isEmpty()){
+            V receiver=call.args().get(0);String type=receiver.type();
+            if(!receiver.kind().equals("new")||type==null||!type.startsWith("kotlin.")||!idx.lazyType(type)||!summary.returns().contains(receiver))continue;
+            Method constructor=idx.resolve(call.method());if(constructor==null)continue;
+            for(int i:capturedInitializerParameters(constructor,new HashSet<>()))if(i<call.args().size()){
+                V argument=call.args().get(i);if(argument.kind().equals("param")&&idx.function0Type(argument.type()))result.add(Integer.parseInt(argument.id()));
+            }
+        }
+        return result;
+    }
+    Set<Integer> capturedInitializerParameters(Method constructor,Set<String> seen){
+        Set<Integer> result=new HashSet<>();if(seen.size()>=6||!seen.add(CapabilityIndex.key(constructor)))return result;
+        Summary summary=flow.summary(constructor);
+        for(Write write:summary.writes())if(write.receiver().kind().equals("param")&&write.receiver().id().equals("0")&&write.value().kind().equals("param")&&idx.function0Type(write.value().type()))result.add(Integer.parseInt(write.value().id()));
+        for(Call call:summary.calls())if(name(call.method()).equals("<init>")&&!call.args().isEmpty()&&call.args().get(0).kind().equals("param")&&call.args().get(0).id().equals("0")){
+            Method delegate=idx.resolve(call.method());if(delegate==null)continue;
+            for(int i:capturedInitializerParameters(delegate,new HashSet<>(seen)))if(i<call.args().size()&&call.args().get(i).kind().equals("param"))result.add(Integer.parseInt(call.args().get(i).id()));
+        }
+        return result;
+    }
     V guardValue(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args.size()?job.args.get(index):UNKNOWN;}
@@ -147,7 +188,18 @@ final class CapabilityEngine {
         if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?job.args.get(i):V.of("unknown",v.type(),"parameter");}
         if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));for(V element:v.args())applyWrite(h,"$contents",array,eval(element,job,h,depth+1,new HashSet<>(visiting)));return array;}
         if(v.kind().equals("array_element"))return elements(h,eval(v.args().get(0),job,h,depth+1,visiting),v.type());
-        if(v.kind().equals("new"))return V.of("object",v.type(),v.id()+"|"+allocationContext(job));
+        if(v.kind().equals("new")){
+            V object=V.of("object",v.type(),v.id()+"|"+allocationContext(job));
+            for(Call ctor:flow.summary(job.method).calls())if(name(ctor.method()).equals("<init>")&&!ctor.args().isEmpty()&&ctor.args().get(0).equals(v)){
+                Method target=idx.resolve(ctor.method());
+                if(target!=null&&(idx.component(v.type())||idx.bindingObjects.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
+                    List<V> args=new ArrayList<>();args.add(object);
+                    for(int i=1;i<ctor.args().size();i++)args.add(eval(ctor.args().get(i),job,h,depth+1,new HashSet<>(visiting)));
+                    materializeConstructor(target,args,job,h,depth+1,visiting);
+                }
+            }
+            return object;
+        }
         if(v.kind().equals("union")){V result=null;for(V x:v.args())result=union(result,eval(x,job,h,depth+1,new HashSet<>(visiting)));return result==null?UNKNOWN:result;}
         if(v.kind().equals("cast")){
             V original=eval(v.args().get(0),job,h,depth+1,visiting);
@@ -168,7 +220,7 @@ final class CapabilityEngine {
             String owner=owner(v.id());ClassDef c=idx.classes.get(owner);
             if(c!=null){
                 for(Field f:c.getFields())if(CapabilityIndex.field(f).equals(v.id())&&f.getInitialValue()!=null){V initial=encoded(f.getInitialValue());if(!initial.equals(UNKNOWN))return initial;}
-                for(Method m:idx.byClass.getOrDefault(owner,List.of()))if(m.getName().equals("<init>")||m.getName().equals("<clinit>")){
+                for(Method m:idx.byClass.getOrDefault(owner,List.of()))if(m.getName().equals("<clinit>")||m.getName().equals("<init>")&&!h.constructed.contains(receiver.id())){
                     if(m.getImplementation()==null)continue;
                     Summary init=flow.summary(m);List<V> args=new ArrayList<>();if((m.getAccessFlags()&8)==0)args.add(receiver);
                     for(CharSequence t:m.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(t.toString()),"constructor_parameter"));
@@ -193,10 +245,15 @@ final class CapabilityEngine {
             }
             if((name.equals("findViewById")||name.equals("requireViewById"))&&args.size()>1)return V.of("view",v.type(),args.get(0).id()+"/view:"+args.get(1).id());
             if((name.equals("getActivity")||name.equals("requireActivity")))return V.of("host",h.activity,"activity:"+h.activity);
-            if(name.equals("lazy")&&owner(v.id())!=null&&owner(v.id()).startsWith("kotlin.LazyKt")&&!args.isEmpty())return expr("lazy","kotlin.Lazy","lazy:"+args.get(args.size()-1).id(),List.of(args.get(args.size()-1)));
-            if(name.equals("getValue")&&"kotlin.Lazy".equals(owner(v.id()))&&!args.isEmpty()){
+            Method lazyFactory=idx.resolve(v.id());
+            if(lazyFactory!=null&&owner(v.id()).startsWith("kotlin.")&&(lazyFactory.getAccessFlags()&8)!=0&&idx.lazyType(CapabilityIndex.cls(lazyFactory.getReturnType()))){
+                V initializer=null;for(int parameter:lazyInitializerParameters(lazyFactory))if(parameter<args.size())for(V alternative:alternatives(args.get(parameter)))if(idx.function0Type(alternative.type()))initializer=union(initializer,alternative);
+                if(initializer!=null)return expr("lazy",CapabilityIndex.cls(lazyFactory.getReturnType()),"lazy:"+initializer.id(),List.of(initializer));
+            }
+            if(lazyFactory==null&&name.equals("lazy")&&owner(v.id())!=null&&owner(v.id()).startsWith("kotlin.LazyKt")&&!args.isEmpty())return expr("lazy","kotlin.Lazy","lazy:"+args.get(args.size()-1).id(),List.of(args.get(args.size()-1)));
+            if(name.equals("getValue")&&idx.lazyType(owner(v.id()))&&!args.isEmpty()){
                 V result=null;for(V lazy:alternatives(args.get(0)))if(lazy.kind().equals("lazy"))for(V initializer:alternatives(lazy.args().get(0)))if(initializer.type()!=null)
-                    for(Method invoke:idx.byClass.getOrDefault(initializer.type(),List.of()))if(invoke.getName().equals("invoke")&&invoke.getParameterTypes().isEmpty()&&!invoke.getReturnType().equals("Ljava/lang/Object;"))result=union(result,eval(expr("return",CapabilityIndex.cls(invoke.getReturnType()),CapabilityIndex.key(invoke),List.of(initializer)),job,h,depth+1,new HashSet<>(visiting)));
+                    for(Method invoke:idx.byClass.getOrDefault(initializer.type(),List.of()))if(invoke.getName().equals("invoke")&&invoke.getParameterTypes().isEmpty()&&invoke.getImplementation()!=null)result=union(result,eval(expr("return",CapabilityIndex.cls(invoke.getReturnType()),CapabilityIndex.key(invoke),List.of(initializer)),job,h,depth+1,new HashSet<>(visiting)));
                 if(result!=null)return result;
             }
             if(!args.isEmpty()&&name.equals("asList")&&"java.util.Arrays".equals(owner(v.id())))return args.get(0);
@@ -226,6 +283,27 @@ final class CapabilityEngine {
             return result==null?new V("unknown",v.type(),v.id(),null,List.of()):result;
         }
         return v;
+    }
+    void materializeConstructor(Method ctor,List<V> args,Job outer,Host h,int depth,Set<String> visiting){
+        if(depth>12||args.isEmpty()||System.nanoTime()>deadline)return;
+        String context=CapabilityIndex.key(ctor)+"|"+args;
+        if(!h.materialized.add(context))return;
+        if(h.materialized.size()>12000){h.gaps.add("constructor_materialization_budget");return;}
+        h.constructed.add(args.get(0).id());
+        Job job=new Job(ctor,args,extend(outer.path,CapabilityIndex.key(ctor)),outer.candidate);
+        Summary summary=flow.summary(ctor,v->guardValue(v,job,h,0));
+        // Bind captured fields now, before a factory return is dereferenced by its caller.
+        // Keep the actual constructor job so initialization capabilities are also emitted.
+        for(Write write:summary.writes())applyWrite(h,write.field(),eval(write.receiver(),job,h,depth+1,new HashSet<>(visiting)),eval(write.value(),job,h,depth+1,new HashSet<>(visiting)));
+        for(Call call:summary.calls())if(name(call.method()).equals("<init>")&&!call.args().isEmpty()){
+            V receiver=eval(call.args().get(0),job,h,depth+1,new HashSet<>(visiting));
+            if(!receiver.id().equals(args.get(0).id()))continue;
+            Method parent=idx.resolve(call.method());if(parent==null)continue;
+            List<V> bound=new ArrayList<>();bound.add(receiver);
+            for(int i=1;i<call.args().size();i++)bound.add(eval(call.args().get(i),job,h,depth+1,new HashSet<>(visiting)));
+            materializeConstructor(parent,bound,job,h,depth+1,visiting);
+        }
+        enqueue(h,ctor,args,outer.path,outer.candidate||summary.branched());
     }
     V installedProvider(String field,Job outer,Host h,int depth,Set<String> visiting){
         if(depth>10||!visiting.add("provider:"+field))return null;
@@ -290,9 +368,21 @@ final class CapabilityEngine {
         String site=CapabilityIndex.key(job.method)+"@"+call.offset();boundSites.add(site);
         V recv=args.isEmpty()?UNKNOWN:args.get(0);if(kind.equals("setting")&&recv.kind().equals("settings"))recv=recv.args().get(0);
         if(kind.equals("message_bridge")&&h.bridgeViews.containsKey(recv.id()))recv=h.bridgeViews.get(recv.id());
-        for(V view:alternatives(recv))if(view.type()!=null&&idx.webview(view.type())&&!Cfg.WEBVIEWS.contains(view.type()))seed(h,view.type(),view,job.path,true);
+        // A nullable receiver describes a condition, never an additional WebView object.
+        boolean nullable=false;V live=null;
+        for(V alternative:alternatives(recv)){
+            if(!call.isStatic()&&alternative.kind().equals("literal")&&"0".equals(alternative.literal()))nullable=true;
+            else live=union(live,alternative);
+        }
+        if(live==null)return;recv=live;
+        for(V view:alternatives(recv))if((view.kind().equals("object")||view.kind().equals("view"))&&view.type()!=null&&idx.webview(view.type())&&!Cfg.WEBVIEWS.contains(view.type()))seed(h,view.type(),view,job.path,true);
         String op=name(call.method());
-        Map<String,Object> base=new LinkedHashMap<>();base.put("activity",h.activity);base.put("kind",kind);base.put("name",op);base.put("site",site);base.put("api",call.method());base.put("webview",Map.of("id",recv.id(),"type",recv.type()==null?"unknown":recv.type()));if(recv.kind().equals("union"))base.put("webview_alternatives",alternatives(recv).stream().map(v->Map.of("id",v.id(),"type",v.type()==null?"unknown":v.type())).toList());base.put("binding_status",job.candidate||conditional||recv.kind().equals("unknown")?"candidate":"explicit");base.put("conditional",conditional);base.put("evidence",job.path);base.put("arguments",args);
+        Map<String,Object> base=new LinkedHashMap<>();base.put("activity",h.activity);base.put("kind",kind);base.put("name",op);base.put("site",site);base.put("api",call.method());base.put("webview",Map.of("id",recv.id(),"type",recv.type()==null?"unknown":recv.type()));if(recv.kind().equals("union"))base.put("webview_alternatives",alternatives(recv).stream().map(v->Map.of("id",v.id(),"type",v.type()==null?"unknown":v.type())).toList());base.put("binding_status",job.candidate||conditional||nullable||recv.kind().equals("unknown")?"candidate":"explicit");base.put("conditional",conditional||nullable);if(nullable)base.put("receiver_condition","non_null");base.put("evidence",job.path);base.put("arguments",args);
+        if(kind.equals("message_bridge")&&!args.isEmpty()){
+            List<Map<String,Object>> transports=new ArrayList<>();
+            for(V registry:alternatives(args.get(0)))for(var binding:h.nativeBindings.getOrDefault(registry.id(),List.of()))if(!transports.contains(binding))transports.add(binding);
+            if(!transports.isEmpty())base.put("transport_bindings",transports);
+        }
         if(kind.equals("setting")||kind.equals("global_setting")){
             List<String> values=new ArrayList<>();int from=call.isStatic()?0:1;
             for(int i=from;i<args.size();i++){V v=args.get(i);for(V option:alternatives(v))values.add(option.literal()==null?"unknown":option.literal());}
@@ -305,6 +395,11 @@ final class CapabilityEngine {
             for(V obj:alternatives(args.get(1))){
                 if(obj.kind().equals("literal")&&"0".equals(obj.literal()))continue;
                 h.bridgeViews.put(obj.id(),union(h.bridgeViews.get(obj.id()),recv));
+                var transports=h.nativeBindings.computeIfAbsent(obj.id(),k->new ArrayList<>());
+                for(V view:alternatives(recv)){
+                    Map<String,Object> binding=Map.of("registration_name",args.get(2).literal()==null?"unknown":args.get(2).literal(),"webview",Map.of("id",view.id(),"type",view.type()==null?"unknown":view.type()),"site",site,"bridge_object_id",obj.id());
+                    if(!transports.contains(binding))transports.add(binding);
+                }
                 List<String> types=new ArrayList<>();if(obj.type()!=null)types.add(obj.type());
                 if(obj.kind().equals("unknown")||obj.kind().equals("field_object"))h.gaps.add("unresolved_bridge_implementation:"+site);
                 if(types.isEmpty())types.add("unknown");

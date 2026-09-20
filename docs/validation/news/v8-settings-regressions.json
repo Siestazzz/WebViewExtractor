@@ -1,0 +1,76 @@
+{
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "evidence_status": "source_verified_dex_symbols_verified_report_compared",
+  "holdout_used": false,
+  "reports": {
+    "baseline": "test/runs/v7/com.tencent.news/0/output/capabilities.json",
+    "current": "test/runs/v8/com.tencent.news/0/output/capabilities.json"
+  },
+  "activity_set": {
+    "v8_count": 37,
+    "same_as_v8a": true,
+    "added": [],
+    "removed": []
+  },
+  "regressions": [
+    {
+      "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+      "verdict": "real_omission",
+      "missing_settings": [
+        {"name":"setMixedContentMode","normalized_api":"Landroid/webkit/WebSettings;->setMixedContentMode(I)V","value":0,"implementation":"Lcom/tencent/news/webview/BaseSysWebView;->allowMixedContent()V"},
+        {"name":"setTextZoom","normalized_api":"Landroid/webkit/WebSettings;->setTextZoom(I)V","value":100,"implementation":"Lcom/tencent/news/webview/BaseSysWebView;->setDefaultFontSetting()V"},
+        {"name":"setDomStorageEnabled","normalized_api":"Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V","value":null,"value_kind":"dynamic","source_expression":"com.tencent.news.utils.remotevalue.q.m151032()","implementation":"Lcom/tencent/news/webview/BaseSysWebView;->setDomStorageEnabled()V"}
+      ],
+      "binding_chain": [
+        "Lcom/tencent/news/tad/business/novel/WebNovelActivity;->initView()V performs findViewById -> NovelWebView",
+        "Lcom/tencent/news/tad/business/novel/NovelWebView;->getLoadingWebView()Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;",
+        "Lcom/tencent/news/tad/business/novel/NovelLoadingWebView;->getWebView()Lcom/tencent/news/webview/BaseSysWebView;",
+        "WebNovelActivity stores that returned object in its BaseSysWebView field and installs both clients on it",
+        "BaseSysWebView constructor -> init() -> allowMixedContent() and setDefaultSetting() -> setDomStorageEnabled()/setDefaultFontSetting()"
+      ],
+      "v8_observation": "No BaseSysWebView mixed-content, text-zoom, or DOM-storage fact is emitted for this Activity.",
+      "v7_field_object_assessment": "v7 emitted several speculative redirect/entry/union alternatives. Its Activity-field identity was not merely a guess: WebNovelActivity.initView explicitly assigns the nested getWebView() result to that field. The exact layout/getter chain is sufficient without the speculative alternatives."
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.WebAdvertActivity",
+      "verdict": "real_omission_for_two_settings",
+      "missing_settings": [
+        {"name":"setMixedContentMode","normalized_api":"Landroid/webkit/WebSettings;->setMixedContentMode(I)V","value":0,"implementation":"Lcom/tencent/news/webview/BaseSysWebView;->allowMixedContent()V"},
+        {"name":"setTextZoom","normalized_api":"Landroid/webkit/WebSettings;->setTextZoom(I)V","value":100,"implementation":"Lcom/tencent/news/webview/BaseSysWebView;->setDefaultFontSetting()V"}
+      ],
+      "not_missing": {"name":"setDomStorageEnabled","reason":"v8 emits a DOM-storage setting through AdSysWebViewWrapperImpl for the Activity; this accounts for the third shared BaseSysWebView setting in current scoring."},
+      "binding_chain": [
+        "Lcom/tencent/news/tad/business/ui/activity/WebAdvertActivity;->initView()V performs findViewById -> WebAdvertView",
+        "Lcom/tencent/news/tad/business/ui/landing/WebAdvertView;->getLoadingWebView()Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;",
+        "Lcom/tencent/news/tad/business/ui/landing/AdLoadingWebView;->getWebView()Lcom/tencent/news/tad/business/ui/landing/AdWebView;",
+        "Lcom/tencent/news/tad/business/ui/landing/AdWebView; is a BaseSysWebView subtype",
+        "WebAdvertActivity stores that returned object in its BaseSysWebView field and installs bridge/clients on it",
+        "BaseSysWebView constructor initialization applies mixed-content, text-zoom, and DOM-storage defaults"
+      ],
+      "v8_observation": "No BaseSysWebView mixed-content or text-zoom fact is emitted for this Activity; the wrapper DOM-storage fact remains.",
+      "v7_field_object_assessment": "The v7 direct Activity-field alias is source-backed by assignment from AdLoadingWebView.getWebView(), although its extra redirect/entry/union alternatives were speculative. Removing unsupported alternatives should retain this exact getter/assignment chain."
+    }
+  ],
+  "likely_common_break": "Both regressions lose constructor/inherited BaseSysWebView settings after the WebView is obtained through two nested layout-wrapper getters and stored in an Activity field. The source-backed chain should be modeled from findViewById wrapper identity through getter returns into the concrete BaseSysWebView/AdWebView constructor. It does not require generic field_object seeding.",
+  "editor_object_check": {
+    "verdict": "valid_same_captured_layout_object_for_recovered_core_facts",
+    "hosts": [
+      {"activity":"com.tencent.news.activity.QAEditorActivity","v8_webview_id":"union:bc9458e4-6b4c-3ab0-87f8-be4f50b569f8"},
+      {"activity":"com.tencent.news.activity.RichEditorActivity","v8_webview_id":"union:1832ea32-78ea-39c4-ae6a-0d339a3f549e"}
+    ],
+    "proof": "For each host, BaseEditorActivity.initView's setUserAgentString and setWebChromeClient and rich-editor initializer settings use the same REWebView union ID. Source/DEX establishes that this object comes from the host-capturing activity.d initializer, BaseEditorActivity lazy field ʻʼ, getValue(), typed accessor ˊˏ(), and findViewById helper ˊˆ(capturedHost).",
+    "caution": "Additional alternate callback paths with different union IDs are not covered by this same-object conclusion."
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/novel/WebNovelActivity.java:705-715",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/novel/NovelWebView.java:61-63,86-88",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/novel/NovelLoadingWebView.java:41-44,74-76",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/ui/activity/WebAdvertActivity.java:986-1008",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/ui/landing/WebAdvertView.java:48-50,72-74",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/tad/business/ui/landing/AdLoadingWebView.java:50-62,75-77",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/webview/BaseSysWebView.java:62-72,99-109,149-181",
+    "docs/validation/news/obfuscated-lazy-rule.json"
+  ]
+}

@@ -74,3 +74,14 @@ in aggregate coverage. `capability_granularity` shows registration/member scores
 Object identity and false capability associations still require independent review; these scores
 must not be described as complete end-to-end binding accuracy. Historical revision-1 scores remain
 available and are not directly comparable without replaying the same oracle and evaluator.
+
+Scoring revision 3 additionally recognizes a handler selector inside a separately injected native
+transport namespace, only with an explicit `transport_bindings` edge carrying the same native
+Bridge object and WebView identity. Selector, implementation and full endpoint signature must
+still match. Namespace text alone cannot create a match. Historical scores need same-oracle replay.
+
+Kotlin delayed initialization recognizes standard or obfuscated Kotlin interfaces by their
+`getValue`/`isInitialized` and zero-argument `invoke` contracts. Actual initializer objects are
+substituted per factory call; unrelated initializer implementations are not enumerated. Unknown
+initializers remain unresolved. Factory recognition is limited to Kotlin namespace static methods whose returned allocation
+passes the exact initializer parameter into a constructor field capture (including delegation).

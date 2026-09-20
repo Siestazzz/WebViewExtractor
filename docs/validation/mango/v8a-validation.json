@@ -1,0 +1,56 @@
+{
+  "activity_count": 85,
+  "ownership": {
+    "counts": {
+      "valid": 80,
+      "uncertain": 5
+    },
+    "added": [
+      "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "com.mgtv.digital.ui.DigitalDetailActivity",
+      "com.mgtv.digital.ui.DigitalModelViewActivity"
+    ],
+    "removed": []
+  },
+  "webcontainer_setting_regression": {
+    "missing": [
+      "setDatabaseEnabled",
+      "setDatabasePath",
+      "setGeolocationDatabasePath",
+      "setGeolocationEnabled"
+    ],
+    "reachable": true,
+    "xml_constructor": "Lcom/mgsz/h5/ImgoWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+    "call_chain": [
+      "Lcom/mgsz/h5/ImgoWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V -> super",
+      "Lcom/mgsz/h5/browser/RootWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+      "Lcom/mgsz/h5/browser/RootWebView;->init(Landroid/content/Context;)V",
+      "Lcom/mgsz/h5/browser/RootWebView;->getSettings()Landroid/webkit/WebSettings;",
+      "Lcom/mgsz/h5/browser/RootWebView;->supportHtml5(Landroid/webkit/WebSettings;)V"
+    ],
+    "first_lost_edge": "the WebSettings value returned by RootWebView.getSettings() in RootWebView.init is passed as parameter 0 to supportHtml5; v8a no longer follows that parameterized helper after removing context-free WebView/Settings helper entry seeds",
+    "calls": [
+      {
+        "signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "value": true,
+        "site_offset": 1
+      },
+      {
+        "signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "value": true,
+        "site_offset": 4
+      },
+      {
+        "signature": "Landroid/webkit/WebSettings;->setGeolocationDatabasePath(Ljava/lang/String;)V",
+        "value": "getContext().getDir(\"geolocation\",0).getPath()",
+        "site_offset": 52
+      },
+      {
+        "signature": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+        "value": "getContext().getDir(\"databases\",0).getPath()",
+        "site_offset": 55
+      }
+    ],
+    "bridge_guard": "No Imgo registerHandler fact is emitted for WebContainer; K0 remains null on the XML path. Restoring the context-bound supportHtml5 edge must not seed the separate interface/programmatic registration route."
+  }
+}

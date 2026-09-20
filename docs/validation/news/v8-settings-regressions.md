@@ -1,0 +1,11 @@
+# Tencent News v8 setting regressions
+
+The v8 report still contains the same 37 Activities as v8a. No host was added or removed.
+
+The three missing `WebNovelActivity` settings are real omissions: mixed content `0`, text zoom `100`, and dynamic DOM storage. The Activity resolves `NovelWebView` from its layout, obtains `NovelLoadingWebView`, then obtains its `BaseSysWebView`, stores that exact return value in the Activity field, and installs clients on it. `BaseSysWebView` construction calls `init()`, which calls `allowMixedContent()` and `setDefaultSetting()`; the latter calls the DOM-storage and font-setting methods. v8 emits none of these three facts for this host.
+
+The two missing `WebAdvertActivity` settings are likewise real: mixed content `0` and text zoom `100`. Its layout chain is `WebAdvertView -> AdLoadingWebView -> AdWebView`, and `AdWebView` extends `BaseSysWebView`. The Activity stores the returned object and configures its bridge and clients. v8 still emits DOM storage through `AdSysWebViewWrapperImpl`, so only mixed content and text zoom account for this regression.
+
+v7 did contain noisy `IPatchRedirector`, entry-parameter, and union alternatives. Those alternatives must not serve as ownership proof. The Activity-field variants were not unsupported `field_object` guesses, however: both Activities explicitly assign their nested `getWebView()` return to the relevant field. A sound fix can follow the layout wrapper, nested getter returns, concrete subtype constructor, and explicit field assignment without generic field seeding.
+
+For both editor Activities, the recovered core facts are tied to the correct object. In each Activity, `BaseEditorActivity.initView` user-agent and chrome-client facts and the four rich-editor initializer settings share one `REWebView` union ID. The independently verified Lazy chain shows that this object is returned by `kotlin.i.getValue()` from field `BaseEditorActivity.ʻʼ`; its initializer `activity.d` captures the actual host and calls the typed helper that performs `capturedHost.findViewById(...)`. Thus these facts refer to the same captured host and layout view. Separate callback alternatives with different union IDs are outside that conclusion.

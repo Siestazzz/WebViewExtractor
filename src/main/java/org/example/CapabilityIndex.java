@@ -23,6 +23,7 @@ final class CapabilityIndex {
     final Map<String,Set<String>> registryHandlerShapes=new HashMap<>();
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
+    final Set<String> lazyContracts=new HashSet<>(Set.of("kotlin.Lazy")), function0Contracts=new HashSet<>(Set.of("kotlin.jvm.functions.Function0"));
     final Map<String,Set<String>> callbackEntries=new HashMap<>();
     final Map<String,Boolean> subtypeCache=new HashMap<>();
     final List<String> diagnostics=new ArrayList<>();
@@ -42,8 +43,13 @@ final class CapabilityIndex {
                 byShape.computeIfAbsent(shape(m),k->new ArrayList<>()).add(m);
             }
         }
+        for(ClassDef c:classes.values())if((c.getAccessFlags()&0x200)!=0){
+            String type=cls(c.getType());Set<String> shapes=new HashSet<>();for(Method m:c.getMethods())shapes.add(shape(m));
+            if(type.startsWith("kotlin.")&&shapes.contains("getValue()Ljava/lang/Object;")&&shapes.contains("isInitialized()Z"))lazyContracts.add(type);
+            if(type.startsWith("kotlin.jvm.functions.")&&shapes.contains("invoke()Ljava/lang/Object;"))function0Contracts.add(type);
+        }
         for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
-        for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&webview(cls(m.getReturnType())))bindingObjects.add(cls(m.getDefiningClass()));
+        for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&(webview(cls(m.getReturnType()))||function0Type(cls(m.getDefiningClass()))))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
             if(System.nanoTime()>deadline)throw new IllegalStateException("index_deadline");
             if(m.getImplementation()==null)continue;
@@ -93,9 +99,19 @@ final class CapabilityIndex {
         var queue=new ArrayDeque<>(seeds); relevant.addAll(seeds);
         while(!queue.isEmpty()) {
             String callee=queue.remove();
+            Set<String> receiverOwners=new HashSet<>();
+            for(String call:calls.getOrDefault(callee,Set.of())){
+                Method target=methods.get(call);
+                if(relevant.contains(call)||target!=null&&target.getImplementation()==null&&byShape.getOrDefault(shape(target),List.of()).stream().anyMatch(m->relevant.contains(key(m))))receiverOwners.add(CapabilityEngine.owner(call));
+            }
             for(String field:referencedFields.getOrDefault(callee,Set.of())){
                 String type=cls(field.substring(field.indexOf(':')+1));
                 boolean binding=webview(type)||settings(type)||bindingObjects.contains(type)||collection(type)&&(seeds.contains(callee)||webview(CapabilityEngine.owner(field)))||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");
+                // Constructors/setters of a composed receiver are needed even when that receiver
+                // is not itself a WebView carrier (controller -> manager -> factory is common).
+                // Require a relevant call on the field's declared receiver type, not mere co-location.
+                if(!binding&&type!=null&&!type.startsWith("java.")&&!type.startsWith("android.")&&!type.startsWith("kotlin."))
+                    for(String receiverOwner:receiverOwners)if(subtype(type,receiverOwner)){binding=true;break;}
                 if(binding)for(String writer:fieldWriters.getOrDefault(field,Set.of()))if(relevant.add(writer))queue.add(writer);
             }
             for(String caller:callers.getOrDefault(callee,Set.of()))if(relevant.add(caller))queue.add(caller);
@@ -122,7 +138,11 @@ final class CapabilityIndex {
             Set<String> seen=new HashSet<>();ArrayDeque<String> q=new ArrayDeque<>();q.add(key(m));int budget=150;
             while(!q.isEmpty()&&budget>0){String id=q.remove();if(!seen.add(id))continue;budget--;
                 transportFields.addAll(referencedFields.getOrDefault(id,Set.of()));transportCalls.addAll(calls.getOrDefault(id,Set.of()));
-                for(String target:calls.getOrDefault(id,Set.of()))if(methods.containsKey(target))q.add(target);
+                for(String target:calls.getOrDefault(id,Set.of()))if(methods.containsKey(target)){
+                    String transportOwner=cls(m.getDefiningClass()),calledOwner=CapabilityEngine.owner(target);
+                    // Stay near the transport before spending its budget inside JSON/logging/SDK code.
+                    if(calledOwner.equals(transportOwner)||calledOwner.startsWith(transportOwner+"$"))q.addFirst(target);else q.addLast(target);
+                }
                 for(String type:allocations.getOrDefault(id,Set.of()))for(Method callback:byClass.getOrDefault(type,List.of())){
                     boolean async=scheduled(type)&&(callback.getName().equals("run")||callback.getName().equals("call"));
                     if(!async&&!callback.getName().startsWith("<")&&!callback.getParameterTypes().isEmpty()&&callback.getParameterTypes().get(0).equals("Ljava/lang/String;"))
@@ -171,7 +191,7 @@ final class CapabilityIndex {
             }
             if(!(webview(cls(m.getDefiningClass()))||bindingObjects.contains(cls(m.getDefiningClass())))||m.getParameterTypes().size()!=2||!m.getParameterTypes().get(0).equals("Ljava/lang/String;"))continue;
             String handler=cls(m.getParameterTypes().get(1).toString());ClassDef hc=classes.get(handler);
-            if(hc==null||(hc.getAccessFlags()&0x200)==0)continue;
+            if(hc==null||(hc.getAccessFlags()&0x600)==0)continue;
             if(!byClass.getOrDefault(handler,List.of()).stream().anyMatch(hm->!hm.getParameterTypes().isEmpty()&&hm.getParameterTypes().get(0).equals("Ljava/lang/String;")))continue;
             if(!calls.getOrDefault(key(m),Set.of()).stream().anyMatch(c->c.contains("->put(Ljava/lang/Object;Ljava/lang/Object;)")))continue;
             DexFlow.Summary summary=new DexFlow(this,deadline).summary(m);
@@ -207,6 +227,8 @@ final class CapabilityIndex {
         subtypeCache.put(cache,result);return result;
     }
     boolean webview(String t){return Cfg.WEBVIEWS.stream().anyMatch(b->subtype(t,b));}
+    boolean lazyType(String t){return lazyContracts.stream().anyMatch(b->subtype(t,b));}
+    boolean function0Type(String t){return function0Contracts.stream().anyMatch(b->subtype(t,b));}
     boolean settings(String t){return subtype(t,"android.webkit.WebSettings")||subtype(t,"com.tencent.smtt.sdk.WebSettings")||subtype(t,"com.uc.webview.export.WebSettings");}
     boolean activity(String t){return Cfg.ACTIVITIES.stream().anyMatch(b->subtype(t,b));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}

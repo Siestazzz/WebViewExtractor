@@ -30,7 +30,12 @@ def match(g,f):
   if f['kind'] not in ('bridge','message_bridge'):return False
   registration=g.get('registration_name',name if k=='bridge' else None)
   if registration is None:return None
-  if f.get('registration_name')!=registration:return False
+  if f.get('registration_name')!=registration:
+   # A handler selector and its native injected transport name are distinct namespaces.
+   # Accept this form only with same-object/WebView transport evidence, never name-only fallback.
+   view_ids={v.get('id') for v in [f.get('webview',{})]+f.get('webview_alternatives',[]) if v.get('id') is not None}
+   linked=k=='message_handler' and f['kind']=='message_bridge' and f.get('registration_name')==name and any(t.get('registration_name')==registration and t.get('webview',{}).get('id') in view_ids and t.get('bridge_object_id') for t in f.get('transport_bindings',[]))
+   if not linked:return False
   if g.get('implementation') and f.get('implementation')!=g['implementation']:return False
   if g.get('binding_status')=='registered-no-compatible-endpoint':return not f.get('members')
   if k in ('bridge_method','message_handler') or signature:
@@ -65,7 +70,7 @@ for g in unique.values():
 for s in submetrics.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None
 for s in stats.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None;s['explicit_recall']=s['explicit_matched']/s['expected'] if s['expected'] else None
 out=dict(oracle_sha256=hashlib.sha256(pathlib.Path(a.oracle).read_bytes()).hexdigest(),report_sha256=hashlib.sha256(pathlib.Path(a.report).read_bytes()).hexdigest(),unassigned_oracle_facts=sum(g.get('activity') is None for g in truth),oracle_file=a.oracle,apk_sha256=r.get('apk_sha256'),report_status=r['status'],metrics=stats,missing=failures,emitted_activities=len(actual),acceptance='unproven',note='Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required.')
-out['scoring_version']=2
+out['scoring_version']=3
 out['duplicate_oracle_rows']=duplicate_rows
 out['capability_granularity']=submetrics
 out['unknown_target_surfaces']=unknown_surfaces

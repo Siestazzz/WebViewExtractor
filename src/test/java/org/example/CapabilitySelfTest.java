@@ -86,7 +86,14 @@ public final class CapabilitySelfTest {
    unknownBridgeFixture();
    reflectiveEndpointFixture();
    registeredServiceFixture();
-   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints");
+   nullableReceiverFixture();
+   composedReceiverFixture();
+   componentHelperFixture();
+   callbackEntryIsolationFixture();
+   xmlConstructorReplayFixture();
+   returnedCaptureFixture();
+   obfuscatedLazyFixture();
+   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints, registered services, nullable receivers, composed receivers, helper/callback entry isolation, abstract-class handlers");
   }finally{Files.deleteIfExists(file);}
  }
  static void messageFixture()throws Exception {
@@ -113,6 +120,23 @@ public final class CapabilitySelfTest {
    var idx=new CapabilityIndex();idx.read(path,System.nanoTime()+20_000_000_000L);
    check(idx.messageRegistries.containsKey(CapabilityIndex.key(register)),"Annotated transport registry not found");
    check(!idx.messageRegistries.containsKey(CapabilityIndex.key(fake)),"HTTP header map incorrectly classified as message registry");
+   var abstractHandler=new ImmutableClassDef(handler,0x401,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(hm));
+   var abstractDispatch=method(transport,"dispatch",List.of("Ljava/lang/String;"),1,4,List.of(
+    new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,2,new ImmutableFieldReference(transport,"view",mw)),new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,0,new ImmutableFieldReference(mw,"handlers",map)),
+    invoke(Opcode.INVOKE_INTERFACE,map,"get",List.of("Ljava/lang/Object;"),"Ljava/lang/Object;",0,3),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),invoke(Opcode.INVOKE_VIRTUAL,handler,"handle",List.of("Ljava/lang/String;"),"V",0,3),end()),true);
+   String concrete="Ltest/ConcreteHandler;";var concreteMethod=method(concrete,"handle",List.of("Ljava/lang/String;"),1,2,List.of(end()),false);
+   DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(wc,new ImmutableClassDef(transport,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(transportField),List.of(abstractDispatch)),abstractHandler,clazz(concrete,handler,concreteMethod))));
+   var abstractIndex=new CapabilityIndex();abstractIndex.read(path,System.nanoTime()+20_000_000_000L);
+   check(abstractIndex.messageRegistries.containsKey(CapabilityIndex.key(register)),"Abstract-class handler registry was excluded");
+   var abstractEngine=new CapabilityEngine(abstractIndex,new ApkInventory(),System.nanoTime()+10_000_000_000L);var abstractHost=abstractEngine.new Host("test.AppActivity");
+   var nativeCall=new DexFlow.Call(W+"->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",1,List.of(),false,false,false);var registrationJob=new CapabilityEngine.Job(register,List.of(),List.of(),false);
+   abstractEngine.emit(abstractHost,registrationJob,nativeCall,List.of(DexFlow.V.of("object","android.webkit.WebView","native-one"),DexFlow.V.of("object","test.MessageWebView","view"),DexFlow.V.literal("java.lang.String","NativeOne")),"bridge",false);
+   abstractEngine.emit(abstractHost,registrationJob,nativeCall,List.of(DexFlow.V.of("object","android.webkit.WebView","native-two"),DexFlow.V.of("object","test.MessageWebView","other-registry"),DexFlow.V.literal("java.lang.String","NativeTwo")),"bridge",false);
+   abstractEngine.emit(abstractHost,new CapabilityEngine.Job(register,List.of(),List.of(),false),new DexFlow.Call(CapabilityIndex.key(register),0,List.of(),false,false,false),List.of(DexFlow.V.of("object","test.MessageWebView","view"),DexFlow.V.literal("java.lang.String","route"),DexFlow.V.of("object","test.ConcreteHandler","handler")),"message_bridge",false);
+   var routed=abstractHost.facts.values().stream().filter(f->"route".equals(f.get("registration_name"))).findFirst().orElseThrow();
+   @SuppressWarnings("unchecked") var transportLinks=(List<Map<String,Object>>)routed.get("transport_bindings");
+   check(transportLinks.size()==1&&transportLinks.get(0).get("registration_name").equals("NativeOne")&&((Map<?,?>)routed.get("webview")).get("id").equals("native-one"),"Handler transport name mixed with a different registry object/WebView");
+   check(abstractHost.facts.values().stream().anyMatch(f->f.get("members").toString().contains(CapabilityIndex.key(concreteMethod))),"Transport's abstract dispatch shape did not resolve the concrete handler signature");
    String client="Ltest/UrlClient;";
    var callback=method(client,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,4,List.of(
     make(0,transport),invoke(Opcode.INVOKE_VIRTUAL,transport,"dispatch",List.of("Ljava/lang/String;"),"V",0,3),end()),false);
@@ -183,6 +207,134 @@ public final class CapabilitySelfTest {
    var empty=engine.messageMembers("test.ReflectiveHandler","missing",job,host);check(empty.reflective()&&empty.resolved()&&empty.members().isEmpty(),"Known absent reflection endpoint not distinguished from unknown dispatcher");
    var present=engine.messageMembers("test.ReflectiveHandler","existing",job,host);check(present.members().size()==1&&present.members().get(0).get("signature").equals(CapabilityIndex.key(existing)),"Exact reflection endpoint missing");
   }finally{Files.deleteIfExists(path);}
+ }
+
+ static void obfuscatedLazyFixture()throws Exception {
+  String lazy="Lkotlin/ObfuscatedLazy;",fn="Lkotlin/jvm/functions/ObfuscatedFunction;",init="Ltest/LazyInitializer;",factoryOwner="Lkotlin/ObfuscatedFactory;";
+  var get=new ImmutableMethod(lazy,"getValue",List.of(),"Ljava/lang/Object;",0x401,Set.of(),Set.of(),null);
+  var initialized=new ImmutableMethod(lazy,"isInitialized",List.of(),"Z",0x401,Set.of(),Set.of(),null);
+  var invokeDecl=new ImmutableMethod(fn,"invoke",List.of(),"Ljava/lang/Object;",0x401,Set.of(),Set.of(),null);
+  var captured=new ImmutableField(init,"captured",W,1,null,Set.of(),Set.of());
+  var invokeBody=method(init,"invoke",List.of(),1,2,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(init,"captured",W)),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var typedInvoke=new ImmutableMethod(init,"invoke",List.of(),"Ljava/lang/Object;",1,Set.of(),Set.of(),invokeBody.getImplementation());
+  String impl="Lkotlin/LazyImpl;";var fnField=new ImmutableField(impl,"initializer",fn,1,null,Set.of(),Set.of());
+  var lazyCtor=method(impl,"<init>",List.of(fn),1,2,List.of(new ImmutableInstruction22c(Opcode.IPUT_OBJECT,1,0,new ImmutableFieldReference(impl,"initializer",fn)),end()),false);
+  var factory=new ImmutableMethod(factoryOwner,"x",List.of(new ImmutableMethodParameter(fn,Set.of(),null)),lazy,9,Set.of(),Set.of(),new ImmutableMethodImplementation(2,List.of(make(0,impl),invoke(Opcode.INVOKE_DIRECT,impl,"<init>",List.of(fn),"V",0,1),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),List.of(),List.of()));
+  var ignoredFactory=new ImmutableMethod(factoryOwner,"ignored",factory.getParameters(),lazy,9,Set.of(),Set.of(),new ImmutableMethodImplementation(2,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,0),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),List.of(),List.of()));
+  Path path=Files.createTempFile("wv-obfuscated-lazy-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(
+   new ImmutableClassDef(lazy,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(get,initialized)),
+   new ImmutableClassDef(fn,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(invokeDecl)),
+   new ImmutableClassDef(init,1,"Ljava/lang/Object;",List.of(fn),null,Set.of(),List.of(captured),List.of(typedInvoke)),clazz(factoryOwner,"Ljava/lang/Object;",factory,ignoredFactory),new ImmutableClassDef(impl,1,"Ljava/lang/Object;",List.of(lazy),null,Set.of(),List.of(fnField),List.of(lazyCtor)))));
+   long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("test.AppActivity");var job=new CapabilityEngine.Job(factory,List.of(),List.of(),false);
+   check(engine.lazyInitializerParameters(ignoredFactory).isEmpty(),"Factory discarding initializer was treated as Lazy capture");
+   check(!idx.lazyType("test.Unrelated"),"Unrelated type recognized as Kotlin Lazy");
+   for(String id:List.of("one","two")){
+    var view=DexFlow.V.of("object","android.webkit.WebView",id);var initializer=DexFlow.V.of("object","test.LazyInitializer","initializer:"+id);
+    engine.applyWrite(host,CapabilityIndex.field(captured),initializer,view);
+    var deferred=engine.eval(DexFlow.expr("return","kotlin.ObfuscatedLazy",CapabilityIndex.key(factory),List.of(initializer)),job,host,0,new HashSet<>());
+    var result=engine.eval(DexFlow.expr("return","java.lang.Object",CapabilityIndex.key(get),List.of(deferred)),job,host,0,new HashSet<>());
+    check(result.equals(view),"Obfuscated Lazy lost initializer capture or mixed separate WebViews");
+   }
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void returnedCaptureFixture()throws Exception {
+  String box="Ltest/CapturedView;";var field=new ImmutableField(box,"view",W,1,null,Set.of(),Set.of());
+  var ctor=method(box,"<init>",List.of(W),1,2,List.of(new ImmutableInstruction22c(Opcode.IPUT_OBJECT,1,0,new ImmutableFieldReference(box,"view",W)),end()),false);
+  var body=method(H,"capture",List.of(W),9,2,List.of(make(0,box),invoke(Opcode.INVOKE_DIRECT,box,"<init>",List.of(W),"V",0,1),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var factory=new ImmutableMethod(H,"capture",body.getParameters(),box,9,Set.of(),Set.of(),body.getImplementation());
+  Path path=Files.createTempFile("wv-return-capture-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(H,"Ljava/lang/Object;",factory),new ImmutableClassDef(box,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(field),List.of(ctor)))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("test.AppActivity");var job=new CapabilityEngine.Job(factory,List.of(),List.of(),false);
+   for(String id:List.of("first-view","second-view")){
+    var view=DexFlow.V.of("object","android.webkit.WebView",id);
+    var captured=engine.eval(DexFlow.expr("return","test.CapturedView",CapabilityIndex.key(factory),List.of(view)),job,host,0,new HashSet<>());
+    var resolved=engine.eval(DexFlow.expr("field","android.webkit.WebView",CapabilityIndex.field(field),List.of(captured)),job,host,0,new HashSet<>());
+    check(resolved.equals(view),"Factory-returned object's constructor capture was unresolved or mixed with another WebView");
+   }
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void xmlConstructorReplayFixture()throws Exception {
+  String parent="Ltest/XmlBaseView;",child="Ltest/XmlChildView;",context="Landroid/content/Context;",attrs="Landroid/util/AttributeSet;";
+  var configure=method(parent,"supportHtml5",List.of(S),2,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setDatabaseEnabled",List.of("Z"),"V",2,0),end()),false);
+  var baseInit=method(parent,"init",List.of(context),2,3,List.of(invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),invoke(Opcode.INVOKE_DIRECT,parent,"supportHtml5",List.of(S),"V",1,0),end()),false);
+  var baseCtor=method(parent,"<init>",List.of(context,attrs),1,3,List.of(invoke(Opcode.INVOKE_DIRECT,parent,"init",List.of(context),"V",0,1),end()),false);
+  var xmlCtor=method(child,"<init>",List.of(context,attrs),1,3,List.of(invoke(Opcode.INVOKE_DIRECT,parent,"<init>",List.of(context,attrs),"V",0,1,2),end()),false);
+  var programCtor=method(child,"<init>",List.of(context,B),1,4,List.of(str(0,"programmatic-only"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",1,3,0),end()),false);
+  var shadow=method(child,"init",List.of(context),1,2,List.of(end()),false);
+  var entry=method(A,"onCreate",List.of(),1,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,7),invoke(Opcode.INVOKE_VIRTUAL,A,"findViewById",List.of("I"),"Landroid/view/View;",2,0),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),new ImmutableInstruction21c(Opcode.CHECK_CAST,1,new ImmutableTypeReference(child)),str(0,"https://example.invalid/"),invoke(Opcode.INVOKE_VIRTUAL,W,"loadUrl",List.of("Ljava/lang/String;"),"V",1,0),end()),false);
+  Path path=Files.createTempFile("wv-xml-replay-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(parent,W,baseCtor,baseInit,configure),clazz(child,parent,xmlCtor,programCtor,shadow),clazz(B,"Ljava/lang/Object;"))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   check(facts.stream().anyMatch(f->"setDatabaseEnabled".equals(f.get("name"))&&"true".equals(f.get("value"))),"Second pass lost XML constructor's private Settings helper");
+   check(facts.stream().noneMatch(f->"programmatic-only".equals(f.get("registration_name"))),"Lookup-derived view seeded unrelated programmatic constructor");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void callbackEntryIsolationFixture()throws Exception {
+  String listener="Ltest/ReadyListener;",parent="Ltest/BusinessParent;",child="Ltest/ReadyCallback;";
+  var declaration=new ImmutableMethod(listener,"onReady",List.of(new ImmutableMethodParameter("Ljava/lang/String;",Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var wrong=method(parent,"uninvokedBusiness",List.of(),1,4,List.of(make(0,W),make(1,B),str(2,"uninvoked-parent"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
+  var right=method(child,"onReady",List.of("Ljava/lang/String;"),1,5,List.of(make(0,W),make(1,B),str(2,"actual-callback"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
+  var init=method(child,"<init>",List.of(),1,1,List.of(end()),false);var entry=method(A,"onCreate",List.of(),1,2,List.of(make(0,child),invoke(Opcode.INVOKE_DIRECT,child,"<init>",List.of(),"V",0),end()),false);
+  Path path=Files.createTempFile("wv-callback-entry-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(B,"Ljava/lang/Object;"),clazz(parent,"Ljava/lang/Object;",wrong),new ImmutableClassDef(listener,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(declaration)),new ImmutableClassDef(child,1,parent,List.of(listener),null,Set.of(),List.of(),List.of(init,right)))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");check(!engine.activities.isEmpty(),"Allocated callback entry was lost");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");check(facts.stream().anyMatch(f->"actual-callback".equals(f.get("registration_name"))),"Callback entry capability missing");check(facts.stream().noneMatch(f->"uninvoked-parent".equals(f.get("registration_name"))),"Constructor seeded an uninvoked inherited business method");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void componentHelperFixture()throws Exception {
+  String custom="Ltest/HelperWebView;";
+  var helper=method(custom,"configureOther",List.of(W),1,4,List.of(make(0,B),str(1,"other-only"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
+  var init=method(custom,"<init>",List.of(),1,1,List.of(end()),false);
+  var entry=method(A,"onCreate",List.of(),1,3,List.of(make(0,custom),invoke(Opcode.INVOKE_DIRECT,custom,"<init>",List.of(),"V",0),make(1,W),invoke(Opcode.INVOKE_VIRTUAL,custom,"configureOther",List.of(W),"V",0,1),end()),false);
+  Path path=Files.createTempFile("wv-helper-entry-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(custom,W,init,helper),clazz(B,"Ljava/lang/Object;"))));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   var bindings=facts.stream().filter(f->"other-only".equals(f.get("registration_name"))).toList();check(bindings.size()==1,"Helper seeded an extra context-free WebView binding");
+   check(!((Map<?,?>)bindings.get(0).get("webview")).get("type").equals("test.HelperWebView"),"Helper argument was conflated with its own WebView receiver");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void composedReceiverFixture()throws Exception {
+  String holder="Ltest/Controller;",api="Ltest/Worker;",good="Ltest/ChosenWorker;",bad="Ltest/OtherWorker;";
+  var slot=new ImmutableField(holder,"worker",api,1,null,Set.of(),Set.of());
+  var init=method(holder,"<init>",List.of(api),1,2,List.of(new ImmutableInstruction22c(Opcode.IPUT_OBJECT,1,0,new ImmutableFieldReference(holder,"worker",api)),end()),false);
+  var run=method(holder,"run",List.of(W),1,3,List.of(new ImmutableInstruction22c(Opcode.IGET_OBJECT,0,1,new ImmutableFieldReference(holder,"worker",api)),invoke(Opcode.INVOKE_INTERFACE,api,"configure",List.of(W),"V",0,2),end()),false);
+  var declaration=new ImmutableMethod(api,"configure",List.of(new ImmutableMethodParameter(W,Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var apply=method(good,"configure",List.of(W),1,4,List.of(make(0,B),str(1,"composed"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),
+   new ImmutableInstruction21c(Opcode.SGET_BOOLEAN,0,new ImmutableFieldReference(good,"enabled","Z")),end()),false);
+  var other=method(bad,"configure",List.of(W),1,4,List.of(make(0,B),str(1,"unselected"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
+  var entry=method(A,"onCreate",List.of(),1,4,List.of(make(0,holder),make(1,good),invoke(Opcode.INVOKE_DIRECT,holder,"<init>",List.of(api),"V",0,1),make(2,W),invoke(Opcode.INVOKE_VIRTUAL,holder,"run",List.of(W),"V",0,2),end()),false);
+  var classes=List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(B,"Ljava/lang/Object;"),new ImmutableClassDef(holder,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(slot),List.of(init,run)),
+   new ImmutableClassDef(api,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(declaration)),new ImmutableClassDef(good,1,"Ljava/lang/Object;",List.of(api),null,Set.of(),List.of(),List.of(apply)),new ImmutableClassDef(bad,1,"Ljava/lang/Object;",List.of(api),null,Set.of(),List.of(),List.of(other)));
+  Path path=Files.createTempFile("wv-composition-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),classes));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);check(idx.relevant.contains(CapabilityIndex.key(init)),"Composed receiver constructor was excluded from dependencies");
+   var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");check(!engine.activities.isEmpty(),"Composed receiver lost Activity binding");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");check(facts.stream().anyMatch(f->"composed".equals(f.get("registration_name"))),"Concrete constructor argument was lost across controller field");check(facts.stream().noneMatch(f->"unselected".equals(f.get("registration_name"))),"Unselected worker subtype leaked into controller");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void nullableReceiverFixture(){
+  var idx=new CapabilityIndex();var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,System.nanoTime()+10_000_000_000L);var h=engine.new Host("test.AppActivity");
+  var entry=method(A,"onCreate",List.of(),1,1,List.of(end()),false);var job=new CapabilityEngine.Job(entry,List.of(),List.of("test.AppActivity"),false);
+  var nil=DexFlow.V.literal(null,"0");var view=DexFlow.V.of("view","android.webkit.WebView","layout:one");
+  var call=new DexFlow.Call(W+"->setWebViewClient(Landroid/webkit/WebViewClient;)V",0,List.of(),false,false,false);
+  engine.emit(h,job,call,List.of(nil,DexFlow.V.of("object","test.Client","client")),"callback",false);
+  check(h.facts.isEmpty(),"Constant null receiver created a WebView capability");
+  engine.emit(h,job,call,List.of(DexFlow.union(nil,view),DexFlow.V.of("object","test.Client","client")),"callback",true);
+  check(h.facts.size()==1,"Nullable receiver lost its live alternative");var fact=h.facts.values().iterator().next();
+  check(((Map<?,?>)fact.get("webview")).get("id").equals("layout:one"),"Null branch became a second symbolic WebView");
+  check(fact.get("receiver_condition").equals("non_null"),"Receiver nullability condition was erased");
+  var global=new DexFlow.Call(W+"->setWebContentsDebuggingEnabled(Z)V",1,List.of(),true,false,false);
+  engine.emit(h,job,global,List.of(nil),"global_setting",false);
+  check(h.facts.values().stream().anyMatch(f->"global_setting".equals(f.get("kind"))&&"false".equals(f.get("value"))),"Static boolean false was confused with a null receiver");
  }
 
  static void registeredServiceFixture()throws Exception {

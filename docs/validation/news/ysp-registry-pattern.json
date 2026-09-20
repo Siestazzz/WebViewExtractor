@@ -1,0 +1,131 @@
+{
+  "rule_id": "tencent_news_ysp_map_registry",
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "evidence_status": "source_verified_dex_disassembly_verified",
+  "holdout_used": false,
+  "transport": {
+    "bridge_class": "Lcom/tencent/news/ysp/f;",
+    "javascript_entry": "Lcom/tencent/news/ysp/f;->invoke(Ljava/lang/String;)Ljava/lang/String;",
+    "annotation": "Landroid/webkit/JavascriptInterface;",
+    "webview_registration": "Lcom/tencent/news/ysp/f;->ʽ()V",
+    "javascript_name": "YspJSBridge",
+    "webview_field": "Lcom/tencent/news/ysp/f;->ʻ:Lcom/tencent/news/webview/BaseWebView;"
+  },
+  "handler_type": {
+    "descriptor": "Lcom/tencent/news/ysp/c;",
+    "dex_access_flags": "0x0601 PUBLIC INTERFACE ABSTRACT",
+    "classification": "interface",
+    "abstract_method": "Lcom/tencent/news/ysp/c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+    "correction": "c is not an abstract class. Its DEX class flags include INTERFACE and every concrete YspMediaPlayer handler implements it."
+  },
+  "registry": {
+    "field": "Lcom/tencent/news/ysp/f;->ʼ:Ljava/util/Map;",
+    "constructor_value": "new java.util.LinkedHashMap",
+    "register_method": "Lcom/tencent/news/ysp/f;->ˋ(Ljava/lang/String;Lcom/tencent/news/ysp/c;)V",
+    "logical_parameter_indices": {
+      "selector": 0,
+      "handler": 1
+    },
+    "dex_registers": {
+      "receiver": "v2 / p0",
+      "selector": "v3 / p1",
+      "handler": "v4 / p2"
+    },
+    "bytecode": [
+      "iget-object v0, v2, Lcom/tencent/news/ysp/f;->ʼ:Ljava/util/Map;",
+      "invoke-interface {v0, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+    ],
+    "argument_expression": "Map.put(selectorParameter, handlerParameter)",
+    "cast_or_wrapper": "none",
+    "return_handling": "Map.put return value is ignored",
+    "patch_branch": "A PatchRedirectCenter early-return branch precedes the real write; the Map.put is in the normal fallthrough path.",
+    "replacement": "A later registration with the same selector replaces the prior value.",
+    "clear": "Lcom/tencent/news/ysp/f;->ˈ()V invokes Map.clear(); Lcom/tencent/news/ysp/f;->ˎ()V removes YspJSBridge and then calls ˈ()."
+  },
+  "registrations": {
+    "caller": "Lcom/tencent/news/ysp/YspMediaPlayer;->ٴ(Lcom/tencent/news/ysp/f;)V",
+    "calls": [
+      {
+        "selector": "videoStatus",
+        "allocation": "Lcom/tencent/news/ysp/YspMediaPlayer$c;-><init>(Lcom/tencent/news/ysp/YspMediaPlayer;)V",
+        "endpoint": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;"
+      },
+      {
+        "selector": "videoProcess",
+        "allocation": "Lcom/tencent/news/ysp/YspMediaPlayer$d;-><init>(Lcom/tencent/news/ysp/YspMediaPlayer;)V",
+        "endpoint": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;"
+      },
+      {
+        "selector": "resume",
+        "allocation": "Lcom/tencent/news/ysp/YspMediaPlayer$e;-><init>(Lcom/tencent/news/ysp/YspMediaPlayer;)V",
+        "endpoint": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;"
+      },
+      {
+        "selector": "getScreenSize",
+        "allocation": "Lcom/tencent/news/ysp/YspMediaPlayer$f;-><init>()V",
+        "endpoint": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;"
+      }
+    ],
+    "call_shape": "Each concrete handler is allocated into a local register, selector is loaded as a literal String, and invoke-virtual calls f.ˋ(selector, handler) directly. There is no cast, lambda wrapper, coroutine continuation, or delegate between allocation and registration."
+  },
+  "dispatch": {
+    "method": "Lcom/tencent/news/ysp/f;->invoke(Ljava/lang/String;)Ljava/lang/String;",
+    "steps": [
+      "new JSONObject(input)",
+      "JSONObject.optString(\"method\") -> selector; null becomes empty String",
+      "JSONObject.optJSONObject(\"params\") -> params; null becomes new JSONObject",
+      "iget-object registry field f.ʼ",
+      "invoke-interface Map.get(selector)",
+      "move-result-object",
+      "check-cast Lcom/tencent/news/ysp/c;",
+      "if non-null, invoke-interface c.ʻ(selector, params)",
+      "wrap returned Object through Lcom/tencent/news/ysp/f;->ˊ(Ljava/lang/Object;)Ljava/lang/String;"
+    ],
+    "exact_lookup": "Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+    "cast": "check-cast result to Lcom/tencent/news/ysp/c; occurs after Map.get",
+    "endpoint_call": "Lcom/tencent/news/ysp/c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+    "asynchrony": "none in inbound dispatch",
+    "coroutine": "none",
+    "delegate": "none",
+    "scheduling_note": "The separate native-to-JavaScript callEvent path f.ʾ(String,String) posts a Runnable and uses evaluateJavascript/ValueCallback; it is outbound and must not be inserted into invoke-to-handler dispatch.",
+    "error_semantics": "Missing selector returns code 500 Method not found JSON. Any Exception from parsing, lookup cast, handler, or result wrapping is caught and returned as code 500 JSON."
+  },
+  "likely_scanner_gap": {
+    "status": "disproved_as_explanation_for_v8_misses",
+    "observed_output": "The four concrete handlers and their complete endpoint signatures were already emitted. Registry discovery therefore succeeded for this sample.",
+    "primary_hypothesis_only": "If another scanner misses this shape, inspect support for invoke-interface java.util.Map.put on an erased Map field. This was not the cause of the reported YSP score mismatch.",
+    "secondary_hypothesis_only": "Interprocedural substitution from interface parameter p2 to caller concrete allocations remains a generally relevant pattern, but it was successfully resolved here.",
+    "control_flow_hypothesis_only": "The QFix early-return/fallthrough shape remains a possible generic edge case, but it did not prevent these four handlers from being emitted.",
+    "not_the_cause": "Handler type c is already a DEX interface, not an abstract-class edge case. Adding abstract-class endpoint support alone cannot make this register method a seed.",
+    "recommended_pattern": "Recognize invoke-interface Map.put on a receiver loaded from a stable instance field; record key/value parameter expressions at the register method, then resolve literals and concrete handler allocations at callers. Preserve router receiver identity."
+  },
+  "two_level_name_semantics": {
+    "transport_registration_name": "YspJSBridge",
+    "handler_selectors": ["videoStatus", "videoProcess", "resume", "getScreenSize"],
+    "confirmed_difference": "YspJSBridge is the native addJavascriptInterface name of the injected f object. The four selector strings are message-handler names looked up inside that same object; they are not alternate Javascript interface registration names.",
+    "identity_requirement": "A message handler matches a gold fact only when its selector equals gold.name and its transport binding names YspJSBridge on the same WebView and same injected f object identity.",
+    "report_model": "Represent the native injection as transport_bindings(name, WebView identity, registration site, injected object identity), and attach message_handler(selector, endpoint) records to that transport object."
+  },
+  "dex_symbol_verification": {
+    "symbol_export": "test/runs/symbols/news.jsonl",
+    "apk_method_descriptors_checked": 16,
+    "apk_method_descriptors_found": 16,
+    "apk_field_descriptors_checked": 2,
+    "apk_field_descriptors_found": 2,
+    "platform_method_references_checked_in_disassembly": [
+      "Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+      "Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+    ],
+    "note": "The symbol export contains APK-defined classes only. java.util.Map methods were verified as referenced instructions in APK DEX disassembly rather than as APK declarations."
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/ysp/f.java:47-238",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/ysp/c.java:1-8",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/ysp/YspMediaPlayer.java:1410-1420",
+    "dexdump classes2.dex: f.ˋ bytecode 0x5177d8-0x51783c",
+    "dexdump classes2.dex: f.invoke bytecode 0x5173c4-0x51750c",
+    "dexdump classes2.dex: YspMediaPlayer.ٴ bytecode 0x518fe4-0x519066"
+  ]
+}

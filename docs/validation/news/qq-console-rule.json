@@ -1,0 +1,120 @@
+{
+  "rule_id": "tencent_opensdk_console_message_router",
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "evidence_status": "source_verified_dex_verified",
+  "blind_status": "non_blind_development",
+  "scope": "public TDialog samples only",
+  "router": {
+    "class": "Lcom/tencent/open/b;",
+    "registry_field": "Lcom/tencent/open/b;->a:Ljava/util/HashMap;",
+    "registry_key_type": "java.lang.String",
+    "registry_value_base_type": "Lcom/tencent/open/b$b;",
+    "creation": {
+      "method": "Lcom/tencent/open/c;->onCreate(Landroid/os/Bundle;)V",
+      "write_field": "Lcom/tencent/open/c;->jsBridge:Lcom/tencent/open/b;",
+      "semantics": "Each Dialog instance receives a new router instance during onCreate."
+    },
+    "registration": {
+      "method": "Lcom/tencent/open/b;->a(Lcom/tencent/open/b$b;Ljava/lang/String;)V",
+      "receiver": "router instance (p0 / this)",
+      "object_argument_index": 0,
+      "object_dex_parameter": "p1",
+      "name_argument_index": 1,
+      "name_dex_parameter": "p2",
+      "write": "this.a.put(name, object)",
+      "replacement": "HashMap.put replaces the previous value for the same registration name on this router instance.",
+      "removal": "No remove, unregister, or clear method exists on com.tencent.open.b in this APK. A fresh router replaces the whole registry only when a new Dialog instance runs c.onCreate; normal Dialog disposal makes the instance unreachable."
+    },
+    "dispatch_entry": {
+      "method": "Lcom/tencent/open/b;->a(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "receiver": "the same router instance whose registry is consulted (p0 / this)",
+      "webview_argument_index": 0,
+      "webview_dex_parameter": "p1",
+      "message_argument_index": 1,
+      "message_dex_parameter": "p2",
+      "accepted_transport": "Uri.parse(message).getScheme().equals(DTConstants.TAG.JS_BRIDGE)",
+      "parse": "Append '/#', split on '/', require at least 6 elements; index 2 is registry name, index 3 is method name, indices 4 through size-2 are URL-decoded arguments.",
+      "callback_webview": "The WebView argument is stored weakly in Lcom/tencent/open/b$a;->a:Ljava/lang/ref/WeakReference; and is the only WebView used for javascript: callback loadUrl calls.",
+      "result": "false for null/wrong scheme/short message; true after a syntactically accepted dispatch attempt, including unknown object or method."
+    },
+    "registry_dispatch": {
+      "method": "Lcom/tencent/open/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lcom/tencent/open/b$a;)V",
+      "lookup": "this.a.get(registrationName)",
+      "endpoint_call": "Lcom/tencent/open/b$b;->call(Ljava/lang/String;Ljava/util/List;Lcom/tencent/open/b$a;)V"
+    }
+  },
+  "installed_transport": {
+    "client": "Lcom/tencent/open/c$1;",
+    "outer_alias_field": "Lcom/tencent/open/c$1;->a:Lcom/tencent/open/c;",
+    "install_site": "Lcom/tencent/open/TDialog;->b()V",
+    "install_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+    "installed_client_field": "Lcom/tencent/open/c;->mChromeClient:Landroid/webkit/WebChromeClient;",
+    "modern_callback": {
+      "method": "Lcom/tencent/open/c$1;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "flow": "consoleMessage.message() -> outer c.onConsoleMessage(String); returns true"
+    },
+    "legacy_callback": {
+      "method": "Lcom/tencent/open/c$1;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "flow": "logs only; it does not invoke the router in this APK"
+    },
+    "dialog_override": "Lcom/tencent/open/TDialog;->onConsoleMessage(Ljava/lang/String;)V",
+    "dialog_flow": "this.jsBridge.a(this.i, message)",
+    "router_alias": "Inherited field Lcom/tencent/open/c;->jsBridge:Lcom/tencent/open/b; on the same TDialog instance",
+    "webview_alias": "Lcom/tencent/open/TDialog;->i:Lcom/tencent/open/d/b;",
+    "webview_creation_attach": "Lcom/tencent/open/TDialog;->a()V constructs field i, adds it to field h's container, and calls Dialog.setContentView(h).",
+    "identity_constraint": "Bind registry endpoints only to the WebView passed as argument 0 to dispatch on this same router instance. For TDialog that argument is exactly this.i. Do not merge another Dialog's jsBridge registry, JsListener, or WebView merely because class and registration strings match."
+  },
+  "registered_object": {
+    "registration_name": "sdk_js_if",
+    "registration_site": "Lcom/tencent/open/TDialog;->b()V",
+    "object_class": "Lcom/tencent/open/TDialog$JsListener;",
+    "object_outer_alias_field": "Lcom/tencent/open/TDialog$JsListener;->this$0:Lcom/tencent/open/TDialog;",
+    "object_base_class": "Lcom/tencent/open/b$b;",
+    "construction": "new TDialog.JsListener(this TDialog)",
+    "router_receiver": "this.jsBridge from the same TDialog",
+    "dispatch_webview": "this.i from the same TDialog"
+  },
+  "reflection": {
+    "resolver_method": "Lcom/tencent/open/b$b;->call(Ljava/lang/String;Ljava/util/List;Lcom/tencent/open/b$a;)V",
+    "enumeration": "getClass().getDeclaredMethods() on the registered object",
+    "selection": "First enumerated declared method whose name equals the URI method segment and whose parameter count equals the decoded argument count.",
+    "inheritance": "Inherited methods are excluded because getDeclaredMethods(), not getMethods(), is used. The base call/customCallback methods are therefore not endpoints for a JsListener registration.",
+    "accessibility": "No Method.setAccessible(true) call exists. Non-public selected methods can fail reflective access and are caught; the concrete TDialog.JsListener endpoints are public in DEX.",
+    "parameter_semantics": "Every supplied argument is a URL-decoded java.lang.String. No type inspection or conversion is performed. A selected endpoint succeeds only if Method.invoke can accept those String objects (or there are zero arguments); incompatible primitive or unrelated reference parameters fail and enter the exception path.",
+    "arity_limit": "The invoke ladder explicitly supplies 0 through 6 String arguments. A list larger than 6 falls through the same final branch and still supplies only indices 0..5, causing an arity/invocation failure for a method selected with a larger parameter count.",
+    "overloads": "Overloads are distinguished only by method name and parameter count. Same-name/same-arity overloads are ambiguous because reflection enumeration order is not constrained and parameter types are ignored.",
+    "return_semantics": "After invocation, non-void results are sent only when callback is non-null and customCallback() returns true. Lcom/tencent/open/b$b;->customCallback()Z returns false and TDialog.JsListener does not override it, so its return values are ignored. All registered TDialog.JsListener endpoints return void.",
+    "unknown_semantics": "No matching method calls callback.a(), producing the 'no such method' JavaScript callback.",
+    "exception_semantics": "Any Exception during lookup invocation/conversion/access is logged and callback.a() is invoked; it does not dispatch another overload.",
+    "actual_endpoints": [
+      "Lcom/tencent/open/TDialog$JsListener;->onAddShare(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancel(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancelAddShare(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancelInvite()V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancelLogin()V",
+      "Lcom/tencent/open/TDialog$JsListener;->onComplete(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onInvite(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onLoad(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->showMsg(Ljava/lang/String;)V"
+    ]
+  },
+  "model_rule": {
+    "key": "router object identity + registration name",
+    "bind": "registration object -> same router registry entry -> dispatch receiver router -> dispatch WebView argument",
+    "required_aliases": [
+      "TDialog.jsBridge == receiver of registration",
+      "TDialog.jsBridge == receiver of dispatch",
+      "TDialog.i == WebView argument 0 of dispatch",
+      "TDialog.JsListener.this$0 == same TDialog"
+    ],
+    "forbidden_join": "Never join endpoints by registration name alone, Dialog class alone, or global framework type. Separate TDialog instances have separate router maps and WebViews."
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/c.java:14-66",
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/TDialog.java:126-177,228-234,237-253,324-368",
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/b.java:24-179",
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/d/b.java:12-24"
+  ]
+}

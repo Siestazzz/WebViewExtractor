@@ -1,0 +1,81 @@
+{
+  "host": "ctrip.android.view.h5.view.H5Container",
+  "selected_report_facts": [
+    {
+      "report_webview_id": "constructor_parameter",
+      "kind": "bridge",
+      "registration_name": "Screen_a",
+      "implementation": "ctrip.android.view.h5.plugin.H5ScreenPlugin",
+      "site": "Lctrip/base/init/m$c;->n(Ljava/lang/Object;Lctrip/android/view/h5/view/H5WebView;Ljava/util/List;)V@287",
+      "status": "duplicate_alias_not_additional_object"
+    },
+    {
+      "report_webview_id": "entry_parameter",
+      "kind": "bridge",
+      "registration_name": "Screen_a",
+      "implementation": "ctrip.android.view.h5.plugin.H5ScreenPlugin",
+      "site": "Lctrip/base/init/m$c;->n(Ljava/lang/Object;Lctrip/android/view/h5/view/H5WebView;Ljava/util/List;)V@287",
+      "status": "duplicate_alias_not_additional_object"
+    }
+  ],
+  "actual_construction": {
+    "allocation": "Lctrip/android/view/h5/view/H5Fragment;->addWebView()V",
+    "invoked_constructor": "Lctrip/android/view/h5/view/H5WebView;-><init>(Landroid/content/Context;)V",
+    "delegated_constructor": "Lctrip/android/view/h5/view/H5WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+    "delegated_attribute_set": null,
+    "field": "Lctrip/android/view/h5/view/H5Fragment;->mWebView:Lctrip/android/view/h5/view/H5WebView;"
+  },
+  "parameter_chain": [
+    {
+      "method": "Lctrip/android/view/h5/view/H5WebView;->l0(Lctrip/android/view/h5/view/H5Fragment;Ljava/lang/String;Lctrip/android/view/h5/view/H5WebView$y;)V",
+      "receiver": "A",
+      "parameter_index": null
+    },
+    {
+      "method": "Lctrip/android/view/h5/view/H5WebView;->o0(Ljava/lang/Object;Lctrip/android/view/h5/view/H5WebView;Lctrip/android/view/h5/view/H5WebView$y;)V",
+      "receiver": "A",
+      "parameter_index": 1,
+      "argument": "A"
+    },
+    {
+      "method": "Lctrip/android/view/h5/view/H5WebView;->M(Ljava/lang/Object;Lctrip/android/view/h5/view/H5WebView;)V",
+      "receiver": "A",
+      "parameter_index": 1,
+      "argument": "A"
+    },
+    {
+      "method": "Lctrip/android/view/h5/view/H5WebView;->H0(Ljava/lang/Object;Lctrip/android/view/h5/view/H5WebView;)V",
+      "receiver": "A",
+      "parameter_index": 1,
+      "argument": "A"
+    },
+    {
+      "method": "Lctrip/base/init/m$c;->n(Ljava/lang/Object;Lctrip/android/view/h5/view/H5WebView;Ljava/util/List;)V",
+      "parameter_index": 1,
+      "argument": "A"
+    }
+  ],
+  "alias_equation": "A = H5Fragment.mWebView = receiver(l0) = parameter[1](o0) = receiver(o0) = parameter[1](M) = receiver(M) = A.f45241h = parameter[1](H0) = parameter[1](m$c.n) = receiver(addJavascriptInterface)",
+  "first_break": {
+    "constructor_parameter": "context-free constructor/entry seed retained despite concrete allocation; constructor arguments are Context and null AttributeSet, not a WebView",
+    "entry_parameter": "callee parameter summary retained without caller substitution parameter[1] := A"
+  },
+  "negative_assertion": "constructor_parameter and entry_parameter are not additional WebViews and do not imply additional Screen_a registrations for this host",
+  "unknown_collection_policy": {
+    "kind": "bridge_candidate",
+    "implementation": null,
+    "binding_status": "unresolved_collection_element",
+    "cardinality": "unknown; not additive",
+    "count_as_concrete_bridge": false,
+    "expand_members": false,
+    "note": "A placeholder describes incomplete loop-element points-to information; separate concrete registrations require proof of separate constructed elements."
+  },
+  "condition": "normal packaged bodies; Robust PatchProxy can replace bodies",
+  "evidence": [
+    "sources/ctrip/android/view/h5/view/H5Container.java:174-180",
+    "sources/ctrip/android/view/h5/view/H5Fragment.java:2733-2745,2935-2945",
+    "sources/ctrip/android/view/h5/view/H5WebView.java:843-845,1082-1090,1928-1952,2346-2365,2389-2397,2572-2603",
+    "sources/ctrip/base/init/m.java:710-765"
+  ],
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66"
+}

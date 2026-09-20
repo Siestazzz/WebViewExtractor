@@ -284,3 +284,85 @@
   `python3 scripts/benchmark.py --label v7 --jar test/runs/v7.jar`, then scripts/evaluate.py with
   the three canonical JSONL files and news/v7-ownership.jsonl, mango/v6-ownership.jsonl,
   ctrip/v4e-ownership.jsonl. Exact commands, hashes, resource usage and replays are retained.
+
+## v8 — object provenance, constructor capture, and nested transport evidence
+
+- Removed context-free WebView helper parameter seeds, unresolved field-object component seeds,
+  and uninvoked inherited business methods on callback objects. Real caller arguments now drive
+  these paths. Lookup-derived views replay only their XML constructor contract in the second pass;
+  this preserves real constructor settings without activating unrelated programmatic bridge paths.
+- Materialized actual constructor captures before dereferencing objects returned by factories;
+  same-receiver delegated constructors retain the original object. Null receiver alternatives do
+  not become WebViews. Static false-valued settings remain valid operations.
+- Added receiver-field writer dependencies for composed controller/manager calls, bounded and
+  relevant-call driven. Abstract-class handler contracts are accepted alongside interfaces.
+  This was NOT the YSP root cause: its handler contract was already an interface and extracted.
+- Added `transport_bindings` for a handler's actual native Bridge object, injected namespace and
+  WebView. Evaluator revision3 uses that edge to match nested handler selectors without treating
+  the selector as the injected native name. This accounts for24 recovered YSP matches in the
+  existing oracle; these are corrected evidence/scoring matches, not newly discovered endpoints.
+- Obfuscated Kotlin Lazy recognition checks the Lazy/Function0 interface contracts, the actual
+  returned allocation, and constructor capture of the exact initializer argument. Per-object
+  captures and Object-returning invoke methods are evaluated; unrelated initializer implementations
+  are not enumerated. A factory discarding its initializer is a negative regression fixture.
+- Added regression fixtures for nullable instance receivers versus static false, composed receiver
+  initialization, helper and inherited-callback isolation, XML constructor replay, two-view
+  constructor capture, abstract handlers, native namespace/object isolation and obfuscated Lazy.
+  JVM fixtures and all six evaluator tests pass. The full requested synthetic matrix is not yet
+  complete (in particular temporal replacement/removal and more complex cross-framework cases).
+- Exploratory fresh serial runs retained: v8a73.30/77.81/154.32s;
+  v8b58.40/57.99/109.40s; v8c69.05/61.72/116.21s; v8d69.46/62.64/121.09s
+  (news/mango/ctrip). Some development builds/probes overlapped these exploratory runs; these are
+  not final isolated repeat measurements. v8b/c/d exposed27 news settings lost when fabricated
+  field objects were removed; v8d's interface-only Lazy change did not recover them. The final v8
+  adds actual initializer captures and Object-returning invoke traversal. All reports remain partial.
+- Accepted60 Sol source/DEX facts for two conditional SDK Dialog hosts into the versioned public
+  news oracle (30 hosts1991 raw rows). These are non-blind development cases, not final holdouts.
+  The original28-host oracle is preserved. Replayed v7 against the expanded set:1264/1385 Bridge,
+  303/366 Settings,205/240 callbacks. No failing oracle case was removed.
+- Independent v8c Ctrip object audit confirms the two checked old-H5 hosts each now have one
+  receiver for60 semantic operations (previously nine IDs). CMB now has its concrete layout-view
+  identity. New H5 still has factory alternatives and self-field alias duplication:453 rows for72
+  semantic operations over12 IDs. Its100% Activity-level recall does not resolve this defect.
+- Sol confirmed unchanged v8c host sets: news37 valid; mango85 hosts80 valid5 uncertain;
+  ctrip55 hosts54 valid1 wrong. Candidate Activities count in full. These ownership numbers do
+  not measure wrong capability combinations. See the new `OPEN_GAPS.json` and retained per-fact
+  evaluation misses for systemic defects, cause, evidence and status.
+- Outstanding framework gaps include QQ console routing, AdCore wrappers/transports, long-video
+  composition, Rainbow pending/inject semantics, custom callback setters and fluent configurator
+  defaults. Final fresh holdouts, full wrong-capability audit, on-demand Soot fallback and isolated
+  three-repeat performance validation remain pending. QUALITY ACCEPTANCE NOT MET.
+
+Current-oracle candidate-inclusive replay (all explicit-only counts are retained in evaluation JSON):
+
+| App | Bridge | Settings | Callbacks |
+|---|---:|---:|---:|
+| news | 1288/1385 (93.00%) | 298/366 (81.42%) | 205/240 (85.42%) |
+| mango | 1137/1153 (98.61%) | 523/526 (99.43%) | 584/591 (98.82%) |
+| ctrip | 3666/3666 (100%) | 233/233 (100%) | 299/299 (100%) |
+
+The Lazy fix recovered22 of27 removed news settings; WebNovel3/WebAdvert2 remain misses.
+Against the expanded v7 baseline this is +24 Bridge matches, -5 Settings matches and unchanged
+callback matches. The settings regression is retained for correction, not hidden by the stronger
+object-identity results. Every remaining failed expectation is preserved in the evaluation files.
+
+Reproduce v8 with the documented Gradle build, freeze the resulting jar, then
+`python3 scripts/benchmark.py --label v8 --jar test/runs/v8.jar` and the three canonical
+`evaluate.py` replays using news/v8a-ownership.jsonl, mango/v8a-ownership.jsonl and
+ctrip/v4e-ownership.jsonl. Development variants and before-expansion reports retain their own
+oracle hashes; use v7-news-development-v3-evaluation.json for same-oracle comparison.
+
+Frozen v8 serial runs: news70.97s, mango62.39s, ctrip120.86s; peak RSS
+8760900/7618728/7768876KiB. All emitted host sets match the independently reviewed v8c sets
+(37/85/55); conservative Activity error bounds are0%,5.88%,1.82%. These are development runs,
+not the final three-repeat acceptance series. The all-output capability-precision audit is still
+incomplete and none of these bounds establishes correct per-WebView capability combinations.
+
+The v8 one-second deadline regression exited in1.233s with55 readable atomic snapshots and
+explicit index-not-finished/hard-deadline diagnostics; retained in v8-deadline-check.json.
+
+Final Sol follow-up confirms the remaining WebNovel3/WebAdvert2 regressions are real: nested
+layout/loading-wrapper getters assign a concrete constructed WebView into an Activity field.
+The repair must follow that actual chain, not restore fabricated field-object seeds. The restored
+editor core settings and client share the same captured-host layout WebView; unrelated callback
+alternatives are not validated by that finding. See news/v8-settings-regressions.{json,md}.

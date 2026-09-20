@@ -1,0 +1,117 @@
+{
+  "scope": "Known systemic issues; all individual scored misses remain in versioned evaluation JSON and oracle facts. No APK-wide completeness claim.",
+  "issues": [
+    {
+      "id": "news_lazy",
+      "app": "news",
+      "status": "partially_fixed_v8",
+      "cause": "Actual Lazy initializer capture and Object-returning invoke recovered 22/27 regressed settings (two editors and VerticalVideo).",
+      "evidence": "news/obfuscated-lazy-rule.json"
+    },
+    {
+      "id": "news_nested_wrapper_constructor",
+      "app": "news",
+      "status": "open_confirmed_regression",
+      "cause": "WebNovel3/WebAdvert2 are real misses: Activity layout wrapper -> loading wrapper -> getWebView -> explicit Activity field -> concrete BaseSysWebView/AdWebView constructor. Do not restore fabricated field-object seeds.",
+      "evidence": "news/v8-settings-regressions.json"
+    },
+    {
+      "id": "news_qq_console",
+      "app": "news",
+      "status": "open",
+      "cause": "SDK Dialog console-message router missing registration namespace and nine declared reflective endpoints per host.",
+      "evidence": "news/qq-console-rule.json"
+    },
+    {
+      "id": "news_adcore",
+      "app": "news",
+      "status": "open",
+      "cause": "Non-View factory/listener wrapper, native and prompt transports must bind through actual AdWebViewWrapper object.",
+      "evidence": "news/adcore-wrapper-factory.json"
+    },
+    {
+      "id": "news_longvideo",
+      "app": "news",
+      "status": "open",
+      "cause": "Activity to inherited controller to manager to YSP provider composition remains incomplete.",
+      "evidence": "news/v7a-ysp-break.json"
+    },
+    {
+      "id": "news_ysp_namespace",
+      "app": "news",
+      "status": "fixed_v8c_evidence",
+      "cause": "Already extracted selectors lacked explicit link to native YspJSBridge namespace; same-object transport_bindings now scored with strict negative tests.",
+      "evidence": "news/ysp-registry-pattern.json"
+    },
+    {
+      "id": "mango_rainbow",
+      "app": "mango",
+      "status": "open",
+      "cause": "Pending clazz list, inject commit/replacement, exact static reflection endpoints and unknown dynamic classes unmodeled.",
+      "evidence": "mango/loading-rule-review.json"
+    },
+    {
+      "id": "mango_custom_callback",
+      "app": "mango",
+      "status": "open",
+      "cause": "Custom setter stores listener in WebView field W; seven implemented callback signatures omitted. onProgressChanged dispatch remains unproven.",
+      "evidence": "mango/v8c-remaining-bindings.json"
+    },
+    {
+      "id": "mango_pangle",
+      "app": "mango",
+      "status": "open",
+      "cause": "Fluent configurator instance default e=true lost through factory/return-this; three false-valued settings missed.",
+      "evidence": "mango/v8c-remaining-bindings.json"
+    },
+    {
+      "id": "ctrip_old_h5_alias",
+      "app": "ctrip",
+      "status": "fixed_in_four_host_audit_v8c",
+      "cause": "Actual constructor captures and caller parameters replace fabricated entry/constructor field objects; checked old H5 hosts each one receiver.",
+      "evidence": "ctrip/v8c-object-audit.jsonl"
+    },
+    {
+      "id": "ctrip_v2_alias",
+      "app": "ctrip",
+      "status": "open",
+      "cause": "Cache/fresh/PatchProxy alternatives are not separate concurrent views; self field A.x=A produces false extra receiver IDs.",
+      "evidence": "ctrip/v8c-object-audit.jsonl"
+    },
+    {
+      "id": "ctrip_feedback_owner",
+      "app": "ctrip",
+      "status": "open",
+      "cause": "Known false Activity association via a gallery URL empty guard remains.",
+      "evidence": "ctrip/v4e-ownership.jsonl"
+    },
+    {
+      "id": "mango_ownership_unknown",
+      "app": "mango",
+      "status": "unresolved",
+      "cause": "Five emitted Activity owners remain uncertain and count against conservative ownership bound.",
+      "evidence": "mango/v8a-ownership.jsonl"
+    },
+    {
+      "id": "global_settings_group",
+      "app": "all",
+      "status": "open",
+      "cause": "Process-global static settings can be grouped under literal receiver instead of process scope.",
+      "evidence": "../CAPABILITY_ANALYSIS.md"
+    },
+    {
+      "id": "temporal_updates",
+      "app": "all",
+      "status": "open",
+      "cause": "Monotone field summaries do not prove ordering of replacement/removal across callbacks; settings are observed operations not final state.",
+      "evidence": "../CAPABILITY_ANALYSIS.md"
+    },
+    {
+      "id": "acceptance",
+      "app": "all",
+      "status": "pending",
+      "cause": "Final sealed new samples, wrong-capability audit, final isolated three-repeat benchmarks, full synthetic matrix, and on-demand Soot fallback remain.",
+      "evidence": "ITERATIONS.md"
+    }
+  ]
+}
