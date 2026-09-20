@@ -242,16 +242,30 @@
     {
       "id": "ctrip_evaluate_override_v13",
       "app": "ctrip",
-      "status": "open",
-      "cause": "Actual loadUrl chain only partly recovered; one override operation and _VideoEnabledWebView registration/member missing on independent supplement despite canonical 100%.",
-      "evidence": "ctrip/v13e-public30-plus-regressions-scoring.json"
+      "status": "fixed_v15a_source_verified",
+      "cause": "Actual callback-argument forwarding recovers _VideoEnabledWebView registration/member and the remaining loadUrl operation. Full-App source review and cumulative scoring pass these facts; exact allocation identity remains unresolved.",
+      "evidence": "ctrip/v15a-source-review.md"
     },
     {
       "id": "actual_async_registration",
       "app": "all",
       "status": "open",
-      "cause": "Diana source confirms callback flows via builder/request captures, structurally obfuscated OkHttp enqueue, Handler.post, then ServiceConnection/package-ready join. Concrete Fragment/View binding is fixed in a probe; actual callback dispatch is not. No callback seeding solely from construction or arbitrary on* methods.",
+      "cause": "Diana requires actual builder/request callback captures, obfuscated OkHttp enqueue, Handler.post and ServiceConnection/package-ready join. Fragment/View identity is repaired, callback dispatch remains missing. Existing constructor-only callback seeding is unsound (v15 synthetic negative); replacement with actual registration adapters is pending.",
       "evidence": "mango/diana-request-callback-chain.json"
+    },
+    {
+      "id": "constructor_only_callback_execution",
+      "app": "all",
+      "status": "open_confirmed_v15",
+      "cause": "A near-API callback constructed and passed only to a no-op still contributes a bridge on a second WebView. Both v14c and v15a fail the same negative; bounded argument forwarding does not repair existing callbackEntries constructor seeding.",
+      "evidence": "v15-near-callback-known-failure.json"
+    },
+    {
+      "id": "mango_erlang_v15_regression",
+      "app": "mango",
+      "status": "open",
+      "cause": "New argument traversal changes receiver alternatives and loses mgTransfer/showMangPushShare in Erlang. Source confirms both registrations and members; four facts appended to cumulative oracle, v14c 4/4 vs v15a 0/4. Root cause not yet established.",
+      "evidence": "mango/v15a-deletion-review.json"
     }
   ]
 }

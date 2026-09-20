@@ -1,0 +1,100 @@
+{
+  "scope": "Tencent News largest remaining public gap: two LongVideo Activities",
+  "version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "status": "source_and_dex_verified_conditional",
+  "holdout_used": false,
+  "affected_activities": [
+    "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity",
+    "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity"
+  ],
+  "shortest_missing_registered_callback_chain": [
+    {
+      "step": 1,
+      "call": "Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->י(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)V -> Lcom/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage;->ˋˋ(Landroid/view/View;Lcom/tencent/news/video/detail/longvideo/b;)Lkotlin/Pair;",
+      "identity": "virtual factory returns the concrete tv.m or ip.v presenter in Pair.second; constructor execution precedes Pair return"
+    },
+    {
+      "step": 2,
+      "tv_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;-><init>(Lcom/tencent/news/kkvideo/detail/longvideo/m;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/d;)V",
+      "ip_constructor": "Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;-><init>(Lcom/tencent/news/kkvideo/detail/longvideo/m;Lcom/tencent/news/kkvideo/detail/longvideo/pojo/a;)V",
+      "actual_registration": "both constructors obtain the page lifecycle object and invoke Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʻ(Lcom/tencent/news/kkvideo/detail/longvideo/g;)V with this",
+      "not_enough": "new tv.m/ip.v, or storing it in Pair.second/page.presenter, alone does not activate callbacks"
+    },
+    {
+      "step": 3,
+      "registry_field": "Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʻ:Ljava/util/ArrayList;",
+      "register": "Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʻ(Lcom/tencent/news/kkvideo/detail/longvideo/g;)V",
+      "register_semantics": "normal branch checks argument non-null and list.contains(argument)==false, then list.add(the exact argument)",
+      "dispatch": "Lcom/tencent/news/kkvideo/detail/longvideo/l;->ʼ()V",
+      "dispatch_semantics": "iterates the same field, casts iterator.next() to longvideo.g and invokes Lcom/tencent/news/list/framework/lifecycle/o;->onPageCreateView()V on that exact element"
+    },
+    {
+      "step": 4,
+      "ordering": "AbsLongVideoDetailPage.י invokes lifecycle.ʼ() only after the presenter constructor/self-registration and Pair.second assignment",
+      "tv_target": "Lcom/tencent/news/kkvideo/detail/longvideo/tv/m;->onPageCreateView()V",
+      "ip_target": "Lcom/tencent/news/kkvideo/detail/longvideo/ip/v;->onPageCreateView()V",
+      "condition": "normal non-PatchRedirector branch; later playback requires non-empty model data and a valid initial/user selection"
+    },
+    {
+      "step": 5,
+      "selection_entry": "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻʽ(IZ)Z",
+      "suffix": [
+        "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻʼ(Lcom/tencent/news/kkvideo/playlist/c;)Z",
+        "Lcom/tencent/news/kkvideo/detail/longvideo/player/g;->ʻˈ(Lcom/tencent/news/model/pojo/Item;ZLjava/util/List;)V",
+        "Lcom/tencent/news/qnplayer/n;->ʾˏ(Lcom/tencent/news/qnplayer/f;)V",
+        "Lcom/tencent/news/qnplayer/h0;->ʾˏ(Lcom/tencent/news/qnplayer/f;)V",
+        "Lcom/tencent/news/video/b1;->ˆ(Lcom/tencent/news/kkvideo/config/VideoDataSource;)V",
+        "Lcom/tencent/news/video/n2;->setVideoParams(Lcom/tencent/news/model/pojo/VideoParams;)V"
+      ],
+      "receiver_identity": "player.g field ˈˈ is constructor parameter 0, the same Activity-created services.e/p recovered through the page registry"
+    },
+    {
+      "step": 6,
+      "webview_identity": "n2 -> VideoPlayManager -> YspMediaPlayer retains the exact TNVideoView container; YspMediaPlayer.ʽ(Context,ViewGroup) creates/stores one BaseWebView in YspMediaPlayer.ʻ and attaches that same value to the retained container",
+      "terminal": "the YSP settings/client/message-handler facts belong conditionally to that attached BaseWebView, not to the TNVideoView object"
+    }
+  ],
+  "required_general_rule": {
+    "name": "instance_collection_registration_dispatch",
+    "activate_callback_only_when": [
+      "a reached registrar stores the exact callback argument into a concrete collection/field/map on a concrete registry receiver",
+      "a reached dispatcher reads the same storage object and invokes an implemented callback method on the retrieved value",
+      "registration precedes dispatch on the same registry instance",
+      "virtual/interface dispatch selects methods implemented by the concrete stored callback type"
+    ],
+    "propagation": "carry callback object identity through add/put or field assignment, iterator/array/map retrieval, cast, and interface invoke; preserve registry receiver and storage-field identity",
+    "conditionality": "retain branch, null, contains/dedup, removal/replacement, PatchRedirector, and asynchronous data availability as conditions/unknowns",
+    "forbidden_shortcuts": [
+      "do not execute a callback merely because its constructor was reached",
+      "do not merge registries by collection type or callback interface",
+      "do not treat Pair.second or an Activity/context argument as callback registration",
+      "do not infer later model selection solely from onPageCreateView"
+    ]
+  },
+  "synthetic_regression_constraints": {
+    "positive": [
+      "Activity creates one registry R and callback C; R.register(C) stores C in R.callbacks; R.dispatch iterates R.callbacks and calls C.onPageCreateView; C reaches a WebView capability: capability must be attributed to Activity",
+      "C is returned in Pair.second as well as registered; deduplicate by object identity and emit the capability once",
+      "two concrete callback implementations behind an interface are registered into distinct registry instances; only the instance whose dispatch is reached may execute"
+    ],
+    "negative": [
+      "construct C near register/dispatch but never pass C to register: emit no capability from C",
+      "store C in registry R1 but dispatch R2: emit no capability from C",
+      "construct/register C but remove the same C before the only dispatch on all known branches: do not execute it",
+      "construct C and put it only in Pair.second or an ordinary presenter field: do not treat that storage as an event registration",
+      "registered callback initializes a player but model list is empty or selected index invalid: do not unconditionally execute the selection suffix"
+    ]
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/AbsLongVideoDetailPage.java:366-386",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/l.java:11-48",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/tv/m.java:600-650,870-879",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/kkvideo/detail/longvideo/ip/v.java:470-530,777-813",
+    "docs/validation/news/v10-longvideo-binding.json",
+    "docs/validation/news/v11-longvideo-service-dispatch.json",
+    "docs/validation/news/v12c-longvideo-event-dispatch.json",
+    "test/runs/symbols/news.jsonl"
+  ]
+}

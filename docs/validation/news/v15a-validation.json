@@ -1,0 +1,41 @@
+{
+  "version": "v15a",
+  "baseline": "v14c",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "report_status": "partial",
+  "wall_seconds": 158.257070815,
+  "hosts": 42,
+  "facts": 5386,
+  "host_set_change": {
+    "added": [],
+    "removed": []
+  },
+  "ownership": {
+    "valid": 41,
+    "uncertain": 1,
+    "wrong": 0,
+    "conservative_nonvalid_upper_bound": "1/42 = 2.38%"
+  },
+  "semantic_delta": {
+    "added": 0,
+    "removed": 0,
+    "changed_hosts": []
+  },
+  "focused_checks": {
+    "new_hosts": "none",
+    "advertising_sdk_hosts": "unchanged; no semantic fact delta",
+    "long_video_hosts": "LongVideoDetailActivity and TvLongVideoDetailActivity remain absent",
+    "canonical_source_regression": "no v14c capability changed, so existing source-confirmed and unresolved canonical findings remain unchanged",
+    "near_callback_negative": "known failure persists identically in v14c and v15a; constructor-only unregistered callback is still spuriously executed"
+  },
+  "evidence": [
+    "docs/validation/news/v14c-validation.md",
+    "docs/validation/news/v15a-delta.json",
+    "docs/validation/v15-near-callback-known-failure.json"
+  ],
+  "limitations": [
+    "Zero report delta does not prove the bounded callback rule is generally sound; News did not exercise a new accepted path.",
+    "The pre-existing near-callback negative remains open and forbids claiming all unregistered callbacks are excluded.",
+    "ShellActivity ownership remains uncertain."
+  ]
+}

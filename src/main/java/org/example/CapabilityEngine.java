@@ -17,7 +17,7 @@ final class CapabilityEngine {
     final Map<String,V> constants=new HashMap<>();
     final Map<String,List<Map<String,Object>>> callbackCache=new HashMap<>();
     final Map<String,Set<Integer>> lazyFactoryParameters=new HashMap<>();
-    final Map<String,Boolean> objectFieldSetters=new HashMap<>(), receiverRelevance=new HashMap<>();
+    final Map<String,Boolean> objectFieldSetters=new HashMap<>(), receiverRelevance=new HashMap<>(), callbackCarrierTypes=new HashMap<>();
     Runnable checkpoint=()->{};
     Host currentHost;
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
@@ -82,12 +82,21 @@ final class CapabilityEngine {
                             if(concrete!=null&&relevantOnReceiver(concrete,receiver,h)){receiverRelevant=true;break;}
                         }
                     }
+                    boolean argumentRelevant=false;
+                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&target!=null&&
+                        call.args().stream().map(v->dispatchHint(v,job,h,0)).flatMap(v->alternatives(v).stream()).anyMatch(this::callbackCarrier)){
+                        List<V> bound=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
+                        Method concrete=target;
+                        if(!call.isStatic()&&!call.isDirect()&&!call.isSuper()&&!bound.isEmpty()&&bound.get(0).type()!=null)
+                            concrete=idx.resolve(desc(bound.get(0).type())+"->"+CapabilityIndex.shape(target));
+                        if(concrete!=null)argumentRelevant=relevantOnArguments(concrete,bound,job,h,new HashSet<>(),0);
+                    }
                     boolean proceedArguments=idx.closureProceedArguments(call.method());
                     boolean closureCall=idx.closureLink(call.method())||idx.closureProceed(call.method())||proceedArguments;
                     boolean carriesJoinPoint=false;
                     if(target!=null&&target.getParameterTypes().stream().anyMatch(t->idx.joinPoint(CapabilityIndex.cls(t.toString()))))
                         for(V arg:call.args())if(alternatives(eval(arg,job,h,0,new HashSet<>())).stream().anyMatch(x->x.kind().equals("aspectj_joinpoint")||h.linkedClosures.containsKey(x.id()))){carriesJoinPoint=true;break;}
-                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!closureCall&&!carriesJoinPoint)continue;
+                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!argumentRelevant&&!closureCall&&!carriesJoinPoint)continue;
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     observeXmlConsumer(h,job,args);
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());followApiOverride(h,job,call,args,summary.branched());continue;}
@@ -106,14 +115,14 @@ final class CapabilityEngine {
                     if(target!=null){
                         boolean virtual=!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&!args.isEmpty();
                         if(!virtual){
-                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle||registryWrite||fieldSetter||receiverRelevant||carriesJoinPoint)enqueue(h,target,args,job.path,job.candidate||summary.branched());
+                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle||registryWrite||fieldSetter||receiverRelevant||argumentRelevant||carriesJoinPoint)enqueue(h,target,args,job.path,job.candidate||summary.branched());
                         }else{
                             int dispatched=0;
                             for(V receiver:alternatives(args.get(0))){
                                 if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
                                 Method concrete=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
                                 if(concrete==null||concrete.getImplementation()==null){h.gaps.add("unresolved_receiver_dispatch:"+call.method());continue;}
-                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete))&&!objectFieldSetter(concrete)&&!relevantOnReceiver(concrete,receiver,h)&&!carriesJoinPoint)continue;
+                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete))&&!objectFieldSetter(concrete)&&!relevantOnReceiver(concrete,receiver,h)&&!argumentRelevant&&!carriesJoinPoint)continue;
                                 if(dispatched++>=64){h.gaps.add("dispatch_budget:"+call.method());break;}
                                 enqueue(h,concrete,specializeReceiver(args,receiver),job.path,job.candidate||summary.branched()||args.get(0).kind().equals("union"));
                             }
@@ -378,6 +387,42 @@ final class CapabilityEngine {
             Method actual=call.isDirect()||call.isSuper()?declared:idx.resolve(desc(type)+"->"+CapabilityIndex.shape(declared));
             if(layoutInflate(call.method())||layoutContent(call.method()))return true;
             if(actual!=null&&relevantOnReceiver(actual,type,h,visited,depth+1))return true;
+        }
+        return false;
+    }
+    boolean callbackCarrier(V value){
+        if(!Set.of("new","object","view").contains(value.kind())||value.type()==null)return false;
+        return callbackCarrierTypes.computeIfAbsent(value.type(),type->{
+            ClassDef definition=idx.classes.get(type);if(definition==null||idx.component(type))return false;
+            boolean captured=false;for(Field field:definition.getFields())if((field.getAccessFlags()&8)==0&&idx.component(CapabilityIndex.cls(field.getType()))){captured=true;break;}
+            if(!captured)return false;
+            for(Method method:idx.hierarchyMethods(type))if(method.getImplementation()!=null&&idx.relevant.contains(CapabilityIndex.key(method))&&!method.getName().startsWith("<"))
+                for(Method contract:idx.byShape.getOrDefault(CapabilityIndex.shape(method),List.of()))
+                    if(contract.getImplementation()==null&&idx.subtype(type,CapabilityIndex.cls(contract.getDefiningClass())))return true;
+            return false;
+        });
+    }
+    boolean relevantOnArguments(Method method,List<V> args,Job outer,Host h,Set<String> seen,int depth){
+        String id=CapabilityIndex.key(method);if(idx.relevant.contains(id))return true;
+        if(method.getImplementation()==null||!seen.add(id+"|"+args))return false;
+        if(depth>3||seen.size()>32){h.gaps.add("argument_relevance_budget:"+id);return false;}
+        int count=0;for(var instruction:method.getImplementation().getInstructions())if(++count>512){h.gaps.add("argument_relevance_body_budget:"+id);return false;}
+        Job nested=new Job(method,args,outer.path,true);
+        for(Call call:flow.summary(method).calls()){
+            if(call.args().isEmpty())continue;
+            // Only follow forwarding of a concrete component-capturing callback. A stored
+            // or constructed callback alone does not cause any of its methods to execute.
+            List<V> hints=call.args().stream().map(v->dispatchHint(v,nested,h,0)).toList();
+            if(hints.stream().flatMap(v->alternatives(v).stream()).noneMatch(this::callbackCarrier))continue;
+            List<V> bound=call.args().stream().map(v->eval(v,nested,h,0,new HashSet<>())).toList();
+            Method target=call.isSuper()?resolveSuper(method,call.method()):idx.resolve(call.method());
+            if(target==null)continue;
+            if(call.isStatic()||call.isDirect()||call.isSuper()){
+                if(relevantOnArguments(target,bound,nested,h,seen,depth+1))return true;
+            }else for(V receiver:alternatives(bound.get(0))){
+                Method actual=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
+                if(actual!=null&&relevantOnArguments(actual,specializeReceiver(bound,receiver),nested,h,seen,depth+1))return true;
+            }
         }
         return false;
     }

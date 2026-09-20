@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "framework": "Diana asynchronous registration boundary",
+  "verdict": "three explicit registration adapters are sufficient to schedule the real entry members, but state joins remain required before renderMiniApp",
+  "adapters": [
+    {
+      "registration": "Lokhttp3/e;->H(Lokhttp3/f;)V",
+      "callback_argument": 0,
+      "members": [
+        "Lokhttp3/f;->onResponse(Lokhttp3/e;Lokhttp3/b0;)V",
+        "Lokhttp3/f;->onFailure(Lokhttp3/e;Ljava/io/IOException;)V"
+      ],
+      "identity_requirement": "enqueue only the concrete f argument; Diana uses Lcom/mgtv/diana/h0/c$a;, whose a field retains the exact c$d request and whose request.h retains the original DianaView$c"
+    },
+    {
+      "registration": "Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z",
+      "callback_argument": 0,
+      "members": ["Ljava/lang/Runnable;->run()V"],
+      "identity_requirement": "enqueue only the posted ny.a/ny.b object; its captured callback must alias c$d.h, ultimately the same DianaView$c"
+    },
+    {
+      "registration": "Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z",
+      "receiver_runtime_type": "android.app.Activity",
+      "service_connection_argument": 1,
+      "flags_argument": 2,
+      "flags_value": 1,
+      "intent_target": "Lcom/mgtv/diana/service/MiniAppIpcService;",
+      "members": [
+        "Lcom/mgtv/diana/sdk/main/DianaView;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V",
+        "Lcom/mgtv/diana/sdk/main/DianaView;->onServiceDisconnected(Landroid/content/ComponentName;)V"
+      ],
+      "identity_requirement": "argument 1 is this: the same DianaView that receives DianaView$c.onSuccess and owns mConnected, mIpcBridgeService, packageReady, and mPageContainer"
+    }
+  ],
+  "diana_bind_sites": [
+    "Lcom/mgtv/diana/sdk/main/DianaView;->bindService(Landroid/app/Activity;)V",
+    "Lcom/mgtv/diana/sdk/main/DianaView;->lambda$new$4()V"
+  ],
+  "required_state_aliases": [
+    "DianaView$c.this$0 == bindService ServiceConnection argument == onServiceConnected receiver",
+    "bindService return writes the same receiver.mConnected",
+    "onServiceConnected writes the same receiver.mIpcBridgeService",
+    "package loader callback and ServiceConnection callback must join on the same receiver.packageReady/mIpcBridgeService pair"
+  ],
+  "limits": [
+    "Callback construction alone is not registration.",
+    "A false bindService return does not justify onServiceConnected dispatch.",
+    "The adapters establish possible asynchronous entry, not callback order or successful network/service completion.",
+    "renderMiniApp requires the independently registered package-load callback and service callback state join."
+  ],
+  "source": [
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/diana/sdk/main/DianaView.java:247-272",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/diana/sdk/main/DianaView.java:361-375",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/diana/sdk/main/DianaView.java:540-550",
+    "test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/diana/sdk/main/DianaView.java:1407-1428",
+    "test/runs/symbols/mango.jsonl"
+  ]
+}

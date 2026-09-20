@@ -1,0 +1,56 @@
+{
+  "host": "ctrip.business.evaluation.EvaluateDialogActivity",
+  "probe": "test/runs/v15a-evaluate-probe.json",
+  "scope": "single public host callback argument chain",
+  "status": "source_confirmed_conditional",
+  "v14c_fact_count": 68,
+  "v15a_fact_count": 73,
+  "semantic_additions": 5,
+  "callback_argument": {
+    "callee": "Lctrip/android/view/h5v2/view/H5BaseWebView;->j(Ljava/lang/String;Ljava/util/List;Lctrip/android/view/h5v2/view/H5BaseWebView$j;)V",
+    "parameter_index_dex": 3,
+    "concrete_type": "Lctrip/android/view/h5v2/view/H5WebView$a;",
+    "invoked_interface_method": "Lctrip/android/view/h5v2/view/H5BaseWebView$j;->onComplete()V",
+    "concrete_target": "Lctrip/android/view/h5v2/view/H5WebView$a;->onComplete()V",
+    "async_forwarder": "Lctrip/android/view/h5v2/view/H5BaseWebView$e;->onPackagesDownloadCallback(Ljava/util/List;Ljava/util/List;)V"
+  },
+  "restored_chain": [
+    "Lctrip/android/view/h5v2/view/H5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->j(Ljava/lang/String;Ljava/util/List;Lctrip/android/view/h5v2/view/H5BaseWebView$j;)V",
+    "Lctrip/android/view/h5v2/view/H5WebView$a;->onComplete()V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->i(Ljava/lang/String;Ljava/util/Map;Z)V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->p(Ljava/lang/String;Ljava/util/Map;Z)V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->q(Ljava/lang/String;Ljava/util/Map;Z)V",
+    "Lctrip/android/view/h5v2/view/VideoEnabledWebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V"
+  ],
+  "webview": {
+    "id": "activity:ctrip.business.evaluation.EvaluateDialogActivity/view:2131313182",
+    "type": "ctrip.android.view.h5v2.view.H5WebView",
+    "layout": "r/a9/wi.xml",
+    "resource_id": 2131313182,
+    "same_object_confirmed": true
+  },
+  "bridge": {
+    "registration_name": "_VideoEnabledWebView",
+    "implementation": "Lctrip/android/view/h5v2/view/VideoEnabledWebView$a;",
+    "member": "Lctrip/android/view/h5v2/view/VideoEnabledWebView$a;->notifyVideoEnd()V",
+    "site": "Lctrip/android/view/h5v2/view/VideoEnabledWebView;->c()V@38",
+    "conditional": true,
+    "same_xml_webview": true
+  },
+  "new_facts": [
+    "bridge:_VideoEnabledWebView",
+    "operation:Lctrip/android/view/h5v2/view/VideoEnabledWebView;->loadUrl(Ljava/lang/String;)V",
+    "operation:Lctrip/android/view/h5v2/view/VideoEnabledWebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+    "operation:Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+    "operation:Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V"
+  ],
+  "rule_boundary": {
+    "valid_for_case": true,
+    "required": "dispatch only an interface method actually invoked on the concrete argument or explicitly forwarded stored argument",
+    "unsupported_generalization": "allocation or listener storage alone does not execute all listener members",
+    "remaining_uncertainty": "branch feasibility and asynchronous callback completion"
+  },
+  "validator": "OpenAI Codex",
+  "validator_model": "GPT-5.6 Sol"
+}

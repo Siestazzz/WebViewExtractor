@@ -1,0 +1,23 @@
+{
+  "scope": "Synthetic negative; pre-existing constructor callback seeding fails independently of new argument relevance. Not a real-App source claim.",
+  "records": [
+    {
+      "variant": "v14c",
+      "expected_bridge_objects": 1,
+      "observed_bridge_objects": 2,
+      "passed": false,
+      "log": "OBSERVED_BRIDGES=2 EXPECTED=1\nException in thread \"main\" java.lang.AssertionError: Constructed but unregistered near-API callback executed\n\tat org.example.CapabilitySelfTest.check(CapabilitySelfTest.java:26)\n\tat org.example.NearCallbackProbe.run(NearCallbackProbe.java:43)\n\tat org.example.NearCallbackProbe.main(NearCallbackProbe.java:13)\n",
+      "jar_sha256": "d580f9136d3a2c3b0dfddcaba9e6702f0665a1ee4ca6d5172e624bcce116d4e1"
+    },
+    {
+      "variant": "v15a",
+      "expected_bridge_objects": 1,
+      "observed_bridge_objects": 2,
+      "passed": false,
+      "log": "OBSERVED_BRIDGES=2 EXPECTED=1\nException in thread \"main\" java.lang.AssertionError: Constructed but unregistered near-API callback executed\n\tat org.example.CapabilitySelfTest.check(CapabilitySelfTest.java:26)\n\tat org.example.NearCallbackProbe.run(NearCallbackProbe.java:43)\n\tat org.example.NearCallbackProbe.main(NearCallbackProbe.java:13)\n",
+      "jar_sha256": "eb6facbc7dff79ad97cb158c7d1742c14e1dfcce5805bd448d5c106cbaa5241f"
+    }
+  ],
+  "reproducer": "docs/validation/regressions/NearCallbackProbe.java",
+  "repair_status": "open; replace construction-only callback seeds with actual registration/dispatch"
+}

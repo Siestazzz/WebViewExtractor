@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "report_sha256": "d0aaac0c902f945bbb5ed816aa3d26675c0df5117ba27894bd43bd915465d89e",
+  "verdict": "no_new_source_capability_recovery",
+  "diana": {
+    "fragment_root_fix_retained": true,
+    "async_callback_recovered": false,
+    "missing_facts": 81,
+    "missing_hosts": [
+      "com.imgo.vodgames.LandVodGameRoomActivity",
+      "com.imgo.vodgames.VodGameRoomActivity",
+      "com.mgtv.diana.vodgames.LandVodGameRoomActivity",
+      "com.mgtv.diana.vodgames.VodGameRoomActivity",
+      "com.mgtv.litevod.LiteVodActivity"
+    ],
+    "earliest_boundary": "actual OkHttp e.H(f) callback dispatch, posted Runnable identity, then bindService ServiceConnection identity and packageReady/mIpcBridgeService join"
+  },
+  "changed_hosts": {
+    "com.mgtv.erlang.ErlangLiveActivity": "Large union-identity consolidation: one new union replaces several prior alternatives while the emitted capability families contract. This is receiver identity churn, not a newly source-proven API surface.",
+    "com.mgtv.ui.interactvod.InteractVodActivity": "one message_bridge row removed",
+    "com.mgtv.ui.videoplay.MGVideoPlayActivity": "four message_bridge and four operation rows removed; Diana surface remains absent",
+    "com.mgtv.ui.videosquare.VideoSquareActivity": "eight message_bridge rows removed"
+  },
+  "near_callback_negative": {
+    "status": "known_failure",
+    "reference": "docs/validation/mango/v15-near-callback-known-failure.json",
+    "meaning": "v15a still executes a constructed but unregistered near-API callback in the synthetic test; this audit does not claim general exclusion of unregistered callbacks."
+  }
+}

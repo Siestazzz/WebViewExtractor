@@ -886,3 +886,55 @@ passes a concrete completion callback through H5Base's package/interceptor routi
 super call. Sol's evaluate-loadurl-chain-correction.md/json supersedes the earlier direct-inheritance
 shortcut; the conditional VideoEnabled supplement remains valid. Filtered method logs must never
 be used as negative evidence for methods not included in the filter.
+
+
+## v15 — Bound actual callback arguments through small forwarding helpers
+
+The remaining Ctrip Evaluate path passes a concrete component-capturing callback into an
+otherwise globally irrelevant helper. A bounded lookahead now follows actual callback arguments
+through at most three levels, 32 contexts and 512 instructions per method. It retains argument
+identity and follows actual invoked members; storing a callback is not itself a lookahead endpoint.
+This is not a generic asynchronous framework model. Captures through inherited fields, non-component
+wrappers, collections and asynchronous registration still need separate handling.
+
+The new forwarding fixture isolates two WebViews and checks that a no-op consumer does not trigger
+the ignored callback. All existing capability fixtures passed for frozen v15a. However, a stronger
+near-API negative deliberately removes three helper levels: existing callbackEntries constructor
+seeding then incorrectly executes the second, unregistered callback. Both v14c and v15a fail with
+two bridge objects instead of one. The complete reproducer and failure evidence remain in
+regressions/NearCallbackProbe.java and v15-near-callback-known-failure.json. Thus the passing fixture
+suite does not imply all synthetic negatives pass; actual-registration replacement remains open.
+
+Sol's single-host Evaluate review confirms five new facts on the same XML H5WebView: the
+_VideoEnabledWebView bridge, notifyVideoEnd()V, and additional loadUrl paths. These are conditional
+static capabilities, not a claim that all URL branches execute together. Full-App results follow.
+
+### v15a final development results
+
+| App | Seconds / peak RSS KiB | Hosts | Bridge | Settings | Callbacks |
+|---|---:|---:|---:|---:|---:|
+| News | 158.757 / 8064412 | 42 | 1296/1393 | 294/366 | 205/240 |
+| Mango | 376.933 / 9522912 | 87 | 1137/1167 | 574/608 | 597/634 |
+| Ctrip | 190.170 / 7246224 | 55 | 3682/3682 | 323/323 | 391/391 |
+
+All-output ownership remains News 41 valid/1 uncertain, Mango 81 valid/1 conditional/5 uncertain,
+Ctrip 54 valid/1 wrong. Conservative error bounds are 2.38%, 6.90%, 1.82%; precise WebView-object
+association is not thereby established. News has no semantic change; Ctrip adds 85 facts without
+semantic deletions, including the independently verified Evaluate bridge/member and one scored
+operation. Mango deletion review finds most changes are alias consolidation, but Erlang loses two
+real registrations and their reflected members. The four source-proven regression facts are now
+appended to canonical with a byte-preserving backup: v14c matches 4/4, v15a 0/4. Thus the revised
+Mango bridge metric falls from 1141/1167 to 1137/1167 on the same cumulative set. Root cause is open.
+
+All APK runs are serial, eight CPUs/16 GiB, fresh analysis. These are development measurements, not
+final isolated three-run repeats. Mango exceeds 300 seconds; News/Mango recall gates fail. Existing
+fixture suite passes, but the newly retained near-callback negative fails; watchdog report survival
+passes in 1.276 seconds. No acceptance is claimed. Sealed final samples remain untouched.
+
+Reproduction: `./gradlew capabilitySelfTest shadowJar --offline --console=plain`, freeze the jar,
+`python3 scripts/benchmark.py --label v15a --jar test/runs/v15a.jar`; replay `scripts/evaluate.py`
+with each current canonical and v15a ownership. Run the near-callback reproducer as specified in
+v15-near-callback-known-failure.json; its failure is expected for this revision, not suppressed.
+Run `scripts/check_deadline.py --jar test/runs/v15a.jar --apk test/apks/com.tencent.news.apk` for
+external supervisor survival. See v15-final-effects.json and per-App source reviews for complete
+metric deltas and limits.

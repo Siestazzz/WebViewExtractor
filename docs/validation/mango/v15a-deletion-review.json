@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "comparison": "v14c -> v15a",
+  "normalization": ["kind", "name", "site", "api", "actual webview type", "registration_name", "implementation", "sorted member signatures"],
+  "result": {
+    "com.mgtv.ui.interactvod.InteractVodActivity": {
+      "raw_removed": 1,
+      "substantive_unique_removed": 0,
+      "verdict": "duplicate_alias_consolidation",
+      "detail": "The removed closeGamePanel registration has an equivalent normalized registration on another retained receiver identity in the same host."
+    },
+    "com.mgtv.ui.videoplay.MGVideoPlayActivity": {
+      "raw_removed": 8,
+      "substantive_unique_removed": 0,
+      "verdict": "duplicate_alias_consolidation",
+      "detail": "The four registrations (showCustomShareMenus, getReportInfo, joinQQGroup, openWXApplet) and four operation sites remain with identical normalized semantics on retained receiver identities."
+    },
+    "com.mgtv.ui.videosquare.VideoSquareActivity": {
+      "raw_removed": 8,
+      "substantive_unique_removed": 0,
+      "verdict": "duplicate_alias_consolidation",
+      "detail": "All eight registration names remain with identical site, implementation, endpoint signature, and WebView type on retained receiver identities."
+    },
+    "com.mgtv.erlang.ErlangLiveActivity": {
+      "raw_removed": 500,
+      "raw_added": 306,
+      "normalized_multiset_removed": 197,
+      "normalized_multiset_added": 3,
+      "unique_semantics_removed": 2,
+      "verdict": "mostly_alias_consolidation_with_two_real_capability_regressions",
+      "lost": [
+        {
+          "registration_name": "mgTransfer",
+          "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mgTransfer(Ljava/lang/String;)V"
+        },
+        {
+          "registration_name": "showMangPushShare",
+          "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showMangPushShare(Ljava/lang/String;)V"
+        }
+      ],
+      "source_evidence": [
+        "ErlangLiveActivity owns fullWebView/detailWebView fields of Lcom/hunantv/webui/WebUIFragment;",
+        "WebUIFragment.initWebView_aroundBody8 initializes its ImgoWebView",
+        "ImgoWebView.java:666 registers mgTransfer on this",
+        "ImgoWebView.java:667 registers showMangPushShare on this",
+        "ImgoWebJavascriptImpl.java declares both exact String endpoint methods"
+      ]
+    }
+  },
+  "limits": "Normalization establishes semantic retention within a host, not identity equivalence between every removed and retained receiver. The two Erlang registrations have no retained normalized counterpart and source proves they are part of ImgoWebView initialization."
+}

@@ -118,6 +118,7 @@ public final class CapabilitySelfTest {
    LayoutBindingFixture.run();
    FragmentLayoutFixture.run();
    SuperReturnFixture.run();
+   CallbackArgumentFixture.run();
    deepEvidenceFixture();
    composedReceiverFixture();
    componentHelperFixture();
