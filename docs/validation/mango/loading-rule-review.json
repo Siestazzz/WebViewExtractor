@@ -1,0 +1,86 @@
+{
+  "framework": "RainbowBridge/NativeMethodInjectHelper prompt reflection",
+  "registration": {
+    "facade_singleton": "Lcom/platform/usercenter/jsbridge/RainbowBridge;->sInstance:Lcom/platform/usercenter/jsbridge/RainbowBridge;",
+    "facade": "Lcom/platform/usercenter/jsbridge/RainbowBridge;->clazz(Ljava/lang/Class;)Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;",
+    "enqueue": "Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;->clazz(Ljava/lang/Class;)Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;",
+    "commit": "Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;->inject()V",
+    "registry_singleton": "Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;->sInstance:Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;",
+    "field_ownership": "sInstance is static; mInjectClasses and mArrayMap are instance fields on the singleton helper",
+    "pending_field": "Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;->mInjectClasses:Ljava/util/List;",
+    "active_registry_field": "Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;->mArrayMap:Ljava/util/Map;",
+    "registry_shape": "Map<Class.getSimpleName(), Map<Method.getName(), java.lang.reflect.Method>>",
+    "namespace_rule": "exact Class.getSimpleName(), not binary or fully-qualified name",
+    "member_rule": {
+      "enumeration": "Class.getDeclaredMethods() only",
+      "required_flags": ["public", "static"],
+      "required_parameter_count": 4,
+      "required_parameter_types_in_order": [
+        "android.webkit.WebView",
+        "org.json.JSONObject",
+        "com.platform.usercenter.jsbridge.JsCallback",
+        "android.os.Handler"
+      ],
+      "parameter_comparison": "exact Class identity for every position",
+      "return_type": "unrestricted",
+      "annotation": "none required",
+      "inherited_methods": "excluded",
+      "instance_methods": "excluded"
+    },
+    "commit_semantics": [
+      "clazz appends a non-null Class to the singleton pending list; it does not alter the active map",
+      "inject with an empty pending list is a no-op and preserves the active map",
+      "inject with a non-empty pending list clears the complete active map, inserts every pending class in list order, then clears the pending list",
+      "putMethod replaces the complete namespace entry at Class.getSimpleName()",
+      "two different classes with the same simple name collide; the later pending class wins",
+      "a class with zero compatible methods still installs an empty namespace map"
+    ]
+  },
+  "dispatch": {
+    "chrome_callback": "Lcom/platform/oms/ui/LoadingWebActivity$CommonWebFragment$1;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+    "payload_argument": 2,
+    "call": "Lcom/platform/usercenter/jsbridge/JsCallJava;->call(Landroid/webkit/WebView;Landroid/os/Handler;Ljava/lang/String;)V",
+    "parse": "rainbow URI host -> class simple-name namespace; slash-stripped path -> method name",
+    "lookup": "Lcom/platform/usercenter/jsbridge/NativeMethodInjectHelper;->findMethod(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/reflect/Method;",
+    "invoke": "Method.invoke(null, webView, JSONObject, JsCallback, Handler)"
+  },
+  "host_binding": {
+    "activity_to_fragment": [
+      "Lcom/platform/oms/ui/LoadingWebActivity;->getFragment()Lcom/platform/oms/ui/FragmentWebLoadingBase;",
+      "Lcom/platform/oms/ui/LoadingWebActivity$CommonWebFragment;->newInstance(Ljava/lang/String;)Lcom/platform/oms/ui/LoadingWebActivity$CommonWebFragment;"
+    ],
+    "webview_creation_and_client": [
+      "Lcom/platform/oms/ui/FragmentWebLoadingBase;->initView(Landroid/view/View;)V creates TimeoutCheckWebView and assigns mWebView",
+      "the same initView calls mWebView.setWebChromeClient(getWebChromeClient())",
+      "virtual dispatch selects CommonWebFragment.getWebChromeClient() and installs CommonWebFragment$1",
+      "CommonWebFragment.initView calls super.initView(view), then initjsinterface() for that fragment/host"
+    ],
+    "default_registration": "when the enclosing LoadingWebActivity is the first stack entry and method_class_names is empty: RainbowBridge.clazz(JSCommondMethod.class).inject()",
+    "dynamic_registration": "when method_class_names is non-empty: split on &, ensure JSCommondMethod fully-qualified name is included, Class.forName each name, clazz each successful Class, then inject",
+    "occurrence_requirements": [
+      "the Activity resolves getFragment() to LoadingWebActivity.CommonWebFragment",
+      "CommonWebFragment.initView executes on the host instance",
+      "mActivityStacks.size() equals 1 at initjsinterface",
+      "the candidate class reaches clazz in that execution: fixed JSCommondMethod or a successfully resolved runtime extra",
+      "inject executes after clazz",
+      "the onJsPrompt client is installed on the same mWebView field created by FragmentWebLoadingBase.initView"
+    ]
+  },
+  "negative_and_unknown_cases": [
+    "A compatible public static method anywhere in the APK is not exposed unless its declaring Class reaches clazz and the following inject for this host execution.",
+    "A subclass inherited compatible method is not exposed because registration uses getDeclaredMethods.",
+    "A public static method with assignable but non-identical parameter classes is rejected.",
+    "A non-public or non-static exact-signature method is rejected.",
+    "An intent-provided method_class_names value is dynamic when its concrete string is unavailable; retain an unknown dynamic-class registration and do not enumerate arbitrary APK classes.",
+    "Class.forName failures are caught and skipped; they do not create a namespace.",
+    "When mActivityStacks.size() is not 1, this fragment performs no registration commit; a singleton map may still contain state from an earlier root Activity, which must not be attributed as a new registration occurrence.",
+    "Simple-name collisions replace an earlier class namespace during the same commit, so both classes must not be reported simultaneously under that namespace."
+  ],
+  "implementation_guidance": {
+    "index_pattern": "summarize clazz(Class) as enqueue(class token), inject() as a stateful commit, and putMethod as declared-method enumeration with exact flags/descriptor",
+    "activity_attribution": "propagate the concrete CommonWebFragment returned by LoadingWebActivity.getFragment through FragmentWebLoadingBase.initView; require the clazz -> inject path and bind the installed CommonWebFragment$1 client to that same mWebView allocation",
+    "do_not_use": "global class-presence or compatible-signature search as proof of registration",
+    "dynamic_policy": "emit the fixed JSCommondMethod members; emit unknown registration facts for unresolved extra class names without invented endpoints"
+  },
+  "holdout_read": false
+}

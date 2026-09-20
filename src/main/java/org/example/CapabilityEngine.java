@@ -26,6 +26,7 @@ final class CapabilityEngine {
         final Map<String,V> heap=new HashMap<>();
         final Map<String,Set<V>> contents=new HashMap<>();
         final Map<String,V> bridgeViews=new HashMap<>();
+        final Map<String,Object> serviceEvidence=new TreeMap<>();
         final ArrayDeque<Job> queue=new ArrayDeque<>();
         final Set<String> visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
@@ -126,7 +127,7 @@ final class CapabilityEngine {
     void enqueue(Host h,Method m,List<V> args,List<String> path,boolean candidate){
         if(path.size()>24){h.gaps.add("call_depth:"+CapabilityIndex.key(m));return;}
         if(h.queue.size()>6000){h.gaps.add("queue_budget");return;}
-        h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate));
+        h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate||args.stream().anyMatch(v->alternatives(v).stream().anyMatch(a->a.id().startsWith("registered_service:")))));
     }
     static List<V> specializeReceiver(List<V> args,V receiver){
         V original=args.get(0);return args.stream().map(v->v.equals(original)?receiver:v).toList();
@@ -183,6 +184,13 @@ final class CapabilityEngine {
         }
         if(v.kind().startsWith("return")){
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
+            String serviceContext=CapabilityIndex.key(job.method)+"|"+allocationContext(job);
+            V service=idx.services.lookup(v.id(),args,serviceContext);if(service!=null){
+                var registrations=idx.services.matchingBindings(v.id(),args,serviceContext);
+                h.serviceEvidence.put(serviceContext+"|"+v.id(),Map.of("lookup",v.id(),"caller",CapabilityIndex.key(job.method),"arguments",args,"registrations",registrations,"binding_status","candidate","conditions",List.of("registration_initialization_not_proven_by_analysis","replacement_order_not_proven","runtime_creation_may_fail")));
+                if(service.kind().equals("unknown"))h.gaps.add(service.id());
+                return service;
+            }
             if((name.equals("findViewById")||name.equals("requireViewById"))&&args.size()>1)return V.of("view",v.type(),args.get(0).id()+"/view:"+args.get(1).id());
             if((name.equals("getActivity")||name.equals("requireActivity")))return V.of("host",h.activity,"activity:"+h.activity);
             if(name.equals("lazy")&&owner(v.id())!=null&&owner(v.id()).startsWith("kotlin.LazyKt")&&!args.isEmpty())return expr("lazy","kotlin.Lazy","lazy:"+args.get(args.size()-1).id(),List.of(args.get(args.size()-1)));
@@ -401,13 +409,15 @@ final class CapabilityEngine {
             if(method.getImplementation()==null||method.getName().startsWith("<"))continue;
             Summary summary=flow.summary(method);
             if(summary.calls().stream().noneMatch(c->c.method().startsWith("Ljava/lang/reflect/Method;->invoke(")))continue;
-            if(summary.calls().stream().anyMatch(c->name(c.method()).equals("getDeclaredMethod")||name(c.method()).equals("getMethod")))reflective=true;
             List<V> args=new ArrayList<>();if((method.getAccessFlags()&8)==0)args.add(V.of("unknown",type,"handler"));
             for(CharSequence p:method.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"handler_parameter"));
             Job job=new Job(method,args,outer.path,true);
             for(Call ref:summary.calls())if(name(ref.method()).equals("getDeclaredMethod")&&ref.args().size()==3&&registered!=null){
                 V clazz=eval(ref.args().get(0),job,h,0,new HashSet<>());V array=ref.args().get(2);
                 if(!clazz.kind().equals("class"))continue;
+                V selector=eval(ref.args().get(1),job,h,0,new HashSet<>());
+                if(selector.literal()!=null&&!selector.literal().equals(registered))continue;
+                reflective=true;
                 TreeMap<Integer,String> params=new TreeMap<>();
                 if(array.kind().equals("array"))for(int i=0;i<array.args().size();i++)if(array.args().get(i).kind().equals("class"))params.put(i,array.args().get(i).id());
                 for(Write w:summary.writes())if(w.field().startsWith("$element:")&&w.receiver().equals(array)){
@@ -446,6 +456,7 @@ final class CapabilityEngine {
     }
     Map<String,Object> hostReport(Host h){
         Map<String,Object> report=new LinkedHashMap<>();report.put("activity",h.activity);report.put("declared",apk.activities.contains(h.activity));
+        if(!h.serviceEvidence.isEmpty())report.put("service_bindings",new ArrayList<>(h.serviceEvidence.values()));
         List<Map<String,Object>> facts=new ArrayList<>(h.facts.values());report.put("facts",facts);
         Map<Object,Map<String,Object>> views=new LinkedHashMap<>();
         for(int i=0;i<facts.size();i++){

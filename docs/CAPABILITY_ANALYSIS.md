@@ -9,7 +9,9 @@ java -Xmx16g -XX:ActiveProcessorCount=8 -jar build/libs/webview_extractor-1.0-SN
 ```
 
 `capabilities.json` is atomically replaced during analysis and when the supervisor ends.
-Every Activity contains `facts`, plus `webviews` grouping those facts by object identity;
+Every Activity contains `facts`, plus `webviews` grouping those facts by symbolic receiver identity;
+Different symbolic IDs can still alias the same runtime WebView; current H5 helper/factory
+alias reconciliation is incomplete. Do not interpret group count as a count of distinct views.
 `capability_indices` indexes the enclosing Activity's facts without duplicating member lists.
 Facts include DEX signatures, registration names, implementation classes, settings values,
 client implementations, call/field evidence and explicit/candidate status. An explicit static
@@ -20,6 +22,13 @@ runtime state; conditional branches and later replacements can change the runtim
 A namespace registration is separate from its injected transport. The empty namespace is
 represented by an empty string, not a fabricated registration name. Unknown names and
 objects are retained. Native bridge removal and client removal are separate operations.
+
+For recognized QNRouter metadata, `service_bindings` records the exact lookup arguments,
+registration sites and implementation types. These bindings remain candidates: packaged metadata
+alone does not prove initialization, replacement order or successful runtime construction. A custom
+unresolved creator is not replaced with the registered default implementation. No arbitrary service
+subtype enumeration is used. Null/empty lookup qualifiers select the framework default, whereas
+empty registration keys remain distinct.
 
 A report can be partial even when every Manifest Activity was visited: unresolved entries,
 flow/context limits, parser errors and unsupported dynamic behavior remain material limits.

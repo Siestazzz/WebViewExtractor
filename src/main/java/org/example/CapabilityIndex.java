@@ -32,6 +32,7 @@ final class CapabilityIndex {
     static String shape(MethodReference m){return m.getName()+"("+String.join("",m.getParameterTypes())+")"+m.getReturnType();}
     static String field(FieldReference f){return f.getDefiningClass()+"->"+f.getName()+":"+f.getType();}
     static String display(MethodReference m){return cls(m.getDefiningClass())+"."+m.getName()+"("+String.join(",",m.getParameterTypes().stream().map(Object::toString).toList())+"):"+m.getReturnType();}
+    final FrameworkServices services=new FrameworkServices();
     void read(Path apk,long deadline) throws Exception {
         var container=DexFileFactory.loadDexContainer(apk.toFile(),Opcodes.getDefault());
         for(String name:container.getDexEntryNames())for(ClassDef c:container.getEntry(name).getDexFile().getClasses()){
@@ -66,6 +67,7 @@ final class CapabilityIndex {
         for(var e:new ArrayList<>(calls.entrySet()))for(String ref:new ArrayList<>(e.getValue())){
             Method m=resolve(ref);if(m!=null){String target=key(m);e.getValue().add(target);callers.computeIfAbsent(target,k->new HashSet<>()).add(e.getKey());}
         }
+        services.index(this,deadline);
         discoverMessageRegistries(deadline);
         for(var e:calls.entrySet())for(String ref:e.getValue())if(messageRegistries.containsKey(ref))seeds.add(e.getKey());
         // Abstract/interface dispatch candidates participate in reverse relevance, not just exact keys.

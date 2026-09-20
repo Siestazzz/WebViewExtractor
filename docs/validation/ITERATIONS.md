@@ -231,3 +231,56 @@
   QUALITY ACCEPTANCE NOT MET; no all-APK completeness claim.
 - Reproduce with the documented build, frozen v6 jar and benchmark script; run the three canonical
   evaluators. News uses v6-news-development-v2-evaluation.json for the expanded current oracle.
+
+## v7 — registered services, endpoint reflection boundaries, and independent object audit
+
+- Added QNRouter Class-key/qualifier/APIMeta service resolution. Only registered implementation
+  classes become candidates; unregistered subtypes do not. Queries preserve exact nonempty names,
+  normalize null/empty lookup names to the default, and retain an unknown result for unresolved
+  custom creators. Every used registration carries per-Activity `service_bindings` evidence and
+  explicit initialization/replacement/construction conditions. Runtime mutation ordering is not
+  proven and no candidate is promoted merely because a generated registration exists.
+- A known message handler's downstream business reflection no longer suppresses its real interface
+  endpoint. Fixed-class registered reflection still distinguishes an existing endpoint from a
+  proven empty surface. This restores Mango's `checkUpdate` endpoint without exporting its body.
+- New DEX fixtures check metadata resolution, unregistered subtype/qualifier exclusion, null/empty
+  lookup keys, custom creator uncertainty, and business-reflection separation. JVM fixtures and all
+  five evaluator tests pass. Updated usage distinguishes the default engine from `--legacy`.
+- v7a exploratory full runs: news91.87s, mango85.89s, ctrip124.97s. After Sol's qualifier/creator
+  review, frozen v7 full serial runs: news91.99s, mango86.52s, ctrip128.40s. All use fresh JVMs,
+  eight logical CPUs and16GiB heap. Peak RSS respectively7842432/7902252/7638324KiB. All reports
+  remain partial. These are development measurements, not final isolated three-repeat acceptance.
+
+| App | Bridge | Settings | Callbacks |
+|---|---:|---:|---:|
+| news | 1264/1365 (92.60%) | 275/338 (81.36%) | 193/228 (84.65%) |
+| mango | 1137/1153 (98.61%) | 519/526 (98.67%) | 584/591 (98.82%) |
+| ctrip | 3666/3666 (100%) | 233/233 (100%) | 299/299 (100%) |
+
+- News uses the same28-host expanded public oracle as v6. Four newly emitted YSP hosts and the
+  recovered provider edge were independently source-verified. The long-video host-to-inherited
+  controller path, four YSP message handlers per reached host, and AdCore transports remain gaps.
+- Ownership review itself was corrected: the older MobileQQ/Qzone `wrong` labels incorrectly
+  required the SDK WebView to escape into an Activity field. Source confirms actual
+  `new TDialog(activity,...).show()` with the same Activity. Such displayed Dialogs count as host
+  capabilities. Original v7a labels are preserved; the independent supplement and v7 ownership
+  record33 valid/1 wrong/0 uncertain (1/34=2.94%). Hippy's unsupported inherited-method expansion
+  remains wrong. This evidence correction is not an Activity-name production exception.
+- Mango's82 hosts are unchanged (77 valid/5 uncertain,6.10% upper bound); Ctrip's55 are unchanged
+  (54 valid/1 wrong,1.82%). These ownership numbers do not measure capability binding precision.
+- Independent four-host Ctrip object audit found a material defect despite100% Activity-level
+  recall: old H5's one runtime WebView is split into nine symbolic IDs, newer H5's cache/fresh
+  alternatives and helper aliases are duplicated, and nullability can appear as a receiver
+  alternative. Unknown collection summaries also create duplicate unresolved Bridge candidates.
+  These findings remain open; raw symbolic group count must not be read as a runtime view count.
+- Source-verified Loading/RainbowBridge commit semantics are now documented: pending clazz entries,
+  nonempty inject clears/replaces the active registry, simple-name collisions, and exact public
+  static declared-method filtering. Its14 known endpoints plus dynamic registration remain missed.
+- Other residuals: settings/callback gaps, false inherited entrypoint expansion, object aliasing,
+  dynamic uncertainty, full negative/multi-WebView tests, on-demand Soot fallback, >=30 deeply
+  checked News positives, final fresh holdouts, and three-repeat performance validation.
+  QUALITY ACCEPTANCE NOT MET. No APK-wide completeness claim.
+- Reproduce: build per docs/CAPABILITY_ANALYSIS.md, freeze the jar, run
+  `python3 scripts/benchmark.py --label v7 --jar test/runs/v7.jar`, then scripts/evaluate.py with
+  the three canonical JSONL files and news/v7-ownership.jsonl, mango/v6-ownership.jsonl,
+  ctrip/v4e-ownership.jsonl. Exact commands, hashes, resource usage and replays are retained.

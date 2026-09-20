@@ -1,0 +1,79 @@
+[
+  {
+    "activity": "com.tencent.news.share.activity.MobileQQActivity",
+    "previous_verdict": "wrong",
+    "revised_verdict": "valid",
+    "scope": "conditional SDK Dialog WebView capability",
+    "reason_for_change": "The project ownership definition includes a Dialog WebView actually invoked and displayed by the Activity. Lack of a field write-back to the Activity is not disqualifying.",
+    "activity_to_sdk_chain": [
+      "Lcom/tencent/news/share/activity/MobileQQActivity;->ʼ(Lcom/tencent/news/share/content/ShareContentObj;)V",
+      "Lcom/tencent/news/share/channel/b;->ʾ(Lcom/tencent/news/share/content/ShareContentObj;)Z",
+      "Lcom/tencent/news/share/channel/b;->ʿ(Landroid/os/Bundle;)Z",
+      "Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V"
+    ],
+    "activity_identity": "MobileQQActivity constructs channel.b with `this`; b stores it in f98059 and passes the same value as the Activity argument to Tencent.shareToQQ.",
+    "execution_condition": "share content is accepted, Tencent is non-null, and Util.isSupportShareToQQ(activity, cflag == 1) is false. QQShare then executes new TDialog(activity, ...).show(); RuntimeException is caught only if show cannot run on the main thread.",
+    "dialog_chain": [
+      "Lcom/tencent/open/TDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V",
+      "Landroid/app/Dialog;->show()V",
+      "Lcom/tencent/open/TDialog;->onCreate(Landroid/os/Bundle;)V",
+      "Lcom/tencent/open/TDialog;->a()V",
+      "Lcom/tencent/open/TDialog;->i:Lcom/tencent/open/d/b;",
+      "Lcom/tencent/open/d/b;->a()V"
+    ],
+    "first_fact_verdict": "valid_conditional",
+    "first_fact": "Lcom/tencent/open/d/b;->a()V@15 removes accessibilityTraversal",
+    "source_evidence": [
+      "MobileQQActivity.java:249-262",
+      "news/share/channel/b.java:30-40,73-88",
+      "Tencent.java:659-670",
+      "QQShare.java:162-171",
+      "TDialog.java:208-220,237-253",
+      "com/tencent/open/d/b.java:12-24"
+    ]
+  },
+  {
+    "activity": "com.tencent.news.share.activity.QzoneShareActivity",
+    "previous_verdict": "wrong",
+    "revised_verdict": "valid",
+    "scope": "conditional SDK Dialog WebView capability",
+    "reason_for_change": "Both the direct Qzone download-dialog branch and the QQShare fallback use the same QzoneShareActivity instance and call show(). This satisfies the Dialog component ownership definition.",
+    "activity_to_sdk_chain": [
+      "Lcom/tencent/news/share/activity/QzoneShareActivity;->ʻ(Lcom/tencent/news/share/content/ShareContentObj;)V",
+      "Lcom/tencent/news/share/channel/c;->ʾ(Lcom/tencent/news/share/content/ShareContentObj;)Z",
+      "Lcom/tencent/news/share/channel/c;->ˋ(Landroid/os/Bundle;)Z",
+      "Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V"
+    ],
+    "activity_identity": "QzoneShareActivity constructs channel.c with `this`; inherited channel.b stores it in f98059, and c passes that exact Activity to Tencent.shareToQzone.",
+    "execution_condition": "After valid share parameters: one branch for an unsupported QQ version executes new TDialog(activity,...).show() directly; for QQ versions between 4.2.0 and 4.6.0 the SDK constructs QQShare(activity, token) and calls shareToQQ(activity,...), whose unsupported-native-share branch also executes new TDialog(activity,...).show().",
+    "dialog_chain": [
+      "Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "Lcom/tencent/open/TDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/tauth/IUiListener;Lcom/tencent/connect/auth/QQToken;)V",
+      "Landroid/app/Dialog;->show()V",
+      "Lcom/tencent/open/TDialog;->onCreate(Landroid/os/Bundle;)V",
+      "Lcom/tencent/open/TDialog;->a()V",
+      "Lcom/tencent/open/TDialog;->i:Lcom/tencent/open/d/b;",
+      "Lcom/tencent/open/d/b;->a()V"
+    ],
+    "first_fact_verdict": "valid_conditional",
+    "first_fact": "Lcom/tencent/open/d/b;->a()V@15 removes accessibilityTraversal",
+    "source_evidence": [
+      "QzoneShareActivity.java:188-202",
+      "news/share/channel/c.java:52-93",
+      "Tencent.java:672-676",
+      "QzoneShare.java:466-488",
+      "QQShare.java:162-171",
+      "TDialog.java:208-220,237-253",
+      "com/tencent/open/d/b.java:12-24"
+    ]
+  },
+  {
+    "activity": "com.tencent.news.hippy.ui.detail.HippyDetailActivity",
+    "previous_verdict": "wrong",
+    "revised_verdict": "wrong",
+    "reason": "Unchanged: the v7a chain jumps from constructing an H5JsApiScriptInterface subclass to an inherited business method without a real invoke or modeled dispatch. No Dialog show path repairs that edge."
+  }
+]

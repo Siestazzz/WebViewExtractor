@@ -1,0 +1,59 @@
+[
+  {
+    "activity": "com.tencent.news.hippy.ui.detail.HippyDetailActivity",
+    "first_wrong_fact": {
+      "kind": "bridge_removal",
+      "site": "Lcom/tencent/news/webview/NewsWebView;->removeAllJavascriptInterface()V@20",
+      "api": "Lcom/tencent/smtt/sdk/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+      "receiver_type": "Lcom/tencent/news/webview/NewsWebView;",
+      "receiver_id": "0"
+    },
+    "first_unsupported_edge": {
+      "caller": "Lcom/tencent/news/hippy/ui/detail/a;-><init>(Lcom/tencent/news/ui/AbsDetailCommentActivity;)V",
+      "callee": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showRankIntroduceDialog(Lorg/json/JSONObject;)Z",
+      "reported_transition": "constructor @6 -> inherited private business method",
+      "object_source": "HippyDetailActivity.initListener allocates hippy.ui.detail.a, a subclass of H5JsApiScriptInterface; no JSONObject call argument and no invocation of showRankIntroduceDialog exists in the constructor",
+      "why_wrong": "Subtype/superclass membership was treated as executable reachability. Constructing a subclass does not execute every inherited method, and therefore cannot transfer ownership to WebViews allocated by those methods.",
+      "actual_owner": "The NewsWebView is field Lcom/tencent/news/ui/medal/view/dialog/c;->ˑˑ and belongs to the medal dialog instance created only on an actual showRankIntroduceDialog call; its unique Activity caller is not established by this evidence chain."
+    },
+    "general_rule": "Do not add arbitrary instance methods of a constructed object's superclass to the call graph. Require an invoke instruction or a modeled callback/reflective dispatch with matching selector and receiver."
+  },
+  {
+    "activity": "com.tencent.news.share.activity.MobileQQActivity",
+    "first_wrong_fact": {
+      "kind": "bridge_removal",
+      "site": "Lcom/tencent/open/d/b;->a()V@15",
+      "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+      "receiver_type": "Lcom/tencent/open/d/b;",
+      "receiver_id": "Lcom/tencent/open/TDialog;->a()V@25|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@809|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@39"
+    },
+    "first_unsupported_edge": {
+      "caller": "Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "callee": "Lcom/tencent/open/TDialog;->a()V",
+      "reported_transition": "SDK share call internal TDialog allocation/field -> TDialog WebView initialization",
+      "object_source": "QQShare conditionally executes new TDialog(activity, ...).show() when the installed QQ version cannot perform native sharing; TDialog owns field Lcom/tencent/open/TDialog;->i:Lcom/tencent/open/d/b;",
+      "why_wrong": "The application Activity is only a Context/launch parameter to an SDK call. Propagating Activity WebView ownership into every object allocated inside that SDK method confuses call reachability with receiver ownership; the WebView is stored on TDialog and is never returned to or stored by MobileQQActivity.",
+      "actual_owner": "com.tencent.open.TDialog (SDK dialog); no manifest Activity owner for its internal WebView"
+    },
+    "general_rule": "Across library calls, do not attribute callee-internal WebView allocations to a caller merely because the caller passes itself as Context/Activity. Require return flow, field assignment on the caller, view-tree attachment proved to the caller, or an explicit owned-wrapper contract."
+  },
+  {
+    "activity": "com.tencent.news.share.activity.QzoneShareActivity",
+    "first_wrong_fact": {
+      "kind": "bridge_removal",
+      "site": "Lcom/tencent/open/d/b;->a()V@15",
+      "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+      "receiver_type": "Lcom/tencent/open/d/b;",
+      "receiver_id": "Lcom/tencent/open/TDialog;->a()V@25|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@809|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1032"
+    },
+    "first_unsupported_edge": {
+      "caller": "Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "callee": "Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V",
+      "reported_transition": "Qzone SDK fallback -> QQShare; later QQShare internal TDialog WebView",
+      "object_source": "The fallback passes the application Activity as an argument; QQShare may allocate its own TDialog, whose field i is com.tencent.open.d.b",
+      "why_wrong": "Even if the SDK fallback call is control-flow valid, neither that edge nor the Activity parameter transfers ownership of the downstream TDialog field to QzoneShareActivity. The WebView has no return/field/view-tree path back to the application Activity.",
+      "actual_owner": "com.tencent.open.TDialog (SDK dialog); no manifest Activity owner for its internal WebView"
+    },
+    "general_rule": "Keep control reachability and ownership provenance separate through fallback/delegate chains. Context arguments are not ownership tokens; require a concrete backward object-flow path from the WebView receiver to an Activity-owned field, return, or attached view."
+  }
+]

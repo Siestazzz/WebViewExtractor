@@ -1,0 +1,37 @@
+{
+  "activity": "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity",
+  "status": "missing_host",
+  "first_missing_capability": {
+    "kind": "setting",
+    "name": "setMixedContentMode",
+    "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+    "implementation": "com.tencent.news.webview.BaseWebView"
+  },
+  "first_broken_edge": {
+    "category": "activity_owned_allocation_to_inherited_player_controller",
+    "caller": "Lcom/tencent/news/video/detail/longvideo/LongVideoDetailActivity;->onViewCreated(Lcom/tencent/news/video/detail/longvideo/a;Landroid/view/View;)V",
+    "allocation": "Lcom/tencent/news/video/detail/longvideo/services/e;-><init>(Landroid/content/Context;Lcom/tencent/news/video/TNVideoView;Landroid/view/View;Landroid/view/View;Landroid/view/View;Lcom/tencent/news/share/p;Lkotlin/jvm/functions/a;Lcom/tencent/news/kkvideo/detail/longvideo/l;Lcom/tencent/news/video/detail/longvideo/n0;Lcom/tencent/news/video/interceptor/o;Z)V",
+    "inheritance": [
+      "Lcom/tencent/news/video/detail/longvideo/services/e;",
+      "Lcom/tencent/news/video/detail/longvideo/services/i;",
+      "Lcom/tencent/news/qnplayer/h0;"
+    ],
+    "controller_accessor": "Lcom/tencent/news/qnplayer/h0;->ˆˑ()Lcom/tencent/news/video/n2;",
+    "explanation": "Preserve the Activity-owned allocation identity across superclass methods; treat an inherited controller accessor on that allocated receiver as belonging to the Activity player composition."
+  },
+  "already_supported_suffix": [
+    "Lcom/tencent/news/video/VideoPlayManager;->setVideoParams(Lcom/tencent/news/model/pojo/VideoParams;)V",
+    "Lcom/tencent/news/qnrouter/service/ServiceMapGenL4qnplayer;->init()V",
+    "Lcom/tencent/news/ysp/YspPlayerService;->ʻ()Lcom/tencent/news/ysp/a;",
+    "Lcom/tencent/news/ysp/YspMediaPlayer;->ʽ(Landroid/content/Context;Landroid/view/ViewGroup;)V"
+  ],
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/LongVideoDetailActivity.java:111-123",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/services/e.java:104-145",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/detail/longvideo/services/i.java:19,59,205",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/video/VideoPlayManager.java:3280-3304",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/qnrouter/service/ServiceMapGenL4qnplayer.java:24-31",
+    "test/decompiled/com.tencent.news/sources/com/tencent/news/ysp/YspPlayerService.java:21-24"
+  ],
+  "holdout_used": false
+}

@@ -1,0 +1,88 @@
+{
+  "map_key": {
+    "outer": "first Class argument to ServiceMap.autoRegister, converted with Class.getName()",
+    "inner": "implName string",
+    "implementation": "second Class argument to APIMeta",
+    "apimeta_first_class_is_not_lookup_authority": true
+  },
+  "qualifier_protocol": {
+    "call_class": "_default_impl_",
+    "get_class": "_default_impl_",
+    "get_string": "_default_impl_",
+    "lookup_null": "_default_impl_",
+    "lookup_empty": "_default_impl_",
+    "lookup_nonempty": "exact, no fallback",
+    "register_null_or_empty_stored_as": "",
+    "empty_registration_is_default": false
+  },
+  "missing_behavior": {
+    "get": "returns null",
+    "call": "non-null assertion fails",
+    "safeCall": "suppresses failure",
+    "safeGet": "returns caller default",
+    "module_only": "requests dynamic module through listener and returns null without synchronous retry"
+  },
+  "replacement": {
+    "autoRegister_release_init_false": "last executed registration replaces same API+qualifier",
+    "autoRegister_debug_true": "duplicate throws IllegalStateException",
+    "Services_register": "always replaces same API+qualifier and module mapping",
+    "unregister": "removes all qualifiers and module mapping for service name"
+  },
+  "creation": {
+    "default": "first declared constructor of exact APIMeta implementation, accessible, zero arguments",
+    "custom_lookup_creator": "overrides APIMeta creator for that lookup",
+    "singleton_true": "cache on APIMeta",
+    "singleton_false": "new instance per lookup",
+    "exception": "caught; resolver returns null"
+  },
+  "initialization": {
+    "application_entry": "Lcom/tencent/news/system/BaseApplication;->attachBaseContext(Landroid/content/Context;)V",
+    "services_init": "Lcom/tencent/news/qnrouter/service/Services;->init(Z)V",
+    "loader": "Lcom/tencent/news/qnrouter/Loader;->init()V",
+    "packaged_debug_flag": false,
+    "normal_path": "BaseApplication -> Services.init(false) -> reflective Loader.init -> RouterEntry.init -> ServiceMapGen.init -> autoRegister",
+    "conditions": [
+      "QFix may replace application, RouterEntry, or generated init bodies",
+      "reflection/init failure prevents some or all registrations",
+      "dynamic module request is asynchronous with respect to current lookup"
+    ]
+  },
+  "classification": {
+    "confirmed": "constant API+qualifier, exact registration, packaged RouterEntry reachable",
+    "conditional": "QFix/replacement ordering or other explicit runtime condition",
+    "candidate": "dynamic key, unproven initialization, module-only mapping, or unresolved custom APICreator",
+    "no_binding": "nonempty constant qualifier has no exact key"
+  },
+  "rule_risks": [
+    "normalizing empty registration key to default",
+    "ignoring explicit qualifier",
+    "enumerating all API subtypes",
+    "assuming every generated map is initialized",
+    "merging overwritten duplicate registrations",
+    "modeling dynamic module request as synchronous return",
+    "ignoring lookup APICreator",
+    "propagating a service implementation to hosts without call-site key and state proof"
+  ],
+  "verified_methods": [
+    "Lcom/tencent/news/qnrouter/service/ServiceMap;->autoRegister(Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APIMeta;)V",
+    "Lcom/tencent/news/qnrouter/service/ServiceMap;->register(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APIMeta;)V",
+    "Lcom/tencent/news/qnrouter/service/Services;->call(Ljava/lang/Class;)Ljava/lang/Object;",
+    "Lcom/tencent/news/qnrouter/service/Services;->call(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+    "Lcom/tencent/news/qnrouter/service/Services;->get(Ljava/lang/Class;)Ljava/lang/Object;",
+    "Lcom/tencent/news/qnrouter/service/Services;->get(Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APICreator;)Ljava/lang/Object;",
+    "Lcom/tencent/news/qnrouter/service/Services;->init(Z)V",
+    "Lcom/tencent/news/qnrouter/Loader;->init()V",
+    "Lcom/tencent/news/qnrouter/utils/CheckDuplicateConcurrentHashMap;->putWithCheck(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;"
+  ],
+  "evidence": [
+    "sources/com/tencent/news/qnrouter/service/Services.java:33-57,76-79,88-154,185-246,284-373",
+    "sources/com/tencent/news/qnrouter/service/ServiceMap.java:20-97",
+    "sources/com/tencent/news/qnrouter/service/APIMeta.java:8-62",
+    "sources/com/tencent/news/qnrouter/utils/CheckDuplicateConcurrentHashMap.java:7-17",
+    "sources/com/tencent/news/qnrouter/utils/g.java:9-39",
+    "sources/com/tencent/news/system/BaseApplication.java:284-305",
+    "sources/com/tencent/news/qnrouter/Loader.java:1-309",
+    "sources/com/tencent/news/L4qnplayer/RouterEntry.java:18-24",
+    "sources/com/tencent/news/qnrouter/service/ServiceMapGenL4qnplayer.java:21-30"
+  ]
+}
