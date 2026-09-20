@@ -51,7 +51,7 @@ public class Main {
         long[] checkpoint={System.nanoTime()};int processed=0;
         engine.checkpoint=()->{
             long now=System.nanoTime();if(now-checkpoint[0]<10_000_000_000L)return;
-            metrics.put("decoded_methods",engine.flow.decoded);metrics.put("elapsed_seconds",(now-start)/1e9);
+            metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);metrics.put("elapsed_seconds",(now-start)/1e9);
             try{write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));}catch(IOException ex){throw new UncheckedIOException(ex);}
             checkpoint[0]=System.nanoTime();
         };
@@ -60,10 +60,10 @@ public class Main {
         write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
         for(String activity:roots){
             if(System.nanoTime()>deadline)break;
-            engine.analyzeActivity(activity);processed++;metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);
+            engine.analyzeActivity(activity);processed++;metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);
             if(System.nanoTime()-checkpoint[0]>10_000_000_000L){engine.checkpoint.run();System.out.println("Progress: "+processed+"/"+roots.size()+" activities="+engine.activities.size()+" decoded="+engine.flow.decoded);}
         }
-        metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);
+        metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);
         String status=processed==roots.size()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
         write(out.resolve("capabilities.json"),engine.report(hash,status,metrics));
     }

@@ -145,9 +145,11 @@ for lineno, line in enumerate(imgo.read_text(errors="replace").splitlines(), 1):
             "com.mgtv.h5.ImgoWebJavascriptImpl" if target_confirmed else None,
             f"void {name}(String str)" if target_confirmed else "",
             f"com/hunantv/imgo/h5/ImgoWebView.java:{lineno} -> com/mgtv/h5/ImgoWebJavascriptImpl.java:732-758",
-            "confirmed" if target_confirmed else "registered-target-unknown")
+            "confirmed" if target_confirmed else "registered-no-compatible-endpoint")
         facts[-1]['registration_name']=name
         facts[-1]['registration_expression']=expr
+        if not target_confirmed:
+            facts[-1]['audit_reference']='docs/validation/mango/imgo-unknown-handler-audit.md'
 
 add("com.hunantv.imgo.xweb.XWebActivity","com.hunantv.imgo.xweb.jsbridge.BridgeWebView","bridge","jsobj","callNative","com.hunantv.imgo.xweb.jsbridge.JSInterface#callNative","public void callNative(String str, String str2, String str3)","com/hunantv/imgo/xweb/jsbridge/BridgeWebView.java:292 -> com/hunantv/imgo/xweb/jsbridge/JSInterface.java:18-19")
 
@@ -185,7 +187,7 @@ for x in facts:
                 x['bridge_method']=''
                 x['signature']=''
                 x['implementation']=None
-                x['binding_status']='registered-target-unknown'
+                x['binding_status']='registered-no-compatible-endpoint' if x.get('audit_reference') else 'registered-target-unknown'
         elif x['name']=='jsobj':
             ret='Ljava/lang/String;' if 'String callNative' in x['signature'] else 'V'
             owner='com/hunantv/imgo/h5/jsbridge/BridgeWebView$JsObject' if ret!='V' else 'com/hunantv/imgo/xweb/jsbridge/JSInterface'
@@ -284,7 +286,7 @@ Unknown means unknown. JADX failures, obfuscated constants, unresolved generated
 ''')
 
 complete=set(imgo_hosts)|{"com.mgtv.ui.other.BackDoorWebActivity","com.mgtv.diana.sdk.api.pay.WechatWapPayRouterActivity","com.ccb.ccbnetpay.H5PayActivity","com.sina.weibo.sdk.web.WebActivity"}
-expanded={"com.mgsz.h5.WebContainerActivity","com.hunantv.imgo.xweb.XWebActivity","com.mgtb.money.web.ThirdWebActivity","com.mgtb.money.web.ThirdFullWebActivity","com.alipay.sdk.app.H5AuthActivity","com.alipay.sdk.app.H5OpenAuthActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity","com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity","com.opos.mobad.ui.feedback.FeedBackWebViewActivity","com.opos.cmn.module.ui.WebViewActivity","com.platform.oms.ui.LoadingWebActivity"}
+expanded={"com.mgsz.h5.WebContainerActivity","com.hunantv.imgo.xweb.XWebActivity","com.mgtb.money.web.ThirdWebActivity","com.mgtb.money.web.ThirdFullWebActivity","com.alipay.sdk.app.H5AuthActivity","com.alipay.sdk.app.H5OpenAuthActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity","com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity","com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity","com.opos.mobad.ui.feedback.FeedBackWebViewActivity","com.opos.cmn.module.ui.WebViewActivity","com.platform.oms.ui.LoadingWebActivity","com.mgtv.ui.live.mglive.webview.WebViewActivity","com.imgo.vipcardiac.activity.LandWebActivity","com.mgadplus.brower.CustomWebActivity","com.huawei.petalpaysdk.webpay.PayWebviewActivity","com.ubix.ssp.open.comm.UBiXWebViewActivity"}
 complete|=expanded
 with (OUT/"coverage.jsonl").open("w") as f:
     for a,layer,w,ev in activities:

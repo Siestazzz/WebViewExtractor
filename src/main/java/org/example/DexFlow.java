@@ -19,15 +19,19 @@ final class DexFlow {
     static final V UNKNOWN=V.of("unknown",null,"unknown");
     final CapabilityIndex idx;
     final Map<String,Summary> cache=new HashMap<>();
+    record Refinement(List<V> probes,List<V> values,Summary summary) {}
+    final Map<String,List<Refinement>> refinements=new HashMap<>();
+    final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>();
     final long deadline;
-    int decoded;
+    int decoded,refined;
     DexFlow(CapabilityIndex i,long deadline){idx=i;this.deadline=deadline;}
     static V union(V a,V b){
         if(a==null)return b;if(b==null||a.equals(b))return a;
         if(a.equals(UNKNOWN)||b.equals(UNKNOWN))return UNKNOWN;
         Set<V> vs=new LinkedHashSet<>();if(a.kind.equals("union"))vs.addAll(a.args);else vs.add(a);if(b.kind.equals("union"))vs.addAll(b.args);else vs.add(b);
         if(vs.size()>12)return UNKNOWN;
-        return new V("union",Objects.equals(a.type,b.type)?a.type:null,"union",null,List.copyOf(vs));
+        String identity=vs.stream().map(v->v.kind+":"+v.type+":"+v.id).sorted().reduce("",(x,y)->x+"|"+y);
+        return new V("union",Objects.equals(a.type,b.type)?a.type:null,"union:"+UUID.nameUUIDFromBytes(identity.getBytes(java.nio.charset.StandardCharsets.UTF_8)),null,List.copyOf(vs));
     }
     static List<V> alternatives(V v){return v.kind.equals("union")?v.args:List.of(v);}
     static V expr(String kind,String type,String id,List<V> args){
@@ -39,7 +43,25 @@ final class DexFlow {
         String key=CapabilityIndex.key(m);Summary old=cache.get(key);if(old!=null)return old;
         Summary result=decode(m);cache.put(key,result);decoded++;return result;
     }
-    Summary decode(Method m){
+    Summary summary(Method m,java.util.function.UnaryOperator<V> resolver){
+        Summary base=summary(m);if(!base.branched())return base;
+        String key=CapabilityIndex.key(m);
+        if(checkedRefinement.add(key)){
+            int count=0;boolean typeGuard=false;
+            for(Instruction instruction:m.getImplementation().getInstructions()){count++;if(instruction.getOpcode()==org.jf.dexlib2.Opcode.INSTANCE_OF)typeGuard=true;}
+            if(typeGuard&&count<=500)refinable.add(key);
+        }
+        if(!refinable.contains(key))return base;
+        List<Refinement> variants=refinements.computeIfAbsent(key,k->new ArrayList<>());
+        for(Refinement variant:variants){boolean matches=true;for(int i=0;i<variant.probes.size();i++)if(!Objects.equals(resolver.apply(variant.probes.get(i)),variant.values.get(i))){matches=false;break;}if(matches)return variant.summary;}
+        // Retain the conservative summary when specialization would exceed its budget.
+        if(variants.size()>=16)return base;
+        List<V> probes=new ArrayList<>(),values=new ArrayList<>();
+        refined++;Summary result=decode(m,v->{V resolved=resolver.apply(v);probes.add(v);values.add(resolved);return resolved;});
+        variants.add(new Refinement(List.copyOf(probes),List.copyOf(values),result));return result;
+    }
+    Summary decode(Method m){return decode(m,v->v);}
+    Summary decode(Method m,java.util.function.UnaryOperator<V> resolver){
         MethodImplementation impl=m.getImplementation();if(impl==null)return new Summary(List.of(),List.of(),List.of(),false,false);
         List<Instruction> ins=new ArrayList<>();List<Integer> offsets=new ArrayList<>();Map<Integer,Integer> positions=new HashMap<>();int off=0;
         for(Instruction i:impl.getInstructions()){positions.put(off,ins.size());offsets.add(off);ins.add(i);off+=i.getCodeUnits();}
@@ -77,6 +99,11 @@ final class DexFlow {
             else if(op.startsWith("filled-new-array")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t){List<V> values=registers(in).stream().map(n->s.getOrDefault(n,UNKNOWN)).toList();s.put(-1,expr("array",t.getType(),key+"@"+at,values));}
             else if(op.startsWith("aget")&&in instanceof ThreeRegisterInstruction three)output=expr("array_element",null,"array_element",List.of(s.getOrDefault(three.getRegisterB(),UNKNOWN)));
             else if(op.startsWith("aput")&&in instanceof ThreeRegisterInstruction three)writes.add(new Write("$element:"+s.getOrDefault(three.getRegisterC(),UNKNOWN).literal(),s.getOrDefault(three.getRegisterB(),UNKNOWN),s.getOrDefault(a,UNKNOWN)));
+            else if(op.equals("instance-of")&&in instanceof TwoRegisterInstruction two&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t){
+                V value=resolver.apply(s.getOrDefault(two.getRegisterB(),UNKNOWN));
+                if(value.kind().equals("literal")&&"0".equals(value.literal()))output=V.literal("number","0");
+                else if(Set.of("host","object","new","class").contains(value.kind())&&value.type()!=null)output=V.literal("number",idx.subtype(value.type(),CapabilityIndex.cls(t.getType()))?"1":"0");
+            }
             else if(op.equals("check-cast")&&in instanceof ReferenceInstruction r&&r.getReference() instanceof TypeReference t)output=expr("cast",CapabilityIndex.cls(t.getType()),"cast",List.of(s.getOrDefault(a,UNKNOWN)));
             else if(in instanceof ReferenceInstruction r&&r.getReference() instanceof FieldReference f){
                 String field=CapabilityIndex.field(f);V receiver=op.startsWith("s")?V.of("static",CapabilityIndex.cls(f.getDefiningClass()),f.getDefiningClass()):in instanceof TwoRegisterInstruction two?s.getOrDefault(two.getRegisterB(),UNKNOWN):UNKNOWN;
@@ -103,7 +130,10 @@ final class DexFlow {
             if(op.startsWith("return")&&!op.equals("return-void"))returns=union(returns,s.getOrDefault(a,UNKNOWN));
             List<Integer> next=new ArrayList<>();
             if(op.startsWith("goto")&&in instanceof OffsetInstruction jump){Integer p=positions.get(at+jump.getCodeOffset());if(p!=null)next.add(p);}
-            else if(op.startsWith("if-")&&in instanceof OffsetInstruction jump){branched=true;Integer p=positions.get(at+jump.getCodeOffset());if(p!=null)next.add(p);if(pc+1<ins.size())next.add(pc+1);}
+            else if(op.startsWith("if-")&&in instanceof OffsetInstruction jump){
+                branched=true;V left=resolver.apply(s.getOrDefault(a,UNKNOWN));V right=in instanceof TwoRegisterInstruction two?resolver.apply(s.getOrDefault(two.getRegisterB(),UNKNOWN)):V.literal("number","0");
+                Boolean decision=condition(op,left,right);Integer p=positions.get(at+jump.getCodeOffset());if(!Boolean.FALSE.equals(decision)&&p!=null)next.add(p);if(!Boolean.TRUE.equals(decision)&&pc+1<ins.size())next.add(pc+1);
+            }
             else if((op.equals("packed-switch")||op.equals("sparse-switch"))&&in instanceof OffsetInstruction jump){
                 branched=true;Integer payload=positions.get(at+jump.getCodeOffset());if(payload!=null&&ins.get(payload) instanceof SwitchPayload sw)for(var e:sw.getSwitchElements()){Integer p=positions.get(at+e.getOffset());if(p!=null)next.add(p);}if(pc+1<ins.size())next.add(pc+1);
             }else if(in.getOpcode().canContinue()&&pc+1<ins.size())next.add(pc+1);
@@ -111,6 +141,18 @@ final class DexFlow {
             for(int p:handlers.getOrDefault(pc,List.of())){branched=true;if(merge(states,p,before))work.add(p);}
         }
         return new Summary(List.copyOf(calls.values()),List.copyOf(writes),returns==null?List.of():alternatives(returns),branched,truncated);
+    }
+    static Boolean condition(String op,V left,V right){
+        Long a=number(left),b=number(right);
+        if(a==null||b==null)return null;
+        if(op.startsWith("if-eq"))return a.longValue()==b.longValue();if(op.startsWith("if-ne"))return a.longValue()!=b.longValue();
+        if(op.startsWith("if-lt"))return a<b;if(op.startsWith("if-le"))return a<=b;if(op.startsWith("if-gt"))return a>b;if(op.startsWith("if-ge"))return a>=b;return null;
+    }
+    static Long number(V v){
+        if(!v.kind().equals("literal"))return null;
+        if("true".equals(v.literal()))return 1L;if("false".equals(v.literal()))return 0L;
+        if(!Set.of("number","boolean").contains(v.type()))return null;
+        try{return Long.valueOf(v.literal());}catch(NumberFormatException ex){return null;}
     }
     static boolean merge(List<Map<Integer,V>> states,int p,Map<Integer,V> s){
         Map<Integer,V> old=states.get(p);if(old==null){states.set(p,new HashMap<>(s));return true;}

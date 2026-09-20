@@ -31,7 +31,7 @@ for row in bridges:
         assert row.get("normalized_signature") == endpoint, row
         assert row.get("implementation"), row
         assert row.get("symbol_status") == "confirmed", row
-    if row.get("binding_status") == "registered-target-unknown":
+    if row.get("binding_status") in {"registered-target-unknown", "registered-no-compatible-endpoint"}:
         assert not row.get("bridge_method"), row
         assert not row.get("normalized_signature"), row
         assert not row.get("signature"), row
@@ -45,7 +45,7 @@ imgo_hosts = {
 }
 imgo = [row for row in bridges if row["activity"] in imgo_hosts and row["value"] == "registered"]
 assert len(imgo) == 966, len(imgo)
-assert Counter(row["binding_status"] for row in imgo) == {"confirmed": 910, "registered-target-unknown": 56}
+assert Counter(row["binding_status"] for row in imgo) == {"confirmed": 910, "registered-no-compatible-endpoint": 56}
 
 ccb = [row for row in bridges if row["activity"] == "com.ccb.ccbnetpay.H5PayActivity"]
 assert len(ccb) == 3
@@ -55,5 +55,5 @@ assert {row["value"] for row in ccb} == {"object_registered", "sdkCallBack", "sh
 print(json.dumps({
     "bridge_rows": len(bridges), "dex_endpoints": len(targets),
     "imgo_registrations": len(imgo), "imgo_confirmed": 910,
-    "imgo_unknown_retained": 56, "ccb_rows": len(ccb),
+    "imgo_no_compatible_endpoint_retained": 56, "ccb_rows": len(ccb),
 }, sort_keys=True))

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+  "selected_output_fact_index": 295,
+  "selected_fact": {
+    "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+    "kind": "callback_removal",
+    "name": "setWebChromeClient",
+    "site": "Lcom/tencent/news/video/auth/webview/TencentVideoWebView;->init()V@15",
+    "api": "Lcom/tencent/smtt/sdk/WebView;->setWebChromeClient(Lcom/tencent/smtt/sdk/WebChromeClient;)V",
+    "webview": {
+      "id": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showRankIntroduceDialog(Lorg/json/JSONObject;)Z@50|Lcom/tencent/news/webview/jsapi/JsApiServiceImpl;->createDefaultJsApiScriptInterface(Landroid/app/Activity;Lcom/tencent/news/webview/api/WebViewBridge;)Lcom/tencent/news/webview/jsapi/IJsApiScriptInterface;@16|union:7ae2bf61-56c5-342f-b907-add922e1651c::Lcom/tencent/news/ui/medal/view/dialog/c;->ˑˑ:Lcom/tencent/news/webview/NewsWebView;",
+      "type": "com.tencent.news.webview.NewsWebView"
+    },
+    "binding_status": "candidate",
+    "conditional": true,
+    "evidence": [
+      "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity;->getScriptInterface()Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+      "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity;->getScriptInterface()Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;@31",
+      "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showRankIntroduceDialog(Lorg/json/JSONObject;)Z",
+      "Lcom/tencent/news/framework/list/model/topic/a;-><init>()V",
+      "Lcom/tencent/news/framework/list/model/topic/a;-><init>()V@0",
+      "Lcom/tencent/news/ui/medal/view/dialog/c;->ˋ()V",
+      "Lcom/tencent/news/webview/jsapi/JsApiServiceImpl;->createDefaultJsApiScriptInterface(Landroid/app/Activity;Lcom/tencent/news/webview/api/WebViewBridge;)Lcom/tencent/news/webview/jsapi/IJsApiScriptInterface;",
+      "Lcom/tencent/news/webview/jsapi/JsApiServiceImpl;->createDefaultJsApiScriptInterface(Landroid/app/Activity;Lcom/tencent/news/webview/api/WebViewBridge;)Lcom/tencent/news/webview/jsapi/IJsApiScriptInterface;@18",
+      "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showRankIntroduceDialog(Lorg/json/JSONObject;)Z",
+      "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showRankIntroduceDialog(Lorg/json/JSONObject;)Z@52",
+      "Lcom/tencent/news/ui/medal/view/dialog/c;->ˑˑ:Lcom/tencent/news/webview/NewsWebView;",
+      "Lcom/tencent/news/webview/BaseWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IZ)V",
+      "Lcom/tencent/news/video/auth/webview/TencentVideoWebView;->init()V"
+    ],
+    "arguments": [
+      {
+        "kind": "field_object",
+        "type": "com.tencent.news.webview.NewsWebView",
+        "id": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showRankIntroduceDialog(Lorg/json/JSONObject;)Z@50|Lcom/tencent/news/webview/jsapi/JsApiServiceImpl;->createDefaultJsApiScriptInterface(Landroid/app/Activity;Lcom/tencent/news/webview/api/WebViewBridge;)Lcom/tencent/news/webview/jsapi/IJsApiScriptInterface;@16|union:7ae2bf61-56c5-342f-b907-add922e1651c::Lcom/tencent/news/ui/medal/view/dialog/c;->ˑˑ:Lcom/tencent/news/webview/NewsWebView;",
+        "args": []
+      },
+      {
+        "kind": "literal",
+        "type": "number",
+        "id": "0",
+        "literal": "0",
+        "args": []
+      }
+    ]
+  },
+  "verdict": "cross_bound_wrong_receiver",
+  "first_invalid_edge": {
+    "from": "Lcom/tencent/news/webview/BaseWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IZ)V",
+    "to": "Lcom/tencent/news/video/auth/webview/TencentVideoWebView;->init()V",
+    "classification": "constructor_receiver_type_fallback / constructor mismatch",
+    "reason": "The receiver reaching BaseWebView.<init> is the layout_dialog_medal_rule NewsWebView instance. A base constructor call does not permit entering a sibling/subclass-only initializer on the same object. TencentVideoWebView.init is invoked only by TencentVideoWebView constructors."
+  },
+  "actual_receiver": {
+    "field": "Lcom/tencent/news/ui/medal/view/dialog/c;->ˑˑ:Lcom/tencent/news/webview/NewsWebView;",
+    "source": "layout_dialog_medal_rule.xml:11 declares com.tencent.news.webview.NewsWebView; dialog c.mo23171 assigns the inflated view at c.java:210",
+    "runtime_lower_bound": "com.tencent.news.webview.NewsWebView",
+    "not_type": "com.tencent.news.video.auth.webview.TencentVideoWebView"
+  },
+  "required_receiver_for_selected_site": {
+    "type": "Lcom/tencent/news/video/auth/webview/TencentVideoWebView;",
+    "constructor": "Lcom/tencent/news/video/auth/webview/TencentVideoWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+    "constructor_call": "constructor invokes private init() on this after super returns (TencentVideoWebView.java:340-350)",
+    "site_effect": "init() calls setWebChromeClient(null) on this (TencentVideoWebView.java:54-64)"
+  },
+  "regression_assertion": {
+    "reject_if": "a receiver typed/allocated as NewsWebView reaches TencentVideoWebView.init solely because its constructor invokes BaseWebView.<init>",
+    "allow_if": "the receiver allocation or inflated layout type is TencentVideoWebView and its exact constructor invokes init",
+    "identity_key": "allocation/inflation site plus constructor receiver; do not replace receiver using a subtype compatible with a base constructor"
+  }
+}

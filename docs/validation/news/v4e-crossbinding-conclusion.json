@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+  "v4d_counterexample_present": false,
+  "remaining_tencent_video_init_fact_count": 60,
+  "first_receiver": {
+    "id": "activity:com.tencent.news.webview.CustomWebBrowserForItemActivity/view:2131302026",
+    "type": "com.tencent.news.video.auth.webview.TencentVideoWebView",
+    "verdict": "valid_conditional",
+    "resource_id_decimal": 2131302026,
+    "resource_id_hex": "0x7f09168a",
+    "resource_name": "tencent_video_web_view",
+    "layout": "res/layout/tencent_video_web_view.xml",
+    "condition": "CustomWebBrowserForItemActivity.isTencentVideoDomain()"
+  },
+  "source_chain": [
+    "CustomWebBrowserForItemActivity.initView assigns mWebView = getWebView()",
+    "getWebView true branch inflates tencent_video_web_view layout",
+    "findViewById(0x7f09168a) returns XML-declared TencentVideoWebView",
+    "TencentVideoWebView.<init>(Context,AttributeSet,int) invokes private init()"
+  ],
+  "remaining_union_guard": {
+    "union_fact_count": 15,
+    "allowed_alternative": "activity:com.tencent.news.webview.CustomWebBrowserForItemActivity/view:2131302026",
+    "rejected_for_tencent_initializer": [
+      "activity:com.tencent.news.webview.CustomWebBrowserForItemActivity/view:2131303140",
+      "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+      "0"
+    ],
+    "rule": "subclass initializer facts must be emitted per compatible allocation alternative; do not apply them to every member of a field-value union"
+  }
+}

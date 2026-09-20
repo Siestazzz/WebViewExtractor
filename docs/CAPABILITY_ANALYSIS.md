@@ -57,3 +57,11 @@ It does not establish complete APK coverage or correct WebView identity by itsel
 also needs independent review of every emitted Activity, wrong-capability associations,
 unknown ownership, full framework coverage, held-out cases and isolated repeated timings.
 The current acceptance state and retained regressions are recorded in `validation/ITERATIONS.md`.
+
+Scoring revision 2 deduplicates semantic oracle rows without deleting source evidence, checks
+Settings API owners, and separates Bridge registrations from exposed members. A known registration
+with unknown target cannot count as a complete capability surface: it remains an unresolved miss
+in aggregate coverage. `capability_granularity` shows registration/member scores independently.
+Object identity and false capability associations still require independent review; these scores
+must not be described as complete end-to-end binding accuracy. Historical revision-1 scores remain
+available and are not directly comparable without replaying the same oracle and evaluator.

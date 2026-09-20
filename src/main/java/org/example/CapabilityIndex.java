@@ -20,6 +20,7 @@ final class CapabilityIndex {
     final Map<String,Set<String>> reflectionFields=new HashMap<>();
     final Map<String,String> messageRegistries=new HashMap<>();
     final Map<String,Set<List<String>>> namespaceRegistries=new HashMap<>();
+    final Map<String,Set<String>> registryHandlerShapes=new HashMap<>();
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
     final Map<String,Set<String>> callbackEntries=new HashMap<>();
@@ -40,6 +41,8 @@ final class CapabilityIndex {
                 byShape.computeIfAbsent(shape(m),k->new ArrayList<>()).add(m);
             }
         }
+        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
+        for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&webview(cls(m.getReturnType())))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
             if(System.nanoTime()>deadline)throw new IllegalStateException("index_deadline");
             if(m.getImplementation()==null)continue;
@@ -77,6 +80,14 @@ final class CapabilityIndex {
         }
         Map<String,Integer> seedDistance=new HashMap<>();ArrayDeque<String> local=new ArrayDeque<>(seeds);for(String seed:seeds)seedDistance.put(seed,0);
         while(!local.isEmpty()){String id=local.remove();int distance=seedDistance.get(id);if(distance>=3)continue;for(String caller:callers.getOrDefault(id,Set.of()))if(!seedDistance.containsKey(caller)){seedDistance.put(caller,distance+1);local.add(caller);}}
+        Set<String> carriers=new HashSet<>();for(String seed:seeds){Method m=methods.get(seed);if(m!=null)carriers.add(cls(m.getDefiningClass()));}
+        // Resolve capability-carrier overrides only near a real registration/configuration site.
+        // This includes concrete SDK adapter base methods, not only abstract declarations.
+        for(var entry:seedDistance.entrySet())if(entry.getValue()<=2){Method implementation=methods.get(entry.getKey());if(implementation==null||implementation.getName().startsWith("<"))continue;
+            String owner=cls(implementation.getDefiningClass());if(!carriers.contains(owner)||component(owner)||activity(owner))continue;
+            for(Method declaration:byShape.getOrDefault(shape(implementation),List.of()))if(!declaration.getDefiningClass().equals(implementation.getDefiningClass())&&subtype(owner,cls(declaration.getDefiningClass())))
+                for(String caller:callers.getOrDefault(key(declaration),Set.of()))callers.computeIfAbsent(key(implementation),k->new HashSet<>()).add(caller);
+        }
         var queue=new ArrayDeque<>(seeds); relevant.addAll(seeds);
         while(!queue.isEmpty()) {
             String callee=queue.remove();
@@ -95,13 +106,13 @@ final class CapabilityIndex {
         }
     }
     void discoverMessageRegistries(long deadline){
-        // A custom WebView registry must write a Map also read by an annotated JS transport.
-        Set<String> transportFields=new HashSet<>();Map<String,Set<List<String>>> namespaceFields=new HashMap<>();
-        for(Method m:methods.values())if(m.getAnnotations().stream().anyMatch(a->a.getType().endsWith("/JavascriptInterface;"))){
+        // Registries must share a Map with a JS or installed-client transport call chain.
+        Set<String> transportFields=new HashSet<>(),transportCalls=new HashSet<>();Map<String,Set<List<String>>> namespaceFields=new HashMap<>();
+        for(Method m:methods.values())if(m.getAnnotations().stream().anyMatch(a->a.getType().endsWith("/JavascriptInterface;"))||clientTransport(m)){
             bindingObjects.add(cls(m.getDefiningClass()));
             Set<String> seen=new HashSet<>();ArrayDeque<String> q=new ArrayDeque<>();q.add(key(m));int budget=150;
             while(!q.isEmpty()&&budget-->0){String id=q.remove();if(!seen.add(id))continue;
-                transportFields.addAll(referencedFields.getOrDefault(id,Set.of()));
+                transportFields.addAll(referencedFields.getOrDefault(id,Set.of()));transportCalls.addAll(calls.getOrDefault(id,Set.of()));
                 for(String target:calls.getOrDefault(id,Set.of()))if(methods.containsKey(target))q.add(target);
                 for(String type:allocations.getOrDefault(id,Set.of()))if(scheduled(type))for(Method callback:byClass.getOrDefault(type,List.of()))if(callback.getName().equals("run")||callback.getName().equals("call"))q.add(key(callback));
             }
@@ -136,7 +147,7 @@ final class CapabilityIndex {
                     }
                 }
             }
-            if(!webview(cls(m.getDefiningClass()))||m.getParameterTypes().size()!=2||!m.getParameterTypes().get(0).equals("Ljava/lang/String;"))continue;
+            if(!(webview(cls(m.getDefiningClass()))||bindingObjects.contains(cls(m.getDefiningClass())))||m.getParameterTypes().size()!=2||!m.getParameterTypes().get(0).equals("Ljava/lang/String;"))continue;
             String handler=cls(m.getParameterTypes().get(1).toString());ClassDef hc=classes.get(handler);
             if(hc==null||(hc.getAccessFlags()&0x200)==0)continue;
             if(!byClass.getOrDefault(handler,List.of()).stream().anyMatch(hm->!hm.getParameterTypes().isEmpty()&&hm.getParameterTypes().get(0).equals("Ljava/lang/String;")))continue;
@@ -144,9 +155,20 @@ final class CapabilityIndex {
             DexFlow.Summary summary=new DexFlow(this,deadline).summary(m);
             for(DexFlow.Call call:summary.calls())if(call.method().contains("->put(Ljava/lang/Object;Ljava/lang/Object;)")&&call.args().size()==3){
                 var receiver=call.args().get(0);var name=call.args().get(1);var value=call.args().get(2);
-                if(receiver.kind().equals("field")&&transportFields.contains(receiver.id())&&name.kind().equals("param")&&name.id().equals("1")&&value.kind().equals("param")&&value.id().equals("2"))messageRegistries.put(key(m),receiver.id());
+                if(receiver.kind().equals("field")&&transportFields.contains(receiver.id())&&name.kind().equals("param")&&name.id().equals("1")&&value.kind().equals("param")&&value.id().equals("2")){
+                    messageRegistries.put(key(m),receiver.id());Set<String> shapes=new HashSet<>();for(Method hm:byClass.getOrDefault(handler,List.of()))if(transportCalls.contains(key(hm)))shapes.add(shape(hm));registryHandlerShapes.put(key(m),shapes);
+                }
             }
         }
+    }
+    boolean clientTransport(Method m){
+        String owner=cls(m.getDefiningClass());String shape=shape(m);
+        for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk.")){
+            String view="L"+prefix.replace('.', '/')+"WebView;";
+            if(subtype(owner,prefix+"WebViewClient")&&(shape.equals("shouldOverrideUrlLoading("+view+"Ljava/lang/String;)Z")||shape.equals("onPageFinished("+view+"Ljava/lang/String;)V")))return true;
+            if(subtype(owner,prefix+"WebChromeClient")&&shape.equals("onJsPrompt("+view+"Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;L"+prefix.replace('.', '/')+"JsPromptResult;)Z"))return true;
+        }
+        return false;
     }
     List<String> possibleTypes(String base){
         if(base==null||base.equals("java.lang.Object"))return List.of();
@@ -171,6 +193,7 @@ final class CapabilityIndex {
     String kind(MethodReference m){
         String owner=cls(m.getDefiningClass()),n=m.getName();var p=m.getParameterTypes();
         if(webview(owner)){
+            if((n.equals("loadUrl")||n.equals("loadData")||n.equals("loadDataWithBaseURL")||n.equals("evaluateJavascript"))&&!p.isEmpty()&&p.get(0).equals("Ljava/lang/String;"))return "webview_operation";
             if(n.equals("addJavascriptInterface")&&p.size()==2&&p.get(0).equals("Ljava/lang/Object;")&&p.get(1).equals("Ljava/lang/String;"))return "bridge";
             if((n.equals("setWebViewClient")||n.equals("setWebChromeClient"))&&p.size()==1)return "callback";
             if(n.equals("removeJavascriptInterface")&&p.size()==1)return "bridge_removal";

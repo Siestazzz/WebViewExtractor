@@ -100,3 +100,58 @@
   precision of unresolved plugin/host edges; complete all-output ownership/capability review;
   held-out final validation; full synthetic suite and three final isolated repeats. QUALITY
   ACCEPTANCE NOT MET. No whole-APK completeness or final performance claim.
+
+## v4 — bounded refinement, wrapper discovery, explicit scoring limits (v4e)
+
+- Added receiver-union field distribution and distinct union identities, Kotlin lazy WebView
+  factories, ViewBinding wrapper constructor discovery, usage-only WebView seeds, bounded SDK
+  override reachability, and type-guard branch specialization. Specializations are cached and
+  limited to 16 contexts per eligible method (at most 500 instructions); conservative summaries
+  remain when no specialization is possible. Unknown receiver types no longer trigger every
+  compatible subclass method. This reduces spurious ownership but loses unresolved true edges.
+- Added URL/client callback transport discovery for registry maps, plus regressions for callback
+  transport vs header maps and cached type guards. Existing JVM synthetic tests pass. Five Python
+  evaluator regressions pass (duplicate rows, unknown targets, exact Settings owners, normalized
+  member signatures, and proven-empty endpoint surfaces). A supervisor deadline check finished
+  in 1.275s with 57 parseable atomic snapshots and an explicit timeout report.
+- Scoring revision 2 removes semantic duplicate weighting, separates registration/member scores,
+  checks exact Settings owners and preserves unresolved surfaces as misses. It does NOT verify
+  WebView object identity. Sol identified and black-box tested scoring defects independently.
+  Same-oracle v3f/v4d/v4e replays are retained as `*-scoring-v2.json`; original score files remain
+  historical and must not be compared across oracle/scoring revisions.
+- Sol completed Mango's 30-host development oracle and independently established that 56 Imgo
+  registrations have no compatible declared String endpoint. The registrations remain in all
+  evidence files, with a source/DEX audit reference and a reproducible state transition. The
+  engine currently invents the dispatcher as an endpoint for some of these routes; the stricter
+  evaluator rejects them. Only two dynamic target-unknown registrations remain in that oracle.
+- v4e serial fresh JVMs, CPUs0–7,16GiB: news77.64s, mango63.58s, ctrip123.83s. All outputs remain
+  partial. These are development measurements, NOT final isolated three-repeat acceptance runs.
+
+| App | v3f Bridge | v4e Bridge | v3f Settings | v4e Settings | v3f Callbacks | v4e Callbacks |
+|---|---:|---:|---:|---:|---:|---:|
+| news | 1252/1338 | 1252/1338 | 201/283 | 212/283 | 181/217 | 181/217 |
+| mango | 1086/1153 | 906/1153 | 479/526 | 519/526 | 544/591 | 584/591 |
+| ctrip | 3666/3666 | 2642/3666 | 233/233 | 233/233 | 299/299 | 299/299 |
+
+- News all-output review:27 valid/3 wrong/0 uncertain, upper bound3/30=10%. Mango:77 valid/
+  0 wrong/5 uncertain, upper bound5/82=6.10%. Six source-valid news hosts and seven source-valid
+  mango hosts disappeared relative to v4d: these are recall regressions, not ownership fixes.
+  Some surviving News TencentVideoWebView paths were independently confirmed as legitimate
+  conditional layouts; union alternatives still mix sibling receivers and need filtering.
+- Ctrip all-output review:54 valid/1 wrong/0 uncertain, upper bound1/55=1.82%. Three new
+  source-valid hosts replace three prior outputs (one source-valid and two cleanup-only uncertain).
+  The 1024 lost Bridge facts are exactly four v1 H5Fragment hosts ×256: the missing edge is
+  the installed provider interface dispatch to `ctrip.base.init.m$c.n`, not absent plugin classes.
+- Failed experiments retained: v4b and v4c repeatedly decoded branches and were stopped with
+  partial snapshots; v4d overbroad override reachability expanded Ctrip to20895 relevant methods,
+  was stopped at402.98s with153/410 hosts processed, and exited2 with a valid failed report.
+  v4e bounds specialization and propagation; no failed run is called a performance pass.
+- Reproduction: build using the documented Gradle command, freeze the jar, then
+  `python3 scripts/benchmark.py --label LABEL --jar test/runs/LABEL.jar` and replay all three
+  canonical oracles using `scripts/evaluate.py --ownership docs/validation/APP/v4e-ownership.jsonl`.
+- Next fixes: per-alternative dispatch receiver substitution (including private/direct invokes),
+  reflective registry endpoint outcomes, lost WebUI/factory receiver-field edges, bounded player
+  adapter propagation, AdCore/Loading prompt semantics and URL bridge dispatch. Retain every
+  discovered miss and independently review output capability identity. Soot fallback, full
+  synthetic coverage, held-out final verification and three final repeats remain unfinished.
+  QUALITY ACCEPTANCE NOT MET. No whole-APK completeness claim.

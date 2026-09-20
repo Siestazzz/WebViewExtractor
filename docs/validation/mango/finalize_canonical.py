@@ -16,13 +16,16 @@ for x in rows:
             if raw in {'true','false'}: x['value']=(raw=='true')
             elif raw.lstrip('-').isdigit(): x['value']=int(raw)
         elif raw in {'ON','ON_DEMAND'}:
-            x['value_kind']='enum'; x['value']='android.webkit.WebSettings.PluginState.'+raw
+            owner=('com.tencent.smtt.sdk.WebSettings.PluginState.' if x.get('normalized_signature','').startswith('Lcom/tencent/smtt/') else 'android.webkit.WebSettings.PluginState.')
+            x['value_kind']='enum'; x['value']=owner+raw
         elif x.get('name')=='setRenderPriority' and raw=='HIGH':
             x['value_kind']='enum'; x['value']='android.webkit.WebSettings.RenderPriority.HIGH'
         elif x.get('name')=='setDefaultZoom' and raw=='MEDIUM':
             x['value_kind']='enum'; x['value']='android.webkit.WebSettings.ZoomDensity.MEDIUM'
         elif x.get('name')=='setLayoutAlgorithm' and raw=='NARROW_COLUMNS':
             x['value_kind']='enum'; x['value']='android.webkit.WebSettings.LayoutAlgorithm.NARROW_COLUMNS'
+        elif x.get('name')=='setLayoutAlgorithm' and raw=='SINGLE_COLUMN':
+            x['value_kind']='enum'; x['value']='android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN'
         elif x.get('name')=='setTextSize' and raw=='NORMAL':
             x['value_kind']='enum'; x['value']='android.webkit.WebSettings.TextSize.NORMAL'
         else:
@@ -54,7 +57,7 @@ for x in rows:
             x['bridge_method']=''
             x['signature']=''
             x['implementation']=None
-            x['binding_status']='registered-target-unknown'
+            x['binding_status']='registered-no-compatible-endpoint' if x.get('audit_reference') else 'registered-target-unknown'
 
 with (HERE/'canonical-facts.jsonl').open('w') as f:
     for x in rows:f.write(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n')

@@ -1,0 +1,3124 @@
+{
+  "oracle_sha256": "10ee052096e6879861fb114283c644212f6fb6e356efb1e2e5bff3e5b8bab629",
+  "report_sha256": "fd34a41e251b08ec3574e86bee8d869cd1e5890bcbc2dff052465c9f1b4ea1d7",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/news/canonical-facts.jsonl",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "report_status": "partial",
+  "metrics": {
+    "bridge": {
+      "expected": 1338,
+      "matched": 992,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.7414050822122571,
+      "explicit_recall": 0.0
+    },
+    "setting": {
+      "expected": 283,
+      "matched": 258,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.911660777385159,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 217,
+      "matched": 149,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.6866359447004609,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "kind": "bridge",
+      "name": "yuanbao",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "kind": "bridge_method",
+      "name": "authorizeNews2Yuanbao",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->authorizeNews2Yuanbao(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "kind": "bridge_method",
+      "name": "getBase64FromBlobData",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getBase64FromBlobData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "kind": "bridge_method",
+      "name": "getNewsQIMEI36",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getNewsQIMEI36(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "kind": "bridge_method",
+      "name": "isInstall",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->isInstall(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+      "kind": "bridge_method",
+      "name": "pageReady",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->pageReady(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "bridge",
+      "name": "yuanbao",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "bridge_method",
+      "name": "authorizeNews2Yuanbao",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->authorizeNews2Yuanbao(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "bridge_method",
+      "name": "getBase64FromBlobData",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getBase64FromBlobData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "bridge_method",
+      "name": "getNewsQIMEI36",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getNewsQIMEI36(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "bridge_method",
+      "name": "isInstall",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->isInstall(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+      "kind": "bridge_method",
+      "name": "pageReady",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->pageReady(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onReceivedSslError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/SslErrorHandler;Lcom/tencent/smtt/export/external/interfaces/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "k",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$k;->onProgressChanged(Lcom/tencent/smtt/sdk/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "k",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$k;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "bridge",
+      "name": "yuanbao",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "authorizeNews2Yuanbao",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->authorizeNews2Yuanbao(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "getBase64FromBlobData",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getBase64FromBlobData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "getNewsQIMEI36",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getNewsQIMEI36(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "isInstall",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->isInstall(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "pageReady",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->pageReady(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebChromeClient",
+      "signature": "Lcom/tencent/news/webview/webchromeclient/CustomWebChromeClient;->onProgressChanged(Lcom/tencent/smtt/sdk/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedHttpError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedSslError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/SslErrorHandler;Lcom/tencent/smtt/export/external/interfaces/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Landroid/os/Bundle;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "webShareContentCallBack",
+      "signature": "Lcom/tencent/news/webview/WebShareJsBridge;->webShareContentCallBack(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge",
+      "name": "webShareJsBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->onReceivedSslError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/SslErrorHandler;Lcom/tencent/smtt/export/external/interfaces/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$CustomWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "TencentVideoWebViewClient",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "k",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$k;->onProgressChanged(Lcom/tencent/smtt/sdk/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "k",
+      "signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$k;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge",
+      "name": "yuanbao",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "authorizeNews2Yuanbao",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->authorizeNews2Yuanbao(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "getBase64FromBlobData",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getBase64FromBlobData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "getNewsQIMEI36",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->getNewsQIMEI36(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "isInstall",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->isInstall(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "bridge_method",
+      "name": "pageReady",
+      "signature": "Lcom/tencent/news/webview/YuanBaoJsBridge;->pageReady(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "CustomWebChromeClient",
+      "signature": "Lcom/tencent/news/webview/webchromeclient/CustomWebChromeClient;->onProgressChanged(Lcom/tencent/smtt/sdk/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedHttpError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedSslError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/SslErrorHandler;Lcom/tencent/smtt/export/external/interfaces/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+      "kind": "callback",
+      "name": "ht",
+      "signature": "Lcom/tencent/news/ui/view/ht;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Landroid/os/Bundle;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "bridge",
+      "name": "TencentNewsJsBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "bridge_method",
+      "name": "bridgeCall",
+      "signature": "Lcom/tencent/news/webview/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isQQLogin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isQQLogin()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isWeixinLogin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isWeixinLogin()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "adVideoBeginPlay",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->adVideoBeginPlay()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "adaptWebAdvertKBEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->adaptWebAdvertKBEvent()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "addAutoDownloadGameEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->addAutoDownloadGameEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "addCardToWXCardPackage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->addCardToWXCardPackage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "addReserveGameEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->addReserveGameEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "addShortCut",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->addShortCut(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "adjustWebViewInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->adjustWebViewInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "appUsedSceonds",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->appUsedSceonds(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "appUsedSeconds",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->appUsedSeconds(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "appointmentAd",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->appointmentAd(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "broadcastMsg",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->broadcastMsg(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "buyBonBean",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->buyBonBean(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "care",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->care()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "changeCityChannel",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->changeCityChannel(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "changeMainAccount",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->changeMainAccount(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "checkAppDownLoadState",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->checkAppDownLoadState(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "checkAppStatus",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->checkAppStatus(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "checkCalendarAuthority",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->checkCalendarAuthority(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "checkCanOpenNativeUrl",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->checkCanOpenNativeUrl(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "chooseAvatar",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->chooseAvatar(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "chooseMedia",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->chooseMedia(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "chooseVideoCover",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->chooseVideoCover(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "clearData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->clearData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "clearUserData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->clearUserData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "closeWebview",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->closeWebview(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "copy",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->copy(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "copyWeixin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->copyWeixin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "createLauncherShortcut",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->createLauncherShortcut(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "createMaskShortcut",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->createMaskShortcut(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "deleteDownloadApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->deleteDownloadApp(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "deleteGameItem",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->deleteGameItem(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "deleteOmAccountLocalDraft",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->deleteOmAccountLocalDraft(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "deleteShareItems",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->deleteShareItems(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "dismissShareDialog",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->dismissShareDialog(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "downloadApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->downloadApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "downloadAppByLocal",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->downloadAppByLocal(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "downloadAppFromBrowser",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->downloadAppFromBrowser(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "downloadApp_gdt",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->downloadApp_gdt(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "editVideo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->editVideo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "enableLocalPush",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->enableLocalPush(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "enableShowBigImg",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->enableShowBigImg(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "exposureBottomTop",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->exposureBottomTop(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAdInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAdInfo()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAdRecommendationSwitch",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAdRecommendationSwitch(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAdSdkVersion",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAdSdkVersion(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAllInstalledApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAllInstalledApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppVersionName",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppVersionName(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppversion",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppversion()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAutoDownloadGameEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAutoDownloadGameEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAwardInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAwardInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getCKey",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getCKey(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getCalendarEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getCalendarEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getConfigInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getConfigInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getCurrentLocationInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getCurrentLocationInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getData(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getEventIdFromGameId",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getEventIdFromGameId(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getGameDownloadInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getGameDownloadInfo()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getGamesDownloadStatus",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getGamesDownloadStatus(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getImei",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getImei()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getIncentivePendantProgress",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getIncentivePendantProgress(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getIncentivePendantProgressSync",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getIncentivePendantProgressSync()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getLocalStorage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getLocalStorage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getReserveGameEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getReserveGameEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getScrollTop",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getScrollTop()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getSecurityRequestCheckCode",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getSecurityRequestCheckCode(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUid",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUid()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUserData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUserData(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUserInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUserPhotoLocations",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUserPhotoLocations(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getWeixinUserInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getWeixinUserInfo()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "gotoImageDetailActivity",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->gotoImageDetailActivity(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "gotoMainChannelList",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->gotoMainChannelList(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "gotoPushHistoryPage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->gotoPushHistoryPage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "gotoPushSwitchSettingPage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->gotoPushSwitchSettingPage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "handleImgError",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->handleImgError(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "installApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->installApp(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "invokeBonBeanPanel",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->invokeBonBeanPanel(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isAllPushClose",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isAllPushClose(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isAppInstalled",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isAppInstalled(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isLogin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isLogin()Ljava/lang/Boolean;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isMethodSupport",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isMethodSupport(Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isNotificationEnabled",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isNotificationEnabled(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "jumpToSysAuthorizationPage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->jumpToSysAuthorizationPage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "launchApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->launchApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "login",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->login(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "logout",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->logout(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "logoutMainAccount",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->logoutMainAccount()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "managePkMaterialTask",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->managePkMaterialTask(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "managePkVideoTask",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->managePkVideoTask(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "onReportSuccess",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->onReportSuccess(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "onTtsHighlight",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->onTtsHighlight(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openApp(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openMiniProgram",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openMiniProgram(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openNativeUrl",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openNativeUrl(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openUrl",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openUrl(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openUrlByWX",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openUrlByWX(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openWebViewWithType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openWebViewWithType(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "playVideo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->playVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "pluginInvoke",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->pluginInvoke(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "pluginRequest",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->pluginRequest(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "postData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->postData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "previewVideo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->previewVideo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "publishArticle",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->publishArticle(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "publishOmAccountArticleFromLocalDraft",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->publishOmAccountArticleFromLocalDraft(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "publishPkMaterial",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->publishPkMaterial(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "publishPkVideo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->publishPkVideo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "publishWeibo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->publishWeibo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "queryData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->queryData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "queryPkMaterialTask",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->queryPkMaterialTask(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "queryPkMaterialTaskProgress",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->queryPkMaterialTaskProgress(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "queryPkVideoLocalPath",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->queryPkVideoLocalPath(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "queryPkVideoTask",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->queryPkVideoTask(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "queryPkVideoTaskProgress",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->queryPkVideoTaskProgress(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "readOmAccountLocalDraft",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->readOmAccountLocalDraft(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "refreshWxAccessToken",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->refreshWxAccessToken(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "regReceiver",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->regReceiver(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "removeAutoDownloadGameEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->removeAutoDownloadGameEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "removeReserveGameEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->removeReserveGameEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "removeWebView",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->removeWebView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "reportToBoss",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->reportToBoss(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "reportToDT",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->reportToDT(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "reportWebContentLoad",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->reportWebContentLoad(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "requestCalendarAuthority",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->requestCalendarAuthority(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "requestWithMobile",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->requestWithMobile(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "saveImageToLocal",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->saveImageToLocal(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "sendBoss",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->sendBoss(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "sendDT",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->sendDT(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "sendPayRequest",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->sendPayRequest(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "sendRequest",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->sendRequest(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setActionBtn",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setActionBtn(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setAdRecommendationSwitch",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setAdRecommendationSwitch(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setBottomBarVisibility",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setBottomBarVisibility(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setClosePanelShow",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setClosePanelShow(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setData(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setFristRssMedia",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setFristRssMedia()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setImageWallpaper",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setImageWallpaper(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setIsClosePanelShow",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setIsClosePanelShow(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setLeftScrollEnable",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setLeftScrollEnable(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setLocalStorage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setLocalStorage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setOrientationEnable",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setOrientationEnable(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setReportParams",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setReportParams(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setReturnBtn",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setReturnBtn(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setReturnBtnActionType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setReturnBtnActionType(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setShareArticleInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setShareArticleInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setStatusBarColor",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setStatusBarColor(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setSyncStatus",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setSyncStatus(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setTagSecondTitle",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setTagSecondTitle(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setTitle",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setTitle(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setUserData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setUserData(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setWebViewContentHeight",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setWebViewContentHeight(Ljava/lang/String;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "share",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->share(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "shareFromWebView",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->shareFromWebView(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "shareTo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->shareTo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "shareToQQ",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->shareToQQ()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "shareToWx",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->shareToWx()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "shareToWxCircle",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->shareToWxCircle()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showActionMenu",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showActionMenu(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showAlert",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showAlert(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showBigImageShareMenu",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showBigImageShareMenu(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showCaptureBigImageShareMenu",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showCaptureBigImageShareMenu(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showErrorTips",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showErrorTips(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showFlower",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showFlower(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showLoginWithType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showLoginWithType(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showNativeLogin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showNativeLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showNativeLoginWithType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showNativeLoginWithType(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showNews",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showNews(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showOmAccountAlert",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showOmAccountAlert(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showPublishAccountAlert",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showPublishAccountAlert(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showShareMenu",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showShareMenu(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showSuccessTips",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showSuccessTips(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showTipsDialog",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showTipsDialog(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showToast",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showToast(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "storeUserAddress",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->storeUserAddress(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "supportLauncherShortcut",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->supportLauncherShortcut(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "switchSearchTab",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->switchSearchTab(Lorg/json/JSONObject;Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "testJson",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->testJson(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "tryAddCalendarEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->tryAddCalendarEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "tryRemoveCalendarEvent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->tryRemoveCalendarEvent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "updateMainUserInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->updateMainUserInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "updatePubContent",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->updatePubContent(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "updateSelfDeclarationInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->updateSelfDeclarationInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "uploadImage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->uploadImage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "userPhotoAuthorization",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->userPhotoAuthorization(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "wPay",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->wPay(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "weixinPay",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->weixinPay(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "writeLog",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->writeLog(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "zoomImageSrc",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->zoomImageSrc(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "closeWebview",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->closeWebview()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppversion",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppversion(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getData(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getGestureQuit",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getGestureQuit(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getImei",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getImei(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getMainAccount",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getMainAccount(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getNetworkStatus",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getNetworkStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUid",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUid(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUserData",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUserData(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isAvailable",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isAvailable(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isQQLogin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isQQLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isWeixinLogin",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isWeixinLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "logoutMainAccount",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->logoutMainAccount(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "openWebViewWithType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->openWebViewWithType(Ljava/lang/String;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "refreshWxAccessToken",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->refreshWxAccessToken(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "sendBoss",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->sendBoss(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setGestureQuit",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setGestureQuit(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setLeftScrollEnable",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setLeftScrollEnable(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showNativeLoginWithType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showNativeLoginWithType(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getGestureQuit",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getGestureQuit(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "gotoPushHistoryPage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->gotoPushHistoryPage()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "gotoPushSwitchSettingPage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->gotoPushSwitchSettingPage()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setReturnBtnActionType",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setReturnBtnActionType(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showActionMenu",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showActionMenu()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "switchSearchTab",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->switchSearchTab(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "copy",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->copy(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAdInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAdInfo(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setActionBtn",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setActionBtn(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setBottomBarVisibility",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setBottomBarVisibility(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setOrientationEnable",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setOrientationEnable(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setTitle",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setTitle(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "share",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->share(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showNews",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showNews(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "writeLog",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->writeLog(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppInfo()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getAppVersionName",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getAppVersionName(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "downloadApp",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->downloadApp(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getConfigInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getConfigInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "isAppInstalled",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isAppInstalled(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "changeMainAccount",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->changeMainAccount(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "enableLocalPush",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->enableLocalPush()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "checkCanOpenNativeUrl",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->checkCanOpenNativeUrl(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getUserInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "setShareArticleInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setShareArticleInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "zoomImageSrc",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->zoomImageSrc(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "saveImageToLocal",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->saveImageToLocal(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "showAlert",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->showAlert(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "downloadAppByLocal",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->downloadAppByLocal(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "previewDetailImage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->previewDetailImage(Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "previewDetailImage",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->previewDetailImage(ILjava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.webview.WebDetailActivity",
+      "kind": "message_handler",
+      "name": "getWeixinUserInfo",
+      "signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getWeixinUserInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "f",
+      "signature": "Lcom/tencent/news/tad/business/ui/mosaic/f;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "f",
+      "signature": "Lcom/tencent/news/tad/business/ui/mosaic/f;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "f",
+      "signature": "Lcom/tencent/news/tad/business/ui/mosaic/f;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "f",
+      "signature": "Lcom/tencent/news/tad/business/ui/mosaic/f;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "d",
+      "signature": "Lcom/tencent/news/tad/business/ui/mosaic/d;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "a",
+      "signature": "Lcom/tencent/news/tad/business/ui/activity/a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "a",
+      "signature": "Lcom/tencent/news/tad/business/ui/activity/a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setJavaScriptCanOpenWindowsAutomatically",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "checkWXAppInstallStatus",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->checkWXAppInstallStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "endMic",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->endMic()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "getLoginStatus",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getLoginStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "getParams",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getParams(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "getRichdata",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getRichdata(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "getUserKey",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getUserKey()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "hasApp",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->hasApp(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "mraidLoaded",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->mraidLoaded()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "openApp",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->openApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "openCanvasAd",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->openCanvasAd(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "openWxByCardIds",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->openWxByCardIds(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "removeRichAd",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->removeRichAd()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "scanQRCode",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->scanQRCode(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "setObjectViewable",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setObjectViewable(IZ)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "setShareData",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setShareData(ILjava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "shareToWXFriend",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->shareToWXFriend(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "shareToWXTimeLine",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->shareToWXTimeLine(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "showLoginPanel",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->showLoginPanel(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "showSharePanel",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->showSharePanel(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "startMic",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->startMic(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "updatePageState",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->updatePageState(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "vibrate",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->vibrate(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "viewMore",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->viewMore(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "endMic",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->endMic(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "vibrate",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->vibrate([J)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "vibrate",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->vibrate([JI)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "message_handler",
+      "name": "setShareData",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setShareData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebChromeClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "kind": "bridge",
+      "name": "MraidBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "checkWXAppInstallStatus",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->checkWXAppInstallStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "endMic",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->endMic()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "getLoginStatus",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getLoginStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "getParams",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getParams(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "getRichdata",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getRichdata(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "getUserKey",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->getUserKey()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "hasApp",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->hasApp(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "mraidLoaded",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->mraidLoaded()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "openApp",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->openApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "openCanvasAd",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->openCanvasAd(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "openWxByCardIds",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->openWxByCardIds(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "removeRichAd",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->removeRichAd()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "scanQRCode",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->scanQRCode(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "setObjectViewable",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setObjectViewable(IZ)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "setShareData",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setShareData(ILjava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "shareToWXFriend",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->shareToWXFriend(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "shareToWXTimeLine",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->shareToWXTimeLine(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "showLoginPanel",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->showLoginPanel(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "showSharePanel",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->showSharePanel(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "startMic",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->startMic(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "updatePageState",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->updatePageState(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "vibrate",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->vibrate(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "viewMore",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->viewMore(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "endMic",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->endMic(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "vibrate",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->vibrate([J)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "vibrate",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->vibrate([JI)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "message_handler",
+      "name": "setShareData",
+      "signature": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setShareData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "setting",
+      "name": "setSupportMultipleWindows",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebChromeClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebChromeClient;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebChromeClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCorePageWebChromeClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCorePageWebChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebViewClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "callback",
+      "name": "AdCoreJsWebChromeClient",
+      "signature": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "kind": "bridge",
+      "name": "MraidBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "kind": "message_handler",
+      "name": "videoStatus",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "kind": "message_handler",
+      "name": "videoProcess",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "kind": "message_handler",
+      "name": "resume",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "kind": "message_handler",
+      "name": "getScreenSize",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+      "kind": "message_handler",
+      "name": "videoStatus",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+      "kind": "message_handler",
+      "name": "videoProcess",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+      "kind": "message_handler",
+      "name": "resume",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+      "kind": "message_handler",
+      "name": "getScreenSize",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "kind": "message_handler",
+      "name": "videoStatus",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "kind": "message_handler",
+      "name": "videoProcess",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "kind": "message_handler",
+      "name": "resume",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "kind": "message_handler",
+      "name": "getScreenSize",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+      "kind": "message_handler",
+      "name": "videoStatus",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+      "kind": "message_handler",
+      "name": "videoProcess",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+      "kind": "message_handler",
+      "name": "resume",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+      "kind": "message_handler",
+      "name": "getScreenSize",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+      "kind": "message_handler",
+      "name": "videoStatus",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+      "kind": "message_handler",
+      "name": "videoProcess",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+      "kind": "message_handler",
+      "name": "resume",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+      "kind": "message_handler",
+      "name": "getScreenSize",
+      "signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->ʻ(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 36,
+  "acceptance": "unproven",
+  "note": "Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required.",
+  "activity_ownership": {
+    "counts": {
+      "valid": 22,
+      "unreviewed": 12,
+      "wrong": 2
+    },
+    "emitted": 36,
+    "wrong": 2,
+    "uncertain_or_unreviewed": 12,
+    "conservative_error_upper_bound": 0.3888888888888889
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

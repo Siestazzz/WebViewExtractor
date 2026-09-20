@@ -73,6 +73,12 @@ public final class CapabilitySelfTest {
    var branch=method(H,"branch",List.of("Z"),9,3,List.of(new ImmutableInstruction11n(Opcode.CONST_4,0,0),new ImmutableInstruction21t(Opcode.IF_EQZ,2,3),new ImmutableInstruction11n(Opcode.CONST_4,0,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",1,0),end()),false);
    var branchSummary=flow.summary(branch);check(branchSummary.branched(),"Branch not recorded");check(DexFlow.alternatives(branchSummary.calls().get(0).args().get(1)).size()==2,"Conditional setting alternatives collapsed");
    var loop=method(H,"loop",List.of(),9,1,List.of(new ImmutableInstruction10t(Opcode.GOTO,0)),false);check(flow.summary(loop).calls().isEmpty(),"Empty loop should reach stable summary");
+   var guarded=method(H,"guardedFactory",List.of("Landroid/content/Context;"),9,3,List.of(new ImmutableInstruction22c(Opcode.INSTANCE_OF,0,2,new ImmutableTypeReference(A)),new ImmutableInstruction21t(Opcode.IF_EQZ,0,5),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",1,0),end()),false);
+   check(flow.summary(guarded,v->v.kind().equals("param")?DexFlow.V.of("host","test.AppActivity","host"):v).calls().size()==1,"Matching Activity factory branch lost");
+   check(flow.summary(guarded,v->v.kind().equals("param")?DexFlow.V.of("host","test.UnrelatedActivity","other"):v).calls().isEmpty(),"Unrelated Activity factory branch included");
+   int refinements=flow.refined;
+   flow.summary(guarded,v->v.kind().equals("param")?DexFlow.V.of("host","test.AppActivity","host"):v);
+   check(flow.refined==refinements,"Repeated type guard was decoded instead of cached");
    messageFixture();
    collectionFixture();
    System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence");
@@ -102,6 +108,15 @@ public final class CapabilitySelfTest {
    var idx=new CapabilityIndex();idx.read(path,System.nanoTime()+20_000_000_000L);
    check(idx.messageRegistries.containsKey(CapabilityIndex.key(register)),"Annotated transport registry not found");
    check(!idx.messageRegistries.containsKey(CapabilityIndex.key(fake)),"HTTP header map incorrectly classified as message registry");
+   String client="Ltest/UrlClient;";
+   var callback=method(client,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,4,List.of(
+    make(0,transport),invoke(Opcode.INVOKE_VIRTUAL,transport,"dispatch",List.of("Ljava/lang/String;"),"V",0,3),end()),false);
+   var unannotated=new ImmutableMethod(transport,"dispatch",dispatch.getParameters(),"V",1,Set.of(),Set.of(),dispatch.getImplementation());
+   var plainTransport=new ImmutableClassDef(transport,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(transportField),List.of(unannotated));
+   DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(wc,plainTransport,hc,clazz(client,"Landroid/webkit/WebViewClient;",callback))));
+   var urlIndex=new CapabilityIndex();urlIndex.read(path,System.nanoTime()+20_000_000_000L);
+   check(urlIndex.messageRegistries.containsKey(CapabilityIndex.key(register)),"URL callback message registry not found");
+   check(!urlIndex.messageRegistries.containsKey(CapabilityIndex.key(fake)),"URL transport turned headers into registry");
   }finally{Files.deleteIfExists(path);}
  }
 

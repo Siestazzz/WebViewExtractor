@@ -1,0 +1,1914 @@
+{
+  "oracle_sha256": "93ae015d1b6456ccedc0ccb945abfafd049d7a62cec4bacbe99e9d63c52fa738",
+  "report_sha256": "424f33d4284295a7891f1effa6af8be7fb48ef2ed01a6819813d2ae118a37d58",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/mango/canonical-facts.jsonl",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 526,
+      "matched": 519,
+      "explicit_matched": 1,
+      "unscorable": 0,
+      "recall": 0.9866920152091255,
+      "explicit_recall": 0.0019011406844106464
+    },
+    "bridge": {
+      "expected": 1153,
+      "matched": 906,
+      "explicit_matched": 0,
+      "unscorable": 2,
+      "recall": 0.7857762359063313,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 591,
+      "matched": 584,
+      "explicit_matched": 8,
+      "unscorable": 0,
+      "recall": 0.988155668358714,
+      "explicit_recall": 0.01353637901861252
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "jumpController",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->jumpController(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "previewChannel",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->previewChannel(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setWebviewTitle",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setWebviewTitle(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "login",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->login(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "confirmLogin",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->confirmLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getUserInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showShareMenus",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showShareMenus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getDeviceInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "closeWebView",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->closeWebView(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "jumpOtherApp",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->jumpOtherApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "userCheckSucc",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->userCheckSucc(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "sendToClipboard",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->sendToClipboard(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "feedback",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->feedback(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setParams",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setParams(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "isUnicomFreeOrdered",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->isUnicomFreeOrdered(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "changeVideo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->changeVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "jumpPage",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->jumpPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openBrowser",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openBrowser(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setSession",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setSession(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getSession",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getSession(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getIap",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getIap(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getNetworkType",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getNetworkType(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "updateUserInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->updateUserInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getMobileOrderStatus",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getMobileOrderStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "backDoor",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->backDoor(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showShare",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "shareTo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->shareTo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "refreshPage",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->refreshPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openSettingPage",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openSettingPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "onUserCaptureScreen",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->onUserCaptureScreen(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "isInstallCMBAPP",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->isInstallCMBAPP(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "reportLoadTime",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->reportLoadTime(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "bindWeChat",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->bindWeChat(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "joinQQGroup",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->joinQQGroup(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getReportInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getReportInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openWXApplet",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openWXApplet(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "postBigData",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->postBigData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showToast",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showToast(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "savePicture",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->savePicture(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "closeEntrance",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->closeEntrance(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "registerClickBack",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->registerClickBack(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "changeDeviceInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->changeDeviceInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "isHalfWebview",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->isHalfWebview(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "sendComment",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->sendComment(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "initFaceVerifySDK",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->initFaceVerifySDK(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "startFaceVerify",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->startFaceVerify(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "initMegvii",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->initMegvii(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "scanDiscern",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->scanDiscern(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showMangoKid",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showMangoKid(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "scanQRCode",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->scanQRCode(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "requestTouchEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->requestTouchEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "isAllowTouchEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->isAllowTouchEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "addCalendarEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->addCalendarEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "deleteCalendarEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->deleteCalendarEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "sendZLComment",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->sendZLComment(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "webviewVedioPlay",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->webviewVedioPlay(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "canOpenApp",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->canOpenApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "installApp",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->installApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "logoutEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->logoutEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getDeviceInfoForLoan",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getDeviceInfoForLoan(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getScreenCutoutInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getScreenCutoutInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "jumpToAppAuthoritySettings",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->jumpToAppAuthoritySettings(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setWebview",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setWebview(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "deviceVibrate",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->deviceVibrate(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "mzBookEdit",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mzBookEdit(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "mzBookPlayVideo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mzBookPlayVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "mzBookCheckCertification",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mzBookCheckCertification(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "requestAd",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->requestAd(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "captureVideo2gif",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->captureVideo2gif(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "checkAppUpdate",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->checkAppUpdate(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "mgoPay",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mgoPay(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "checkAppInstalled",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->checkAppInstalled(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "checkLocationPermission",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->checkLocationPermission(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "requestLocationPermission",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->requestLocationPermission(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openMapApps",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openMapApps(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getGeoPosition",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getGeoPosition(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "playTranslucentVideoWithUrl",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->playTranslucentVideoWithUrl(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "closeTranslucentVideo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->closeTranslucentVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "sendPrp",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->sendPrp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getPrpMsg",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getPrpMsg(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "tokensPayResult",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->tokensPayResult(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openSpecialWebview",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openSpecialWebview(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "registerShakeListener",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->registerShakeListener(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "unregisterShakeListener",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->unregisterShakeListener(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showMeetionInviteAlert",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showMeetionInviteAlert(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showMeetionCreditSuccessAlert",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showMeetionCreditSuccessAlert(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "isApkInstall",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->isApkInstall(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "whisper",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->whisper(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "clearWebViewCache",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->clearWebViewCache(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "closeGamePanel",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->closeGamePanel(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "fmevent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->fmevent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showGiftModal",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showGiftModal(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getClipboardInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getClipboardInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getFpExtra",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getFpExtra(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setWebviewSize",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setWebviewSize(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getWebviewVisibility",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getWebviewVisibility(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setScreenType",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setScreenType(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "createShortCut",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->createShortCut(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "gotoUninstallApp",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->gotoUninstallApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "isNotificationOpened",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->isNotificationOpened(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openNotification",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openNotification(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "checkTicket",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->checkTicket(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "requestAppScoreWindow",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->requestAppScoreWindow(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setSoftInputListen",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setSoftInputListen(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "liveMissionEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->liveMissionEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "saveVideo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->saveVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getCameraAuthoration",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getCameraAuthoration(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "requestCameraAuthoration",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->requestCameraAuthoration(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "setScreenSecure",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->setScreenSecure(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "changeVersion",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->changeVersion(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "networkCapture",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->networkCapture(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showIpPublishPoster",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showIpPublishPoster(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "mgAuthorization",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mgAuthorization(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getRiskMngmtInfo",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getRiskMngmtInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "notifyRequestVideoAuth",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->notifyRequestVideoAuth(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getAddressBook",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->getAddressBook(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "jumpHalfWeb",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->jumpHalfWeb(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "openSystemSetting",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openSystemSetting(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "sendLocalPixelBarrage",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->sendLocalPixelBarrage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showInteractiveMagicCube",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showInteractiveMagicCube(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "VideoInteractionEvent",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->VideoInteractionEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "VideoSetPlayerMuted",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->VideoSetPlayerMuted(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "mgTransfer",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mgTransfer(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showMangPushShare",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showMangPushShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "liveStartRecordVoice",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->liveStartRecordVoice(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "liveCancelRecordVoice",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->liveCancelRecordVoice(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "liveEndRecordVoice",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->liveEndRecordVoice(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "liveAIKeyBoard",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->liveAIKeyBoard(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "startPlayVoice",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->startPlayVoice(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "stopPlayVoice",
+      "signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->stopPlayVoice(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "kind": "bridge",
+      "name": "<dynamic-jsInterfaceMap>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "controlNativeTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->controlNativeTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getClientContext",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getClientContext(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getHeaderJson",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getHeaderJson(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getToken",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getToken(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "onDomLoadFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onDomLoadFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "onFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->openBrowser(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "refresh",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->refresh(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "setClientTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setClientTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "setWebViewHeight",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setWebViewHeight(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "showClientDialog",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showClientDialog(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "showToast",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showToast(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "startActivity",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->startActivity(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "statisticsDCS",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->statisticsDCS(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "bridge",
+      "name": "<dynamic-method-class-names>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setLightTouchEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setLightTouchEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setNeedInitialFocus",
+      "signature": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": "Landroid/webkit/WebSettings;->setPluginState(Landroid/webkit/WebSettings$PluginState;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "loadCustomScheme",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->loadCustomScheme(Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onTitle",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onTitle(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "postADMonitor",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$t;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getMediaUrl",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$u;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getPluginConfig",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$v;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getSize",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$w;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$x;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$y;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "showShareMenus",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$z;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "shareTo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$a0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchBranch",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$a;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$b;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "changeFactor",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$c;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getBaseFolder",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$d;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getBranchInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$e;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$f;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getVideoInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$g;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getFactorInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$i;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "feedbackResult",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$j;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "playNext",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$l;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchBackground",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$m;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "showLogin",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$n;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchForeground",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$o;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "pointQuery",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$p;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "checkAuth",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$q;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "postBigData",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$r;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$h;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "login",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$w;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "logout",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$x;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "setShareInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$y;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$z;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfoForMobile",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$b;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$c;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$e;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getUserAgent",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$f;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "btnApply",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$g;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "bindMobile",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$h;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "support",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$i;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "chooseLoc",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$k;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "chooseDate",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$l;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "back",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$m;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "listenBackBtn",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$n;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "identityDirectly",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$o;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "webviewConfig",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$p;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$v;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "copy",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$d;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "checkUpdate",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$j;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 82,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive Activity-level recall; unknown targets count as unresolved misses in aggregate coverage. Registration-only matches are shown separately and do not prove endpoint coverage. WebView object identity requires independent review.",
+  "scoring_version": 2,
+  "duplicate_oracle_rows": 70,
+  "capability_granularity": {
+    "setting": {
+      "expected": 526,
+      "matched": 519,
+      "recall": 0.9866920152091255
+    },
+    "bridge_member": {
+      "expected": 1094,
+      "matched": 905,
+      "recall": 0.8272394881170019
+    },
+    "callback": {
+      "expected": 591,
+      "matched": 584,
+      "recall": 0.988155668358714
+    },
+    "bridge_registration": {
+      "expected": 59,
+      "matched": 1,
+      "recall": 0.01694915254237288
+    }
+  },
+  "unknown_target_surfaces": [
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "name": "<dynamic-jsInterfaceMap>",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "name": "<dynamic-method-class-names>",
+      "status": "registered-target-unknown"
+    }
+  ],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "valid": 77,
+      "uncertain": 5
+    },
+    "emitted": 82,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 5,
+    "conservative_error_upper_bound": 0.06097560975609756
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

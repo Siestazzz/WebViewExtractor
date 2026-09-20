@@ -37,5 +37,10 @@ python3 docs/validation/mango/build_opos_truth.py
 python3 docs/validation/mango/build_loadingweb_truth.py
 python3 docs/validation/mango/build_xweb_truth.py
 python3 docs/validation/mango/build_webcontainer_truth.py
+python3 docs/validation/mango/build_huawei_truth.py
+python3 docs/validation/mango/build_ubix_truth.py
+python3 docs/validation/mango/build_mgadplus_truth.py
+python3 docs/validation/mango/build_mglive_truth.py
+python3 docs/validation/mango/build_landweb_truth.py
 python3 docs/validation/mango/finalize_canonical.py
 ```

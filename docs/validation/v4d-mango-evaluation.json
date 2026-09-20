@@ -1,0 +1,1283 @@
+{
+  "oracle_sha256": "a1adbe3d7e48cff99024862360f6a8f0babd7e80e9d998e121ef0af7d66c5556",
+  "report_sha256": "6cd4ca09199d89429f7f80987ffc264d49695c3e3abc9a6fc6f6ae93567a5d3e",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/mango/canonical-facts.jsonl",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 526,
+      "matched": 519,
+      "explicit_matched": 1,
+      "unscorable": 0,
+      "recall": 0.9866920152091255,
+      "explicit_recall": 0.0019011406844106464
+    },
+    "bridge": {
+      "expected": 1153,
+      "matched": 1036,
+      "explicit_matched": 0,
+      "unscorable": 58,
+      "recall": 0.8985255854293148,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 591,
+      "matched": 584,
+      "explicit_matched": 8,
+      "unscorable": 0,
+      "recall": 0.988155668358714,
+      "explicit_recall": 0.01353637901861252
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getSMSNumber",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "getSMSCode",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "payWithWeChat",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "share",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "showCustomShareMenus",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "invokeH5Callback",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "webviewBecomeActive",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "kind": "bridge",
+      "name": "webviewEnterBackground",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "kind": "bridge",
+      "name": "<dynamic-jsInterfaceMap>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "controlNativeTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->controlNativeTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getClientContext",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getClientContext(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getHeaderJson",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getHeaderJson(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getToken",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getToken(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "onDomLoadFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onDomLoadFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "onFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->openBrowser(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "refresh",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->refresh(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "setClientTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setClientTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "setWebViewHeight",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setWebViewHeight(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "showClientDialog",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showClientDialog(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "showToast",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showToast(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "startActivity",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->startActivity(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "statisticsDCS",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->statisticsDCS(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "bridge",
+      "name": "<dynamic-method-class-names>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setLightTouchEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setLightTouchEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setNeedInitialFocus",
+      "signature": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": "Landroid/webkit/WebSettings;->setPluginState(Landroid/webkit/WebSettings$PluginState;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "loadCustomScheme",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->loadCustomScheme(Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onTitle",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onTitle(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "postADMonitor",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$t;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getMediaUrl",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$u;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getPluginConfig",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$v;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getSize",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$w;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$x;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$y;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "showShareMenus",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$z;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "shareTo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$a0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchBranch",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$a;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$b;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "changeFactor",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$c;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getBaseFolder",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$d;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getBranchInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$e;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$f;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getVideoInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$g;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getFactorInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$i;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "feedbackResult",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$j;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "playNext",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$l;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchBackground",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$m;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "showLogin",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$n;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchForeground",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$o;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "pointQuery",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$p;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "checkAuth",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$q;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "postBigData",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$r;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$h;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "login",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$w;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "logout",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$x;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "setShareInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$y;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$z;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfoForMobile",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$b;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$c;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$e;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getUserAgent",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$f;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "btnApply",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$g;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "bindMobile",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$h;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "support",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$i;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "chooseLoc",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$k;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "chooseDate",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$l;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "back",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$m;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "listenBackBtn",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$n;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "identityDirectly",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$o;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "webviewConfig",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$p;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$v;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "copy",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$d;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "checkUpdate",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$j;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 92,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive Activity-level recall; unknown targets count as unresolved misses in aggregate coverage. Registration-only matches are shown separately and do not prove endpoint coverage. WebView object identity requires independent review.",
+  "scoring_version": 2,
+  "duplicate_oracle_rows": 70,
+  "capability_granularity": {
+    "setting": {
+      "expected": 526,
+      "matched": 519,
+      "recall": 0.9866920152091255
+    },
+    "bridge_member": {
+      "expected": 1094,
+      "matched": 1035,
+      "recall": 0.9460694698354661
+    },
+    "callback": {
+      "expected": 591,
+      "matched": 584,
+      "recall": 0.988155668358714
+    },
+    "bridge_registration": {
+      "expected": 59,
+      "matched": 57,
+      "recall": 0.9661016949152542
+    }
+  },
+  "unknown_target_surfaces": [
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "getSMSNumber",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "getSMSCode",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "payWithWeChat",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "share",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "showCustomShareMenus",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "invokeH5Callback",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "webviewBecomeActive",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.HalfWebActivity",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.MeCaptureWebActivity",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.guide.PureWebActivity",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivity",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.browser.WebActivityTransparent",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.mgtv.ui.login.CaptureWebActivity",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.hunantv.webui.WebUIActivity",
+      "name": "webviewEnterBackground",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "name": "<dynamic-jsInterfaceMap>",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "name": "<dynamic-method-class-names>",
+      "status": "registered-target-unknown"
+    }
+  ],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 92
+    },
+    "emitted": 92,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 92,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

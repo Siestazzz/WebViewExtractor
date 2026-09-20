@@ -1,6 +1,6 @@
 # Tencent News v3f ownership audit
 
-All 24 emitted Activities were checked against the decompiled source, including alternative evidence paths and the concrete receiver object for each capability. Results: **22 valid Activity hosts, 2 wrong, 0 uncertain**. The conservative candidate upper bound is therefore 22. `valid` only means the Activity has at least one real WebView capability path; it does not approve every emitted fact.
+All 24 emitted Activities were checked against the decompiled source, including alternative evidence paths and the concrete receiver object for each capability. Results: **22 valid Activity hosts, 2 wrong, 0 uncertain**. Counting wrong plus uncertain candidates, the conservative ownership-error upper bound is **2/24 = 8.33%**. `valid` only means the Activity has at least one real WebView capability path; it does not approve every emitted fact.
 
 The two wrong Activities are `MobileQQActivity` and `QzoneShareActivity`. They call Tencent share APIs but never receive or store the SDK WebViews. The emitted `PKDialog`, `TDialog`, `SocialApiIml`, and `com.tencent.open.d.b` facts belong to SDK-created alternatives and cannot be assigned to the launcher Activity.
 

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "rules": [
+    {
+      "id": "adcore_mraid_prompt_transport",
+      "transport": {
+        "client_type": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;",
+        "callback": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "payload_parameter_index": 2,
+        "result_parameter_index": 4,
+        "bridge_field": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;->a:Lcom/tencent/ams/adcore/js/AdCoreJsBridge;",
+        "dispatch": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->invokeJavascriptInterface(Ljava/lang/String;)Ljava/lang/String;",
+        "response_sink": "Landroid/webkit/JsPromptResult;->confirm(Ljava/lang/String;)V",
+        "fallback_condition": "bridge is null, or dispatch response code is 500 and external client field b is non-null"
+      },
+      "client_bridge_binding": {
+        "constructor": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;-><init>(Lcom/tencent/ams/adcore/js/AdCoreJsBridge;)V",
+        "bridge_parameter_index": 0,
+        "stored_field": "Lcom/tencent/ams/adwebview/adapter/client/AdCoreJsWebChromeClient;->a:Lcom/tencent/ams/adcore/js/AdCoreJsBridge;"
+      },
+      "registry": {
+        "bridge_type": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;",
+        "method_map_field": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->jsMap:Ljava/util/Map;",
+        "instance_map_field": null,
+        "receiver_rule": "the registry owner instance itself; reflection invokes Method on this AdCoreJsBridge",
+        "initializer_chain": [
+          "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;-><init>(Ljava/lang/String;ZLcom/tencent/ams/adcore/js/AdCoreJsBridge$Handler;Lcom/tencent/ams/adcore/view/AdCoreServiceHandler;)V",
+          "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->initDelegate()V",
+          "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->initJsMap(ZLjava/lang/Class;)V"
+        ],
+        "annotation_type": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge$AdBasicInterface;",
+        "annotation_test": "Ljava/lang/reflect/Method;->isAnnotationPresent(Ljava/lang/Class;)Z",
+        "get_annotations_method": null,
+        "get_annotations_note": "This APK does not call getAnnotations for this registry; use isAnnotationPresent with the Class argument supplied by initDelegate.",
+        "safe_filter_annotation": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge$AdSafeInterface;",
+        "safe_filter": "include @AdBasicInterface method unless it also has @AdSafeInterface and constructor isSafe is false",
+        "enumeration": "Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;",
+        "key_builder": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->genJavaMethodSign(Ljava/lang/reflect/Method;)Ljava/lang/String;",
+        "map_insert": "Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+        "map_lookup": "Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+        "reflection_invoke": "Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;",
+        "bridge_constructor_parameters": {
+          "injected_name": 0,
+          "is_safe": 1,
+          "handler_receiver": 2,
+          "service_handler": 3
+        },
+        "known_construction_evidence": "AdCorePage.java:254 constructs AdCoreJsBridge(\"mraid\", safe, this, serviceHandler); rule matching must remain Activity-agnostic"
+      },
+      "javascript_name_logic": {
+        "namespace": "MraidBridge",
+        "request_fields": [
+          "method",
+          "types",
+          "args"
+        ],
+        "base_name": "Method.getName(); @AdBasicInterface has no name element and does not rename the method",
+        "parameter_suffixes": {
+          "Ljava/lang/String;": "_S",
+          "[Ljava/lang/String;": "_[LS",
+          "[J": "_[LN",
+          "I|J|F|D": "_N",
+          "Z": "_B",
+          "Lorg/json/JSONObject;": "_O",
+          "Lcom/tencent/ams/adcore/js/AdCoreJsBridge$JSCallbackFun;": "_F",
+          "other": "_P"
+        },
+        "object_fallback": "if exact key misses, replace _O with _S and look up once more"
+      },
+      "bridge_webview_binding": {
+        "helper": "Lcom/tencent/ams/adcore/view/AdCoreWebViewHelper;->setJsWebChromeClient(Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;Lcom/tencent/ams/adcore/js/AdCoreJsBridge;Ljava/lang/Object;)V",
+        "webview_wrapper_parameter_index": 0,
+        "bridge_parameter_index": 1,
+        "optional_client_parameter_index": 2,
+        "setter": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->setWebView(Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;)V",
+        "stored_field": "Lcom/tencent/ams/adcore/js/AdCoreJsBridge;->webViewWrapper:Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;",
+        "client_registration": "Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;->setWebChromeClient(Ljava/lang/Object;)V",
+        "identity_constraint": "the wrapper passed at helper argument 0 is both stored in the bridge and receives the client built from helper argument 1; do not join by wrapper/client type alone"
+      }
+    },
+    {
+      "id": "midas_wrapper_receiver_binding",
+      "branches": [
+        {
+          "page_initializer": "Lcom/tencent/midas/jsbridge/APSystemWebPage;->initUI(Landroid/app/Activity;)V",
+          "wrapper_constructor": "Lcom/tencent/midas/jsbridge/APWebView;-><init>(Landroid/app/Activity;Landroid/webkit/WebView;Lcom/tencent/midas/jsbridge/IAPWebViewCallback;)V",
+          "webview_parameter_index": 1,
+          "stored_webview_field": "Lcom/tencent/midas/jsbridge/APWebView;->mWebview:Landroid/webkit/WebView;",
+          "wrapper_field": "Lcom/tencent/midas/jsbridge/APSystemWebPage;->webView:Lcom/tencent/midas/jsbridge/APWebView;"
+        },
+        {
+          "page_initializer": "Lcom/tencent/midas/jsbridge/APX5WebPage;->initUI(Landroid/app/Activity;)V",
+          "wrapper_constructor": "Lcom/tencent/midas/jsbridge/APX5WebView;-><init>(Landroid/app/Activity;Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/midas/jsbridge/IAPX5WebViewCallback;)V",
+          "webview_parameter_index": 1,
+          "stored_webview_field": "Lcom/tencent/midas/jsbridge/APX5WebView;->mWebview:Lcom/tencent/smtt/sdk/WebView;",
+          "wrapper_field": "Lcom/tencent/midas/jsbridge/APX5WebPage;->webView:Lcom/tencent/midas/jsbridge/APX5WebView;"
+        }
+      ],
+      "receiver_rule": "attribute every InitWebView settings/client call to constructor argument 1 via mWebview; constructor argument 0 is Activity context and must not be treated as the WebView receiver",
+      "initialization_rule": "each constructor stores argument 1 in mWebview and synchronously invokes the private InitWebView method"
+    }
+  ]
+}

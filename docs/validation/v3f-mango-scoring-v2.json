@@ -1,0 +1,1214 @@
+{
+  "oracle_sha256": "93ae015d1b6456ccedc0ccb945abfafd049d7a62cec4bacbe99e9d63c52fa738",
+  "report_sha256": "6b61666ab1919369c00d7c6c8cbe37d1da4956a5984d52c959b12722b92335bf",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/mango/canonical-facts.jsonl",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 526,
+      "matched": 479,
+      "explicit_matched": 1,
+      "unscorable": 0,
+      "recall": 0.9106463878326996,
+      "explicit_recall": 0.0019011406844106464
+    },
+    "bridge": {
+      "expected": 1153,
+      "matched": 1086,
+      "explicit_matched": 0,
+      "unscorable": 2,
+      "recall": 0.9418907198612315,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 591,
+      "matched": 544,
+      "explicit_matched": 8,
+      "unscorable": 0,
+      "recall": 0.9204737732656514,
+      "explicit_recall": 0.01353637901861252
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "kind": "bridge",
+      "name": "<dynamic-jsInterfaceMap>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "controlNativeTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->controlNativeTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getClientContext",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getClientContext(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getHeaderJson",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getHeaderJson(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "getToken",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getToken(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "onDomLoadFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onDomLoadFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "onFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->openBrowser(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "refresh",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->refresh(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "setClientTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setClientTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "setWebViewHeight",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setWebViewHeight(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "showClientDialog",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showClientDialog(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "showToast",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showToast(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "startActivity",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->startActivity(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "message_handler",
+      "name": "statisticsDCS",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->statisticsDCS(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "kind": "bridge",
+      "name": "<dynamic-method-class-names>",
+      "signature": "",
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setDatabaseEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": "Landroid/webkit/WebSettings;->setGeolocationDatabasePath(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setLightTouchEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setLightTouchEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setNeedInitialFocus",
+      "signature": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setSupportMultipleWindows",
+      "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": "Landroid/webkit/WebSettings;->setPluginState(Landroid/webkit/WebSettings$PluginState;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": "Landroid/webkit/WebSettings;->setTextZoom(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setDefaultTextEncodingName",
+      "signature": "Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": "Landroid/webkit/WebSettings;->setPluginState(Landroid/webkit/WebSettings$PluginState;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": "Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$2;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$3;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$3;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$3;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$3;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/mgsz/h5/ImgoWebView$3;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onGeolocationPermissionsHidePrompt",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onGeolocationPermissionsHidePrompt()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "kind": "bridge_method",
+      "name": "callNative",
+      "signature": "Lcom/mgsz/h5/jsbridge/BridgeWebView$b;->callNative(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setDefaultTextEncodingName",
+      "signature": "Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": "Landroid/webkit/WebSettings;->setLayoutAlgorithm(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setSupportMultipleWindows",
+      "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setAllowContentAccess",
+      "signature": "Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": "Landroid/webkit/WebSettings;->setPluginState(Landroid/webkit/WebSettings$PluginState;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": "Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "loadCustomScheme",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->loadCustomScheme(Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onTitle",
+      "signature": "Lcom/mgadplus/brower/CustomWebActivity$c;->onTitle(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Lcom/mgadplus/brower/b;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/mgadplus/brower/b;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/mgadplus/brower/b;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/mgadplus/brower/b;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/mgadplus/brower/b;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/mgadplus/brower/b;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/mgadplus/brower/b;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/mgadplus/brower/c;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgadplus/brower/jsbridge/BridgeWebView$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/mgadplus/brower/jsbridge/BridgeWebView$a;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/mgadplus/brower/jsbridge/BridgeWebView$a;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/mgadplus/brower/jsbridge/BridgeWebView$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "postADMonitor",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$t;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getMediaUrl",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$u;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getPluginConfig",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$v;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getSize",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$w;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$x;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$y;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "showShareMenus",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$z;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "shareTo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$a0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchBranch",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$a;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$b;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "changeFactor",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$c;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getBaseFolder",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$d;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getBranchInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$e;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$f;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getVideoInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$g;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getFactorInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$i;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "feedbackResult",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$j;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "playNext",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$l;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchBackground",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$m;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "showLogin",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$n;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "switchForeground",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$o;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "pointQuery",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$p;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "checkAuth",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$q;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "postBigData",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$r;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView$h;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "login",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$w;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "logout",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$x;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "setShareInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$y;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$z;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfoForMobile",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$b;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$c;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$e;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getUserAgent",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$f;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "btnApply",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$g;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "bindMobile",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$h;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "support",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$i;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "chooseLoc",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$k;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "chooseDate",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$l;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "back",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$m;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "listenBackBtn",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$n;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "identityDirectly",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$o;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "webviewConfig",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$p;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$v;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "copy",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$d;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.mgtv.ui.live.mglive.webview.WebViewActivity",
+      "kind": "message_handler",
+      "name": "checkUpdate",
+      "signature": "Lcom/mgtv/ui/live/mglive/webview/a$j;->a(Ljava/lang/String;Lcn0/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.imgo.vipcardiac.activity.LandWebActivity",
+      "kind": "message_handler",
+      "name": "getDeviceInfo",
+      "signature": "Lcom/imgo/vipcardiac/activity/LandWebActivity$2;->handler(Ljava/lang/String;Lcom/imgo/webbase/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.imgo.vipcardiac.activity.LandWebActivity",
+      "kind": "message_handler",
+      "name": "getUserInfo",
+      "signature": "Lcom/imgo/vipcardiac/activity/LandWebActivity$3;->handler(Ljava/lang/String;Lcom/imgo/webbase/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.imgo.vipcardiac.activity.LandWebActivity",
+      "kind": "message_handler",
+      "name": "login",
+      "signature": "Lcom/imgo/vipcardiac/activity/LandWebActivity$4;->handler(Ljava/lang/String;Lcom/imgo/webbase/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.imgo.vipcardiac.activity.LandWebActivity",
+      "kind": "message_handler",
+      "name": "jumpPage",
+      "signature": "Lcom/imgo/vipcardiac/activity/LandWebActivity$5;->handler(Ljava/lang/String;Lcom/imgo/webbase/jsbridge/d;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.imgo.vipcardiac.activity.LandWebActivity",
+      "kind": "message_handler",
+      "name": "closeWebView",
+      "signature": "Lcom/imgo/vipcardiac/activity/LandWebActivity$6;->handler(Ljava/lang/String;Lcom/imgo/webbase/jsbridge/d;)V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 74,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive Activity-level recall; unknown targets count as unresolved misses in aggregate coverage. Registration-only matches are shown separately and do not prove endpoint coverage. WebView object identity requires independent review.",
+  "scoring_version": 2,
+  "duplicate_oracle_rows": 70,
+  "capability_granularity": {
+    "setting": {
+      "expected": 526,
+      "matched": 479,
+      "recall": 0.9106463878326996
+    },
+    "bridge_member": {
+      "expected": 1094,
+      "matched": 1029,
+      "recall": 0.9405850091407678
+    },
+    "callback": {
+      "expected": 591,
+      "matched": 544,
+      "recall": 0.9204737732656514
+    },
+    "bridge_registration": {
+      "expected": 59,
+      "matched": 57,
+      "recall": 0.9661016949152542
+    }
+  },
+  "unknown_target_surfaces": [
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "name": "<dynamic-jsInterfaceMap>",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "name": "<dynamic-method-class-names>",
+      "status": "registered-target-unknown"
+    }
+  ],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "valid": 69,
+      "uncertain": 5
+    },
+    "emitted": 74,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 5,
+    "conservative_error_upper_bound": 0.06756756756756757
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}
