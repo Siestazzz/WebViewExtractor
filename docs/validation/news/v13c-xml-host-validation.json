@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "input": "test/runs/v13c-news-xml-hosts.json",
+  "input_status": "development_selected_completed_hosts",
+  "baseline": "test/runs/v12j/com.tencent.news/0/output/capabilities.json",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "scope": "four public development hosts; not full-v13c ownership validation",
+  "overall": "XML identities are correct, but component seeding also expands uninvoked methods and nullable/helper alternatives; candidate status does not make those ownerships correct",
+  "hosts": [
+    {
+      "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+      "counts": {"v12j": 11, "v13c": 30, "precise_xml_rows": 16},
+      "xml_identity": "valid: activity/view:2131303140 is X5WrapperWebView from init_web_browser_layout",
+      "same_object": "The eight PrivacyAbsWebActivity settings and setWebViewClient are source calls on its webView field, hence the same XML object, although v13c reports them as an unknown union rather than the precise identity.",
+      "valid_new_groups": ["smtt superclass constructor removeJavascriptInterface sites execute while the XML X5Wrapper object is constructed", "DtX5 injectBridge is reachable when the real object executes loadUrl"],
+      "overexpanded_groups": ["X5Wrapper/DtX5 loadData and loadDataWithBaseURL override sites are class-surface expansion without a demonstrated call from this host", "WeakReference WebViewCompatHelper android/X5 alternatives and constructor_parameter debug WebView are not bound to the XML object"],
+      "verdict": "ownership valid; per-row binding mixed"
+    },
+    {
+      "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+      "counts": {"v12j": 12, "v13c": 31, "precise_xml_rows": 16},
+      "xml_identity": "valid: activity/view:2131303140 is X5WrapperWebView from init_web_browser_layout",
+      "same_object": "Inherited settings/client plus the item-specific mixed-content setting and load belong to the same XML field; several remain parent/unknown unions.",
+      "valid_new_groups": ["same constructor cleanup and load-triggered DtX5 bridge as PrivacyWebActivity"],
+      "overexpanded_groups": ["uninvoked loadData/loadDataWithBaseURL overrides", "unbound WeakReference compatibility branches", "constructor_parameter debug WebView"],
+      "verdict": "ownership valid; per-row binding mixed"
+    },
+    {
+      "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+      "counts": {"v12j": 55, "v13c": 66, "precise_xml_rows": 29},
+      "xml_identity": "valid: ordered NovelWebView -> NovelLoadingWebView -> AdWebView XML chain produces the inner object stored as BaseSysWebView",
+      "same_object": "The twelve NovelWebView.setWebViewSettings calls are applied to NovelWebView.mWebView obtained from NovelLoadingWebView.getWebView, so they target the same AdWebView. v13c still reports that group as an unknown union.",
+      "valid_new_groups": ["BaseSysWebView constructor/default setting sites on the AdWebView instance", "actual NovelWebView settings, callbacks and load paths through the stored inner field"],
+      "overexpanded_groups": ["AdWebView.initWebViewSettings has no call on the WebNovel source path; its eleven setting rows are XML-component method seeding, not executed Novel capability", "DtWebView loadData/loadDataWithBaseURL override rows lack host call evidence", "WeakReference/compatibility android-vs-X5 alternatives are not the bound AdWebView"],
+      "verdict": "ownership valid; XML identity valid; eleven concrete-type setting rows are false expansion even though the type is correct"
+    },
+    {
+      "activity": "com.tencent.news.ui.SupportActivity",
+      "counts": {"v12j": 12, "v13c": 55, "precise_xml_rows": 28, "dt_x5_alias_rows": 12},
+      "xml_identity": "valid: BaseActivity inflate(false)+addView makes activity_support reachable and webView 2131303125 is BaseWebView",
+      "same_object": "Support initView settings, two client assignments and Activity load calls use field ˋˋ populated by that lookup. Parent/unknown rows sharing the activity/view ID describe the same object but lose type precision.",
+      "valid_new_groups": ["BaseWebView constructor default settings", "actual Activity client/settings/load sites", "load-triggered DtX5 bridge on the BaseWebView inheritance chain"],
+      "overexpanded_groups": ["the 12-row DtX5 identity under utils.r.ˆ/m150665 is the nullable fallback new DtX5WebView branch; Support passes its initialized non-null field, so it is not a second UI WebView", "RecyclableWebView hardReset/softReset rows lack a Support call", "uninvoked loadData/loadDataWithBaseURL overrides", "android.webkit branch of WebViewCompatHelper is incompatible with this X5 object", "WeakReference, entry_parameter and constructor_parameter objects are not proven aliases of the XML field"],
+      "verdict": "host recovery valid; 55-row result contains alias/constructor expansion and cannot be accepted wholesale"
+    }
+  ],
+  "reusable_rules": [
+    "A superclass method is attributable only when construction, a lifecycle callback, or a reachable virtual call invokes it; XML subtype discovery alone must not seed every relevant method.",
+    "Preserve one allocation identity while viewing it through BaseWebView/X5Wrapper/DtX5/smtt parent types; do not create a second object id for a parent helper call.",
+    "For `if (webView == null) webView = new DtX5WebView(...)`, keep the fallback allocation separate and require null feasibility; a preceding mandatory XML field write makes it infeasible on the normal lifecycle path.",
+    "Object-typed compatibility helpers must select the branch compatible with the bound receiver hierarchy; an X5Wrapper/BaseWebView cannot simultaneously be android.webkit.WebView.",
+    "Settings/client calls through a field/getter chain should inherit the XML allocation identity, not merely attach XML evidence to an unknown union."
+  ]
+}

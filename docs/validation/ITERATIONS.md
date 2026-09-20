@@ -710,3 +710,105 @@ Replay each report with `scripts/evaluate.py --report <capabilities.json> --orac
  docs/validation/<app>/canonical-facts.jsonl --ownership docs/validation/<app>/v12j-ownership.jsonl
  --out <evaluation.json>`. Benchmark/environment JSON, source audits and individual missing facts
 are retained alongside this log.
+
+
+## v13: actual layout scopes and concrete XML receiver types (development iteration; acceptance failed)
+
+v13a's first real News probe exposed a resource-table parser failure. The existing third-party
+parser threw RuntimeException, and the previous res/layout prefix scan found zero layout XMLs
+in all three obfuscated APKs. These failures are not negative capability evidence. v13 replaces
+resource-table parsing with a bounded layout-only reader for standard, sparse, offset16 and compact
+entries, layout aliases, and the actual paths stored in the global string pool. All three APKs
+now parse thousands of layout files with no inventory errors (v13-resource-inventory.json).
+
+Layout effects follow actual reached setContentView/inflate/addView calls and lookup roots;
+the implementation does not join types through a global view-resource-ID table. A superclass
+cast preserves an already known XML subtype. Layout-derived facts have source path/root/type
+evidence and remain candidates: branch/configuration cooccurrence and exact repeated allocation
+identity are not proved. Different static inflate sites use their code offsets. Unsupported
+resource values, dynamic layout/attachment, invalid merge inflation and bounded lookup losses
+produce diagnostics. Fragment XML tags are not mistaken for returned Fragment instances.
+
+A new fixture covers reused IDs in unrelated layouts, resource aliases and encoded table formats,
+malformed table bounds, superclass casts, isolated roots, attached merge versus detached ordinary
+roots, actual BaseActivity inflate(false)+addView wrappers, and two nested XML constructors whose
+field/getter chain returns the concrete inner WebView. The independently reviewed wrapper assertion
+now also requires a nonempty bridge set; allMatch alone could vacuously pass.
+
+News v13b single-host probes recover concrete XML types for Privacy and Novel; Support still
+loses the multi-level container link. v13c retains the conditional parent relation of unresolved
+findViewById results, so later addView effects can be replayed. This is candidate evidence, not
+proof a nullable lookup succeeds. Full serial three-App v13c runs and their independent audits are
+retained. They exposed uncalled XML helper expansion; see the subsequent development results below.
+No new quality or speed acceptance is claimed.
+
+Resource format reference: https://android.googlesource.com/platform/frameworks/base/+/refs/heads/main/libs/androidfw/include/androidfw/ResourceTypes.h
+
+
+### v13c / v13d development results (not acceptance)
+
+| Variant | News seconds / hosts | Mango seconds / hosts | Ctrip seconds / hosts |
+|---|---:|---:|---:|
+| v13c | 208.750 / 44 | 379.816 / 92 | 203.860 / 55 |
+| v13d | 150.845 / 42 | 357.963 / 87 | 185.608 / 55 |
+
+Sol found v13c's XML all-method seeding includes uncalled AdWebView helpers. v13d restricts XML
+construction to constructors and platform View lifecycle entries. It also resolves deferred fields
+through actual owner-specific heap writes; synthetic tests isolate two owners and cyclic unknowns.
+Compact JSON preserves fields while reducing serialization cost. Phase metrics separately record
+hashing, inventory and prior completed report writes (the current/final write is not included).
+
+The restriction removes genuine false expansions, but source audit also found real regressions:
+Mango lost five conditional MiniAppFragment hosts and MGVideoPlay's 81 Diana facts; News lost real
+loadUrl override initialization; Ctrip EvaluateDialog lost its actual loadUrl override chain and
+_VideoEnabledWebView bridge despite 100% on the then-public scored facts. These failures are
+retained, not relabeled as successful noise removal. v13e follows actual WebView API override bodies
+on their concrete receivers, with a synthetic positive and an uncalled-helper negative. Its final
+three-App results and source checks are recorded below.
+
+Ctrip's public development oracle expands from 17 to 30 source-positive hosts. The original 4330
+rows and all draft corrections remain versioned. Sol independently re-enumerated the 13 additional
+hosts' settings, client hierarchies and bridge members after a first report-assisted draft. The final
+196 added facts preserve four explicit-super callback implementations. A mistaken UTF-8 enum label
+and four dynamic-expression metadata fields were corrected from source, with failed scores retained.
+On this same expanded set, both v12j and v13c score 3680/3680 bridges, 323/323 settings, 391/391
+callbacks. This is no extractor gain and no blind-holdout result. Exact allocation matching remains
+unproven; the sealed ten samples per App remain untouched.
+
+
+### v13e measured candidate
+
+| App | Wall seconds | Peak RSS KiB | Output hosts | Bridge | Settings | Callbacks |
+|---|---:|---:|---:|---:|---:|---:|
+| News | 147.930 | 7892300 | 42 | 1288/1385 | 291/366 | 205/240 |
+| Mango | 348.158 | 9321164 | 87 | 1137/1163 | 574/608 | 597/634 |
+| Ctrip | 177.434 | 7353264 | 55 | 3680/3680 | 323/323 | 391/391 |
+
+All runs are partial reports, fresh serial JVMs with eight CPUs and 16 GiB heap. These are development
+measurements, not the required isolated final three repeats. The five-minute target and quality gates
+remain unmet. News improves by 20 settings and 23 callback facts relative to v12j; Mango loses 34
+settings, 37 callbacks and 10 bridge facts. Retain those regressions explicitly for the next repair.
+
+Sol's News ownership review confirms that the two removed hosts were old false associations, unlike
+Mango's five real missing hosts. News has 41 valid and one uncertain output host (2.38% conservative
+bound); Mango has 81 valid, one conditional and five uncertain (6.90%). These ownership statistics do
+not measure erroneous capability combinations within an otherwise valid Activity. News override
+following also propagates some existing receiver aliases/cross-binding, while the real Privacy
+XML object remains widened to the smtt parent in its loadUrl call. Source regression records retain
+both the missing override chain and the two removed false owners.
+
+Mango source verification pinpoints the missing constructor-argument → final listener field →
+instance interceptor list → interface dispatch chain. Its five MiniApp hosts and MG Diana81 are
+still absent. No broad XML all-method seed restoration is an acceptable substitute. Known omissions
+and all failed development score artifacts remain in OPEN_GAPS and per-App validation documents.
+
+Validation: capabilitySelfTest and shadowJar pass; all 12 evaluator black-box tests pass. The frozen
+v13e jar's external one-second watchdog leaves a parseable atomic timeout report after 1.276 seconds
+(57 observed snapshots). This verifies report survival only. Reproduce with the v12 commands above,
+substituting v13e, and use v13e-ownership.jsonl plus the current versioned canonical facts for scoring.
+
+Ctrip final source audit covers all 55 outputs (54 valid, one wrong; conservative bound 1.82%).
+Its 30-host canonical stays at 100%, but the newly versioned four-fact Evaluate source regression
+replays at only 1/4: one override operation restored, one operation and the auxiliary bridge/member
+still missing. See ctrip/v13e-public30-plus-regressions-scoring.json. This cumulative failure prevents
+interpreting the public canonical score as acceptance. All future replays must retain this supplement.

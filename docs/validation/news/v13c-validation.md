@@ -1,0 +1,13 @@
+# Tencent News v13c validation
+
+The complete v13c report remains partial and emits the same 44 Activities as v12j. Ownership remains 43 valid hosts and one uncertain host, `ShellActivity`; this certifies that a host owns at least one real WebView path, not every emitted candidate row. Eight hosts change. The complete row-level delta is in `v13c-delta.json`, and all 44 ownership records are in `v13c-ownership.jsonl`.
+
+The four XML-focused hosts are audited separately in `v13c-xml-host-validation.md`. Their concrete XML identities are correct, and Support’s wrapper path is recovered. The added facts are mixed: real constructor/inherited calls and direct field operations coexist with uninvoked methods seeded from the component class, nullable fallback allocations, duplicate parent aliases, and incompatible Android/X5 helper alternatives.
+
+`VerticalVideoVideoActivity` changes by 17 additions and 12 removals, largely replacing DtX5 constructor/override rows with BaseWebView/X5Wrapper rows. `VisitVerticalVideoActivity` adds 57 rows, frequently duplicated across two receiver identities. Both Activities remain real hosts, but XML type discovery alone does not establish `hardReset`, `softReset`, every load override, or every duplicated constructor path. These rows remain mixed candidates.
+
+`NewsDetailActivity` and `PushDetailActivity` each add `r0.ˏˊ() -> BaseWebView.loadUrl`. Their detail-content controller is source reachable, so the operation is plausible on the owned detail WebView; it does not resolve the older alternative receiver identities. No host is added or removed, and the two known long-video Activities remain absent.
+
+The four prominent scoring misses are receiver-identity failures rather than false source facts. Support’s `setJavaScriptEnabled`, `setDomStorageEnabled`, and `setUserAgentString` execute in `SupportActivity.initView` on field `ˋˋ`. That field was populated from XML `webView` and is the same BaseWebView. v13c reports these sites on the same `activity/view:2131303125` identity typed only as `smtt.WebView`, without carrying the XML concrete evidence.
+
+For Novel, `setBlockNetworkImage` is one of the twelve calls in `NovelWebView.setWebViewSettings` on `mWebView`; the field comes from `NovelLoadingWebView.getWebView` and is the nested AdWebView. `WebNovelActivity.initListener` installs clients `e` and `f` on `f101623`, which is obtained from the same getter chain. Their eleven callback implementations are therefore source true for the AdWebView. The report leaves the registration receiver as BaseSysWebView or an unknown union, so the concrete type constraint does not match. This is consistent with field binding becoming precise after the current host passes, rather than missing XML parsing.

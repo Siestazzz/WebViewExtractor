@@ -1,0 +1,7 @@
+# Privacy loadUrl override regression
+
+Both Privacy Activities inflate the same `X5WrapperWebView` resource and store it in a field declared as `smtt.WebView`. Their `parseIntent()` methods invoke `Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V` on that field. Runtime virtual dispatch must retain the allocation type: `X5WrapperWebView.loadUrl(String)` calls `super`, which is `DtX5WebView.loadUrl(String)`; that calls the platform/X5 superclass and then `DtX5WebView.injectBridge()`.
+
+`injectBridge()` is conditional. `JsBinderHelper.allowInjectOnLoad()` must be true. It registers `new BridgeInterface(this)` as `DTJsBridgeInterface` once while `mIsJsInterfaceInject` is false, and it registers/stores `new JsBridgeInterfaceV2(this)` as `dtBridge` once while `mIsJsInterfaceV2Inject` is false. These are conditional capabilities on the same XML allocation, not capabilities of an extra parent object.
+
+In v13e the first missing edge is the dynamic dispatch from the declared smtt call to `X5WrapperWebView.loadUrl`. The report retains the correct XML allocation ID as one receiver alternative, but rewrites that alternative's type to `com.tencent.smtt.sdk.WebView`. Consequently override lookup cannot select `X5WrapperWebView`, so neither the X5Wrapper super edge, the DtX5 override, nor either bridge registration is emitted. The PatchRedirector alternative may remain unknown; it must not prevent following the separately known XML alternative.

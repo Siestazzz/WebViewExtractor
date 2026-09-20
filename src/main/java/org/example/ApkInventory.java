@@ -12,6 +12,23 @@ final class ApkInventory {
     final Set<String> activities=new TreeSet<>();
     final Map<String,String> aliases=new TreeMap<>();
     final Map<String,Set<String>> layoutTypes=new TreeMap<>();
+    static final class LayoutNode {
+        String type,source; Integer id,include;
+        final List<LayoutNode> children=new ArrayList<>();
+        LayoutNode(String type){this.type=type;}
+    }
+    final Map<String,List<LayoutNode>> layoutRoots=new TreeMap<>();
+    final Map<Integer,Set<String>> layoutResources=new TreeMap<>();
+    final Map<Integer,Set<Integer>> layoutAliases=new TreeMap<>();
+    Set<String> layouts(int id){var result=new TreeSet<String>();collectLayouts(id,result,new HashSet<>());return result;}
+    void collectLayouts(int id,Set<String> result,Set<Integer> seen){
+        if(!seen.add(id)||seen.size()>64)return;
+        result.addAll(layoutResources.getOrDefault(id,Set.of()));
+        for(int alias:layoutAliases.getOrDefault(id,Set.of()))collectLayouts(alias,result,seen);
+    }
+    void resources(byte[] bytes)throws Exception {
+        new LayoutResources(bytes).read(this);
+    }
     final List<String> errors=new ArrayList<>();
     static ApkInventory read(Path apk) throws Exception {
         ApkInventory result=new ApkInventory();
@@ -19,10 +36,14 @@ final class ApkInventory {
             var entry=zip.getEntry("AndroidManifest.xml");
             if(entry!=null) new AxmlReader(zip.getInputStream(entry).readAllBytes()).accept(result.visitor(null));
             else result.errors.add("missing_manifest");
+            var table=zip.getEntry("resources.arsc");
+            if(table!=null)try{result.resources(zip.getInputStream(table).readAllBytes());}
+            catch(Exception ex){result.errors.add("resource_table_parse:"+ex.getClass().getSimpleName());}
+            Set<String> layoutFiles=new HashSet<>();result.layoutResources.values().forEach(layoutFiles::addAll);
             var entries=zip.entries();
             while(entries.hasMoreElements()) {
                 var e=entries.nextElement();
-                if(!e.getName().startsWith("res/layout")||!e.getName().endsWith(".xml")) continue;
+                if(!layoutFiles.contains(e.getName())&&(!e.getName().startsWith("res/layout")||!e.getName().endsWith(".xml"))) continue;
                 try { new AxmlReader(zip.getInputStream(e).readAllBytes()).accept(result.visitor(e.getName())); }
                 catch(Exception ex) {result.errors.add("layout_parse:"+e.getName()+":"+ex.getClass().getSimpleName());}
             }
@@ -30,9 +51,11 @@ final class ApkInventory {
         return result;
     }
     AxmlVisitor visitor(String layout) {
-        return new AxmlVisitor(){@Override public NodeVisitor child(String ns,String name){return node(name,layout);}};
+        return new AxmlVisitor(){@Override public NodeVisitor child(String ns,String name){return node(name,layout,null);}};
     }
-    NodeVisitor node(String tag,String layout) {
+    NodeVisitor node(String tag,String layout,LayoutNode parent) {
+        LayoutNode item=new LayoutNode(tag.equals("WebView")?"android.webkit.WebView":tag);item.source=layout;
+        if(layout!=null){if(parent==null)layoutRoots.computeIfAbsent(layout,k->new ArrayList<>()).add(item);else parent.children.add(item);}
         return new NodeVisitor(){
             String name,target;
             @Override public void attr(String ns,String key,int resource,int type,Object value) {
@@ -43,9 +66,14 @@ final class ApkInventory {
                     if(tag.equals("uses-sdk")&&key.equals("targetSdkVersion")&&value instanceof Number n)targetSdk=n.intValue();
                     if(key.equals("name"))name=text;
                     if(key.equals("targetActivity"))target=text;
-                } else if(key.equals("class")||key.equals("name")) layoutTypes.computeIfAbsent(layout,k->new TreeSet<>()).add(text);
+                } else {
+                    if(key.equals("class")||key.equals("name")){layoutTypes.computeIfAbsent(layout,k->new TreeSet<>()).add(text);if(tag.equals("view"))item.type=text;}
+                    Integer reference=value instanceof Number n?n.intValue():value instanceof ValueWrapper w?w.ref:null;
+                    if(key.equals("id"))item.id=reference;
+                    if(tag.equals("include")&&key.equals("layout"))item.include=reference;
+                }
             }
-            @Override public NodeVisitor child(String ns,String name){return node(name,layout);}
+            @Override public NodeVisitor child(String ns,String name){return node(name,layout,item);}
             @Override public void end(){
                 if(layout!=null){if(tag.contains(".")||tag.equals("WebView"))layoutTypes.computeIfAbsent(layout,k->new TreeSet<>()).add(tag);return;}
                 if(name!=null&&tag.equals("activity"))activities.add(full(name));

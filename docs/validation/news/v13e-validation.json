@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "report": "test/runs/v13e/com.tencent.news/0/output/capabilities.json",
+  "baseline": "v13d",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "wall_seconds": 147.93,
+  "host_count": 42,
+  "ownership": {"valid":41,"uncertain":1,"uncertain_hosts":["com.tencent.news.basebiz.ShellActivity"]},
+  "host_set_delta": {"added":[],"removed":[]},
+  "semantic_delta": {"added":182,"removed":0,"changed_hosts":20},
+  "v13c_removed_hosts": [
+    {"activity":"com.tencent.news.album.album.preview.AlbumPreviewActivity","verdict":"previous_false_ownership_removed","evidence":"Activity/AlbumPreView/PreVideo use native preview views; no source Activity->YSP WebView service path. v13c rows began at generic VideoPlayManager/YspPlayerService registry reachability rather than the album object chain."},
+    {"activity":"com.tencent.news.login.module.LoginWithPhoneNumTransparentActivity","verdict":"previous_false_ownership_removed","evidence":"Subclass only delegates phone-login Activity behavior; parent initializes phone-number views and phone OAuth flow. No source QQAuth/AuthDialog/TDialog creation/show path. v13c OpenSDK dialog rows were unrelated login-family expansion."}
+  ],
+  "override_follow_review": [
+    {"group":"okweb_ilive","verdict":"source_consistent_but_duplicated","evidence":"Five hosts gain BaseWebView override super.loadUrl and setWebViewClient(null) sites. Actual calls can dispatch to these overrides, but each site appears twice on alternative receiver identities."},
+    {"group":"privacy","verdict":"known_recall_not_restored","evidence":"Neither privacy host changes. Their real Activity loadUrl on the XML X5Wrapper should dispatch through X5Wrapper and DtX5 and conditionally inject bridges; v13e still lacks these rows."},
+    {"group":"editor_vertical_support_novel_security","verdict":"narrow_real_override_recovery","evidence":"BaseWebView evaluateJavascript, BaseSysWebView evaluateJavascript, or X5Wrapper loadUrl super sites are consistent with actual API calls; duplicates/unknown alternatives remain candidates."},
+    {"group":"tencent_video_expansion","verdict":"mixed_receiver_dependent","evidence":"TencentVideoWebView override/client rows are valid only where the concrete TencentVideo receiver is source-bound. The same rows appear in CustomWebBrowser/CustomWebGame and related hosts with multiple duplicates; followApiOverride propagates any pre-existing receiver cross-binding and does not itself prove ownership."},
+    {"group":"webadvert_dtx","verdict":"source_consistent_for_real_loads_but_duplicate_aliases","evidence":"Actual AdWebView loads can enter DtWebView onLoad/inject bridge. Multiple identical additions reflect receiver alternatives, not distinct capabilities."}
+  ],
+  "longvideo": {"emitted":false,"verdict":"recall_failure_unchanged"},
+  "files": ["v13e-delta.json","v13e-ownership.jsonl","v13e-validation.md"]
+}

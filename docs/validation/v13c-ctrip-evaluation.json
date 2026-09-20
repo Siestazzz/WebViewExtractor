@@ -1,0 +1,107 @@
+{
+  "oracle_sha256": "6af38655a9efe03df593665920c6f1125b84bb7bd98ac18d864ecae27c47bf17",
+  "report_sha256": "29a98fef5c057a035a986244d090b6998347dd116b0f0f67622f1f268c3b6606",
+  "unassigned_oracle_facts": 108,
+  "oracle_file": "docs/validation/ctrip/canonical-facts.jsonl",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 323,
+      "matched": 322,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.9969040247678018,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 3680,
+      "matched": 3680,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 391,
+      "matched": 391,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.kwai.auth.login.kwailogin.h5login.KwaiH5LoginActivity",
+      "webview": "KwaiH5LoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDefaultTextEncodingName",
+      "signature": null,
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 55,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 5,
+  "webview_constraint_coverage": {
+    "expected": 4394,
+    "with_source_type_constraint": 4394,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 30,
+    "matched": 30,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 28,
+  "capability_granularity": {
+    "setting": {
+      "expected": 323,
+      "matched": 322,
+      "recall": 0.9969040247678018
+    },
+    "bridge_registration": {
+      "expected": 491,
+      "matched": 491,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 3189,
+      "matched": 3189,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 369,
+      "matched": 369,
+      "recall": 1.0
+    },
+    "callback_registration": {
+      "expected": 22,
+      "matched": 22,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "valid": 54,
+      "wrong": 1
+    },
+    "emitted": 55,
+    "wrong": 1,
+    "uncertain_or_unreviewed": 0,
+    "conservative_error_upper_bound": 0.01818181818181818
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

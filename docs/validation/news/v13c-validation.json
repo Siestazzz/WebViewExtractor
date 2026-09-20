@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "report": "test/runs/v13c/com.tencent.news/0/output/capabilities.json",
+  "baseline": "v12j",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "status": "partial",
+  "wall_seconds": 208.75,
+  "host_count": 44,
+  "ownership": {"valid": 43, "uncertain": 1, "uncertain_hosts": ["com.tencent.news.basebiz.ShellActivity"]},
+  "host_set_delta": {"added": [], "removed": []},
+  "changed_host_count": 8,
+  "changed_hosts": ["com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity", "com.tencent.news.kkvideo.shortvideo.VisitVerticalVideoActivity", "com.tencent.news.startup.privacy.PrivacyWebActivity", "com.tencent.news.startup.privacy.PrivacyWebItemActivity", "com.tencent.news.tad.business.novel.WebNovelActivity", "com.tencent.news.ui.NewsDetailActivity", "com.tencent.news.ui.PushDetailActivity", "com.tencent.news.ui.SupportActivity"],
+  "findings": [
+    {"group":"four_xml_hosts","verdict":"mixed","evidence":"v13c-xml-host-validation.md/json; XML identity is correct, direct settings/clients belong to the same object, while class-wide method seeding, nullable fallback allocations and incompatible helper branches add false candidate rows."},
+    {"group":"vertical_video","verdict":"alias_replacement_mixed","evidence":"17 added/12 removed. BaseWebView/X5Wrapper rows replace or duplicate superclass capability paths; hard/soft reset and uninvoked load variants are not established by XML type alone."},
+    {"group":"visit_vertical_video","verdict":"overexpanded_candidates","evidence":"57 additions include duplicated constructor, reset, setting and override groups across two abstract identities. Existing source host ownership remains valid, but XML component discovery does not prove all seeded methods execute."},
+    {"group":"news_push_detail","verdict":"source_reachable_operation_receiver_still_candidate","evidence":"Each gains r0.ˏˊ BaseWebView.loadUrl. The detail-content controller path is source-owned, but the new row alone does not resolve all pre-existing receiver alternatives."},
+    {"group":"remaining_support_gold","verdict":"source_true_receiver_degraded","evidence":"setJavaScriptEnabled, setDomStorageEnabled and setUserAgentString execute in SupportActivity.initView on field ˋˋ. The report places them on activity/view:2131303125 typed smtt.WebView without XML evidence, while the same ID is proven BaseWebView elsewhere."},
+    {"group":"remaining_novel_gold","verdict":"source_true_receiver_degraded","evidence":"setBlockNetworkImage executes in NovelWebView.setWebViewSettings on mWebView, the nested AdWebView. WebNovelActivity installs e/f clients on f101623, the same object, so all eleven callback implementations are real; report callback/setting registrations remain BaseSysWebView or unknown unions rather than AdWebView."},
+    {"group":"longvideo","verdict":"recall_failure_unchanged","evidence":"LongVideoDetailActivity and TvLongVideoDetailActivity remain absent."}
+  ],
+  "files": ["v13c-delta.json", "v13c-ownership.jsonl", "v13c-xml-host-validation.md", "v13c-xml-host-validation.json"]
+}

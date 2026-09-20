@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "snapshot": {
+    "path": "docs/validation/mango/snapshots/v13c-development-capabilities.json",
+    "sha256": "f6d8ae59549a7198051d51e59e04bfcc20a973da23f3b05a062eff179a19fe8e",
+    "status": "partial",
+    "activity_count": 82,
+    "final_report": false
+  },
+  "baseline": {
+    "version": "v12j",
+    "activity_count": 92
+  },
+  "live_file_observation": "advanced from 80 to 82 activities during initial read; transient host sets are not regression evidence",
+  "false_binding": {
+    "activity": "com.mgtv.ui.skin.SkinDetailActivity",
+    "fact_count": 69,
+    "kinds": {
+      "setting": 36,
+      "webview_operation": 18,
+      "bridge_removal": 9,
+      "callback": 6
+    },
+    "verdict": "false host ownership",
+    "activity_layout": "R.layout.activity_skin_detail",
+    "layout_has_webview": false,
+    "actual_fact_receiver": "com.tencent.open.b.b",
+    "remote_paths": [
+      "QQShare.shareToQQ",
+      "QzoneShare.shareToQzone",
+      "Tencent.shareToQQ",
+      "Tencent.shareToQzone",
+      "TDialog.a/b"
+    ],
+    "earliest_invalid_expansion": "ordinary Activity/XML reachability expanded through share helpers into separately constructed SDK dialog WebView methods without an attachment/ownership edge",
+    "original_verdict": "false host ownership (withdrawn)",
+    "corrected_verdict": "transient conditional candidate; absent from final v12j and v13c",
+    "correction_evidence": [
+      "SkinDetailActivity.java:176-182 title bar branch b12 == 2 calls showShareDialog",
+      "SkinDetailActivity.java:608-616 Q != null then MGShare.goShare(this,...)",
+      "MGShare.java:1087-1090 preserves Context in AspectJ closure state"
+    ],
+    "correction_reason": "absence of an Activity XML WebView does not disprove ownership of a conditionally created dialog WebView; the original review omitted the real caller/context chain"
+  },
+  "reusable_rule": "Seed only a concrete XML WebView node or its bound findViewById/field aliases, then actual constructor/lifecycle calls. A reachable helper that creates a separate dialog needs an explicit construction and attachment edge and separate ownership.",
+  "canonical_modified": false,
+  "final_ownership_emitted": false,
+  "final_report_check": {
+    "v12j_contains_activity": false,
+    "v13c_contains_activity": false
+  }
+}

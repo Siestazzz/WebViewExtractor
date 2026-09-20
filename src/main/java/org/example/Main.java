@@ -9,7 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 /** Supervisor enforces a wall-clock deadline even if a library fails to cooperate. */
 public class Main {
-    static final Gson JSON=new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+    static final Gson JSON=new GsonBuilder().disableHtmlEscaping().create();
+    static long reportWriteNanos,reportWrites;
     public static void main(String[] args) throws Exception {
         if(Arrays.asList(args).contains("--legacy")||Arrays.asList(args).contains("--read-apk-only")){LegacyMain.main(args);return;}
         Map<String,String> options=options(args);
@@ -39,7 +40,10 @@ public class Main {
     static void worker(Path apk,Path out,int target,int hard) throws Exception {
         long start=System.nanoTime(),deadline=start+hard*1_000_000_000L;Map<String,Object> metrics=new LinkedHashMap<>();
         String hash;try(InputStream stream=Files.newInputStream(apk)){MessageDigest digest=MessageDigest.getInstance("SHA-256");byte[] b=new byte[1024*1024];int n;while((n=stream.read(b))!=-1)digest.update(b,0,n);hash=HexFormat.of().formatHex(digest.digest());}
-        ApkInventory inventory=ApkInventory.read(apk);
+        metrics.put("hash_seconds",(System.nanoTime()-start)/1e9);
+        long inventoryStart=System.nanoTime();ApkInventory inventory=ApkInventory.read(apk);
+        metrics.put("inventory_seconds",(System.nanoTime()-inventoryStart)/1e9);
+        metrics.put("layout_resource_ids",inventory.layoutResources.size());metrics.put("layout_xml_files",inventory.layoutRoots.size());
         write(out.resolve("capabilities.json"),Map.of("schema_version",1,"status","indexing","apk_sha256",hash,"package",inventory.packageName,"version",inventory.version,"activities",List.of(),"unattributed",List.of(),"diagnostics",List.of("index_not_finished")));
         long t=System.nanoTime();CapabilityIndex idx=new CapabilityIndex();idx.read(apk,deadline);
         metrics.put("platform_hierarchy_source",idx.platformSource);metrics.put("platform_hierarchy_classes",idx.platformParents.size());
@@ -53,6 +57,7 @@ public class Main {
         engine.checkpoint=()->{
             long now=System.nanoTime();if(now-checkpoint[0]<10_000_000_000L)return;
             metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);metrics.put("elapsed_seconds",(now-start)/1e9);
+            metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
             try{write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));}catch(IOException ex){throw new UncheckedIOException(ex);}
             checkpoint[0]=System.nanoTime();
         };
@@ -65,12 +70,15 @@ public class Main {
             if(System.nanoTime()-checkpoint[0]>10_000_000_000L){engine.checkpoint.run();System.out.println("Progress: "+processed+"/"+roots.size()+" activities="+engine.activities.size()+" decoded="+engine.flow.decoded);}
         }
         metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);
+        metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
         String status=processed==roots.size()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
         write(out.resolve("capabilities.json"),engine.report(hash,status,metrics));
     }
     static void write(Path path,Object value)throws IOException{
+        long start=System.nanoTime();
         Path temp=path.resolveSibling(path.getFileName()+".tmp");try(Writer w=Files.newBufferedWriter(temp)){JSON.toJson(value,w);}
         try{Files.move(temp,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}catch(AtomicMoveNotSupportedException e){Files.move(temp,path,StandardCopyOption.REPLACE_EXISTING);}
+        reportWriteNanos+=System.nanoTime()-start;reportWrites++;
     }
     static Map<String,String> options(String[] args){
         Map<String,String> result=new LinkedHashMap<>();Set<String> allowed=Set.of("--apkpath","--out","--target-seconds","--hard-seconds","--worker","--pathcount");

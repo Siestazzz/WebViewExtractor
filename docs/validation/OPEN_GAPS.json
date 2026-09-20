@@ -210,6 +210,41 @@
       "status": "open",
       "cause": "288 retained component facts have unproven host bindings. Actual selectors 3/4 do not establish Capture 107 or Feedback 1021 branches. Not positive acceptance facts and not proven regressions.",
       "evidence": "news/v12h-development-host-binding-audit.md"
+    },
+    {
+      "id": "xml_seed_actual_callbacks_v13",
+      "app": "all",
+      "status": "open_regression_v13d",
+      "cause": "Restricting XML automatic method seeds removes uncalled helper false positives but loses real SDK callback dispatch. Mango five MiniAppFragment hosts and MGVideoPlay Diana81 lost in v13d. Recover only through actual callback registration/dispatch; never restore all XML helper seeds.",
+      "evidence": "mango/v13d-validation.md"
+    },
+    {
+      "id": "api_override_body_v13",
+      "app": "all",
+      "status": "partially_fixed_v13e_pending_full_audit",
+      "cause": "Emit no longer swallows actual app WebView API override bodies. Synthetic test passes and News source audit confirms some restored calls, but Privacy registration chain remains missing. Existing receiver cross-binding and aliases may propagate through overrides.",
+      "evidence": "news/v13e-validation.md"
+    },
+    {
+      "id": "xml_identity_limits_v13",
+      "app": "all",
+      "status": "open",
+      "cause": "Layout-only unseeded Activities, alternate resource configurations, repeated runtime allocations at one callsite, unknown attachment and mutable heap ordering are not fully resolved. Deferred fields preserve same-owner links but do not prove temporal order.",
+      "evidence": "news/v13-layout-implementation-audit.md"
+    },
+    {
+      "id": "news_nullable_fallback_object_v13",
+      "app": "news",
+      "status": "open",
+      "cause": "Support normal initialized host retains nullable helper fallback DtX5 object/12 settings as candidates; concrete non-null branch pruning remains missing.",
+      "evidence": "news/v13d-xml-host-validation.md"
+    },
+    {
+      "id": "ctrip_evaluate_override_v13",
+      "app": "ctrip",
+      "status": "open",
+      "cause": "Actual loadUrl chain only partly recovered; one override operation and _VideoEnabledWebView registration/member missing on independent supplement despite canonical 100%.",
+      "evidence": "ctrip/v13e-public30-plus-regressions-scoring.json"
     }
   ]
 }

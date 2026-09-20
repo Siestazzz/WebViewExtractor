@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "input": "test/runs/v13d-news-xml-hosts.json",
+  "baseline": "test/runs/v13c-news-xml-hosts.json",
+  "status": "development_selected_completed_hosts",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "overall": "class-wide XML method seeding is substantially removed and true field chains improve, but unknown patch alternatives and nullable fallback allocations remain; pruning also removes some genuinely invoked virtual override chains",
+  "hosts": [
+    {
+      "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+      "counts": {"v13c":30,"v13d":18,"x5wrapper":15},
+      "improvement": "client and eight settings now bind directly to activity/view:2131303140 as X5WrapperWebView; the former XML-backed unknown union is gone",
+      "valid_removals": ["uncalled loadData/loadDataWithBaseURL variants", "unbound WebViewCompatHelper Android/X5 alternatives"],
+      "over_pruned": ["Activity parseIntent calls loadUrl on the XML field; virtual dispatch executes X5WrapperWebView.loadUrl then DtX5WebView.loadUrl, whose injectBridge can register two bridges. Those removed loadUrl/bridge rows are real conditional execution paths."],
+      "remaining_noise": ["constructor_parameter debug WebView and one global-setting unknown remain outside the precise XML identity"]
+    },
+    {
+      "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+      "counts": {"v13c":31,"v13d":19,"x5wrapper":15},
+      "improvement": "inherited client/eight settings bind to the precise X5Wrapper allocation",
+      "remaining_noise": ["item mixed-content setting remains a union of the real XML field and PatchRedirector return", "constructor/debug and global unknown objects remain"],
+      "over_pruned": ["same real loadUrl -> X5Wrapper -> DtX5 -> injectBridge chain as PrivacyWebActivity"]
+    },
+    {
+      "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+      "counts": {"v13c":66,"v13d":39,"adwebview":6,"unknown":25},
+      "confirmed_fix": "all eleven uncalled AdWebView.initWebViewSettings setting rows disappeared",
+      "true_field_chain": "the twelve NovelWebView.setWebViewSettings rows, including setBlockNetworkImage, now have an alternative equal to the nested AdWebView id activity/view:2131303127/view:2131299735/view:2131303140 and XML res/oBh.xml evidence",
+      "callbacks": "both client registrations now contain that same AdWebView alternative; their eleven callback implementations are source true through these registrations, but the union also contains PatchRedirector-derived BaseSysWebView alternatives and must remain candidate/unknown",
+      "remaining_noise": ["WeakReference/compatibility alternatives remain", "PatchRedirector return and field-return alternatives prevent a unique receiver"],
+      "over_pruned": ["some removed BaseSysWebView/WebViewBridge/load override and conditional WebView4File paths are reachable after the Activity loads the real nested view; their removal is not uniformly a precision win"]
+    },
+    {
+      "activity": "com.tencent.news.ui.SupportActivity",
+      "counts": {"v13c":55,"v13d":37,"basewebview":14,"dtx5fallback":12},
+      "improvement": "two client registrations and constructor/default BaseWebView settings retain the precise XML identity; hard/soft reset and broad uninvoked override rows disappeared",
+      "true_but_parent_typed": "three direct initView settings keep the correct activity/view:2131303125 identity but remain typed smtt.WebView rather than BaseWebView",
+      "remaining_false_group": "the 12 DtX5 rows under utils.r.ˆ/m150665 remain. They arise from `if (webView == null) new DtX5WebView(...)`; on the normal Support lifecycle the argument is the already initialized XML field, so this fallback is infeasible and is not a second host WebView",
+      "remaining_noise": ["android.webkit compatibility branch and WeakReference/entry/constructor parameter objects remain unproven"]
+    }
+  ],
+  "reusable_findings": [
+    "Restricting XML seeds to constructors and real View lifecycle removes the demonstrated AdWebView public-method false positives.",
+    "Deferred field resolution correctly adds the concrete AdWebView alternative to Novel settings and client registrations, but PatchRedirector alternatives must remain explicit unknown candidates.",
+    "A direct call whose receiver is parent-declared but has the same proven XML allocation id should retain the concrete XML type; Support's three settings still miss this propagation.",
+    "Tight component seeding must not suppress dynamically dispatched override bodies reached by a real call. Privacy loadUrl reaches X5WrapperWebView and DtX5WebView and conditionally injects bridges.",
+    "Nullable fallback allocation requires order/null feasibility. Keeping both the non-null argument and `new` branch without the guard continues to fabricate Support's DtX5 object."
+  ]
+}

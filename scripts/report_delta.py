@@ -6,7 +6,7 @@ p.add_argument('--before', required=True)
 p.add_argument('--after', required=True)
 p.add_argument('--out', required=True)
 a = p.parse_args()
-excluded = {'evidence', 'arguments', 'binding_status', 'conditional'}
+excluded = {'evidence', 'arguments', 'binding_status', 'conditional', 'xml_binding_evidence', 'xml_binding_semantics'}
 def read(path):
     raw = pathlib.Path(path).read_bytes()
     report = json.loads(raw)

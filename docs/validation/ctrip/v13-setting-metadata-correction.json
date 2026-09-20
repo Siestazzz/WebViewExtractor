@@ -1,0 +1,61 @@
+{
+  "before_sha256": "6af38655a9efe03df593665920c6f1125b84bb7bd98ac18d864ecae27c47bf17",
+  "after_sha256": "fb35ad3adbfee3dcf34340a4f88decfb38c69343a0a5d94382b510049cfc2bc9",
+  "changes": [
+    {
+      "activity": "com.kwai.auth.login.kwailogin.h5login.KwaiH5LoginActivity",
+      "name": "setDefaultTextEncodingName",
+      "changes": {
+        "source_expression": [
+          "UTF-8",
+          "\"UTF-8\""
+        ],
+        "value_kind": [
+          "enum",
+          "literal"
+        ]
+      }
+    },
+    {
+      "activity": "com.sina.weibo.sdk.web.WebActivity",
+      "name": "setUserAgentString",
+      "changes": {
+        "source_expression": [
+          null,
+          "e.h()"
+        ]
+      }
+    },
+    {
+      "activity": "com.tencent.cloud.huiyansdkface.facelight.ui.FaceProtocalActivity",
+      "name": "setAppCachePath",
+      "changes": {
+        "source_expression": [
+          null,
+          "getDir(\"appcache\", 0).getPath()"
+        ]
+      }
+    },
+    {
+      "activity": "com.tencent.cloud.huiyansdkface.facelight.ui.FaceProtocalActivity",
+      "name": "setDatabasePath",
+      "changes": {
+        "source_expression": [
+          null,
+          "getDir(\"databases\", 0).getPath()"
+        ]
+      }
+    },
+    {
+      "activity": "com.tencent.cloud.huiyansdkface.facelight.ui.FaceProtocalActivity",
+      "name": "setGeolocationDatabasePath",
+      "changes": {
+        "source_expression": [
+          null,
+          "getDir(\"geolocation\", 0).getPath()"
+        ]
+      }
+    }
+  ],
+  "reason": "Source literal/enum audit; extractor output unchanged, no extraction gain claimed"
+}

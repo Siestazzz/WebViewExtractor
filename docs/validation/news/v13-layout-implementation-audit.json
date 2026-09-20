@@ -1,0 +1,175 @@
+{
+  "schema_version": 2,
+  "scope": "uncommitted v13 XML layout identity implementation audited against source-confirmed privacy/support/novel chains",
+  "source_oracle": "docs/validation/news/xml-webview-identity-bindings.json schema 2",
+  "probe_policy": "host probes are diagnostic only and are not acceptance evidence",
+  "overall_verdict": "privacy_and_novel_diagnostic_success; support_real_apk_unresolved; soundness_improved_with_remaining_abstraction_risks",
+  "chains": [
+    {
+      "name": "privacy_web",
+      "verdict": "implemented_and_real_probe_diagnostic_success_not_acceptance",
+      "required_path": "PrivacyAbsWebActivity.onCreate -> framework Activity.setContentView(constant init_web_browser_layout) -> Activity.findViewById(web_detail_webview) -> parent cast",
+      "implementation_path": [
+        "layoutContent recognizes framework/no-body setContentView(I)",
+        "prepareLayouts mounts resource XML on Activity receiver",
+        "lookupView searches only receiver layoutScopes",
+        "cast preserves XML subtype when it is a subtype of the declared cast"
+      ],
+      "source_specific_result": "X5WrapperWebView identity can survive the smtt.WebView cast",
+      "conditions": [
+        "resources.arsc maps 0x7f0c02bb to the parsed init_web_browser_layout variant",
+        "Activity receiver evaluates to the same host id at mount and lookup"
+      ],
+      "review_update": "Precise X5WrapperWebView appeared in the diagnostic host probe; XML-derived facts are forced candidate."
+    },
+    {
+      "name": "support_web",
+      "verdict": "synthetic_wrapper_covered_but_real_apk_unresolved",
+      "required_path": "SupportActivity.onCreate -> BaseActivity.setContentView(activity_support) -> inflate(i,contentParent,false) -> contentParent.addView(root) -> Activity.findViewById(webView)",
+      "implementation_path": [
+        "BaseActivity.setContentView is not treated as a terminal layoutContent call because it has a body",
+        "relevantOnReceiver marks the wrapper relevant because its body contains framework setContentView/inflate",
+        "the queued wrapper mounts the base layout, creates a detached requested-layout root, and records contentParent->root at addView",
+        "lookupView traverses Activity root, content view identity, and layoutChildren to the requested root"
+      ],
+      "source_specific_result": "BaseWebView identity can survive the smtt.WebView cast",
+      "conditions": [
+        "virtual dispatch resolves the inherited BaseActivity implementation",
+        "parameter i remains the activity_support constant in the queued job",
+        "inflate return and addView argument retain the same synthetic root id"
+      ],
+      "review_update": "The new wrapper fixture covers inflate(false)+addView, but the current Support host probe still does not recover BaseWebView. The source chain is therefore not accepted; DEX summary/root identity propagation remains open."
+    },
+    {
+      "name": "novel_web",
+      "verdict": "nested_fixture_covered_and_real_probe_diagnostic_success_not_acceptance",
+      "required_path": "virtual layout provider normal return -> BaseActivity wrapper -> Activity lookup NovelWebView -> XML component constructor -> inflate(layout,this,true) -> lookup NovelLoadingWebView -> constructor delegation -> inflate(merge,this,true) -> lookup AdWebView",
+      "implementation_path": [
+        "return evaluation can resolve the normal constant from WebNovelActivity.ˈᵢ()I",
+        "BaseActivity wrapper path is the same as support",
+        "lookupView seeds non-WebView XML components",
+        "constructor jobs expose both attach=true nested inflates",
+        "layout scope is mounted on each concrete this receiver",
+        "lookup/cast preserves AdWebView through BaseSysWebView"
+      ],
+      "source_specific_result": "AdWebView identity is representable on the final BaseSysWebView fields",
+      "conditions": [
+        "PatchRedirector unknown alternative does not replace the normal constant",
+        "XML component seeding reaches the actual constructor overload and its delegation",
+        "each nested this receiver has a stable distinct id"
+      ],
+      "review_update": "The new nested constructor/field/getter fixture covers two XML components and attach=true inflation; the Novel diagnostic probe reports AdWebView, but this remains candidate XML evidence."
+    }
+  ],
+  "risks": [
+    {
+      "id": "branch_insensitive_layout_mount",
+      "severity": "high",
+      "status": "mitigated_not_closed",
+      "mechanism": "prepareLayouts visits summarized layout calls without enforcing mutually exclusive branch predicates; mountLayout also unions every resource configuration path for one id onto one root",
+      "failure_mode": "a findViewById may receive XML types from an unexecuted layout branch or incompatible configuration",
+      "recommended_fixture": "two conditional setContentView calls with the same view id but incompatible classes; result must be candidate/union with branch evidence rather than unconditional ownership",
+      "review_update": "XML-derived emitted facts are forcibly candidate and carry non-cooccurrence semantics. Layout nodes are still unioned, so precision and downstream consumers that ignore binding_status remain at risk."
+    },
+    {
+      "id": "merge_attach_false",
+      "severity": "high",
+      "status": "closed_for_known_literal_resource_and_flag",
+      "mechanism": "inflateLayout currently materializes a detached synthetic root for any attach=false layout, including a top-level merge",
+      "failure_mode": "Android would throw for merge with attachToRoot=false, but analysis can manufacture reachable children",
+      "recommended_fixture": "merge + false must produce an invalid-inflate diagnostic and no mounted or returned child identity",
+      "review_update": "inflateLayout checks parsed top-level merge and returns unknown with invalid_merge_inflation before mounting. Dynamic/unresolved resource cases cannot receive this validation."
+    },
+    {
+      "id": "inflate_instance_alias",
+      "severity": "high",
+      "status": "partially_closed",
+      "mechanism": "synthetic inflate identity hashes method/allocationContext plus evaluated argument text, not an explicit call offset or invocation occurrence",
+      "failure_mode": "two executions or call sites with equal arguments may collapse distinct inflated trees; fields/settings can cross-bind between instances",
+      "recommended_fixture": "inflate the same layout twice under distinct wrapper instances and assert distinct roots and inner WebViews",
+      "review_update": "DexFlow preserves inflate call offset, separating distinct static call sites. Repeated executions of the same call site still share one abstract root; allocationContext helps separate receiver contexts but is not a runtime instance identity."
+    },
+    {
+      "id": "unknown_attach_treated_as_attached",
+      "severity": "medium",
+      "status": "mitigated_with_explicit_alternatives",
+      "mechanism": "a dynamic attach flag records a gap but also mounts the layout on the parent",
+      "failure_mode": "parent lookup gains children on executions where attach is false",
+      "recommended_fixture": "unknown boolean should preserve attached and detached alternatives with candidate status, not unconditional parent scope",
+      "review_update": "Unknown attach produces returned-root and parent alternatives plus dynamic_inflate_attachment; XML evidence forces candidate. The parent is still mounted in the shared graph, so later lookups can observe it without path correlation."
+    },
+    {
+      "id": "root_id_only_child_graph",
+      "severity": "medium",
+      "status": "open_reduced",
+      "mechanism": "layoutChildren is keyed only by symbolic id and is monotonically accumulated for the host",
+      "failure_mode": "reused object ids across branch alternatives or collapsed inflate identities make stale children reachable from later roots",
+      "recommended_fixture": "replace content or inflate alternative layouts on the same symbolic receiver and verify temporal/branch separation",
+      "review_update": "Call-site identity reduces collisions, but layoutChildren remains monotonic and keyed by abstract symbolic ids; same-site repeated instances and branch alternatives are not temporally separated."
+    },
+    {
+      "id": "configuration_union",
+      "severity": "medium",
+      "status": "mitigated_not_resolved",
+      "mechanism": "resources.arsc configuration variants are collected as a set of paths and all roots are mounted",
+      "failure_mode": "portrait/night/API-specific nodes may coexist although no runtime configuration contains all of them",
+      "recommended_fixture": "same layout id across two configurations with different class for one id; require explicit alternatives and candidate provenance",
+      "review_update": "layout_configuration_alternatives/layout_union_not_cooccurrence diagnostics and candidate XML facts prevent an explicit claim of cooccurrence, but all variants still form the receiver alternative set."
+    },
+    {
+      "id": "include_cycle_budget_silent",
+      "severity": "low",
+      "status": "open",
+      "mechanism": "include traversal stops by depth/set but does not emit a diagnostic when depth exceeds 32",
+      "failure_mode": "missing identity may look like absence rather than incomplete analysis",
+      "recommended_fixture": "cyclic/deep include graph must report truncation",
+      "review_update": "unchanged"
+    }
+  ],
+  "test_coverage_assessment": {
+    "covered": [
+      "selected layout excludes unrelated same-id layout",
+      "resource aliases",
+      "root isolation",
+      "ordinary attach=true and attach=false",
+      "superclass cast retains XML subtype",
+      "BaseActivity-style inflate(false)+addView wrapper",
+      "two nested XML component constructor/field/getter stages",
+      "literal merge+attach=false rejection",
+      "sparse/offset16/compact table encodings",
+      "malformed table bounds rejection"
+    ],
+    "missing": [
+      "Support real DEX wrapper/root chain (current probe unresolved)",
+      "virtual layout provider with normal constant plus unknown patch branch",
+      "two static inflate call sites and repeated same-site instances with identical arguments",
+      "unknown attach path-correlation after later parent lookup",
+      "mutually exclusive/configuration layouts with downstream candidate enforcement",
+      "dynamic/unresolved merge resource validation",
+      "include-depth truncation diagnostic"
+    ]
+  },
+  "acceptance_recommendation": "Keep XML-derived facts candidate. Privacy and Novel probes are diagnostic successes. Do not claim all three source chains recovered until Support real DEX root/summary binding is explained and passes. Retain branch/configuration and repeated-instance limitations in evidence.",
+  "review_revision": "post merge-validation/call-offset/dynamic-attach/candidate-evidence/LayoutResources/expanded-fixture changes",
+  "resource_reader_review": {
+    "verdict": "material_improvement_with_bounded_parser_limits",
+    "confirmed_design": [
+      "resource table paths drive XML discovery, including obfuscated paths outside res/layout prefix",
+      "layout aliases are followed with a bounded visited set",
+      "sparse, offset16 and compact entry encodings have fixtures",
+      "chunk/string/entry bounds are checked",
+      "three real APK tables reportedly parse where the prior library failed"
+    ],
+    "remaining_limits": [
+      "dynamic package/reference resolution is explicitly unsupported",
+      "complex layout entries are skipped with diagnostics",
+      "configuration qualifiers are not modeled and paths are unioned",
+      "resource alias depth/visited budget stops without a dedicated truncation diagnostic"
+    ]
+  },
+  "fixture_review_notes": [
+    "WrappedActivity assertion uses allMatch; if no bridge facts are emitted it passes vacuously. Require a non-empty bridge selection or anyMatch plus count assertion.",
+    "NestedActivity uses anyMatch and therefore proves at least one concrete nested bridge path.",
+    "Synthetic fixture success does not resolve Support real-APK failure."
+  ]
+}

@@ -54,3 +54,12 @@ The deepEvidenceFixture adds a 72-helper call chain followed by actual Fragment 
 checks both direct and Fragment-owned capabilities, bounded 64-step evidence presentation, and
 an explicit omission diagnostic. Context and external deadline budgets still apply; a long
 presentation path no longer silently removes a reachable capability from analysis.
+
+
+`LayoutBindingFixture` (v13) covers actual resource-table paths and normal/sparse/offset16/compact
+entries, aliases and malformed bounds; scoped reused view IDs; real inflate/addView wrappers;
+nested XML constructor/field/getter chains; concrete subtype preservation through widening casts;
+merge attachment; static inflate-site separation; owner-specific deferred fields and cycles;
+uncalled XML helper exclusion; and actual WebView API override registration. These are structural
+regressions, not substitutes for full source ownership audits. Configuration alternatives, repeated
+runtime allocations at one site and heap-write temporal order remain candidate approximations.

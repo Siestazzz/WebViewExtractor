@@ -23,9 +23,15 @@ final class CapabilityEngine {
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
     CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=new DexFlow(idx,deadline);}
     record Job(Method method,List<V> args,List<String> path,boolean candidate){}
+    record DeferredField(String field,V receiver){}
     final class Host {
         final String activity;
         final Map<String,V> heap=new HashMap<>();
+        final Map<String,DeferredField> deferredFields=new HashMap<>();
+        final Map<String,Set<ApkInventory.LayoutNode>> layoutScopes=new HashMap<>();
+        final Set<String> preparingLayouts=new HashSet<>();
+        final Map<String,Set<String>> layoutChildren=new HashMap<>();
+        final Map<String,Set<Map<String,Object>>> xmlBindings=new HashMap<>();
         final Map<String,Set<V>> contents=new HashMap<>();
         final Map<String,Map<String,V>> maps=new HashMap<>(), arrays=new HashMap<>();
         final Map<String,V> bridgeViews=new HashMap<>(), linkedClosures=new HashMap<>();
@@ -52,6 +58,7 @@ final class CapabilityEngine {
                 Summary summary;
                 try{summary=flow.summary(job.method,v->guardValue(v,job,h,0));}catch(RuntimeException ex){h.gaps.add("decode_failed:"+id+":"+ex.getClass().getSimpleName());continue;}
                 if(summary.truncated())h.gaps.add("flow_budget:"+id);
+                prepareLayouts(summary,job,h,0,new HashSet<>());
                 for(Write w:summary.writes()){
                     V receiver=eval(w.receiver(),job,h,0,new HashSet<>()),value=eval(w.value(),job,h,0,new HashSet<>());
                     applyWrite(h,w.field(),receiver,value);
@@ -78,7 +85,7 @@ final class CapabilityEngine {
                         for(V arg:call.args())if(alternatives(eval(arg,job,h,0,new HashSet<>())).stream().anyMatch(x->x.kind().equals("aspectj_joinpoint")||h.linkedClosures.containsKey(x.id()))){carriesJoinPoint=true;break;}
                     if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!closureCall&&!carriesJoinPoint)continue;
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
-                    if(kind!=null){emit(h,job,call,args,kind,summary.branched());continue;}
+                    if(kind!=null){emit(h,job,call,args,kind,summary.branched());followApiOverride(h,job,call,args,summary.branched());continue;}
                     if(idx.closureProceed(call.method())&&!args.isEmpty()){
                         boolean linked=false;
                         for(V point:alternatives(linkedJoinPoint(h,args.get(0))))if(point.kind().equals("aspectj_joinpoint")){
@@ -118,6 +125,143 @@ final class CapabilityEngine {
         currentHost=null;
         if(!h.gaps.isEmpty())diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
     }
+    void followApiOverride(Host h,Job job,Call call,List<V> args,boolean conditional){
+        if(call.isStatic()||args.isEmpty())return;
+        Method declared=idx.resolve(call.method());String shape=call.method().substring(call.method().indexOf("->")+2);
+        for(V receiver:alternatives(args.get(0))){
+            Method actual=call.isDirect()||call.isSuper()?declared:receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+shape);
+            if(actual==null||actual.getImplementation()==null)continue;
+            String owner=CapabilityIndex.cls(actual.getDefiningClass());
+            if(!idx.webview(owner)||Cfg.WEBVIEWS.contains(owner)||owner.startsWith("android.")||!idx.relevant.contains(CapabilityIndex.key(actual)))continue;
+            // Recording an API invocation must not swallow an actual app override. Its
+            // additional registration/settings effects are reached through this exact call.
+            enqueue(h,actual,specializeReceiver(args,receiver),extend(job.path,"api_override:"+call.method()),job.candidate||conditional||args.get(0).kind().equals("union"));
+        }
+    }
+    boolean layoutInflate(String method){
+        if(!name(method).equals("inflate"))return false;
+        String owner=owner(method);Method resolved=idx.resolve(method);
+        if(resolved!=null&&resolved.getImplementation()!=null&&!CapabilityIndex.cls(resolved.getDefiningClass()).startsWith("android."))return false;
+        return name(method).equals("inflate")&&((idx.subtype(owner,"android.view.LayoutInflater")&&
+            (method.endsWith("(ILandroid/view/ViewGroup;)Landroid/view/View;")||method.endsWith("(ILandroid/view/ViewGroup;Z)Landroid/view/View;")))||
+            idx.subtype(owner,"android.view.View")&&method.endsWith("(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;"));
+    }
+    boolean layoutContent(String method){
+        if(!name(method).equals("setContentView"))return false;
+        Method resolved=idx.resolve(method);
+        return name(method).equals("setContentView")&&(idx.activity(owner(method))||idx.subtype(owner(method),"android.app.Dialog"))&&method.endsWith("(I)V")&&
+            (resolved==null||resolved.getImplementation()==null||CapabilityIndex.cls(resolved.getDefiningClass()).startsWith("android."));
+    }
+    boolean layoutAddView(String method){
+        return name(method).equals("addView")&&idx.subtype(owner(method),"android.view.ViewGroup")&&method.substring(method.indexOf('(')).startsWith("(Landroid/view/View;");
+    }
+    void prepareLayouts(Summary summary,Job job,Host h,int depth,Set<String> visiting){
+        if(depth>12||System.nanoTime()>deadline)return;
+        String context=CapabilityIndex.key(job.method)+"|"+job.args;
+        if(!h.preparingLayouts.add(context))return;
+        try{for(Call call:summary.calls())if(layoutInflate(call.method())||layoutContent(call.method())||layoutAddView(call.method())){
+            List<V> args=call.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();
+            if(layoutContent(call.method())&&args.size()==2){
+                for(V receiver:alternatives(args.get(0))){
+                    Method actual=call.isSuper()||call.isDirect()||receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+call.method().substring(call.method().indexOf("->")+2));
+                    if(actual==null||actual.getImplementation()==null||CapabilityIndex.cls(actual.getDefiningClass()).startsWith("android."))mountLayout(receiver,args.get(1),h);
+                }
+            }
+            else if(layoutInflate(call.method()))inflateLayout(call.method(),args,job,h,String.valueOf(call.offset()));
+            else if(layoutAddView(call.method())&&args.size()>1)for(V parent:alternatives(args.get(0)))for(V child:alternatives(args.get(1)))
+                h.layoutChildren.computeIfAbsent(parent.id(),k->new LinkedHashSet<>()).add(child.id());
+        }}finally{h.preparingLayouts.remove(context);}
+    }
+    void mountLayout(V root,V resource,Host h){
+        for(V r:alternatives(root))for(V id:alternatives(resource)){
+            Long value=number(id);if(value==null){h.gaps.add("dynamic_layout_resource");continue;}
+            Set<String> layouts=apk.layouts(value.intValue());
+            if(layouts.isEmpty()){h.gaps.add("unresolved_layout_resource:"+value);continue;}
+            var scope=h.layoutScopes.computeIfAbsent(r.id(),k->new LinkedHashSet<>());
+            for(String path:layouts){var nodes=apk.layoutRoots.get(path);if(nodes==null)h.gaps.add("missing_layout_xml:"+path);else scope.addAll(nodes);}
+            if(layouts.size()>1)h.gaps.add("layout_configuration_alternatives");
+            if(scope.size()>1)h.gaps.add("layout_union_not_cooccurrence");
+        }
+    }
+    V inflateLayout(String method,List<V> args,Job job,Host h){return inflateLayout(method,args,job,h,"synthetic");}
+    V inflateLayout(String method,List<V> args,Job job,Host h,String site){
+        if(args.size()<3)return V.of("unknown","android.view.View","inflate_arguments");
+        // Both View.inflate(context,id,parent) and LayoutInflater.inflate(id,parent[,attach])
+        // carry their resource at argument 1; the former is static, the latter has this.
+        Long resource=number(args.get(1));
+        boolean hasParent=alternatives(args.get(2)).stream().anyMatch(p->!p.kind().equals("unknown")&&!(p.kind().equals("literal")&&"0".equals(p.literal())));
+        Long attach=args.size()>3?number(args.get(3)):hasParent?1L:0L;
+        if(resource!=null&&(!hasParent||Long.valueOf(0).equals(attach))&&apk.layouts(resource.intValue()).stream()
+            .flatMap(path->apk.layoutRoots.getOrDefault(path,List.of()).stream()).anyMatch(node->node.type.equals("merge"))){
+            h.gaps.add("invalid_merge_inflation:"+resource);return V.of("unknown","android.view.View","invalid_merge_inflation");
+        }
+        V root=V.of("view","android.view.View","inflate:"+CapabilityIndex.key(job.method)+"@"+site+"|"+allocationContext(job)+"|"+UUID.nameUUIDFromBytes(args.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        mountLayout(root,args.get(1),h);
+        h.gaps.add("xml_allocation_site_abstraction");
+        boolean staticView=idx.subtype(owner(method),"android.view.View");
+        V attached=null;
+        for(V parent:alternatives(args.get(2))){
+            if(parent.kind().equals("literal")&&"0".equals(parent.literal()))continue;
+            if(parent.kind().equals("unknown")){h.gaps.add("unresolved_inflate_parent");continue;}
+            Long flag=args.size()>3?number(args.get(3)):1L;
+            if(flag==null)h.gaps.add("dynamic_inflate_attachment");
+            if(staticView||flag==null||flag!=0){mountLayout(parent,args.get(1),h);attached=union(attached,parent);}
+        }
+        V typedRoot=null;
+        for(var node:h.layoutScopes.getOrDefault(root.id(),Set.of()))if(node.type.contains(".")){
+            V choice=V.of("view",node.type,root.id());typedRoot=union(typedRoot,choice);
+            h.xmlBindings.computeIfAbsent(root.id(),k->new LinkedHashSet<>()).add(Map.of("lookup_root",root.id(),"layout",node.source==null?"synthetic":node.source,"concrete_type",node.type));
+            if(idx.component(node.type)&&!idx.activity(node.type)&&!Cfg.WEBVIEWS.contains(node.type))seed(h,node.type,choice,extend(job.path,"xml_inflate:"+node.source),true);
+        }
+        V returned=typedRoot==null?root:typedRoot;
+        if(attached!=null){
+            if(staticView||args.size()==3||attach!=null&&attach!=0)return attached;
+            if(attach==null)return union(returned,attached);
+        }
+        return returned;
+    }
+    V lookupView(V receiver,V resource,String declared,Job job,Host h){
+        V result=null;
+        for(V root:alternatives(receiver))for(V id:alternatives(resource)){
+            Long value=number(id);List<ApkInventory.LayoutNode> matches=new ArrayList<>();
+            if(value!=null){
+                var roots=new ArrayDeque<String>();var seen=new HashSet<String>();roots.add(root.id());
+                while(!roots.isEmpty()&&seen.size()<512){String r=roots.remove();if(!seen.add(r))continue;
+                    for(var node:h.layoutScopes.getOrDefault(r,Set.of()))findLayoutNodes(node,value.intValue(),matches,new HashSet<>(),0);
+                    roots.addAll(h.layoutChildren.getOrDefault(r,Set.of()));
+                }
+                if(!roots.isEmpty())h.gaps.add("layout_root_budget");
+            }
+            matches=new ArrayList<>(new LinkedHashSet<>(matches));
+            String identity=root.id()+"/view:"+id.id();
+            // Even before a parent layout is resolved, a successful findViewById result is
+            // scoped beneath its receiver. Preserve that conditional edge so later addView
+            // effects can be replayed through multi-level Activity container wrappers.
+            h.layoutChildren.computeIfAbsent(root.id(),k->new LinkedHashSet<>()).add(identity);
+            if(matches.isEmpty()){h.gaps.add("xml_lookup_unresolved_candidate");result=union(result,V.of("view",declared,identity));continue;}
+            for(var node:matches){
+                String type=node.type.contains(".")?node.type:declared;
+                V view=V.of("view",type,identity);
+                h.layoutScopes.computeIfAbsent(identity,k->new LinkedHashSet<>()).add(node);
+                h.layoutChildren.computeIfAbsent(root.id(),k->new LinkedHashSet<>()).add(identity);
+                h.xmlBindings.computeIfAbsent(identity,k->new LinkedHashSet<>()).add(Map.of(
+                    "lookup_root",root.id(),"view_resource_id",value,"layout",node.source==null?"synthetic":node.source,"concrete_type",type));
+                result=union(result,view);
+                if(idx.component(type)&&!idx.activity(type)&&!Cfg.WEBVIEWS.contains(type))seed(h,type,view,extend(job.path,"xml_view:"+value+":"+type),true);
+            }
+            if(matches.size()>1)h.gaps.add("xml_lookup_alternatives:"+value);
+        }
+        return result==null?V.of("unknown",declared,"view_lookup"):result;
+    }
+    void findLayoutNodes(ApkInventory.LayoutNode node,int id,List<ApkInventory.LayoutNode> matches,Set<Integer> includes,int depth){
+        if(depth>32)return;
+        if(Objects.equals(node.id,id))matches.add(node);
+        for(var child:node.children)findLayoutNodes(child,id,matches,includes,depth+1);
+        if(node.include!=null&&includes.add(node.include)){
+            for(String path:apk.layouts(node.include))for(var child:apk.layoutRoots.getOrDefault(path,List.of()))findLayoutNodes(child,id,matches,includes,depth+1);
+            includes.remove(node.include);
+        }
+    }
     V dispatchHint(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int i=Integer.parseInt(value.id());return i<job.args.size()?job.args.get(i):UNKNOWN;}
@@ -136,11 +280,13 @@ final class CapabilityEngine {
         if(depth>3||visited.size()>32){h.gaps.add("receiver_relevance_budget:"+id);return false;}
         int count=0;for(var instruction:method.getImplementation().getInstructions())if(++count>512){h.gaps.add("receiver_relevance_body_budget:"+id);return false;}
         for(Call call:flow.summary(method).calls()){
+            if(layoutInflate(call.method())||layoutContent(call.method()))return true;
             if(call.isStatic()||call.args().isEmpty())continue;
             V self=call.args().get(0);while(self.kind().equals("cast")&&!self.args().isEmpty())self=self.args().get(0);
             if(!self.kind().equals("param")||!self.id().equals("0"))continue;
             Method declared=idx.resolve(call.method());if(declared==null||name(call.method()).startsWith("<"))continue;
             Method actual=call.isDirect()||call.isSuper()?declared:idx.resolve(desc(type)+"->"+CapabilityIndex.shape(declared));
+            if(layoutInflate(call.method())||layoutContent(call.method()))return true;
             if(actual!=null&&relevantOnReceiver(actual,type,h,visited,depth+1))return true;
         }
         return false;
@@ -158,6 +304,7 @@ final class CapabilityEngine {
         }
         objectFieldSetters.put(id,found);return found;
     }
+    static final Set<String> XML_VIEW_CALLBACKS=Set.of("onFinishInflate","onAttachedToWindow","onDetachedFromWindow","onWindowVisibilityChanged","onVisibilityChanged","onSizeChanged","onLayout","onMeasure","onDraw","onWindowFocusChanged","onFocusChanged","onConfigurationChanged");
     void seed(Host h,String type,V self,List<String> path,boolean candidate){
         if(Cfg.WEBVIEWS.contains(type))return;
         if(h.components.size()>=12000){h.gaps.add("component_instance_budget:"+type);return;}
@@ -169,6 +316,9 @@ final class CapabilityEngine {
             for(String call:idx.calls.getOrDefault(CapabilityIndex.key(entry),Set.of()))referencedShapes.add(call.substring(call.indexOf("->")+2));
         Set<String> usedFields=new HashSet<>();ArrayDeque<String> fieldMethods=new ArrayDeque<>();
         for(Method m:hierarchy){
+            // XML inflation constructs a View; it does not invoke every app-defined helper.
+            // Ordinary helpers receive this receiver only through actual calls/getters.
+            if(self.kind().equals("view")&&idx.subtype(type,"android.view.View")&&!m.getName().startsWith("<")&&!XML_VIEW_CALLBACKS.contains(m.getName()))continue;
             if(!m.getName().startsWith("<")){
                 if(!idx.activity(type)&&!idx.component(type)&&!idx.scheduled(type)&&!idx.callbackEntries.getOrDefault(type,Set.of()).contains(CapabilityIndex.key(m)))continue;
                 // A WebView-taking helper gets its receiver arguments from actual call sites.
@@ -252,6 +402,33 @@ final class CapabilityEngine {
         }
         return result;
     }
+    V deferredField(Host h,String field,V receiver,String type){
+        String key=heapKey(field,receiver);h.deferredFields.putIfAbsent(key,new DeferredField(field,receiver));
+        return V.of("field_object",type,key);
+    }
+    V refreshBinding(V value,Host h,int depth,Set<String> seen){
+        if(depth>12){h.gaps.add("deferred_binding_depth");return value;}
+        if(value.kind().equals("union")){V result=null;for(V choice:alternatives(value))result=union(result,refreshBinding(choice,h,depth+1,new HashSet<>(seen)));return result==null?value:result;}
+        if(value.kind().equals("field_object")){
+            DeferredField field=h.deferredFields.get(value.id());if(field==null||!seen.add(value.id()))return value;
+            V receiver=refreshBinding(field.receiver(),h,depth+1,seen),result=null;
+            for(V actual:alternatives(receiver)){
+                V stored=h.heap.get(heapKey(field.field(),actual));
+                if(stored!=null&&!stored.equals(value))result=union(result,refreshBinding(stored,h,depth+1,new HashSet<>(seen)));
+            }
+            if(result!=null)h.gaps.add("deferred_field_order_unproven");
+            return result==null?value:result;
+        }
+        if(value.kind().equals("view")){
+            V result=null;
+            for(var binding:h.xmlBindings.getOrDefault(value.id(),Set.of())){
+                String concrete=(String)binding.get("concrete_type");
+                if(value.type()==null||idx.subtype(concrete,value.type()))result=union(result,V.of("view",concrete,value.id()));
+            }
+            return result==null?value:result;
+        }
+        return value;
+    }
     V guardValue(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args.size()?job.args.get(index):UNKNOWN;}
@@ -268,7 +445,7 @@ final class CapabilityEngine {
     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
         if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return V.of("unknown",v.type(),"global_deadline");}
         if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
-        if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?job.args.get(i):V.of("unknown",v.type(),"parameter");}
+        if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?refreshBinding(job.args.get(i),h,0,new HashSet<>()):V.of("unknown",v.type(),"parameter");}
         if(v.kind().equals("array_new")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));Long size=number(eval(v.args().get(0),job,h,depth+1,visiting));if(size!=null&&size>=0)h.arrayLengths.put(array.id(),size);return array;}
         if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));h.arrayLengths.put(array.id(),(long)v.args().size());for(int i=0;i<v.args().size();i++)applyWrite(h,"$element:"+i,array,eval(v.args().get(i),job,h,depth+1,new HashSet<>(visiting)));return array;}
         if(v.kind().equals("map_entry"))return new V("map_entry",null,"entry",null,v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList());
@@ -301,8 +478,8 @@ final class CapabilityEngine {
         if(v.kind().equals("cast")){
             V original=eval(v.args().get(0),job,h,depth+1,visiting);
             List<V> choices=new ArrayList<>();for(V alternative:alternatives(original)){
-                V cast=new V(alternative.kind(),alternative.kind().equals("object")?alternative.type():v.type(),alternative.id(),alternative.literal(),alternative.args());choices.add(cast);
-                if(alternative.kind().equals("view")&&idx.component(v.type())&&!idx.activity(v.type())&&!Cfg.WEBVIEWS.contains(v.type()))seed(h,v.type(),cast,job.path,true);
+                V cast=new V(alternative.kind(),(alternative.kind().equals("object")||alternative.kind().equals("view")&&idx.subtype(alternative.type(),v.type()))?alternative.type():v.type(),alternative.id(),alternative.literal(),alternative.args());choices.add(cast);
+                if(alternative.kind().equals("view")&&idx.component(cast.type())&&!idx.activity(cast.type())&&!Cfg.WEBVIEWS.contains(cast.type()))seed(h,cast.type(),cast,job.path,true);
             }
             return choices.size()==1?choices.get(0):new V("union",v.type(),original.id(),null,List.copyOf(choices));
         }
@@ -312,8 +489,8 @@ final class CapabilityEngine {
             if(receiver.kind().equals("union")){V joined=null;for(V alternative:alternatives(receiver))joined=union(joined,eval(expr("field",v.type(),v.id(),List.of(alternative)),job,h,depth+1,new HashSet<>(visiting)));return joined==null?UNKNOWN:joined;}
             String hk=heapKey(v.id(),receiver);
             if(idx.subtype(v.type(),"java.lang.Enum"))return new V("enum",v.type(),v.id(),v.id().substring(v.id().indexOf("->")+2,v.id().indexOf(':')),List.of());
-            V result=h.heap.get(hk);if(result!=null)return result;
-            if(!visiting.add(hk))return V.of("field_object",v.type(),hk);
+            V result=h.heap.get(hk);if(result!=null)return refreshBinding(result,h,0,new HashSet<>());
+            if(!visiting.add(hk))return deferredField(h,v.id(),receiver,v.type());
             String owner=owner(v.id());ClassDef c=idx.classes.get(owner);
             if(c!=null){
                 for(Field f:c.getFields())if(CapabilityIndex.field(f).equals(v.id())&&f.getInitialValue()!=null){V initial=encoded(f.getInitialValue());if(!initial.equals(UNKNOWN))return initial;}
@@ -329,7 +506,7 @@ final class CapabilityEngine {
                 ClassDef declared=idx.classes.get(v.type());
                 if(declared!=null&&(declared.getAccessFlags()&0x600)!=0){V provider=installedProvider(v.id(),job,h,depth,visiting);if(provider!=null)result=union(result,provider);}
             }
-            return result!=null?result:V.of("field_object",v.type(),hk);
+            return result!=null?refreshBinding(result,h,0,new HashSet<>()):deferredField(h,v.id(),receiver,v.type());
         }
         if(v.kind().startsWith("return")){
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
@@ -341,7 +518,8 @@ final class CapabilityEngine {
                 if(service.kind().equals("unknown"))h.gaps.add(service.id());
                 return service;
             }
-            if((name.equals("findViewById")||name.equals("requireViewById"))&&args.size()>1)return V.of("view",v.type(),args.get(0).id()+"/view:"+args.get(1).id());
+            if(layoutInflate(v.id()))return inflateLayout(v.id(),args,job,h,v.kind().startsWith("return_inflate:")?v.kind().substring(15):"unknown");
+            if((name.equals("findViewById")||name.equals("requireViewById"))&&args.size()>1)return lookupView(args.get(0),args.get(1),v.type(),job,h);
             if((name.equals("getActivity")||name.equals("requireActivity")))return V.of("host",h.activity,"activity:"+h.activity);
             Method lazyFactory=idx.resolve(v.id());
             if(lazyFactory!=null&&owner(v.id()).startsWith("kotlin.")&&(lazyFactory.getAccessFlags()&8)!=0&&idx.lazyType(CapabilityIndex.cls(lazyFactory.getReturnType()))){
@@ -374,6 +552,7 @@ final class CapabilityEngine {
             }
             for(Method actual:targets)if(visiting.add(CapabilityIndex.key(actual))){
                 Job nested=new Job(actual,args,job.path,true);Summary summary=flow.summary(actual,v0->guardValue(v0,nested,h,0));
+                prepareLayouts(summary,nested,h,depth+1,visiting);
                 if(idx.collection(CapabilityIndex.cls(actual.getReturnType()))||idx.map(CapabilityIndex.cls(actual.getReturnType())))for(Write w:summary.writes()){
                     V receiver=eval(w.receiver(),nested,h,depth+1,new HashSet<>(visiting));V value=eval(w.value(),nested,h,depth+1,new HashSet<>(visiting));applyWrite(h,w.field(),receiver,value);
                 }
@@ -562,6 +741,8 @@ final class CapabilityEngine {
         for(V view:alternatives(recv))if((view.kind().equals("object")||view.kind().equals("view"))&&view.type()!=null&&idx.webview(view.type())&&!Cfg.WEBVIEWS.contains(view.type()))seed(h,view.type(),view,job.path,true);
         String op=name(call.method());
         Map<String,Object> base=new LinkedHashMap<>();base.put("activity",h.activity);base.put("kind",kind);base.put("name",op);base.put("site",site);base.put("api",call.method());base.put("webview",Map.of("id",recv.id(),"type",recv.type()==null?"unknown":recv.type()));if(recv.kind().equals("union"))base.put("webview_alternatives",alternatives(recv).stream().map(v->Map.of("id",v.id(),"type",v.type()==null?"unknown":v.type())).toList());base.put("binding_status",job.candidate||conditional||nullable||recv.kind().equals("unknown")?"candidate":"explicit");base.put("conditional",conditional||nullable);if(nullable)base.put("receiver_condition","non_null");base.put("evidence",job.path);base.put("arguments",args);
+        var xmlEvidence=new LinkedHashSet<Map<String,Object>>();for(V view:alternatives(recv))xmlEvidence.addAll(h.xmlBindings.getOrDefault(view.id(),Set.of()));
+        if(!xmlEvidence.isEmpty()){base.put("xml_binding_evidence",xmlEvidence);base.put("binding_status","candidate");base.put("xml_binding_semantics","possible layout receivers; branch/configuration and repeated-instance cooccurrence not proven");}
         if(kind.equals("message_bridge")&&!args.isEmpty()){
             List<Map<String,Object>> transports=new ArrayList<>();
             for(V registry:alternatives(args.get(0)))for(var binding:h.nativeBindings.getOrDefault(registry.id(),List.of()))if(!transports.contains(binding))transports.add(binding);
