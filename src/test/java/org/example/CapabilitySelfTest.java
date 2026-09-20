@@ -81,7 +81,10 @@ public final class CapabilitySelfTest {
    check(flow.refined==refinements,"Repeated type guard was decoded instead of cached");
    messageFixture();
    collectionFixture();
-   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence");
+   installedProviderFixture();
+   privateDispatchFixture();
+   reflectiveEndpointFixture();
+   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints");
   }finally{Files.deleteIfExists(file);}
  }
  static void messageFixture()throws Exception {
@@ -117,6 +120,66 @@ public final class CapabilitySelfTest {
    var urlIndex=new CapabilityIndex();urlIndex.read(path,System.nanoTime()+20_000_000_000L);
    check(urlIndex.messageRegistries.containsKey(CapabilityIndex.key(register)),"URL callback message registry not found");
    check(!urlIndex.messageRegistries.containsKey(CapabilityIndex.key(fake)),"URL transport turned headers into registry");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void privateDispatchFixture()throws Exception {
+  String base="Ltest/BaseHolder;",sub="Ltest/SubHolder;";
+  var original=method(base,"init",List.of(W),2,4,List.of(make(0,B),str(1,"base-private"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
+  var sibling=method(sub,"init",List.of(W),2,4,List.of(make(0,B),str(1,"wrong-private"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
+  var baseCtor=method(base,"<init>",List.of(W),1,2,List.of(invoke(Opcode.INVOKE_DIRECT,base,"init",List.of(W),"V",0,1),end()),false);
+  var subCtor=method(sub,"<init>",List.of(W),1,2,List.of(invoke(Opcode.INVOKE_DIRECT,base,"<init>",List.of(W),"V",0,1),end()),false);
+  var entry=method(A,"onCreate",List.of(),1,3,List.of(make(0,W),make(1,sub),invoke(Opcode.INVOKE_DIRECT,sub,"<init>",List.of(W),"V",1,0),end()),false);
+  Path path=Files.createTempFile("wv-private-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(base,"Ljava/lang/Object;",original,baseCtor),clazz(sub,base,sibling,subCtor),clazz(B,"Ljava/lang/Object;"))));
+   long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   check(facts.stream().anyMatch(f->"base-private".equals(f.get("registration_name"))),"Exact private initializer lost");
+   check(facts.stream().noneMatch(f->"wrong-private".equals(f.get("registration_name"))),"Private initializer dispatched to same-name subclass member");
+  }finally{Files.deleteIfExists(path);}
+ }
+ static void reflectiveEndpointFixture()throws Exception {
+  String handler="Ltest/ReflectiveHandler;",target="Ltest/ReflectionTarget;";
+  var dispatch=method(handler,"dispatch",List.of("Ljava/lang/String;"),1,6,List.of(
+   new ImmutableInstruction21c(Opcode.CONST_CLASS,0,new ImmutableTypeReference(target)),
+   new ImmutableInstruction11n(Opcode.CONST_4,1,1),new ImmutableInstruction22c(Opcode.NEW_ARRAY,1,1,new ImmutableTypeReference("[Ljava/lang/Class;")),
+   new ImmutableInstruction11n(Opcode.CONST_4,2,0),new ImmutableInstruction21c(Opcode.CONST_CLASS,3,new ImmutableTypeReference("Ljava/lang/String;")),
+   new ImmutableInstruction23x(Opcode.APUT_OBJECT,3,1,2),
+   invoke(Opcode.INVOKE_VIRTUAL,"Ljava/lang/Class;","getDeclaredMethod",List.of("Ljava/lang/String;","[Ljava/lang/Class;"),"Ljava/lang/reflect/Method;",0,5,1),
+   new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
+   invoke(Opcode.INVOKE_VIRTUAL,"Ljava/lang/reflect/Method;","invoke",List.of("Ljava/lang/Object;","[Ljava/lang/Object;"),"Ljava/lang/Object;",0,2,2),end()),false);
+  var existing=method(target,"existing",List.of("Ljava/lang/String;"),1,2,List.of(end()),false);
+  Path path=Files.createTempFile("wv-reflection-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(handler,"Ljava/lang/Object;",dispatch),clazz(target,"Ljava/lang/Object;",existing))));
+   long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(path,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("test.AppActivity");var job=new CapabilityEngine.Job(dispatch,List.of(),List.of(),true);
+   var empty=engine.messageMembers("test.ReflectiveHandler","missing",job,host);check(empty.reflective()&&empty.resolved()&&empty.members().isEmpty(),"Known absent reflection endpoint not distinguished from unknown dispatcher");
+   var present=engine.messageMembers("test.ReflectiveHandler","existing",job,host);check(present.members().size()==1&&present.members().get(0).get("signature").equals(CapabilityIndex.key(existing)),"Exact reflection endpoint missing");
+  }finally{Files.deleteIfExists(path);}
+ }
+
+ static void installedProviderFixture()throws Exception {
+  String api="Ltest/Provider;",installed="Ltest/InstalledProvider;",unused="Ltest/UnusedProvider;",initializer="Ltest/ApplicationInit;";
+  var field=new ImmutableField(H,"provider",api,9,null,Set.of(),Set.of());
+  var setter=method(H,"install",List.of(api),9,1,List.of(new ImmutableInstruction21c(Opcode.SPUT_OBJECT,0,new ImmutableFieldReference(H,"provider",api)),end()),false);
+  var getterBody=method(H,"get",List.of(),9,1,List.of(new ImmutableInstruction21c(Opcode.SGET_OBJECT,0,new ImmutableFieldReference(H,"provider",api)),new ImmutableInstruction11x(Opcode.RETURN_OBJECT,0)),false);
+  var getter=new ImmutableMethod(H,"get",List.of(),api,9,Set.of(),Set.of(),getterBody.getImplementation());
+  var init=method(initializer,"init",List.of(),9,1,List.of(make(0,installed),invoke(Opcode.INVOKE_STATIC,H,"install",List.of(api),"V",0),end()),false);
+  var declaration=new ImmutableMethod(api,"configure",List.of(new ImmutableMethodParameter(W,Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
+  var good=method(installed,"configure",List.of(W),1,4,List.of(make(0,B),str(1,"installed"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
+  var bad=method(unused,"configure",List.of(W),1,4,List.of(make(0,B),str(1,"unused"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
+  var entry=method(A,"onCreate",List.of(),1,3,List.of(make(0,W),invoke(Opcode.INVOKE_STATIC,H,"get",List.of(),api),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),invoke(Opcode.INVOKE_INTERFACE,api,"configure",List.of(W),"V",1,0),end()),false);
+  var classes=List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(initializer,"Ljava/lang/Object;",init),clazz(B,"Ljava/lang/Object;"),
+   new ImmutableClassDef(H,1,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(field),List.of(setter,getter)),
+   new ImmutableClassDef(api,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(declaration)),
+   new ImmutableClassDef(installed,1,"Ljava/lang/Object;",List.of(api),null,Set.of(),List.of(),List.of(good)),
+   new ImmutableClassDef(unused,1,"Ljava/lang/Object;",List.of(api),null,Set.of(),List.of(),List.of(bad)));
+  Path path=Files.createTempFile("wv-provider-",".dex");
+  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),classes));long deadline=System.nanoTime()+20_000_000_000L;
+   var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
+   check(!engine.activities.isEmpty(),"Installed global provider was not resolved");
+   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
+   check(facts.stream().anyMatch(f->"installed".equals(f.get("registration_name"))),"Installed provider capability missing");
+   check(facts.stream().noneMatch(f->"unused".equals(f.get("registration_name"))),"Uninstalled provider subtype leaked into host");
   }finally{Files.deleteIfExists(path);}
  }
 

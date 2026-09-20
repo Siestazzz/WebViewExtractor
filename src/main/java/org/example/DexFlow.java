@@ -13,7 +13,7 @@ final class DexFlow {
         static V of(String k,String t,String id){return new V(k,t,id,null,List.of());}
         static V literal(String t,String value){return new V("literal",t,value,value,List.of());}
     }
-    record Call(String method,int offset,List<V> args,boolean isStatic,boolean isSuper) {}
+    record Call(String method,int offset,List<V> args,boolean isStatic,boolean isSuper,boolean isDirect) {}
     record Write(String field,V receiver,V value) {}
     record Summary(List<Call> calls,List<Write> writes,List<V> returns,boolean branched,boolean truncated) {}
     static final V UNKNOWN=V.of("unknown",null,"unknown");
@@ -121,9 +121,9 @@ final class DexFlow {
                     if(target.getName().equals("add"))writes.add(new Write("$contents",args.get(0),args.get(1)));
                     if(target.getName().equals("addAll"))writes.add(new Write("$contentsAll",args.get(0),args.get(1)));
                 }
-                calls.put(at,new Call(targetKey,at,List.copyOf(args),stat,op.startsWith("invoke-super")));
+                calls.put(at,new Call(targetKey,at,List.copyOf(args),stat,op.startsWith("invoke-super"),op.startsWith("invoke-direct")));
                 if(target.getName().equals("getSettings")&&idx.webview(CapabilityIndex.cls(target.getDefiningClass()))&&!args.isEmpty())s.put(-1,expr("settings",CapabilityIndex.cls(target.getReturnType()),"settings",List.of(args.get(0))));
-                else if(!target.getReturnType().equals("V"))s.put(-1,expr("return",CapabilityIndex.cls(target.getReturnType()),targetKey,args));
+                else if(!target.getReturnType().equals("V"))s.put(-1,expr(op.startsWith("invoke-direct")||op.startsWith("invoke-super")?"return_direct":"return",CapabilityIndex.cls(target.getReturnType()),targetKey,args));
             }
             if(output!=null)s.put(a,output);
             else if(in.getOpcode().setsRegister())s.put(a,UNKNOWN);

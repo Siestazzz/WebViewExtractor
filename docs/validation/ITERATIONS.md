@@ -155,3 +155,43 @@
   discovered miss and independently review output capability identity. Soot fallback, full
   synthetic coverage, held-out final verification and three final repeats remain unfinished.
   QUALITY ACCEPTANCE NOT MET. No whole-APK completeness claim.
+
+## v5 — concrete provider recovery and receiver-specific dispatch
+
+- Direct/private calls retain exact method identity. Virtual jobs substitute individual receiver
+  alternatives, including equal aliased arguments, instead of running each target with the full
+  sibling-object union. The previously source-confirmed News TencentVideo initializer counterexample
+  now has45 correctly typed facts and0 unknown-union facts (v4e:45 typed+15 unknown unions).
+- Static interface providers are recovered from actual indexed field setter callsites and concrete
+  object arguments, bounded to64 inspected callers. This restores the Ctrip v1 installed-provider
+  path without selecting every class that implements the interface. Unknown dispatches remain gaps.
+- Reflective handler lookup now distinguishes a known missing declared endpoint from an unknown
+  target. A reflective dispatcher is not itself emitted as the named JavaScript endpoint. Registration
+  remains present even when its callable member list is empty.
+- Added executable DEX fixtures for installed-vs-uninstalled providers, exact private initializer
+  dispatch and known empty/existing reflection endpoints. Existing JVM and evaluator tests pass.
+- Three serial fresh-JVM runs: news78.60s, mango74.21s, ctrip136.20s; all outputs partial. Ctrip's
+  four-host256-fact-per-host regression is recovered. These are development runs, not final repeats.
+
+| App | Bridge | Settings | Callbacks |
+|---|---:|---:|---:|
+| news | 1252/1338 | 212/283 | 181/217 |
+| mango | 1092/1153 | 519/526 | 584/591 |
+| ctrip | 3666/3666 | 233/233 | 299/299 |
+
+- Ctrip still emits969 unsupported subtype-inferred Bridge facts. A separate diagnostic replay
+  excluding only that inference (retaining all Activity identities) loses no current canonical fact;
+  see v5-ctrip-subtype-dependence.json. This is a dependency experiment, NOT an acceptance report.
+  Remove the actual production inference next and rerun all apps before claiming that precision fix.
+- News and Ctrip emitted Activity sets are unchanged from independently reviewed v4e. Mango removes
+  two previously valid Activity candidates; a smaller output is not evidence that their paths are
+  impossible. All-source/new-sample validation and bound-object precision remain necessary.
+- Independent Sol v5 audit confirms all56 Imgo semantic registrations retained, all416 duplicate
+  carrier records have empty members and the verified no-compatible-endpoint status. Mango
+  ownership is75 valid/0 wrong/5 uncertain (5/80=6.25%). Async registry evidence identifies
+  mglive BridgeWebView$a and mgadplus BridgeWebView$c queue callbacks as the missing map-read edge.
+- Still failing: News settings/callback and several frameworks, Mango Bridge below95%, dynamic
+  registrations, unsupported message/prompt transports, false capability associations, known wrong
+  Activity hosts. No final holdout or three-repeat acceptance run yet. QUALITY ACCEPTANCE NOT MET.
+- Reproduce with the documented build, `scripts/benchmark.py --label v5 --jar test/runs/v5.jar`,
+  then the three canonical evaluator commands. Benchmark JSON preserves exact commands/hashes.

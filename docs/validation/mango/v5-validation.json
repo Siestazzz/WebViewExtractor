@@ -1,0 +1,67 @@
+{
+  "report": "test/runs/v5/com.hunantv.imgo.activity/0/output/capabilities.json",
+  "activity_count": 80,
+  "ownership": {
+    "counts": {
+      "valid": 75,
+      "uncertain": 5
+    },
+    "added_since_v4e": [],
+    "removed_since_v4e": [
+      "com.mg.ec.cards.result.SmallCardResultActivity",
+      "com.mg.ec.ui.videodetail.VideoDetailActivity"
+    ],
+    "retained_verdict_changes": []
+  },
+  "imgo_dispatcher": {
+    "hosts": [
+      "com.hunantv.webui.WebUIActivity",
+      "com.mgtv.ui.browser.HalfWebActivity",
+      "com.mgtv.ui.browser.WebActivity",
+      "com.mgtv.ui.browser.WebActivityTransparent",
+      "com.mgtv.ui.guide.PureWebActivity",
+      "com.mgtv.ui.login.CaptureWebActivity",
+      "com.mgtv.ui.login.MeCaptureWebActivity"
+    ],
+    "registration_names": [
+      "getSMSCode",
+      "getSMSNumber",
+      "invokeH5Callback",
+      "payWithWeChat",
+      "share",
+      "showCustomShareMenus",
+      "webviewBecomeActive",
+      "webviewEnterBackground"
+    ],
+    "semantic_registration_count": 56,
+    "raw_emitted_fact_count": 416,
+    "all_members_empty": true,
+    "all_endpoint_status": "registered-no-compatible-endpoint",
+    "dispatcher_implementation": "com.mgtv.h5.ImgoWebJavascriptImpl$e0",
+    "independent_rule_evidence": "imgo-unknown-handler-audit.md"
+  },
+  "async_registry_discovery": {
+    "mglive": {
+      "chain": [
+        "cn0.c.shouldOverrideUrlLoading(WebView,String)",
+        "BridgeWebView.flushMessageQueue()",
+        "new BridgeWebView$a passed to javascript:_fetchQueue callback",
+        "BridgeWebView$a.onCallBack(String)",
+        "BridgeWebView.G.get(handlerName)",
+        "cn0.a.a(String,cn0.d)"
+      ],
+      "note": "onPageFinished installs/flushes startup JS messages; the yy:// queue signal in shouldOverrideUrlLoading starts the inbound registry dispatch"
+    },
+    "mgadplus": {
+      "chain": [
+        "BridgeWebView$a client callback d/e (page lifecycle delegated by base client)",
+        "BridgeWebView.flushMessageQueue()",
+        "new BridgeWebView$c passed to javascript:_fetchQueue callback",
+        "BridgeWebView$c.onCallBack(String)",
+        "BridgeWebView.G.get(handlerName)",
+        "com.mgadplus.brower.jsbridge.a.handler(String,d)"
+      ],
+      "note": "the queue callback is $c, not the installed WebViewClient $a"
+    }
+  }
+}

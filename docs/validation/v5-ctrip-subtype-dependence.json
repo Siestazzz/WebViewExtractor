@@ -1,0 +1,77 @@
+{
+  "oracle_sha256": "5a5ad61d4185492331e672cec5cac03c9f1c41cca2dfae30b9859d0d8c0df1be",
+  "report_sha256": "a2a716efe20c8da7447a839090a476d5d0d097c42b10b75c8086ec271dccebec",
+  "unassigned_oracle_facts": 108,
+  "oracle_file": "docs/validation/ctrip/canonical-facts.jsonl",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 233,
+      "matched": 233,
+      "explicit_matched": 3,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.012875536480686695
+    },
+    "bridge": {
+      "expected": 3666,
+      "matched": 3666,
+      "explicit_matched": 7,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0019094380796508457
+    },
+    "callback": {
+      "expected": 299,
+      "matched": 299,
+      "explicit_matched": 3,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.010033444816053512
+    }
+  },
+  "missing": [],
+  "emitted_activities": 55,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive Activity-level recall; unknown targets count as unresolved misses in aggregate coverage. Registration-only matches are shown separately and do not prove endpoint coverage. WebView object identity requires independent review.",
+  "scoring_version": 2,
+  "duplicate_oracle_rows": 28,
+  "capability_granularity": {
+    "setting": {
+      "expected": 233,
+      "matched": 233,
+      "recall": 1.0
+    },
+    "bridge_registration": {
+      "expected": 489,
+      "matched": 489,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 3177,
+      "matched": 3177,
+      "recall": 1.0
+    },
+    "callback": {
+      "expected": 299,
+      "matched": 299,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 55
+    },
+    "emitted": 55,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 55,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations.",
+  "purpose": "Diagnostic only: measure reliance on unproven subtype candidates before removing that production inference. All emitted Activity identities retained; not an acceptance run.",
+  "excluded_fact_resolution": "type_compatible_bridge_implementation",
+  "excluded_fact_count": 969
+}

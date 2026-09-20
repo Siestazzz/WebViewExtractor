@@ -59,22 +59,20 @@ final class CapabilityEngine {
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());continue;}
                     if(target!=null){
-                        Set<Method> targets=new LinkedHashSet<>();
-                        if(idx.relevant.contains(CapabilityIndex.key(target))||name.equals("<init>")&&lifecycle)targets.add(target);
-                        if(!call.isStatic()&&!call.isSuper()&&!args.isEmpty()&&!name.equals("<init>")){
-                            for(V recv:alternatives(args.get(0)))if(recv.type()!=null){
-                                Method concrete=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(target));
-                                if(concrete!=null&&idx.relevant.contains(CapabilityIndex.key(concrete)))targets.add(concrete);
-                                if(recv.kind().equals("unknown")||recv.kind().equals("field_object")||concrete==null||concrete.getImplementation()==null){
-                                    // A declared receiver type is not evidence for every allocated subclass.
-                                    // Preserve the unresolved dispatch instead of attaching sibling object capabilities.
-                                    if(concrete==null||concrete.getImplementation()==null)h.gaps.add("unresolved_receiver_dispatch:"+call.method());
-                                }
+                        boolean virtual=!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&!args.isEmpty();
+                        if(!virtual){
+                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle)enqueue(h,target,args,job.path,job.candidate||summary.branched());
+                        }else{
+                            int dispatched=0;
+                            for(V receiver:alternatives(args.get(0))){
+                                if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
+                                Method concrete=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
+                                if(concrete==null||concrete.getImplementation()==null){h.gaps.add("unresolved_receiver_dispatch:"+call.method());continue;}
+                                if(!idx.relevant.contains(CapabilityIndex.key(concrete)))continue;
+                                if(dispatched++>=64){h.gaps.add("dispatch_budget:"+call.method());break;}
+                                enqueue(h,concrete,specializeReceiver(args,receiver),job.path,job.candidate||summary.branched()||args.get(0).kind().equals("union"));
                             }
                         }
-                        if(targets.size()>64){h.gaps.add("dispatch_budget:"+call.method());}
-                        int dispatched=0;
-                        for(Method actual:targets){if(dispatched++>=64)break;enqueue(h,actual,args,job.path,job.candidate||summary.branched()||targets.size()>1);}
                     }
 
                     if(name.equals("<init>")&&!args.isEmpty()&&(idx.component(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner))&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
@@ -130,13 +128,16 @@ final class CapabilityEngine {
         if(h.queue.size()>6000){h.gaps.add("queue_budget");return;}
         h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate));
     }
+    static List<V> specializeReceiver(List<V> args,V receiver){
+        V original=args.get(0);return args.stream().map(v->v.equals(original)?receiver:v).toList();
+    }
     static List<String> extend(List<String> path,String s){var p=new ArrayList<>(path);p.add(s);return List.copyOf(p);}
     V guardValue(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args.size()?job.args.get(index):UNKNOWN;}
         if(value.kind().equals("cast"))return guardValue(value.args().get(0),job,h,depth+1);
         if(value.kind().equals("field")){V receiver=guardValue(value.args().get(0),job,h,depth+1);return h.heap.getOrDefault(heapKey(value.id(),receiver),UNKNOWN);}
-        if(value.kind().equals("return"))return UNKNOWN;
+        if(value.kind().startsWith("return"))return UNKNOWN;
         return value;
     }
     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
@@ -174,9 +175,13 @@ final class CapabilityEngine {
                     for(Write w:init.writes())if(w.field().equals(v.id()))result=union(result,eval(w.value(),nested,h,depth+1,new HashSet<>(visiting)));
                 }
             }
+            if(receiver.kind().equals("static")&&c!=null){
+                ClassDef declared=idx.classes.get(v.type());
+                if(declared!=null&&(declared.getAccessFlags()&0x600)!=0){V provider=installedProvider(v.id(),job,h,depth,visiting);if(provider!=null)result=union(result,provider);}
+            }
             return result!=null?result:V.of("field_object",v.type(),hk);
         }
-        if(v.kind().equals("return")){
+        if(v.kind().startsWith("return")){
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
             if((name.equals("findViewById")||name.equals("requireViewById"))&&args.size()>1)return V.of("view",v.type(),args.get(0).id()+"/view:"+args.get(1).id());
             if((name.equals("getActivity")||name.equals("requireActivity")))return V.of("host",h.activity,"activity:"+h.activity);
@@ -193,7 +198,7 @@ final class CapabilityEngine {
             if(!args.isEmpty()&&name.equals("get")&&idx.collection(owner(v.id())))return elements(h,args.get(0),v.type());
             Method method=idx.resolve(v.id());V result=null;Set<Method> targets=new LinkedHashSet<>();
             if(method!=null){
-                if((method.getAccessFlags()&8)==0&&!args.isEmpty())for(V recv:alternatives(args.get(0)))if(recv.type()!=null){Method concrete=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(method));if(concrete!=null&&concrete.getImplementation()!=null)targets.add(concrete);}
+                if(!v.kind().equals("return_direct")&&(method.getAccessFlags()&8)==0&&!args.isEmpty())for(V recv:alternatives(args.get(0)))if(recv.type()!=null){Method concrete=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(method));if(concrete!=null&&concrete.getImplementation()!=null)targets.add(concrete);}
                 if(targets.isEmpty()&&method.getImplementation()==null){
                     String returnType=CapabilityIndex.cls(method.getReturnType());
                     boolean factory=idx.collection(returnType)||idx.webview(returnType)||idx.subtype(returnType,"android.webkit.WebViewClient")||idx.subtype(returnType,"android.webkit.WebChromeClient");
@@ -213,6 +218,31 @@ final class CapabilityEngine {
             return result==null?new V("unknown",v.type(),v.id(),null,List.of()):result;
         }
         return v;
+    }
+    V installedProvider(String field,Job outer,Host h,int depth,Set<String> visiting){
+        if(depth>10||!visiting.add("provider:"+field))return null;
+        V result=null;int inspected=0;
+        for(String writerId:idx.fieldWriters.getOrDefault(field,Set.of())){
+            Method writer=idx.methods.get(writerId);if(writer==null||writer.getImplementation()==null)continue;
+            for(Write write:flow.summary(writer).writes()){
+                if(!write.field().equals(field)||!write.receiver().kind().equals("static")||!write.value().kind().equals("param"))continue;
+                int parameter=Integer.parseInt(write.value().id());
+                for(String callerId:idx.callers.getOrDefault(writerId,Set.of())){
+                    if(inspected++>=64){h.gaps.add("provider_registration_budget:"+field);return result;}
+                    Method caller=idx.methods.get(callerId);if(caller==null)continue;
+                    List<V> callerArgs=new ArrayList<>();if((caller.getAccessFlags()&8)==0)callerArgs.add(V.of("object",CapabilityIndex.cls(caller.getDefiningClass()),"global_initializer:"+callerId));
+                    for(CharSequence p:caller.getParameterTypes())callerArgs.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"global_initializer_parameter"));
+                    Job context=new Job(caller,callerArgs,outer.path,true);
+                    for(Call registration:flow.summary(caller).calls()){
+                        Method target=idx.resolve(registration.method());
+                        if(target==null||!CapabilityIndex.key(target).equals(writerId)||parameter>=registration.args().size())continue;
+                        V candidate=eval(registration.args().get(parameter),context,h,depth+1,new HashSet<>(visiting));
+                        for(V alternative:alternatives(candidate))if(alternative.kind().equals("object"))result=union(result,alternative);
+                    }
+                }
+            }
+        }
+        return result;
     }
     void applyWrite(Host h,String field,V receiver,V value){
         if(field.equals("$contents")||field.equals("$contentsAll")||field.startsWith("$element:")){
@@ -310,8 +340,9 @@ final class CapabilityEngine {
             base.put("registry_field",registryField(call.method()));
             for(V handler:alternatives(args.get(2))){
                 Map<String,Object> b=new LinkedHashMap<>(base);b.put("implementation",handler.type()==null?"unknown":handler.type());
-                List<Map<String,Object>> members=messageMembers(handler.type(),args.get(1).literal(),job,h);
-                if(members.isEmpty()&&handler.type()!=null){Set<String> shapes=idx.registryHandlerShapes.getOrDefault(registryKey,Set.of());for(Method member:idx.hierarchyMethods(handler.type()))if(shapes.contains(CapabilityIndex.shape(member))&&member.getImplementation()!=null)members.add(Map.of("signature",CapabilityIndex.key(member),"display",CapabilityIndex.display(member),"resolution","registered_handler_interface_dispatch"));}
+                HandlerSurface surface=messageMembers(handler.type(),args.get(1).literal(),job,h);List<Map<String,Object>> members=new ArrayList<>(surface.members());
+                if(surface.reflective())b.put("endpoint_status",surface.resolved()?members.isEmpty()?"registered-no-compatible-endpoint":"resolved":"registered-target-unknown");
+                if(members.isEmpty()&&!surface.reflective()&&handler.type()!=null){Set<String> shapes=idx.registryHandlerShapes.getOrDefault(registryKey,Set.of());for(Method member:idx.hierarchyMethods(handler.type()))if(shapes.contains(CapabilityIndex.shape(member))&&member.getImplementation()!=null)members.add(Map.of("signature",CapabilityIndex.key(member),"display",CapabilityIndex.display(member),"resolution","registered_handler_interface_dispatch"));}
                 b.put("members",members);b.put("resolution","annotated_transport_shared_registry");
                 if(!members.isEmpty())b.put("implementation",owner((String)members.get(0).get("signature")));
                 add(h,b);
@@ -362,12 +393,14 @@ final class CapabilityEngine {
             t=CapabilityIndex.cls(c.getSuperclass());
         }return UNKNOWN;
     }
-    List<Map<String,Object>> messageMembers(String type,String registered,Job outer,Host h){
-        if(type==null)return List.of();List<Map<String,Object>> result=new ArrayList<>();
+    record HandlerSurface(List<Map<String,Object>> members,boolean reflective,boolean resolved){}
+    HandlerSurface messageMembers(String type,String registered,Job outer,Host h){
+        if(type==null)return new HandlerSurface(List.of(),false,false);List<Map<String,Object>> result=new ArrayList<>();boolean reflective=false,resolved=false;
         for(Method method:idx.hierarchyMethods(type)){
             if(method.getImplementation()==null||method.getName().startsWith("<"))continue;
             Summary summary=flow.summary(method);
             if(summary.calls().stream().noneMatch(c->c.method().startsWith("Ljava/lang/reflect/Method;->invoke(")))continue;
+            if(summary.calls().stream().anyMatch(c->name(c.method()).equals("getDeclaredMethod")||name(c.method()).equals("getMethod")))reflective=true;
             List<V> args=new ArrayList<>();if((method.getAccessFlags()&8)==0)args.add(V.of("unknown",type,"handler"));
             for(CharSequence p:method.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"handler_parameter"));
             Job job=new Job(method,args,outer.path,true);
@@ -375,14 +408,16 @@ final class CapabilityEngine {
                 V clazz=eval(ref.args().get(0),job,h,0,new HashSet<>());V array=ref.args().get(2);
                 if(!clazz.kind().equals("class"))continue;
                 TreeMap<Integer,String> params=new TreeMap<>();
+                if(array.kind().equals("array"))for(int i=0;i<array.args().size();i++)if(array.args().get(i).kind().equals("class"))params.put(i,array.args().get(i).id());
                 for(Write w:summary.writes())if(w.field().startsWith("$element:")&&w.receiver().equals(array)){
                     try{V p=eval(w.value(),job,h,0,new HashSet<>());if(p.kind().equals("class"))params.put(Integer.parseInt(w.field().substring(9)),p.id());}catch(NumberFormatException ignored){}
                 }
                 if(params.isEmpty())continue;
+                resolved=true;
                 for(Method exposed:idx.byClass.getOrDefault(clazz.type(),List.of()))if(exposed.getName().equals(registered)&&exposed.getParameterTypes().equals(new ArrayList<>(params.values())))
                     result.add(Map.of("signature",CapabilityIndex.key(exposed),"display",CapabilityIndex.display(exposed),"resolution","reflective_registered_handler","handler_signature",CapabilityIndex.key(method)));
             }
-        }return result;
+        }return new HandlerSurface(result,reflective,resolved);
     }
     void add(Host h,Map<String,Object> fact){
         String key=fact.get("kind")+"|"+fact.get("site")+"|"+fact.get("webview")+"|"+fact.get("implementation")+"|"+fact.get("registration_name")+"|"+fact.get("values");
