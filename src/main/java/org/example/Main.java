@@ -1,101 +1,73 @@
 package org.example;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import com.google.gson.*;
+import java.io.*;
+import java.nio.file.*;
+import java.security.*;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
+/** Supervisor enforces a wall-clock deadline even if a library fails to cooperate. */
 public class Main {
-    public static void main(String[] args) throws IOException {
-        Path cwd = Path.of("").toAbsolutePath().normalize();
-        Path apk = apkPath(args);
-        Path outDir = cwd.resolve("output");
-        int pathLimit = pathCount(args);
-
-        if (!Files.isRegularFile(apk)) {
-            throw new IllegalArgumentException("APK not found: " + apk);
-        }
-
-        if (hasArg(args, "--read-apk-only")) {
-            long start = System.nanoTime();
-            int classCount = DexReader.read(apk).size();
-            long elapsedMs = (System.nanoTime() - start) / 1_000_000;
-            System.out.println("APK: " + apk);
-            System.out.println("Classes read: " + classCount);
-            System.out.println("Read APK only elapsed ms: " + elapsedMs);
-            return;
-        }
-
-        long start = System.nanoTime();
-        Result res = Analyzer.run(apk, pathLimit);
-        long analyzeElapsedMs = (System.nanoTime() - start) / 1_000_000;
-        Files.createDirectories(outDir);
-
-        String tag = Util.apkTag(apk);
-        Path containers = outDir.resolve(tag + "_webview_container_classes.json");
-        Path paths = outDir.resolve(tag + "_webview_outer_paths.json");
-        Path names = outDir.resolve(tag + "_webview_outermost_classes.json");
-        Path risks = outDir.resolve(tag + "_webview_activity_risk_scores.json");
-        java.util.List<ActivityRisk> riskScores = RiskScorer.score(apk, res.paths());
-
-        JsonSink.containers(containers, res.why());
-        JsonSink.paths(paths, res.paths());
-        JsonSink.names(names, res.paths(), riskScores);
-        JsonSink.riskScores(risks, riskScores);
-
-        System.out.println("APK: " + apk);
-        System.out.println("Container classes: " + res.why().size());
-        System.out.println("Outer paths: " + res.paths().size());
-        System.out.println("Path count per activity: " + pathLimit);
-        System.out.println("Analyze elapsed ms: " + analyzeElapsedMs);
-        System.out.println("Wrote: " + containers);
-        System.out.println("Wrote: " + paths);
-        System.out.println("Wrote: " + names);
-        System.out.println("Wrote: " + risks);
+    static final Gson JSON=new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+    public static void main(String[] args) throws Exception {
+        if(Arrays.asList(args).contains("--legacy")||Arrays.asList(args).contains("--read-apk-only")){LegacyMain.main(args);return;}
+        Map<String,String> options=options(args);
+        Path apk=Path.of(required(options,"--apkpath")).toAbsolutePath();
+        if(!Files.isRegularFile(apk))throw new IllegalArgumentException("APK not found: "+apk);
+        int hard=number(options,"--hard-seconds",600),target=number(options,"--target-seconds",300);
+        if(target>hard)throw new IllegalArgumentException("target seconds must not exceed hard seconds");
+        Path out=Path.of(options.getOrDefault("--out","output/"+Util.apkTag(apk))).toAbsolutePath();Files.createDirectories(out);
+        if(options.containsKey("--worker")){worker(apk,out,target,hard);return;}
+        long start=System.nanoTime();Path report=out.resolve("capabilities.json");
+        write(report,Map.of("schema_version",1,"status","starting","apk",apk.toString(),"activities",List.of(),"unattributed",List.of()));
+        List<String> cmd=new ArrayList<>(List.of(Path.of(System.getProperty("java.home"),"bin","java").toString(),"-Xmx"+Runtime.getRuntime().maxMemory(),"-XX:ActiveProcessorCount="+Runtime.getRuntime().availableProcessors(),"-cp",System.getProperty("java.class.path"),Main.class.getName(),"--worker","--apkpath",apk.toString(),"--out",out.toString(),"--target-seconds",String.valueOf(target),"--hard-seconds",String.valueOf(Math.max(1,hard-5))));
+        Process process=new ProcessBuilder(cmd).inheritIO().start();
+        Thread shutdown=new Thread(()->{process.descendants().forEach(ProcessHandle::destroyForcibly);process.destroyForcibly();});Runtime.getRuntime().addShutdownHook(shutdown);
+        boolean done=process.waitFor(Math.max(1,hard-2),TimeUnit.SECONDS);
+        if(!done){process.destroy();if(!process.waitFor(250,TimeUnit.MILLISECONDS))process.destroyForcibly();}
+        Runtime.getRuntime().removeShutdownHook(shutdown);
+        JsonObject finalReport;
+        try(Reader r=Files.newBufferedReader(report)){finalReport=JsonParser.parseReader(r).getAsJsonObject();}
+        if(!done)finalReport.addProperty("status","timeout");else if(process.exitValue()!=0)finalReport.addProperty("status","failed");
+        finalReport.addProperty("wall_seconds",(System.nanoTime()-start)/1e9);finalReport.addProperty("target_seconds",target);finalReport.addProperty("hard_seconds",hard);
+        write(report,finalReport);
+        System.out.println("Wrote: "+report+" status="+finalReport.get("status"));
+        if(!done||process.exitValue()!=0)System.exit(2);
     }
-
-    private static Path apkPath(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-            if ("--apkpath".equals(args[i])) {
-                if (i + 1 >= args.length) {
-                    throw new IllegalArgumentException("--apkpath requires an APK file path");
-                }
-                return Path.of(args[i + 1]).toAbsolutePath().normalize();
-            }
+    static void worker(Path apk,Path out,int target,int hard) throws Exception {
+        long start=System.nanoTime(),deadline=start+hard*1_000_000_000L;Map<String,Object> metrics=new LinkedHashMap<>();
+        String hash;try(InputStream stream=Files.newInputStream(apk)){MessageDigest digest=MessageDigest.getInstance("SHA-256");byte[] b=new byte[1024*1024];int n;while((n=stream.read(b))!=-1)digest.update(b,0,n);hash=HexFormat.of().formatHex(digest.digest());}
+        ApkInventory inventory=ApkInventory.read(apk);long t=System.nanoTime();CapabilityIndex idx=new CapabilityIndex();idx.read(apk,deadline);
+        metrics.put("index_seconds",(System.nanoTime()-t)/1e9);metrics.put("classes",idx.classes.size());metrics.put("methods",idx.methods.size());metrics.put("instructions",idx.instructions);metrics.put("seed_methods",idx.seeds.size());metrics.put("relevant_methods",idx.relevant.size());metrics.put("manifest_activities",inventory.activities.size());
+        System.out.println("Indexed: "+JSON.toJson(metrics));
+        CapabilityEngine engine=new CapabilityEngine(idx,inventory,deadline);List<String> roots=new ArrayList<>(inventory.activities);
+        if(roots.isEmpty())idx.classes.keySet().stream().filter(idx::activity).sorted().forEach(roots::add);
+        // Direct seed hosts first; remaining hosts are still examined, not silently excluded.
+        roots.sort(Comparator.comparingInt((String a)->idx.hierarchyMethods(a).stream().anyMatch(m->idx.seeds.contains(CapabilityIndex.key(m)))?0:1).thenComparing(a->a));
+        long checkpoint=0;int processed=0;
+        write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
+        for(String activity:roots){
+            if(System.nanoTime()>deadline)break;
+            engine.analyzeActivity(activity);processed++;metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);
+            if(System.nanoTime()-checkpoint>10_000_000_000L){write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));checkpoint=System.nanoTime();System.out.println("Progress: "+processed+"/"+roots.size()+" activities="+engine.activities.size()+" decoded="+engine.flow.decoded);}
         }
-        throw new IllegalArgumentException("Missing required argument: --apkpath <apk-file>");
+        metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);
+        String status=processed==roots.size()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
+        write(out.resolve("capabilities.json"),engine.report(hash,status,metrics));
     }
-
-    private static int pathCount(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-            String arg = args[i];
-            if ("--pathcount".equals(arg)) {
-                if (i + 1 >= args.length) {
-                    throw new IllegalArgumentException(arg + " requires a positive integer value");
-                }
-                return positiveInt(args[++i], arg);
-            }
-        }
-        return Analyzer.DEFAULT_PATH_LIMIT;
+    static void write(Path path,Object value)throws IOException{
+        Path temp=path.resolveSibling(path.getFileName()+".tmp");try(Writer w=Files.newBufferedWriter(temp)){JSON.toJson(value,w);}
+        try{Files.move(temp,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}catch(AtomicMoveNotSupportedException e){Files.move(temp,path,StandardCopyOption.REPLACE_EXISTING);}
     }
-
-    private static boolean hasArg(String[] args, String expected) {
-        for (String arg : args) {
-            if (expected.equals(arg)) {
-                return true;
-            }
-        }
-        return false;
+    static Map<String,String> options(String[] args){
+        Map<String,String> result=new LinkedHashMap<>();Set<String> allowed=Set.of("--apkpath","--out","--target-seconds","--hard-seconds","--worker","--pathcount");
+        for(int i=0;i<args.length;i++){
+            String key=args[i];if(!allowed.contains(key))throw new IllegalArgumentException("Unknown argument: "+key);
+            if(key.equals("--worker")){result.put(key,"true");continue;}
+            if(i+1==args.length)throw new IllegalArgumentException("Missing value: "+key);result.put(key,args[++i]);
+        }return result;
     }
-
-    private static int positiveInt(String value, String option) {
-        try {
-            int parsed = Integer.parseInt(value);
-            if (parsed > 0) {
-                return parsed;
-            }
-        } catch (NumberFormatException ignored) {
-            // fall through
-        }
-        throw new IllegalArgumentException(option + " must be a positive integer, got: " + value);
-    }
+    static String required(Map<String,String> opts,String key){if(!opts.containsKey(key))throw new IllegalArgumentException("Missing "+key);return opts.get(key);}
+    static int number(Map<String,String> opts,String key,int fallback){int n=Integer.parseInt(opts.getOrDefault(key,String.valueOf(fallback)));if(n<1)throw new IllegalArgumentException(key+" must be positive");return n;}
 }

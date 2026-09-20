@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     implementation("org.smali:dexlib2:2.5.2")
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation("org.soot-oss:soot:4.6.0")
 
     constraints {
@@ -41,3 +42,10 @@ tasks.shadowJar {
 tasks.build {
     dependsOn(tasks.shadowJar)
 }
+
+val capabilitySelfTest by tasks.registering(JavaExec::class) {
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("org.example.CapabilitySelfTest")
+}
+tasks.check { dependsOn(capabilitySelfTest) }

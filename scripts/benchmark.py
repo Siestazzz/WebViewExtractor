@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Serial, isolated APK benchmark. Outputs are never used as validation truth."""
 import argparse,json,os,pathlib,subprocess,time
-p=argparse.ArgumentParser();p.add_argument('--label',required=True);p.add_argument('--jar',required=True);p.add_argument('--repeat',type=int,default=1);p.add_argument('--legacy',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--label',required=True);p.add_argument('--jar',required=True);p.add_argument('--repeat',type=int,default=1);p.add_argument('--legacy',action='store_true');p.add_argument('--cpu-start',type=int,default=0);a=p.parse_args()
 root=pathlib.Path(__file__).resolve().parents[1];jar=pathlib.Path(a.jar).resolve()
-cpu=sorted(os.sched_getaffinity(0))[:8]; cpus=','.join(map(str,cpu)); results=[]
+cpu=sorted(os.sched_getaffinity(0))[a.cpu_start:a.cpu_start+8]; cpus=','.join(map(str,cpu)); results=[]
 env=dict(os.environ,ANDROID_HOME='/home/d3008/phy/workspace/languages/Android/Sdk')
 for sample in json.loads((root/'docs/validation/samples.json').read_text()):
  for run in range(a.repeat):
