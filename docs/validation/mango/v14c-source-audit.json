@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "report_sha256": "1525015ec8d0ead4f278f8a39e814faf15f97e396eead689013e740460c808d5",
+  "verdict": "fragment_root_identity_fixed_but_async_diana_chain_still_incomplete",
+  "fragment_root": {
+    "status": "source_consistent",
+    "evidence": "The focused v14c probe gives MiniAppFragment.onActivityCreated/startDianaApp two contexts and DianaView.startLoad two contexts with the same concrete inflated child identity (view id 2131828340).",
+    "full_report_effect": "MangoMiniAppActivity replaces the former raw ViewGroup.getChildAt receiver with source-consistent Page/DianaView identities; it does not restore the five absent conditional hosts."
+  },
+  "diana_async_boundary": {
+    "status": "unresolved_in_report",
+    "source_chain": [
+      "DianaView.startLoad",
+      "DianaView.requestMiniAppInfo(new DianaView$c)",
+      "com.mgtv.diana.h0.c$d$a.h = callback",
+      "com.mgtv.diana.h0.c$d.h = callback",
+      "new com.mgtv.diana.h0.c$a(client, request)",
+      "okhttp3.e.H(okhttp3.f)",
+      "c$a.onResponse -> Handler.post(ny.a) -> DianaView$c.onSuccess",
+      "DianaView.renderMiniApp",
+      "AppService/onServiceReady -> PageWebView and ServiceWebView"
+    ],
+    "missing_oracle_facts": 81,
+    "breakdown": {"setting": 34, "callback": 29, "callback_registration": 8, "bridge_method": 8, "bridge": 2}
+  },
+  "five_absent_hosts": [
+    "com.imgo.vodgames.LandVodGameRoomActivity",
+    "com.imgo.vodgames.VodGameRoomActivity",
+    "com.mgtv.diana.vodgames.LandVodGameRoomActivity",
+    "com.mgtv.diana.vodgames.VodGameRoomActivity",
+    "com.mgtv.litevod.LiteVodActivity"
+  ],
+  "new_object_assessment": {
+    "confirmed": "MangoMiniAppActivity PageWebView facts rooted at createAndAttachDianaView -> DianaView.renderMiniApp -> Page.m/view:2131834265 -> PageWebViewWrapper.mWebView are source-consistent.",
+    "uncertain": "Alternatives rooted at unresolved_collection and duplicate :0/non-:0 aliases are not independently proven distinct WebView instances and must remain candidate identities.",
+    "false_positive_conclusion": "No newly added capability method or new host is proven false by this audit; the additions chiefly refine or duplicate receiver identities."
+  },
+  "references": [
+    "docs/validation/mango/diana-render-entry-chain.md",
+    "docs/validation/mango/diana-request-callback-chain.md",
+    "docs/validation/mango/v14c-miniapp-validation.md"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "framework": "Mango Diana MiniApp",
+  "probe": "test/runs/v13e-miniapp-probe.log",
+  "probe_observation": {
+    "visited": [
+      "Lcom/mgtv/diana/MiniAppFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V"
+    ],
+    "filter_limitation": "onActivityCreated was not requested by the probe filter; its absence is not evidence that it was unvisited",
+    "confirmed_contexts": {
+      "Lcom/mgtv/diana/Diana;->startDianaApp(Landroid/app/Activity;Landroidx/fragment/app/Fragment;Lcom/mgtv/diana/sdk/main/DianaAppStartupParam;)V": 2
+    },
+    "relevant_unvisited": [
+      "Lcom/mgtv/diana/sdk/main/DianaView;->renderMiniApp(Landroid/widget/FrameLayout;)V",
+      "Lcom/mgtv/diana/sdk/service/AppService;-><init>(Lcom/mgtv/diana/sdk/main/DianaView;)V",
+      "Lcom/mgtv/diana/sdk/main/DianaView;->onServiceReady()V"
+    ]
+  },
+  "source_entry_chain": {
+    "from": "Lcom/mgtv/diana/MiniAppFragment;->onActivityCreated(Landroid/os/Bundle;)V",
+    "via": "Lcom/mgtv/diana/Diana;->startDianaApp(Landroid/app/Activity;Landroidx/fragment/app/Fragment;Lcom/mgtv/diana/sdk/main/DianaAppStartupParam;)V",
+    "binding": "fragment.getView() -> ViewGroup.getChildAt(0) -> instanceof/cast DianaView",
+    "to": "Lcom/mgtv/diana/sdk/main/DianaView;->startLoad()V",
+    "classification": "real Fragment lifecycle plus exact root-child binding; startDianaApp entry is probe-confirmed"
+  },
+  "earliest_probe_supported_break": {
+    "lower_bound": "inside or after the three-argument Diana.startDianaApp overload",
+    "upper_bound": "before DianaView.renderMiniApp",
+    "unresolved_alternatives": [
+      "fragment root getChildAt(0)/cast materialization",
+      "DianaView.startLoad reachability or receiver propagation",
+      "request/package callback propagation",
+      "ServiceConnection callback propagation",
+      "same-receiver state join"
+    ]
+  },
+  "async_chain": [
+    "DianaView.startLoad -> requestMiniAppInfo(new DianaView$c)",
+    "DianaView$c.onSuccess -> DianaView.onSuccess -> bindService",
+    "DianaView.onSuccess -> new loader(context,mLoadMiniAppCallback)",
+    "DianaView$a package callback -> goNextStepByResult",
+    "ServiceConnection.onServiceConnected -> mIpcBridgeService field",
+    "same-receiver packageReady && mIpcBridgeService -> renderMiniApp(this)"
+  ],
+  "generic_requirements": [
+    "preserve reached Fragment lifecycle context; do not infer missing callbacks from filtered logs",
+    "constant-index child lookup and cast identity",
+    "exact callback object registration and invoked interface member",
+    "same-receiver two-event state join independent of completion order"
+  ],
+  "not_required": [
+    "global renderMiniApp seed",
+    "all on* methods",
+    "WeakReference.get as the render entry"
+  ],
+  "conditional": true,
+  "enhanced_probe": {
+    "path": "test/runs/v14-miniapp-before.json.contexts.json",
+    "contexts": {
+      "MiniAppFragment.onActivityCreated": 2,
+      "Diana.startDianaApp(Activity,Fragment,param)": 2,
+      "DianaView.startLoad": 1,
+      "DianaView$c.<init>": 1,
+      "DianaView$c.onSuccess": 0,
+      "DianaView.onServiceConnected": 0,
+      "DianaView.renderMiniApp": 0
+    },
+    "object_split": {
+      "startLoad_receiver": "unknown id=ViewGroup.getChildAt",
+      "DianaView$c_outer": "same unknown getChildAt receiver",
+      "DianaView$a_outer": "different XML lookup object entry_parameter/view:2131828340"
+    },
+    "conclusion": [
+      "Fragment root/child is not unified with concrete XML DianaView",
+      "actual async callback registrations are not dispatched"
+    ]
+  }
+}

@@ -1,0 +1,1483 @@
+{
+  "baseline": "v13e",
+  "candidate": "v14c",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "host_count_before": 42,
+  "host_count_after": 42,
+  "added_hosts": [],
+  "removed_hosts": [],
+  "semantic_added_count": 84,
+  "semantic_removed_count": 0,
+  "comparison_excluded_fields": [
+    "arguments",
+    "binding_status",
+    "conditional",
+    "evidence",
+    "xml_binding_evidence",
+    "xml_binding_semantics"
+  ],
+  "changed_activities": {
+    "com.tencent.news.login.module.security.SecurityTicketActivity": {
+      "before_count": 19,
+      "after_count": 22,
+      "added": [
+        {
+          "activity": "com.tencent.news.login.module.security.SecurityTicketActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "activity:com.tencent.news.login.module.security.SecurityTicketActivity/view:2131303121",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.login.module.security.SecurityTicketActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "activity:com.tencent.news.login.module.security.SecurityTicketActivity/view:2131303121",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.login.module.security.SecurityTicketActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "activity:com.tencent.news.login.module.security.SecurityTicketActivity/view:2131303121",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.startup.privacy.PrivacyWebActivity": {
+      "before_count": 18,
+      "after_count": 23,
+      "added": [
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/startup/privacy/PrivacyWebActivity;->parseIntent()V@56",
+          "webview": {
+            "id": "union:31964a8c-a9e4-3181-9214-2a6ef5c4b5a4",
+            "type": "unknown"
+          },
+          "webview_alternatives": [
+            {
+              "id": "activity:com.tencent.news.startup.privacy.PrivacyWebActivity/view:2131303140",
+              "type": "com.tencent.news.webview.api.X5WrapperWebView"
+            },
+            {
+              "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+              "type": "com.tencent.smtt.sdk.WebView"
+            }
+          ]
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.startup.privacy.PrivacyWebItemActivity": {
+      "before_count": 19,
+      "after_count": 25,
+      "added": [
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebItemActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebItemActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+          "kind": "setting",
+          "name": "setMixedContentMode",
+          "site": "Lcom/tencent/news/startup/privacy/PrivacyWebItemActivity;->doOtherSettings()V@26",
+          "value": "0",
+          "values": [
+            "0"
+          ],
+          "webview": {
+            "id": "union:dc753fe3-da78-3a12-b3f0-3fc310466f3b",
+            "type": "unknown"
+          },
+          "webview_alternatives": [
+            {
+              "id": "activity:com.tencent.news.startup.privacy.PrivacyWebItemActivity/view:2131303140",
+              "type": "com.tencent.news.webview.api.X5WrapperWebView"
+            },
+            {
+              "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+              "type": "com.tencent.smtt.sdk.WebView"
+            }
+          ]
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/startup/privacy/PrivacyWebItemActivity;->parseIntent()V@180",
+          "webview": {
+            "id": "union:dc753fe3-da78-3a12-b3f0-3fc310466f3b",
+            "type": "unknown"
+          },
+          "webview_alternatives": [
+            {
+              "id": "activity:com.tencent.news.startup.privacy.PrivacyWebItemActivity/view:2131303140",
+              "type": "com.tencent.news.webview.api.X5WrapperWebView"
+            },
+            {
+              "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+              "type": "com.tencent.smtt.sdk.WebView"
+            }
+          ]
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V@21",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebItemActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "activity:com.tencent.news.startup.privacy.PrivacyWebItemActivity/view:2131303140",
+            "type": "com.tencent.news.webview.api.X5WrapperWebView"
+          }
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.ui.NewsDetailActivity": {
+      "before_count": 707,
+      "after_count": 740,
+      "added": [
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.NewsDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.ui.PushDetailActivity": {
+      "before_count": 707,
+      "after_count": 740,
+      "added": [
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface.bridgeCall(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "DTJsBridgeInterface",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+          "kind": "bridge",
+          "members": [
+            {
+              "annotated": true,
+              "display": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2.postMessage(Ljava/lang/String;):Ljava/lang/String;",
+              "signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;"
+            }
+          ],
+          "name": "addJavascriptInterface",
+          "registration_name": "dtBridge",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.PushDetailActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadData",
+          "site": "Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V@0",
+          "webview": {
+            "id": "Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;",
+            "type": "com.tencent.news.webview.NewsWebView"
+          }
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.ui.SupportActivity": {
+      "before_count": 38,
+      "after_count": 42,
+      "added": [
+        {
+          "activity": "com.tencent.news.ui.SupportActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "site": "Lcom/tencent/news/ui/SupportActivity;->initView()V@32",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.news.ui.SupportActivity/view:2131303125",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.SupportActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "site": "Lcom/tencent/news/ui/SupportActivity;->initView()V@41",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.news.ui.SupportActivity/view:2131303125",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.SupportActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+          "kind": "setting",
+          "name": "setUserAgentString",
+          "site": "Lcom/tencent/news/ui/SupportActivity;->initView()V@83",
+          "value": "unknown",
+          "values": [
+            "unknown"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.news.ui.SupportActivity/view:2131303125",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.SupportActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/news/ui/SupportActivity;->ˉʾ()V@149",
+          "webview": {
+            "id": "activity:com.tencent.news.ui.SupportActivity/view:2131303125",
+            "type": "com.tencent.news.webview.BaseWebView"
+          }
+        }
+      ],
+      "removed": []
+    }
+  }
+}

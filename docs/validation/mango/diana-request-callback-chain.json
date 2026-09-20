@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "framework": "Diana mini-app-info request",
+  "registration_chain": [
+    {
+      "method": "Lcom/mgtv/diana/sdk/main/DianaView;->requestMiniAppInfo(Lcom/mgtv/diana/h0/c$InterfaceC0712c;)V",
+      "callback_argument": 0,
+      "target": "DianaView$c exact instance"
+    },
+    {
+      "method": "Lcom/mgtv/diana/h0/c$d$a;->a(Lcom/mgtv/diana/h0/c$InterfaceC0712c;)Lcom/mgtv/diana/h0/c$d$a;",
+      "field": "f48475h"
+    },
+    {
+      "method": "Lcom/mgtv/diana/h0/c$d$a;->a()Lcom/mgtv/diana/h0/c$d;",
+      "copy": "builder.f48475h -> d.f48467h"
+    },
+    {
+      "method": "Lcom/mgtv/diana/h0/c;->a(Lcom/mgtv/diana/h0/c$d;)V",
+      "adapter": "com.mgtv.diana.h0.c$a",
+      "capture": "d -> c$a.f48456a"
+    },
+    {
+      "method": "Lcom/mgtv/diana/o0/e;->a(Lokhttp3/Request;Lokhttp3/f;)V",
+      "callback_argument": 1,
+      "sink": "Lokhttp3/e;->H(Lokhttp3/f;)V"
+    }
+  ],
+  "success_dispatch": [
+    "c$a.onResponse -> parse response -> c.a(d.f48467h,MiniAppInfo)",
+    "new ny.a(callback,result) -> Handler.post(Runnable)",
+    "ny.a.run -> c.b(callback,result) -> InterfaceC0712c.onSuccess",
+    "DianaView$c.onSuccess -> captured DianaView.onSuccess -> bindService"
+  ],
+  "failure_dispatch": [
+    "c$a.onFailure/error branch -> c.a(d.f48467h,int,int,String)",
+    "new ny.b(callback,error...) -> Handler.post(Runnable)",
+    "ny.b.run -> InterfaceC0712c.onFail(int,int,String)"
+  ],
+  "generic_adapters": [
+    {
+      "registration": "Lokhttp3/e;->H(Lokhttp3/f;)V",
+      "members": [
+        "onResponse(Lokhttp3/e;Lokhttp3/b0;)V",
+        "onFailure(Lokhttp3/e;Ljava/io/IOException;)V"
+      ]
+    },
+    {
+      "registration": "Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z",
+      "members": [
+        "run()V"
+      ]
+    }
+  ],
+  "constraints": [
+    "same callback instance through builder and request fields",
+    "only members actually dispatched by the registration framework",
+    "no all-interface-implementor or all-method expansion"
+  ],
+  "dex_identity": {
+    "source": "test/runs/symbols/mango.jsonl",
+    "builder": {
+      "type": "Lcom/mgtv/diana/h0/c$d$a;",
+      "callback_field": "h:Lcom/mgtv/diana/h0/c$c;",
+      "setter": "Lcom/mgtv/diana/h0/c$d$a;->a(Lcom/mgtv/diana/h0/c$c;)Lcom/mgtv/diana/h0/c$d$a;",
+      "build": "Lcom/mgtv/diana/h0/c$d$a;->a()Lcom/mgtv/diana/h0/c$d;"
+    },
+    "request": {
+      "type": "Lcom/mgtv/diana/h0/c$d;",
+      "callback_field": "h:Lcom/mgtv/diana/h0/c$c;"
+    },
+    "adapter": {
+      "type": "Lcom/mgtv/diana/h0/c$a;",
+      "constructor": "Lcom/mgtv/diana/h0/c$a;-><init>(Lcom/mgtv/diana/h0/c;Lcom/mgtv/diana/h0/c$d;)V",
+      "request_field": "a:Lcom/mgtv/diana/h0/c$d;",
+      "outer_manager_field": "b:Lcom/mgtv/diana/h0/c;"
+    },
+    "okhttp": {
+      "registration": "Lokhttp3/e;->H(Lokhttp3/f;)V",
+      "callback_methods": [
+        "Lokhttp3/f;->onFailure(Lokhttp3/e;Ljava/io/IOException;)V",
+        "Lokhttp3/f;->onResponse(Lokhttp3/e;Lokhttp3/b0;)V"
+      ],
+      "response": {
+        "type": "Lokhttp3/b0;",
+        "body": "Lokhttp3/b0;->a()Lokhttp3/c0;",
+        "status": "Lokhttp3/b0;->l()I",
+        "close": "Lokhttp3/b0;->close()V",
+        "closeable_evidence": "decompiled class declaration implements java.io.Closeable; symbols row omits interfaces"
+      }
+    }
+  },
+  "jadx_alias_warning": {
+    "f48475h": "DEX builder field h",
+    "f48467h": "DEX request field h",
+    "f48456a": "DEX adapter field a"
+  }
+}

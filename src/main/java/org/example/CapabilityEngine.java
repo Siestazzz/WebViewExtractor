@@ -24,10 +24,14 @@ final class CapabilityEngine {
     CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=new DexFlow(idx,deadline);}
     record Job(Method method,List<V> args,List<String> path,boolean candidate){}
     record DeferredField(String field,V receiver){}
+    record XmlConsumer(Job job,Set<V> observed){}
     final class Host {
         final String activity;
         final Map<String,V> heap=new HashMap<>();
         final Map<String,DeferredField> deferredFields=new HashMap<>();
+        final Map<String,XmlConsumer> xmlConsumers=new LinkedHashMap<>();
+        final Map<String,V> fragmentViews=new HashMap<>();
+        final Set<String> xmlReplays=new HashSet<>();
         final Map<String,Set<ApkInventory.LayoutNode>> layoutScopes=new HashMap<>();
         final Set<String> preparingLayouts=new HashSet<>();
         final Map<String,Set<String>> layoutChildren=new HashMap<>();
@@ -48,8 +52,8 @@ final class CapabilityEngine {
         Host h=new Host(activity);currentHost=h;V self=V.of("host",activity,"activity:"+activity);
         seed(h,activity,self,List.of(activity),false);
         for(int phase=0;phase<2;phase++){
-            if(phase==1){h.queue.clear();h.pending.clear();h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();seed(h,activity,self,List.of(activity),false);}
-            while(!h.queue.isEmpty()){
+            if(phase==1){h.queue.clear();h.pending.clear();h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();h.xmlConsumers.clear();h.xmlReplays.clear();seed(h,activity,self,List.of(activity),false);}
+            while(!h.queue.isEmpty()||replayXmlConsumers(h)){
                 if(System.nanoTime()>deadline){h.gaps.add("global_deadline");break;}
                 if(h.visited.size()>12000){h.gaps.add("host_context_budget");break;}
                 checkpoint.run();
@@ -64,7 +68,7 @@ final class CapabilityEngine {
                     applyWrite(h,w.field(),receiver,value);
                 }
                 for(Call call:summary.calls()){
-                    Method target=idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
+                    Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
                     boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
                     boolean fieldSetter=target!=null&&objectFieldSetter(target);
@@ -85,6 +89,7 @@ final class CapabilityEngine {
                         for(V arg:call.args())if(alternatives(eval(arg,job,h,0,new HashSet<>())).stream().anyMatch(x->x.kind().equals("aspectj_joinpoint")||h.linkedClosures.containsKey(x.id()))){carriesJoinPoint=true;break;}
                     if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!closureCall&&!carriesJoinPoint)continue;
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
+                    observeXmlConsumer(h,job,args);
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());followApiOverride(h,job,call,args,summary.branched());continue;}
                     if(idx.closureProceed(call.method())&&!args.isEmpty()){
                         boolean linked=false;
@@ -125,9 +130,52 @@ final class CapabilityEngine {
         currentHost=null;
         if(!h.gaps.isEmpty())diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
     }
+    void observeXmlConsumer(Host h,Job job,List<V> args){
+        Set<V> views=new LinkedHashSet<>();
+        for(V arg:args)for(V choice:alternatives(arg)){
+            V value=choice.kind().equals("settings")&&!choice.args().isEmpty()?choice.args().get(0):choice;
+            for(V view:alternatives(value))if(view.kind().equals("view"))views.add(view);
+        }
+        if(views.isEmpty())return;
+        String context=CapabilityIndex.key(job.method)+"|"+job.args;
+        XmlConsumer previous=h.xmlConsumers.get(context);
+        if(previous!=null)views.addAll(previous.observed());
+        h.xmlConsumers.put(context,new XmlConsumer(job,views));
+    }
+    boolean replayXmlConsumers(Host h){
+        if(System.nanoTime()>deadline)return false;
+        // Layout discovery can occur after a consumer was visited. Replay only actual
+        // consuming contexts whose own receiver ID gained a concrete compatible type.
+        for(var entry:h.xmlConsumers.entrySet()){
+            XmlConsumer consumer=entry.getValue();
+            for(V observed:consumer.observed()){
+                V current=refreshBinding(observed,h,0,new HashSet<>());
+                if(current.equals(observed))continue;
+                String revision=entry.getKey()+"|"+observed+"=>"+current;
+                if(!h.xmlReplays.add(revision))continue;
+                if(h.xmlReplays.size()>12000){h.gaps.add("xml_consumer_replay_budget");return !h.queue.isEmpty();}
+                h.visited.remove(entry.getKey());
+                Job job=consumer.job();enqueue(h,job.method,job.args,job.path,true);
+            }
+        }
+        return !h.queue.isEmpty();
+    }
+    Method resolveSuper(Method caller,String reference){
+        Method declared=idx.resolve(reference);ClassDef referenced=idx.classes.get(owner(reference));
+        // DEX invoke-super with a class reference selects the closest superclass
+        // implementation of the invoking class, even if method_id names an ancestor.
+        // Interface default calls keep the referenced interface contract.
+        if(referenced!=null&&(referenced.getAccessFlags()&0x200)!=0)return declared;
+        ClassDef invoking=idx.classes.get(CapabilityIndex.cls(caller.getDefiningClass()));
+        if(invoking==null||invoking.getSuperclass()==null)return declared;
+        String parent=CapabilityIndex.cls(invoking.getSuperclass());
+        if(!idx.subtype(parent,owner(reference)))return declared;
+        Method actual=idx.resolve(invoking.getSuperclass()+"->"+reference.substring(reference.indexOf("->")+2));
+        return actual==null?declared:actual;
+    }
     void followApiOverride(Host h,Job job,Call call,List<V> args,boolean conditional){
         if(call.isStatic()||args.isEmpty())return;
-        Method declared=idx.resolve(call.method());String shape=call.method().substring(call.method().indexOf("->")+2);
+        Method declared=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String shape=call.method().substring(call.method().indexOf("->")+2);
         for(V receiver:alternatives(args.get(0))){
             Method actual=call.isDirect()||call.isSuper()?declared:receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+shape);
             if(actual==null||actual.getImplementation()==null)continue;
@@ -253,6 +301,48 @@ final class CapabilityEngine {
         }
         return result==null?V.of("unknown",declared,"view_lookup"):result;
     }
+    boolean frameworkViewAccess(String method,List<V> args){
+        for(V receiver:args.isEmpty()?List.<V>of():alternatives(args.get(0))){
+            Method actual=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+method.substring(method.indexOf("->")+2));
+            if(actual!=null&&actual.getImplementation()!=null){String owner=CapabilityIndex.cls(actual.getDefiningClass());
+                if(!owner.startsWith("android.")&&!owner.equals("androidx.fragment.app.Fragment"))return false;
+            }
+        }
+        return true;
+    }
+    boolean fragment(String type){return idx.subtype(type,"android.app.Fragment")||idx.subtype(type,"androidx.fragment.app.Fragment")||idx.subtype(type,"android.support.v4.app.Fragment");}
+    V fragmentView(V receiver,Job job,Host h,int depth,Set<String> visiting){
+        V result=null;
+        for(V actual:alternatives(receiver)){
+            V known=h.fragmentViews.get(actual.id());if(known!=null){result=union(result,known);continue;}
+            if(actual.type()==null||!fragment(actual.type())||!actual.kind().equals("object")){h.gaps.add("fragment_receiver_unresolved");continue;}
+            Method creator=idx.resolve(desc(actual.type())+"->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;");
+            if(creator==null||creator.getImplementation()==null){h.gaps.add("fragment_view_factory_unresolved:"+actual.type());continue;}
+            String key="fragment_view:"+actual.id();if(!visiting.add(key)){h.gaps.add("fragment_view_factory_cycle");continue;}
+            List<V> args=List.of(actual,V.of("object","android.view.LayoutInflater","fragment_inflater:"+actual.id()),
+                V.of("unknown","android.view.ViewGroup","fragment_container:"+actual.id()),V.of("unknown","android.os.Bundle","fragment_state:"+actual.id()));
+            V root=eval(expr("return","android.view.View",CapabilityIndex.key(creator),args),job,h,depth+1,new HashSet<>(visiting));
+            if(!root.kind().equals("unknown")){h.fragmentViews.put(actual.id(),root);result=union(result,root);}
+        }
+        return result==null?V.of("unknown","android.view.View","fragment_view:"+receiver.id()):result;
+    }
+    V layoutChild(V receiver,V index,Job job,Host h){
+        Long position=number(index);V result=null;
+        if(position==null||position<0||position>4096){h.gaps.add("dynamic_layout_child_index");return V.of("unknown","android.view.View","layout_child:"+receiver.id());}
+        for(V root:alternatives(receiver))for(var node:h.layoutScopes.getOrDefault(root.id(),Set.of())){
+            if(position>=node.children.size())continue;
+            var child=node.children.get(position.intValue());
+            if(child.type.equals("include")||child.type.equals("fragment")||child.type.equals("merge")){h.gaps.add("layout_child_structural_tag");continue;}
+            String identity=root.id()+(child.id==null?"/child:"+position:"/view:"+child.id);
+            String type=child.type.contains(".")?child.type:"android.view.View";
+            V value=V.of("view",type,identity);result=union(result,value);
+            h.layoutScopes.computeIfAbsent(identity,k->new LinkedHashSet<>()).add(child);
+            h.xmlBindings.computeIfAbsent(identity,k->new LinkedHashSet<>()).add(Map.of("lookup_root",root.id(),"child_index",position,"layout",child.source==null?"synthetic":child.source,"concrete_type",type));
+            if(idx.component(type)&&!idx.activity(type)&&!Cfg.WEBVIEWS.contains(type))seed(h,type,value,extend(job.path,"xml_child:"+position),true);
+        }
+        if(result==null)h.gaps.add("layout_child_unresolved");
+        return result==null?V.of("unknown","android.view.View","layout_child:"+receiver.id()+":"+position):result;
+    }
     void findLayoutNodes(ApkInventory.LayoutNode node,int id,List<ApkInventory.LayoutNode> matches,Set<Integer> includes,int depth){
         if(depth>32)return;
         if(Objects.equals(node.id,id))matches.add(node);
@@ -336,7 +426,10 @@ final class CapabilityEngine {
             if(idx.activity(type)&&!CapabilityIndex.cls(m.getDefiningClass()).equals(type)&&!m.getName().equals("<init>")&&!m.getName().startsWith("on")&&!referencedShapes.contains(CapabilityIndex.shape(m)))continue;
             fieldMethods.add(CapabilityIndex.key(m));
             List<V> args=new ArrayList<>();if((m.getAccessFlags()&8)==0)args.add(self);
-            for(CharSequence p:m.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"entry_parameter"));
+            for(CharSequence p:m.getParameterTypes()){
+                if(fragment(type)&&m.getName().equals("onViewCreated")&&args.size()==1&&p.toString().equals("Landroid/view/View;"))args.add(expr("fragment_view","android.view.View","fragment_view:"+self.id(),List.of(self)));
+                else args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"entry_parameter"));
+            }
             enqueue(h,m,args,path,candidate);
         }
         Set<String> traversed=new HashSet<>();
@@ -445,7 +538,8 @@ final class CapabilityEngine {
     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
         if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return V.of("unknown",v.type(),"global_deadline");}
         if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
-        if(v.kind().equals("param")){int i=Integer.parseInt(v.id());return i<job.args.size()?refreshBinding(job.args.get(i),h,0,new HashSet<>()):V.of("unknown",v.type(),"parameter");}
+        if(v.kind().equals("param")){int i=Integer.parseInt(v.id());if(i>=job.args.size())return V.of("unknown",v.type(),"parameter");V arg=job.args.get(i);return arg.kind().equals("fragment_view")?fragmentView(arg.args().get(0),job,h,depth+1,visiting):refreshBinding(arg,h,0,new HashSet<>());}
+        if(v.kind().equals("fragment_view"))return fragmentView(v.args().get(0),job,h,depth+1,visiting);
         if(v.kind().equals("array_new")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));Long size=number(eval(v.args().get(0),job,h,depth+1,visiting));if(size!=null&&size>=0)h.arrayLengths.put(array.id(),size);return array;}
         if(v.kind().equals("array")){V array=V.of("object",v.type(),v.id()+"|"+allocationContext(job));h.arrayLengths.put(array.id(),(long)v.args().size());for(int i=0;i<v.args().size();i++)applyWrite(h,"$element:"+i,array,eval(v.args().get(i),job,h,depth+1,new HashSet<>(visiting)));return array;}
         if(v.kind().equals("map_entry"))return new V("map_entry",null,"entry",null,v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList());
@@ -518,6 +612,8 @@ final class CapabilityEngine {
                 if(service.kind().equals("unknown"))h.gaps.add(service.id());
                 return service;
             }
+            if(name.equals("getView")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/view/View;")&&args.size()==1&&frameworkViewAccess(v.id(),args))return fragmentView(args.get(0),job,h,depth+1,visiting);
+            if(name.equals("getChildAt")&&idx.subtype(owner(v.id()),"android.view.ViewGroup")&&v.id().endsWith("(I)Landroid/view/View;")&&args.size()==2&&frameworkViewAccess(v.id(),args))return layoutChild(args.get(0),args.get(1),job,h);
             if(layoutInflate(v.id()))return inflateLayout(v.id(),args,job,h,v.kind().startsWith("return_inflate:")?v.kind().substring(15):"unknown");
             if((name.equals("findViewById")||name.equals("requireViewById"))&&args.size()>1)return lookupView(args.get(0),args.get(1),v.type(),job,h);
             if((name.equals("getActivity")||name.equals("requireActivity")))return V.of("host",h.activity,"activity:"+h.activity);
@@ -538,9 +634,9 @@ final class CapabilityEngine {
             if(!args.isEmpty()&&name.equals("iterator")&&idx.collection(owner(v.id())))return expr("iterator","java.util.Iterator","iterator:"+args.get(0).id(),List.of(args.get(0)));
             if(!args.isEmpty()&&name.equals("next")&&owner(v.id()).equals("java.util.Iterator")&&args.get(0).kind().equals("iterator"))return elements(h,args.get(0).args().get(0),v.type());
             if(!args.isEmpty()&&name.equals("get")&&idx.collection(owner(v.id())))return elements(h,args.get(0),v.type());
-            Method method=idx.resolve(v.id());V result=null;Set<Method> targets=new LinkedHashSet<>();
+            Method method=v.kind().equals("return_super")?resolveSuper(job.method,v.id()):idx.resolve(v.id());V result=null;Set<Method> targets=new LinkedHashSet<>();
             if(method!=null){
-                if(!v.kind().equals("return_direct")&&(method.getAccessFlags()&8)==0&&!args.isEmpty())for(V recv:alternatives(args.get(0)))if(recv.type()!=null){Method concrete=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(method));if(concrete!=null&&concrete.getImplementation()!=null)targets.add(concrete);}
+                if(!v.kind().equals("return_direct")&&!v.kind().equals("return_super")&&(method.getAccessFlags()&8)==0&&!args.isEmpty())for(V recv:alternatives(args.get(0)))if(recv.type()!=null){Method concrete=idx.resolve(desc(recv.type())+"->"+CapabilityIndex.shape(method));if(concrete!=null&&concrete.getImplementation()!=null)targets.add(concrete);}
                 if(targets.isEmpty()&&method.getImplementation()==null){
                     String returnType=CapabilityIndex.cls(method.getReturnType());
                     boolean factory=idx.collection(returnType)||idx.webview(returnType)||idx.subtype(returnType,"android.webkit.WebViewClient")||idx.subtype(returnType,"android.webkit.WebChromeClient");

@@ -1,0 +1,57 @@
+{
+  "version": "v14c",
+  "baseline": "v13e",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "hosts": 42,
+  "host_set_change": {
+    "added": [],
+    "removed": []
+  },
+  "ownership": {
+    "valid": 41,
+    "uncertain": 1,
+    "wrong": 0,
+    "conservative_nonvalid_upper_bound": "1/42 = 2.38%"
+  },
+  "semantic_delta": {
+    "added": 84,
+    "removed": 0,
+    "changed_hosts": {
+      "com.tencent.news.login.module.security.SecurityTicketActivity": {
+        "added": 3,
+        "removed": 0
+      },
+      "com.tencent.news.startup.privacy.PrivacyWebActivity": {
+        "added": 5,
+        "removed": 0
+      },
+      "com.tencent.news.startup.privacy.PrivacyWebItemActivity": {
+        "added": 6,
+        "removed": 0
+      },
+      "com.tencent.news.ui.NewsDetailActivity": {
+        "added": 33,
+        "removed": 0
+      },
+      "com.tencent.news.ui.PushDetailActivity": {
+        "added": 33,
+        "removed": 0
+      },
+      "com.tencent.news.ui.SupportActivity": {
+        "added": 4,
+        "removed": 0
+      }
+    }
+  },
+  "source_conclusions": {
+    "privacy": "source_confirmed conditional recovery on same XML X5WrapperWebView; 4 registrations and 4 exposed-method supplement rows cover two Activities",
+    "support": "source-confirmed replay of three initView settings and one loadUrl on field f109620 / XML BaseWebView",
+    "security_ticket": "source-confirmed conditional X5Wrapper loadUrl override path; DT bridge injection is inherited conditional behavior",
+    "news_push_detail": "ownership valid, but 66 added rows are alias duplication: receiver ids are collection removals or PatchRedirector returns, not distinct source WebViews"
+  },
+  "limitations": [
+    "ShellActivity remains uncertain",
+    "PatchRedirector branches remain unknown",
+    "NewsDetail/PushDetail alias-derived rows are not accepted as independent source capabilities"
+  ]
+}

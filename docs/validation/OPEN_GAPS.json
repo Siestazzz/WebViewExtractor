@@ -151,9 +151,9 @@
     {
       "id": "mango_mgvideo_diana_regression",
       "app": "mango",
-      "status": "fixed_v12i_v12j_source_verified",
-      "cause": "All 81 source-constrained Diana facts recovered on PageWebView/ServiceWebView; remaining host budgets and aliases are not resolved.",
-      "evidence": "mango/v12j-validation.md"
+      "status": "reopened_v13d_still_open_v14c",
+      "cause": "v12i/v12j recovered Diana81 through then-broad XML entry expansion. Removing uncalled helpers in v13d exposed missing actual async registration chains; v14c repairs Fragment receiver identity but does not yet restore the 81 facts.",
+      "evidence": "mango/v14c-miniapp-validation.md"
     },
     {
       "id": "aspectj_profile_limits",
@@ -179,16 +179,16 @@
     {
       "id": "xml_concrete_receiver",
       "app": "news",
-      "status": "open",
-      "cause": "Layout-created views retain declared SDK/cast types instead of actual XML subclass. Must bind layout roots and nested inflation; resource IDs are reused across layouts.",
-      "evidence": "news/xml-webview-identity-bindings.json"
+      "status": "partially_fixed_v14c_source_verified",
+      "cause": "Selected layouts, late consumer replay and Fragment roots recover verified concrete receivers. Unknown layouts, configuration alternatives, stale parent-type aliases and async callbacks remain.",
+      "evidence": "news/v14c-validation.md"
     },
     {
       "id": "mango_300_second_target",
       "app": "mango",
       "status": "open",
-      "cause": "v12j took 355.49 seconds: fails preferred 300s target; final three-repeat measurements remain pending.",
-      "evidence": "v12j-benchmark.json"
+      "cause": "v14c fresh development run takes 361.476 seconds (8 CPUs,16 GiB); all657 Manifest Activities processed but speed and quality gates not passed. Main still analyzes Activities serially.",
+      "evidence": "v14c-benchmark.json"
     },
     {
       "id": "mango_xweb_replay",
@@ -221,9 +221,9 @@
     {
       "id": "api_override_body_v13",
       "app": "all",
-      "status": "partially_fixed_v13e_pending_full_audit",
-      "cause": "Emit no longer swallows actual app WebView API override bodies. Synthetic test passes and News source audit confirms some restored calls, but Privacy registration chain remains missing. Existing receiver cross-binding and aliases may propagate through overrides.",
-      "evidence": "news/v13e-validation.md"
+      "status": "partially_fixed_v14c_source_verified",
+      "cause": "Actual API overrides plus closest class invoke-super recover Privacy XML registrations. Ctrip Evaluate remains missing its auxiliary bridge/member and one operation; no general override completeness claim.",
+      "evidence": "news/v14c-validation.md"
     },
     {
       "id": "xml_identity_limits_v13",
@@ -245,6 +245,13 @@
       "status": "open",
       "cause": "Actual loadUrl chain only partly recovered; one override operation and _VideoEnabledWebView registration/member missing on independent supplement despite canonical 100%.",
       "evidence": "ctrip/v13e-public30-plus-regressions-scoring.json"
+    },
+    {
+      "id": "actual_async_registration",
+      "app": "all",
+      "status": "open",
+      "cause": "Diana source confirms callback flows via builder/request captures, structurally obfuscated OkHttp enqueue, Handler.post, then ServiceConnection/package-ready join. Concrete Fragment/View binding is fixed in a probe; actual callback dispatch is not. No callback seeding solely from construction or arbitrary on* methods.",
+      "evidence": "mango/diana-request-callback-chain.json"
     }
   ]
 }

@@ -136,7 +136,7 @@ final class DexFlow {
                     writes.add(new Write("$map_mutation:"+targetKey,args.get(0),UNKNOWN));
                 calls.put(at,new Call(targetKey,at,List.copyOf(args),stat,op.startsWith("invoke-super"),op.startsWith("invoke-direct")));
                 if(target.getName().equals("getSettings")&&idx.webview(CapabilityIndex.cls(target.getDefiningClass()))&&!args.isEmpty())s.put(-1,expr("settings",CapabilityIndex.cls(target.getReturnType()),"settings",List.of(args.get(0))));
-                else if(!target.getReturnType().equals("V"))s.put(-1,expr(target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-direct")||op.startsWith("invoke-super")?"return_direct":"return",CapabilityIndex.cls(target.getReturnType()),targetKey,args));
+                else if(!target.getReturnType().equals("V"))s.put(-1,expr(target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-super")?"return_super":op.startsWith("invoke-direct")?"return_direct":"return",CapabilityIndex.cls(target.getReturnType()),targetKey,args));
             }
             if(output!=null)s.put(a,output);
             else if(in.getOpcode().setsRegister())s.put(a,UNKNOWN);

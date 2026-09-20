@@ -812,3 +812,77 @@ Its 30-host canonical stays at 100%, but the newly versioned four-fact Evaluate 
 replays at only 1/4: one override operation restored, one operation and the auxiliary bridge/member
 still missing. See ctrip/v13e-public30-plus-regressions-scoring.json. This cumulative failure prevents
 interpreting the public canonical score as acceptance. All future replays must retain this supplement.
+
+
+## v14: delayed XML consumers, Fragment view roots and invoke-super (acceptance failed)
+
+The enhanced CompactProbe exports full visited contexts, heap and XML bindings to ignored local
+artifacts. This distinguishes a filtered log's absence from actual non-execution. Mango's Fragment
+onActivityCreated and three-argument startDianaApp were already reached; the old narrow probe could
+not support an assertion that Fragment lifecycle scheduling was missing. Sol corrected that inference.
+
+Privacy had two independent breaks. A consumer ran before its receiver's concrete layout type was
+known; bounded per-object consumer replay now revisits only contexts whose own XML ID acquires a
+compatible concrete type. Then X5Wrapper's invoke-super referenced smtt in the DEX method_id while
+its immediate superclass was DtX5. The analyzer incorrectly skipped that intervening override.
+Class invoke-super now resolves from the invoking class's immediate superclass; interface default
+calls retain their referenced interface contract. Returned super calls retain a distinct symbolic
+kind. Android's normative instruction description is at
+https://source.android.google.cn/docs/core/runtime/dalvik-bytecode?hl=en .
+
+Sol confirms v14b's Privacy single-host probe recovers DTJsBridgeInterface/BridgeInterface.bridgeCall
+and dtBridge/JsBridgeInterfaceV2.postMessage on the same X5Wrapper XML object. Old parent-typed union
+facts still duplicate the refined candidate; PatchRedirector alternatives remain unresolved. This
+is a single-host positive, not whole-App or second-Privacy acceptance.
+
+Fragment onViewCreated's View argument and Fragment.getView now derive from that concrete Fragment's
+onCreateView return. Constant XML getChildAt uses the selected root's children and reuses findViewById
+identity where the child has an ID. Unknown roots/indexes/structural tags are diagnosed; app method
+overrides are not silently replaced with platform models. Synthetic tests cover two distinct Fragment
+instances, per-instance child/ID identity, nonempty actual bridge registration and ancestor-named
+invoke-super reaching the middle implementation.
+
+Mango v14c's probe verifies startLoad and its captured callback now share the actual layout DianaView
+with lifecycle lookup, but onSuccess, onServiceConnected and renderMiniApp remain unvisited. Sol's
+new evidence traces actual request builder captures → obfuscated OkHttp enqueue → response adapter →
+Handler.post → SDK callback, and the later ServiceConnection/package-ready join. This still requires
+bounded actual-registration modeling. The full v14c serial three-App benchmark is recorded below; no quality
+or final performance acceptance is claimed.
+
+
+### v14c final development results
+
+| App | Seconds / peak RSS KiB | Hosts | Bridge | Settings | Callbacks |
+|---|---:|---:|---:|---:|---:|
+| News | 148.032 / 8275624 | 42 | 1296/1393 | 294/366 | 205/240 |
+| Mango | 361.476 / 9258024 | 87 | 1137/1163 | 574/608 | 597/634 |
+| Ctrip | 180.508 / 7548600 | 55 | 3680/3682 | 323/323 | 391/391 |
+
+News's eight Privacy registration/member supplement facts and Ctrip's four Evaluate supplement
+facts are now appended to canonical, with byte-preserving pre-merge backups. On the same expanded
+oracle, v13e→v14c gains eight News bridge facts and three settings; Mango/Ctrip metrics are unchanged.
+Ctrip still misses the auxiliary bridge/member and one of two scored operations. Mango still misses
+Diana81 plus Loading14 and two unscorable dynamic registrations. Newly found failures are not removed.
+
+All-output source ownership is unchanged: News 41 valid/1 uncertain (2.38% upper bound), Mango
+81 valid/1 conditional/5 uncertain (6.90%), Ctrip 54 valid/1 wrong (1.82%). Source reviews identify
+additional receiver alias duplicates; a correct Activity label does not establish exact object
+precision. NewsDetail/PushDetail alias growth and MangoMini identity changes are not counted as
+new independent runtime capabilities. Five known valid Mango hosts remain absent.
+
+The three frozen-jar APK runs are serial with eight CPUs and 16 GiB heap. Development source review
+and small synthetic-test builds may overlap; these are not isolated final repeat measurements.
+All runs finish below 600 seconds, but Mango remains above 300 and News/Mango quality gates fail.
+Final ten-sample holdouts and three fresh repeats per App remain pending.
+
+Validation: all capability fixtures pass, including two Fragment instances sharing one layout,
+late XML consumer replay isolation, ancestor-named super API calls, and returned super factories.
+External watchdog survival passes for the frozen v14c jar (see v14c-deadline-check.json).
+Reproduction follows the v13 commands with label v14c, current canonical and v14c ownership files.
+
+
+Ctrip source-chain correction: the H5-owned map overload is already visited. The missing successor
+passes a concrete completion callback through H5Base's package/interceptor routing before its eventual
+super call. Sol's evaluate-loadurl-chain-correction.md/json supersedes the earlier direct-inheritance
+shortcut; the conditional VideoEnabled supplement remains valid. Filtered method logs must never
+be used as negative evidence for methods not included in the filter.

@@ -47,7 +47,7 @@ final class LayoutBindingFixture {
   try{
    DexFileFactory.writeDexFile(file.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(nestedHost,"Landroid/app/Activity;",nestedEntry),
    new ImmutableClassDef(outer,1,"Landroid/widget/FrameLayout;",List.of(),null,Set.of(),List.of(outerField),List.of(outerCtor,outerGetter)),
-   new ImmutableClassDef(inner,1,"Landroid/widget/FrameLayout;",List.of(),null,Set.of(),List.of(innerField),List.of(innerCtor,innerGetter)),clazz(base,"Landroid/app/Activity;",wrap),clazz(wrapped,base,wrappedEntry),clazz(child,W,method(child,"loadUrl",List.of("Ljava/lang/String;"),1,4,List.of(
+   new ImmutableClassDef(inner,1,"Landroid/widget/FrameLayout;",List.of(),null,Set.of(),List.of(innerField),List.of(innerCtor,innerGetter)),clazz(base,"Landroid/app/Activity;",wrap),clazz(wrapped,base,wrappedEntry),clazz("Ltest/MiddleWebView;",W,method("Ltest/MiddleWebView;","loadUrl",List.of("Ljava/lang/String;"),1,4,List.of(make(0,B),str(1,"super_override"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,0,1),invoke(Opcode.INVOKE_SUPER,W,"loadUrl",List.of("Ljava/lang/String;"),"V",2,3),end()),false)),clazz(child,"Ltest/MiddleWebView;",method(child,"loadUrl",List.of("Ljava/lang/String;"),1,4,List.of(
     make(0,B),str(1,"load_override"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,0,1),
     invoke(Opcode.INVOKE_SUPER,W,"loadUrl",List.of("Ljava/lang/String;"),"V",2,3),end()),false),method(child,"unusedHelper",List.of(),1,3,List.of(make(0,B),str(1,"must_not_execute"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,0,1),end()),false)),clazz(other,W),clazz(B,"Ljava/lang/Object;",method(B,"hello",List.of(),1,1,List.of(end()),true)))));
    long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(file,deadline);
@@ -80,6 +80,7 @@ final class LayoutBindingFixture {
    var bridge=facts.stream().filter(f->"bridge".equals(f.get("kind"))).findFirst().orElseThrow();
    check(bridge.get("webview").toString().contains("test.XmlWebView"),"Superclass cast erased XML type: "+bridge);
    check(facts.stream().anyMatch(f->"load_override".equals(f.get("registration_name"))),"Actual API override registration was swallowed by emit");
+   check(facts.stream().anyMatch(f->"super_override".equals(f.get("registration_name"))),"Ancestor method_id bypassed immediate superclass override");
    check(facts.stream().noneMatch(f->"must_not_execute".equals(f.get("registration_name"))),"XML inflation executed an uncalled helper");
    check(!facts.toString().contains("OtherWebView"),"Same resource ID from unselected layout contaminated receiver");
    engine.analyzeActivity("test.WrappedActivity");
@@ -97,6 +98,17 @@ final class LayoutBindingFixture {
    check(found.type().equals("test.XmlWebView")&&!absent.type().equals("test.XmlWebView"),"Different inflation roots shared layouts");
    V early=V.of("view","android.webkit.WebView",found.id());
    check(engine.refreshBinding(early,host,0,new HashSet<>()).type().equals("test.XmlWebView"),"Known XML object stayed at its earlier parent type");
+   var lateHost=engine.new Host("test.AppActivity");
+   var consumer=new CapabilityEngine.Job(entry,List.of(V.of("host","test.AppActivity","consumer")),List.of("consumer"),false);
+   String consumerKey=CapabilityIndex.key(entry)+"|"+consumer.args();lateHost.visited.add(consumerKey);
+   engine.observeXmlConsumer(lateHost,consumer,List.of(early));
+   check(!engine.replayXmlConsumers(lateHost),"Unresolved view caused an unbounded replay");
+   lateHost.xmlBindings.put("different-root",Set.of(Map.of("concrete_type","test.XmlWebView")));
+   check(!engine.replayXmlConsumers(lateHost),"Different XML object invalidated consumer");
+   lateHost.xmlBindings.put(early.id(),Set.of(Map.of("concrete_type","test.XmlWebView")));
+   check(engine.replayXmlConsumers(lateHost)&&!lateHost.visited.contains(consumerKey),"Late concrete XML type did not invalidate actual consuming context");
+   lateHost.queue.clear();lateHost.pending.clear();lateHost.visited.add(consumerKey);
+   check(!engine.replayXmlConsumers(lateHost),"Unchanged concrete binding replayed forever");
    V one=V.of("object","test.Owner","owner-one"),two=V.of("object","test.Owner","owner-two");
    String field="Ltest/Owner;->child:Ltest/Inner;",webField="Ltest/Inner;->web:Landroid/webkit/WebView;";
    V delayedChild=engine.deferredField(host,field,one,"test.Inner");

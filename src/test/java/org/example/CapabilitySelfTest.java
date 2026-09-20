@@ -116,6 +116,8 @@ public final class CapabilitySelfTest {
    receiverOverrideFixture();
    AspectJFixture.run();
    LayoutBindingFixture.run();
+   FragmentLayoutFixture.run();
+   SuperReturnFixture.run();
    deepEvidenceFixture();
    composedReceiverFixture();
    componentHelperFixture();

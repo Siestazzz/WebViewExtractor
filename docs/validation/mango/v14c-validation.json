@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "report_sha256": "1525015ec8d0ead4f278f8a39e814faf15f97e396eead689013e740460c808d5",
+  "report_status": "partial",
+  "wall_seconds_internal": 359.941189192,
+  "wall_seconds_benchmark": 361.476,
+  "host_count": 87,
+  "fact_count": 41833,
+  "host_delta_from_v13e": {"added": [], "removed": []},
+  "changed_host_count": 5,
+  "canonical_replay": {
+    "oracle": "canonical-facts-webview-constrained.candidate.jsonl",
+    "oracle_sha256": "8dc251199b3790f265d6b8a1ea7f897cfaa5bc6d54e14d46d110fbd1f5f9776d",
+    "setting": {"matched": 574, "expected": 608},
+    "callback": {"matched": 597, "expected": 634},
+    "bridge": {"matched": 1137, "expected": 1163, "unscorable": 2},
+    "webview_operation": {"matched": 3, "expected": 3},
+    "missing_total": 97,
+    "missing_groups": {"MGVideoPlay_Diana": 81, "Loading_Rainbow_members": 14, "Loading_dynamic_registration": 1, "OPOS_dynamic_registration": 1}
+  },
+  "conclusion": "Fragment root identity improved, but the asynchronous Diana callback boundary remains unresolved; five valid conditional hosts and all 81 MGVideoPlay Diana facts remain absent."
+}

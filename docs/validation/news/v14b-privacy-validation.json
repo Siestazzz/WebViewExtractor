@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "report": "test/runs/v14b-privacy-probe.json",
+  "report_status": "partial_development_single_activity_probe",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+  "overall_verdict": "target regression restored in single-host probe; full APK not assessed",
+  "binding": {
+    "verdict": "valid_candidate",
+    "receiver": {"id":"activity:com.tencent.news.startup.privacy.PrivacyWebActivity/view:2131303140","type":"com.tencent.news.webview.api.X5WrapperWebView"},
+    "xml_evidence": {"layout_path":"res/88e.xml","resource_id":2131303140,"source_layout_name":"init_web_browser_layout"},
+    "call_chain": [
+      "Lcom/tencent/news/startup/privacy/PrivacyWebActivity;->parseIntent()V@56 declares Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+      "actual XML receiver selects Lcom/tencent/news/webview/api/X5WrapperWebView;->loadUrl(Ljava/lang/String;)V",
+      "its invoke-super method_id names smtt.WebView but nearest runtime superclass implementation is Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->loadUrl(Ljava/lang/String;)V",
+      "DtX5WebView.loadUrl invokes smtt.WebView.loadUrl then Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V"
+    ]
+  },
+  "bridges": [
+    {
+      "registration_name":"DTJsBridgeInterface",
+      "site":"Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@22",
+      "api":"Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "implementation":"com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+      "constructor":"Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;-><init>(Ljava/lang/Object;)V",
+      "exposed_members":[{"name":"bridgeCall","normalized_signature":"Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;","annotation":"Landroid/webkit/JavascriptInterface;"}],
+      "conditions":["JsBinderHelper.allowInjectOnLoad() == true","mIsJsInterfaceInject == false"],
+      "binding_status":"source_confirmed_conditional"
+    },
+    {
+      "registration_name":"dtBridge",
+      "site":"Lcom/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView;->injectBridge()V@43",
+      "api":"Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "implementation":"com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+      "constructor":"Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;-><init>(Ljava/lang/Object;)V",
+      "exposed_members":[{"name":"postMessage","normalized_signature":"Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;","annotation":"Landroid/webkit/JavascriptInterface;"}],
+      "not_exposed":["Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->dispatchVisibilityChange(Z)V"],
+      "conditions":["JsBinderHelper.allowInjectOnLoad() == true","mIsJsInterfaceV2Inject == false"],
+      "binding_status":"source_confirmed_conditional"
+    }
+  ],
+  "remaining_issues": [
+    {
+      "id":"parent_typed_duplicate_activity_call",
+      "evidence":"parseIntent@56 is emitted once as a smtt.WebView union and again as an XML replay union containing X5WrapperWebView",
+      "impact":"same call site/capability is duplicated; the parent-typed row is not a second WebView"
+    },
+    {
+      "id":"patchredirector_unknown_alternative",
+      "evidence":"both Activity-call unions retain Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(...) as smtt.WebView",
+      "impact":"top-level receiver remains unknown/candidate even though the known XML alternative is sufficient for conditional override following"
+    },
+    {
+      "id":"conditionality_detail",
+      "evidence":"bridge facts are conditional, while source supplies the exact allowInjectOnLoad and once-flag conditions",
+      "impact":"registration is reachable but not guaranteed on every execution"
+    }
+  ],
+  "scope_limit":"This validates one development single-Activity probe only. It does not establish PrivacyWebItemActivity or full-APK correctness."
+}

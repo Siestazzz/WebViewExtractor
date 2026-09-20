@@ -1,0 +1,60 @@
+{
+  "host": "ctrip.business.evaluation.EvaluateDialogActivity",
+  "webview_type": "Lctrip/android/view/h5v2/view/H5WebView;",
+  "status": "corrected_conditional_chain",
+  "receiver_alias": "H5WebView.this == H5BaseWebView receiver == VideoEnabledWebView invoke-super receiver",
+  "entry": "Lctrip/android/view/h5v2/view/H5WebView;->loadUrl(Ljava/lang/String;)V",
+  "declared_map_overload": "Lctrip/android/view/h5v2/view/H5WebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+  "plugin_list_factory": "Lctrip/android/view/h5v2/view/c;->a(Ljava/lang/Object;)Ljava/util/List;",
+  "plugin_list_argument": "ubt",
+  "gate": "Lctrip/android/view/h5v2/view/H5BaseWebView;->j(Ljava/lang/String;Ljava/util/List;Lctrip/android/view/h5v2/view/H5BaseWebView$j;)V",
+  "completion_callback": "Lctrip/android/view/h5v2/view/H5WebView$a;->onComplete()V",
+  "post_completion_chain": [
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->i(Ljava/lang/String;Ljava/util/Map;Z)V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->p(Ljava/lang/String;Ljava/util/Map;Z)V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->t(Ljava/lang/String;Ljava/util/Map;Z)V",
+    "Lctrip/android/view/h5v2/view/H5BaseWebView;->q(Ljava/lang/String;Ljava/util/Map;Z)V"
+  ],
+  "actual_invokesuper_target": "Lctrip/android/view/h5v2/view/VideoEnabledWebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+  "javascript_invokesuper_target": "Lctrip/android/view/h5v2/view/VideoEnabledWebView;->loadUrl(Ljava/lang/String;)V",
+  "registration": {
+    "name": "_VideoEnabledWebView",
+    "implementation": "Lctrip/android/view/h5v2/view/VideoEnabledWebView$a;",
+    "method": "Lctrip/android/view/h5v2/view/VideoEnabledWebView$a;->notifyVideoEnd()V"
+  },
+  "conditionality": [
+    "Robust PatchProxy may replace method bodies",
+    "empty URL terminates before the final load",
+    "package gates may continue asynchronously",
+    "local package paths may defer through install/download callbacks"
+  ],
+  "probe_observation": {
+    "h5_map_overload_contexts": 3,
+    "video_enabled_overload_visited": false,
+    "interpretation": "first unresolved boundary is callback/private routing after H5WebView.loadUrl(String,Map), not entry into that overload"
+  },
+  "supplement_disposition": {
+    "h5_string_operation": "retain",
+    "h5_map_operation": "separate source-valid operation; add if exhaustive operation enumeration is intended",
+    "video_enabled_map_operation": "retain as conditional eventual operation with corrected evidence",
+    "video_bridge": "retain as conditional eventual registration with corrected evidence"
+  },
+  "evidence": [
+    "H5WebView.java:63-85",
+    "H5WebView.java:363-372",
+    "H5WebView.java:458-465",
+    "H5BaseWebView.java:212-247",
+    "H5BaseWebView.java:543-568",
+    "H5BaseWebView.java:601-620",
+    "H5BaseWebView.java:787-847",
+    "H5BaseWebView.java:850-866",
+    "H5BaseWebView.java:950-994",
+    "VideoEnabledWebView.java:77-86",
+    "VideoEnabledWebView.java:111-123",
+    "VideoEnabledWebView.java:151-159",
+    "test/runs/v14c-evaluate-probe.log",
+    "test/runs/symbols/ctrip.jsonl"
+  ],
+  "validator": "OpenAI Codex",
+  "validator_model": "GPT-5.6 Sol"
+}

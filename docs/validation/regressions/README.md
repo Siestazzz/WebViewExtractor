@@ -63,3 +63,11 @@ merge attachment; static inflate-site separation; owner-specific deferred fields
 uncalled XML helper exclusion; and actual WebView API override registration. These are structural
 regressions, not substitutes for full source ownership audits. Configuration alternatives, repeated
 runtime allocations at one site and heap-write temporal order remain candidate approximations.
+
+
+v14 adds `FragmentLayoutFixture` (two actual Fragment allocations; lifecycle View, getView and XML
+child/ID lookup must agree within each instance and stay separate across instances) and
+`SuperReturnFixture` (ancestor-named invoke-super selects the middle factory's returned allocation).
+LayoutBindingFixture also tests delayed XML consumer invalidation and a middle WebView override.
+CompactProbe now saves full visited contexts/heap/XML bindings to `<report>.contexts.json` under
+ignored local runs, so filter omissions are distinguishable from actual unvisited contexts.

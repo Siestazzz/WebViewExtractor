@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "probe": {
+    "report": "test/runs/v14c-miniapp-probe.json",
+    "contexts": "test/runs/v14c-miniapp-probe.json.contexts.json"
+  },
+  "contexts": {
+    "DianaView.startLoad": 2,
+    "DianaView$c.constructor": 2,
+    "DianaView$c.onSuccess": 0,
+    "DianaView.onServiceConnected": 0,
+    "DianaView.renderMiniApp": 0
+  },
+  "confirmed_recovery": {
+    "scope": "per Fragment allocation/context",
+    "type": "com.mgtv.diana.sdk.main.DianaView",
+    "view_id": 2131828340,
+    "host_identity": "inflate:MiniAppFragment.onCreateView@12|MiniAppFragment.newInstance@64|VodGameRoomActivity.initializeMiniApp@71|924fc372-626b-3e9e-b8d8-dc5ca20f0bc1/view:2131828340",
+    "same_object_roles": [
+      "Fragment root childAt(0)",
+      "onViewCreated findViewById result / listener receiver",
+      "DianaView.startLoad receiver",
+      "DianaView$c captured outer",
+      "DianaView$a captured outer for matching inflate branch"
+    ]
+  },
+  "alternative_identities": "present from entry/super/alternate inflation contexts; retain as candidates and do not merge across Fragment allocations",
+  "not_recovered": [
+    "OkHttp response dispatch to DianaView$c.onSuccess",
+    "Handler Runnable dispatch",
+    "ServiceConnection.onServiceConnected",
+    "same-DianaView packageReady/service-connected join",
+    "DianaView.renderMiniApp",
+    "AppService, ServiceWebView, and PageWebView capability surface"
+  ],
+  "verdict": "root/child/XML object binding recovered; asynchronous capability chain remains incomplete"
+}
