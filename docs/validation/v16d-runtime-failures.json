@@ -1,0 +1,20 @@
+{
+  "news": {
+    "elapsed_seconds": 149.82932172808796,
+    "exit_code": 2,
+    "status": "failed",
+    "processed_activities": 2233,
+    "manifest_activities": 2329,
+    "cause": "inflateLayout used a ternary combining nullable Long from dynamic attachToRoot and primitive long; Java unboxed null. Both attach and per-parent flag ternaries fixed in v16e.",
+    "regression_fixture": "LayoutBindingFixture dynamic attachment preserves parent/root alternatives and diagnostic"
+  },
+  "ctrip": {
+    "elapsed_seconds": 592.098492864985,
+    "status": "partial",
+    "processed_activities": 396,
+    "manifest_activities": 410,
+    "cause": "Global analysis deadline reached. Five development stack samples concentrate in recursive eval of fields/returns; total expression work was bounded only by depth and APK deadline.",
+    "sampling_scope": "Development diagnostic samples only, not a statistical CPU profile or isolated final performance test.",
+    "proposed_repair": "v17 prototype bounds total recursive work per root expression and diagnoses exhausted resolution; not yet APK-validated."
+  }
+}

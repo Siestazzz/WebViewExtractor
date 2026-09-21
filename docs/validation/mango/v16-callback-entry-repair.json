@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "purpose": "minimum actual registration-to-callback entries needed to recover v16 source facts without construction seeding",
+  "frameworks": {
+    "mgadplus": {
+      "status": "confirmed",
+      "entry_chain": [
+        "host render widget constructs am.a(ImgoAdWebView,u0) and calls A(VASTAd)/z(model)",
+        "Lam/a;->z(Lcom/mgmi/model/k;)V registers showMedia with the concrete Lam/a$q0; at BridgeWebView.t(String,a)",
+        "BridgeWebView dispatch invokes Lam/a$q0;->handler(String,d)V on that same registry value",
+        "q0.handler writes outer am.a.f2663h then calls outer Y(CreativeMediaData,k)",
+        "Y tests CreativeMediaData.type == h5 and calls outer Q() then I(data,k)",
+        "Q performs the fifteen literal t(name,new handler) registrations",
+        "I -> D(url,boolean); D invokes U(); U installs exact Lam/a$w; lifecycle instance"
+      ],
+      "exact_signatures": [
+        "Lam/a;->z(Lcom/mgmi/model/k;)V",
+        "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "Lam/a$q0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "Lam/a;->Y(Lcom/mgmi/model/CreativeMediaData;Lcom/mgmi/model/k;)V",
+        "Lam/a;->Q()V",
+        "Lam/a;->I(Lcom/mgmi/model/CreativeMediaData;Lcom/mgmi/model/k;)V",
+        "Lam/a;->D(Ljava/lang/String;Z)V",
+        "Lam/a;->U()V",
+        "Lcom/mgadplus/brower/ImgoAdWebView;->setWebViewLifeCycleCallback(Lcom/mgadplus/brower/g;)V"
+      ],
+      "identity_requirements": ["q0.this$0 is the same am.a whose f2656a/f2660e fields are used", "registry lookup must return the exact q0 value stored for showMedia", "q0 captured k is passed unchanged into Y"]
+    },
+    "dtf": {
+      "status": "confirmed",
+      "entry_chain": [
+        "Activity.onResume invokes FaceLoadingActivity.I() once",
+        "I creates exact FaceLoadingActivity$h(zimId)",
+        "baseverify.d.a(zimId,meta,h) stores h in returned map callback slot",
+        "Ly5/b;->e(Ljava/util/Map;Lcom/dtf/face/network/APICallback;)Z registers the APICallback adapter from that map",
+        "successful network dispatch reaches FaceLoadingActivity$h.onSuccess(String,String,String)",
+        "onSuccess validates protocol then calls C() or z(); z() calls J() for enabled NavigatePage",
+        "J constructs ToygerWebView into FaceLoadingActivity.M; its constructor calls init()"
+      ],
+      "exact_signatures": [
+        "Lcom/dtf/face/ui/FaceLoadingActivity;->onResume()V",
+        "Lcom/dtf/face/ui/FaceLoadingActivity;->I()V",
+        "Ly5/b;->e(Ljava/util/Map;Lcom/dtf/face/network/APICallback;)Z",
+        "Lcom/dtf/face/ui/FaceLoadingActivity$h;->onSuccess(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "Lcom/dtf/face/ui/FaceLoadingActivity$h;->onError(Ljava/lang/String;Ljava/lang/String;)V",
+        "Lcom/dtf/face/ui/FaceLoadingActivity;->z()V",
+        "Lcom/dtf/face/ui/FaceLoadingActivity;->J()Z",
+        "Lcom/dtf/face/ui/widget/ToygerWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V"
+      ],
+      "identity_requirements": ["map callback value retains the exact FaceLoadingActivity$h", "h.this$0 is the same Activity whose J writes field M", "only success reaches protocol-driven J; error callbacks do not"]
+    },
+    "pangle": {
+      "status": "no_async_boundary_proven_or_required_at_registration",
+      "entry_chain": [
+        "component.c.j(WebView) builder owns exact WebView and defaults field f12300zx to IESJSBridge",
+        "built com.bytedance.sdk.component.c.r.c(j) copies j.f12286c/f12300zx and synchronously calls addJavascriptInterface(this,name)",
+        "the separate adexpress manager overload bp.c(WebView,r,String) synchronously creates/reuses component.adexpress.bp.z and calls addJavascriptInterface(z,name)"
+      ],
+      "exact_signatures": [
+        "Lcom/bytedance/sdk/component/c/j;-><init>(Landroid/webkit/WebView;)V",
+        "Lcom/bytedance/sdk/component/c/r;->c(Lcom/bytedance/sdk/component/c/j;)V",
+        "Lcom/bytedance/sdk/component/adexpress/bp/bp;->c(Landroid/webkit/WebView;Lcom/bytedance/sdk/component/c/r;Ljava/lang/String;)V",
+        "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V"
+      ],
+      "repair_rule": "Follow the synchronous builder/factory call on a host-reached WebView. Do not invent an asynchronous callback before bp.c; any host-specific earlier lifecycle edge must be proven separately."
+    }
+  }
+}

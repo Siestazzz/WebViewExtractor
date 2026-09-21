@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "report_sha256": "a07539a546a0989034ff28d8221dfa7e4ab2c7bb532df5e5825094b91ed8ae90",
+  "status": "partial",
+  "wall_seconds_report": 362.738413689,
+  "wall_seconds_benchmark": 364.321,
+  "hosts": {"v15a": 87, "v16a": 90, "added": 5, "removed": 2},
+  "facts": 41601,
+  "canonical_replay": {
+    "setting": {"matched": 608, "expected": 608},
+    "callback": {"matched": 634, "expected": 634},
+    "bridge": {"matched": 1147, "expected": 1167, "unscorable": 2},
+    "webview_operation": {"matched": 3, "expected": 3},
+    "missing": 20,
+    "oracle_sha256": "0a39821962101aacaac95e0b54557a1594dba39898377354e24cd8b8978eff47",
+    "missing_groups": {"Erlang_regression_facts": 4, "Loading_Rainbow_members": 14, "Loading_dynamic": 1, "OPOS_dynamic": 1}
+  },
+  "erlang_regression_replay": {"matched": 0, "expected": 4},
+  "release_assessment": "not_final; source-real callback-related regressions remain and v16d is expected to add actual interface invocation and Lazy.getValue reachability"
+}

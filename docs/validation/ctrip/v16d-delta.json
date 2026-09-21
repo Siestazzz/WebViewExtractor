@@ -1,0 +1,1258 @@
+{
+  "package": "ctrip.android.view",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "scope": {
+    "status": "partial",
+    "processed_activities": 396,
+    "manifest_activities": 410,
+    "unprocessed_count": 14,
+    "emitted_activities": 51,
+    "elapsed_seconds": 590.008931625,
+    "worker_budget_seconds": 590,
+    "complete": false
+  },
+  "strict": {
+    "v16a_file_sha256": "5eb3656c817f1b5d5f7b90b89d5f20b543da9af79a78a71b28f7bc2a5112b9fa",
+    "v16d_file_sha256": "29f16ad9f7503ed8073e6a9954589073e08ec4d35f72b9f17aeabb4f66b8253e"
+  },
+  "comparison": {
+    "emitted_activity_set_equal": false,
+    "disappeared_emitted_hosts": [
+      "ctrip.business.share.qqapi.TencentEntryActivity"
+    ],
+    "added_emitted_hosts": [],
+    "changed_hosts": 3,
+    "semantic_additions": 42,
+    "semantic_removals": 56,
+    "additions_by_kind": {
+      "setting": 27,
+      "bridge": 3,
+      "webview_operation": 5,
+      "callback": 6,
+      "global_setting": 1
+    },
+    "removals_by_kind": {
+      "webview_operation": 5,
+      "setting": 42,
+      "bridge_removal": 3,
+      "callback": 6
+    }
+  },
+  "changed_hosts": [
+    {
+      "host": "ctrip.android.destination.view.mapforall.GSAllMapActivity",
+      "processed_in_v16d": true,
+      "v16a_fact_count": 17,
+      "v16d_fact_count": 31,
+      "semantic_added": [
+        {
+          "kind": "setting",
+          "name": "setAllowContentAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setDefaultTextEncodingName",
+          "api": "Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "utf-8"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptCanOpenWindowsAutomatically",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadWithOverviewMode",
+          "api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadsImagesAutomatically",
+          "api": "Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "registration_name": "GoogleMapUtils",
+          "implementation": "ctrip.android.map.google.CGoogleMapView",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView;->checkGoogleMapEnableCallbackGood(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->mapLongClicked(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onCoordinatesConvertedToScreenPoints(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapBoundsChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapCenterChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapClicked(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapIdle(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapLoadFailed()V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapLoaded()V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapProperties(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapZoomChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMarkerClick(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onRouteLineCallback(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onScreenPointsConvertedToCoordinates(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onTilesloaded()V",
+            "Lctrip/android/map/google/CGoogleMapView;->printNativeLog(Ljava/lang/String;)V"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "registration_name": null,
+          "implementation": "ctrip.android.map.google.CGoogleMapView$5",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView$5;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "registration_name": null,
+          "implementation": "ctrip.android.map.google.CGoogleMapView$6",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView$6;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+            "Lctrip/android/map/google/CGoogleMapView$6;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        }
+      ],
+      "semantic_removed": [],
+      "classification": "processed_semantic_delta"
+    },
+    {
+      "host": "ctrip.android.tmkit.activity.TouristMapActivity",
+      "processed_in_v16d": true,
+      "v16a_fact_count": 2,
+      "v16d_fact_count": 32,
+      "semantic_added": [
+        {
+          "kind": "setting",
+          "name": "setAllowContentAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowContentAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setDefaultTextEncodingName",
+          "api": "Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "utf-8"
+        },
+        {
+          "kind": "setting",
+          "name": "setDefaultTextEncodingName",
+          "api": "Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "utf-8"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptCanOpenWindowsAutomatically",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptCanOpenWindowsAutomatically",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadWithOverviewMode",
+          "api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadWithOverviewMode",
+          "api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadsImagesAutomatically",
+          "api": "Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadsImagesAutomatically",
+          "api": "Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": "true"
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "registration_name": "GoogleMapUtils",
+          "implementation": "ctrip.android.map.google.CGoogleMapView",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView;->checkGoogleMapEnableCallbackGood(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->mapLongClicked(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onCoordinatesConvertedToScreenPoints(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapBoundsChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapCenterChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapClicked(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapIdle(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapLoadFailed()V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapLoaded()V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapProperties(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapZoomChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMarkerClick(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onRouteLineCallback(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onScreenPointsConvertedToCoordinates(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onTilesloaded()V",
+            "Lctrip/android/map/google/CGoogleMapView;->printNativeLog(Ljava/lang/String;)V"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "registration_name": "GoogleMapUtils",
+          "implementation": "ctrip.android.map.google.CGoogleMapView",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView;->checkGoogleMapEnableCallbackGood(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->mapLongClicked(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onCoordinatesConvertedToScreenPoints(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapBoundsChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapCenterChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapClicked(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapIdle(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapLoadFailed()V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapLoaded()V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapProperties(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMapZoomChanged(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onMarkerClick(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onRouteLineCallback(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onScreenPointsConvertedToCoordinates(Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView;->onTilesloaded()V",
+            "Lctrip/android/map/google/CGoogleMapView;->printNativeLog(Ljava/lang/String;)V"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "entry_parameter::Lctrip/android/map/google/CGoogleMapView;->mGoogleWebView:Landroid/webkit/WebView;",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "entry_parameter::Lctrip/android/tmkit/activity/TouristMapParentActivity;->mMapView:Lctrip/android/map/CtripUnitedMapView;::Lctrip/android/map/CtripUnitedMapView;->mMapView:Lctrip/android/map/IMapViewV2;::Lctrip/android/map/google/CGoogleMapView;->mGoogleWebView:Landroid/webkit/WebView;",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "registration_name": null,
+          "implementation": "ctrip.android.map.google.CGoogleMapView$5",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView$5;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "registration_name": null,
+          "implementation": "ctrip.android.map.google.CGoogleMapView$5",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView$5;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "global_setting",
+          "name": "setWebContentsDebuggingEnabled",
+          "api": "Landroid/webkit/WebView;->setWebContentsDebuggingEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "1",
+          "webview_type": "number",
+          "value": "true"
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "registration_name": null,
+          "implementation": "ctrip.android.map.google.CGoogleMapView$6",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView$6;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+            "Lctrip/android/map/google/CGoogleMapView$6;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|Lctrip/android/tmkit/activity/TouristMapParentActivity;->initMap()V@412",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "registration_name": null,
+          "implementation": "ctrip.android.map.google.CGoogleMapView$6",
+          "members": [
+            "Lctrip/android/map/google/CGoogleMapView$6;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+            "Lctrip/android/map/google/CGoogleMapView$6;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+            "Lctrip/android/map/google/CGoogleMapView$6;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+          ],
+          "webview_id": "Lctrip/android/map/google/CGoogleMapView;->initWebView()V@27|Lctrip/android/map/CtripUnitedMapView;->initMapViewWithMapType(Lctrip/android/map/model/MapType;Z)V@177|entry_parameter",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        }
+      ],
+      "semantic_removed": [
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "activity:ctrip.android.tmkit.activity.TouristMapActivity::Lctrip/android/tmkit/activity/TouristMapParentActivity;->mMapView:Lctrip/android/map/CtripUnitedMapView;::Lctrip/android/map/CtripUnitedMapView;->mMapView:Lctrip/android/map/IMapViewV2;::Lctrip/android/map/google/CGoogleMapView;->mGoogleWebView:Landroid/webkit/WebView;",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        }
+      ],
+      "classification": "processed_semantic_delta"
+    },
+    {
+      "host": "ctrip.business.share.qqapi.TencentEntryActivity",
+      "processed_in_v16d": false,
+      "v16a_fact_count": 69,
+      "v16d_fact_count": 0,
+      "semantic_added": [],
+      "semantic_removed": [
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccessFromFileURLs",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccessFromFileURLs",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccessFromFileURLs",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "-1"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "-1"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "-1"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabasePath",
+          "api": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "unknown"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabasePath",
+          "api": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "unknown"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabasePath",
+          "api": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "unknown"
+        },
+        {
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setNeedInitialFocus",
+          "api": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setNeedInitialFocus",
+          "api": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setNeedInitialFocus",
+          "api": "Landroid/webkit/WebSettings;->setNeedInitialFocus(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setRenderPriority",
+          "api": "Landroid/webkit/WebSettings;->setRenderPriority(Landroid/webkit/WebSettings$RenderPriority;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "HIGH"
+        },
+        {
+          "kind": "setting",
+          "name": "setRenderPriority",
+          "api": "Landroid/webkit/WebSettings;->setRenderPriority(Landroid/webkit/WebSettings$RenderPriority;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "HIGH"
+        },
+        {
+          "kind": "setting",
+          "name": "setRenderPriority",
+          "api": "Landroid/webkit/WebSettings;->setRenderPriority(Landroid/webkit/WebSettings$RenderPriority;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "HIGH"
+        },
+        {
+          "kind": "setting",
+          "name": "setSaveFormData",
+          "api": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setSaveFormData",
+          "api": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setSaveFormData",
+          "api": "Landroid/webkit/WebSettings;->setSaveFormData(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "false"
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": "true"
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;",
+          "webview_type": "android.webkit.WebView",
+          "value": null
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "bridge_removal",
+          "name": "removeJavascriptInterface",
+          "api": "Landroid/webkit/WebView;->removeJavascriptInterface(Ljava/lang/String;)V",
+          "registration_name": null,
+          "implementation": null,
+          "members": [],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "registration_name": null,
+          "implementation": "com.tencent.open.b$1",
+          "members": [
+            "Lcom/tencent/open/b$1;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+            "Lcom/tencent/open/b$1;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V"
+          ],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "registration_name": null,
+          "implementation": "com.tencent.open.b$1",
+          "members": [
+            "Lcom/tencent/open/b$1;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+            "Lcom/tencent/open/b$1;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V"
+          ],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebChromeClient",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "registration_name": null,
+          "implementation": "com.tencent.open.b$1",
+          "members": [
+            "Lcom/tencent/open/b$1;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+            "Lcom/tencent/open/b$1;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V"
+          ],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "registration_name": null,
+          "implementation": "com.tencent.open.TDialog$FbWebViewClient",
+          "members": [
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+          ],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@959",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "registration_name": null,
+          "implementation": "com.tencent.open.TDialog$FbWebViewClient",
+          "members": [
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+          ],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QQShare;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@756|Lcom/tencent/tauth/Tencent;->shareToQQ(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@28",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        },
+        {
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "registration_name": null,
+          "implementation": "com.tencent.open.TDialog$FbWebViewClient",
+          "members": [
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+            "Lcom/tencent/open/TDialog$FbWebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+          ],
+          "webview_id": "Lcom/tencent/open/TDialog;->a()V@24|Lcom/tencent/connect/share/QzoneShare;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@1073|Lcom/tencent/tauth/Tencent;->shareToQzone(Landroid/app/Activity;Landroid/os/Bundle;Lcom/tencent/tauth/IUiListener;)V@15",
+          "webview_type": "com.tencent.open.c.b",
+          "value": null
+        }
+      ],
+      "classification": "budget_truncated_unassessable"
+    }
+  ],
+  "assessment": "Only emitted hosts present in v16d are eligible for semantic assessment. TencentEntryActivity disappearance is unassessable because the run processed only 396/410 manifest Activities and exhausted its global worker budget."
+}

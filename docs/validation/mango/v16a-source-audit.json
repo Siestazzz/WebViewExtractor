@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "report_sha256": "a07539a546a0989034ff28d8221dfa7e4ab2c7bb532df5e5825094b91ed8ae90",
+  "verdict": "development_variant_recovers_diana_but_has_source_real_callback_related_regressions",
+  "diana": {
+    "canonical_81_recovered": true,
+    "five_hosts_recovered": true,
+    "recovered_hosts": ["com.imgo.vodgames.LandVodGameRoomActivity", "com.imgo.vodgames.VodGameRoomActivity", "com.mgtv.diana.vodgames.LandVodGameRoomActivity", "com.mgtv.diana.vodgames.VodGameRoomActivity", "com.mgtv.litevod.LiteVodActivity"],
+    "interpretation": "The independently audited Fragment root, OkHttp/Handler callback, bindService ServiceConnection, and same-DianaView state chain is now represented."
+  },
+  "canonical_sha256": "0a39821962101aacaac95e0b54557a1594dba39898377354e24cd8b8978eff47",
+  "erlang_regression_facts": {"matched": 0, "expected": 4, "status": "not_recovered_and_now_in_current_canonical"},
+  "source_real_regression_groups": [
+    "Pangle IESJSBridge explicit addJavascriptInterface registrations across nine hosts",
+    "mgadplus Q() fifteen named t(name,handler) registrations plus setWebViewLifeCycleCallback in RewardAdFreeActivity and MGVideoPlayActivity",
+    "two DTF FaceLoadingActivity complete owned WebView surfaces disappear",
+    "Erlang retains the earlier mgTransfer/showMangPushShare loss and additionally loses five named Imgo handler registrations",
+    "mglive callback-dispatched setSavePassword sites and several explicitly invoked retry/posted operations disappear"
+  ],
+  "alias_only": "Receiver multiplicity changes are excluded in v16a-normalized-semantic-delta.json; only normalized set additions/removals are listed there.",
+  "unresolved": "Some operation-only losses reached through callback/interface dispatch remain unresolved pending v16d's actual-interface-call relevance and Lazy.getValue support; v16a must not be treated as final negative evidence."
+}

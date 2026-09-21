@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "report_sha256": "bc2b1d57df81055745e65a2d16480e188ca32e481aead5405fe6c7e1fe5b7b48",
+  "status": "partial",
+  "wall_seconds_report": 364.569253517,
+  "wall_seconds_benchmark": 366.147,
+  "hosts": {"v16a": 90, "v16d": 90, "added": [], "removed": []},
+  "facts": 41663,
+  "canonical_sha256": "0a39821962101aacaac95e0b54557a1594dba39898377354e24cd8b8978eff47",
+  "canonical_replay": {
+    "setting": {"matched": 608, "expected": 608},
+    "bridge": {"matched": 1153, "expected": 1259, "unscorable": 2},
+    "callback": {"matched": 634, "expected": 662},
+    "webview_operation": {"matched": 3, "expected": 3},
+    "missing": 134
+  },
+  "v16_regression_replay": {"matched": 6, "expected": 120, "bridge": "6/92", "callback": "0/28"},
+  "recovered": ["Erlang openSystemSetting registration/member", "Erlang sendLocalPixelBarrage registration/member", "Erlang showInteractiveMagicCube registration/member"],
+  "not_recovered": ["Pangle IESJSBridge 18 facts", "mgadplus 72 facts", "DTF 20 facts", "Erlang VideoInteractionEvent/VideoSetPlayerMuted 4 facts", "prior Erlang mgTransfer/showMangPushShare 4 facts"]
+}

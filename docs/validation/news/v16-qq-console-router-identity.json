@@ -1,0 +1,100 @@
+{
+  "rule_id": "tencent_opensdk_console_router_identity_v2",
+  "reuses": "docs/validation/news/qq-console-rule.json",
+  "scope": "20 public Dialog bridge facts; identity supplement only",
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "status": "source_and_dex_verified",
+  "holdout_used": false,
+  "missing_identity_edges_from_v1": [
+    {
+      "edge": "Dialog constructor -> client outer alias",
+      "constructors": [
+        "Lcom/tencent/open/c;-><init>(Landroid/content/Context;)V",
+        "Lcom/tencent/open/c;-><init>(Landroid/content/Context;I)V"
+      ],
+      "allocation": "new Lcom/tencent/open/c$1; with constructor argument this",
+      "write": "Lcom/tencent/open/c;->mChromeClient:Landroid/webkit/WebChromeClient; = that exact c$1",
+      "back_reference": "Lcom/tencent/open/c$1;->a:Lcom/tencent/open/c; = constructor argument 0"
+    },
+    {
+      "edge": "super.onCreate -> router field before registration",
+      "call": "Lcom/tencent/open/TDialog;->onCreate(Landroid/os/Bundle;)V invokes Lcom/tencent/open/c;->onCreate(Landroid/os/Bundle;)V",
+      "allocation_write": "new Lcom/tencent/open/b; -> Lcom/tencent/open/c;->jsBridge:Lcom/tencent/open/b;",
+      "ordering": "super.onCreate completes before TDialog.a() creates/attaches WebView and before TDialog.b() registers sdk_js_if"
+    },
+    {
+      "edge": "one concrete WebView field used by install, dispatch, and UI attachment",
+      "creation": "Lcom/tencent/open/TDialog;->a()V constructs Lcom/tencent/open/d/b; and writes Lcom/tencent/open/TDialog;->i:Lcom/tencent/open/d/b;",
+      "attachment": "the same field value is passed to FrameLayout.addView; the containing FrameLayout h is passed to Dialog.setContentView",
+      "install": "Lcom/tencent/open/TDialog;->b()V invokes i.setWebChromeClient(mChromeClient)",
+      "dispatch_argument": "Lcom/tencent/open/TDialog;->onConsoleMessage(Ljava/lang/String;)V invokes jsBridge.a(i,message); argument 0 is the same field i"
+    },
+    {
+      "edge": "registered listener belongs to the same Dialog",
+      "construction": "Lcom/tencent/open/TDialog$JsListener;-><init>(Lcom/tencent/open/TDialog;)V",
+      "back_reference": "Lcom/tencent/open/TDialog$JsListener;->this$0:Lcom/tencent/open/TDialog;",
+      "registration": "Lcom/tencent/open/TDialog;->b()V invokes Lcom/tencent/open/b;->a(Lcom/tencent/open/b$b;Ljava/lang/String;)V on this.jsBridge with the new listener and literal sdk_js_if"
+    }
+  ],
+  "end_to_end_identity_key": {
+    "tuple": ["Dialog instance", "router instance", "WebChromeClient instance", "WebView instance", "listener instance", "registration name"],
+    "equalities": [
+      "client.a == Dialog",
+      "Dialog.mChromeClient == installed client",
+      "Dialog.jsBridge == registration receiver == console-dispatch receiver",
+      "Dialog.i == client installation receiver == router dispatch WebView argument 0 == attached child WebView",
+      "listener.this$0 == Dialog",
+      "router.a[sdk_js_if] == listener"
+    ],
+    "forbidden_join": "Never merge by sdk_js_if, TDialog class, c$1 class, JsListener class, or WebView type without this instance tuple."
+  },
+  "transport": {
+    "installed_callback": "Lcom/tencent/open/c$1;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+    "message_flow": "ConsoleMessage.message() -> client.a virtual onConsoleMessage(String) -> TDialog.onConsoleMessage(String) -> jsBridge.a(i,message)",
+    "router_entry": "Lcom/tencent/open/b;->a(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+    "registry_dispatch": "Lcom/tencent/open/b;->a(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lcom/tencent/open/b$a;)V",
+    "handler_dispatch": "Lcom/tencent/open/b$b;->call(Ljava/lang/String;Ljava/util/List;Lcom/tencent/open/b$a;)V",
+    "legacy_non_transport": "Lcom/tencent/open/c$1;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V logs only"
+  },
+  "reflection": {
+    "enumeration": "registeredObject.getClass().getDeclaredMethods()",
+    "selector": "method name plus parameter count only",
+    "arguments": "URL-decoded String values; invoke ladder supplies 0..6",
+    "access": "no setAccessible; inherited members excluded; exception returns error callback",
+    "return": "result callback requires customCallback()==true; base returns false",
+    "members": [
+      "Lcom/tencent/open/TDialog$JsListener;->onAddShare(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancel(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancelAddShare(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancelInvite()V",
+      "Lcom/tencent/open/TDialog$JsListener;->onCancelLogin()V",
+      "Lcom/tencent/open/TDialog$JsListener;->onComplete(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onInvite(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->onLoad(Ljava/lang/String;)V",
+      "Lcom/tencent/open/TDialog$JsListener;->showMsg(Ljava/lang/String;)V"
+    ]
+  },
+  "implementation_rule": {
+    "register": "on a reached call b.a(handler,name), write (router object identity,name)->handler object identity",
+    "install": "on reached setWebChromeClient, write WebView object identity->client object identity",
+    "callback": "execute onConsoleMessage only for that installed client; recover the exact outer Dialog through c$1.a",
+    "dispatch": "bind endpoints only when the callback reaches b.a(webview,message) on the same router object; attach endpoints only to that exact webview argument",
+    "construction_boundary": "construction of c$1, b, JsListener, or another callback is not activation without the corresponding install/register/reached dispatch edge"
+  },
+  "dex_verified_types": {
+    "Lcom/tencent/open/c$1;->a": "Lcom/tencent/open/c;",
+    "Lcom/tencent/open/c;->mChromeClient": "Landroid/webkit/WebChromeClient;",
+    "Lcom/tencent/open/c;->jsBridge": "Lcom/tencent/open/b;",
+    "Lcom/tencent/open/TDialog;->i": "Lcom/tencent/open/d/b;",
+    "Lcom/tencent/open/TDialog$JsListener;->this$0": "Lcom/tencent/open/TDialog;",
+    "Lcom/tencent/open/b;->a": "Ljava/util/HashMap;"
+  },
+  "source_evidence": [
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/c.java:14-66",
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/TDialog.java:126-177,228-253,324-368",
+    "test/decompiled/com.tencent.news/sources/com/tencent/open/b.java:24-179",
+    "test/runs/symbols/news.jsonl"
+  ]
+}

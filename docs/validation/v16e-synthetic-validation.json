@@ -1,0 +1,18 @@
+{
+  "frozen_jar_sha256": "eba0c66800dcf7bf6c7b9fbac0cde01e7812ef44f278bb2b2a7d1151587b79ca",
+  "capability_suite": "passed",
+  "command": "./gradlew capabilitySelfTest shadowJar --offline --console=plain",
+  "new_cases": [
+    "constructed unregistered callback does not execute",
+    "actual posted Runnable vs unregistered sibling",
+    "argument forwarding through actual post wrapper",
+    "application scheduling override returning false is not platform post",
+    "unrelated post method name rejected",
+    "structural obfuscated network callback contract positive and malformed negative",
+    "reached application interface initializer uses concrete field receiver",
+    "consumed Lazy executes initializer body, unused Lazy does not",
+    "unknown inflate attachToRoot preserves alternatives without null unboxing"
+  ],
+  "near_callback_probe": "OBSERVED_BRIDGES=1 EXPECTED=1\n",
+  "limits": "Synthetic behavior only. Real APK quality, ownership, final holdouts and performance remain separate gates."
+}

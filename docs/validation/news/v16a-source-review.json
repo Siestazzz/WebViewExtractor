@@ -1,0 +1,60 @@
+{
+  "version": "v16a",
+  "baseline": "v15a",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "summary": {
+    "hosts": "42 -> 36",
+    "facts": "5386 -> 4521",
+    "semantic_added": 101,
+    "semantic_removed": 966,
+    "ownership_emitted": {
+      "valid": 35,
+      "uncertain": 1,
+      "wrong": 0
+    }
+  },
+  "removed_host_source_verdicts": [
+    {
+      "activity": "com.tencent.ams.splash.preview.SplashAdDynamicPreviewActivity",
+      "verdict": "true_regression_of_source_valid_conditional_host",
+      "chain": "Activity callback -> View.post(d) -> d.run -> new SplashAdDynamicView/addView/show -> inherited gesture controller -> EasterEggWebView"
+    },
+    {
+      "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+      "verdict": "true_regression",
+      "chain": "onCreate -> initWebPage concrete APSystem/APX5 page -> initUI/toPureH5Pay -> wrapper constructor -> InitWebView -> settings and client installation"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity",
+      "verdict": "true_regression_of_source_valid_conditional_subset",
+      "chain": "Activity -> shortvideo controller -> tips.e.setData -> new CommonPendantFloatView -> owned PendantWebView"
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.shortvideo.VisitVerticalVideoActivity",
+      "verdict": "true_regression_of_inherited_conditional_subset_but_not_current_positive_canonical",
+      "chain": "manifest subclass invokes inherited VerticalVideoVideoActivity path"
+    },
+    {
+      "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "verdict": "true_regression",
+      "chain": "Activity-owned n2 -> VideoPlayManager -> YspPlayerService/YspMediaPlayer -> attached BaseWebView"
+    },
+    {
+      "activity": "com.tencent.news.ui.view.player.FullPlayVideoActivity",
+      "verdict": "true_regression",
+      "chain": "Activity-owned FullVideoPlayer/n2 -> VideoPlayManager -> YspMediaPlayer -> attached BaseWebView"
+    }
+  ],
+  "capability_group_verdicts": {
+    "APWebJSBridgeActivity": "26 scoring facts are source-confirmed: 14 settings and 12 callback facts across concrete system/X5 branches; wrapper constructors directly call InitWebView and install exact client fields.",
+    "RichEditor_QAEditor": "at least two removed WebViewClient facts per Activity are true regressions through the registered Kotlin Lazy initializer and typed accessor; broader removed operations include aliases requiring per-receiver review.",
+    "Login_Dialog": "actual shown AuthDialog/TDialog paths make a source-valid subset of removed settings/clients; construction alone is insufficient, but these Dialogs are constructed with the Activity and shown.",
+    "Rose_FullPlay": "11 settings, 2 callback facts and YSP bridge/message surface per host are source-confirmed conditional regressions.",
+    "Splash": "11 settings, 3 callback/bridge surface are source-confirmed conditional through the actually posted d Runnable; unrelated EasterEgg aliases remain excluded.",
+    "Vertical": "source-confirmed pendant subset regressed; not every prior 127/95 alias row is validated.",
+    "WebAdvert": "removed initialization/settings/client subset is source-valid through WebAdvertView/AdLoadingWebView nested construction; duplicate Dt bridge aliases are not automatically accepted.",
+    "ILive_preload": "three-row removal remains unresolved here; not classified from count reduction.",
+    "operation_only_removals": "loadUrl/evaluateJavascript-only reductions on retained hosts are mixed; some remove receiver aliases, while source-reached operations cannot be rejected without their concrete chain."
+  },
+  "known_rule_boundary": "Do not restore global constructor/callbackEntries seeding. Restore only exact reached constructor/factory/lazy return or actual post/register/dispatch edges."
+}

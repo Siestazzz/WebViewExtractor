@@ -1,0 +1,52 @@
+{
+  "host": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+  "app_version": "8.78.0",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "status": "confirmed_conditional",
+  "binding_target": "Lctrip/android/tour/search/view/v2/SearchH5Fragment2;",
+  "webview_type": "Lctrip/android/tour/search/view/v2/SearchWebView;",
+  "conditions": [
+    "tab id is retained in searchTabs",
+    "tab URL is not classified as CRN",
+    "configTabs runs after createPages",
+    "ViewPager2 requests the descriptor position",
+    "PatchProxy does not replace the audited static method bodies"
+  ],
+  "class_transport": {
+    "input": "Lctrip/android/tour/search/view/v2/SearchH5Fragment2; class literal",
+    "conversion": "Ljava/lang/Class;->getName()Ljava/lang/String;",
+    "stored_class_field": "Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;->e:Ljava/lang/String;",
+    "stored_bundle_field": "Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;->f:Landroid/os/Bundle;",
+    "construction": "Landroidx/fragment/app/Fragment;->instantiate(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroidx/fragment/app/Fragment;",
+    "reflection_required": true
+  },
+  "chain": [
+    {"method":"Lctrip/android/tour/search/view/CTTourSearchActivity2;->createPages()V","action":"allocate pages; add non-CRN SearchH5Fragment2 descriptor","source":"CTTourSearchActivity2.java:2288-2290,2295-2301,2344-2373"},
+    {"method":"Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;->f(Ljava/lang/CharSequence;Ljava/lang/Class;Landroid/os/Bundle;Lctrip/android/tour/search/model/response/CustomTab;)Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;","action":"delegate to e with exact Class and Bundle","source":"a.java:39-47"},
+    {"method":"Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;->e(Ljava/lang/CharSequence;FLjava/lang/Class;Landroid/os/Bundle;Lctrip/android/tour/search/model/response/CustomTab;)Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;","action":"Class.getName; store name and same Bundle","source":"a.java:22-36"},
+    {"method":"Lctrip/android/tour/search/view/CTTourSearchActivity2$e;->run()V","action":"invoke activity configTabs through synthetic accessor","source":"CTTourSearchActivity2.java:682-695"},
+    {"method":"Lctrip/android/tour/search/view/CTTourSearchActivity2;->configTabs()Z","action":"construct SearchPageAdapter with activity.pages; store adapter; install on ViewPager2","source":"CTTourSearchActivity2.java:2074-2078"},
+    {"method":"Lctrip/android/tour/search/adapter/SearchPageAdapter;-><init>(Landroidx/fragment/app/FragmentActivity;Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/FragmentPagerItems;)V","action":"store exact pages collection in adapter.pages","source":"SearchPageAdapter.java:27-32"},
+    {"method":"Lctrip/android/tour/search/adapter/SearchPageAdapter;->createFragment(I)Landroidx/fragment/app/Fragment;","action":"framework callback reads page descriptor and calls d(context,position)","source":"SearchPageAdapter.java:58-73"},
+    {"method":"Lctrip/android/tour/search/view/widget/AdvancedTabView/utils/v4/a;->d(Landroid/content/Context;I)Landroidx/fragment/app/Fragment;","action":"write position into same Bundle and instantiate stored class name","source":"a.java:50-68"},
+    {"method":"Lctrip/android/tour/search/view/v2/SearchH5Fragment2;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;","action":"invoke inherited H5Fragment onCreateView","source":"SearchH5Fragment2.java:331-362"},
+    {"method":"Lctrip/android/view/h5/view/H5Fragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;","action":"init layout; virtual addWebView dispatch","source":"H5Fragment.java:2181-2193,3263-3273"},
+    {"method":"Lctrip/android/tour/search/view/v2/SearchH5Fragment2;->addWebView()V","action":"allocate SearchWebView into inherited mWebView and add same object to container","source":"SearchH5Fragment2.java:221-232"},
+    {"method":"Lctrip/android/tour/search/view/v2/SearchH5Fragment2;->loadWebview()V","action":"invoke base loadWebview, which invokes initWebView on same mWebView","source":"SearchH5Fragment2.java:278-294; H5Fragment.java:2935-2953,2996-3014,3506-3527"}
+  ],
+  "alias_equations": [
+    "activity.pages === adapter.pages",
+    "descriptor.e == SearchH5Fragment2.class.getName()",
+    "descriptor.f === tabBundle",
+    "createFragment(position) === Fragment.instantiate(context, descriptor.e, descriptor.f)",
+    "createdFragment.mWebView === new SearchWebView(createdFragment.getContext())"
+  ],
+  "negative_assertions": [
+    "SearchH5Fragment2 is not selected for the CRN branch",
+    "SearchFragment2 descriptors for nested tabs are separate objects and are not aliases of SearchH5Fragment2",
+    "getPage(position) is a post-creation weak-reference lookup, not a factory edge",
+    "the class literal alone is not treated as a host binding"
+  ],
+  "dex_symbols_checked": true,
+  "provenance": "independent_decompiled_source_plus_dex_symbols; no extractor output used"
+}

@@ -1,0 +1,40 @@
+{
+  "version": "v16e",
+  "report_status": "partial",
+  "processed_manifest_activities": 2329,
+  "manifest_activities": 2329,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "hosts": 37,
+  "facts": 4552,
+  "ownership": {
+    "valid": 36,
+    "uncertain": 1,
+    "wrong": 0,
+    "conservative_nonvalid_upper_bound": "1/37 = 2.70%"
+  },
+  "versus_v16a": {
+    "added_hosts": [
+      "com.tencent.midas.jsbridge.APWebJSBridgeActivity"
+    ],
+    "removed_hosts": [],
+    "semantic_added": 31,
+    "semantic_removed": 0
+  },
+  "versus_v15a": {
+    "removed_hosts": [
+      "com.tencent.ams.splash.preview.SplashAdDynamicPreviewActivity",
+      "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity",
+      "com.tencent.news.kkvideo.shortvideo.VisitVerticalVideoActivity",
+      "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "com.tencent.news.ui.view.player.FullPlayVideoActivity"
+    ],
+    "semantic_added": 131,
+    "semantic_removed": 965
+  },
+  "focused": {
+    "APWebJSBridgeActivity": "14 settings and expected 12 callback methods restored on exact system/X5 wrapper WebViews",
+    "editors": "not restored; both remain 51 facts",
+    "remaining_missing_hosts": "five apparent hosts versus successful v15a; each has a source-valid subset, though Visit was outside current positive canonical"
+  },
+  "canonical_evaluation_file": "docs/validation/news/v16e-canonical-evaluation.json"
+}

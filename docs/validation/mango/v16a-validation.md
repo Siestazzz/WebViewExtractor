@@ -1,0 +1,7 @@
+# Mango v16a validation
+
+The final Mango report has SHA-256 `a07539a546a0989034ff28d8221dfa7e4ab2c7bb532df5e5825094b91ed8ae90`, status `partial`, 90 hosts, 41,601 facts, and internal time 362.738 seconds (benchmark 364.321 seconds). Compared with v15a it adds the five expected Diana conditional hosts and removes both DTF FaceLoading hosts. The 90-row ownership file reuses prior source verdicts for retained/restored hosts; the two removals remain ownership regressions rather than invalidated hosts.
+
+Current canonical SHA-256 `0a39821962101aacaac95e0b54557a1594dba39898377354e24cd8b8978eff47` includes the four cumulative Erlang facts. Replay gives settings 608/608, callbacks 634/634, bridges 1147/1167 with two unscorable dynamic registrations, and operations 3/3. The remaining 20 are four Erlang facts, 14 Loading/Rainbow members, and the retained Loading and OPOS dynamic registrations. All 81 MGVideoPlay Diana facts are recovered. The older 1163-denominator candidate replay remains preserved in its prior score file and is superseded here.
+
+The improved canonical score does not make v16a regression-free. Normalized semantic review removes receiver-alias multiplicity and still finds source-real losses in Pangle, mgadplus, DTF, and Erlang, plus unresolved callback-body operations. These are documented in `v16a-source-audit` and the machine-readable `v16a-normalized-semantic-delta.json`. v16a is therefore recorded as a development checkpoint pending v16d.

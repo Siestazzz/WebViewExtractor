@@ -1,0 +1,36 @@
+{
+  "version": "v16e",
+  "report_complete": true,
+  "processed_manifest_activities": "2329/2329",
+  "baseline": ["v15a", "v16a"],
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "ap_recovery": {
+    "status": "source_confirmed",
+    "raw_facts": 29,
+    "settings_matched_gain": 14,
+    "callback_matched_gain": 12,
+    "chain": "Activity webPage concrete interface dispatch -> APSystem/APX5Page initUI/toPureH5Pay -> wrapper constructor parameter 1 -> mWebview -> same-receiver InitWebView -> settings and installed clients",
+    "remaining_raw_difference": "v15a had additional loadUrl aliases; not part of AP26 scoring gap"
+  },
+  "editor_lazy": {
+    "status": "not_recovered",
+    "qa_facts": 51,
+    "rich_facts": 51,
+    "same_as_v16a": true,
+    "actual_registration": "Lkotlin/j;->ʼ(Lkotlin/jvm/functions/a;)Lkotlin/i; receives exact Lcom/tencent/news/activity/d; initializer",
+    "missing_identity": "initializer -> concrete Lazy returned as kotlin.i -> BaseEditorActivity.ʻʼ -> same receiver getValue cache/result -> REWebView"
+  },
+  "remaining_source_regressions": [
+    {"group":"Splash preview", "entry":"Landroid/view/View;->post(Ljava/lang/Runnable;)Z with AdSplashDynamicPreviewActivity$d; d.run constructs/adds/shows SplashAdDynamicView", "impact":"source-confirmed conditional EasterEgg subset missing"},
+    {"group":"Vertical video", "entry":"VerticalVideoVideoActivity concrete controller -> shortvideo.m.ʽᴵ(m1) -> tips.e.setData -> new CommonPendantFloatView", "impact":"source-confirmed pendant subset missing; Visit inherited variant remains outside current positive canonical"},
+    {"group":"Rose/FullPlay", "entry":"Activity-owned n2/FullVideoPlayer -> VideoPlayManager YSP selection -> YspMediaPlayer.ʽ(Context,ViewGroup)", "impact":"settings/client/YSP bridge and message handlers missing"},
+    {"group":"Editor Lazy", "entry":"reached kotlin.j.ʼ factory plus reached field getValue consumer", "impact":"two Activities' settings/client subset missing"},
+    {"group":"Login shown Dialog", "entry":"actual new AuthDialog/TDialog(Activity,...) followed by Dialog.show; onCreate builds UI and installs clients", "impact":"source-valid Dialog settings/client subset missing"},
+    {"group":"WebAdvert nested wrapper", "entry":"Activity layout wrapper construction -> WebAdvertView/AdLoadingWebView internal field initialization", "impact":"source-valid initialization settings/client subset missing"},
+    {"group":"LongVideo", "entry":"longvideo.l.ʻ(g) exact collection registration -> same l.ʼ iterator dispatch -> presenter onPageCreateView -> conditional selection", "impact":"two canonical positive hosts still absent"},
+    {"group":"AdMosaic", "entry":"DKMosaicWebViewComponentImpl.setJSEngine registers $12 with DynamicUtils.runOnUiThread; run -> initWebView -> exact provider.getDKWebView -> mosaic.e native AdWebView", "impact":"canonical host remains absent"},
+    {"group":"AdLanding", "entry":"AdLandingPageWrapper.onCreate Handler.post($2); run -> delayLoad -> listener factory return -> mAdPage -> loadWebView", "impact":"canonical host remains absent"}
+  ],
+  "canonical_caution": "AdBonusPageActivity's inherited EasterEgg facts are not source-proven by current review: its Activity creates AdBonusPageView/player and reports manager events but no WebView construction/bind/attach transfer was found. Keep unresolved; do not use as a repair target without a concrete ownership edge."
+}

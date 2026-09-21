@@ -1,0 +1,592 @@
+{
+  "baseline": "v16a",
+  "candidate": "v16e",
+  "status": "partial",
+  "processed_manifest_activities": 2329,
+  "host_count_before": 36,
+  "host_count_after": 37,
+  "added_hosts": [
+    "com.tencent.midas.jsbridge.APWebJSBridgeActivity"
+  ],
+  "removed_hosts": [],
+  "fact_count_before": 4521,
+  "fact_count_after": 4552,
+  "semantic_added_count": 31,
+  "semantic_removed_count": 0,
+  "comparison_excluded_fields": [
+    "arguments",
+    "binding_status",
+    "conditional",
+    "evidence",
+    "xml_binding_evidence",
+    "xml_binding_semantics"
+  ],
+  "changed_activities": {
+    "com.tencent.midas.jsbridge.APWebJSBridgeActivity": {
+      "before_count": 0,
+      "after_count": 29,
+      "added": [
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "implementation": "com.tencent.midas.jsbridge.APWebView$1",
+          "kind": "callback",
+          "members": [
+            {
+              "display": "com.tencent.midas.jsbridge.APWebView$1.onJsAlert(Landroid/webkit/WebView;,Ljava/lang/String;,Ljava/lang/String;,Landroid/webkit/JsResult;):Z",
+              "name": "onJsAlert",
+              "signature": "Lcom/tencent/midas/jsbridge/APWebView$1;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APWebView$1.onJsPrompt(Landroid/webkit/WebView;,Ljava/lang/String;,Ljava/lang/String;,Ljava/lang/String;,Landroid/webkit/JsPromptResult;):Z",
+              "name": "onJsPrompt",
+              "signature": "Lcom/tencent/midas/jsbridge/APWebView$1;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z"
+            }
+          ],
+          "name": "setWebChromeClient",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@70",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "implementation": "com.tencent.midas.jsbridge.APWebView$2",
+          "kind": "callback",
+          "members": [
+            {
+              "display": "com.tencent.midas.jsbridge.APWebView$2.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "name": "onPageFinished",
+              "signature": "Lcom/tencent/midas/jsbridge/APWebView$2;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APWebView$2.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "name": "onPageStarted",
+              "signature": "Lcom/tencent/midas/jsbridge/APWebView$2;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APWebView$2.onReceivedError(Landroid/webkit/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+              "name": "onReceivedError",
+              "signature": "Lcom/tencent/midas/jsbridge/APWebView$2;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APWebView$2.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Ljava/lang/String;):Z",
+              "name": "shouldOverrideUrlLoading",
+              "signature": "Lcom/tencent/midas/jsbridge/APWebView$2;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+            }
+          ],
+          "name": "setWebViewClient",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@77",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->setWebChromeClient(Lcom/tencent/smtt/sdk/WebChromeClient;)V",
+          "implementation": "com.tencent.midas.jsbridge.APX5WebView$1",
+          "kind": "callback",
+          "members": [
+            {
+              "display": "com.tencent.midas.jsbridge.APX5WebView$1.onJsAlert(Lcom/tencent/smtt/sdk/WebView;,Ljava/lang/String;,Ljava/lang/String;,Lcom/tencent/smtt/export/external/interfaces/JsResult;):Z",
+              "name": "onJsAlert",
+              "signature": "Lcom/tencent/midas/jsbridge/APX5WebView$1;->onJsAlert(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/smtt/export/external/interfaces/JsResult;)Z"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APX5WebView$1.onJsPrompt(Lcom/tencent/smtt/sdk/WebView;,Ljava/lang/String;,Ljava/lang/String;,Ljava/lang/String;,Lcom/tencent/smtt/export/external/interfaces/JsPromptResult;):Z",
+              "name": "onJsPrompt",
+              "signature": "Lcom/tencent/midas/jsbridge/APX5WebView$1;->onJsPrompt(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/smtt/export/external/interfaces/JsPromptResult;)Z"
+            }
+          ],
+          "name": "setWebChromeClient",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@64",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->setWebViewClient(Lcom/tencent/smtt/sdk/WebViewClient;)V",
+          "implementation": "com.tencent.midas.jsbridge.APX5WebView$2",
+          "kind": "callback",
+          "members": [
+            {
+              "display": "com.tencent.midas.jsbridge.APX5WebView$2.onPageFinished(Lcom/tencent/smtt/sdk/WebView;,Ljava/lang/String;):V",
+              "name": "onPageFinished",
+              "signature": "Lcom/tencent/midas/jsbridge/APX5WebView$2;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APX5WebView$2.onPageStarted(Lcom/tencent/smtt/sdk/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "name": "onPageStarted",
+              "signature": "Lcom/tencent/midas/jsbridge/APX5WebView$2;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APX5WebView$2.onReceivedError(Lcom/tencent/smtt/sdk/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+              "name": "onReceivedError",
+              "signature": "Lcom/tencent/midas/jsbridge/APX5WebView$2;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "display": "com.tencent.midas.jsbridge.APX5WebView$2.shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;,Ljava/lang/String;):Z",
+              "name": "shouldOverrideUrlLoading",
+              "signature": "Lcom/tencent/midas/jsbridge/APX5WebView$2;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z"
+            }
+          ],
+          "name": "setWebViewClient",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@71",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@18",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@21",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+          "kind": "setting",
+          "name": "setAppCacheEnabled",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@31",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setAppCachePath(Ljava/lang/String;)V",
+          "kind": "setting",
+          "name": "setAppCachePath",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@51",
+          "value": "unknown",
+          "values": [
+            "unknown"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "kind": "setting",
+          "name": "setCacheMode",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@55",
+          "value": "-1",
+          "values": [
+            "-1"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "kind": "setting",
+          "name": "setSavePassword",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@58",
+          "value": "false",
+          "values": [
+            "false"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->InitWebView()V@7",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@18",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setAppCachePath(Ljava/lang/String;)V",
+          "kind": "setting",
+          "name": "setAppCachePath",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@39",
+          "value": "unknown",
+          "values": [
+            "unknown"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setAllowFileAccess(Z)V",
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@42",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setAppCacheEnabled(Z)V",
+          "kind": "setting",
+          "name": "setAppCacheEnabled",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@45",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+          "kind": "setting",
+          "name": "setCacheMode",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@49",
+          "value": "-1",
+          "values": [
+            "-1"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setSavePassword(Z)V",
+          "kind": "setting",
+          "name": "setSavePassword",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@52",
+          "value": "false",
+          "values": [
+            "false"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->InitWebView()V@7",
+          "value": "true",
+          "values": [
+            "true"
+          ],
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/control/APMidasPayHelper;->h5Init(Landroid/app/Activity;Landroid/webkit/WebView;Lcom/tencent/smtt/sdk/WebView;)V@120",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/control/APMidasPayHelper;->h5Init(Landroid/app/Activity;Landroid/webkit/WebView;Lcom/tencent/smtt/sdk/WebView;)V@90",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebProtocol;->H5CallBack(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V@105",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebProtocol;->H5CallBack(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V@105",
+          "webview": {
+            "id": "union:b3f17931-3eda-3f40-92dd-d1ed96cac085",
+            "type": "com.tencent.smtt.sdk.WebView"
+          },
+          "webview_alternatives": [
+            {
+              "id": "constructor_parameter",
+              "type": "com.tencent.smtt.sdk.WebView"
+            },
+            {
+              "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+              "type": "com.tencent.smtt.sdk.WebView"
+            }
+          ]
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebProtocol;->H5CallBack(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V@80",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebProtocol;->H5CallBack(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V@80",
+          "webview": {
+            "id": "union:abeb77da-d27e-3100-a5c7-5529471d8e83",
+            "type": "android.webkit.WebView"
+          },
+          "webview_alternatives": [
+            {
+              "id": "constructor_parameter",
+              "type": "android.webkit.WebView"
+            },
+            {
+              "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+              "type": "android.webkit.WebView"
+            }
+          ]
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView$2;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z@69",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APWebView;->loadUrl(Ljava/lang/String;)V@2",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "android.webkit.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView$2;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z@69",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/midas/jsbridge/APX5WebView;->loadUrl(Ljava/lang/String;)V@2",
+          "webview": {
+            "id": "activity:com.tencent.midas.jsbridge.APWebJSBridgeActivity/view:Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        },
+        {
+          "activity": "com.tencent.midas.jsbridge.APWebJSBridgeActivity",
+          "api": "Lcom/tencent/smtt/sdk/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadDataWithBaseURL",
+          "site": "Lcom/tencent/smtt/sdk/WebView;->showDebugView(Ljava/lang/String;)Z@122",
+          "webview": {
+            "id": "constructor_parameter",
+            "type": "com.tencent.smtt.sdk.WebView"
+          }
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity": {
+      "before_count": 292,
+      "after_count": 293,
+      "added": [
+        {
+          "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity;->applyTheme()V@87",
+          "webview": {
+            "id": "union:a829a4ce-eed0-3051-bce5-e196b59e89ab",
+            "type": "unknown"
+          },
+          "webview_alternatives": [
+            {
+              "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+              "type": "com.tencent.news.webview.BaseWebView"
+            },
+            {
+              "id": "activity:com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity/view:2131303140",
+              "type": "com.tencent.news.webview.BaseWebView"
+            },
+            {
+              "id": "activity:com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity/view:2131302026",
+              "type": "com.tencent.news.video.auth.webview.TencentVideoWebView"
+            }
+          ]
+        }
+      ],
+      "removed": []
+    },
+    "com.tencent.news.webview.TencentVideoWebActivity": {
+      "before_count": 289,
+      "after_count": 290,
+      "added": [
+        {
+          "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+          "api": "Lcom/tencent/news/webview/BaseWebView;->loadUrl(Ljava/lang/String;)V",
+          "kind": "webview_operation",
+          "name": "loadUrl",
+          "receiver_condition": "non_null",
+          "site": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity;->applyTheme()V@87",
+          "webview": {
+            "id": "union:d3001607-1366-393d-aa4f-7f25b78b7fdd",
+            "type": "unknown"
+          },
+          "webview_alternatives": [
+            {
+              "id": "Lcom/tencent/mobileqq/qfix/redirect/IPatchRedirector;->redirect(SLjava/lang/Object;)Ljava/lang/Object;",
+              "type": "com.tencent.news.webview.BaseWebView"
+            },
+            {
+              "id": "activity:com.tencent.news.webview.TencentVideoWebActivity/view:2131303140",
+              "type": "com.tencent.news.webview.BaseWebView"
+            },
+            {
+              "id": "activity:com.tencent.news.webview.TencentVideoWebActivity/view:2131302026",
+              "type": "com.tencent.news.video.auth.webview.TencentVideoWebView"
+            }
+          ]
+        }
+      ],
+      "removed": []
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "scope": "AdCore entry chains for AdMosaicXiJingPageActivity, AdLandingPageActivity, and AdBonusPageActivity",
+  "app_version": "7.9.50",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "validator": "GPT-5.6 Sol",
+  "status": "source_and_dex_verified_with_one_unsupported_host_binding",
+  "holdout_used": false,
+  "reuses": "docs/validation/news/adcore-wrapper-factory.json",
+  "hosts": [
+    {
+      "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+      "verdict": "source_confirmed_system_webview",
+      "entry": "Lcom/tencent/news/tad/business/ui/activity/AdMosaicXiJingPageActivity;->ˈᵎ()V",
+      "provider_allocation": "Lcom/tencent/news/tad/business/ui/mosaic/a;-><init>(Landroid/content/Context;Lcom/tencent/news/tad/common/data/AdOrder;)V",
+      "provider_field": "Lcom/tencent/news/tad/business/ui/activity/AdMosaicXiJingPageActivity;->ʼˉ:Lcom/tencent/news/tad/business/ui/mosaic/a;",
+      "provider_transfer": "provider is constructor parameter 3 of Lcom/tencent/news/tad/business/ui/activity/AdMosaicXiJingPageActivity$b;-><init>(Lcom/tencent/news/tad/business/ui/activity/AdMosaicXiJingPageActivity;Landroid/content/Context;Lcom/tencent/ams/dynamicwidget/data/AdInfo;Lcom/tencent/ams/dsdk/event/DKMethodHandler;Lcom/tencent/ams/dsdk/core/DKCustomAbilityProvider;Lcom/tencent/ams/dynamicwidget/d$a;)V and is forwarded to XJPageView",
+      "actual_registered_callback": {
+        "install": "Lcom/tencent/ams/dsdk/view/webview/DKMosaicWebViewComponentImpl;->setJSEngine(Lcom/tencent/ams/mosaic/jsengine/JSEngine;)V passes a new DKMosaicWebViewComponentImpl$12 to DynamicUtils.runOnUiThread",
+        "callback": "Lcom/tencent/ams/dsdk/view/webview/DKMosaicWebViewComponentImpl$12;->run()V",
+        "outer_field": "Lcom/tencent/ams/dsdk/view/webview/DKMosaicWebViewComponentImpl$12;->this$0:Lcom/tencent/ams/dsdk/view/webview/DKMosaicWebViewComponentImpl;",
+        "target": "Lcom/tencent/ams/dsdk/view/webview/DKMosaicWebViewComponentImpl;->initWebView(Landroid/content/Context;)V",
+        "synchronous_alternative": "Lcom/tencent/ams/dsdk/view/webview/DKMosaicWebViewComponentImpl;->getView()Landroid/view/View; directly calls initWebView on main thread when mDKWebView is null"
+      },
+      "factory": "initWebView obtains mMosaicEngine.getCustomAbilityProvider() and calls Lcom/tencent/ams/dsdk/core/DKCustomAbilityProvider;->getDKWebView(Landroid/content/Context;)Lcom/tencent/ams/dsdk/view/webview/DKWebView;",
+      "concrete_factory": "Lcom/tencent/news/tad/business/ui/mosaic/a;->getDKWebView(Landroid/content/Context;)Lcom/tencent/ams/dsdk/view/webview/DKWebView;",
+      "return": "normal Activity-context branch returns new Lcom/tencent/news/tad/business/ui/mosaic/e;-><init>(Landroid/content/Context;)V and stores it in DKMosaicWebViewComponentImpl.mDKWebView",
+      "native_webview_field": "Lcom/tencent/news/tad/business/ui/mosaic/e;->ˈˈ:Lcom/tencent/news/tad/business/ui/landing/AdWebView;",
+      "native_allocation": "mosaic.e constructor creates its inner AdWebView subclass, stores it in field ˈˈ, and invokes e.ʽ(AdWebView,Context)",
+      "view_return": "Lcom/tencent/news/tad/business/ui/mosaic/e;->getDKWebView()Landroid/view/View; returns the same field ˈˈ; DKMosaicWebViewComponentImpl.getView returns that result",
+      "client_registration": "Lcom/tencent/news/tad/business/ui/mosaic/e;->ʾ(AdWebView,AdMosaicXiJingPageActivity)V installs concrete mosaic.d via setWebChromeClient and mosaic.f via setWebViewClient on that exact AdWebView",
+      "branch_note": "This host's source-confirmed branch is a platform AdWebView. It is not the reflective X5 AdWebViewWrapper branch."
+    },
+    {
+      "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+      "verdict": "source_confirmed_system_wrapper_with_runtime_x5_unknown",
+      "actual_registered_callback": {
+        "install": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->onCreate(Landroid/os/Bundle;)V invokes Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z with new AdLandingPageWrapper$2",
+        "callback": "Lcom/tencent/ads/landing/AdLandingPageWrapper$2;->run()V",
+        "target": "run -> access$200(wrapper) -> Lcom/tencent/ads/landing/AdLandingPageWrapper;->delayLoad()V"
+      },
+      "listener_field": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->mAdLandingPageListener:Lcom/tencent/ads/landing/AdLandingPageWrapper$AdLandingPageListener;",
+      "factory_call": "Lcom/tencent/ads/landing/AdLandingPageWrapper$AdLandingPageListener;->createAdPage(Landroid/content/Context;Lcom/tencent/ams/adcore/view/AdCorePageListener;ZZLcom/tencent/ads/view/AdServiceHandler;)Lcom/tencent/ams/adcore/view/AdCorePage;",
+      "concrete_override": "Lcom/tencent/ads/landing/AdLandingPageActivity$1;->createAdPage(Landroid/content/Context;Lcom/tencent/ams/adcore/view/AdCorePageListener;ZZLcom/tencent/ads/view/AdServiceHandler;)Lcom/tencent/ams/adcore/view/AdCorePage;",
+      "return_field": "Lcom/tencent/ads/landing/AdLandingPageWrapper;->mAdPage:Lcom/tencent/ams/adcore/view/AdCorePage;",
+      "ordered_consumers": ["Lcom/tencent/ams/adcore/view/AdCorePage;->attachToCurrentActivity()V", "Lcom/tencent/ams/adcore/view/AdCorePage;->loadWebView(Ljava/lang/String;)V"],
+      "wrapper_factory": ["Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;->create(Landroid/content/Context;Z)Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;", "Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;->create(Landroid/content/Context;ZI)Lcom/tencent/ams/adcore/webview/AdWebViewWrapper;"],
+      "system_native_field": "Lcom/tencent/ams/adwebview/adapter/view/AdSysWebViewWrapperImpl;->a:Landroid/webkit/WebView;",
+      "system_native_type": "Lcom/tencent/ams/adwebview/adapter/view/AdWebView;",
+      "x5_status": "AppWebViewWrapperImpl and AppJsWebChromeClient are absent from APK DEX; X5 is runtime-reflective and must remain unknown, never synthesized as a local capability."
+    },
+    {
+      "activity": "com.tencent.ams.adcore.gesture.bonus.AdBonusPageActivity",
+      "verdict": "easteregg_webview_host_binding_not_source_proven",
+      "observed_source": "BaseAdEasterEggActivity.onCreate calls virtual createContentView(this); AdBonusPageActivity.createContentView returns new AdBonusPageView. Its onCreate initializes AdBonusPagePlayer, registers AdBonusPagePlayerController in PlayerEventObserver, and starts video playback.",
+      "missing_required_edge": "No reached call in this Activity/base class constructs InteractiveEastEggController or EasterEggWebView, calls bind/bindWebview, or attaches that WebView to the Activity.",
+      "manager_event": "AdDrawGestureManager.dispatchBonusPageEvent(Activity,...) reports bonus page events but does not by itself transfer the originating EasterEggWebView into this Activity.",
+      "conclusion": "Do not repair this host by inheriting the AdGyros EasterEgg group or by callback construction. Keep its 17 EasterEgg facts pending/unsupported unless a concrete cross-Activity UI ownership transfer is found."
+    }
+  ],
+  "general_rule": {
+    "provider_factory": "propagate an exact provider object through constructor field/engine storage; execute getDKWebView only from a reached synchronous call or an actually registered callback; carry callback return into the exact mDKWebView field; call getDKWebView on that same returned provider object to recover the native View",
+    "non_view_wrapper": "a wrapper/interface return is not itself a WebView; require a getter or native field relation proving the exact underlying WebView receiving settings/clients",
+    "callback_boundary": "construction of a Runnable/listener/provider does not activate it. Require Handler.post, DynamicUtils.runOnUiThread, another recognized registration/dispatch pair, or a reached direct call.",
+    "branch_isolation": "separate system and X5 wrapper objects; do not merge by common interface or requested mode; absent reflective X5 classes remain unknown"
+  },
+  "synthetic_regressions": {
+    "positive": [
+      "Provider P is passed into engine E; installed callback C captures E; dispatcher runs C; C calls E.init; E calls P.factory; returned wrapper W is stored; W.getView returns W.native; settings/client on W.native must be attributed to host.",
+      "Handler.post(R) where R.run calls listener factory, stores returned non-View page, and page.load creates wrapper: follow exact return and native getter chain."
+    ],
+    "negative": [
+      "Construct provider/callback but never install or dispatch it: emit no factory-derived WebView facts.",
+      "Register callback C on E1 but dispatch E2: do not call E1 provider.",
+      "System wrapper and X5 wrapper share an interface: facts from one branch must not bind to the other instance.",
+      "Reflective X5 class is absent: do not invent its constructor, native field, settings, or client members.",
+      "Activity reports manager events but never receives/attaches the manager's WebView: do not transfer another Activity's WebView facts."
+    ]
+  },
+  "evidence": ["docs/validation/news/adcore-wrapper-factory.json", "AdMosaicXiJingPageActivity.java:940-948", "mosaic/a.java:44-55", "mosaic/e.java:91-110,303-345", "DKMosaicWebViewComponentImpl.java:73-115,230-250,335-350", "AdLandingPageWrapper.java:264-281,588-617", "AdBonusPageActivity.java:55-130", "BaseAdEasterEggActivity.java:209-221", "test/runs/symbols/news.jsonl"]
+}

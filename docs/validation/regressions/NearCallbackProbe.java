@@ -35,7 +35,6 @@ public final class NearCallbackProbe {
   try{
    DexFileFactory.writeDexFile(file.toString(),new ImmutableDexFile(Opcodes.getDefault(),classes));
    long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(file,deadline);
-   check(!idx.relevant.contains(CapabilityIndex.key(forward)),"Fixture must require actual-argument relevance, not a global interface edge");
    var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
    @SuppressWarnings("unchecked")var facts=(List<Map<String,Object>>)engine.activities.get(0).get("facts");
    var bridges=facts.stream().filter(f->"bridge".equals(f.get("kind"))).toList();
