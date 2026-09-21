@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 /** Supervisor enforces a wall-clock deadline even if a library fails to cooperate. */
 public class Main {
     static final Gson JSON=new GsonBuilder().disableHtmlEscaping().create();
+    static final Gson COMPACT_JSON=new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
     static long reportWriteNanos,reportWrites;
     public static void main(String[] args) throws Exception {
         if(Arrays.asList(args).contains("--legacy")||Arrays.asList(args).contains("--read-apk-only")){LegacyMain.main(args);return;}
@@ -53,9 +54,10 @@ public class Main {
         if(roots.isEmpty())idx.classes.keySet().stream().filter(idx::activity).sorted().forEach(roots::add);
         // Direct seed hosts first; remaining hosts are still examined, not silently excluded.
         roots.sort(Comparator.comparingInt((String a)->idx.hierarchyMethods(a).stream().anyMatch(m->idx.seeds.contains(CapabilityIndex.key(m)))?0:1).thenComparing(a->a));
-        long[] checkpoint={System.nanoTime()};int processed=0;
+        long[] checkpoint={System.nanoTime()};
         engine.checkpoint=()->{
             long now=System.nanoTime();if(now-checkpoint[0]<10_000_000_000L)return;
+            updateCoverage(engine,roots,metrics);
             metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);metrics.put("elapsed_seconds",(now-start)/1e9);
             metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
             try{write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));}catch(IOException ex){throw new UncheckedIOException(ex);}
@@ -64,19 +66,49 @@ public class Main {
         metrics.put("target_seconds",target);metrics.put("worker_budget_seconds",hard);
         metrics.put("analysis_strategy","dex_index_parameterized_summaries");
         write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
+        metrics.put("scheduling","initial_pass_then_resumable_round_robin");
+        metrics.put("initial_slice_max_contexts",8);metrics.put("initial_slice_max_millis",50);
+        metrics.put("deep_slice_max_contexts",100);metrics.put("deep_slice_max_millis",50);
+        metrics.put("scheduling_stage","initial_pass");
+        ArrayDeque<CapabilityEngine.ActivityState> pending=new ArrayDeque<>();
+        int attempted=0;
         for(String activity:roots){
-            if(System.nanoTime()>deadline)break;
-            engine.analyzeActivity(activity);processed++;metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);
-            if(System.nanoTime()-checkpoint[0]>10_000_000_000L){engine.checkpoint.run();System.out.println("Progress: "+processed+"/"+roots.size()+" activities="+engine.activities.size()+" decoded="+engine.flow.decoded);}
+            if(System.nanoTime()>=deadline)break;
+            long share=Math.max(1_000_000L,(Math.min(deadline,start+target*1_000_000_000L)-System.nanoTime())/Math.max(1,roots.size()-attempted));
+            var state=engine.beginActivity(activity);engine.advanceActivity(state,Math.min(50_000_000L,share),8);state.initialPass=true;attempted++;
+            if(!state.done)pending.add(state);
         }
-        metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("processed_activities",processed);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);
+        metrics.put("initial_pass_seconds",(System.nanoTime()-start)/1e9);
+        metrics.put("scheduling_stage","deep_analysis");updateCoverage(engine,roots,metrics);
+        write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
+        while(!pending.isEmpty()&&System.nanoTime()<deadline){
+            var state=pending.remove();engine.advanceActivity(state,50_000_000L,100);
+            if(!state.done)pending.add(state);
+        }
+        metrics.put("scheduling_stage",pending.isEmpty()&&attempted==roots.size()?"finished":"deadline");
+        updateCoverage(engine,roots,metrics);
+        metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);
         metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
-        String status=processed==roots.size()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
+        String status=pending.isEmpty()&&attempted==roots.size()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
         write(out.resolve("capabilities.json"),engine.report(hash,status,metrics));
+    }
+    static void updateCoverage(CapabilityEngine engine,List<String> roots,Map<String,Object> metrics){
+        metrics.put("started_activities",engine.states.size());
+        metrics.put("initial_pass_activities",engine.states.values().stream().filter(s->s.initialPass).count());
+        metrics.put("processed_activities",engine.states.values().stream().filter(s->s.done).count());
+        metrics.put("traversal_finished_activities",engine.states.values().stream().filter(s->s.done&&!s.limited).count());
+        metrics.put("budget_exhausted_activities",engine.states.values().stream().filter(s->s.done&&s.limited).count());
+        metrics.put("pending_activities",engine.states.values().stream().filter(s->!s.done).count());
+        metrics.put("not_started_activities",roots.size()-engine.states.size());
     }
     static void write(Path path,Object value)throws IOException{
         long start=System.nanoTime();
-        Path temp=path.resolveSibling(path.getFileName()+".tmp");try(Writer w=Files.newBufferedWriter(temp)){JSON.toJson(value,w);}
+        boolean compactOutput=path.getFileName().toString().equals("capabilities.compact.json");
+        Path temp=path.resolveSibling(path.getFileName()+".tmp");
+        try(Writer w=Files.newBufferedWriter(temp)){
+            (compactOutput?COMPACT_JSON:JSON).toJson(value,w);
+            if(compactOutput)w.write("\n");
+        }
         try{Files.move(temp,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}catch(AtomicMoveNotSupportedException e){Files.move(temp,path,StandardCopyOption.REPLACE_EXISTING);}
         if(path.getFileName().toString().equals("capabilities.json")){
             JsonObject compact=CompactReport.project(JSON.toJsonTree(value).getAsJsonObject());

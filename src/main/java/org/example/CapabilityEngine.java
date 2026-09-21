@@ -50,19 +50,87 @@ final class CapabilityEngine {
         final Set<String> gaps=new LinkedHashSet<>();
         Host(String a){activity=a;}
     }
+    final Map<String,ActivityState> states=new LinkedHashMap<>();
+    final class ActivityState {
+        Host host;
+        final String activity;
+        int phase, jobs, slices;
+        long nanos;
+        boolean done, limited, initialPass;
+        Map<String,Object> completedReport;
+        Map<String,Map<String,Object>> previousFacts=new TreeMap<>();
+        ActivityState(String activity){this.activity=activity;this.host=new Host(activity);}
+    }
+    ActivityState beginActivity(String activity){
+        ActivityState existing=states.get(activity);if(existing!=null)return existing;
+        ActivityState state=new ActivityState(activity);states.put(activity,state);
+        long start=System.nanoTime();
+        seed(state.host,activity,V.of("host",activity,"activity:"+activity),List.of(activity),false);
+        state.nanos+=System.nanoTime()-start;return state;
+    }
+    // A task is atomic. Slice deadlines are cooperative, checked between method contexts.
+    void advanceActivity(ActivityState state,long budgetNanos,int maxJobs){
+        if(state.done||System.nanoTime()>=deadline)return;
+        long start=System.nanoTime(),stop=Math.min(deadline,start+budgetNanos);int processed=0;
+        Host h=state.host;currentHost=h;state.slices++;
+        try {
+            while(System.nanoTime()<deadline){
+                if(processed>=maxJobs||processed>0&&System.nanoTime()>=stop)break;
+                boolean capped=h.visited.size()>12000;
+                if(capped){h.gaps.add("host_context_budget");state.limited=true;}
+                if(capped||h.queue.isEmpty()&&!replayXmlConsumers(h)){
+                    if(state.phase==1){finishActivity(state);break;}
+                    state.previousFacts.putAll(h.facts);state.phase=1;
+                    h.queue.clear();h.pending.clear();h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();h.xmlConsumers.clear();h.xmlReplays.clear();
+                    seed(h,state.activity,V.of("host",state.activity,"activity:"+state.activity),List.of(state.activity),false);
+                    continue;
+                }
+                checkpoint.run();processJob(h);processed++;state.jobs++;
+            }
+            if(!state.done&&System.nanoTime()>=deadline)h.gaps.add("global_deadline");
+        }finally{state.nanos+=System.nanoTime()-start;currentHost=null;}
+    }
+    void finishActivity(ActivityState state){
+        Host h=state.host;state.done=true;
+        if(!state.limited)state.previousFacts.clear();
+        state.completedReport=stateReport(state);
+        if(!((List<?>)state.completedReport.get("facts")).isEmpty())activities.add(state.completedReport);
+        if(!h.gaps.isEmpty()){
+            Map<String,Long> limits=new TreeMap<>();
+            for(String gap:h.gaps)if(gap.contains("budget")||gap.contains("deadline")||gap.startsWith("decode_failed:")||gap.equals("resolve_depth"))limits.merge(gap.split(":",2)[0],1L,Long::sum);
+            if(!limits.isEmpty())diagnostics.add(state.activity+":analysis_limits:"+limits);
+            diagnostics.add(state.activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
+        }
+        // Completed receivers no longer need their full heap/queues retained in memory.
+        state.previousFacts.clear();state.host=null;
+    }
+    Map<String,Object> stateReport(ActivityState state){
+        if(state.completedReport!=null)return state.completedReport;
+        Host h=state.host;
+        if(state.previousFacts.isEmpty())return hostReport(h);
+        Map<String,Map<String,Object>> combined=new TreeMap<>();
+        for(var entry:state.previousFacts.entrySet()){
+            Map<String,Object> fact=new LinkedHashMap<>(entry.getValue());fact.put("binding_status","candidate");fact.put("analysis_stage","previous_phase_provisional");combined.put(entry.getKey(),fact);
+        }
+        combined.putAll(h.facts);return hostReport(h,new ArrayList<>(combined.values()));
+    }
+    List<Map<String,Object>> coverage(List<String> roots){
+        List<Map<String,Object>> out=new ArrayList<>();
+        for(String activity:roots){ActivityState s=states.get(activity);Map<String,Object> row=new LinkedHashMap<>();row.put("activity",activity);
+            row.put("status",s==null?"not_started":s.done?(s.limited?"budget_exhausted":"traversal_finished"):s.initialPass?"pending_deep_analysis":"initial_analysis");
+            row.put("phase",s==null?0:s.phase+1);row.put("contexts_processed",s==null?0:s.jobs);row.put("pending_contexts",s==null||s.host==null?0:s.host.queue.size());row.put("analysis_seconds",s==null?0:s.nanos/1e9);row.put("slices",s==null?0:s.slices);out.add(row);
+        }return out;
+    }
     void analyzeActivity(String activity){
-        Host h=new Host(activity);currentHost=h;V self=V.of("host",activity,"activity:"+activity);
-        seed(h,activity,self,List.of(activity),false);
-        for(int phase=0;phase<2;phase++){
-            if(phase==1){h.queue.clear();h.pending.clear();h.facts.clear();h.visited.clear();h.components.clear();h.materialized.clear();h.xmlConsumers.clear();h.xmlReplays.clear();seed(h,activity,self,List.of(activity),false);}
-            while(!h.queue.isEmpty()||replayXmlConsumers(h)){
-                if(System.nanoTime()>deadline){h.gaps.add("global_deadline");break;}
-                if(h.visited.size()>12000){h.gaps.add("host_context_budget");break;}
-                checkpoint.run();
+        ActivityState state=beginActivity(activity);
+        while(!state.done&&System.nanoTime()<deadline)advanceActivity(state,Long.MAX_VALUE/4,Integer.MAX_VALUE);
+        if(!state.done&&!((List<?>)stateReport(state).get("facts")).isEmpty())activities.add(stateReport(state));
+    }
+    void processJob(Host h){
                 Job job=h.queue.remove();String id=CapabilityIndex.key(job.method);
-                String context=id+"|"+job.args;h.pending.remove(context);if(!h.visited.add(context))continue;
+                String context=id+"|"+job.args;h.pending.remove(context);if(!h.visited.add(context))return;
                 Summary summary;
-                try{summary=flow.summary(job.method,v->guardValue(v,job,h,0));}catch(RuntimeException ex){h.gaps.add("decode_failed:"+id+":"+ex.getClass().getSimpleName());continue;}
+                try{summary=flow.summary(job.method,v->guardValue(v,job,h,0));}catch(RuntimeException ex){h.gaps.add("decode_failed:"+id+":"+ex.getClass().getSimpleName());return;}
                 if(summary.truncated())h.gaps.add("flow_budget:"+id);
                 prepareLayouts(summary,job,h,0,new HashSet<>());
                 for(Write w:summary.writes()){
@@ -135,19 +203,6 @@ final class CapabilityEngine {
 
                     if(name.equals("<init>")&&!args.isEmpty()&&idx.component(owner)&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
                 }
-            }
-        }
-        if(!h.facts.isEmpty()){
-            activities.add(hostReport(h));
-        }
-        currentHost=null;
-        if(!h.gaps.isEmpty()){
-            Map<String,Long> limits=new TreeMap<>();
-            for(String gap:h.gaps)if(gap.contains("budget")||gap.contains("deadline")||gap.startsWith("decode_failed:")||gap.equals("resolve_depth"))
-                limits.merge(gap.split(":",2)[0],1L,Long::sum);
-            if(!limits.isEmpty())diagnostics.add(activity+":analysis_limits:"+limits);
-            diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
-        }
     }
     void dispatchRegistered(Host h,Job job,Call call,List<V> args,List<AsyncRegistrations.Entry> registrations){
         for(var registration:registrations){
@@ -1127,10 +1182,11 @@ final class CapabilityEngine {
         }
         callbackCache.put(type,result);return result;
     }
-    Map<String,Object> hostReport(Host h){
+    Map<String,Object> hostReport(Host h){return hostReport(h,new ArrayList<>(h.facts.values()));}
+    Map<String,Object> hostReport(Host h,List<Map<String,Object>> facts){
         Map<String,Object> report=new LinkedHashMap<>();report.put("activity",h.activity);report.put("declared",apk.activities.contains(h.activity));
         if(!h.serviceEvidence.isEmpty())report.put("service_bindings",new ArrayList<>(h.serviceEvidence.values()));
-        List<Map<String,Object>> facts=new ArrayList<>(h.facts.values());report.put("facts",facts);
+        report.put("facts",facts);
         Map<Object,Map<String,Object>> views=new LinkedHashMap<>();
         for(int i=0;i<facts.size();i++){
             Map<String,Object> fact=facts.get(i);Object view=fact.get("webview");
@@ -1147,6 +1203,6 @@ final class CapabilityEngine {
             if(s==null){unbound.add(Map.of("method",id,"reason","not_expanded"));continue;}
             for(Call call:s.calls())if(kind(call.method())!=null&&!boundSites.contains(id+"@"+call.offset()))unbound.add(Map.of("site",id+"@"+call.offset(),"api",call.method(),"reason","no_activity_owner"));
         }
-        Map<String,Object> out=new LinkedHashMap<>();out.put("schema_version",1);out.put("package",apk.packageName);out.put("version",apk.version);out.put("apk_sha256",hash);out.put("status",status);List<Map<String,Object>> snapshots=new ArrayList<>(activities);if(currentHost!=null&&!currentHost.facts.isEmpty())snapshots.add(hostReport(currentHost));out.put("activities",snapshots);out.put("unattributed",unbound);out.put("diagnostics",diagnostics);out.put("index_diagnostics",idx.diagnostics);out.put("manifest_diagnostics",apk.errors);out.put("metrics",metrics);out.put("semantics","Static binding evidence; explicit does not prove runtime execution. Candidate bindings are retained. Settings are observed operations, not final runtime state.");return out;
+        Map<String,Object> out=new LinkedHashMap<>();out.put("schema_version",1);out.put("package",apk.packageName);out.put("version",apk.version);out.put("apk_sha256",hash);out.put("status",status);List<Map<String,Object>> snapshots=new ArrayList<>();for(ActivityState state:states.values()){Map<String,Object> snapshot=stateReport(state);if(!((List<?>)snapshot.get("facts")).isEmpty())snapshots.add(snapshot);}out.put("activities",snapshots);out.put("activity_coverage",coverage(apk.activities.isEmpty()?new ArrayList<>(states.keySet()):new ArrayList<>(apk.activities)));out.put("unattributed",unbound);out.put("diagnostics",diagnostics);out.put("index_diagnostics",idx.diagnostics);out.put("manifest_diagnostics",apk.errors);out.put("metrics",metrics);out.put("semantics","Static binding evidence; explicit does not prove runtime execution. Candidate bindings are retained. Settings are observed operations, not final runtime state.");return out;
     }
 }

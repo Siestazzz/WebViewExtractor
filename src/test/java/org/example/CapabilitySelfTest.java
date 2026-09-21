@@ -25,6 +25,7 @@ public final class CapabilitySelfTest {
  static Instruction end(){return new ImmutableInstruction10x(Opcode.RETURN_VOID);}
  static void check(boolean ok,String text){if(!ok)throw new AssertionError(text);}
  public static void main(String[] args)throws Exception {
+  SchedulerIsolationFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction11n(Opcode.CONST_4,1,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",0,1),
@@ -50,6 +51,7 @@ public final class CapabilitySelfTest {
    var apk=new ApkInventory();apk.targetSdk=30;apk.activities.add("test.AppActivity");
    var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");
    check(engine.activities.size()==1,"Activity missing");
+   ActivityResumeFixture.run(idx,apk,engine.activities.get(0));
    check(engine.staticConstant("test.Bridge","TAG").literal().equals("instanceTag"),"Reflective instance TAG constructor constant missing");
    @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
    Map<String,Object> bf=facts.stream().filter(f->f.get("kind").equals("bridge")).findFirst().orElseThrow();
