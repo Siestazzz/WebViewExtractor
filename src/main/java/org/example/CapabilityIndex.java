@@ -159,7 +159,17 @@ final class CapabilityIndex {
                         if(!base.equals(owner)&&subtype(owner,base))for(String caller:callers.getOrDefault(key(declaration),Set.of()))if(relevant.add(caller))queue.add(caller);
                     }
                 boolean callback=!aroundClosure(owner)&&seedDistance.getOrDefault(callee,99)<=2&&!cm.getName().startsWith("<")&&(cm.getAccessFlags()&8)==0&&!component(owner)&&!activity(owner)&&byShape.getOrDefault(shape(cm),List.of()).stream().anyMatch(declaration->declaration.getImplementation()==null&&subtype(owner,cls(declaration.getDefiningClass())));
-                if(callback)callbackEntries.computeIfAbsent(owner,k->new HashSet<>()).add(key(cm));
+                if(callback){
+                    callbackEntries.computeIfAbsent(owner,k->new HashSet<>()).add(key(cm));
+                    // Relevance of a concrete callback/initializer also reaches callers of
+                    // its application contract. This does not execute that implementation:
+                    // forward dispatch must still obtain the actual registered/stored object.
+                    for(Method contract:byShape.getOrDefault(shape(cm),List.of())){
+                        String base=cls(contract.getDefiningClass());
+                        if(contract.getImplementation()!=null||base.startsWith("java.")||base.startsWith("android.")||base.startsWith("androidx.")||base.startsWith("kotlin.")||!subtype(owner,base))continue;
+                        for(String caller:callers.getOrDefault(key(contract),Set.of()))if(relevant.add(caller))queue.add(caller);
+                    }
+                }
                 if(callback||component(owner)||scheduled(owner)&&(cm.getName().equals("run")||cm.getName().equals("call")))for(Method init:byClass.getOrDefault(owner,List.of()))if(init.getName().equals("<init>")&&relevant.add(key(init)))queue.add(key(init));
             }
         }

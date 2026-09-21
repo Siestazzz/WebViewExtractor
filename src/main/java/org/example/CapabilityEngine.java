@@ -9,6 +9,7 @@ import static org.example.DexFlow.*;
 final class CapabilityEngine {
     final CapabilityIndex idx;
     final DexFlow flow;
+    final AsyncRegistrations async;
     final ApkInventory apk;
     final long deadline;
     final List<Map<String,Object>> activities=new ArrayList<>();
@@ -20,8 +21,9 @@ final class CapabilityEngine {
     final Map<String,Boolean> objectFieldSetters=new HashMap<>(), receiverRelevance=new HashMap<>(), callbackCarrierTypes=new HashMap<>();
     Runnable checkpoint=()->{};
     Host currentHost;
+    int activeEvaluations, evaluationSteps, evaluationStepLimit=12000;
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
-    CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=new DexFlow(idx,deadline);}
+    CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=new DexFlow(idx,deadline);async=new AsyncRegistrations(idx);}
     record Job(Method method,List<V> args,List<String> path,boolean candidate){}
     record DeferredField(String field,V receiver){}
     record XmlConsumer(Job job,Set<V> observed){}
@@ -70,6 +72,7 @@ final class CapabilityEngine {
                 for(Call call:summary.calls()){
                     Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
+                    List<AsyncRegistrations.Entry> registrations=async.entries(call.method());
                     boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
                     boolean fieldSetter=target!=null&&objectFieldSetter(target);
                     boolean registryWrite=target!=null&&(idx.keyedRegistryWrites.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.keyedRegistryWrites.contains(CapabilityIndex.key(m))));
@@ -96,9 +99,10 @@ final class CapabilityEngine {
                     boolean carriesJoinPoint=false;
                     if(target!=null&&target.getParameterTypes().stream().anyMatch(t->idx.joinPoint(CapabilityIndex.cls(t.toString()))))
                         for(V arg:call.args())if(alternatives(eval(arg,job,h,0,new HashSet<>())).stream().anyMatch(x->x.kind().equals("aspectj_joinpoint")||h.linkedClosures.containsKey(x.id()))){carriesJoinPoint=true;break;}
-                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!argumentRelevant&&!closureCall&&!carriesJoinPoint)continue;
+                    if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&!receiverRelevant&&!argumentRelevant&&!closureCall&&!carriesJoinPoint&&registrations.isEmpty())continue;
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     observeXmlConsumer(h,job,args);
+                    if(!registrations.isEmpty())dispatchRegistered(h,job,call,args,registrations);
                     if(kind!=null){emit(h,job,call,args,kind,summary.branched());followApiOverride(h,job,call,args,summary.branched());continue;}
                     if(idx.closureProceed(call.method())&&!args.isEmpty()){
                         boolean linked=false;
@@ -129,7 +133,7 @@ final class CapabilityEngine {
                         }
                     }
 
-                    if(name.equals("<init>")&&!args.isEmpty()&&(idx.component(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner))&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
+                    if(name.equals("<init>")&&!args.isEmpty()&&idx.component(owner)&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
                 }
             }
         }
@@ -137,7 +141,32 @@ final class CapabilityEngine {
             activities.add(hostReport(h));
         }
         currentHost=null;
-        if(!h.gaps.isEmpty())diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
+        if(!h.gaps.isEmpty()){
+            Map<String,Long> limits=new TreeMap<>();
+            for(String gap:h.gaps)if(gap.contains("budget")||gap.contains("deadline")||gap.startsWith("decode_failed:")||gap.equals("resolve_depth"))
+                limits.merge(gap.split(":",2)[0],1L,Long::sum);
+            if(!limits.isEmpty())diagnostics.add(activity+":analysis_limits:"+limits);
+            diagnostics.add(activity+":"+String.join(",",h.gaps.stream().distinct().limit(20).toList()));
+        }
+    }
+    void dispatchRegistered(Host h,Job job,Call call,List<V> args,List<AsyncRegistrations.Entry> registrations){
+        for(var registration:registrations){
+            if(registration.argument()>=args.size()){h.gaps.add("async_registration_arguments:"+call.method());continue;}
+            for(V callback:alternatives(args.get(registration.argument()))){
+                if(callback.kind().equals("literal")&&"0".equals(callback.literal()))continue;
+                if(!Set.of("object","new","view","host").contains(callback.kind())||callback.type()==null||!idx.subtype(callback.type(),registration.contract())){
+                    h.gaps.add("async_unresolved_callback:"+call.method());continue;
+                }
+                for(String shape:registration.members()){
+                    Method member=idx.resolve(desc(callback.type())+"->"+shape);
+                    if(member==null||member.getImplementation()==null){h.gaps.add("async_unresolved_member:"+callback.type()+"->"+shape);continue;}
+                    if(!idx.relevant.contains(CapabilityIndex.key(member)))continue;
+                    List<V> bound=new ArrayList<>();bound.add(callback);
+                    for(CharSequence parameter:member.getParameterTypes())bound.add(V.of("unknown",CapabilityIndex.cls(parameter.toString()),"async_callback_parameter"));
+                    enqueue(h,member,bound,extend(job.path,"conditional_async_registration:"+CapabilityIndex.key(job.method)+"@"+call.offset()+":"+call.method()),true);
+                }
+            }
+        }
     }
     void observeXmlConsumer(Host h,Job job,List<V> args){
         Set<V> views=new LinkedHashSet<>();
@@ -247,7 +276,7 @@ final class CapabilityEngine {
         // carry their resource at argument 1; the former is static, the latter has this.
         Long resource=number(args.get(1));
         boolean hasParent=alternatives(args.get(2)).stream().anyMatch(p->!p.kind().equals("unknown")&&!(p.kind().equals("literal")&&"0".equals(p.literal())));
-        Long attach=args.size()>3?number(args.get(3)):hasParent?1L:0L;
+        Long attach=args.size()>3?number(args.get(3)):Long.valueOf(hasParent?1L:0L);
         if(resource!=null&&(!hasParent||Long.valueOf(0).equals(attach))&&apk.layouts(resource.intValue()).stream()
             .flatMap(path->apk.layoutRoots.getOrDefault(path,List.of()).stream()).anyMatch(node->node.type.equals("merge"))){
             h.gaps.add("invalid_merge_inflation:"+resource);return V.of("unknown","android.view.View","invalid_merge_inflation");
@@ -260,7 +289,7 @@ final class CapabilityEngine {
         for(V parent:alternatives(args.get(2))){
             if(parent.kind().equals("literal")&&"0".equals(parent.literal()))continue;
             if(parent.kind().equals("unknown")){h.gaps.add("unresolved_inflate_parent");continue;}
-            Long flag=args.size()>3?number(args.get(3)):1L;
+            Long flag=args.size()>3?number(args.get(3)):Long.valueOf(1L);
             if(flag==null)h.gaps.add("dynamic_inflate_attachment");
             if(staticView||flag==null||flag!=0){mountLayout(parent,args.get(1),h);attached=union(attached,parent);}
         }
@@ -394,7 +423,11 @@ final class CapabilityEngine {
         if(!Set.of("new","object","view").contains(value.kind())||value.type()==null)return false;
         return callbackCarrierTypes.computeIfAbsent(value.type(),type->{
             ClassDef definition=idx.classes.get(type);if(definition==null||idx.component(type))return false;
-            boolean captured=false;for(Field field:definition.getFields())if((field.getAccessFlags()&8)==0&&idx.component(CapabilityIndex.cls(field.getType()))){captured=true;break;}
+            if(idx.scheduled(type))for(String shape:List.of("run()V","call()Ljava/lang/Object;")){
+                Method entry=idx.resolve(desc(type)+"->"+shape);
+                if(entry!=null&&idx.relevant.contains(CapabilityIndex.key(entry)))return true;
+            }
+            boolean captured=false;for(Field field:definition.getFields())if((field.getAccessFlags()&8)==0&&(idx.component(CapabilityIndex.cls(field.getType()))||idx.activity(CapabilityIndex.cls(field.getType())))){captured=true;break;}
             if(!captured)return false;
             for(Method method:idx.hierarchyMethods(type))if(method.getImplementation()!=null&&idx.relevant.contains(CapabilityIndex.key(method))&&!method.getName().startsWith("<"))
                 for(Method contract:idx.byShape.getOrDefault(CapabilityIndex.shape(method),List.of()))
@@ -415,6 +448,13 @@ final class CapabilityEngine {
             List<V> hints=call.args().stream().map(v->dispatchHint(v,nested,h,0)).toList();
             if(hints.stream().flatMap(v->alternatives(v).stream()).noneMatch(this::callbackCarrier))continue;
             List<V> bound=call.args().stream().map(v->eval(v,nested,h,0,new HashSet<>())).toList();
+            for(var registration:async.entries(call.method()))if(registration.argument()<bound.size())
+                for(V callback:alternatives(bound.get(registration.argument())))
+                    if(callback.type()!=null&&idx.subtype(callback.type(),registration.contract()))
+                        for(String member:registration.members()){
+                            Method implementation=idx.resolve(desc(callback.type())+"->"+member);
+                            if(implementation!=null&&idx.relevant.contains(CapabilityIndex.key(implementation)))return true;
+                        }
             Method target=call.isSuper()?resolveSuper(method,call.method()):idx.resolve(call.method());
             if(target==null)continue;
             if(call.isStatic()||call.isDirect()||call.isSuper()){
@@ -581,6 +621,13 @@ final class CapabilityEngine {
         return value;
     }
     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
+        if(activeEvaluations++==0)evaluationSteps=0;
+        try{
+            if(++evaluationSteps>evaluationStepLimit){h.gaps.add("resolve_work_budget:"+CapabilityIndex.key(job.method));return V.of("unknown",v.type(),"resolve_work_budget");}
+            return evalInner(v,job,h,depth,visiting);
+        }finally{activeEvaluations--;}
+    }
+    V evalInner(V v,Job job,Host h,int depth,Set<String> visiting){
         if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return V.of("unknown",v.type(),"global_deadline");}
         if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
         if(v.kind().equals("param")){int i=Integer.parseInt(v.id());if(i>=job.args.size())return V.of("unknown",v.type(),"parameter");V arg=job.args.get(i);return arg.kind().equals("fragment_view")?fragmentView(arg.args().get(0),job,h,depth+1,visiting):refreshBinding(arg,h,0,new HashSet<>());}
@@ -670,7 +717,10 @@ final class CapabilityEngine {
             if(lazyFactory==null&&name.equals("lazy")&&owner(v.id())!=null&&owner(v.id()).startsWith("kotlin.LazyKt")&&!args.isEmpty())return expr("lazy","kotlin.Lazy","lazy:"+args.get(args.size()-1).id(),List.of(args.get(args.size()-1)));
             if(name.equals("getValue")&&idx.lazyType(owner(v.id()))&&!args.isEmpty()){
                 V result=null;for(V lazy:alternatives(args.get(0)))if(lazy.kind().equals("lazy"))for(V initializer:alternatives(lazy.args().get(0)))if(initializer.type()!=null)
-                    for(Method invoke:idx.byClass.getOrDefault(initializer.type(),List.of()))if(invoke.getName().equals("invoke")&&invoke.getParameterTypes().isEmpty()&&invoke.getImplementation()!=null)result=union(result,eval(expr("return",CapabilityIndex.cls(invoke.getReturnType()),CapabilityIndex.key(invoke),List.of(initializer)),job,h,depth+1,new HashSet<>(visiting)));
+                    for(Method invoke:idx.byClass.getOrDefault(initializer.type(),List.of()))if(invoke.getName().equals("invoke")&&invoke.getParameterTypes().isEmpty()&&invoke.getImplementation()!=null){
+                        enqueue(h,invoke,List.of(initializer),extend(job.path,"lazy_getValue:"+v.id()),true);
+                        result=union(result,eval(expr("return",CapabilityIndex.cls(invoke.getReturnType()),CapabilityIndex.key(invoke),List.of(initializer)),job,h,depth+1,new HashSet<>(visiting)));
+                    }
                 if(result!=null)return result;
             }
             if(idx.map(owner(v.id()))&&name.equals("get")&&args.size()==2&&v.id().endsWith("(Ljava/lang/Object;)Ljava/lang/Object;"))return mapLookup(h,args.get(0),args.get(1),v.type());
@@ -959,9 +1009,20 @@ final class CapabilityEngine {
                 b.put("members",members);b.put("resolution","annotated_transport_shared_registry");
                 if(!members.isEmpty())b.put("implementation",owner((String)members.get(0).get("signature")));
                 add(h,b);
+                enqueueRegisteredHandler(h,job,registryKey,handler,args.get(1),site);
             }return;
         }
         add(h,base);
+    }
+    void enqueueRegisteredHandler(Host h,Job job,String registry,V handler,V registrationName,String site){
+        if(handler.type()==null||!Set.of("new","object").contains(handler.kind()))return;
+        for(String shape:idx.registryHandlerShapes.getOrDefault(registry,Set.of())){
+            Method member=idx.resolve(desc(handler.type())+"->"+shape);
+            if(member==null||member.getImplementation()==null||!idx.relevant.contains(CapabilityIndex.key(member)))continue;
+            List<V> args=new ArrayList<>();args.add(handler);
+            for(CharSequence parameter:member.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(parameter.toString()),"message_handler_parameter"));
+            enqueue(h,member,args,extend(job.path,"conditional_registered_message_handler:"+site+":"+registrationName.literal()),true);
+        }
     }
     void reflectEndpoints(Host h,Job job,V bridge,String type,Map<String,Object> base){
         for(Method transport:idx.hierarchyMethods(type)){

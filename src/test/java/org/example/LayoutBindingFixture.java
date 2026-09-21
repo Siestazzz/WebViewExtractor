@@ -132,6 +132,8 @@ final class LayoutBindingFixture {
    check(!engine.lookupView(second,V.literal("number",String.valueOf(id+1)),"android.view.View",job,host).type().equals("test.OtherWebView"),"attach=false polluted parent");
    var another=engine.inflateLayout("Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;",List.of(inflater,V.literal("number",String.valueOf(layout+2)),second,V.literal("number","0")),job,host,"different_site");
    check(!detached.id().equals(another.id()),"Different static inflation sites merged");
+   var dynamic=engine.inflateLayout("Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;",List.of(inflater,V.literal("number",String.valueOf(layout+2)),second,V.of("unknown","boolean","dynamic_attach")),job,host,"dynamic_site");
+   check(host.gaps.contains("dynamic_inflate_attachment")&&alternatives(dynamic).stream().anyMatch(v->v.id().equals(second.id()))&&alternatives(dynamic).stream().anyMatch(v->!v.id().equals(second.id())),"Dynamic attachment must preserve conditional parent/root alternatives without null unboxing");
    check(engine.lookupView(detached,V.literal("number",String.valueOf(id+1)),"android.view.View",job,host).type().equals("test.OtherWebView"),"Detached layout root lost");
   }finally{Files.deleteIfExists(file);}
  }

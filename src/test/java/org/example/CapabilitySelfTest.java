@@ -119,6 +119,13 @@ public final class CapabilitySelfTest {
    FragmentLayoutFixture.run();
    SuperReturnFixture.run();
    CallbackArgumentFixture.run();
+        AsyncRegistrationFixture.run();
+        NearCallbackFixture.run();
+        ContractInitializerFixture.run();
+        LazyInvocationFixture.run();
+        RegisteredMessageFixture.run();
+        ActivityArgumentFixture.run();
+        ResolutionBudgetFixture.run();
    deepEvidenceFixture();
    composedReceiverFixture();
    componentHelperFixture();
@@ -400,8 +407,7 @@ public final class CapabilitySelfTest {
   var init=method(child,"<init>",List.of(),1,1,List.of(end()),false);var entry=method(A,"onCreate",List.of(),1,2,List.of(make(0,child),invoke(Opcode.INVOKE_DIRECT,child,"<init>",List.of(),"V",0),end()),false);
   Path path=Files.createTempFile("wv-callback-entry-",".dex");
   try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(B,"Ljava/lang/Object;"),clazz(parent,"Ljava/lang/Object;",wrong),new ImmutableClassDef(listener,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(declaration)),new ImmutableClassDef(child,1,parent,List.of(listener),null,Set.of(),List.of(),List.of(init,right)))));long deadline=System.nanoTime()+20_000_000_000L;
-   var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");check(!engine.activities.isEmpty(),"Allocated callback entry was lost");
-   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");check(facts.stream().anyMatch(f->"actual-callback".equals(f.get("registration_name"))),"Callback entry capability missing");check(facts.stream().noneMatch(f->"uninvoked-parent".equals(f.get("registration_name"))),"Constructor seeded an uninvoked inherited business method");
+   var idx=new CapabilityIndex();idx.read(path,deadline);var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");check(engine.activities.isEmpty(),"Construction alone executed a callback or inherited business method");
   }finally{Files.deleteIfExists(path);}
  }
 
