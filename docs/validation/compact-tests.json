@@ -1,0 +1,10 @@
+{
+  "projection_test": "PASS",
+  "capability_self_tests": "PASS",
+  "commands": [
+    "./gradlew capabilitySelfTest shadowJar --offline --console=plain",
+    "./gradlew compactReportTest --offline --console=plain"
+  ],
+  "frozen_jar_sha256": "eda7f512d72174c968074ceae4f476169a5a3932ad07b6e3b96ef06690777547",
+  "scope": "format and structural tests; not independent APK capability accuracy validation"
+}

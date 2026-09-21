@@ -78,6 +78,10 @@ public class Main {
         long start=System.nanoTime();
         Path temp=path.resolveSibling(path.getFileName()+".tmp");try(Writer w=Files.newBufferedWriter(temp)){JSON.toJson(value,w);}
         try{Files.move(temp,path,StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);}catch(AtomicMoveNotSupportedException e){Files.move(temp,path,StandardCopyOption.REPLACE_EXISTING);}
+        if(path.getFileName().toString().equals("capabilities.json")){
+            JsonObject compact=CompactReport.project(JSON.toJsonTree(value).getAsJsonObject());
+            write(path.resolveSibling("capabilities.compact.json"),compact);
+        }
         reportWriteNanos+=System.nanoTime()-start;reportWrites++;
     }
     static Map<String,String> options(String[] args){

@@ -49,3 +49,10 @@ val capabilitySelfTest by tasks.registering(JavaExec::class) {
     mainClass.set("org.example.CapabilitySelfTest")
 }
 tasks.check { dependsOn(capabilitySelfTest) }
+
+val compactReportTest by tasks.registering(JavaExec::class) {
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("org.example.CompactReportTest")
+}
+tasks.check { dependsOn(compactReportTest) }
