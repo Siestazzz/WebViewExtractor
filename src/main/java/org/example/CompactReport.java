@@ -14,7 +14,7 @@ final class CompactReport {
     static JsonObject project(JsonObject full){
         JsonObject out=new JsonObject(),meta=new JsonObject();meta.addProperty("schema_version",1);
         for(String key:List.of("package","version","apk_sha256","status","wall_seconds","target_seconds","hard_seconds"))if(full.has(key))meta.add(key,full.get(key));
-        if(full.has("metrics")){JsonObject m=full.getAsJsonObject("metrics");for(String key:List.of("elapsed_seconds","processed_activities","manifest_activities","started_activities","initial_pass_activities","traversal_finished_activities","budget_exhausted_activities","pending_activities","not_started_activities","initial_pass_seconds","scheduling_stage"))if(m.has(key))meta.add(key,m.get(key));}
+        if(full.has("metrics")){JsonObject m=full.getAsJsonObject("metrics");for(String key:List.of("elapsed_seconds","processed_activities","manifest_activities","started_activities","initial_pass_activities","traversal_finished_activities","budget_exhausted_activities","pending_activities","not_started_activities","initial_pass_seconds","scheduling_stage","discarded_contexts","provisional_facts"))if(m.has(key))meta.add(key,m.get(key));}
         meta.addProperty("detailed_report","capabilities.json");
         meta.addProperty("counts_semantics","Deduplicated displayed entries per WebView, summed across WebViews; bridges count exposed signatures (class fallback if unresolved), not registration names. Candidates included.");
         meta.addProperty("settings_semantics","Observed argument alternatives, not final state; null means unresolved.");

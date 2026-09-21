@@ -30,6 +30,7 @@ final class CapabilityEngine {
     final class Host {
         final String activity;
         final Map<String,V> heap=new HashMap<>();
+        final Map<String,List<V>> lookupSources=new HashMap<>();
         final Map<String,DeferredField> deferredFields=new HashMap<>();
         final Map<String,XmlConsumer> xmlConsumers=new LinkedHashMap<>();
         final Map<String,V> fragmentViews=new HashMap<>();
@@ -54,8 +55,9 @@ final class CapabilityEngine {
     final class ActivityState {
         Host host;
         final String activity;
-        int phase, jobs, slices;
-        long nanos;
+        int phase, jobs, slices, discardedContexts, provisionalFacts, terminalXmlConsumers, terminalDeferredFields;
+        final int[] phaseJobs=new int[2];
+        long nanos, checkpointNanos;
         boolean done, limited, initialPass;
         Map<String,Object> completedReport;
         Map<String,Map<String,Object>> previousFacts=new TreeMap<>();
@@ -71,13 +73,13 @@ final class CapabilityEngine {
     // A task is atomic. Slice deadlines are cooperative, checked between method contexts.
     void advanceActivity(ActivityState state,long budgetNanos,int maxJobs){
         if(state.done||System.nanoTime()>=deadline)return;
-        long start=System.nanoTime(),stop=Math.min(deadline,start+budgetNanos);int processed=0;
+        long start=System.nanoTime(),stop=Math.min(deadline,start+budgetNanos);int processed=0;long checkpointSpent=0;
         Host h=state.host;currentHost=h;state.slices++;
         try {
             while(System.nanoTime()<deadline){
                 if(processed>=maxJobs||processed>0&&System.nanoTime()>=stop)break;
                 boolean capped=h.visited.size()>12000;
-                if(capped){h.gaps.add("host_context_budget");state.limited=true;}
+                if(capped){h.gaps.add("host_context_budget");state.limited=true;state.discardedContexts+=h.queue.size();}
                 if(capped||h.queue.isEmpty()&&!replayXmlConsumers(h)){
                     if(state.phase==1){finishActivity(state);break;}
                     state.previousFacts.putAll(h.facts);state.phase=1;
@@ -85,14 +87,18 @@ final class CapabilityEngine {
                     seed(h,state.activity,V.of("host",state.activity,"activity:"+state.activity),List.of(state.activity),false);
                     continue;
                 }
-                checkpoint.run();processJob(h);processed++;state.jobs++;
+                long checkpointStart=System.nanoTime();checkpoint.run();long checkpointTime=System.nanoTime()-checkpointStart;checkpointSpent+=checkpointTime;stop=Math.min(deadline,stop+checkpointTime);
+                if(System.nanoTime()>=deadline)break;
+                processJob(h);processed++;state.jobs++;state.phaseJobs[state.phase]++;
             }
             if(!state.done&&System.nanoTime()>=deadline)h.gaps.add("global_deadline");
-        }finally{state.nanos+=System.nanoTime()-start;currentHost=null;}
+        }finally{state.nanos+=System.nanoTime()-start-checkpointSpent;state.checkpointNanos+=checkpointSpent;currentHost=null;}
     }
     void finishActivity(ActivityState state){
         Host h=state.host;state.done=true;
-        if(!state.limited)state.previousFacts.clear();
+        state.provisionalFacts=remainingProvisional(state).size();
+        if(state.provisionalFacts>0)h.gaps.add("previous_phase_not_rederived:"+state.provisionalFacts);
+        state.terminalXmlConsumers=h.xmlConsumers.size();state.terminalDeferredFields=h.deferredFields.size();
         state.completedReport=stateReport(state);
         if(!((List<?>)state.completedReport.get("facts")).isEmpty())activities.add(state.completedReport);
         if(!h.gaps.isEmpty()){
@@ -109,16 +115,64 @@ final class CapabilityEngine {
         Host h=state.host;
         if(state.previousFacts.isEmpty())return hostReport(h);
         Map<String,Map<String,Object>> combined=new TreeMap<>();
-        for(var entry:state.previousFacts.entrySet()){
-            Map<String,Object> fact=new LinkedHashMap<>(entry.getValue());fact.put("binding_status","candidate");fact.put("analysis_stage","previous_phase_provisional");combined.put(entry.getKey(),fact);
+        for(var entry:remainingProvisional(state).entrySet()){
+            Map<String,Object> fact=new LinkedHashMap<>(entry.getValue());fact.put("binding_status","candidate");fact.put("analysis_stage","previous_phase_provisional");combined.put("previous:"+entry.getKey(),fact);
         }
-        combined.putAll(h.facts);return hostReport(h,new ArrayList<>(combined.values()));
+        combined.putAll(h.facts);Map<String,Object> report=hostReport(h,new ArrayList<>(combined.values()));
+        Map<String,Map<String,Object>> unresolved=remainingProvisional(state);
+        List<Map<String,Object>> superseded=new ArrayList<>();
+        for(var entry:state.previousFacts.entrySet())if(!unresolved.containsKey(entry.getKey())&&!h.facts.containsKey(entry.getKey()))superseded.add(Map.of("reason","same_receiver_and_argument_refinement","previous_fact",entry.getValue()));
+        if(!superseded.isEmpty())report.put("superseded_provisional_facts",superseded);return report;
+    }
+    static List<Object> refinementKey(Map<String,Object> fact){
+        Object view=fact.get("webview");Object id=view instanceof Map<?,?> m?m.get("id"):view;
+        return Arrays.asList(fact.get("kind"),fact.get("site"),fact.get("api"),id,fact.get("registration_name"));
+    }
+    @SuppressWarnings("unchecked")
+    boolean refinesFact(Host h,Map<String,Object> old,Map<String,Object> fresh){
+        Map<String,Object> before=(Map<String,Object>)old.get("webview"),after=(Map<String,Object>)fresh.get("webview");
+        if(before==null||after==null||!Objects.equals(before.get("id"),after.get("id")))return false;
+        String oldType=String.valueOf(before.get("type")),newType=String.valueOf(after.get("type"));
+        if(!oldType.equals(newType)&&!idx.subtype(newType,oldType))return false;
+        if(!Objects.equals(old.get("values"),fresh.get("values")))return false;
+        List<V> oldArgs=(List<V>)old.getOrDefault("arguments",List.of()),newArgs=(List<V>)fresh.getOrDefault("arguments",List.of());
+        if(oldArgs.size()!=newArgs.size())return false;
+        for(int i=1;i<oldArgs.size();i++){
+            V x=oldArgs.get(i),y=newArgs.get(i);if(x.equals(y))continue;
+            List<V> source=h.lookupSources.get(x.id());
+            if(!x.kind().equals("unknown")||source==null||source.size()!=2||mapKey(source.get(1))==null)return false;
+            Map<String,V> entries=h.maps.getOrDefault(source.get(0).id(),Map.of());
+            V resolved=entries.get(mapKey(source.get(1)));
+            if(entries.containsKey("*")||resolved==null||alternatives(resolved).stream().noneMatch(v->v.id().equals(y.id())&&Objects.equals(v.type(),y.type())))return false;
+        }
+        Object oldImpl=old.get("implementation"),newImpl=fresh.get("implementation");
+        if(!Objects.equals(oldImpl,newImpl)&&!("unknown".equals(oldImpl)&&newImpl!=null&&!newImpl.equals("unknown")&&!oldArgs.isEmpty()))return false;
+        Set<String> members=new HashSet<>();for(var member:(List<Map<String,Object>>)fresh.getOrDefault("members",List.of()))members.add((String)member.get("signature"));
+        for(var member:(List<Map<String,Object>>)old.getOrDefault("members",List.of()))if(!members.contains(member.get("signature")))return false;
+        return true;
+    }
+    Map<String,Map<String,Object>> remainingProvisional(ActivityState state){
+        Map<List<Object>,List<Map<String,Object>>> candidates=new HashMap<>();
+        for(var fact:state.host.facts.values())candidates.computeIfAbsent(refinementKey(fact),k->new ArrayList<>()).add(fact);
+        Map<String,Map<String,Object>> result=new TreeMap<>();
+        for(var entry:state.previousFacts.entrySet()){
+            if(state.host.facts.containsKey(entry.getKey())&&refinesFact(state.host,entry.getValue(),state.host.facts.get(entry.getKey())))continue;
+            Map<String,Object> fact=entry.getValue();
+            if(candidates.getOrDefault(refinementKey(fact),List.of()).stream().anyMatch(f->refinesFact(state.host,fact,f)))continue;
+            result.put(entry.getKey(),fact);
+        }
+        return result;
     }
     List<Map<String,Object>> coverage(List<String> roots){
         List<Map<String,Object>> out=new ArrayList<>();
         for(String activity:roots){ActivityState s=states.get(activity);Map<String,Object> row=new LinkedHashMap<>();row.put("activity",activity);
-            row.put("status",s==null?"not_started":s.done?(s.limited?"budget_exhausted":"traversal_finished"):s.initialPass?"pending_deep_analysis":"initial_analysis");
-            row.put("phase",s==null?0:s.phase+1);row.put("contexts_processed",s==null?0:s.jobs);row.put("pending_contexts",s==null||s.host==null?0:s.host.queue.size());row.put("analysis_seconds",s==null?0:s.nanos/1e9);row.put("slices",s==null?0:s.slices);out.add(row);
+            row.put("status",s==null?"not_started":s.done?(s.limited?"budget_exhausted":"traversal_finished"):System.nanoTime()>=deadline?"deadline_interrupted":s.initialPass?"pending_deep_analysis":"initial_analysis");
+            row.put("phase",s==null?0:s.phase+1);row.put("contexts_processed",s==null?0:s.jobs);row.put("pending_contexts",s==null||s.host==null?0:s.host.queue.size());row.put("analysis_seconds",s==null?0:s.nanos/1e9);row.put("slices",s==null?0:s.slices);
+            row.put("discarded_contexts",s==null?0:s.discardedContexts);row.put("phase_contexts",s==null?List.of(0,0):List.of(s.phaseJobs[0],s.phaseJobs[1]));
+            row.put("tracked_xml_consumers",s==null?0:s.host==null?s.terminalXmlConsumers:s.host.xmlConsumers.size());
+            row.put("tracked_deferred_fields",s==null?0:s.host==null?s.terminalDeferredFields:s.host.deferredFields.size());
+            row.put("provisional_facts",s==null?0:s.host==null?s.provisionalFacts:remainingProvisional(s).size());
+            row.put("checkpoint_seconds",s==null?0:s.checkpointNanos/1e9);out.add(row);
         }return out;
     }
     void analyzeActivity(String activity){
@@ -940,7 +994,7 @@ final class CapabilityEngine {
                 result=union(result,entries.get("*"));
             }
         }
-        return result==null?V.of("unknown",type,"unresolved_map_lookup:"+receiver.id()+":"+key.id()):result;
+        if(result==null){String id="unresolved_map_lookup:"+receiver.id()+":"+key.id();h.lookupSources.putIfAbsent(id,List.of(receiver,key));return V.of("unknown",type,id);}return result;
     }
     V elements(Host h,V collection,String type){
         Set<V> values=new LinkedHashSet<>();for(V recv:alternatives(collection))values.addAll(h.contents.getOrDefault(recv.id(),Set.of()));

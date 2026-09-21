@@ -85,7 +85,7 @@ public class Main {
             var state=pending.remove();engine.advanceActivity(state,50_000_000L,100);
             if(!state.done)pending.add(state);
         }
-        metrics.put("scheduling_stage",pending.isEmpty()&&attempted==roots.size()?"finished":"deadline");
+        metrics.put("scheduling_stage",pending.isEmpty()&&attempted==roots.size()?(engine.states.values().stream().anyMatch(s0->s0.limited||s0.provisionalFacts>0)?"finished_with_limits":"finished"):"deadline");
         updateCoverage(engine,roots,metrics);
         metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);
         metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
@@ -100,6 +100,12 @@ public class Main {
         metrics.put("budget_exhausted_activities",engine.states.values().stream().filter(s->s.done&&s.limited).count());
         metrics.put("pending_activities",engine.states.values().stream().filter(s->!s.done).count());
         metrics.put("not_started_activities",roots.size()-engine.states.size());
+        long pending=engine.states.values().stream().filter(s->s.host!=null).count();
+        metrics.put("peak_retained_hosts",Math.max(((Number)metrics.getOrDefault("peak_retained_hosts",0L)).longValue(),pending));
+        metrics.put("retained_heap_entries",engine.states.values().stream().filter(s->s.host!=null).mapToLong(s->s.host.heap.size()).sum());
+        metrics.put("queued_contexts",engine.states.values().stream().filter(s->s.host!=null).mapToLong(s->s.host.queue.size()).sum());
+        metrics.put("discarded_contexts",engine.states.values().stream().mapToLong(s->s.discardedContexts).sum());
+        metrics.put("provisional_facts",engine.states.values().stream().mapToLong(s->s.host==null?s.provisionalFacts:engine.remainingProvisional(s).size()).sum());
     }
     static void write(Path path,Object value)throws IOException{
         long start=System.nanoTime();

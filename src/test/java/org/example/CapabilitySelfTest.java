@@ -25,6 +25,7 @@ public final class CapabilitySelfTest {
  static Instruction end(){return new ImmutableInstruction10x(Opcode.RETURN_VOID);}
  static void check(boolean ok,String text){if(!ok)throw new AssertionError(text);}
  public static void main(String[] args)throws Exception {
+  PhaseRetentionFixture.run();
   SchedulerIsolationFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
