@@ -938,3 +938,12 @@ v15-near-callback-known-failure.json; its failure is expected for this revision,
 Run `scripts/check_deadline.py --jar test/runs/v15a.jar --apk test/apks/com.tencent.news.apk` for
 external supervisor survival. See v15-final-effects.json and per-App source reviews for complete
 metric deltas and limits.
+
+
+## Resumable scheduling series — six-App initial pass and deep analysis
+
+Baseline source consolidation: 48de3ad preserves the extractor used by compact-six; original detailed results remain in COMPACT_REPORT.md. Scheduler v1 (ef3656d) adds ActivityState and round-robin continuation; all six initial passes finish, but independent Sol review exposes normal-finalization loss of phase-one-only facts. v1 results and failure reproduction are retained in SCHEDULER_V1.md. Scheduler v2 (7f782c2) preserves provisional facts and reports limits; the six-App development batch was deliberately interrupted when Sol reproduced two refinement-boundary bugs. See SCHEDULER_V2.md; its snapshots are not complete performance measurements.
+
+Scheduler v3 fixes no-provenance implementation concretization and cross-registry replacement. All original and new synthetic tests pass, as do independent frozen-JAR boundary checks and the real-DEX constructor retention probe. Full six-App parallel testing is recorded in SCHEDULER_V3.md, scheduler-v3-results.json and scheduler-v3-effects.json. Every Activity receives a first-pass slice within 19.3–57.8 seconds including indexing. Final traversal-finished / local-cap / deadline-pending counts: News 2327/2/0, Mango 639/18/0, Ctrip 407/3/0, Xigua 284/0/344, FreeReels 59/0/105, Yangshipin 229/0/0. End-to-end times are approximately 179/433/425/592/594/48 seconds respectively.
+
+The same cumulative development oracle matcher reports no loss of previously matched facts for News/Mango/Ctrip; Mango gains 81 facts. This is candidate-inclusive recall, not precision or final independent acceptance. FreeReels loses one previously emitted MaxDebuggerMultiAdActivity row while its analysis remains deadline-interrupted; this output regression remains explicitly open. Added provisional hosts and aliases require ownership review. Existing quality gates, sealed holdouts, unresolved framework coverage and final isolated performance repetitions remain unpassed. The compact format still contains parameters/counts and is now pretty-printed.

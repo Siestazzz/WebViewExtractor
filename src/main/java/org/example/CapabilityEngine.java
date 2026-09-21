@@ -137,16 +137,22 @@ final class CapabilityEngine {
         if(!Objects.equals(old.get("values"),fresh.get("values")))return false;
         List<V> oldArgs=(List<V>)old.getOrDefault("arguments",List.of()),newArgs=(List<V>)fresh.getOrDefault("arguments",List.of());
         if(oldArgs.size()!=newArgs.size())return false;
-        for(int i=1;i<oldArgs.size();i++){
-            V x=oldArgs.get(i),y=newArgs.get(i);if(x.equals(y))continue;
+        Object oldImpl=old.get("implementation"),newImpl=fresh.get("implementation");
+        boolean implementationProven=Objects.equals(oldImpl,newImpl);
+        for(int i=0;i<oldArgs.size();i++){
+            V x=oldArgs.get(i),y=newArgs.get(i);
+            boolean concreteTarget=i>0&&Set.of("object","new","view","host").contains(y.kind())&&Objects.equals(y.type(),newImpl);
+            if(x.equals(y)){if(concreteTarget)implementationProven=true;continue;}
+            boolean directReceiver=i==0&&Set.of("bridge","callback","webview_operation").contains(old.get("kind"));
+            if(directReceiver&&x.kind().equals(y.kind())&&Set.of("object","new","view","host").contains(x.kind())&&x.id().equals(y.id())&&x.type()!=null&&y.type()!=null&&idx.subtype(y.type(),x.type()))continue;
             List<V> source=h.lookupSources.get(x.id());
             if(!x.kind().equals("unknown")||source==null||source.size()!=2||mapKey(source.get(1))==null)return false;
             Map<String,V> entries=h.maps.getOrDefault(source.get(0).id(),Map.of());
             V resolved=entries.get(mapKey(source.get(1)));
             if(entries.containsKey("*")||resolved==null||alternatives(resolved).stream().noneMatch(v->v.id().equals(y.id())&&Objects.equals(v.type(),y.type())))return false;
+            if(concreteTarget)implementationProven=true;
         }
-        Object oldImpl=old.get("implementation"),newImpl=fresh.get("implementation");
-        if(!Objects.equals(oldImpl,newImpl)&&!("unknown".equals(oldImpl)&&newImpl!=null&&!newImpl.equals("unknown")&&!oldArgs.isEmpty()))return false;
+        if(!Objects.equals(oldImpl,newImpl)&&!("unknown".equals(oldImpl)&&newImpl!=null&&!newImpl.equals("unknown")&&implementationProven))return false;
         Set<String> members=new HashSet<>();for(var member:(List<Map<String,Object>>)fresh.getOrDefault("members",List.of()))members.add((String)member.get("signature"));
         for(var member:(List<Map<String,Object>>)old.getOrDefault("members",List.of()))if(!members.contains(member.get("signature")))return false;
         return true;

@@ -17,6 +17,11 @@ final class PhaseRetentionFixture {
   var old=fact("unknown",unknown,List.of());var good=fact("test.Bridge",object,List.of(member));
   check(engine.refinesFact(third.host,old,good),"Exact map receiver/key refinement rejected");
   check(!engine.refinesFact(third.host,old,fact("test.Bridge",DexFlow.V.of("object","test.Bridge","object-b"),List.of(member))),"Different registered object merged by site/name");
+  var opaque=DexFlow.V.of("unknown","java.lang.Object","opaque");
+  check(!engine.refinesFact(third.host,fact("unknown",opaque,List.of()),fact("test.Bridge",opaque,List.of(member))),"Opaque unknown became concrete without provenance");
+  var oldRegistry=fact("test.Bridge",object,List.of(member));var newRegistry=fact("test.Bridge",object,List.of(member));oldRegistry.put("kind","message_bridge");newRegistry.put("kind","message_bridge");
+  oldRegistry.put("arguments",List.of(DexFlow.V.of("object","test.Registry","registry-1"),object));newRegistry.put("arguments",List.of(DexFlow.V.of("object","test.Registry","registry-2"),object));
+  check(!engine.refinesFact(third.host,oldRegistry,newRegistry),"Different registry receivers merged");
   third.host.maps.get(map.id()).put("*",object);check(!engine.refinesFact(third.host,old,good),"Dynamic selector incorrectly treated as exact provenance");
   var capped=engine.beginActivity("test.Cap");capped.phase=1;for(int i=0;i<12001;i++)capped.host.visited.add("context"+i);
   engine.advanceActivity(capped,50_000_000L,1);check(capped.done&&capped.limited,"Context cap reported normal traversal");

@@ -1,0 +1,2330 @@
+{
+  "news": {
+    "oracle_sha256": "6a4c21a973d122fac4518559a80952c8c7cb9a48f6334b0c3f61306d0199f209",
+    "new_missing": [],
+    "resolved_missing": [],
+    "before_metrics": {
+      "bridge": {
+        "expected": 1393,
+        "matched": 1284,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.9217516152189519,
+        "explicit_recall": 0.0
+      },
+      "setting": {
+        "expected": 366,
+        "matched": 272,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.7431693989071039,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 240,
+        "matched": 197,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.8208333333333333,
+        "explicit_recall": 0.0
+      }
+    },
+    "after_metrics": {
+      "bridge": {
+        "expected": 1393,
+        "matched": 1284,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.9217516152189519,
+        "explicit_recall": 0.0
+      },
+      "setting": {
+        "expected": 366,
+        "matched": 272,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.7431693989071039,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 240,
+        "matched": 197,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.8208333333333333,
+        "explicit_recall": 0.0
+      }
+    },
+    "new_missing_multiset": [],
+    "resolved_missing_multiset": []
+  },
+  "mango": {
+    "oracle_sha256": "45c13709769c39601fc139bdf188ccafac24150543c98934d604ce5ac9237dc2",
+    "new_missing": [],
+    "resolved_missing": [
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge",
+        "name": "addJavascriptInterface",
+        "reason": "not_matched",
+        "signature": "",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge",
+        "name": "addJavascriptInterface",
+        "reason": "not_matched",
+        "signature": "",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "invokeHandler",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "invokeHandler",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "invokeHandlerSync",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandlerSync(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "invokeHandlerSync",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandlerSync(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "log",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->log(Ljava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "log",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->log(Ljava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "publishHandler",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->publishHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "bridge_method",
+        "name": "publishHandler",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->publishHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "getDefaultVideoPoster",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onConsoleMessage",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/BaseWebView$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onConsoleMessage",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/core/BaseWebView$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onConsoleMessage",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onHideCustomView",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$f;->onHideCustomView()V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onJsPrompt",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onJsPrompt",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/service/view/ServiceWebView$a;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onPageFinished",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onPageFinished",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onPageFinished",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onPageStarted",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onPageStarted",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onPageStarted",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onProgressChanged",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onReceivedError",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onReceivedError",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onReceivedError",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onReceivedError",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onReceivedSslError",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onRenderProcessGone",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onRenderProcessGone",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onRenderProcessGone",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "onShowCustomView",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$f;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "shouldInterceptRequest",
+        "reason": "not_matched",
+        "signature": "Lcom/hunantv/imgo/h5/browser/MoWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "shouldInterceptRequest",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "shouldInterceptRequest",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "shouldInterceptRequest",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "shouldInterceptRequest",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback",
+        "name": "shouldOverrideUrlLoading",
+        "reason": "not_matched",
+        "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback_registration",
+        "name": "setWebChromeClient",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback_registration",
+        "name": "setWebChromeClient",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback_registration",
+        "name": "setWebViewClient",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "callback_registration",
+        "name": "setWebViewClient",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setAllowFileAccess",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setAllowFileAccess",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setAppCacheEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setAppCacheEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setBuiltInZoomControls",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setBuiltInZoomControls",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setCacheMode",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setCacheMode",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setDatabaseEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setDatabaseEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setDisplayZoomControls",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setDisplayZoomControls",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setDomStorageEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setDomStorageEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setGeolocationEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setGeolocationEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setJavaScriptEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setJavaScriptEnabled",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setLayoutAlgorithm",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setLayoutAlgorithm(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setLoadWithOverviewMode",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setSavePassword",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setSavePassword",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setSupportMultipleWindows",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setSupportMultipleWindows",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setSupportZoom",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setSupportZoom",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setUseWideViewPort",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setUseWideViewPort",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        }
+      },
+      {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "kind": "setting",
+        "name": "setUserAgentString",
+        "reason": "not_matched",
+        "signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        }
+      }
+    ],
+    "before_metrics": {
+      "setting": {
+        "expected": 608,
+        "matched": 574,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.944078947368421,
+        "explicit_recall": 0.0
+      },
+      "bridge": {
+        "expected": 1259,
+        "matched": 1197,
+        "explicit_matched": 0,
+        "unscorable": 2,
+        "recall": 0.9507545671167593,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 662,
+        "matched": 609,
+        "explicit_matched": 10,
+        "unscorable": 0,
+        "recall": 0.9199395770392749,
+        "explicit_recall": 0.015105740181268883
+      },
+      "webview_operation": {
+        "expected": 3,
+        "matched": 3,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      }
+    },
+    "after_metrics": {
+      "setting": {
+        "expected": 608,
+        "matched": 608,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      },
+      "bridge": {
+        "expected": 1259,
+        "matched": 1207,
+        "explicit_matched": 0,
+        "unscorable": 2,
+        "recall": 0.9586973788721207,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 662,
+        "matched": 646,
+        "explicit_matched": 10,
+        "unscorable": 0,
+        "recall": 0.9758308157099698,
+        "explicit_recall": 0.015105740181268883
+      },
+      "webview_operation": {
+        "expected": 3,
+        "matched": 3,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      }
+    },
+    "new_missing_multiset": [],
+    "resolved_missing_multiset": [
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "reason": "not_matched",
+          "signature": "",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge",
+          "name": "addJavascriptInterface",
+          "reason": "not_matched",
+          "signature": "",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "invokeHandler",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "invokeHandler",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "invokeHandlerSync",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandlerSync(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "invokeHandlerSync",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandlerSync(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "log",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->log(Ljava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "log",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->log(Ljava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "publishHandler",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->publishHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "bridge_method",
+          "name": "publishHandler",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->publishHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "getDefaultVideoPoster",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onConsoleMessage",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/BaseWebView$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onConsoleMessage",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/core/BaseWebView$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onConsoleMessage",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onHideCustomView",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$f;->onHideCustomView()V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onJsPrompt",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onJsPrompt",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/service/view/ServiceWebView$a;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onPageFinished",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onPageFinished",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onPageFinished",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onPageStarted",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onPageStarted",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onPageStarted",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onProgressChanged",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onReceivedError",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onReceivedError",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onReceivedError",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onReceivedError",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onReceivedSslError",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onRenderProcessGone",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onRenderProcessGone",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onRenderProcessGone",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/service/AppService$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "onShowCustomView",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$f;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "reason": "not_matched",
+          "signature": "Lcom/hunantv/imgo/h5/browser/MoWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback",
+          "name": "shouldOverrideUrlLoading",
+          "reason": "not_matched",
+          "signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback_registration",
+          "name": "setWebChromeClient",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 3
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback_registration",
+          "name": "setWebChromeClient",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 2
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback_registration",
+          "name": "setWebViewClient",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 2
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "callback_registration",
+          "name": "setWebViewClient",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setAppCacheEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setAppCacheEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setCacheMode",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 2
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setCacheMode",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setGeolocationEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setGeolocationEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 2
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 2
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setLayoutAlgorithm",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setLayoutAlgorithm(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setLoadWithOverviewMode",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setMediaPlaybackRequiresUserGesture",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setSavePassword",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setSavePassword",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setSupportMultipleWindows",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setSupportMultipleWindows",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 2
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.service.view.ServiceWebView"
+            ]
+          }
+        },
+        "count": 1
+      },
+      {
+        "fact": {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "kind": "setting",
+          "name": "setUserAgentString",
+          "reason": "not_matched",
+          "signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+          "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+          "webview_constraint": {
+            "types": [
+              "com.mgtv.diana.sdk.page.view.PageWebView"
+            ]
+          }
+        },
+        "count": 1
+      }
+    ]
+  },
+  "ctrip": {
+    "oracle_sha256": "a4e3f06b04b7fd9f9afac229ef3bda47341d5c853e2842f8de80bfaf11f355a9",
+    "new_missing": [],
+    "resolved_missing": [],
+    "before_metrics": {
+      "setting": {
+        "expected": 391,
+        "matched": 375,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.959079283887468,
+        "explicit_recall": 0.0
+      },
+      "bridge": {
+        "expected": 3970,
+        "matched": 3682,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.927455919395466,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 444,
+        "matched": 421,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.9481981981981982,
+        "explicit_recall": 0.0
+      },
+      "webview_operation": {
+        "expected": 6,
+        "matched": 6,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      }
+    },
+    "after_metrics": {
+      "setting": {
+        "expected": 391,
+        "matched": 375,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.959079283887468,
+        "explicit_recall": 0.0
+      },
+      "bridge": {
+        "expected": 3970,
+        "matched": 3682,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.927455919395466,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 444,
+        "matched": 421,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 0.9481981981981982,
+        "explicit_recall": 0.0
+      },
+      "webview_operation": {
+        "expected": 6,
+        "matched": 6,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      }
+    },
+    "new_missing_multiset": [],
+    "resolved_missing_multiset": []
+  }
+}
