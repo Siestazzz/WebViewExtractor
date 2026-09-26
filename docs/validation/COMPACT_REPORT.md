@@ -1,5 +1,7 @@
 # Compact capability report
 
+Current default output is pretty-printed with two-space indentation and a trailing newline. Coverage metadata includes initial-pass, finished, locally limited and pending counts, discarded contexts and provisional facts. See [USAGE](../../USAGE.md) and [scheduler v3](SCHEDULER_V3.md). The six-App measurements further below are the historical **pre-scheduler compact-six baseline**, not the latest results.
+
 `capabilities.compact.json` is now exported beside `capabilities.json` at every checkpoint and supervisor finalization. Both files are individually atomically replaced; they are not a transactional pair. Analysis is unchanged by this projection. Full evidence and diagnostic messages remain in the detailed report.
 
 Structure: metadata/counts/activities → signature/counts/webviews → signature/counts/bridges/settings/callbacks. Activity and WebView signatures use DEX class descriptors. Bridge and callback entries use member descriptors, falling back to the implementation descriptor if members cannot be resolved. `unknown` explicitly represents an unavailable implementation.
@@ -10,7 +12,7 @@ Counts at the report, Activity and WebView levels include `activities`, `webview
 
 Validation: `./gradlew compactReportTest capabilitySelfTest shadowJar --offline --console=plain`. Projection regression verifies duplicate methods, two receivers of one class, unresolved bridge fallback, Boolean settings, multi-argument branch alternatives/unknowns, recursive counts and on-disk export.
 
-## Six-App parallel run
+## Historical compact-six parallel run
 
 Sample provenance/hashes: `compact-six-samples.json`. Original files are read-only sources, copied under ignored `test/apks/`. Package/version identities checked using Android SDK aapt. FreeReels uses its base APK only, excluding resource/native-library splits. Xigua uses original.apk, not the patched variant.
 
@@ -25,9 +27,9 @@ python3 scripts/run_parallel.py \
 
 Six fresh analyses run simultaneously, with disjoint sets of eight logical CPUs and 16 GiB heap each. Each supervisor gets 595 seconds inside a 600-second external timeout. This is an explicitly requested concurrent batch, not the original isolated serial acceptance benchmark. Results are development output, not independent completeness validation of the three new Apps.
 
-The frozen jar was built from the current working tree, including the uncommitted v17 prototype described in the preceding development work (actual registered handlers, Runnable forwarding and expression work budget), plus compact export. It is **not** the v15 or v16e binary. Exact source snapshot is retained at ignored `test/runs/compact-six-source.tar.gz`; frozen jar SHA-256 and runtime configuration are recorded in the batch environment file. Underlying extractor changes have not been claimed as accepted.
+At the time of this historical measurement, the frozen jar was built from the working tree, including the then-uncommitted v17 prototype described in the preceding development work (actual registered handlers, Runnable forwarding and expression work budget), plus compact export. It is **not** the v15 or v16e binary. Exact source snapshot is retained at ignored `test/runs/compact-six-source.tar.gz`; frozen jar SHA-256 and runtime configuration are recorded in the batch environment file. Underlying extractor changes have not been claimed as accepted.
 
-## Measured results
+## Historical compact-six measured results
 
 All six fresh processes exited normally, but all reports retain `partial` because diagnostics remain. Xigua and FreeReels exhausted the internal analysis budget: normal exit does not mean full coverage. The other four completed Activity traversal, not proof of complete capability recall.
 

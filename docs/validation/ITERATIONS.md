@@ -1,5 +1,7 @@
 # Iteration ledger
 
+Current implementation and six-App results: [SCHEDULER_V3.md](SCHEDULER_V3.md). Navigation and acceptance status: [validation index](README.md). Entries below preserve each version’s measurements and limitations; older version-specific claims are not current status. Canonical fact sets grew over time, so compare versions by replaying the same oracle/scorer.
+
 ## v1 — DEX index and bounded object/parameter binding
 
 - Original source: 78afea4; input/protocol setup: a87f9c6.

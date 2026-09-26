@@ -1,14 +1,48 @@
 # Activity capability analysis
 
+Current implementation: scheduler v3. Start with [USAGE](../USAGE.md) for commands,
+[core design](../CORE_IDEA.md) for the current/legacy distinction, and the
+[validation index](validation/README.md) for measured results. This document describes
+capability semantics, not an acceptance claim.
+
+## Current scheduling and coverage
+
+All Manifest Activity roots receive an initial slice (up to 8 method contexts or a cooperative
+50 ms); unfinished states then resume round-robin (up to 100 contexts or 50 ms). Host state
+retains queue, arguments, heap/collections, bindings, facts and refinement phase. Single method
+work may overrun a slice. These scheduling passes are separate from the internal two-phase
+refinement. Recovery is in-memory only; reports cannot restore a killed worker.
+
+`activity_coverage` records not_started, initial_analysis, pending_deep_analysis,
+deadline_interrupted, traversal_finished and budget_exhausted, including roots with no emitted
+facts. `metrics.initial_pass_activities` is the number given an initial pass;
+`processed_activities` includes locally budget-terminated analyses, while
+`traversal_finished_activities` excludes those. Pending roots and discarded contexts are explicit.
+Finished traversal does not prove all capabilities resolved. See [scheduler v3](validation/SCHEDULER_V3.md)
+for exact state transitions, budgets, memory costs and six-App results.
+
+Previous-phase-only facts remain candidate/provisional. Replacement requires compatible receiver
+and argument provenance and a non-shrinking member set. Superseded placeholders are retained in
+`superseded_provisional_facts`. Candidate retention can increase uncertain host/receiver aliases;
+old ownership/error-rate percentages must not be applied to the new output without review.
+
+## Reports and execution
+
 Build and run:
 
 ```sh
-./gradlew capabilitySelfTest shadowJar --offline --console=plain
+./gradlew capabilitySelfTest compactReportTest shadowJar
 java -Xmx16g -XX:ActiveProcessorCount=8 -jar build/libs/webview_extractor-1.0-SNAPSHOT-all.jar \
   --apkpath app.apk --out output/app --target-seconds 300 --hard-seconds 600
 ```
 
-`capabilities.json` is atomically replaced during analysis and when the supervisor ends.
+`capabilities.json` and the pretty-printed `capabilities.compact.json` are each atomically
+replaced during analysis and supervisor finalization; they are not a transactional pair.
+The compact report retains class/member signatures, Settings parameters, coverage metadata and
+per-level counts. Counts include candidates and sum per-WebView entries; Bridge counts are
+exposed signatures/class fallbacks, not registration names or runtime object counts.
+Unknown Settings parameters use JSON null; branch alternatives stay in their argument position.
+See the [compact schema](validation/COMPACT_REPORT.md).
 Every Activity contains `facts`, plus `webviews` grouping those facts by symbolic receiver identity;
 Different symbolic IDs can still alias the same runtime WebView; current H5 helper/factory
 alias reconciliation is incomplete. Do not interpret group count as a count of distinct views.
@@ -33,8 +67,9 @@ empty registration keys remain distinct.
 A report can be partial even when every Manifest Activity was visited: unresolved entries,
 flow/context limits, parser errors and unsupported dynamic behavior remain material limits.
 Check `status`, `diagnostics`, `index_diagnostics`, `manifest_diagnostics`, `unattributed` and
-per-Activity `limitations`. Empty output is not proof that no capability exists. The supervisor
-returns exit code 2 on worker failure/hard timeout while retaining the last valid snapshot.
+per-Activity `limitations`. Empty output is not proof that no capability exists. Normal internal-budget exhaustion can return exit code 0 with a partial report. The supervisor
+returns exit code 2 on worker failure/hard timeout while retaining the last valid snapshot;
+invalid inputs can fail before creating one.
 The output's `metrics` record index time, traversal progress, decoded summaries and budgets.
 
 The new engine indexes all DEX references and instantiates method summaries on demand.
@@ -44,9 +79,14 @@ A separate on-demand Soot fallback is still pending, not silently reported as im
 
 ## Reproduce validation
 
-Samples and hashes: `docs/validation/samples.json`. APKs and complete decompiled sources
-are intentionally excluded from Git. Reusable independent Sol source/DEX evidence lives
-under `docs/validation/{news,mango,ctrip}`. Never construct expected facts from extractor output.
+The original three samples/hashes are in `docs/validation/samples.json`; the later six-App
+parallel development batch uses `docs/validation/compact-six-samples.json`. Clone users must
+supply APKs and build their own JAR; `test/runs/*` binaries/reports referenced by historical
+commands are ignored local artifacts, not downloadable repository contents. APKs and complete decompiled sources
+are intentionally excluded from Git. Reusable Sol source/DEX evidence lives
+under `docs/validation/{news,mango,ctrip}`. Initial source inventories and later report-guided,
+source-verified development extensions must be distinguished: the cumulative canonical set is
+not a blind holdout. Never construct expected facts from extractor output alone.
 
 ```sh
 python3 scripts/benchmark.py --label fresh-label --jar test/runs/frozen-version.jar
@@ -56,8 +96,11 @@ python3 scripts/check_deadline.py --jar test/runs/frozen-version.jar \
   --apk test/apks/com.tencent.news.apk
 ```
 
+`scripts/benchmark.py` is the original three-App **serial** benchmark. The later user-requested
+six-App **parallel** development runner is `scripts/run_parallel.py`; see [USAGE](../USAGE.md).
+Those concurrent timings do not replace final isolated serial repetitions.
 Each benchmark launches a fresh JVM, fixes eight logical CPUs and a 16 GiB maximum heap,
-and enforces an external 600-second limit. Use `--repeat 3` for repeat measurements; the OS
+and enforces an external 600-second limit. Use `--repeat 3` on the serial benchmark only (the parallel runner has no repeat option); the OS
 page cache is not flushed, and the first launch is distinguished from subsequent launches.
 Benchmark and environment JSON record commands, APK/JAR hashes, peak RSS, phases and status.
 

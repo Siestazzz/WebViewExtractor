@@ -249,16 +249,22 @@
     {
       "id": "actual_async_registration",
       "app": "all",
-      "status": "open",
+      "status": "partially_implemented",
       "cause": "Diana requires actual builder/request callback captures, obfuscated OkHttp enqueue, Handler.post and ServiceConnection/package-ready join. Fragment/View identity is repaired, callback dispatch remains missing. Existing constructor-only callback seeding is unsound (v15 synthetic negative); replacement with actual registration adapters is pending.",
-      "evidence": "mango/diana-request-callback-chain.json"
+      "evidence": "mango/diana-request-callback-chain.json",
+      "historical_status": "open",
+      "current_note": "Actual Handler/View posting, Activity.runOnUiThread, Executor, service connection and structurally recognized network callback adapters exist. Other framework/lifecycle boundaries remain incomplete.",
+      "current_evidence": "v16-registration-design.md"
     },
     {
       "id": "constructor_only_callback_execution",
       "app": "all",
-      "status": "open_confirmed_v15",
+      "status": "fixed_in_preserved_regression_fixture",
       "cause": "A near-API callback constructed and passed only to a no-op still contributes a bridge on a second WebView. Both v14c and v15a fail the same negative; bounded argument forwarding does not repair existing callbackEntries constructor seeding.",
-      "evidence": "v15-near-callback-known-failure.json"
+      "evidence": "v15-near-callback-known-failure.json",
+      "historical_status": "open_confirmed_v15",
+      "current_note": "Constructor-only callback seeding was removed in the consolidated prototype. NearCallbackFixture and the current scheduler-v3 capability suite pass; this does not prove all callback associations precise.",
+      "current_evidence": "scheduler-v3-tests.json"
     },
     {
       "id": "mango_erlang_v15_regression",
@@ -266,6 +272,48 @@
       "status": "open",
       "cause": "New argument traversal changes receiver alternatives and loses mgTransfer/showMangPushShare in Erlang. Source confirms both registrations and members; four facts appended to cumulative oracle, v14c 4/4 vs v15a 0/4. Root cause not yet established.",
       "evidence": "mango/v15a-deletion-review.json"
+    },
+    {
+      "id": "scheduler_v3_deep_deadline",
+      "app": "xigua/freereels",
+      "status": "open",
+      "cause": "All hosts receive an initial pass, but 344 Xigua and 105 FreeReels hosts remain interrupted at the deadline.",
+      "evidence": "scheduler-v3-effects.json"
+    },
+    {
+      "id": "scheduler_v3_context_limits",
+      "app": "news/mango/ctrip",
+      "status": "open",
+      "cause": "2/18/3 hosts terminate at internal context caps. Discarded tasks are counted but cannot be resumed after that termination.",
+      "evidence": "SCHEDULER_V3.md"
+    },
+    {
+      "id": "scheduler_v3_provisional_precision",
+      "app": "all",
+      "status": "unverified",
+      "cause": "Retained first-phase candidates and new output hosts/aliases have not received all-output ownership and capability precision audit; do not reuse historical error rates.",
+      "evidence": "scheduler-v3-review.md"
+    },
+    {
+      "id": "scheduler_v3_pending_memory",
+      "app": "all",
+      "status": "open",
+      "cause": "Unfinished Host heaps remain in memory; retained-state metrics exist, but no disk spill/bounded active window or process restart recovery.",
+      "evidence": "scheduler-v3-review.md"
+    },
+    {
+      "id": "scheduler_v3_freereels_missing_host",
+      "app": "freereels",
+      "status": "source_review_pending",
+      "cause": "Previously emitted MaxDebuggerMultiAdActivity is absent in the fixed-time run and still deadline-interrupted. Prior tool output is not independent truth.",
+      "evidence": "scheduler-v3-effects.json"
     }
-  ]
+  ],
+  "current_status": {
+    "implementation": "scheduler-v3",
+    "details": "SCHEDULER_V3.md",
+    "index": "README.md",
+    "acceptance": "not_passed",
+    "historical_issue_statuses": "Existing version-tagged issue statuses are retained as historical findings; they are not all re-audited current outcomes. Use current same-oracle replays and versioned reviews."
+  }
 }

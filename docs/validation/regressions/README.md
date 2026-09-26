@@ -1,6 +1,18 @@
 # Preserved regression fixtures
 
 These fixtures preserve previously demonstrated defects and their versioned status.
+Current automated regressions live under `src/test/java/org/example` and run through
+`./gradlew capabilitySelfTest compactReportTest` from the repository root. The standalone
+historical probes below may intentionally assert the presence of an old bug: a nonzero exit
+against a repaired version is not automatically a new regression.
+
+Scheduler review probes:
+
+- `SchedulerPhaseFactLossProbe.java`: v1 normal-finalization fact loss; deliberately expects the old failure.
+- `SchedulerV2RefinementBoundaryProbe.java`: v2 overly broad replacement; on v3 both printed values must be false, while its old-bug assertion then exits nonzero.
+- `SchedulerV3ConstructorRetentionProbe.java`: DEX constructor-derived first-phase Bridge fact retention; see [v3 review](../scheduler-v3-review.md) for exact commands and scope.
+
+[Validation index](../README.md) distinguishes frozen measurements, current tests and remaining acceptance work.
 
 `LifecycleFixture.java` reproduces the v11c long-video binding defect without app-specific names:
 a base Activity creates a concrete page, calls an interface-typed field setter/getter, and forwards

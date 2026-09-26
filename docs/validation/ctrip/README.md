@@ -1,6 +1,8 @@
 # Ctrip 8.78.0 source oracle
 
-This directory is an independently derived oracle for `test/apks/ctrip.android.view.apk`. It is based only on the matching JADX tree at `/HDD/d3008/WebViewBench/WebViewBench-predecompiled/ctrip-1`; extractor output was not consulted.
+This directory contains source/DEX evidence for `test/apks/ctrip.android.view.apk`. The initial inventory was built from the matching JADX tree at `/HDD/d3008/WebViewBench/WebViewBench-predecompiled/ctrip-1` without consulting extractor output. Later versioned documents also include report-guided, source-verified development extensions and corrections. The cumulative canonical set is not a blind holdout; JADX failures remain unknown unless checked against bytecode.
+
+Current cross-App results and scope: [validation index](../README.md), [scheduler v3](../SCHEDULER_V3.md). The paths above and `test/runs` artifacts are local evaluation inputs, not repository-bundled files.
 
 `activities.jsonl` contains every `<activity>` entry in the decoded manifest. `facts.jsonl` contains reviewable capability facts. `inventory-counts.json` is a generated consistency check. All paths in evidence are relative to the decompile root and line numbers refer to that immutable tree.
 
