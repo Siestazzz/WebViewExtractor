@@ -1,123 +1,76 @@
-# WebView 容器提取核心思路
+# WebView 能力提取的当前核心思路
 
-## 1. APK 信息读取
+当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文对应两轮调度实现；旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
 
-项目同时使用 dexlib2 和 Soot：
+## 与最初版的区别
 
-- dexlib2 读取 APK 中的全部 DEX，提取类名、直接父类和成员字段类型。
-- Soot 将 APK 方法体转换为 Jimple，用于提取方法内部声明的引用类型。
-- 两部分结果按完整类名合并。
+| 维度 | 最初版 | 当前默认实现 |
+|---|---|---|
+| 分析单位 | 类及其关系 | 方法调用上下文、符号对象、字段与参数 |
+| 数据获取 | dexlib2 类/字段信息，加 Soot/Jimple 局部类型 | dexlib2 全 DEX 索引，按需构建方法摘要 |
+| 宿主发现 | 从 WebView 基类沿 inherits/holds/declares 反向传播候选容器 | 从 Manifest Activity 出发，在能力相关方法范围内追踪对象和调用 |
+| 能力归属 | 在选定路径上的类中汇总 API 命中及风险分 | 依据调用参数、接收对象、字段/返回值等，将能力绑定到 Activity 内的 WebView |
+| 输出 | 候选容器、有限条类路径、风险信息 | Activity → WebView → Bridge/Settings/回调，及证据、候选状态、未归属入口 |
+| 调度 | 原始流程没有当前的按宿主暂停恢复机制 | 全部 Activity 先获得初扫机会，再恢复未完成现场、轮流深入 |
 
-Soot 使用 APK 输入模式，开启 MultiDex，并允许 phantom reference，避免部分依赖缺失时直接终止。
+共同点是利用静态关系寻找可能的 WebView 宿主；具体分析对象、绑定方法、调度和报告已经改变。不能仅凭有继承或字段类型关系就声称新实现已证明具体能力归属。
 
-## 2. 三类关系
+## 1. 全局索引：确定哪些方法值得追踪
 
-图以类为节点，边方向为“外层候选类指向它使用的内层类”。
+[CapabilityIndex](src/main/java/org/example/CapabilityIndex.java) 扫描 DEX，建立类继承、方法、调用、字段读写、能力调用点及部分框架注册关系。API 识别考虑方法身份、签名和类型关系。
 
-### `inherits`
+从能力调用点反向标记相关方法，用于缩小后续展开范围。这个反向标记不直接决定 Activity 归属，也不是一个已经证明某个 Activity 使用 WebView 的筛选器。
 
-类 `A` 的直接父类是 `B` 时建立：
+[ApkInventory](src/main/java/org/example/ApkInventory.java) 和布局解析器读取 Manifest、必要布局及资源信息。默认主流程不构建全 APK Soot scene；按需 Soot 回退仍未实现。
 
-```text
-A --inherits--> B
-```
+## 2. 从 Activity 出发建立绑定
 
-父类来自 DEX 的 superclass 描述符。传播可以逐层进行，因此支持间接继承 WebView。
+[CapabilityEngine](src/main/java/org/example/CapabilityEngine.java) 为每个 Activity 创建独立 Host 状态，从相关入口开始处理方法任务。
 
-### `holds`
-
-类 `A` 的成员字段类型是 `B` 时建立：
-
-```text
-A --holds--> B
-```
-
-字段由 dexlib2 读取。对象数组会去掉数组维度后记录元素类，基本类型忽略。
-
-内部类还会建立所属关系：
-
-```text
-Outer --holds--> Outer$Inner
-```
-
-多层内部类按直接层级连接，如 `A -> A$B -> A$B$C`。内部类编译产生的外部类回指字段会造成反向环，因此字段类型如果指向任意外层类会被过滤。
-
-### `declares`
-
-`declares` 通过 Soot 的 Jimple 方法体提取，不依赖 DEX debug local 信息。
-
-对每个 application class 的 concrete method：
-
-1. 调用 `retrieveActiveBody()` 获取 Jimple `Body`。
-2. 遍历 `body.getUnits()`。
-3. 只处理赋值类语句 `DefinitionStmt`。
-4. 跳过 `IdentityStmt`。Jimple 用它绑定 `this` 和方法参数，因此参数不会被算作方法内声明。
-5. 要求赋值左侧是 `Local`，读取该局部变量的静态类型。
-6. 只记录 `RefType`；如果是 `ArrayType`，先逐层取元素类型。
-
-以下右值会被排除：
-
-- `ParameterRef`：方法参数。
-- `ThisRef`：当前对象。
-- `FieldRef`：成员字段读取。
-- `Local`：局部变量复制。
-- `CastExpr`：类型转换产生的临时变量。
+[DexFlow](src/main/java/org/example/DexFlow.java) 提取方法内的符号寄存器传播、调用、字段写入和返回值摘要。调用者将实际符号对象和参数代入摘要；对象身份保留分配点、接收对象等来源信息。字段和集合状态保存在对应 Host 中。
 
 例如：
 
 ```java
-void run(WebView input) {
-    WebView a = input;
-    QYWebviewCorePanel panel = new QYWebviewCorePanel(...);
-}
+WebView first = new WebView(this);
+WebView second = new WebView(this);
+configure(first, new AppBridge());
+second.setWebViewClient(new PageClient());
 ```
 
-参数 `input` 和复制变量 `a` 不产生关系；对象创建会产生：
+追踪目标是把 `configure` 内部的 Bridge/设置归给 `first`，把 Client 归给 `second`，再共同归到当前 Activity。不能把相关类里出现的所有 API 混成一个 WebView 的能力。
 
-```text
-CurrentClass --declares--> QYWebviewCorePanel
-```
+已实现的传播包括若干字段/参数/返回值、继承、Fragment、布局、自定义 View、共享注册器和实际异步注册路径。它们均有边界和预算；反射、动态工厂、未知接收对象等仍可能留下候选或未决结果。符号对象也可能互为别名，WebView 条目数不是运行时对象数量。
 
-结果按类使用集合去重。方法体解析失败时只跳过该方法，不影响其他类。
+## 3. 能力记录
 
-注意：Jimple 是字节码中间表示，并不完全等同于反编译 Java。当前规则能排除参数和常见搬运语句，但其他编译器临时变量仍可能被识别为 `declares`。
+遇到能力调用后，记录具体 WebView 接收对象和关联证据：
 
-## 3. 候选容器传播
+- Bridge：注册名、实现类型、暴露方法及完整 DEX 签名；识别部分消息桥接和注册器协议。
+- Settings：配置调用、参数及未知/分支值；表示观察到的配置操作，不保证是最终状态。
+- Client/回调：注册实现类型、回调完整签名，以及相关继承实现。
 
-初始节点包括 Android、腾讯 X5、UC、MIUI 和 Huawei WebView 基类。
+匹配不到具体宿主的入口和解析限制仍写入详细报告。静态明确绑定也不证明运行时一定执行；未输出某个 Activity 不证明它没有 WebView。
 
-程序先建立“目标类 -> 所有指向它的关系”的反向索引，再执行队列传播：
+## 4. 先初扫，再恢复现场深入分析
 
-1. 从队列取出已知 WebView 候选类。
-2. 找到所有继承、持有或声明它的类。
-3. 将这些类标记为新候选容器并记录原因。
-4. 新候选继续入队，直到没有新类。
+[Main](src/main/java/org/example/Main.java) 调度全部 Manifest Activity；Manifest 没有 Activity 时有基于继承类型的回退。
 
-因此，由 `inherits`、`holds`、`declares` 或内部类关系连接到 WebView 的类都会成为候选容器。
+1. 第一轮每个 Activity 最多先处理 8 个方法上下文或约 50 毫秒；临近目标时间时还会缩小时间份额。
+2. 暂停时保留 ActivityState/Host：任务队列、参数、对象/字段/集合状态、已发现能力和处理记录。
+3. 第二轮按轮转顺序恢复未完成宿主，每批最多 100 个上下文或约 50 毫秒。
+4. 默认目标 300 秒、硬时限 600 秒；定期落盘，独立进程监督截止时间。
 
-## 4. 路径选择
+暂停发生在方法任务之间，因此 50 毫秒是软预算，单个复杂任务可能超出。现场仅保留在当前进程内，不支持退出后从报告恢复。
 
-图可能包含环和多条路径。搜索使用递归栈避免环，并缓存每个节点的一条最佳路径。
+这两轮调度与引擎内部两个细化阶段不同。第一阶段独有的事实在后续未重新推导时保留为待复核候选；替换旧占位需满足对象来源、参数及成员不缩减等约束。内部上下文限额仍可能放弃任务，报告会记录数量。
 
-每个起点只保留一条到 WebView 基类的路径：
+## 5. 报告与当前效果
 
-1. 优先选择包含更多 Activity/Fragment 的路径。
-2. 数量相同时按完整路径文本排序，保证结果稳定。
+- `capabilities.json`：完整能力事实、对象分组、证据、覆盖状态、诊断、未归属入口。
+- `capabilities.compact.json`：格式化的三层列表，仅展示签名、Settings 参数和各层统计，保留覆盖元数据。
+- `activity_coverage`：区分未开始、初扫/待深入、截止中断、遍历结束、内部预算耗尽。遍历结束不等于能力完整。
 
-Activity/Fragment 通过沿继承链查找预设 Android、AndroidX 和 support 基类判定。
+最近六 App 并行测试中，全部 Activity 在约 19～58 秒内获得初扫；西瓜和 FreeReels 仍未在截止前完成深入分析。三个已有累计核验集未出现新增遗漏，但新增候选的整体误报率尚未核验，质量总验收没有通过。
 
-起点依次为：
-
-1. 没有被其他候选容器包裹的 Activity/Fragment。
-2. 已被包裹、但自身也是候选容器的 Activity/Fragment。
-3. 没有被包裹，且路径中不含 Activity/Fragment 的普通 class。
-
-第二类起点可以避免宿主回指导致有效 Activity/Fragment 从结果中消失。
-
-## 5. 输出文件
-
-程序根据 APK 文件名在 `output` 目录生成：
-
-- `<apk>_webview_container_classes.json`：候选类及其发现原因。
-- `<apk>_webview_outer_paths.json`：起点到 WebView 基类的详细路径。
-- `<apk>_webview_outermost_classes.json`：按 Activity/Fragment 和普通 class 分组的简化类名。
+实现细节、测试、实际结果和残留问题见 [两轮调度记录](docs/validation/SCHEDULER_V3.md)、[能力分析说明](docs/CAPABILITY_ANALYSIS.md) 和 [迭代总账](docs/validation/ITERATIONS.md)。使用命令见 [USAGE.md](USAGE.md)。
