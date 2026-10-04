@@ -1,0 +1,54 @@
+{
+  "package": "com.ss.android.article.video",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "apk_scope": "single APK",
+  "source_root": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1",
+  "source_hash_verified": true,
+  "jadx_exit_code": 1,
+  "jadx_arguments": [
+    "--show-bad-code",
+    "--threads-count",
+    "4",
+    "--log-level",
+    "warn"
+  ],
+  "jadx_heap": "8g",
+  "reviewer": "GPT-6.1 Sol",
+  "manifest_activity_count": 628,
+  "java_file_count": 77448,
+  "source_entry_count": 354,
+  "source_entry_files": 122,
+  "reviewed_positive_hosts": [
+    "com.bytedance.bdturing.comonui.CommonWebActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+    "com.ixigua.browser.specific.AggregationBrowserActivity",
+    "com.ixigua.browser.specific.BrowserActivity",
+    "com.ixigua.browser.specific.PureBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+  ],
+  "canonical_fact_count": 83,
+  "acceptance": "unproven",
+  "holdout_status": "10 Activity selection sealed before body/report analysis",
+  "present_strata": {
+    "service_factory_scene": [
+      "com.ixigua.browser.specific.BrowserActivity",
+      "com.ixigua.browser.specific.PureBrowserActivity",
+      "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+    ],
+    "sdk_xml_custom_webview": [
+      "com.bytedance.bdturing.comonui.CommonWebActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2"
+    ]
+  },
+  "source_audit_scope": "source-first deep subset; whole Manifest and lexical entries inventoried, not fully verified",
+  "remaining_gates": [
+    "30 source-confirmed positive Activity hosts or evidence of exhaustive smaller positive inventory",
+    "2 hosts per every actual binding stratum",
+    "All output activity_host ownership",
+    "Sealed10 Activity holdout truth/evaluation",
+    "capability precision and final report recall"
+  ]
+}

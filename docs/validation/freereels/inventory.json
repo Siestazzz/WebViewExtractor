@@ -1,0 +1,55 @@
+{
+  "package": "com.freereels.app",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "apk_scope": "base APK only",
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/FreeReels_2.3.11",
+  "source_build_sha256": "583544c7e546a3cda79a8b9f0739cbb7d2bb76971617badf2e80c272d284b2b7",
+  "source_hash_verified": true,
+  "reviewer": "GPT-6.1 Sol",
+  "manifest_activity_count": 164,
+  "java_file_count": 67295,
+  "source_entry_count": 521,
+  "source_entry_files": 178,
+  "source_entries_by_category": {
+    "bridge_member": 183,
+    "bridge_registration": 23,
+    "setting": 98,
+    "client_registration": 217
+  },
+  "reviewed_positive_hosts": [
+    "com.applovin.sdk.AppLovinWebViewActivity",
+    "com.dramawave.feature.web.WebPageActivity",
+    "com.fyber.ads.ofw.OfferWallActivity",
+    "com.tapjoy.TJAdUnitActivity",
+    "com.tapjoy.TJWebViewActivity",
+    "com.taurusx.tax.ui.TaxWebViewActivity",
+    "com.taurusx.tax.utils.webview.TaxBrowserActivity"
+  ],
+  "canonical_fact_count": 46,
+  "acceptance": "unproven",
+  "scope_note": "Whole Manifest and lexical entry inventory is not whole-source validation; host chains pending",
+  "holdout_status": "pending independent source selection",
+  "present_strata": {
+    "fragment_resource": [
+      "com.dramawave.feature.web.WebPageActivity"
+    ],
+    "sdk_direct_webview": [
+      "com.tapjoy.TJWebViewActivity",
+      "com.applovin.sdk.AppLovinWebViewActivity",
+      "com.fyber.ads.ofw.OfferWallActivity",
+      "com.taurusx.tax.ui.TaxWebViewActivity",
+      "com.taurusx.tax.utils.webview.TaxBrowserActivity"
+    ],
+    "sdk_unit_retained_webview": [
+      "com.tapjoy.TJAdUnitActivity"
+    ]
+  },
+  "source_audit_scope": "source-first deep subset; whole Manifest and lexical entries inventoried, not fully verified",
+  "remaining_gates": [
+    "30 source-confirmed positive Activity hosts or evidence of exhaustive smaller positive inventory",
+    "2 hosts per every actual binding stratum",
+    "All output activity_host ownership",
+    "Sealed10 Activity holdout truth/evaluation",
+    "capability precision and final report recall"
+  ]
+}

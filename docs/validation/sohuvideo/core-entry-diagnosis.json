@@ -1,0 +1,126 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "selection_provenance": "source-backed core entrypoint diagnosis after v2, excludes reserved holdouts",
+  "source_entry_chain": "Activity.onCreate -> initFragment -> actual Fragment object+input params+manager replace -> Fragment.onCreateView inflate -> onViewCreated -> initView writes concrete custom WebView field -> initViewByData -> initWebSetting -> virtual factories + capabilities",
+  "evidence": [
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+      "line": 298,
+      "text": "initFragment();"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+      "line": 166,
+      "text": "this.fragment = (WebViewFragment) Fragment.instantiate(this, WebViewFragment.class.getName());"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+      "line": 184,
+      "text": "this.fragment.setOverviewMode(this.isOverviewMode);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+      "line": 186,
+      "text": "beginTransaction.replace(R.id.webview_container, this.fragment);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2687,
+      "text": "return R.layout.fragment_webview;"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 3252,
+      "text": "view = layoutInflater.inflate(getContentViewLayout(), viewGroup, false);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 3539,
+      "text": "if (this.inputParams == null) {"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 3542,
+      "text": "initView(view);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 3544,
+      "text": "initViewByData();"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2895,
+      "text": "this.mWebView = (VideoEnabledWebView) view.findViewById(R.id.webView);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2915,
+      "text": "initWebSetting(true);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2949,
+      "text": "WebSettings settings = this.mWebView.getSettings();"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2976,
+      "text": "initJsBridge();"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2977,
+      "text": "this.mWebView.addJavascriptInterface(this.sohuJsBridge, \"handler\");"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2993,
+      "text": "initWebViewClient();"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2994,
+      "text": "this.mWebView.setWebViewClient(this.webViewClient);"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2996,
+      "text": "initChromeWebViewClient();"
+    },
+    {
+      "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+      "line": 2997,
+      "text": "this.mWebView.setWebChromeClient(this.chromeClient);"
+    }
+  ],
+  "engine_fact": "CapabilityEngine.seed permits all relevant methods of a Fragment/component, including ordinary helpers, and gives non-View arguments entry_parameter placeholders. lifecycle-style onViewCreated receives fragment_view placeholder. This can introduce many helper contexts before the actual input/layout writes, but v2 pending metrics alone do not prove which job was lost.",
+  "minimal_structure": {
+    "real_entry": [
+      "Activity constructs DerivedFragment, calls setInputParams(real), adds Fragment to actual manager",
+      "Fragment.onCreateView returns inflate(constantLayout)",
+      "Fragment.onViewCreated(view) calls initView(view), then initViewByData()",
+      "initView writes webView=(CustomWebView)view.findViewById(constantId)",
+      "initViewByData calls initWebSetting(true)",
+      "initWebSetting obtains settings, initBridge virtual factory, registers bridge, initClient virtual factory, installs clients"
+    ],
+    "distractors": [
+      "100+ relevant ordinary Fragment helpers not called from lifecycle; some forward to synthetic dialogs or callback-taking helpers",
+      "callbacks capturing fragment fields, installed on distinct owners or only used by user-driven JS actions",
+      "direct helper seeds with unknown parameters, later actual helper calls with precise params"
+    ],
+    "expected_invariants": [
+      "Actual same-host, same-concrete-WebView setup facts appear without invoking every ordinary helper as an independent root",
+      "No capability assigned solely because a never-called helper could create another modal/container",
+      "Keep real framework/lifecycle callbacks, installed client members and registered async continuations reachable",
+      "Unknown constructor/guard values preserve branch alternatives; do not fabricate concrete WebView fields"
+    ]
+  },
+  "needed_diagnostics": [
+    "Root-origin category per Job: actual manifest lifecycle, actual invoke, framework contract, registered async/client callback, ordinary synthetic seed, field-origin materialization",
+    "Per host/method/receiver: seed enqueue order, first processing order, heap readiness, pending/processed counts, ordinary vs priority class",
+    "Direct lifecycle-to-initWebSetting paths and actual receiver-ID mapping for real fragment_view inflation",
+    "Constructor/getter/field-writer replays and discarded/capped contexts separated from deadline interruptions"
+  ],
+  "verdict": "Real source entry exists; unfinished v2 traversal is established. Pseudo-root flooding is a plausible generic mechanism, but requires job-origin trace to distinguish it from unresolved entry/layout binding. No proven propagation bug solely from this source audit."
+}

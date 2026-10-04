@@ -1,0 +1,164 @@
+{
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "reviewer": "GPT-6.1 Sol",
+  "evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 735,
+      "text": "android:name=\"com.ixigua.browser.specific.BrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 789,
+      "text": "this.t = r2;",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 969,
+      "text": "return (AppSettings.inst().mSearchConfigSettings.A().enable() && w2()) ? ((IBrowserService) ServiceManager.getService(IBrowserService.class)).getSearchChildBrowserScene() : ((IBrowserService) ServiceManager.getService(IBrowserService.class)).getArticleBrowserScene();",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/impl/BrowserServiceImpl.java",
+      "line": 112,
+      "text": "return new ArticleBrowserScene();",
+      "sha256": "86c41dac228e8a6fa90c40561429b7d3e795c727343efe8d5a00bf69f8645073"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/ArticleBrowserScene.java",
+      "line": 143,
+      "text": "public class ArticleBrowserScene extends BrowserScene implements BrowserScene.OnPageLoadListener {",
+      "sha256": "17cfc354adbbadebf37939e12a2b17cb7374bf5d053192da015d53889f8d0319"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 744,
+      "text": "android:name=\"com.ixigua.browser.specific.PureBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/PureBrowserActivity.java",
+      "line": 6,
+      "text": "public final class PureBrowserActivity extends BrowserActivity {",
+      "sha256": "32c28af6d70b9988d40fe392530504448e2ae081ff290d229bcad5e88ff2059d"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 748,
+      "text": "android:name=\"com.ixigua.browser.specific.AggregationBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/AggregationBrowserActivity.java",
+      "line": 43,
+      "text": "public final class AggregationBrowserActivity extends BrowserActivity {",
+      "sha256": "92820c3809505eb9078194207798b3891838b5c89c6766cb5723b3f4dc3e8592"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 739,
+      "text": "android:name=\"com.ixigua.browser.specific.pad.PadBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/pad/PadBrowserActivity.java",
+      "line": 17,
+      "text": "public final class PadBrowserActivity extends BrowserActivity {",
+      "sha256": "5400ae620923d290263da9549eaad4217a694a06b76873165c4e437bddb02f76"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1695,
+      "text": "android:name=\"com.ixigua.browser.specific.pad.PadBrowserDialogActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/pad/PadBrowserDialogActivity.java",
+      "line": 38,
+      "text": "public final class PadBrowserDialogActivity extends BrowserActivity implements IPageTrackNode {",
+      "sha256": "f964d70ba04292246bf8760b313b9ca6c9be439be46ae0b0dfc94579a665ba18"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3960,
+      "text": "android:name=\"com.bytedance.bdturing.comonui.CommonWebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "line": 126,
+      "text": "this.e = (TuringVerifyWebView) findViewById(2131178759);",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "line": 128,
+      "text": "this.e.b(new VerifyWebViewListener() { // from class: com.bytedance.bdturing.comonui.CommonWebActivity.1",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/TuringVerifyWebView.java",
+      "line": 41,
+      "text": "public class TuringVerifyWebView extends WebView {",
+      "sha256": "48dad07225b4538df9cc3489a2a2395a0db4b762a813b1d3478e2d167e987f71"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "line": 163,
+      "text": "new JsBridgeModule(this.g, this.e);",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3894,
+      "text": "android:name=\"com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "line": 207,
+      "text": "TuringVerifyWebView turingVerifyWebView = (TuringVerifyWebView) findViewById(2131167810);",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "line": 209,
+      "text": "turingVerifyWebView.b(this.j, true, this.d);",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "line": 220,
+      "text": "new JsBridgeModule(this.i, this.a);",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10"
+    }
+  ],
+  "deep_positive_activities": 7,
+  "present_strata": {
+    "service_factory_scene": [
+      "com.ixigua.browser.specific.BrowserActivity",
+      "com.ixigua.browser.specific.PureBrowserActivity",
+      "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+    ],
+    "sdk_xml_custom_webview": [
+      "com.bytedance.bdturing.comonui.CommonWebActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2"
+    ]
+  },
+  "exhaustive_positive_inventory": false,
+  "manifest_activity_count": 628,
+  "acceptance": "unproven; source-first work in progress",
+  "holdout_disjoint": true,
+  "source_first_expansion_evidence": {
+    "hosts": [
+      "com.bytedance.bdturing.comonui.CommonWebActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2"
+    ],
+    "canonical_fact_count": 83,
+    "provenance": "source-first; no extractor output read"
+  }
+}

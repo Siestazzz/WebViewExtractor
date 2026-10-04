@@ -29,6 +29,7 @@ public final class CapabilitySelfTest {
   SchedulerIsolationFixture.run();
   ContextPriorityFixture.run();
   SwitchOwnershipFixture.run();
+  ComponentEntryFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction11n(Opcode.CONST_4,1,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",0,1),
@@ -456,7 +457,7 @@ public final class CapabilitySelfTest {
   helpers.add(method(H,"hop72",List.of(W),9,3,List.of(make(0,B),str(1,"deep-direct"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",2,0,1),make(0,fragment),invoke(Opcode.INVOKE_DIRECT,fragment,"<init>",List.of(),"V",0),end()),false));
   var entry=method(A,"onCreate",List.of(),1,2,List.of(make(0,W),invoke(Opcode.INVOKE_STATIC,H,"hop0",List.of(W),"V",0),end()),false);
   var init=method(fragment,"<init>",List.of(),1,1,List.of(end()),false);
-  var view=method(fragment,"onCreateView",List.of(),1,4,List.of(make(0,W),make(1,B),str(2,"deep-fragment"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
+  var view=method(fragment,"onCreate",List.of("Landroid/os/Bundle;"),1,5,List.of(make(0,W),make(1,B),str(2,"deep-fragment"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
   Path path=Files.createTempFile("wv-long-evidence-",".dex");
   try{
    DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",helpers.toArray(ImmutableMethod[]::new)),clazz(fragment,"Landroid/app/Fragment;",init,view),clazz(B,"Ljava/lang/Object;",method(B,"exposed",List.of(),1,1,List.of(end()),true)))));
@@ -464,7 +465,7 @@ public final class CapabilitySelfTest {
    check(engine.activities.size()==1,"Evidence length incorrectly blocked deep capability chain");
    @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
    check(facts.stream().anyMatch(f->"deep-direct".equals(f.get("registration_name"))),"Deep direct capability lost");
-   check(facts.stream().anyMatch(f->"deep-fragment".equals(f.get("registration_name"))),"Deep actual Fragment initializer lost");
+   check(facts.stream().anyMatch(f->"deep-fragment".equals(f.get("registration_name"))),"Deep actual Fragment lifecycle lost");
    check(facts.stream().allMatch(f->((List<?>)f.get("evidence")).size()<=64),"Evidence presentation grew without bound");
    check(engine.activities.get(0).get("limitations").toString().contains("evidence_path_truncated"),"Omitted evidence was not diagnosed");
   }finally{Files.deleteIfExists(path);}

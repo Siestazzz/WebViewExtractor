@@ -1,0 +1,206 @@
+{
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 578,
+      "text": "android:name=\"com.dramawave.feature.web.WebPageActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageActivity.java",
+      "line": 162,
+      "text": "this.mWebPageFragment = companion.newInstance(str4, false, false, true, z12, valueOf, valueOf2, z10, webPageArgs3 != null ? webPageArgs3.getCloseWhenRedirectDramawave() : false);",
+      "sha256": "1c1e647008651a6692fd5cd78a8f1e741785e6bb78a19c0f161c3e020c90298a"
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageFragment.java",
+      "line": 324,
+      "text": "WebPageFragment webPageFragment = new WebPageFragment();",
+      "sha256": "da10f77f7a20f35071cdd1bba521c2b574b56d449bc4458cda02bddde9e1dcb1"
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageFragment.java",
+      "line": 487,
+      "text": "U3((WebView) view.findViewById(R$id.i));",
+      "sha256": "da10f77f7a20f35071cdd1bba521c2b574b56d449bc4458cda02bddde9e1dcb1"
+    },
+    {
+      "file": "resources/res/layout/fragment_webpage.xml",
+      "line": 42,
+      "text": "<WebView",
+      "sha256": "9a6dcfa6536ffa419f5495018573cff810bc334b98a37e25a1b286ca9fb2d102"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 906,
+      "text": "android:name=\"com.tapjoy.TJWebViewActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/tapjoy/TJWebViewActivity.java",
+      "line": 186,
+      "text": "TJWebView tJWebView = new TJWebView(this);",
+      "sha256": "bf2dbaedeb709f840403ee8e64c3a54fd53262281a67e109a7c2ad3b37e43fb9"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 931,
+      "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 232,
+      "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 875,
+      "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+      "line": 152,
+      "text": "WebView webView = new WebView(getApplicationContext());",
+      "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+    },
+    {
+      "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+      "line": 156,
+      "text": "setContentView(this.webView);",
+      "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 900,
+      "text": "android:name=\"com.tapjoy.TJAdUnitActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 103,
+      "text": "this.f119807f = new TJAdUnit();",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 107,
+      "text": "this.f119807f.load(this.f119808g, false, this);",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnit.java",
+      "line": 52,
+      "text": "TapjoyUtil.runOnMainThread(new c(this, context, tJPlacementData, z));",
+      "sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811"
+    },
+    {
+      "file": "sources/com/tapjoy/c.java",
+      "line": 41,
+      "text": "TJWebView tJWebView = new TJWebView(context);",
+      "sha256": "7e3de98a87faf9b582db458db5531862f372ef1779e75f004b4eeccaabba86af"
+    },
+    {
+      "file": "sources/com/tapjoy/c.java",
+      "line": 42,
+      "text": "tJAdUnit.f119800e = tJWebView;",
+      "sha256": "7e3de98a87faf9b582db458db5531862f372ef1779e75f004b4eeccaabba86af"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnit.java",
+      "line": 135,
+      "text": "return this.f119800e;",
+      "sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 123,
+      "text": "this.f119792a.addView(webView);",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1330,
+      "text": "android:name=\"com.taurusx.tax.ui.TaxWebViewActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaxWebViewActivity.java",
+      "line": 176,
+      "text": "WebView webView = new WebView(this);",
+      "sha256": "746d92720907b2ea79a3ec703a5ef61ba6d01b622236373ee03cb99cf1c890e1"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaxWebViewActivity.java",
+      "line": 178,
+      "text": "frameLayout.addView(webView);",
+      "sha256": "746d92720907b2ea79a3ec703a5ef61ba6d01b622236373ee03cb99cf1c890e1"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaxWebViewActivity.java",
+      "line": 180,
+      "text": "w(this.f121336c);",
+      "sha256": "746d92720907b2ea79a3ec703a5ef61ba6d01b622236373ee03cb99cf1c890e1"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1349,
+      "text": "android:name=\"com.taurusx.tax.utils.webview.TaxBrowserActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 184,
+      "text": "setContentView(R.layout.taurusx_activity_web_view);",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 185,
+      "text": "a();",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 106,
+      "text": "t();",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 124,
+      "text": "WebView webView = new WebView(this);",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 126,
+      "text": "frameLayout.addView(webView);",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    }
+  ],
+  "deep_positive_activities": 7,
+  "present_strata": {
+    "fragment_resource": [
+      "com.dramawave.feature.web.WebPageActivity"
+    ],
+    "sdk_direct_webview": [
+      "com.tapjoy.TJWebViewActivity",
+      "com.applovin.sdk.AppLovinWebViewActivity",
+      "com.fyber.ads.ofw.OfferWallActivity",
+      "com.taurusx.tax.ui.TaxWebViewActivity",
+      "com.taurusx.tax.utils.webview.TaxBrowserActivity"
+    ],
+    "sdk_unit_retained_webview": [
+      "com.tapjoy.TJAdUnitActivity"
+    ]
+  },
+  "exhaustive_positive_inventory": false,
+  "manifest_activity_count": 164,
+  "acceptance": "unproven; source-first work in progress",
+  "holdout_disjoint": true
+}

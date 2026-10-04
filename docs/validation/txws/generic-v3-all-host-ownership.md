@@ -1,0 +1,3 @@
+# generic-v3 full emitted-host ownership re-review
+
+All 15 v3 emitted hosts re-reviewed against their existing source chains: all source statements were re-read and their file hashes recorded; new emitted receiver type inventories and per-host fact counts were checked against v2. All 15 retain source-supported conditional WebView ownership. This is scope=activity_host, not a full capability precision claim. The JSONL contains exact v3 APK/report hashes and per-host applicability evidence; this is not a hash-only carry-forward. Full Manifest source exhaustion and 30-positive proof remain incomplete.

@@ -1745,11 +1745,21 @@
   "input_variant": "patched; explicitly selected by user",
   "supersedes_origin_inventory": true,
   "positive_hosts_reviewed": [
+    "com.sina.weibo.sdk.web.WebActivity",
+    "com.tencent.feedback.activity.FeedbackWebActivity",
+    "com.tencent.feedback.activity.WebViewBrowser",
+    "com.tencent.oscar.common.security.captcha.TCaptchaPopupActivity",
     "com.tencent.oscar.module.webview.BrowserMainActivity",
     "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
     "com.tencent.oscar.module.webview.WebviewBaseActivity",
+    "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
     "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity",
-    "com.tencent.wework.api.view.H5Activity"
+    "com.tencent.oscar.module.webview.tenvideo.TenvideoPayWebViewActivityLandscape",
+    "com.tencent.upgrade.ui.UpgradeActiveActivity",
+    "com.tencent.weishi.base.qq.QQScanLoginActivity",
+    "com.tencent.weishi.module.landvideo.HorizontalVideoActivity",
+    "com.tencent.wework.api.view.H5Activity",
+    "com.webank.facelight.ui.FaceProtocalActivity"
   ],
   "canonical_fact_count": 99,
   "canonical_kind_counts": {
@@ -2186,9 +2196,9 @@
   ],
   "raw_source_first_file": "canonical-source-first-raw.jsonl",
   "normalized_source_first_file": "canonical-facts.jsonl",
-  "additional_report_guided_rows": 69,
+  "additional_report_guided_rows": 246,
   "additional_report_guided_file": "canonical-additional-report-guided.jsonl",
-  "combined_fact_rows": 168,
+  "combined_fact_rows": 345,
   "reviewed_host_groups": [
     {
       "group": "X5 Fragment wrapper",
@@ -2205,5 +2215,16 @@
         "com.tencent.wework.api.view.H5Activity"
       ]
     }
-  ]
+  ],
+  "ownership_all_output_review": {
+    "file": "generic-v2-all-host-ownership.jsonl",
+    "report_sha256": "e11b96e7233399dfc7b61dfe90bb6c5ead6549ec33ea9b4ec39a423e488f27f2",
+    "scope": "activity_host",
+    "emitted": 15,
+    "reviewed": 15,
+    "valid": 15,
+    "wrong": 0,
+    "unresolved": 0
+  },
+  "exhaustive_source_positive_search_complete": false
 }

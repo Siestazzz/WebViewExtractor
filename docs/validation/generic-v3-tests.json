@@ -1,0 +1,21 @@
+{
+  "jar_sha256": "c81d5de49a1c79b0895e5f9f285f771032f97c85539a29a03eaa95ba0bd318c2",
+  "command": "./gradlew capabilitySelfTest compactReportTest shadowJar --offline --console=plain",
+  "exit_code": 0,
+  "build_seconds": 8,
+  "fixtures": [
+    "ComponentEntryFixture",
+    "SwitchOwnershipFixture",
+    "ContextPriorityFixture",
+    "PhaseRetentionFixture",
+    "SchedulerIsolationFixture",
+    "ActivityResumeFixture",
+    "existing CapabilitySelfTest",
+    "CompactReportTest"
+  ],
+  "limitations": [
+    "Development parallel benchmark, not isolated acceptance repeats",
+    "One jcmd sample of Sohu supervisor and one worker at about 437 seconds; small measurement perturbation possible",
+    "Oracle normalization correction for Yangshipin is applied equally to v2 and v3; not a production recall improvement"
+  ]
+}

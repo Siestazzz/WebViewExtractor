@@ -432,6 +432,68 @@ final class CapabilityIndex {
     boolean map(String t){return t!=null&&(Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.util.TreeMap","java.util.concurrent.ConcurrentMap","java.util.concurrent.ConcurrentHashMap").contains(t)||subtype(t,"java.util.Map"));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
+    boolean componentEntry(String type,Method method){
+        if((method.getAccessFlags()&(2|8))!=0||(method.getAccessFlags()&(1|4))==0)return false;
+        String contract=shape(method);
+        if((webview(type)||subtype(type,"android.view.View"))&&VIEW_ENTRY_SHAPES.contains(contract))return true;
+        if(subtype(type,"android.view.ViewGroup")&&VIEW_GROUP_ENTRY_SHAPES.contains(contract))return true;
+        for(String base:List.of("android.app.Fragment","androidx.fragment.app.Fragment","android.support.v4.app.Fragment"))
+            if(subtype(type,base)&&(FRAGMENT_ENTRY_SHAPES.contains(contract)||contract.equals("onAttachFragment(L"+base.replace('.', '/')+";)V")||
+                base.equals("android.app.Fragment")&&contract.equals("onTrimMemory(I)V")||
+                !base.equals("android.app.Fragment")&&contract.equals("onPrimaryNavigationFragmentChanged(Z)V")))return true;
+        return subtype(type,"android.app.Dialog")&&DIALOG_ENTRY_SHAPES.contains(contract);
+    }
+    // Complete public/protected framework callback shapes; ordinary APIs are not entrypoints.
+    static final Set<String> VIEW_ENTRY_SHAPES=Set.of(
+        "onFinishInflate()V","onAttachedToWindow()V","onDetachedFromWindow()V",
+        "onWindowVisibilityChanged(I)V","onVisibilityChanged(Landroid/view/View;I)V",
+        "onSizeChanged(IIII)V","onLayout(ZIIII)V","onMeasure(II)V",
+        "onDraw(Landroid/graphics/Canvas;)V","dispatchDraw(Landroid/graphics/Canvas;)V",
+        "draw(Landroid/graphics/Canvas;)V","onWindowFocusChanged(Z)V",
+        "onFocusChanged(ZILandroid/graphics/Rect;)V","onConfigurationChanged(Landroid/content/res/Configuration;)V",
+        "onScrollChanged(IIII)V","onDisplayHint(I)V","onScreenStateChanged(I)V",
+        "onWindowSystemUiVisibilityChanged(I)V","onVisibilityAggregated(Z)V",
+        "drawableStateChanged()V","onCreateDrawableState(I)[I",
+        "onRestoreInstanceState(Landroid/os/Parcelable;)V","onSaveInstanceState()Landroid/os/Parcelable;",
+        "onTouchEvent(Landroid/view/MotionEvent;)Z","dispatchTouchEvent(Landroid/view/MotionEvent;)Z",
+        "onGenericMotionEvent(Landroid/view/MotionEvent;)Z","onHoverEvent(Landroid/view/MotionEvent;)Z",
+        "onTrackballEvent(Landroid/view/MotionEvent;)Z","onKeyDown(ILandroid/view/KeyEvent;)Z",
+        "onKeyUp(ILandroid/view/KeyEvent;)Z","onKeyLongPress(ILandroid/view/KeyEvent;)Z",
+        "onKeyMultiple(IILandroid/view/KeyEvent;)Z","onKeyShortcut(ILandroid/view/KeyEvent;)Z",
+        "dispatchKeyEvent(Landroid/view/KeyEvent;)Z","dispatchKeyEventPreIme(Landroid/view/KeyEvent;)Z",
+        "onKeyPreIme(ILandroid/view/KeyEvent;)Z","onCheckIsTextEditor()Z",
+        "onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;");
+    static final Set<String> VIEW_GROUP_ENTRY_SHAPES=Set.of(
+        "onInterceptTouchEvent(Landroid/view/MotionEvent;)Z","onViewAdded(Landroid/view/View;)V",
+        "onViewRemoved(Landroid/view/View;)V","onDescendantInvalidated(Landroid/view/View;Landroid/view/View;)V");
+    static final Set<String> FRAGMENT_ENTRY_SHAPES=Set.of(
+        "onAttach(Landroid/content/Context;)V","onAttach(Landroid/app/Activity;)V",
+        "onInflate(Landroid/content/Context;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
+        "onInflate(Landroid/app/Activity;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
+        "onCreate(Landroid/os/Bundle;)V",
+        "onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+        "onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V","onViewStateRestored(Landroid/os/Bundle;)V",
+        "onActivityCreated(Landroid/os/Bundle;)V","onStart()V","onResume()V","onPause()V",
+        "onStop()V","onDestroyView()V","onDestroy()V","onDetach()V",
+        "onSaveInstanceState(Landroid/os/Bundle;)V","onConfigurationChanged(Landroid/content/res/Configuration;)V",
+        "onLowMemory()V","onHiddenChanged(Z)V",
+        "onMultiWindowModeChanged(Z)V","onMultiWindowModeChanged(ZLandroid/content/res/Configuration;)V",
+        "onPictureInPictureModeChanged(Z)V","onPictureInPictureModeChanged(ZLandroid/content/res/Configuration;)V",
+        "onActivityResult(IILandroid/content/Intent;)V",
+        "onRequestPermissionsResult(I[Ljava/lang/String;[I)V",
+        "onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V",
+        "onPrepareOptionsMenu(Landroid/view/Menu;)V","onOptionsItemSelected(Landroid/view/MenuItem;)Z",
+        "onOptionsMenuClosed(Landroid/view/Menu;)V",
+        "onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
+        "onContextItemSelected(Landroid/view/MenuItem;)Z");
+    static final Set<String> DIALOG_ENTRY_SHAPES=Set.of(
+        "onCreate(Landroid/os/Bundle;)V","onStart()V","onStop()V",
+        "onAttachedToWindow()V","onDetachedFromWindow()V","onWindowFocusChanged(Z)V",
+        "onContentChanged()V","onBackPressed()V","onSaveInstanceState()Landroid/os/Bundle;",
+        "onRestoreInstanceState(Landroid/os/Bundle;)V","dispatchTouchEvent(Landroid/view/MotionEvent;)Z",
+        "dispatchKeyEvent(Landroid/view/KeyEvent;)Z","onKeyDown(ILandroid/view/KeyEvent;)Z",
+        "onKeyUp(ILandroid/view/KeyEvent;)Z","onKeyLongPress(ILandroid/view/KeyEvent;)Z",
+        "onKeyMultiple(IILandroid/view/KeyEvent;)Z");
     boolean component(String t){return webview(t)||subtype(t,"android.app.Fragment")||subtype(t,"androidx.fragment.app.Fragment")||subtype(t,"android.support.v4.app.Fragment")||subtype(t,"android.view.View")||subtype(t,"android.app.Dialog");}
     String kind(MethodReference m){
         String owner=cls(m.getDefiningClass()),n=m.getName();var p=m.getParameterTypes();

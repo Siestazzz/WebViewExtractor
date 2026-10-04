@@ -595,7 +595,6 @@ final class CapabilityEngine {
         }
         objectFieldSetters.put(id,found);return found;
     }
-    static final Set<String> XML_VIEW_CALLBACKS=Set.of("onFinishInflate","onAttachedToWindow","onDetachedFromWindow","onWindowVisibilityChanged","onVisibilityChanged","onSizeChanged","onLayout","onMeasure","onDraw","onWindowFocusChanged","onFocusChanged","onConfigurationChanged");
     void seed(Host h,String type,V self,List<String> path,boolean candidate){
         if(Cfg.WEBVIEWS.contains(type))return;
         if(h.components.size()>=12000){h.gaps.add("component_instance_budget:"+type);return;}
@@ -607,10 +606,9 @@ final class CapabilityEngine {
             for(String call:idx.calls.getOrDefault(CapabilityIndex.key(entry),Set.of()))referencedShapes.add(call.substring(call.indexOf("->")+2));
         Set<String> usedFields=new HashSet<>();ArrayDeque<String> fieldMethods=new ArrayDeque<>();
         for(Method m:hierarchy){
-            // XML inflation constructs a View; it does not invoke every app-defined helper.
-            // Ordinary helpers receive this receiver only through actual calls/getters.
-            if(self.kind().equals("view")&&idx.subtype(type,"android.view.View")&&!m.getName().startsWith("<")&&!XML_VIEW_CALLBACKS.contains(m.getName()))continue;
             if(!m.getName().startsWith("<")){
+                // Component allocation permits framework callbacks, not arbitrary helpers.
+                if(!idx.activity(type)&&idx.component(type)&&!idx.componentEntry(type,m))continue;
                 if(!idx.activity(type)&&!idx.component(type)&&!idx.scheduled(type)&&!idx.callbackEntries.getOrDefault(type,Set.of()).contains(CapabilityIndex.key(m)))continue;
                 // A WebView-taking helper gets its receiver arguments from actual call sites.
                 // Seeding it with entry_parameter fabricates extra WebViews and merges capabilities.
@@ -830,7 +828,10 @@ final class CapabilityEngine {
             String owner=owner(v.id());ClassDef c=idx.classes.get(owner);
             if(c!=null){
                 for(Field f:c.getFields())if(CapabilityIndex.field(f).equals(v.id())&&f.getInitialValue()!=null){V initial=encoded(f.getInitialValue());if(!initial.equals(UNKNOWN))return initial;}
-                for(Method m:idx.byClass.getOrDefault(owner,List.of()))if(m.getName().equals("<clinit>")||m.getName().equals("<init>")&&!h.constructed.contains(receiver.id())){
+                // Static reads load the declaring class. Instance field declarations do not
+                // establish which constructor ran, or even that the receiver was allocated.
+                // Actual allocation/constructor and XML entry jobs supply instance writes.
+                for(Method m:idx.byClass.getOrDefault(owner,List.of()))if(receiver.kind().equals("static")&&m.getName().equals("<clinit>")){
                     if(m.getImplementation()==null)continue;
                     Summary init=flow.summary(m);List<V> args=new ArrayList<>();if((m.getAccessFlags()&8)==0)args.add(receiver);
                     for(CharSequence t:m.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(t.toString()),"constructor_parameter"));

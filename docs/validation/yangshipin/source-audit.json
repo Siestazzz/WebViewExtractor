@@ -1,0 +1,98 @@
+{
+  "apk_sha256": "16ce4954ebbf29effe54c73736863acbd78808895a6be2cfff71ceddc81bad1a",
+  "reviewer": "GPT-6.1 Sol",
+  "evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 794,
+      "text": "android:name=\"com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractStandardActivity.java",
+      "line": 23,
+      "text": "this.h5View = (H5InteractView) findViewById;",
+      "sha256": "1ed8284ec5ed366aec7291b391fc9cf8beeb7908a1dd8eda4ce6b1711fc73930"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/H5BaseView.java",
+      "line": 300,
+      "text": "u.y.h0.a.t3.h hVar = new u.y.h0.a.t3.h(getContext(), this.f18805n, this.f18810s, isNeedOverScroll, false);",
+      "sha256": "ea41212d258c3be36ab00a58f96051a66c2d1f91303e1fa2ce398cc4f4856275"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/h.java",
+      "line": 157,
+      "text": "CustomWebView c3 = c2.c();",
+      "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 799,
+      "text": "android:name=\"com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractStandardFullScreenActivity.java",
+      "line": 19,
+      "text": "public final class H5InteractStandardFullScreenActivity extends H5InteractStandardActivity {",
+      "sha256": "d881084a2637c05b2c50e0e7d320f159cc84525fac3cf1581e981017cd40a3d4"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 301,
+      "text": "android:name=\"com.tencent.videolite.android.ui.FeedBackActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/FeedBackActivity.java",
+      "line": 225,
+      "text": "this.h5View = (H5BaseView) findViewById(R.id.h5_view);",
+      "sha256": "af618a4416985f8837773ffd2fa8f875e630ffcbb6aaccadf33f8eb2720fa1a1"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 395,
+      "text": "android:name=\"com.tencent.videolite.android.ui.ArticleActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/ArticleActivity.java",
+      "line": 994,
+      "text": "this.h5View = (H5ArticleView) findViewById(R.id.h5_view);",
+      "sha256": "cd0a01ca3c0e7330099b40b6e0be8f9b42c65666eba89d41ad22a99482e575a7"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 309,
+      "text": "android:name=\"com.tencent.videolite.android.ui.KingOpenActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/KingOpenActivity.java",
+      "line": 112,
+      "text": "this.h5View = (KingCardH5View) findViewById(R.id.h5_view);",
+      "sha256": "cfed7e51a571e9864bdd565693eb91ca43083c394e332b3bc4b776e1571591bd"
+    }
+  ],
+  "deep_positive_activities": [
+    "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+    "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+    "com.tencent.videolite.android.ui.ArticleActivity",
+    "com.tencent.videolite.android.ui.FeedBackActivity",
+    "com.tencent.videolite.android.ui.KingOpenActivity"
+  ],
+  "present_strata": {
+    "custom_x5_factory_wrapper": [
+      "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "com.tencent.videolite.android.ui.FeedBackActivity",
+      "com.tencent.videolite.android.ui.ArticleActivity",
+      "com.tencent.videolite.android.ui.KingOpenActivity"
+    ]
+  },
+  "exhaustive_positive_inventory": false,
+  "manifest_activity_count": 229,
+  "acceptance": "unproven; source-first work in progress",
+  "holdout_disjoint": true
+}

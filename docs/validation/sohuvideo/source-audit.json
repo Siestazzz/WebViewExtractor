@@ -1,0 +1,72 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "reviewer": {
+    "role": "independent source reviewer",
+    "model": "GPT-6 (Codex; exact runtime model identifier unavailable)"
+  },
+  "evidence": [
+    {
+      "file": "docs/validation/sohuvideo/canonical-facts.jsonl",
+      "source_rows": 93
+    },
+    {
+      "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+      "provenance": "separately proved host chains; fixed previous failures retained"
+    },
+    {
+      "file": "docs/validation/sohuvideo/inventory.json",
+      "manifest_entry_count": 407
+    }
+  ],
+  "deep_positive_activities": [
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity"
+  ],
+  "present_strata": {
+    "Fragment custom WebView inflation": [
+      "com.sohu.sohuvideo.ui.WebViewActivity",
+      "com.sohu.sohuvideo.ui.FarmExerciseActivity"
+    ],
+    "virtual Bridge/Client factory override": [
+      "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "com.sohu.sohuvideo.ui.WebViewPgcActivity"
+    ],
+    "advertising layout/container wrapper": [
+      "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity"
+    ],
+    "direct platform WebView": [
+      "com.sohu.passport.core.WebViewActivity"
+    ],
+    "DialogFragment host": [
+      "com.facebook.FacebookActivity"
+    ]
+  },
+  "source_supported_positive_activities": [
+    "com.facebook.FacebookActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity"
+  ],
+  "audit_complete": false,
+  "exhaustive_inventory": false,
+  "exhaustive_source_search_proves_fewer_than_30": false,
+  "unreviewed_frameworks": [
+    "Ali Auth/Alipay/Qianfan/news wrappers and remaining SDKs",
+    "app navigation/share dialogs, dynamically bound Activities"
+  ],
+  "unknown": [
+    "Deep list covers named reviewed core chains; all-output capability precision incomplete.",
+    "Some present strata have fewer than two deep reviewed hosts.",
+    "Holdout reservations are not sealed gold or passed recall.",
+    "Manifest unreviewed entries are unknown, not negative evidence."
+  ],
+  "acceptance": "unproven"
+}
