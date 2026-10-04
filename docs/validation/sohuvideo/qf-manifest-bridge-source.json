@@ -164,6 +164,60 @@
       "line": 552,
       "text": "dVar.init(this.mContext, this, this.mWebView, this.mConfig, this.mWebViewJsListener);",
       "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 308,
+      "text": "",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 310,
+      "text": "try {",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 311,
+      "text": "ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128);",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 312,
+      "text": "for (String str : applicationInfo.metaData.keySet()) {",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 313,
+      "text": "Object obj = applicationInfo.metaData.get(str);",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 314,
+      "text": "if (String.class.isInstance(obj) && TextUtils.equals((String) obj, \"QFWebViewModule\")) {",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 315,
+      "text": "webViewModule = (com.sohu.qianfan.base.ui.view.webapp.d) Class.forName(str).newInstance();",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 549,
+      "text": "}",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
+    },
+    {
+      "file": "sources/com/sohu/qianfan/base/ui/view/webapp/QFWebViewDialog.java",
+      "line": 550,
+      "text": "com.sohu.qianfan.base.ui.view.webapp.d dVar = webViewModule;",
+      "sha256": "ced395c8d10f736a2310c956459670902b836d5382e7c0705e872e95fdc8a568"
     }
   ],
   "surfaces": [
@@ -205,5 +259,17 @@
   "sdk_surface_closure": "partial: inherited NBS and SDK settings/client/Download rows will be frozen separately",
   "reviewer": {
     "model": "GPT-6 Codex; exact runtime identifier unavailable"
+  },
+  "metadata_acquisition": {
+    "context_argument": "actual FragmentActivity this.mContext, obtained by DialogFragment.onAttach(Activity/Context) from owner PreviewActivity",
+    "package_manager": "context.getPackageManager()",
+    "package_name": "context.getPackageName() same actual context",
+    "getApplicationInfo_api": "Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;",
+    "flags_decimal": 128,
+    "flags_hex": "0x80",
+    "flags_meaning": "GET_META_DATA",
+    "registry_field": "Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;",
+    "iteration": "applicationInfo.metaData.keySet(), get(key), String.class.isInstance(value), TextUtils.equals(value, constant QFWebViewModule)",
+    "reflected_class_selector": "key string, not value; Class.forName(key).newInstance() -> com.sohu.qianfan.base.ui.view.webapp.d static webViewModule field; later instance init(actual FragmentActivity, Dialog, own WebView, config, listener)"
   }
 }

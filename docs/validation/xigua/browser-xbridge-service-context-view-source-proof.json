@@ -1,0 +1,128 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "source_first": true,
+  "report_read": false,
+  "scope": "BrowserScene shared registerXBridgesByContext service path; no complete surface assertion",
+  "service_binding": {
+    "implementation": "com.ixigua.jsbridge.specific.impl.XBridgeRegisterImpl",
+    "factory": "com.ixigua.jsbridge.specific.impl.XBridgeRegisterServiceFactory",
+    "evidence": [
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/impl/XBridgeRegisterServiceFactory.java",
+        "line": 8,
+        "text": "@ServiceFactory(protocol = IXBridgeRegisterService.class)",
+        "sha256": "35345b5a034f16e47953857f46e88cbeda908060b8abace120b36b8a1c09a258"
+      },
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/impl/XBridgeRegisterServiceFactory.java",
+        "line": 14,
+        "text": "return new XBridgeRegisterImpl();",
+        "sha256": "35345b5a034f16e47953857f46e88cbeda908060b8abace120b36b8a1c09a258"
+      }
+    ]
+  },
+  "actual_registration": {
+    "api": "Lcom/bytedance/sdk/bridge/js/delegate/JsCallInterceptorManager;->addInterceptor(Lcom/bytedance/sdk/bridge/js/delegate/JsCallInterceptor;)V",
+    "implementation": "com.ixigua.jsbridge.specific.xbridge.interceptor.XbridgeJsInterceptor",
+    "evidence": [
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/impl/XBridgeRegisterImpl.java",
+        "line": 81,
+        "text": "this.a.put(Integer.valueOf(context.hashCode()), XBridgeService.d(context, view, xBridgeRegistry));",
+        "sha256": "eab82a87755d0f00ad1e7e660d47641621cccfb4c89fc5ecfb79e1d87999de8b"
+      },
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeService.java",
+        "line": 119,
+        "text": "xContextProviderFactory.registerHolder(XBridgeMethod.JsEventDelegate.class, new XBridgeJsEventDelegate(view));",
+        "sha256": "5e54fe648d413acf7d338c362081a4830326cd224caa1b28b3306fe325b27c68"
+      },
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeService.java",
+        "line": 120,
+        "text": "XbridgeJsInterceptor xbridgeJsInterceptor = new XbridgeJsInterceptor(context, xBridgeRegistry, xContextProviderFactory);",
+        "sha256": "5e54fe648d413acf7d338c362081a4830326cd224caa1b28b3306fe325b27c68"
+      },
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeService.java",
+        "line": 123,
+        "text": "JsCallInterceptorManager.INSTANCE.addInterceptor(xbridgeJsInterceptor);",
+        "sha256": "5e54fe648d413acf7d338c362081a4830326cd224caa1b28b3306fe325b27c68"
+      }
+    ]
+  },
+  "actual_sdk_member": {
+    "api": "Lcom/ixigua/jsbridge/specific/xbridge/interceptor/XbridgeJsInterceptor;->intercept(Ljava/lang/String;Lorg/json/JSONObject;Lcom/bytedance/sdk/bridge/js/spec/JsBridgeContext;)Z",
+    "contract_superclass": "com.bytedance.sdk.bridge.js.delegate.JsCallInterceptor",
+    "dispatch_api": "Lcom/bytedance/sdk/bridge/js/delegate/JsCallInterceptorManager;->interceptJsRequest(Ljava/lang/String;Lorg/json/JSONObject;Lcom/bytedance/sdk/bridge/js/spec/JsBridgeContext;)Z",
+    "evidence": [
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/xbridge/interceptor/XbridgeJsInterceptor.java",
+        "line": 87,
+        "text": "public boolean intercept(@NotNull String str, @Nullable JSONObject jSONObject, @NotNull JsBridgeContext jsBridgeContext) {",
+        "sha256": "f59f58f612be7c8331824e10a6ad0a31e6cd865bf03e3d1d09562eafeb636ea6"
+      },
+      {
+        "file": "sources/com/bytedance/sdk/bridge/js/delegate/JsCallInterceptorManager.java",
+        "line": 42,
+        "text": "if (it.next().intercept(str, jSONObject, jsBridgeContext)) {",
+        "sha256": "2539e9759f72ce9ce11b574d6137053a738ae6af8a312f0f70634fff9cd30b6a"
+      }
+    ]
+  },
+  "view_event_delegate": {
+    "api": "Lcom/ixigua/jsbridge/specific/xbridge/XBridgeJsEventDelegate;->sendJsEvent(Ljava/lang/String;Lcom/bytedance/ies/xbridge/XReadableMap;)V",
+    "retained_receiver": "WeakReference<View> of same BrowserScene.e passed service; sendEvent(WebView) after runtime instanceof",
+    "evidence": [
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeJsEventDelegate.java",
+        "line": 27,
+        "text": "this.a = new WeakReference<>(view);",
+        "sha256": "aa7a112191290d66bccaeec5e48af28d39868e464e17cf7fd4dd58d3d991a1f6"
+      },
+      {
+        "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeJsEventDelegate.java",
+        "line": 49,
+        "text": "jsbridgeEventHelper.sendEvent(str, jSONObject, (WebView) view);",
+        "sha256": "aa7a112191290d66bccaeec5e48af28d39868e464e17cf7fd4dd58d3d991a1f6"
+      }
+    ]
+  },
+  "java_bridge_boundary": "Factory/service registration path reviewed here calls registry, interceptor and provider holder APIs, not addJavascriptInterface. Registry module handler names are dispatcher methods, not @JavascriptInterface methods on separately injected objects. Existing native injected interfaces remain independent facts.",
+  "unknowns": [
+    "Method registries Common/UG classes and actual runtime invocation paths not fully audited here.",
+    "jadx interceptor context loop includes unconditional context=null after while, potentially a decompiler control-flow error; no activity-match semantics assertion before DEX branch review.",
+    "Callback registration occurs on global SDK manager with explicit source context/view provider linkage; retained exact signature inventory separate from canonical pending taxonomy/ownership audit."
+  ],
+  "files": [
+    {
+      "file": "sources/com/ixigua/jsbridge/specific/impl/XBridgeRegisterServiceFactory.java",
+      "sha256": "35345b5a034f16e47953857f46e88cbeda908060b8abace120b36b8a1c09a258"
+    },
+    {
+      "file": "sources/com/ixigua/jsbridge/specific/impl/XBridgeRegisterImpl.java",
+      "sha256": "eab82a87755d0f00ad1e7e660d47641621cccfb4c89fc5ecfb79e1d87999de8b"
+    },
+    {
+      "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeService.java",
+      "sha256": "5e54fe648d413acf7d338c362081a4830326cd224caa1b28b3306fe325b27c68"
+    },
+    {
+      "file": "sources/com/ixigua/jsbridge/specific/xbridge/interceptor/XbridgeJsInterceptor.java",
+      "sha256": "f59f58f612be7c8331824e10a6ad0a31e6cd865bf03e3d1d09562eafeb636ea6"
+    },
+    {
+      "file": "sources/com/ixigua/jsbridge/specific/xbridge/XBridgeJsEventDelegate.java",
+      "sha256": "aa7a112191290d66bccaeec5e48af28d39868e464e17cf7fd4dd58d3d991a1f6"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/bridge/js/delegate/JsCallInterceptor.java",
+      "sha256": "f576d53efc53c8c386b4364e759d7f87b7c31a56fe733d33b71111bf12c5488d"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/bridge/js/delegate/JsCallInterceptorManager.java",
+      "sha256": "2539e9759f72ce9ce11b574d6137053a738ae6af8a312f0f70634fff9cd30b6a"
+    }
+  ]
+}

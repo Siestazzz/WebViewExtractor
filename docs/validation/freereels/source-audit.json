@@ -557,6 +557,8 @@
   ],
   "deep_positive_activities": [
     "com.dramawave.feature.web.WebPageActivity",
+    "com.fyber.ads.ofw.OfferWallActivity",
+    "com.taurusx.tax.mraid.MraidBrowser",
     "com.taurusx.tax.ui.TaxWebViewActivity",
     "com.taurusx.tax.utils.webview.TaxBrowserActivity"
   ],
@@ -566,7 +568,9 @@
     ],
     "sdk_direct_webview": [
       "com.taurusx.tax.ui.TaxWebViewActivity",
-      "com.taurusx.tax.utils.webview.TaxBrowserActivity"
+      "com.taurusx.tax.utils.webview.TaxBrowserActivity",
+      "com.taurusx.tax.mraid.MraidBrowser",
+      "com.fyber.ads.ofw.OfferWallActivity"
     ]
   },
   "exhaustive_positive_inventory": false,
@@ -1925,6 +1929,1332 @@
         }
       ],
       "unresolved_source_surface": []
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "reviewer": "GPT-6.1 Sol",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "source_first": true,
+      "report_read": false,
+      "deep_audit_complete": true,
+      "source_file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "source_sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "categories": {
+        "bridge": {
+          "status": "done",
+          "unresolved": []
+        },
+        "setting": {
+          "status": "done",
+          "unresolved": []
+        },
+        "callback": {
+          "status": "done",
+          "unresolved": []
+        }
+      },
+      "bridge_surface": "Entire concrete Activity and nested classes: no addJavascriptInterface, direct native WebView constructor, native Activity parent; no custom WebView ancestor/provider. No bridge registrations.",
+      "setting_surface": "Exactly four direct settings: JavaScript true, supportZoom true, builtInZoomControls true, useWideViewPort true. onCreate\u2192w constructs and attaches same field\u2192z(Intent) gets field settings. No settings in remaining methods or callbacks.",
+      "callback_surface": "Same field directly installs z WebViewClient four compatible own overrides and w WebChromeClient one. Nested button OnClickListeners are installed on ImageButtons, not WebView and not Client members. SafeDK helper merely delegates Activity.startActivity; not a callback registration or hidden WebView owner.",
+      "lifecycle": "All concrete methods read: pause/resume only CookieSyncManager; navigation button handlers call goBack/goForward/reload or Activity.finish; no late registration/settings/bridge. No unreviewed application-defined superclasses.",
+      "added_facts": [
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback_registration",
+          "name": "setWebViewClient",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 215,
+              "text": "this.z.setWebViewClient(new z());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client"
+        },
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "shouldOverrideUrlLoading",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+          "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 215,
+              "text": "this.z.setWebViewClient(new z());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 116,
+              "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onPageFinished",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+          "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 215,
+              "text": "this.z.setWebViewClient(new z());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 137,
+              "text": "public void onPageFinished(WebView webView, String str) {",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onPageStarted",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+          "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 215,
+              "text": "this.z.setWebViewClient(new z());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 156,
+              "text": "public void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onReceivedError",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+          "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 215,
+              "text": "this.z.setWebViewClient(new z());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 162,
+              "text": "public void onReceivedError(WebView webView, int i, String str, String str2) {",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback_registration",
+          "name": "setWebChromeClient",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$w",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 216,
+              "text": "this.z.setWebChromeClient(new w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client"
+        },
+        {
+          "activity": "com.taurusx.tax.mraid.MraidBrowser",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 1352,
+              "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 224,
+              "text": "setContentView(w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 225,
+              "text": "z(getIntent());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 189,
+              "text": "this.z = new WebView(this);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 193,
+              "text": "relativeLayout.addView(this.z);",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "group_id": "source-first-mraid-full-callback",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onProgressChanged",
+          "registration_name": null,
+          "implementation": "com.taurusx.tax.mraid.MraidBrowser$w",
+          "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$w;->onProgressChanged(Landroid/webkit/WebView;I)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 216,
+              "text": "this.z.setWebChromeClient(new w());",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            },
+            {
+              "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+              "line": 84,
+              "text": "public void onProgressChanged(WebView webView, int i) {",
+              "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "signature_in_apk": true
+        }
+      ]
+    },
+    {
+      "activity": "com.fyber.ads.ofw.OfferWallActivity",
+      "reviewer": "GPT-6.1 Sol",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "source_first": true,
+      "report_read": false,
+      "deep_audit_complete": true,
+      "categories": {
+        "bridge": {
+          "status": "done",
+          "unresolved": []
+        },
+        "setting": {
+          "status": "done",
+          "unresolved": []
+        },
+        "callback": {
+          "status": "done",
+          "unresolved": []
+        }
+      },
+      "construction": "onCreate SDK cd.b() branch new nativeWebView(getApplicationContext)\u2192field webView\u2192setContentView(field), direct nativeActivity parent. Known samefield all helpers reviewed.",
+      "bridge": "addJavascriptInterface(this,FyberSDK), single own @JavascriptInterface shouldHandleBackButton(Z)V; nativeActivity superclass contributes no custom injection members. No other injection wrappers/setters in called helpers or late lifecycle.",
+      "settings": "Four reachable direct setters through yw.b(WebView): DOM true/cache-1/DBtrue/JStrue. yw.a(WebSettings) PluginState.ON guarded sl.b(20)==SDK<20 and yw.b DBpath guardedSDK<19 both unreachable on manifestminSdk23; retain nonpositive source branch inventory, not positive settings. yw.a(WebView) onlyCookieManager.acceptThirdPartyCookies GETTER, no fictitious setAcceptThirdPartyCookies call.",
+      "unreachable_setting_declarations": [
+        {
+          "api": "setPluginState",
+          "value": "android.webkit.WebSettings$PluginState.ON",
+          "guard": "SDK<20",
+          "positive_acceptance": false,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/fairbid/yw.java",
+              "line": 13,
+              "text": "webSettings.setPluginState(WebSettings.PluginState.ON);",
+              "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/sl.java",
+              "line": 12,
+              "text": "return Build.VERSION.SDK_INT < i;",
+              "sha256": "188df8849d4640352b7bebaa403d74a565f97b059c68bff17c7d384e0b1603f7"
+            }
+          ]
+        },
+        {
+          "api": "setDatabasePath",
+          "expression": "context.getDatabasePath(webviewCache).getPath()",
+          "guard": "SDK<19",
+          "positive_acceptance": false,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/fairbid/yw.java",
+              "line": 34,
+              "text": "settings.setDatabasePath(databasePath.getPath());",
+              "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+            }
+          ]
+        }
+      ],
+      "clients": "Actual DEX j extendsxw, own5standardoverride + inheritedfinal xw.shouldOverrideUrlLoading(String), nativeChrome gm1progress. Native immediate installation, no wrapper drops signatures. SafeDK helpers not callback names. Parent xw overridden5 bodies not counted as separate effective inherited handlers; actual own signatures recorded j and inheritedmember ownerxw.",
+      "lifecycle": "onResume onlyloadURL; pausepreferences/progressdialog; onDestroyblank+destroy; backevaluateJS withnull callback; hm Handler andww Dialoglistener onlynativeback/finish, not WebView installedcallback. No delayed settings/client/bridge install.",
+      "manifest_min_sdk": 23,
+      "dex_proof": "offerwall-installed-members-source-dex.json",
+      "files": [
+        {
+          "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+          "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/yw.java",
+          "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/C5423j.java",
+          "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/gm.java",
+          "sha256": "b134c8b6312d0fc55e4f72b568d9f01305703c8efba36f0035d06687fbf4e316"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/xw.java",
+          "sha256": "0c3ff1ba239bd26457d594b9fe5b22f8e0fa9654ca116c26f08027074027f185"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/sl.java",
+          "sha256": "188df8849d4640352b7bebaa403d74a565f97b059c68bff17c7d384e0b1603f7"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/hm.java",
+          "sha256": "9fddf61d3846c2f3e2dda0285a8de4f63a2cbf93e814e97ebae3d763bec09fb9"
+        },
+        {
+          "file": "sources/com/fyber/fairbid/ww.java",
+          "sha256": "e04c80d1bd3d95dab674a4a1e608066c399661f7355948fd219ee97461534d9c"
+        }
+      ],
+      "added_facts": [
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-setting",
+          "evaluation_tier": "core_required",
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "registration_name": null,
+          "implementation": "android.webkit.WebSettings",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "value": true,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 157,
+              "text": "yw.b(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/yw.java",
+              "line": 26,
+              "text": "settings.setDomStorageEnabled(true);",
+              "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "SDKinitialized cd.b() success then same native webView settings helper"
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-setting",
+          "evaluation_tier": "core_required",
+          "kind": "setting",
+          "name": "setCacheMode",
+          "registration_name": null,
+          "implementation": "android.webkit.WebSettings",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "value": -1,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 157,
+              "text": "yw.b(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/yw.java",
+              "line": 27,
+              "text": "settings.setCacheMode(-1);",
+              "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "value_kind": "literal",
+          "source_expression": "-1",
+          "condition": "SDKinitialized cd.b() success then same native webView settings helper"
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-setting",
+          "evaluation_tier": "core_required",
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "registration_name": null,
+          "implementation": "android.webkit.WebSettings",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "value": true,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 157,
+              "text": "yw.b(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/yw.java",
+              "line": 32,
+              "text": "settings.setDatabaseEnabled(true);",
+              "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "SDKinitialized cd.b() success then same native webView settings helper"
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-setting",
+          "evaluation_tier": "core_required",
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "registration_name": null,
+          "implementation": "android.webkit.WebSettings",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "value": true,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 157,
+              "text": "yw.b(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/yw.java",
+              "line": 36,
+              "text": "settings.setJavaScriptEnabled(true);",
+              "sha256": "9676d102f321808056c52c2fa0b5780d04345ab8dfd3658d5039c589c6162785"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "SDKinitialized cd.b() success then same native webView settings helper"
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback_registration",
+          "name": "setWebViewClient",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.j",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer"
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onLoadResource",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.j",
+          "normalized_signature": "Lcom/fyber/fairbid/j;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/C5423j.java",
+              "line": 21,
+              "text": "public void onLoadResource(WebView view, String url) {",
+              "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.j",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onPageFinished",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.j",
+          "normalized_signature": "Lcom/fyber/fairbid/j;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/C5423j.java",
+              "line": 27,
+              "text": "public void onPageFinished(WebView view, String url) {",
+              "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.j",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onPageStarted",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.j",
+          "normalized_signature": "Lcom/fyber/fairbid/j;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/C5423j.java",
+              "line": 33,
+              "text": "public void onPageStarted(WebView view, String url, Bitmap favicon) {",
+              "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.j",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.j",
+          "normalized_signature": "Lcom/fyber/fairbid/j;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/C5423j.java",
+              "line": 39,
+              "text": "public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest webResourceRequest) {",
+              "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.j",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onReceivedError",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.j",
+          "normalized_signature": "Lcom/fyber/fairbid/j;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/C5423j.java",
+              "line": 44,
+              "text": "public final void onReceivedError(WebView webView, int i, String str, String str2) {",
+              "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.j",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "shouldOverrideUrlLoading",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.xw",
+          "normalized_signature": "Lcom/fyber/fairbid/xw;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 162,
+              "text": "this.webView.setWebViewClient(c5423j);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/xw.java",
+              "line": 69,
+              "text": "public final boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+              "sha256": "0c3ff1ba239bd26457d594b9fe5b22f8e0fa9654ca116c26f08027074027f185"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.j",
+          "signature_in_apk": true
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback_registration",
+          "name": "setWebChromeClient",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.gm",
+          "normalized_signature": null,
+          "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 163,
+              "text": "this.webView.setWebChromeClient(new gm(this));",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer"
+        },
+        {
+          "activity": "com.fyber.ads.ofw.OfferWallActivity",
+          "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+          "host_evidence": [
+            {
+              "file": "resources/AndroidManifest.xml",
+              "line": 875,
+              "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+              "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 152,
+              "text": "WebView webView = new WebView(getApplicationContext());",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 156,
+              "text": "setContentView(this.webView);",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            }
+          ],
+          "group_id": "source-first-offerwall-complete-client",
+          "evaluation_tier": "core_required",
+          "kind": "callback",
+          "name": "onProgressChanged",
+          "registration_name": null,
+          "implementation": "com.fyber.fairbid.gm",
+          "normalized_signature": "Lcom/fyber/fairbid/gm;->onProgressChanged(Landroid/webkit/WebView;I)V",
+          "normalized_api": null,
+          "value": null,
+          "evidence": [
+            {
+              "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+              "line": 163,
+              "text": "this.webView.setWebChromeClient(new gm(this));",
+              "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+            },
+            {
+              "file": "sources/com/fyber/fairbid/gm.java",
+              "line": 19,
+              "text": "public final void onProgressChanged(WebView webView, int i) {",
+              "sha256": "b134c8b6312d0fc55e4f72b568d9f01305703c8efba36f0035d06687fbf4e316"
+            }
+          ],
+          "reviewer": "GPT-6.1 Sol",
+          "binding_status": "explicit",
+          "positive_acceptance": true,
+          "provenance": "source-first",
+          "taxonomy": "standard_android_client",
+          "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+          "condition": "SDKinitialized branch actual samefield installer",
+          "installed_implementation": "com.fyber.fairbid.gm",
+          "signature_in_apk": true
+        }
+      ]
     }
   ]
 }

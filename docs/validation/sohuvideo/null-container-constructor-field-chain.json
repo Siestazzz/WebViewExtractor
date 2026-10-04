@@ -1,0 +1,261 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "dex_sha256": "a2cd3d18d4912c96873ad703d24f7a5426c49a33a81b5db397beef2bcb44bf96",
+  "dex_entry": "classes9.dex",
+  "field": {
+    "descriptor": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->innerBrowerContainer:Landroid/view/ViewGroup;",
+    "public": true,
+    "static": false,
+    "final": false,
+    "access_flags": "0x1",
+    "assignment_inventory": "All packaged Java source search finds only JumpInfo final seven-argument constructor assignment; source toString occurrence is not a writer. No caller/helper field write on the two concrete five-argument instances."
+  },
+  "constructor_overloads": [
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>()V",
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;)V",
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;I)V",
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;)V",
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/view/ViewGroup;)V",
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/view/ViewGroup;I)V"
+  ],
+  "actual_callers": [
+    {
+      "activity": "com.sohu.app.ads.sdk.settings.AdvertActivity",
+      "constructor_parameters": "String,String,String,String,int",
+      "source_line": 64
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.crazyfocus.CrazyFocusVideoActivity",
+      "constructor_parameters": "String,String,String,String,int",
+      "source_lines": [
+        182,
+        189
+      ]
+    }
+  ],
+  "bytecode_chain": {
+    "five_arg": {
+      "const_null_register": 6,
+      "const_offset": 0,
+      "invoke_range_offset": 7,
+      "callee": "six arguments, last is ViewGroup",
+      "passed_registers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "six_arg": {
+      "received_container_register": 14,
+      "container_parameter_never_forwarded": true,
+      "const_null_register": 6,
+      "const_offset": 0,
+      "const_zero_display_register": 7,
+      "invoke_range_offset": 8,
+      "callee": "seven arguments, last are ViewGroup,int",
+      "passed_registers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "seven_arg": {
+      "parameter_register_start": 0,
+      "container_parameter_register": 6,
+      "receiver_register": 0,
+      "field_write_register": 6,
+      "field": "innerBrowerContainer"
+    }
+  },
+  "helper_chain": "forward(Context,JumpInfo) -> forward(Context,JumpInfo,JumpCallback null) -> forward(Context,JumpInfo,JumpCallback,IDownloadNotifier null). The identical actual object is retained; if trimmed link starts sv:// then forwardToSv(context,forwardInfo,trim,callback). It parses action/url; action 4 reaches container test. No source field mutation or copy constructor along the wrapper chain.",
+  "null_guard_bytecode": {
+    "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSv(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z",
+    "method_static": true,
+    "parameter_register_start": 3,
+    "context_register": 3,
+    "actual_Info_register": 4,
+    "iget_object_offset": 71,
+    "iget_dest": 1,
+    "if_eqz_offset": 73,
+    "guard_register": 1,
+    "relative_skip": 21,
+    "null_target_offset": 94,
+    "forbidden_on_null_new_instance_offset": 75,
+    "forbidden_on_null_ctor_offset": 77,
+    "forbidden_on_null_addView_offset": 87,
+    "forbidden_on_null_loadUrl_offset": 90
+  },
+  "source_evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 10,
+      "text": "public class JumpInfo {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 12,
+      "text": "public ViewGroup innerBrowerContainer;",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 25,
+      "text": "public JumpInfo() {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 79,
+      "text": "public JumpInfo(String linkUrl) {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 83,
+      "text": "public JumpInfo(String linkUrl, String mulUrl) {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 87,
+      "text": "public JumpInfo(String linkUrl, int supportDeeplink) {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 91,
+      "text": "public JumpInfo(String linkUrl, String mulUrl, String wxMiniProId, String wxMiniProPath, int supportDeeplink) {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 92,
+      "text": "this(linkUrl, mulUrl, wxMiniProId, wxMiniProPath, supportDeeplink, null);",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 95,
+      "text": "public JumpInfo(String linkUrl, String mulUrl, String wxMiniProId, String wxMiniProPath, int supportDeeplink, ViewGroup container) {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 96,
+      "text": "this(linkUrl, mulUrl, wxMiniProId, wxMiniProPath, supportDeeplink, null, 0);",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 99,
+      "text": "public JumpInfo(String linkUrl, String mulUrl, String wxMiniProId, String wxMiniProPath, int supportDeeplink, ViewGroup container, int displayType) {",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/bean/JumpInfo.java",
+      "line": 103,
+      "text": "this.innerBrowerContainer = container;",
+      "sha256": "8ae140955c4f7711d16422456fa6be67e7136251d15382b9e1f17d1ca7740945"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 276,
+      "text": "private static boolean forwardToSv(Context context, JumpInfo info, String trimUrl, JumpCallback callback) {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 289,
+      "text": "if (i == 2) {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 294,
+      "text": "} else if (info.innerBrowerContainer != null) {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 295,
+      "text": "SohuCloseWebView sohuCloseWebView = new SohuCloseWebView(context);",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 297,
+      "text": "info.innerBrowerContainer.addView(sohuCloseWebView);",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 473,
+      "text": "return forward(context, new JumpInfo(forwardUrl, supportDeeplink), callback);",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 474,
+      "text": "}",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 481,
+      "text": "if (context != null && forwardInfo != null) {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 482,
+      "text": "IWXAPI createWXAPI = WXAPIFactory.createWXAPI(context, Const.WXAPPID);",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 485,
+      "text": "}",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 486,
+      "text": "if (!TextUtils.isEmpty(forwardInfo.getMulUrlTracking())) {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 489,
+      "text": "try {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 530,
+      "text": "if (trim.startsWith(\"sv://\")) {",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/adjump/JumpUtil.java",
+      "line": 531,
+      "text": "return forwardToSv(context, forwardInfo, trim, callback);",
+      "sha256": "486c2e453f80662bda0199b5675f6a6f84769330b7db21b7dea8b2e9eaf1f576"
+    }
+  ],
+  "raw_dex_evidence": "null-container-dex-evidence.json",
+  "engine_root_cause": "Not proved by source/DEX evidence. Possible missing exact-instance field/null propagation or helper synthetic-entry path must be distinguished by execution/context diagnostics.",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable"
+  }
+}

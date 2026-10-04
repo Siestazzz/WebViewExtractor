@@ -1,0 +1,37 @@
+{
+  "reason": "NBS SSL probe initially overlooked the intermediary SohuWebViewClient override. Existing restored/ad gold already correctly records most-specific SohuWebViewClient SSL; those 26 preliminary NBS ancestor rows are source-rejected. Only QF direct NBS client needs one additive SSL row.",
+  "hosts": [
+    "com.sohu.qfsdk.course.preview.ui.PreviewActivity"
+  ],
+  "new_rows": 1,
+  "source_evidence": [
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+      "line": 123,
+      "text": "public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {",
+      "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+    }
+  ],
+  "excluded": "Core BaseWebClient and Facebook own SSL overrides; Weibo already records inherited SSL per all three client alternatives.",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable"
+  },
+  "source_coverage_impact": "Restored/ad existing closures already include most-specific SSL callback. QF closure adds one inherited NBS SSL method.",
+  "source_rejected_initial_probe_rows": 26,
+  "initial_probe_file": "canonical-nbs-ssl-initial-probe.jsonl",
+  "frozen_gold_changed": false,
+  "source_correction_evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebViewClient.java",
+      "line": 11,
+      "text": "public abstract class SohuWebViewClient extends NBSWebViewClient {",
+      "sha256": "d6e3c24ca958b9e4266a3b7fb4e52a47d7e12ec1a9b2f7b3dcf20220d60b4e64"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebViewClient.java",
+      "line": 13,
+      "text": "public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {",
+      "sha256": "d6e3c24ca958b9e4266a3b7fb4e52a47d7e12ec1a9b2f7b3dcf20220d60b4e64"
+    }
+  ]
+}

@@ -1,0 +1,3187 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "dex_entry": "classes9.dex",
+  "dex_sha256": "a2cd3d18d4912c96873ad703d24f7a5426c49a33a81b5db397beef2bcb44bf96",
+  "parser_scope": "Exact field/method descriptors and raw DEX code units; instruction op names for moves/constants/invokes/field/null guards; other raw opcodes retained. Not guessed from source line text.",
+  "fields": [
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->displayType:I",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->innerBrowerContainer:Landroid/view/ViewGroup;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isGotoVideoDetailPage:Z",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->linkUrl:Ljava/lang/String;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mAd:Lcom/sohu/app/ads/sdk/base/model/IAd;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mAdvertiser:Ljava/lang/String;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mPlayPosition:I",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mulUrl:Ljava/lang/String;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mulUrlTracking:Ljava/lang/String;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->playStatus:I",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProId:Ljava/lang/String;",
+      "access_flags": "0x1",
+      "final": false
+    },
+    {
+      "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProPath:Ljava/lang/String;",
+      "access_flags": "0x1",
+      "final": false
+    }
+  ],
+  "methods": {
+    "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;)Z": {
+      "access_flags": "0x9",
+      "code_offset_bytes": 7113088,
+      "registers_size": 3,
+      "input_words": 2,
+      "parameter_register_start": 1,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x12",
+          "operation": "const/4",
+          "dest": 0,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z",
+          "registers": [
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0xa",
+          "raw_unit": "0x10a"
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0xf",
+          "raw_unit": "0x10f"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z": {
+      "access_flags": "0x9",
+      "code_offset_bytes": 7113116,
+      "registers_size": 4,
+      "input_words": 3,
+      "parameter_register_start": 1,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x12",
+          "operation": "const/4",
+          "dest": 0,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;Lcom/sohu/app/ads/download/IDownloadNotifier;)Z",
+          "registers": [
+            1,
+            2,
+            3,
+            0
+          ]
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0xa",
+          "raw_unit": "0x10a"
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0xf",
+          "raw_unit": "0x10f"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;Lcom/sohu/app/ads/download/IDownloadNotifier;)Z": {
+      "access_flags": "0x9",
+      "code_offset_bytes": 7113144,
+      "registers_size": 20,
+      "input_words": 4,
+      "parameter_register_start": 16,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x8",
+          "raw_unit": "0x8",
+          "operation": "move-object/from16",
+          "dest": 0,
+          "src": 16
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x8",
+          "raw_unit": "0x108",
+          "operation": "move-object/from16",
+          "dest": 1,
+          "src": 17
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x8",
+          "raw_unit": "0x208",
+          "operation": "move-object/from16",
+          "dest": 2,
+          "src": 18
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x12",
+          "raw_unit": "0x312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 0
+        },
+        {
+          "offset_code_units": 7,
+          "opcode": "0x38",
+          "raw_unit": "0x38",
+          "operation": "if-eqz",
+          "value_register": 0,
+          "relative_target": 471
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0x39",
+          "raw_unit": "0x139",
+          "operation": "if-nez",
+          "value_register": 1,
+          "relative_target": 4
+        },
+        {
+          "offset_code_units": 11,
+          "opcode": "0x29",
+          "raw_unit": "0x29"
+        },
+        {
+          "offset_code_units": 13,
+          "opcode": "0x62",
+          "raw_unit": "0x462"
+        },
+        {
+          "offset_code_units": 15,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/tencent/mm/opensdk/openapi/WXAPIFactory;->createWXAPI(Landroid/content/Context;Ljava/lang/String;)Lcom/tencent/mm/opensdk/openapi/IWXAPI;",
+          "registers": [
+            0,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 18,
+          "opcode": "0xc",
+          "raw_unit": "0x40c"
+        },
+        {
+          "offset_code_units": 19,
+          "opcode": "0x63",
+          "raw_unit": "0x563"
+        },
+        {
+          "offset_code_units": 21,
+          "opcode": "0x1a",
+          "raw_unit": "0x61a"
+        },
+        {
+          "offset_code_units": 23,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 44
+        },
+        {
+          "offset_code_units": 25,
+          "opcode": "0x22",
+          "raw_unit": "0x522"
+        },
+        {
+          "offset_code_units": 27,
+          "opcode": "0x70",
+          "raw_unit": "0x1070",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;-><init>()V",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 30,
+          "opcode": "0x1a",
+          "raw_unit": "0x71a"
+        },
+        {
+          "offset_code_units": 32,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            5,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 35,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;",
+          "registers": [
+            5,
+            1
+          ]
+        },
+        {
+          "offset_code_units": 38,
+          "opcode": "0x1a",
+          "raw_unit": "0x71a"
+        },
+        {
+          "offset_code_units": 40,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            5,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 43,
+          "opcode": "0x54",
+          "raw_unit": "0x1754",
+          "operation": "iget",
+          "value_register": 7,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProId:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 45,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            5,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 48,
+          "opcode": "0x1a",
+          "raw_unit": "0x71a"
+        },
+        {
+          "offset_code_units": 50,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            5,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 53,
+          "opcode": "0x62",
+          "raw_unit": "0x762"
+        },
+        {
+          "offset_code_units": 55,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            5,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 58,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 61,
+          "opcode": "0xc",
+          "raw_unit": "0x50c"
+        },
+        {
+          "offset_code_units": 62,
+          "opcode": "0x23",
+          "raw_unit": "0x3723"
+        },
+        {
+          "offset_code_units": 64,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/o;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
+          "registers": [
+            6,
+            5,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 67,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 70,
+          "opcode": "0xc",
+          "raw_unit": "0x50c"
+        },
+        {
+          "offset_code_units": 71,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 74,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 75,
+          "opcode": "0x39",
+          "raw_unit": "0x539",
+          "operation": "if-nez",
+          "value_register": 5,
+          "relative_target": 8
+        },
+        {
+          "offset_code_units": 77,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 80,
+          "opcode": "0xc",
+          "raw_unit": "0x50c"
+        },
+        {
+          "offset_code_units": 81,
+          "opcode": "0x69",
+          "raw_unit": "0x569"
+        },
+        {
+          "offset_code_units": 83,
+          "opcode": "0x55",
+          "raw_unit": "0x1555",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isGotoVideoDetailPage:Z"
+        },
+        {
+          "offset_code_units": 85,
+          "opcode": "0x12",
+          "raw_unit": "0x1712",
+          "operation": "const/4",
+          "dest": 7,
+          "value": 1
+        },
+        {
+          "offset_code_units": 86,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 54
+        },
+        {
+          "offset_code_units": 88,
+          "opcode": "0x52",
+          "raw_unit": "0x1552",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 90,
+          "opcode": "0x3d",
+          "raw_unit": "0x53d"
+        },
+        {
+          "offset_code_units": 92,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isMulJump()Z",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 95,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 96,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 10
+        },
+        {
+          "offset_code_units": 98,
+          "opcode": "0x54",
+          "raw_unit": "0x1554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mulUrl:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 100,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/b;->v(Landroid/content/Context;Ljava/lang/String;)Z",
+          "registers": [
+            0,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 103,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 104,
+          "opcode": "0x39",
+          "raw_unit": "0x539",
+          "operation": "if-nez",
+          "value_register": 5,
+          "relative_target": 14
+        },
+        {
+          "offset_code_units": 106,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isMiniJump()Z",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 109,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 110,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 14
+        },
+        {
+          "offset_code_units": 112,
+          "opcode": "0x72",
+          "raw_unit": "0x1072",
+          "operation": "invoke",
+          "method": "Lcom/tencent/mm/opensdk/openapi/IWXAPI;->isWXAppInstalled()Z",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 115,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 116,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 8
+        },
+        {
+          "offset_code_units": 118,
+          "opcode": "0x1a",
+          "raw_unit": "0x51a"
+        },
+        {
+          "offset_code_units": 120,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+          "registers": [
+            6,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 123,
+          "opcode": "0x28",
+          "raw_unit": "0x1128"
+        },
+        {
+          "offset_code_units": 124,
+          "opcode": "0x54",
+          "raw_unit": "0x1554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mAd:Lcom/sohu/app/ads/sdk/base/model/IAd;"
+        },
+        {
+          "offset_code_units": 126,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 14
+        },
+        {
+          "offset_code_units": 128,
+          "opcode": "0x77",
+          "raw_unit": "0x277",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToVideoDetail(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;)Z",
+          "registers": [
+            16,
+            17
+          ]
+        },
+        {
+          "offset_code_units": 131,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 132,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 8
+        },
+        {
+          "offset_code_units": 134,
+          "opcode": "0x1a",
+          "raw_unit": "0x1a"
+        },
+        {
+          "offset_code_units": 136,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+          "registers": [
+            6,
+            0
+          ]
+        },
+        {
+          "offset_code_units": 139,
+          "opcode": "0xf",
+          "raw_unit": "0x70f"
+        },
+        {
+          "offset_code_units": 140,
+          "opcode": "0x54",
+          "raw_unit": "0x1554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->linkUrl:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 142,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 145,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 146,
+          "opcode": "0x39",
+          "raw_unit": "0x839",
+          "operation": "if-nez",
+          "value_register": 8,
+          "relative_target": 9
+        },
+        {
+          "offset_code_units": 148,
+          "opcode": "0x1a",
+          "raw_unit": "0x81a"
+        },
+        {
+          "offset_code_units": 150,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+          "registers": [
+            5,
+            8
+          ]
+        },
+        {
+          "offset_code_units": 153,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 154,
+          "opcode": "0x28",
+          "raw_unit": "0x228"
+        },
+        {
+          "offset_code_units": 155,
+          "opcode": "0x12",
+          "raw_unit": "0x812",
+          "operation": "const/4",
+          "dest": 8,
+          "value": 0
+        },
+        {
+          "offset_code_units": 156,
+          "opcode": "0x38",
+          "raw_unit": "0x838",
+          "operation": "if-eqz",
+          "value_register": 8,
+          "relative_target": 7
+        },
+        {
+          "offset_code_units": 158,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/b;->v(Landroid/content/Context;Ljava/lang/String;)Z",
+          "registers": [
+            0,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 161,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 162,
+          "opcode": "0x28",
+          "raw_unit": "0x228"
+        },
+        {
+          "offset_code_units": 163,
+          "opcode": "0x12",
+          "raw_unit": "0x812",
+          "operation": "const/4",
+          "dest": 8,
+          "value": 0
+        },
+        {
+          "offset_code_units": 164,
+          "opcode": "0x63",
+          "raw_unit": "0x963"
+        },
+        {
+          "offset_code_units": 166,
+          "opcode": "0x38",
+          "raw_unit": "0x938",
+          "operation": "if-eqz",
+          "value_register": 9,
+          "relative_target": 26
+        },
+        {
+          "offset_code_units": 168,
+          "opcode": "0x22",
+          "raw_unit": "0x922"
+        },
+        {
+          "offset_code_units": 170,
+          "opcode": "0x70",
+          "raw_unit": "0x1070",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;-><init>()V",
+          "registers": [
+            9
+          ]
+        },
+        {
+          "offset_code_units": 173,
+          "opcode": "0x1a",
+          "raw_unit": "0xa1a"
+        },
+        {
+          "offset_code_units": 175,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            9,
+            10
+          ]
+        },
+        {
+          "offset_code_units": 178,
+          "opcode": "0x52",
+          "raw_unit": "0x1a52",
+          "operation": "iget",
+          "value_register": 10,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 180,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;",
+          "registers": [
+            9,
+            10
+          ]
+        },
+        {
+          "offset_code_units": 183,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+          "registers": [
+            9
+          ]
+        },
+        {
+          "offset_code_units": 186,
+          "opcode": "0xc",
+          "raw_unit": "0x90c"
+        },
+        {
+          "offset_code_units": 187,
+          "opcode": "0x23",
+          "raw_unit": "0x3a23"
+        },
+        {
+          "offset_code_units": 189,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/o;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
+          "registers": [
+            6,
+            9,
+            10
+          ]
+        },
+        {
+          "offset_code_units": 192,
+          "opcode": "0x52",
+          "raw_unit": "0x1952",
+          "operation": "iget",
+          "value_register": 9,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 194,
+          "opcode": "0x3d",
+          "raw_unit": "0x93d"
+        },
+        {
+          "offset_code_units": 196,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isMulJump()Z",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 199,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 200,
+          "opcode": "0x38",
+          "raw_unit": "0x838",
+          "operation": "if-eqz",
+          "value_register": 8,
+          "relative_target": 21
+        },
+        {
+          "offset_code_units": 202,
+          "opcode": "0x54",
+          "raw_unit": "0x1854",
+          "operation": "iget",
+          "value_register": 8,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mulUrl:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 204,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/b;->v(Landroid/content/Context;Ljava/lang/String;)Z",
+          "registers": [
+            0,
+            8
+          ]
+        },
+        {
+          "offset_code_units": 207,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 208,
+          "opcode": "0x38",
+          "raw_unit": "0x838",
+          "operation": "if-eqz",
+          "value_register": 8,
+          "relative_target": 13
+        },
+        {
+          "offset_code_units": 210,
+          "opcode": "0x54",
+          "raw_unit": "0x1554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mulUrl:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 212,
+          "opcode": "0x1a",
+          "raw_unit": "0x41a"
+        },
+        {
+          "offset_code_units": 214,
+          "opcode": "0x23",
+          "raw_unit": "0x3823"
+        },
+        {
+          "offset_code_units": 216,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/o;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
+          "registers": [
+            6,
+            4,
+            8
+          ]
+        },
+        {
+          "offset_code_units": 219,
+          "opcode": "0x12",
+          "raw_unit": "0x1812",
+          "operation": "const/4",
+          "dest": 8,
+          "value": 1
+        },
+        {
+          "offset_code_units": 220,
+          "opcode": "0x28",
+          "raw_unit": "0x3d28"
+        },
+        {
+          "offset_code_units": 221,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isMiniJump()Z",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 224,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 225,
+          "opcode": "0x38",
+          "raw_unit": "0x838",
+          "operation": "if-eqz",
+          "value_register": 8,
+          "relative_target": 20
+        },
+        {
+          "offset_code_units": 227,
+          "opcode": "0x72",
+          "raw_unit": "0x1072",
+          "operation": "invoke",
+          "method": "Lcom/tencent/mm/opensdk/openapi/IWXAPI;->isWXAppInstalled()Z",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 230,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 231,
+          "opcode": "0x38",
+          "raw_unit": "0x838",
+          "operation": "if-eqz",
+          "value_register": 8,
+          "relative_target": 14
+        },
+        {
+          "offset_code_units": 233,
+          "opcode": "0x54",
+          "raw_unit": "0x1054",
+          "operation": "iget",
+          "value_register": 0,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProId:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 235,
+          "opcode": "0x54",
+          "raw_unit": "0x1254",
+          "operation": "iget",
+          "value_register": 2,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProPath:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 237,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 240,
+          "opcode": "0xc",
+          "raw_unit": "0x10c"
+        },
+        {
+          "offset_code_units": 241,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->jumpWXMiniProgram(Lcom/tencent/mm/opensdk/openapi/IWXAPI;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "registers": [
+            4,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "offset_code_units": 244,
+          "opcode": "0xf",
+          "raw_unit": "0x70f"
+        },
+        {
+          "offset_code_units": 245,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/b;->v(Landroid/content/Context;Ljava/lang/String;)Z",
+          "registers": [
+            0,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 248,
+          "opcode": "0xa",
+          "raw_unit": "0x80a"
+        },
+        {
+          "offset_code_units": 249,
+          "opcode": "0x1a",
+          "raw_unit": "0x41a"
+        },
+        {
+          "offset_code_units": 251,
+          "opcode": "0x23",
+          "raw_unit": "0x3923"
+        },
+        {
+          "offset_code_units": 253,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/o;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
+          "registers": [
+            6,
+            4,
+            9
+          ]
+        },
+        {
+          "offset_code_units": 256,
+          "opcode": "0x28",
+          "raw_unit": "0x1928"
+        },
+        {
+          "offset_code_units": 257,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->isMiniJump()Z",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 260,
+          "opcode": "0xa",
+          "raw_unit": "0x90a"
+        },
+        {
+          "offset_code_units": 261,
+          "opcode": "0x38",
+          "raw_unit": "0x938",
+          "operation": "if-eqz",
+          "value_register": 9,
+          "relative_target": 20
+        },
+        {
+          "offset_code_units": 263,
+          "opcode": "0x72",
+          "raw_unit": "0x1072",
+          "operation": "invoke",
+          "method": "Lcom/tencent/mm/opensdk/openapi/IWXAPI;->isWXAppInstalled()Z",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 266,
+          "opcode": "0xa",
+          "raw_unit": "0x90a"
+        },
+        {
+          "offset_code_units": 267,
+          "opcode": "0x38",
+          "raw_unit": "0x938",
+          "operation": "if-eqz",
+          "value_register": 9,
+          "relative_target": 14
+        },
+        {
+          "offset_code_units": 269,
+          "opcode": "0x54",
+          "raw_unit": "0x1054",
+          "operation": "iget",
+          "value_register": 0,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProId:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 271,
+          "opcode": "0x54",
+          "raw_unit": "0x1254",
+          "operation": "iget",
+          "value_register": 2,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProPath:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 273,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 276,
+          "opcode": "0xc",
+          "raw_unit": "0x10c"
+        },
+        {
+          "offset_code_units": 277,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->jumpWXMiniProgram(Lcom/tencent/mm/opensdk/openapi/IWXAPI;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "registers": [
+            4,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "offset_code_units": 280,
+          "opcode": "0xf",
+          "raw_unit": "0x70f"
+        },
+        {
+          "offset_code_units": 281,
+          "opcode": "0x63",
+          "raw_unit": "0x463"
+        },
+        {
+          "offset_code_units": 283,
+          "opcode": "0x38",
+          "raw_unit": "0x438",
+          "operation": "if-eqz",
+          "value_register": 4,
+          "relative_target": 24
+        },
+        {
+          "offset_code_units": 285,
+          "opcode": "0x22",
+          "raw_unit": "0x422"
+        },
+        {
+          "offset_code_units": 287,
+          "opcode": "0x70",
+          "raw_unit": "0x1070",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;-><init>()V",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 290,
+          "opcode": "0x1a",
+          "raw_unit": "0x91a"
+        },
+        {
+          "offset_code_units": 292,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            4,
+            9
+          ]
+        },
+        {
+          "offset_code_units": 295,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+          "registers": [
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 298,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 301,
+          "opcode": "0xc",
+          "raw_unit": "0x40c"
+        },
+        {
+          "offset_code_units": 302,
+          "opcode": "0x23",
+          "raw_unit": "0x3923"
+        },
+        {
+          "offset_code_units": 304,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/o;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
+          "registers": [
+            6,
+            4,
+            9
+          ]
+        },
+        {
+          "offset_code_units": 307,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 310,
+          "opcode": "0xa",
+          "raw_unit": "0x40a"
+        },
+        {
+          "offset_code_units": 311,
+          "opcode": "0x38",
+          "raw_unit": "0x438",
+          "operation": "if-eqz",
+          "value_register": 4,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 313,
+          "opcode": "0xf",
+          "raw_unit": "0x30f"
+        },
+        {
+          "offset_code_units": 314,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->trim()Ljava/lang/String;",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 317,
+          "opcode": "0xc",
+          "raw_unit": "0x40c"
+        },
+        {
+          "offset_code_units": 318,
+          "opcode": "0x71",
+          "raw_unit": "0x71",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/analytics/event/sohuWebView/WebAnalyticsEvent;->getWebAnalyticsClick()Z",
+          "registers": []
+        },
+        {
+          "offset_code_units": 321,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 322,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 20
+        },
+        {
+          "offset_code_units": 324,
+          "opcode": "0x62",
+          "raw_unit": "0x962"
+        },
+        {
+          "offset_code_units": 326,
+          "opcode": "0x71",
+          "raw_unit": "0x71",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/analytics/event/sohuWebView/WebAnalyticsEvent;->getWebAnalyticsRid()Ljava/lang/String;",
+          "registers": []
+        },
+        {
+          "offset_code_units": 329,
+          "opcode": "0xc",
+          "raw_unit": "0xa0c"
+        },
+        {
+          "offset_code_units": 330,
+          "opcode": "0x71",
+          "raw_unit": "0x71",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->analyticsParamsByTracking()[Ljava/lang/String;",
+          "registers": []
+        },
+        {
+          "offset_code_units": 333,
+          "opcode": "0xc",
+          "raw_unit": "0xc0c"
+        },
+        {
+          "offset_code_units": 334,
+          "opcode": "0x16",
+          "raw_unit": "0xd16"
+        },
+        {
+          "offset_code_units": 336,
+          "opcode": "0x1a",
+          "raw_unit": "0xf1a"
+        },
+        {
+          "offset_code_units": 338,
+          "opcode": "0x7",
+          "raw_unit": "0x4b07",
+          "operation": "move-object",
+          "dest": 11,
+          "src": 4
+        },
+        {
+          "offset_code_units": 339,
+          "opcode": "0x74",
+          "raw_unit": "0x774",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/analytics/event/sohuWebView/WebAnalyticsEvent;->loadAnalytics(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;JLjava/lang/String;)V",
+          "registers": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "offset_code_units": 342,
+          "opcode": "0x1a",
+          "raw_unit": "0x51a"
+        },
+        {
+          "offset_code_units": 344,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+          "registers": [
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 347,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 348,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 7
+        },
+        {
+          "offset_code_units": 350,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSv(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z",
+          "registers": [
+            0,
+            1,
+            4,
+            2
+          ]
+        },
+        {
+          "offset_code_units": 353,
+          "opcode": "0xa",
+          "raw_unit": "0xa"
+        },
+        {
+          "offset_code_units": 354,
+          "opcode": "0xf",
+          "raw_unit": "0xf"
+        },
+        {
+          "offset_code_units": 355,
+          "opcode": "0x1a",
+          "raw_unit": "0x51a"
+        },
+        {
+          "offset_code_units": 357,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+          "registers": [
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 360,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 361,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 9
+        },
+        {
+          "offset_code_units": 363,
+          "opcode": "0x8",
+          "raw_unit": "0x508",
+          "operation": "move-object/from16",
+          "dest": 5,
+          "src": 19
+        },
+        {
+          "offset_code_units": 365,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToDownloadApp(Landroid/content/Context;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;Lcom/sohu/app/ads/download/IDownloadNotifier;)Z",
+          "registers": [
+            0,
+            4,
+            2,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 368,
+          "opcode": "0xa",
+          "raw_unit": "0xa"
+        },
+        {
+          "offset_code_units": 369,
+          "opcode": "0xf",
+          "raw_unit": "0xf"
+        },
+        {
+          "offset_code_units": 370,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->isSohuVideoAction(Ljava/lang/String;)Z",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 373,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 374,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 26
+        },
+        {
+          "offset_code_units": 376,
+          "opcode": "0x38",
+          "raw_unit": "0x238",
+          "operation": "if-eqz",
+          "value_register": 2,
+          "relative_target": 9
+        },
+        {
+          "offset_code_units": 378,
+          "opcode": "0x62",
+          "raw_unit": "0x562"
+        },
+        {
+          "offset_code_units": 380,
+          "opcode": "0x72",
+          "raw_unit": "0x3072",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;->doBeforeJump(Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpType;Ljava/lang/Object;)Z",
+          "registers": [
+            2,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 383,
+          "opcode": "0xa",
+          "raw_unit": "0x20a"
+        },
+        {
+          "offset_code_units": 384,
+          "opcode": "0x28",
+          "raw_unit": "0x228"
+        },
+        {
+          "offset_code_units": 385,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 386,
+          "opcode": "0x39",
+          "raw_unit": "0x239",
+          "operation": "if-nez",
+          "value_register": 2,
+          "relative_target": 12
+        },
+        {
+          "offset_code_units": 388,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 391,
+          "opcode": "0xc",
+          "raw_unit": "0x10c"
+        },
+        {
+          "offset_code_units": 392,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSohuVideoDetail(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z",
+          "registers": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "offset_code_units": 395,
+          "opcode": "0xa",
+          "raw_unit": "0xa"
+        },
+        {
+          "offset_code_units": 396,
+          "opcode": "0x38",
+          "raw_unit": "0x38",
+          "operation": "if-eqz",
+          "value_register": 0,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 398,
+          "opcode": "0x12",
+          "raw_unit": "0x1312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 1
+        },
+        {
+          "offset_code_units": 399,
+          "opcode": "0xf",
+          "raw_unit": "0x30f"
+        },
+        {
+          "offset_code_units": 400,
+          "opcode": "0x52",
+          "raw_unit": "0x1552",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 402,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSohuGotoAction(Landroid/content/Context;Ljava/lang/String;ILcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z",
+          "registers": [
+            0,
+            4,
+            5,
+            2
+          ]
+        },
+        {
+          "offset_code_units": 405,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 406,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 408,
+          "opcode": "0xf",
+          "raw_unit": "0x70f"
+        },
+        {
+          "offset_code_units": 409,
+          "opcode": "0x1a",
+          "raw_unit": "0x51a"
+        },
+        {
+          "offset_code_units": 411,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->startsWith(Ljava/lang/String;)Z",
+          "registers": [
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 414,
+          "opcode": "0xa",
+          "raw_unit": "0x50a"
+        },
+        {
+          "offset_code_units": 415,
+          "opcode": "0x38",
+          "raw_unit": "0x538",
+          "operation": "if-eqz",
+          "value_register": 5,
+          "relative_target": 26
+        },
+        {
+          "offset_code_units": 417,
+          "opcode": "0x38",
+          "raw_unit": "0x238",
+          "operation": "if-eqz",
+          "value_register": 2,
+          "relative_target": 9
+        },
+        {
+          "offset_code_units": 419,
+          "opcode": "0x62",
+          "raw_unit": "0x562"
+        },
+        {
+          "offset_code_units": 421,
+          "opcode": "0x72",
+          "raw_unit": "0x3072",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;->doBeforeJump(Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpType;Ljava/lang/Object;)Z",
+          "registers": [
+            2,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 424,
+          "opcode": "0xa",
+          "raw_unit": "0x20a"
+        },
+        {
+          "offset_code_units": 425,
+          "opcode": "0x28",
+          "raw_unit": "0x228"
+        },
+        {
+          "offset_code_units": 426,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 427,
+          "opcode": "0x39",
+          "raw_unit": "0x239",
+          "operation": "if-nez",
+          "value_register": 2,
+          "relative_target": 12
+        },
+        {
+          "offset_code_units": 429,
+          "opcode": "0x52",
+          "raw_unit": "0x1252",
+          "operation": "iget",
+          "value_register": 2,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 431,
+          "opcode": "0x54",
+          "raw_unit": "0x1154",
+          "operation": "iget",
+          "value_register": 1,
+          "receiver_register": 1,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mAdvertiser:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 433,
+          "opcode": "0x71",
+          "raw_unit": "0x4071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardBySoHuBrowse(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Z",
+          "registers": [
+            0,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "offset_code_units": 436,
+          "opcode": "0xa",
+          "raw_unit": "0xa"
+        },
+        {
+          "offset_code_units": 437,
+          "opcode": "0x38",
+          "raw_unit": "0x38",
+          "operation": "if-eqz",
+          "value_register": 0,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 439,
+          "opcode": "0x12",
+          "raw_unit": "0x1312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 1
+        },
+        {
+          "offset_code_units": 440,
+          "opcode": "0xf",
+          "raw_unit": "0x30f"
+        },
+        {
+          "offset_code_units": 441,
+          "opcode": "0x38",
+          "raw_unit": "0x838",
+          "operation": "if-eqz",
+          "value_register": 8,
+          "relative_target": 37
+        },
+        {
+          "offset_code_units": 443,
+          "opcode": "0x38",
+          "raw_unit": "0x238",
+          "operation": "if-eqz",
+          "value_register": 2,
+          "relative_target": 9
+        },
+        {
+          "offset_code_units": 445,
+          "opcode": "0x62",
+          "raw_unit": "0x562"
+        },
+        {
+          "offset_code_units": 447,
+          "opcode": "0x72",
+          "raw_unit": "0x3072",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;->doBeforeJump(Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpType;Ljava/lang/Object;)Z",
+          "registers": [
+            2,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 450,
+          "opcode": "0xa",
+          "raw_unit": "0x20a"
+        },
+        {
+          "offset_code_units": 451,
+          "opcode": "0x28",
+          "raw_unit": "0x228"
+        },
+        {
+          "offset_code_units": 452,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 453,
+          "opcode": "0x1a",
+          "raw_unit": "0x51a"
+        },
+        {
+          "offset_code_units": 455,
+          "opcode": "0x23",
+          "raw_unit": "0x3823"
+        },
+        {
+          "offset_code_units": 457,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/scadsdk/utils/o;->c(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V",
+          "registers": [
+            6,
+            5,
+            8
+          ]
+        },
+        {
+          "offset_code_units": 460,
+          "opcode": "0x39",
+          "raw_unit": "0x239",
+          "operation": "if-nez",
+          "value_register": 2,
+          "relative_target": 12
+        },
+        {
+          "offset_code_units": 462,
+          "opcode": "0x74",
+          "raw_unit": "0x174",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            17
+          ]
+        },
+        {
+          "offset_code_units": 465,
+          "opcode": "0xc",
+          "raw_unit": "0x10c"
+        },
+        {
+          "offset_code_units": 466,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToOtherApp(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z",
+          "registers": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "offset_code_units": 469,
+          "opcode": "0xa",
+          "raw_unit": "0xa"
+        },
+        {
+          "offset_code_units": 470,
+          "opcode": "0x38",
+          "raw_unit": "0x38",
+          "operation": "if-eqz",
+          "value_register": 0,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 472,
+          "opcode": "0x12",
+          "raw_unit": "0x1312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 1
+        },
+        {
+          "offset_code_units": 473,
+          "opcode": "0xf",
+          "raw_unit": "0x30f"
+        },
+        {
+          "offset_code_units": 474,
+          "opcode": "0xd",
+          "raw_unit": "0xd"
+        },
+        {
+          "offset_code_units": 475,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/Exception;->printStackTrace()V",
+          "registers": [
+            0
+          ]
+        },
+        {
+          "offset_code_units": 478,
+          "opcode": "0xf",
+          "raw_unit": "0x30f"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSv(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z": {
+      "access_flags": "0xa",
+      "code_offset_bytes": 7115552,
+      "registers_size": 7,
+      "input_words": 4,
+      "parameter_register_start": 3,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->parserActionInfo(Ljava/lang/String;)Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;",
+          "registers": [
+            5
+          ]
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0xc",
+          "raw_unit": "0xc"
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x54",
+          "raw_unit": "0x154",
+          "operation": "iget",
+          "value_register": 1,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z",
+          "registers": [
+            1
+          ]
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0xa",
+          "raw_unit": "0x10a"
+        },
+        {
+          "offset_code_units": 10,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 11,
+          "opcode": "0x38",
+          "raw_unit": "0x138",
+          "operation": "if-eqz",
+          "value_register": 1,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 13,
+          "opcode": "0xf",
+          "raw_unit": "0x20f"
+        },
+        {
+          "offset_code_units": 14,
+          "opcode": "0x38",
+          "raw_unit": "0x638",
+          "operation": "if-eqz",
+          "value_register": 6,
+          "relative_target": 8
+        },
+        {
+          "offset_code_units": 16,
+          "opcode": "0x62",
+          "raw_unit": "0x162"
+        },
+        {
+          "offset_code_units": 18,
+          "opcode": "0x72",
+          "raw_unit": "0x3072",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;->doBeforeJump(Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpType;Ljava/lang/Object;)Z",
+          "registers": [
+            6,
+            1,
+            0
+          ]
+        },
+        {
+          "offset_code_units": 21,
+          "opcode": "0xa",
+          "raw_unit": "0x20a"
+        },
+        {
+          "offset_code_units": 22,
+          "opcode": "0x39",
+          "raw_unit": "0x239",
+          "operation": "if-nez",
+          "value_register": 2,
+          "relative_target": 26
+        },
+        {
+          "offset_code_units": 24,
+          "opcode": "0x54",
+          "raw_unit": "0x654",
+          "operation": "iget",
+          "value_register": 6,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 26,
+          "opcode": "0x71",
+          "raw_unit": "0x1071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->isSohuVideoAction(Ljava/lang/String;)Z",
+          "registers": [
+            6
+          ]
+        },
+        {
+          "offset_code_units": 29,
+          "opcode": "0xa",
+          "raw_unit": "0x60a"
+        },
+        {
+          "offset_code_units": 30,
+          "opcode": "0x38",
+          "raw_unit": "0x638",
+          "operation": "if-eqz",
+          "value_register": 6,
+          "relative_target": 18
+        },
+        {
+          "offset_code_units": 32,
+          "opcode": "0x54",
+          "raw_unit": "0x554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 34,
+          "opcode": "0x39",
+          "raw_unit": "0x439",
+          "operation": "if-nez",
+          "value_register": 4,
+          "relative_target": 5
+        },
+        {
+          "offset_code_units": 36,
+          "opcode": "0x1a",
+          "raw_unit": "0x41a"
+        },
+        {
+          "offset_code_units": 38,
+          "opcode": "0x28",
+          "raw_unit": "0x528"
+        },
+        {
+          "offset_code_units": 39,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->getMulUrlTracking()Ljava/lang/String;",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 42,
+          "opcode": "0xc",
+          "raw_unit": "0x40c"
+        },
+        {
+          "offset_code_units": 43,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSohuVideoDetail(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z",
+          "registers": [
+            3,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 46,
+          "opcode": "0xa",
+          "raw_unit": "0x30a"
+        },
+        {
+          "offset_code_units": 47,
+          "opcode": "0xf",
+          "raw_unit": "0x30f"
+        },
+        {
+          "offset_code_units": 48,
+          "opcode": "0x12",
+          "raw_unit": "0x1612",
+          "operation": "const/4",
+          "dest": 6,
+          "value": 1
+        },
+        {
+          "offset_code_units": 49,
+          "opcode": "0x38",
+          "raw_unit": "0x238",
+          "operation": "if-eqz",
+          "value_register": 2,
+          "relative_target": 3
+        },
+        {
+          "offset_code_units": 51,
+          "opcode": "0xf",
+          "raw_unit": "0x60f"
+        },
+        {
+          "offset_code_units": 52,
+          "opcode": "0x52",
+          "raw_unit": "0x152",
+          "operation": "iget",
+          "value_register": 1,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->action:I"
+        },
+        {
+          "offset_code_units": 54,
+          "opcode": "0x12",
+          "raw_unit": "0x2212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 2
+        },
+        {
+          "offset_code_units": 55,
+          "opcode": "0x32",
+          "raw_unit": "0x2132"
+        },
+        {
+          "offset_code_units": 57,
+          "opcode": "0x12",
+          "raw_unit": "0x3212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 3
+        },
+        {
+          "offset_code_units": 58,
+          "opcode": "0x32",
+          "raw_unit": "0x2132"
+        },
+        {
+          "offset_code_units": 60,
+          "opcode": "0x12",
+          "raw_unit": "0x4212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 4
+        },
+        {
+          "offset_code_units": 61,
+          "opcode": "0x32",
+          "raw_unit": "0x2132"
+        },
+        {
+          "offset_code_units": 63,
+          "opcode": "0x54",
+          "raw_unit": "0x554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 65,
+          "opcode": "0x52",
+          "raw_unit": "0x4452",
+          "operation": "iget",
+          "value_register": 4,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 67,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardBySoHuBrowse(Landroid/content/Context;Ljava/lang/String;I)Z",
+          "registers": [
+            3,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 70,
+          "opcode": "0x28",
+          "raw_unit": "0x3328"
+        },
+        {
+          "offset_code_units": 71,
+          "opcode": "0x54",
+          "raw_unit": "0x4154",
+          "operation": "iget",
+          "value_register": 1,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->innerBrowerContainer:Landroid/view/ViewGroup;"
+        },
+        {
+          "offset_code_units": 73,
+          "opcode": "0x38",
+          "raw_unit": "0x138",
+          "operation": "if-eqz",
+          "value_register": 1,
+          "relative_target": 21
+        },
+        {
+          "offset_code_units": 75,
+          "opcode": "0x22",
+          "raw_unit": "0x22"
+        },
+        {
+          "offset_code_units": 77,
+          "opcode": "0x70",
+          "raw_unit": "0x2070",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView;-><init>(Landroid/content/Context;)V",
+          "registers": [
+            0,
+            3
+          ]
+        },
+        {
+          "offset_code_units": 80,
+          "opcode": "0x52",
+          "raw_unit": "0x4352",
+          "operation": "iget",
+          "value_register": 3,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 82,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView;->setSupportDeeplink(I)V",
+          "registers": [
+            0,
+            3
+          ]
+        },
+        {
+          "offset_code_units": 85,
+          "opcode": "0x54",
+          "raw_unit": "0x4354",
+          "operation": "iget",
+          "value_register": 3,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->innerBrowerContainer:Landroid/view/ViewGroup;"
+        },
+        {
+          "offset_code_units": 87,
+          "opcode": "0x6e",
+          "raw_unit": "0x206e",
+          "operation": "invoke",
+          "method": "Landroid/view/ViewGroup;->addView(Landroid/view/View;)V",
+          "registers": [
+            3,
+            0
+          ]
+        },
+        {
+          "offset_code_units": 90,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument;->loadUrl(Landroid/view/View;Ljava/lang/String;)V",
+          "registers": [
+            0,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 93,
+          "opcode": "0x28",
+          "raw_unit": "0x1c28"
+        },
+        {
+          "offset_code_units": 94,
+          "opcode": "0x54",
+          "raw_unit": "0x554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 96,
+          "opcode": "0x52",
+          "raw_unit": "0x4452",
+          "operation": "iget",
+          "value_register": 4,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 98,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardBySoHuBrowse(Landroid/content/Context;Ljava/lang/String;I)Z",
+          "registers": [
+            3,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 101,
+          "opcode": "0x28",
+          "raw_unit": "0x1428"
+        },
+        {
+          "offset_code_units": 102,
+          "opcode": "0x38",
+          "raw_unit": "0x438",
+          "operation": "if-eqz",
+          "value_register": 4,
+          "relative_target": 19
+        },
+        {
+          "offset_code_units": 104,
+          "opcode": "0x52",
+          "raw_unit": "0x4452",
+          "operation": "iget",
+          "value_register": 4,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 106,
+          "opcode": "0x3d",
+          "raw_unit": "0x43d"
+        },
+        {
+          "offset_code_units": 108,
+          "opcode": "0x54",
+          "raw_unit": "0x454",
+          "operation": "iget",
+          "value_register": 4,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 110,
+          "opcode": "0x71",
+          "raw_unit": "0x2071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardByThirdBrowse(Landroid/content/Context;Ljava/lang/String;)Z",
+          "registers": [
+            3,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 113,
+          "opcode": "0x28",
+          "raw_unit": "0x828"
+        },
+        {
+          "offset_code_units": 114,
+          "opcode": "0x54",
+          "raw_unit": "0x554",
+          "operation": "iget",
+          "value_register": 5,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/ActionInfo;->url:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 116,
+          "opcode": "0x52",
+          "raw_unit": "0x4452",
+          "operation": "iget",
+          "value_register": 4,
+          "receiver_register": 4,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 118,
+          "opcode": "0x71",
+          "raw_unit": "0x3071",
+          "operation": "invoke",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardBySoHuBrowse(Landroid/content/Context;Ljava/lang/String;I)Z",
+          "registers": [
+            3,
+            5,
+            4
+          ]
+        },
+        {
+          "offset_code_units": 121,
+          "opcode": "0xf",
+          "raw_unit": "0x60f"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>()V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117124,
+      "registers_size": 7,
+      "input_words": 1,
+      "parameter_register_start": 6,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x112",
+          "operation": "const/4",
+          "dest": 1,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x12",
+          "raw_unit": "0x312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 0
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x12",
+          "raw_unit": "0x412",
+          "operation": "const/4",
+          "dest": 4,
+          "value": 0
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x12",
+          "raw_unit": "0x1512",
+          "operation": "const/4",
+          "dest": 5,
+          "value": 1
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x7",
+          "raw_unit": "0x6007",
+          "operation": "move-object",
+          "dest": 0,
+          "src": 6
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x76",
+          "raw_unit": "0x676",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+          "registers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;)V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117160,
+      "registers_size": 8,
+      "input_words": 2,
+      "parameter_register_start": 6,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x12",
+          "raw_unit": "0x312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 0
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x12",
+          "raw_unit": "0x412",
+          "operation": "const/4",
+          "dest": 4,
+          "value": 0
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x12",
+          "raw_unit": "0x1512",
+          "operation": "const/4",
+          "dest": 5,
+          "value": 1
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x7",
+          "raw_unit": "0x6007",
+          "operation": "move-object",
+          "dest": 0,
+          "src": 6
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x7",
+          "raw_unit": "0x7107",
+          "operation": "move-object",
+          "dest": 1,
+          "src": 7
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x76",
+          "raw_unit": "0x676",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+          "registers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;I)V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117196,
+      "registers_size": 9,
+      "input_words": 3,
+      "parameter_register_start": 6,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x212",
+          "operation": "const/4",
+          "dest": 2,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x12",
+          "raw_unit": "0x312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 0
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x12",
+          "raw_unit": "0x412",
+          "operation": "const/4",
+          "dest": 4,
+          "value": 0
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x7",
+          "raw_unit": "0x6007",
+          "operation": "move-object",
+          "dest": 0,
+          "src": 6
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x7",
+          "raw_unit": "0x7107",
+          "operation": "move-object",
+          "dest": 1,
+          "src": 7
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x1",
+          "raw_unit": "0x8501"
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x76",
+          "raw_unit": "0x676",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+          "registers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;)V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117232,
+      "registers_size": 9,
+      "input_words": 3,
+      "parameter_register_start": 6,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x312",
+          "operation": "const/4",
+          "dest": 3,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x12",
+          "raw_unit": "0x412",
+          "operation": "const/4",
+          "dest": 4,
+          "value": 0
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x12",
+          "raw_unit": "0x1512",
+          "operation": "const/4",
+          "dest": 5,
+          "value": 1
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x7",
+          "raw_unit": "0x6007",
+          "operation": "move-object",
+          "dest": 0,
+          "src": 6
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x7",
+          "raw_unit": "0x7107",
+          "operation": "move-object",
+          "dest": 1,
+          "src": 7
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x7",
+          "raw_unit": "0x8207",
+          "operation": "move-object",
+          "dest": 2,
+          "src": 8
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x76",
+          "raw_unit": "0x676",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+          "registers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117268,
+      "registers_size": 13,
+      "input_words": 6,
+      "parameter_register_start": 7,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x612",
+          "operation": "const/4",
+          "dest": 6,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x7",
+          "raw_unit": "0x7007",
+          "operation": "move-object",
+          "dest": 0,
+          "src": 7
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x7",
+          "raw_unit": "0x8107",
+          "operation": "move-object",
+          "dest": 1,
+          "src": 8
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x7",
+          "raw_unit": "0x9207",
+          "operation": "move-object",
+          "dest": 2,
+          "src": 9
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x7",
+          "raw_unit": "0xa307",
+          "operation": "move-object",
+          "dest": 3,
+          "src": 10
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x7",
+          "raw_unit": "0xb407",
+          "operation": "move-object",
+          "dest": 4,
+          "src": 11
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x1",
+          "raw_unit": "0xc501"
+        },
+        {
+          "offset_code_units": 7,
+          "opcode": "0x76",
+          "raw_unit": "0x776",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/view/ViewGroup;)V",
+          "registers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "offset_code_units": 10,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/view/ViewGroup;)V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117308,
+      "registers_size": 15,
+      "input_words": 7,
+      "parameter_register_start": 8,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x12",
+          "raw_unit": "0x612",
+          "operation": "const/4",
+          "dest": 6,
+          "value": 0
+        },
+        {
+          "offset_code_units": 1,
+          "opcode": "0x12",
+          "raw_unit": "0x712",
+          "operation": "const/4",
+          "dest": 7,
+          "value": 0
+        },
+        {
+          "offset_code_units": 2,
+          "opcode": "0x7",
+          "raw_unit": "0x8007",
+          "operation": "move-object",
+          "dest": 0,
+          "src": 8
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x7",
+          "raw_unit": "0x9107",
+          "operation": "move-object",
+          "dest": 1,
+          "src": 9
+        },
+        {
+          "offset_code_units": 4,
+          "opcode": "0x7",
+          "raw_unit": "0xa207",
+          "operation": "move-object",
+          "dest": 2,
+          "src": 10
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x7",
+          "raw_unit": "0xb307",
+          "operation": "move-object",
+          "dest": 3,
+          "src": 11
+        },
+        {
+          "offset_code_units": 6,
+          "opcode": "0x7",
+          "raw_unit": "0xc407",
+          "operation": "move-object",
+          "dest": 4,
+          "src": 12
+        },
+        {
+          "offset_code_units": 7,
+          "opcode": "0x1",
+          "raw_unit": "0xd501"
+        },
+        {
+          "offset_code_units": 8,
+          "opcode": "0x76",
+          "raw_unit": "0x876",
+          "operation": "invoke/range",
+          "method": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/view/ViewGroup;I)V",
+          "registers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "offset_code_units": 11,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    },
+    "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/view/ViewGroup;I)V": {
+      "access_flags": "0x10001",
+      "code_offset_bytes": 7117348,
+      "registers_size": 8,
+      "input_words": 8,
+      "parameter_register_start": 0,
+      "instructions": [
+        {
+          "offset_code_units": 0,
+          "opcode": "0x70",
+          "raw_unit": "0x1070",
+          "operation": "invoke",
+          "method": "Ljava/lang/Object;-><init>()V",
+          "registers": [
+            0
+          ]
+        },
+        {
+          "offset_code_units": 3,
+          "opcode": "0x38",
+          "raw_unit": "0x138",
+          "operation": "if-eqz",
+          "value_register": 1,
+          "relative_target": 6
+        },
+        {
+          "offset_code_units": 5,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->trim()Ljava/lang/String;",
+          "registers": [
+            1
+          ]
+        },
+        {
+          "offset_code_units": 8,
+          "opcode": "0xc",
+          "raw_unit": "0x10c"
+        },
+        {
+          "offset_code_units": 9,
+          "opcode": "0x5b",
+          "raw_unit": "0x15b",
+          "operation": "iput",
+          "value_register": 1,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->linkUrl:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 11,
+          "opcode": "0x38",
+          "raw_unit": "0x238",
+          "operation": "if-eqz",
+          "value_register": 2,
+          "relative_target": 6
+        },
+        {
+          "offset_code_units": 13,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->trim()Ljava/lang/String;",
+          "registers": [
+            2
+          ]
+        },
+        {
+          "offset_code_units": 16,
+          "opcode": "0xc",
+          "raw_unit": "0x20c"
+        },
+        {
+          "offset_code_units": 17,
+          "opcode": "0x5b",
+          "raw_unit": "0x25b",
+          "operation": "iput",
+          "value_register": 2,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->mulUrl:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 19,
+          "opcode": "0x59",
+          "raw_unit": "0x559",
+          "operation": "iput",
+          "value_register": 5,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->supportDeeplink:I"
+        },
+        {
+          "offset_code_units": 21,
+          "opcode": "0x5b",
+          "raw_unit": "0x65b",
+          "operation": "iput",
+          "value_register": 6,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->innerBrowerContainer:Landroid/view/ViewGroup;"
+        },
+        {
+          "offset_code_units": 23,
+          "opcode": "0x38",
+          "raw_unit": "0x338",
+          "operation": "if-eqz",
+          "value_register": 3,
+          "relative_target": 6
+        },
+        {
+          "offset_code_units": 25,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->trim()Ljava/lang/String;",
+          "registers": [
+            3
+          ]
+        },
+        {
+          "offset_code_units": 28,
+          "opcode": "0xc",
+          "raw_unit": "0x30c"
+        },
+        {
+          "offset_code_units": 29,
+          "opcode": "0x5b",
+          "raw_unit": "0x35b",
+          "operation": "iput",
+          "value_register": 3,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProId:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 31,
+          "opcode": "0x38",
+          "raw_unit": "0x438",
+          "operation": "if-eqz",
+          "value_register": 4,
+          "relative_target": 6
+        },
+        {
+          "offset_code_units": 33,
+          "opcode": "0x6e",
+          "raw_unit": "0x106e",
+          "operation": "invoke",
+          "method": "Ljava/lang/String;->trim()Ljava/lang/String;",
+          "registers": [
+            4
+          ]
+        },
+        {
+          "offset_code_units": 36,
+          "opcode": "0xc",
+          "raw_unit": "0x40c"
+        },
+        {
+          "offset_code_units": 37,
+          "opcode": "0x5b",
+          "raw_unit": "0x45b",
+          "operation": "iput",
+          "value_register": 4,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->wxMiniProPath:Ljava/lang/String;"
+        },
+        {
+          "offset_code_units": 39,
+          "opcode": "0x59",
+          "raw_unit": "0x759",
+          "operation": "iput",
+          "value_register": 7,
+          "receiver_register": 0,
+          "field": "Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;->displayType:I"
+        },
+        {
+          "offset_code_units": 41,
+          "opcode": "0xe",
+          "raw_unit": "0xe"
+        }
+      ]
+    }
+  }
+}

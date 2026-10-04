@@ -1,0 +1,1401 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "parse_method": "DEX class_defs/class_data encoded method declarations, method_ids/proto_ids/type_ids/string_ids; all interface declarations, no name-based callback inference.",
+  "classes": [
+    {
+      "class_descriptor": "Lcom/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner;",
+      "superclass_descriptor": "Landroid/webkit/WebChromeClient;",
+      "interface_descriptors": [
+        "Lcom/bytedance/webx/core/IExtendableControl;",
+        "Lcom/bytedance/webx/core/webview/client/IWebChromeContainerClient;",
+        "Lcom/bytedance/webx/context/IContextItem;"
+      ],
+      "class_def_offset": 1488952,
+      "class_access_flags": 1,
+      "dex": "classes3.dex",
+      "dex_sha256": "8d7f9f8846780b6473dcf9b7a62722a8308263876152e71d5457906afb51bd2f",
+      "source_file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+      "source_sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7",
+      "methods": [
+        {
+          "method_id": 49793,
+          "method_id_offset": 1064248,
+          "access_flags": 65537,
+          "code_offset": 7710996,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49794,
+          "method_id_offset": 1064256,
+          "access_flags": 1,
+          "code_offset": 7711036,
+          "name": "getDefaultVideoPoster",
+          "descriptor": "()Landroid/graphics/Bitmap;"
+        },
+        {
+          "method_id": 49795,
+          "method_id_offset": 1064264,
+          "access_flags": 1,
+          "code_offset": 7711080,
+          "name": "getExtendableContext",
+          "descriptor": "()Lcom/bytedance/webx/context/ExtendableContext;"
+        },
+        {
+          "method_id": 49796,
+          "method_id_offset": 1064272,
+          "access_flags": 1,
+          "code_offset": 7711120,
+          "name": "getVideoLoadingProgressView",
+          "descriptor": "()Landroid/view/View;"
+        },
+        {
+          "method_id": 49797,
+          "method_id_offset": 1064280,
+          "access_flags": 1,
+          "code_offset": 7711164,
+          "name": "getVisitedHistory",
+          "descriptor": "(Landroid/webkit/ValueCallback;)V"
+        },
+        {
+          "method_id": 49798,
+          "method_id_offset": 1064288,
+          "access_flags": 1,
+          "code_offset": 7711204,
+          "name": "getWebChromeClientDelegate",
+          "descriptor": "()Landroid/webkit/WebChromeClient;"
+        },
+        {
+          "method_id": 49799,
+          "method_id_offset": 1064296,
+          "access_flags": 1,
+          "code_offset": 7711228,
+          "name": "init",
+          "descriptor": "(Lcom/bytedance/webx/WebXEnv;)V"
+        },
+        {
+          "method_id": 49800,
+          "method_id_offset": 1064304,
+          "access_flags": 1,
+          "code_offset": 7711276,
+          "name": "onCloseWindow",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 49801,
+          "method_id_offset": 1064312,
+          "access_flags": 1,
+          "code_offset": 7711316,
+          "name": "onConsoleMessage",
+          "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 49802,
+          "method_id_offset": 1064320,
+          "access_flags": 1,
+          "code_offset": 7711356,
+          "name": "onConsoleMessage",
+          "descriptor": "(Landroid/webkit/ConsoleMessage;)Z"
+        },
+        {
+          "method_id": 49803,
+          "method_id_offset": 1064328,
+          "access_flags": 1,
+          "code_offset": 7711400,
+          "name": "onCreateWindow",
+          "descriptor": "(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z"
+        },
+        {
+          "method_id": 49804,
+          "method_id_offset": 1064336,
+          "access_flags": 1,
+          "code_offset": 7711444,
+          "name": "onExceededDatabaseQuota",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V"
+        },
+        {
+          "method_id": 49805,
+          "method_id_offset": 1064344,
+          "access_flags": 1,
+          "code_offset": 7711520,
+          "name": "onGeolocationPermissionsHidePrompt",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49806,
+          "method_id_offset": 1064352,
+          "access_flags": 1,
+          "code_offset": 7711560,
+          "name": "onGeolocationPermissionsShowPrompt",
+          "descriptor": "(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V"
+        },
+        {
+          "method_id": 49807,
+          "method_id_offset": 1064360,
+          "access_flags": 1,
+          "code_offset": 7711724,
+          "name": "onHideCustomView",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49808,
+          "method_id_offset": 1064368,
+          "access_flags": 1,
+          "code_offset": 7711764,
+          "name": "onJsAlert",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49809,
+          "method_id_offset": 1064376,
+          "access_flags": 1,
+          "code_offset": 7711808,
+          "name": "onJsBeforeUnload",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49810,
+          "method_id_offset": 1064384,
+          "access_flags": 1,
+          "code_offset": 7711852,
+          "name": "onJsConfirm",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49811,
+          "method_id_offset": 1064392,
+          "access_flags": 1,
+          "code_offset": 7711896,
+          "name": "onJsPrompt",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z"
+        },
+        {
+          "method_id": 49812,
+          "method_id_offset": 1064400,
+          "access_flags": 1,
+          "code_offset": 7711960,
+          "name": "onJsTimeout",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 49813,
+          "method_id_offset": 1064408,
+          "access_flags": 1,
+          "code_offset": 7712004,
+          "name": "onPermissionRequest",
+          "descriptor": "(Landroid/webkit/PermissionRequest;)V"
+        },
+        {
+          "method_id": 49814,
+          "method_id_offset": 1064416,
+          "access_flags": 1,
+          "code_offset": 7712160,
+          "name": "onPermissionRequestCanceled",
+          "descriptor": "(Landroid/webkit/PermissionRequest;)V"
+        },
+        {
+          "method_id": 49815,
+          "method_id_offset": 1064424,
+          "access_flags": 1,
+          "code_offset": 7712200,
+          "name": "onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        },
+        {
+          "method_id": 49816,
+          "method_id_offset": 1064432,
+          "access_flags": 1,
+          "code_offset": 7712240,
+          "name": "onReachedMaxAppCacheSize",
+          "descriptor": "(JJLandroid/webkit/WebStorage$QuotaUpdater;)V"
+        },
+        {
+          "method_id": 49817,
+          "method_id_offset": 1064440,
+          "access_flags": 1,
+          "code_offset": 7712260,
+          "name": "onReceivedIcon",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 49818,
+          "method_id_offset": 1064448,
+          "access_flags": 1,
+          "code_offset": 7712300,
+          "name": "onReceivedTitle",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49819,
+          "method_id_offset": 1064456,
+          "access_flags": 1,
+          "code_offset": 7712340,
+          "name": "onReceivedTouchIconUrl",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 49820,
+          "method_id_offset": 1064464,
+          "access_flags": 1,
+          "code_offset": 7712380,
+          "name": "onRequestFocus",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 49821,
+          "method_id_offset": 1064472,
+          "access_flags": 1,
+          "code_offset": 7712420,
+          "name": "onShowCustomView",
+          "descriptor": "(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        },
+        {
+          "method_id": 49822,
+          "method_id_offset": 1064480,
+          "access_flags": 1,
+          "code_offset": 7712460,
+          "name": "onShowCustomView",
+          "descriptor": "(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        },
+        {
+          "method_id": 49823,
+          "method_id_offset": 1064488,
+          "access_flags": 1,
+          "code_offset": 7712500,
+          "name": "onShowFileChooser",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z"
+        },
+        {
+          "method_id": 49824,
+          "method_id_offset": 1064496,
+          "access_flags": 1,
+          "code_offset": 7712544,
+          "name": "setWebChromeClientDelegate",
+          "descriptor": "(Landroid/webkit/WebChromeClient;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/webx/core/webview/client/WebChromeContainerClient;",
+      "superclass_descriptor": "Lcom/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner;",
+      "interface_descriptors": [],
+      "class_def_offset": 1488984,
+      "class_access_flags": 1,
+      "dex": "classes3.dex",
+      "dex_sha256": "8d7f9f8846780b6473dcf9b7a62722a8308263876152e71d5457906afb51bd2f",
+      "source_file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+      "source_sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0",
+      "methods": [
+        {
+          "method_id": 49665,
+          "method_id_offset": 1063224,
+          "access_flags": 65537,
+          "code_offset": 7702248,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49666,
+          "method_id_offset": 1063232,
+          "access_flags": 1,
+          "code_offset": 7702272,
+          "name": "__super_getDefaultVideoPoster",
+          "descriptor": "()Landroid/graphics/Bitmap;"
+        },
+        {
+          "method_id": 49667,
+          "method_id_offset": 1063240,
+          "access_flags": 1,
+          "code_offset": 7702300,
+          "name": "__super_getVideoLoadingProgressView",
+          "descriptor": "()Landroid/view/View;"
+        },
+        {
+          "method_id": 49668,
+          "method_id_offset": 1063248,
+          "access_flags": 1,
+          "code_offset": 7702328,
+          "name": "__super_getVisitedHistory",
+          "descriptor": "(Landroid/webkit/ValueCallback;)V"
+        },
+        {
+          "method_id": 49669,
+          "method_id_offset": 1063256,
+          "access_flags": 1,
+          "code_offset": 7702352,
+          "name": "__super_onCloseWindow",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 49670,
+          "method_id_offset": 1063264,
+          "access_flags": 1,
+          "code_offset": 7702376,
+          "name": "__super_onConsoleMessage",
+          "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 49671,
+          "method_id_offset": 1063272,
+          "access_flags": 1,
+          "code_offset": 7702400,
+          "name": "__super_onConsoleMessage",
+          "descriptor": "(Landroid/webkit/ConsoleMessage;)Z"
+        },
+        {
+          "method_id": 49672,
+          "method_id_offset": 1063280,
+          "access_flags": 1,
+          "code_offset": 7702428,
+          "name": "__super_onCreateWindow",
+          "descriptor": "(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z"
+        },
+        {
+          "method_id": 49673,
+          "method_id_offset": 1063288,
+          "access_flags": 1,
+          "code_offset": 7702456,
+          "name": "__super_onExceededDatabaseQuota",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V"
+        },
+        {
+          "method_id": 49674,
+          "method_id_offset": 1063296,
+          "access_flags": 1,
+          "code_offset": 7702480,
+          "name": "__super_onGeolocationPermissionsHidePrompt",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49675,
+          "method_id_offset": 1063304,
+          "access_flags": 1,
+          "code_offset": 7702504,
+          "name": "__super_onGeolocationPermissionsShowPrompt",
+          "descriptor": "(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V"
+        },
+        {
+          "method_id": 49676,
+          "method_id_offset": 1063312,
+          "access_flags": 1,
+          "code_offset": 7702528,
+          "name": "__super_onHideCustomView",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49677,
+          "method_id_offset": 1063320,
+          "access_flags": 1,
+          "code_offset": 7702552,
+          "name": "__super_onJsAlert",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49678,
+          "method_id_offset": 1063328,
+          "access_flags": 1,
+          "code_offset": 7702580,
+          "name": "__super_onJsBeforeUnload",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49679,
+          "method_id_offset": 1063336,
+          "access_flags": 1,
+          "code_offset": 7702608,
+          "name": "__super_onJsConfirm",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49680,
+          "method_id_offset": 1063344,
+          "access_flags": 1,
+          "code_offset": 7702636,
+          "name": "__super_onJsPrompt",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z"
+        },
+        {
+          "method_id": 49681,
+          "method_id_offset": 1063352,
+          "access_flags": 1,
+          "code_offset": 7702664,
+          "name": "__super_onJsTimeout",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 49682,
+          "method_id_offset": 1063360,
+          "access_flags": 1,
+          "code_offset": 7702692,
+          "name": "__super_onPermissionRequest",
+          "descriptor": "(Landroid/webkit/PermissionRequest;)V"
+        },
+        {
+          "method_id": 49683,
+          "method_id_offset": 1063368,
+          "access_flags": 1,
+          "code_offset": 7702716,
+          "name": "__super_onPermissionRequestCanceled",
+          "descriptor": "(Landroid/webkit/PermissionRequest;)V"
+        },
+        {
+          "method_id": 49684,
+          "method_id_offset": 1063376,
+          "access_flags": 1,
+          "code_offset": 7702740,
+          "name": "__super_onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        },
+        {
+          "method_id": 49685,
+          "method_id_offset": 1063384,
+          "access_flags": 1,
+          "code_offset": 7702764,
+          "name": "__super_onReachedMaxAppCacheSize",
+          "descriptor": "(JJLandroid/webkit/WebStorage$QuotaUpdater;)V"
+        },
+        {
+          "method_id": 49686,
+          "method_id_offset": 1063392,
+          "access_flags": 1,
+          "code_offset": 7702788,
+          "name": "__super_onReceivedIcon",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 49687,
+          "method_id_offset": 1063400,
+          "access_flags": 1,
+          "code_offset": 7702812,
+          "name": "__super_onReceivedTitle",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49688,
+          "method_id_offset": 1063408,
+          "access_flags": 1,
+          "code_offset": 7702836,
+          "name": "__super_onReceivedTouchIconUrl",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 49689,
+          "method_id_offset": 1063416,
+          "access_flags": 1,
+          "code_offset": 7702860,
+          "name": "__super_onRequestFocus",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 49690,
+          "method_id_offset": 1063424,
+          "access_flags": 1,
+          "code_offset": 7702884,
+          "name": "__super_onShowCustomView",
+          "descriptor": "(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        },
+        {
+          "method_id": 49691,
+          "method_id_offset": 1063432,
+          "access_flags": 1,
+          "code_offset": 7702908,
+          "name": "__super_onShowCustomView",
+          "descriptor": "(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        },
+        {
+          "method_id": 49692,
+          "method_id_offset": 1063440,
+          "access_flags": 1,
+          "code_offset": 7702932,
+          "name": "__super_onShowFileChooser",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z"
+        },
+        {
+          "method_id": 49693,
+          "method_id_offset": 1063448,
+          "access_flags": 1,
+          "code_offset": 7702960,
+          "name": "getDefaultVideoPoster",
+          "descriptor": "()Landroid/graphics/Bitmap;"
+        },
+        {
+          "method_id": 49694,
+          "method_id_offset": 1063456,
+          "access_flags": 1,
+          "code_offset": 7703068,
+          "name": "getVideoLoadingProgressView",
+          "descriptor": "()Landroid/view/View;"
+        },
+        {
+          "method_id": 49695,
+          "method_id_offset": 1063464,
+          "access_flags": 1,
+          "code_offset": 7703176,
+          "name": "getVisitedHistory",
+          "descriptor": "(Landroid/webkit/ValueCallback;)V"
+        },
+        {
+          "method_id": 49696,
+          "method_id_offset": 1063472,
+          "access_flags": 1,
+          "code_offset": 7703280,
+          "name": "onCloseWindow",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 49697,
+          "method_id_offset": 1063480,
+          "access_flags": 1,
+          "code_offset": 7703384,
+          "name": "onConsoleMessage",
+          "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 49698,
+          "method_id_offset": 1063488,
+          "access_flags": 1,
+          "code_offset": 7703488,
+          "name": "onConsoleMessage",
+          "descriptor": "(Landroid/webkit/ConsoleMessage;)Z"
+        },
+        {
+          "method_id": 49699,
+          "method_id_offset": 1063496,
+          "access_flags": 1,
+          "code_offset": 7703596,
+          "name": "onCreateWindow",
+          "descriptor": "(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z"
+        },
+        {
+          "method_id": 49700,
+          "method_id_offset": 1063504,
+          "access_flags": 1,
+          "code_offset": 7703704,
+          "name": "onExceededDatabaseQuota",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V"
+        },
+        {
+          "method_id": 49701,
+          "method_id_offset": 1063512,
+          "access_flags": 1,
+          "code_offset": 7703844,
+          "name": "onGeolocationPermissionsHidePrompt",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49702,
+          "method_id_offset": 1063520,
+          "access_flags": 1,
+          "code_offset": 7703948,
+          "name": "onGeolocationPermissionsShowPrompt",
+          "descriptor": "(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V"
+        },
+        {
+          "method_id": 49703,
+          "method_id_offset": 1063528,
+          "access_flags": 1,
+          "code_offset": 7704176,
+          "name": "onHideCustomView",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49704,
+          "method_id_offset": 1063536,
+          "access_flags": 1,
+          "code_offset": 7704280,
+          "name": "onJsAlert",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49705,
+          "method_id_offset": 1063544,
+          "access_flags": 1,
+          "code_offset": 7704388,
+          "name": "onJsBeforeUnload",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49706,
+          "method_id_offset": 1063552,
+          "access_flags": 1,
+          "code_offset": 7704496,
+          "name": "onJsConfirm",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 49707,
+          "method_id_offset": 1063560,
+          "access_flags": 1,
+          "code_offset": 7704604,
+          "name": "onJsPrompt",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z"
+        },
+        {
+          "method_id": 49708,
+          "method_id_offset": 1063568,
+          "access_flags": 1,
+          "code_offset": 7704732,
+          "name": "onJsTimeout",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 49709,
+          "method_id_offset": 1063576,
+          "access_flags": 1,
+          "code_offset": 7704840,
+          "name": "onPermissionRequest",
+          "descriptor": "(Landroid/webkit/PermissionRequest;)V"
+        },
+        {
+          "method_id": 49710,
+          "method_id_offset": 1063584,
+          "access_flags": 1,
+          "code_offset": 7705060,
+          "name": "onPermissionRequestCanceled",
+          "descriptor": "(Landroid/webkit/PermissionRequest;)V"
+        },
+        {
+          "method_id": 49711,
+          "method_id_offset": 1063592,
+          "access_flags": 1,
+          "code_offset": 7705164,
+          "name": "onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        },
+        {
+          "method_id": 49712,
+          "method_id_offset": 1063600,
+          "access_flags": 1,
+          "code_offset": 7705268,
+          "name": "onReachedMaxAppCacheSize",
+          "descriptor": "(JJLandroid/webkit/WebStorage$QuotaUpdater;)V"
+        },
+        {
+          "method_id": 49713,
+          "method_id_offset": 1063608,
+          "access_flags": 1,
+          "code_offset": 7705384,
+          "name": "onReceivedIcon",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 49714,
+          "method_id_offset": 1063616,
+          "access_flags": 1,
+          "code_offset": 7705488,
+          "name": "onReceivedTitle",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49715,
+          "method_id_offset": 1063624,
+          "access_flags": 1,
+          "code_offset": 7705592,
+          "name": "onReceivedTouchIconUrl",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 49716,
+          "method_id_offset": 1063632,
+          "access_flags": 1,
+          "code_offset": 7705696,
+          "name": "onRequestFocus",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 49717,
+          "method_id_offset": 1063640,
+          "access_flags": 1,
+          "code_offset": 7705800,
+          "name": "onShowCustomView",
+          "descriptor": "(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        },
+        {
+          "method_id": 49718,
+          "method_id_offset": 1063648,
+          "access_flags": 1,
+          "code_offset": 7705904,
+          "name": "onShowCustomView",
+          "descriptor": "(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        },
+        {
+          "method_id": 49719,
+          "method_id_offset": 1063656,
+          "access_flags": 1,
+          "code_offset": 7706008,
+          "name": "onShowFileChooser",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner;",
+      "superclass_descriptor": "Landroid/webkit/WebViewClient;",
+      "interface_descriptors": [
+        "Lcom/bytedance/webx/core/IExtendableControl;",
+        "Lcom/bytedance/webx/core/webview/client/IWebViewContainerClient;",
+        "Lcom/bytedance/webx/context/IContextItem;"
+      ],
+      "class_def_offset": 1489016,
+      "class_access_flags": 1,
+      "dex": "classes3.dex",
+      "dex_sha256": "8d7f9f8846780b6473dcf9b7a62722a8308263876152e71d5457906afb51bd2f",
+      "source_file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+      "source_sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258",
+      "methods": [
+        {
+          "method_id": 49825,
+          "method_id_offset": 1064504,
+          "access_flags": 65537,
+          "code_offset": 7712568,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49843,
+          "method_id_offset": 1064648,
+          "access_flags": 2,
+          "code_offset": 7712608,
+          "name": "onRenderProcessGone$$sedna$original$$2809",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49844,
+          "method_id_offset": 1064656,
+          "access_flags": 9,
+          "code_offset": 7712652,
+          "name": "onRenderProcessGone$$sedna$redirect$replace$$2808",
+          "descriptor": "(Landroid/webkit/WebViewClient;Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49826,
+          "method_id_offset": 1064512,
+          "access_flags": 1,
+          "code_offset": 7712692,
+          "name": "doUpdateVisitedHistory",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 49827,
+          "method_id_offset": 1064520,
+          "access_flags": 1,
+          "code_offset": 7712732,
+          "name": "getExtendableContext",
+          "descriptor": "()Lcom/bytedance/webx/context/ExtendableContext;"
+        },
+        {
+          "method_id": 49828,
+          "method_id_offset": 1064528,
+          "access_flags": 1,
+          "code_offset": 7712772,
+          "name": "getWebViewClientDelegate",
+          "descriptor": "()Landroid/webkit/WebViewClient;"
+        },
+        {
+          "method_id": 49829,
+          "method_id_offset": 1064536,
+          "access_flags": 1,
+          "code_offset": 7712796,
+          "name": "init",
+          "descriptor": "(Lcom/bytedance/webx/WebXEnv;)V"
+        },
+        {
+          "method_id": 49830,
+          "method_id_offset": 1064544,
+          "access_flags": 1,
+          "code_offset": 7712844,
+          "name": "onFormResubmission",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 49831,
+          "method_id_offset": 1064552,
+          "access_flags": 1,
+          "code_offset": 7712884,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49832,
+          "method_id_offset": 1064560,
+          "access_flags": 1,
+          "code_offset": 7712924,
+          "name": "onPageCommitVisible",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49833,
+          "method_id_offset": 1064568,
+          "access_flags": 1,
+          "code_offset": 7712964,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49834,
+          "method_id_offset": 1064576,
+          "access_flags": 1,
+          "code_offset": 7713004,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 49835,
+          "method_id_offset": 1064584,
+          "access_flags": 1,
+          "code_offset": 7713044,
+          "name": "onReceivedClientCertRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V"
+        },
+        {
+          "method_id": 49836,
+          "method_id_offset": 1064592,
+          "access_flags": 1,
+          "code_offset": 7713084,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49837,
+          "method_id_offset": 1064600,
+          "access_flags": 1,
+          "code_offset": 7713124,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 49838,
+          "method_id_offset": 1064608,
+          "access_flags": 1,
+          "code_offset": 7713164,
+          "name": "onReceivedHttpAuthRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49839,
+          "method_id_offset": 1064616,
+          "access_flags": 1,
+          "code_offset": 7713204,
+          "name": "onReceivedHttpError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+        },
+        {
+          "method_id": 49840,
+          "method_id_offset": 1064624,
+          "access_flags": 1,
+          "code_offset": 7713244,
+          "name": "onReceivedLoginRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49841,
+          "method_id_offset": 1064632,
+          "access_flags": 1,
+          "code_offset": 7713284,
+          "name": "onReceivedSslError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+        },
+        {
+          "method_id": 49842,
+          "method_id_offset": 1064640,
+          "access_flags": 1,
+          "code_offset": 7713324,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49845,
+          "method_id_offset": 1064664,
+          "access_flags": 1,
+          "code_offset": 7713352,
+          "name": "onSafeBrowsingHit",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V"
+        },
+        {
+          "method_id": 49846,
+          "method_id_offset": 1064672,
+          "access_flags": 1,
+          "code_offset": 7713392,
+          "name": "onScaleChanged",
+          "descriptor": "(Landroid/webkit/WebView;FF)V"
+        },
+        {
+          "method_id": 49847,
+          "method_id_offset": 1064680,
+          "access_flags": 1,
+          "code_offset": 7713432,
+          "name": "onTooManyRedirects",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 49848,
+          "method_id_offset": 1064688,
+          "access_flags": 1,
+          "code_offset": 7713472,
+          "name": "onUnhandledKeyEvent",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V"
+        },
+        {
+          "method_id": 49849,
+          "method_id_offset": 1064696,
+          "access_flags": 1,
+          "code_offset": 7713512,
+          "name": "setWebViewClientDelegate",
+          "descriptor": "(Landroid/webkit/WebViewClient;)V"
+        },
+        {
+          "method_id": 49850,
+          "method_id_offset": 1064704,
+          "access_flags": 1,
+          "code_offset": 7713536,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 49851,
+          "method_id_offset": 1064712,
+          "access_flags": 1,
+          "code_offset": 7713580,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 49852,
+          "method_id_offset": 1064720,
+          "access_flags": 1,
+          "code_offset": 7713624,
+          "name": "shouldOverrideKeyEvent",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z"
+        },
+        {
+          "method_id": 49853,
+          "method_id_offset": 1064728,
+          "access_flags": 1,
+          "code_offset": 7713668,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+        },
+        {
+          "method_id": 49854,
+          "method_id_offset": 1064736,
+          "access_flags": 1,
+          "code_offset": 7713712,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/webx/core/webview/client/WebViewContainerClient;",
+      "superclass_descriptor": "Lcom/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner;",
+      "interface_descriptors": [],
+      "class_def_offset": 1489048,
+      "class_access_flags": 1,
+      "dex": "classes3.dex",
+      "dex_sha256": "8d7f9f8846780b6473dcf9b7a62722a8308263876152e71d5457906afb51bd2f",
+      "source_file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+      "source_sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e",
+      "methods": [
+        {
+          "method_id": 49744,
+          "method_id_offset": 1063856,
+          "access_flags": 65537,
+          "code_offset": 7707912,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49782,
+          "method_id_offset": 1064160,
+          "access_flags": 2,
+          "code_offset": 7707936,
+          "name": "onRenderProcessGone$$sedna$original$$2887",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49783,
+          "method_id_offset": 1064168,
+          "access_flags": 9,
+          "code_offset": 7708044,
+          "name": "onRenderProcessGone$$sedna$redirect$replace$$2886",
+          "descriptor": "(Landroid/webkit/WebViewClient;Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49745,
+          "method_id_offset": 1063864,
+          "access_flags": 1,
+          "code_offset": 7708084,
+          "name": "__super_doUpdateVisitedHistory",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 49746,
+          "method_id_offset": 1063872,
+          "access_flags": 1,
+          "code_offset": 7708108,
+          "name": "__super_onFormResubmission",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 49747,
+          "method_id_offset": 1063880,
+          "access_flags": 1,
+          "code_offset": 7708132,
+          "name": "__super_onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49748,
+          "method_id_offset": 1063888,
+          "access_flags": 1,
+          "code_offset": 7708156,
+          "name": "__super_onPageCommitVisible",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49749,
+          "method_id_offset": 1063896,
+          "access_flags": 1,
+          "code_offset": 7708180,
+          "name": "__super_onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49750,
+          "method_id_offset": 1063904,
+          "access_flags": 1,
+          "code_offset": 7708204,
+          "name": "__super_onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 49751,
+          "method_id_offset": 1063912,
+          "access_flags": 1,
+          "code_offset": 7708228,
+          "name": "__super_onReceivedClientCertRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V"
+        },
+        {
+          "method_id": 49752,
+          "method_id_offset": 1063920,
+          "access_flags": 1,
+          "code_offset": 7708252,
+          "name": "__super_onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49753,
+          "method_id_offset": 1063928,
+          "access_flags": 1,
+          "code_offset": 7708276,
+          "name": "__super_onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 49754,
+          "method_id_offset": 1063936,
+          "access_flags": 1,
+          "code_offset": 7708300,
+          "name": "__super_onReceivedHttpAuthRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49755,
+          "method_id_offset": 1063944,
+          "access_flags": 1,
+          "code_offset": 7708324,
+          "name": "__super_onReceivedHttpError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+        },
+        {
+          "method_id": 49756,
+          "method_id_offset": 1063952,
+          "access_flags": 1,
+          "code_offset": 7708348,
+          "name": "__super_onReceivedLoginRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49757,
+          "method_id_offset": 1063960,
+          "access_flags": 1,
+          "code_offset": 7708372,
+          "name": "__super_onReceivedSslError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+        },
+        {
+          "method_id": 49758,
+          "method_id_offset": 1063968,
+          "access_flags": 1,
+          "code_offset": 7708396,
+          "name": "__super_onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49759,
+          "method_id_offset": 1063976,
+          "access_flags": 1,
+          "code_offset": 7708424,
+          "name": "__super_onSafeBrowsingHit",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V"
+        },
+        {
+          "method_id": 49760,
+          "method_id_offset": 1063984,
+          "access_flags": 1,
+          "code_offset": 7708448,
+          "name": "__super_onScaleChanged",
+          "descriptor": "(Landroid/webkit/WebView;FF)V"
+        },
+        {
+          "method_id": 49761,
+          "method_id_offset": 1063992,
+          "access_flags": 1,
+          "code_offset": 7708472,
+          "name": "__super_onTooManyRedirects",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 49762,
+          "method_id_offset": 1064000,
+          "access_flags": 1,
+          "code_offset": 7708496,
+          "name": "__super_onUnhandledKeyEvent",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V"
+        },
+        {
+          "method_id": 49763,
+          "method_id_offset": 1064008,
+          "access_flags": 1,
+          "code_offset": 7708520,
+          "name": "__super_shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 49764,
+          "method_id_offset": 1064016,
+          "access_flags": 1,
+          "code_offset": 7708548,
+          "name": "__super_shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 49765,
+          "method_id_offset": 1064024,
+          "access_flags": 1,
+          "code_offset": 7708576,
+          "name": "__super_shouldOverrideKeyEvent",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z"
+        },
+        {
+          "method_id": 49766,
+          "method_id_offset": 1064032,
+          "access_flags": 1,
+          "code_offset": 7708604,
+          "name": "__super_shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+        },
+        {
+          "method_id": 49767,
+          "method_id_offset": 1064040,
+          "access_flags": 1,
+          "code_offset": 7708632,
+          "name": "__super_shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 49768,
+          "method_id_offset": 1064048,
+          "access_flags": 1,
+          "code_offset": 7708660,
+          "name": "doUpdateVisitedHistory",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 49769,
+          "method_id_offset": 1064056,
+          "access_flags": 1,
+          "code_offset": 7708764,
+          "name": "onFormResubmission",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 49770,
+          "method_id_offset": 1064064,
+          "access_flags": 1,
+          "code_offset": 7708868,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49771,
+          "method_id_offset": 1064072,
+          "access_flags": 1,
+          "code_offset": 7708972,
+          "name": "onPageCommitVisible",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49772,
+          "method_id_offset": 1064080,
+          "access_flags": 1,
+          "code_offset": 7709076,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49773,
+          "method_id_offset": 1064088,
+          "access_flags": 1,
+          "code_offset": 7709180,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 49774,
+          "method_id_offset": 1064096,
+          "access_flags": 1,
+          "code_offset": 7709284,
+          "name": "onReceivedClientCertRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V"
+        },
+        {
+          "method_id": 49775,
+          "method_id_offset": 1064104,
+          "access_flags": 1,
+          "code_offset": 7709388,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49776,
+          "method_id_offset": 1064112,
+          "access_flags": 1,
+          "code_offset": 7709492,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 49777,
+          "method_id_offset": 1064120,
+          "access_flags": 1,
+          "code_offset": 7709596,
+          "name": "onReceivedHttpAuthRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49778,
+          "method_id_offset": 1064128,
+          "access_flags": 1,
+          "code_offset": 7709700,
+          "name": "onReceivedHttpError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+        },
+        {
+          "method_id": 49779,
+          "method_id_offset": 1064136,
+          "access_flags": 1,
+          "code_offset": 7709804,
+          "name": "onReceivedLoginRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 49780,
+          "method_id_offset": 1064144,
+          "access_flags": 1,
+          "code_offset": 7709908,
+          "name": "onReceivedSslError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+        },
+        {
+          "method_id": 49781,
+          "method_id_offset": 1064152,
+          "access_flags": 1,
+          "code_offset": 7710012,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 49784,
+          "method_id_offset": 1064176,
+          "access_flags": 1,
+          "code_offset": 7710040,
+          "name": "onSafeBrowsingHit",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V"
+        },
+        {
+          "method_id": 49785,
+          "method_id_offset": 1064184,
+          "access_flags": 1,
+          "code_offset": 7710144,
+          "name": "onScaleChanged",
+          "descriptor": "(Landroid/webkit/WebView;FF)V"
+        },
+        {
+          "method_id": 49786,
+          "method_id_offset": 1064192,
+          "access_flags": 1,
+          "code_offset": 7710248,
+          "name": "onTooManyRedirects",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 49787,
+          "method_id_offset": 1064200,
+          "access_flags": 1,
+          "code_offset": 7710352,
+          "name": "onUnhandledKeyEvent",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V"
+        },
+        {
+          "method_id": 49788,
+          "method_id_offset": 1064208,
+          "access_flags": 1,
+          "code_offset": 7710456,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 49789,
+          "method_id_offset": 1064216,
+          "access_flags": 1,
+          "code_offset": 7710564,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 49790,
+          "method_id_offset": 1064224,
+          "access_flags": 1,
+          "code_offset": 7710672,
+          "name": "shouldOverrideKeyEvent",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z"
+        },
+        {
+          "method_id": 49791,
+          "method_id_offset": 1064232,
+          "access_flags": 1,
+          "code_offset": 7710780,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+        },
+        {
+          "method_id": 49792,
+          "method_id_offset": 1064240,
+          "access_flags": 1,
+          "code_offset": 7710888,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    }
+  ]
+}

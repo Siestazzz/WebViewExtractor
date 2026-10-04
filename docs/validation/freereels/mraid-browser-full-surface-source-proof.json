@@ -1,0 +1,521 @@
+{
+  "activity": "com.taurusx.tax.mraid.MraidBrowser",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": true,
+  "source_file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+  "source_sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c",
+  "host_evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1352,
+      "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 224,
+      "text": "setContentView(w());",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 225,
+      "text": "z(getIntent());",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 189,
+      "text": "this.z = new WebView(this);",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 193,
+      "text": "relativeLayout.addView(this.z);",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 224,
+      "text": "setContentView(w());",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 225,
+      "text": "z(getIntent());",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 193,
+      "text": "relativeLayout.addView(this.z);",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    }
+  ],
+  "categories": {
+    "bridge": {
+      "status": "done",
+      "unresolved": []
+    },
+    "setting": {
+      "status": "done",
+      "unresolved": []
+    },
+    "callback": {
+      "status": "done",
+      "unresolved": []
+    }
+  },
+  "bridge_surface": "Entire concrete Activity and nested classes: no addJavascriptInterface, direct native WebView constructor, native Activity parent; no custom WebView ancestor/provider. No bridge registrations.",
+  "setting_surface": "Exactly four direct settings: JavaScript true, supportZoom true, builtInZoomControls true, useWideViewPort true. onCreate\u2192w constructs and attaches same field\u2192z(Intent) gets field settings. No settings in remaining methods or callbacks.",
+  "callback_surface": "Same field directly installs z WebViewClient four compatible own overrides and w WebChromeClient one. Nested button OnClickListeners are installed on ImageButtons, not WebView and not Client members. SafeDK helper merely delegates Activity.startActivity; not a callback registration or hidden WebView owner.",
+  "lifecycle": "All concrete methods read: pause/resume only CookieSyncManager; navigation button handlers call goBack/goForward/reload or Activity.finish; no late registration/settings/bridge. No unreviewed application-defined superclasses.",
+  "added_facts": [
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 215,
+          "text": "this.z.setWebViewClient(new z());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client"
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+      "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 215,
+          "text": "this.z.setWebViewClient(new z());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 116,
+          "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+      "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 215,
+          "text": "this.z.setWebViewClient(new z());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 137,
+          "text": "public void onPageFinished(WebView webView, String str) {",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+      "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 215,
+          "text": "this.z.setWebViewClient(new z());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 156,
+          "text": "public void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$z",
+      "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$z;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 215,
+          "text": "this.z.setWebViewClient(new z());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 162,
+          "text": "public void onReceivedError(WebView webView, int i, String str, String str2) {",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$w",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 216,
+          "text": "this.z.setWebChromeClient(new w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client"
+    },
+    {
+      "activity": "com.taurusx.tax.mraid.MraidBrowser",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1352,
+          "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 224,
+          "text": "setContentView(w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 225,
+          "text": "z(getIntent());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 189,
+          "text": "this.z = new WebView(this);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 193,
+          "text": "relativeLayout.addView(this.z);",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "group_id": "source-first-mraid-full-callback",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "registration_name": null,
+      "implementation": "com.taurusx.tax.mraid.MraidBrowser$w",
+      "normalized_signature": "Lcom/taurusx/tax/mraid/MraidBrowser$w;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 216,
+          "text": "this.z.setWebChromeClient(new w());",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        },
+        {
+          "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+          "line": 84,
+          "text": "public void onProgressChanged(WebView webView, int i) {",
+          "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "signature_in_apk": true
+    }
+  ]
+}

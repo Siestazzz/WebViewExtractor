@@ -1,0 +1,505 @@
+{
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "activities": [
+    "com.unity3d.services.ads.adunit.AdUnitActivity",
+    "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+    "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+    "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+  ],
+  "known_constructor_settings": 12,
+  "installed_members": {
+    "WebPlayerChromeClient": {
+      "base": "WebChromeClient",
+      "setter": "setWebChromeClient",
+      "members": [
+        {
+          "name": "onCreateWindow",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 86,
+            "text": "public boolean onCreateWindow(WebView webView, boolean z, boolean z10, Message message) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onCloseWindow",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 94,
+            "text": "public void onCloseWindow(WebView webView) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onConsoleMessage",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 104,
+            "text": "public boolean onConsoleMessage(ConsoleMessage consoleMessage) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onGeolocationPermissionsShowPrompt",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 119,
+            "text": "public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissions.Callback callback) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onHideCustomView",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onHideCustomView()V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 129,
+            "text": "public void onHideCustomView() {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onJsAlert",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 139,
+            "text": "public boolean onJsAlert(WebView webView, String str, String str2, JsResult jsResult) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onJsConfirm",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 154,
+            "text": "public boolean onJsConfirm(WebView webView, String str, String str2, JsResult jsResult) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onJsPrompt",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 169,
+            "text": "public boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onPermissionRequest",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 184,
+            "text": "public void onPermissionRequest(PermissionRequest permissionRequest) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onProgressChanged",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 194,
+            "text": "public void onProgressChanged(WebView webView, int i) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedIcon",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 204,
+            "text": "public void onReceivedIcon(WebView webView, Bitmap bitmap) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedTitle",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 214,
+            "text": "public void onReceivedTitle(WebView webView, String str) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedTouchIconUrl",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 224,
+            "text": "public void onReceivedTouchIconUrl(WebView webView, String str, boolean z) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onRequestFocus",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onRequestFocus(Landroid/webkit/WebView;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 234,
+            "text": "public void onRequestFocus(WebView webView) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onShowCustomView",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 244,
+            "text": "public void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onShowFileChooser",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 254,
+            "text": "public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        }
+      ]
+    },
+    "WebPlayerClient": {
+      "base": "WebViewClient",
+      "setter": "setWebViewClient",
+      "members": [
+        {
+          "name": "onLoadResource",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 289,
+            "text": "public void onLoadResource(WebView webView, String str) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onPageStarted",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 296,
+            "text": "public void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedError",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 303,
+            "text": "public void onReceivedError(WebView webView, int i, String str, String str2) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedError",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 311,
+            "text": "public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedSslError",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 319,
+            "text": "public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "shouldInterceptRequest",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 358,
+            "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "shouldOverrideUrlLoading",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 365,
+            "text": "public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "shouldOverrideUrlLoading",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 373,
+            "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onFormResubmission",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 381,
+            "text": "public void onFormResubmission(WebView webView, Message message, Message message2) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onPageCommitVisible",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 391,
+            "text": "public void onPageCommitVisible(WebView webView, String str) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onPageFinished",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 401,
+            "text": "public void onPageFinished(WebView webView, String str) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedClientCertRequest",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 412,
+            "text": "public void onReceivedClientCertRequest(WebView webView, ClientCertRequest clientCertRequest) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedHttpAuthRequest",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 431,
+            "text": "public void onReceivedHttpAuthRequest(WebView webView, HttpAuthHandler httpAuthHandler, String str, String str2) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedHttpError",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 442,
+            "text": "public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onReceivedLoginRequest",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 463,
+            "text": "public void onReceivedLoginRequest(WebView webView, String str, String str2, String str3) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onRenderProcessGone",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 473,
+            "text": "public boolean onRenderProcessGone(final WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onScaleChanged",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onScaleChanged(Landroid/webkit/WebView;FF)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 487,
+            "text": "public void onScaleChanged(WebView webView, float f6, float f10) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "onUnhandledKeyEvent",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 497,
+            "text": "public void onUnhandledKeyEvent(WebView webView, KeyEvent keyEvent) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        },
+        {
+          "name": "shouldOverrideKeyEvent",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 534,
+            "text": "public boolean shouldOverrideKeyEvent(WebView webView, KeyEvent keyEvent) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        }
+      ]
+    },
+    "WebPlayerDownloadListener": {
+      "base": "DownloadListener",
+      "setter": "setDownloadListener",
+      "members": [
+        {
+          "name": "onDownloadStart",
+          "normalized_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerDownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+          "evidence": {
+            "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+            "line": 588,
+            "text": "public void onDownloadStart(String str, String str2, String str3, String str4, long j) {",
+            "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+          }
+        }
+      ]
+    }
+  },
+  "reflection": {
+    "entry_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView;->setSettings(Lorg/json/JSONObject;Lorg/json/JSONObject;)V",
+    "helper_signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView;->setTargetSettings(Ljava/lang/Object;Lorg/json/JSONObject;)Ljava/lang/Object;",
+    "targets": [
+      {
+        "receiver": "same native WebView.getSettings()",
+        "json_argument": 0,
+        "owner_bound": "android.webkit.WebSettings runtime implementation"
+      },
+      {
+        "receiver": "same WebPlayerView this",
+        "json_argument": 1,
+        "owner_bound": "com.unity3d.services.ads.webplayer.WebPlayerView and public ancestors"
+      }
+    ],
+    "method_name": "JSONObject.keys().next() runtime string",
+    "argument_types": "JSONObject.className\u2192Class.forName or raw JSON primitive wrapper\u2192getPrimitiveClass; public getMethod exact parameter types",
+    "argument_values": "raw JSON values or Enum.valueOf(Class.forName(className), runtime value); structured non-Enum leaves null in getValues",
+    "condition": "non-nullJSON; successful class/method lookup/invoke; per-entry exception recorded; empty startup cache defaults cause zero reflectioncalls",
+    "sources": "cache runtime records and @WebViewExposed WebPlayer.setSettings JSON parameters; late call uses retained WebPlayerViewCache sameview id and UI runnable",
+    "evidence": [
+      {
+        "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+        "line": 813,
+        "text": "setTargetSettings(getSettings(), jSONObject);",
+        "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+      },
+      {
+        "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+        "line": 814,
+        "text": "setTargetSettings(this, jSONObject2);",
+        "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+      },
+      {
+        "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+        "line": 734,
+        "text": "obj.getClass().getMethod(next, getTypes(jSONArray)).invoke(obj, getValues(jSONArray));",
+        "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+      }
+    ],
+    "acceptance": "No concrete normalizedAPI/value inferred from open runtime keys. Explicit unresolved runtime_method_signature, runtime_argument_values; not wildcard dynamic. Public WebPlayerView target potentially covers inherited configuration/registration APIs, therefore settings and full callback/bridge late-install surface remain partial."
+  },
+  "bridge": "Constructor SafeDK wrapper forwards exactsame target/object/name to addJavascriptInterface(newWebPlayerBridgeInterface,webplayerbridge); sole annotation handleEvent(String)V. No fabricated helpers as annotated endpoints.",
+  "other_view_listener": "Actual DEX WebPlayerView$1 implements View$OnLayoutChangeListener, own onLayoutChange(View,8int)V matched source constructor\u2192subscribe\u2192addListener. Destroy unsubscribe retained as lifecycle.",
+  "deep_audit_complete": false,
+  "files": [
+    {
+      "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+      "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/WebPlayerHandler.java",
+      "sha256": "32f10f2f8608d7f87a64f0ca75471206e46bccde4a22440817dee66f2c8b68e8"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerSettingsCache.java",
+      "sha256": "fb68afa4603eae372fc9ee3f731d22118375a52849d7ecd9bcc773d75fdd3c87"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/api/WebPlayer.java",
+      "sha256": "ed315e793cb1d9993e323e2d42eb2d6bec6633984a9688794f23115859c746a6"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerBridgeInterface.java",
+      "sha256": "9867d024be4bcd9f800b65c158557df8c35992a5549aa49a4f94fc01e9172ae5"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/UnityAdsNetworkBridge.java",
+      "sha256": "97951d2812ae4d19ea7f209ef8d920d56fab58f8f8b5f26a05eb9b02cdb4a377"
+    }
+  ],
+  "added_fact_count": 164,
+  "dex_verified_standard_members": [
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onHideCustomView()V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onRequestFocus(Landroid/webkit/WebView;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onScaleChanged(Landroid/webkit/WebView;FF)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+    "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerDownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V"
+  ],
+  "dex_proof_file": "unity-installed-members-source-dex.json",
+  "added_layout_fact_count": 8
+}

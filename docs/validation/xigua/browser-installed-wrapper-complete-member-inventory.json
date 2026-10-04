@@ -1,0 +1,1618 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "source_first": true,
+  "report_read": false,
+  "actual_own_installed_members": [
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onLoadResource",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 302,
+        "text": "public void onLoadResource(WebView webView, String str) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onLoadResource",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 70,
+          "text": "public void onLoadResource(WebView webView, String str) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 73,
+            "text": "webViewClient.onLoadResource(webView, str);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onPageCommitVisible",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 315,
+        "text": "public void onPageCommitVisible(WebView webView, String str) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onPageCommitVisible",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 81,
+          "text": "public void onPageCommitVisible(WebView webView, String str) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 84,
+            "text": "webViewClient.onPageCommitVisible(webView, str);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onPageFinished",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 328,
+        "text": "public void onPageFinished(WebView webView, String str) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onPageFinished",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 91,
+          "text": "public void onPageFinished(WebView webView, String str) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 94,
+            "text": "webViewClient.onPageFinished(webView, str);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedClientCertRequest",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 341,
+        "text": "public void onReceivedClientCertRequest(WebView webView, ClientCertRequest clientCertRequest) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedClientCertRequest",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 102,
+          "text": "public void onReceivedClientCertRequest(WebView webView, ClientCertRequest clientCertRequest) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 105,
+            "text": "webViewClient.onReceivedClientCertRequest(webView, clientCertRequest);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onRenderProcessGone",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 354,
+        "text": "public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onRenderProcessGone",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 113,
+          "text": "public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 64,
+            "text": "return webViewClient.onRenderProcessGone(webView, renderProcessGoneDetail);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          },
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 180,
+            "text": "((WebViewContainerClientInner) webViewClient).onRenderProcessGone$$sedna$original$$2809(webView, renderProcessGoneDetail);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": "renderGone public member calls sedna helper then original helper forwards same signature and returns true"
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onUnhandledKeyEvent",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 359,
+        "text": "public void onUnhandledKeyEvent(WebView webView, KeyEvent keyEvent) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onUnhandledKeyEvent",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 118,
+          "text": "public void onUnhandledKeyEvent(WebView webView, KeyEvent keyEvent) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 121,
+            "text": "webViewClient.onUnhandledKeyEvent(webView, keyEvent);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "shouldInterceptRequest",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 372,
+        "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "shouldInterceptRequest",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 130,
+          "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 133,
+            "text": "return webViewClient.shouldInterceptRequest(webView, webResourceRequest);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "shouldOverrideKeyEvent",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 385,
+        "text": "public boolean shouldOverrideKeyEvent(WebView webView, KeyEvent keyEvent) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "shouldOverrideKeyEvent",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 139,
+          "text": "public boolean shouldOverrideKeyEvent(WebView webView, KeyEvent keyEvent) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 142,
+            "text": "return webViewClient.shouldOverrideKeyEvent(webView, keyEvent);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "shouldOverrideUrlLoading",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 398,
+        "text": "public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "shouldOverrideUrlLoading",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 149,
+          "text": "public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 152,
+            "text": "return webViewClient.shouldOverrideUrlLoading(webView, webResourceRequest);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "shouldInterceptRequest",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 419,
+        "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, String str) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "shouldInterceptRequest",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 159,
+          "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, String str) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 162,
+            "text": "return webViewClient.shouldInterceptRequest(webView, str);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "shouldOverrideUrlLoading",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 432,
+        "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "shouldOverrideUrlLoading",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 168,
+          "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 171,
+            "text": "return webViewClient.shouldOverrideUrlLoading(webView, str);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "doUpdateVisitedHistory",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 485,
+        "text": "public void doUpdateVisitedHistory(WebView webView, String str, boolean z) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "doUpdateVisitedHistory",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 185,
+          "text": "public void doUpdateVisitedHistory(WebView webView, String str, boolean z) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 188,
+            "text": "webViewClient.doUpdateVisitedHistory(webView, str, z);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onFormResubmission",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 498,
+        "text": "public void onFormResubmission(WebView webView, Message message, Message message2) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onFormResubmission",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 195,
+          "text": "public void onFormResubmission(WebView webView, Message message, Message message2) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 198,
+            "text": "webViewClient.onFormResubmission(webView, message, message2);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onPageStarted",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 511,
+        "text": "public void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onPageStarted",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 205,
+          "text": "public void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 208,
+            "text": "webViewClient.onPageStarted(webView, str, bitmap);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedError",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 524,
+        "text": "public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedError",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 216,
+          "text": "public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 219,
+            "text": "webViewClient.onReceivedError(webView, webResourceRequest, webResourceError);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedHttpError",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 537,
+        "text": "public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedHttpError",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 227,
+          "text": "public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 230,
+            "text": "webViewClient.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedSslError",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 550,
+        "text": "public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedSslError",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 237,
+          "text": "public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 240,
+            "text": "webViewClient.onReceivedSslError(webView, sslErrorHandler, sslError);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onScaleChanged",
+      "descriptor": "(Landroid/webkit/WebView;FF)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 563,
+        "text": "public void onScaleChanged(WebView webView, float f, float f2) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onScaleChanged",
+        "descriptor": "(Landroid/webkit/WebView;FF)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 247,
+          "text": "public void onScaleChanged(WebView webView, float f, float f2) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 250,
+            "text": "webViewClient.onScaleChanged(webView, f, f2);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onTooManyRedirects",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 576,
+        "text": "public void onTooManyRedirects(WebView webView, Message message, Message message2) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onTooManyRedirects",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 257,
+          "text": "public void onTooManyRedirects(WebView webView, Message message, Message message2) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 260,
+            "text": "webViewClient.onTooManyRedirects(webView, message, message2);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedError",
+      "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 605,
+        "text": "public void onReceivedError(WebView webView, int i, String str, String str2) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedError",
+        "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 267,
+          "text": "public void onReceivedError(WebView webView, int i, String str, String str2) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 270,
+            "text": "webViewClient.onReceivedError(webView, i, str, str2);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedHttpAuthRequest",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 618,
+        "text": "public void onReceivedHttpAuthRequest(WebView webView, HttpAuthHandler httpAuthHandler, String str, String str2) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedHttpAuthRequest",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 277,
+          "text": "public void onReceivedHttpAuthRequest(WebView webView, HttpAuthHandler httpAuthHandler, String str, String str2) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 280,
+            "text": "webViewClient.onReceivedHttpAuthRequest(webView, httpAuthHandler, str, str2);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onReceivedLoginRequest",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 631,
+        "text": "public void onReceivedLoginRequest(WebView webView, String str, @Nullable String str2, String str3) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onReceivedLoginRequest",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 287,
+          "text": "public void onReceivedLoginRequest(WebView webView, String str, @Nullable String str2, String str3) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 290,
+            "text": "webViewClient.onReceivedLoginRequest(webView, str, str2, str3);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebViewContainerClient",
+      "name": "onSafeBrowsingHit",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebViewContainerClient.java",
+        "line": 644,
+        "text": "public void onSafeBrowsingHit(WebView webView, WebResourceRequest webResourceRequest, int i, SafeBrowsingResponse safeBrowsingResponse) {",
+        "sha256": "aa243629ca9dce9dc04af0986a00b1b3844f697c6d143e482c8473589b6af05e"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebViewContainerClientInner",
+        "name": "onSafeBrowsingHit",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+          "line": 298,
+          "text": "public void onSafeBrowsingHit(WebView webView, WebResourceRequest webResourceRequest, int i, SafeBrowsingResponse safeBrowsingResponse) {",
+          "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebViewContainerClientInner.java",
+            "line": 301,
+            "text": "webViewClient.onSafeBrowsingHit(webView, webResourceRequest, i, safeBrowsingResponse);",
+            "sha256": "8a9dc4219544f72877d90de12c8d2030d136e1acd74eaac9eef0b780cdc38258"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "getDefaultVideoPoster",
+      "descriptor": "()Landroid/graphics/Bitmap;",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 292,
+        "text": "public Bitmap getDefaultVideoPoster() {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "getDefaultVideoPoster",
+        "descriptor": "()Landroid/graphics/Bitmap;",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 37,
+          "text": "public Bitmap getDefaultVideoPoster() {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 39,
+            "text": "return webChromeClient != null ? webChromeClient.getDefaultVideoPoster() : super.getDefaultVideoPoster();",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "getVideoLoadingProgressView",
+      "descriptor": "()Landroid/view/View;",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 305,
+        "text": "public View getVideoLoadingProgressView() {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "getVideoLoadingProgressView",
+        "descriptor": "()Landroid/view/View;",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 53,
+          "text": "public View getVideoLoadingProgressView() {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 55,
+            "text": "return webChromeClient != null ? webChromeClient.getVideoLoadingProgressView() : super.getVideoLoadingProgressView();",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onGeolocationPermissionsHidePrompt",
+      "descriptor": "()V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 318,
+        "text": "public void onGeolocationPermissionsHidePrompt() {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onGeolocationPermissionsHidePrompt",
+        "descriptor": "()V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 59,
+          "text": "public void onGeolocationPermissionsHidePrompt() {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 62,
+            "text": "webChromeClient.onGeolocationPermissionsHidePrompt();",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onHideCustomView",
+      "descriptor": "()V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 331,
+        "text": "public void onHideCustomView() {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onHideCustomView",
+        "descriptor": "()V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 69,
+          "text": "public void onHideCustomView() {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 72,
+            "text": "webChromeClient.onHideCustomView();",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onJsTimeout",
+      "descriptor": "()Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 344,
+        "text": "public boolean onJsTimeout() {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onJsTimeout",
+        "descriptor": "()Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 79,
+          "text": "public boolean onJsTimeout() {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 81,
+            "text": "return webChromeClient != null ? webChromeClient.onJsTimeout() : super.onJsTimeout();",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "getVisitedHistory",
+      "descriptor": "(Landroid/webkit/ValueCallback;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 389,
+        "text": "public void getVisitedHistory(ValueCallback<String[]> valueCallback) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "getVisitedHistory",
+        "descriptor": "(Landroid/webkit/ValueCallback;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 89,
+          "text": "public void getVisitedHistory(ValueCallback<String[]> valueCallback) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 92,
+            "text": "webChromeClient.getVisitedHistory(valueCallback);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onCloseWindow",
+      "descriptor": "(Landroid/webkit/WebView;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 402,
+        "text": "public void onCloseWindow(WebView webView) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onCloseWindow",
+        "descriptor": "(Landroid/webkit/WebView;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 105,
+          "text": "public void onCloseWindow(WebView webView) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 108,
+            "text": "webChromeClient.onCloseWindow(webView);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onConsoleMessage",
+      "descriptor": "(Landroid/webkit/ConsoleMessage;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 415,
+        "text": "public boolean onConsoleMessage(ConsoleMessage consoleMessage) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onConsoleMessage",
+        "descriptor": "(Landroid/webkit/ConsoleMessage;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 115,
+          "text": "public boolean onConsoleMessage(ConsoleMessage consoleMessage) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 118,
+            "text": "return webChromeClient.onConsoleMessage(consoleMessage);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onPermissionRequest",
+      "descriptor": "(Landroid/webkit/PermissionRequest;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 428,
+        "text": "public void onPermissionRequest(PermissionRequest permissionRequest) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onPermissionRequest",
+        "descriptor": "(Landroid/webkit/PermissionRequest;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 124,
+          "text": "public void onPermissionRequest(PermissionRequest permissionRequest) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 136,
+            "text": "webChromeClient.onPermissionRequest(permissionRequest);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onPermissionRequestCanceled",
+      "descriptor": "(Landroid/webkit/PermissionRequest;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 450,
+        "text": "public void onPermissionRequestCanceled(PermissionRequest permissionRequest) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onPermissionRequestCanceled",
+        "descriptor": "(Landroid/webkit/PermissionRequest;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 143,
+          "text": "public void onPermissionRequestCanceled(PermissionRequest permissionRequest) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 146,
+            "text": "webChromeClient.onPermissionRequestCanceled(permissionRequest);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onRequestFocus",
+      "descriptor": "(Landroid/webkit/WebView;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 463,
+        "text": "public void onRequestFocus(WebView webView) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onRequestFocus",
+        "descriptor": "(Landroid/webkit/WebView;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 153,
+          "text": "public void onRequestFocus(WebView webView) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 156,
+            "text": "webChromeClient.onRequestFocus(webView);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "descriptor": "(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 496,
+        "text": "public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissions.Callback callback) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onGeolocationPermissionsShowPrompt",
+        "descriptor": "(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 167,
+          "text": "public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissions.Callback callback) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 179,
+            "text": "webChromeClient.onGeolocationPermissionsShowPrompt(str, callback);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onProgressChanged",
+      "descriptor": "(Landroid/webkit/WebView;I)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 518,
+        "text": "public void onProgressChanged(WebView webView, int i) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onProgressChanged",
+        "descriptor": "(Landroid/webkit/WebView;I)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 186,
+          "text": "public void onProgressChanged(WebView webView, int i) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 189,
+            "text": "webChromeClient.onProgressChanged(webView, i);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onReceivedIcon",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 531,
+        "text": "public void onReceivedIcon(WebView webView, Bitmap bitmap) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onReceivedIcon",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 196,
+          "text": "public void onReceivedIcon(WebView webView, Bitmap bitmap) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 199,
+            "text": "webChromeClient.onReceivedIcon(webView, bitmap);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onReceivedTitle",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 544,
+        "text": "public void onReceivedTitle(WebView webView, String str) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onReceivedTitle",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 206,
+          "text": "public void onReceivedTitle(WebView webView, String str) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 209,
+            "text": "webChromeClient.onReceivedTitle(webView, str);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onShowCustomView",
+      "descriptor": "(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 557,
+        "text": "public void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onShowCustomView",
+        "descriptor": "(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 216,
+          "text": "public void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 219,
+            "text": "webChromeClient.onShowCustomView(view, customViewCallback);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onConsoleMessage",
+      "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 590,
+        "text": "public void onConsoleMessage(String str, int i, String str2) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onConsoleMessage",
+        "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 226,
+          "text": "public void onConsoleMessage(String str, int i, String str2) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 229,
+            "text": "webChromeClient.onConsoleMessage(str, i, str2);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onReceivedTouchIconUrl",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 616,
+        "text": "public void onReceivedTouchIconUrl(WebView webView, String str, boolean z) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onReceivedTouchIconUrl",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 236,
+          "text": "public void onReceivedTouchIconUrl(WebView webView, String str, boolean z) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 239,
+            "text": "webChromeClient.onReceivedTouchIconUrl(webView, str, z);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onShowCustomView",
+      "descriptor": "(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 629,
+        "text": "public void onShowCustomView(View view, int i, WebChromeClient.CustomViewCallback customViewCallback) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onShowCustomView",
+        "descriptor": "(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 246,
+          "text": "public void onShowCustomView(View view, int i, WebChromeClient.CustomViewCallback customViewCallback) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 249,
+            "text": "webChromeClient.onShowCustomView(view, i, customViewCallback);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onShowFileChooser",
+      "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 642,
+        "text": "public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onShowFileChooser",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 256,
+          "text": "public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 259,
+            "text": "return webChromeClient.onShowFileChooser(webView, valueCallback, fileChooserParams);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onCreateWindow",
+      "descriptor": "(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 671,
+        "text": "public boolean onCreateWindow(WebView webView, boolean z, boolean z2, Message message) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onCreateWindow",
+        "descriptor": "(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 268,
+          "text": "public boolean onCreateWindow(WebView webView, boolean z, boolean z2, Message message) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 271,
+            "text": "return webChromeClient.onCreateWindow(webView, z, z2, message);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onJsAlert",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 684,
+        "text": "public boolean onJsAlert(WebView webView, String str, String str2, JsResult jsResult) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onJsAlert",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 277,
+          "text": "public boolean onJsAlert(WebView webView, String str, String str2, JsResult jsResult) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 280,
+            "text": "return webChromeClient.onJsAlert(webView, str, str2, jsResult);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onJsBeforeUnload",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 697,
+        "text": "public boolean onJsBeforeUnload(WebView webView, String str, String str2, JsResult jsResult) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onJsBeforeUnload",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 286,
+          "text": "public boolean onJsBeforeUnload(WebView webView, String str, String str2, JsResult jsResult) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 289,
+            "text": "return webChromeClient.onJsBeforeUnload(webView, str, str2, jsResult);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onJsConfirm",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 710,
+        "text": "public boolean onJsConfirm(WebView webView, String str, String str2, JsResult jsResult) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onJsConfirm",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 295,
+          "text": "public boolean onJsConfirm(WebView webView, String str, String str2, JsResult jsResult) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 298,
+            "text": "return webChromeClient.onJsConfirm(webView, str, str2, jsResult);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onJsPrompt",
+      "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 727,
+        "text": "public boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onJsPrompt",
+        "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 304,
+          "text": "public boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 307,
+            "text": "return webChromeClient.onJsPrompt(webView, str, str2, str3, jsPromptResult);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onExceededDatabaseQuota",
+      "descriptor": "(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 744,
+        "text": "public void onExceededDatabaseQuota(String str, String str2, long j, long j2, long j3, WebStorage.QuotaUpdater quotaUpdater) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onExceededDatabaseQuota",
+        "descriptor": "(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 313,
+          "text": "public void onExceededDatabaseQuota(String str, String str2, long j, long j2, long j3, WebStorage.QuotaUpdater quotaUpdater) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [
+          {
+            "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+            "line": 316,
+            "text": "webChromeClient.onExceededDatabaseQuota(str, str2, j, j2, j3, quotaUpdater);",
+            "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+          }
+        ],
+        "condition": "delegate != null, and EventManager/Helios route permits reaching inner; specific override signature only",
+        "exception": null
+      }
+    },
+    {
+      "owner": "com.bytedance.webx.core.webview.client.WebChromeContainerClient",
+      "name": "onReachedMaxAppCacheSize",
+      "descriptor": "(JJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+      "outer_evidence": {
+        "file": "sources/com/bytedance/webx/core/webview/client/WebChromeContainerClient.java",
+        "line": 603,
+        "text": "public void onReachedMaxAppCacheSize(long j, long j2, WebStorage.QuotaUpdater quotaUpdater) {",
+        "sha256": "9bf0bb3296c3d75c58238c219356d6b3954fd53ce6252e355373d4a156ce88d0"
+      },
+      "inner_dispatch": {
+        "owner": "com.bytedance.webx.core.webview.client.inner.WebChromeContainerClientInner",
+        "name": "onReachedMaxAppCacheSize",
+        "descriptor": "(JJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+        "declaration_evidence": {
+          "file": "sources/com/bytedance/webx/core/webview/client/inner/WebChromeContainerClientInner.java",
+          "line": 264,
+          "text": "public void onReachedMaxAppCacheSize(long j, long j2, WebStorage.QuotaUpdater quotaUpdater) {",
+          "sha256": "a7fa8a35e308fd90539b58781889f3f20e4801f755c666ce795fca8e0958b7e7"
+        },
+        "actual_forward_evidence": [],
+        "condition": "Actual installed wrapper own compatible SDK deprecated callback; innerbody empty, no delegate forwarding inferred."
+      }
+    }
+  ],
+  "member_count": 50,
+  "registration_count_per_host": 2,
+  "added_facts": 260,
+  "hosts": [
+    "com.ixigua.browser.specific.BrowserActivity",
+    "com.ixigua.browser.specific.PureBrowserActivity",
+    "com.ixigua.browser.specific.AggregationBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+  ],
+  "deep_audit_complete": false,
+  "unresolved": "EventManager concrete environment extension classes and runtime request/context boundaries still pending; wrappers source declared surface complete, wholehosts remainpartial."
+}
