@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json,pathlib,tempfile,unittest
+import hashlib,json,pathlib,subprocess,tempfile,unittest
 from freeze_oracle import union_sources
 
 class FreezeOracleTest(unittest.TestCase):
@@ -44,4 +44,13 @@ class FreezeOracleTest(unittest.TestCase):
   with tempfile.TemporaryDirectory() as folder:
    p=pathlib.Path(folder)/'bad.jsonl';p.write_text('{broken\n')
    with self.assertRaises(json.JSONDecodeError):union_sources([p])
+ def test_modified_previous_freeze_is_rejected_before_output(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=pathlib.Path(folder);source=root/'old.jsonl';manifest=root/'manifest.json';out=root/'new'
+   source.write_text(json.dumps(dict(activity='A',kind='bridge',name='original'))+'\n')
+   manifest.write_text(json.dumps([dict(app='app',package='package',oracle=str(source),sha256=hashlib.sha256(source.read_bytes()).hexdigest())]))
+   source.write_text(json.dumps(dict(activity='A',kind='bridge',name='changed'))+'\n')
+   command=['python3',str(pathlib.Path(__file__).with_name('freeze_oracle.py')),'--previous',str(manifest),'--out',str(out)]
+   result=subprocess.run(command,capture_output=True,text=True)
+   self.assertNotEqual(result.returncode,0);self.assertIn('no longer matches',result.stderr);self.assertFalse(out.exists())
 if __name__=='__main__':unittest.main()

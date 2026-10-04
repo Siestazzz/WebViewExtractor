@@ -53,7 +53,7 @@ final class CapabilityEngine {
         final Set<String> installedFragments=new HashSet<>(),fragmentReplays=new HashSet<>();
         final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
         final ContextQueue queue=new ContextQueue();
-        final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
+        final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>(),constantMapSnapshots=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
         final Set<String> gaps=new LinkedHashSet<>();
         V activeClientContext,activeManifestEntry;
@@ -218,6 +218,7 @@ final class CapabilityEngine {
                     applyWrite(h,w.field(),receiver,value);
                 }
                 for(Call call:summary.calls()){
+                    invalidateConstantMapEscape(h,job,call);
                     Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
                     if(call.method().equals(StaticReflection.INVOKE)){
@@ -1106,10 +1107,28 @@ final class CapabilityEngine {
         V object=V.of("object",expression.type(),expression.id()+"|"+allocationContext(job));
         materializeConstructor(ctor,List.of(object),job,h,depth+1,visiting);return object;
     }
+    void invalidateConstantMapEscape(Host h,Job job,Call call){
+        if(h.constantMapSnapshots.isEmpty())return;
+        String id=call.method();boolean read=Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap").contains(owner(id))&&(id.endsWith("->get(Ljava/lang/Object;)Ljava/lang/Object;")||id.endsWith("->containsKey(Ljava/lang/Object;)Z")||id.endsWith("->size()I"));
+        if(read)return;
+        List<String> types=parameters(id.substring(id.indexOf('(')+1,id.indexOf(')')));if(!call.isStatic()){types=new ArrayList<>(types);types.add(0,desc(owner(id)));}
+        for(int i=0;i<call.args().size();i++)for(V actual:alternatives(priorityBinding(call.args().get(i),job,h,0))){
+            if(h.constantMapSnapshots.remove(actual.id()))h.gaps.add("static_map_constant_invalidated:escape:"+id);
+            else if((actual.kind().equals("unknown")||actual.kind().equals("field_object")||actual.kind().startsWith("return"))&&
+                Set.of("java.lang.Object","java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.io.Serializable","java.lang.Cloneable").contains(actual.type()==null?i<types.size()?CapabilityIndex.cls(types.get(i)):"":actual.type())){
+                h.constantMapSnapshots.clear();h.gaps.add("static_map_constant_invalidated:unresolved_escape:"+id);
+            }
+        }
+    }
     V guardValue(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args.size()?job.args.get(index):UNKNOWN;}
         if(value.kind().equals("cast"))return guardValue(value.args().get(0),job,h,depth+1);
+        if(value.kind().startsWith("return")){
+            if(value.id().equals(IntegerConstants.BOX)||value.id().equals(IntegerConstants.UNBOX))return IntegerConstants.resolve(value.id(),value.args().stream().map(v->guardValue(v,job,h,depth+1)).toList());
+            if(value.id().equals("Ljava/lang/Class;->getName()Ljava/lang/String;")&&value.args().size()==1){V type=guardValue(value.args().get(0),job,h,depth+1);if(type.kind().equals("class")&&type.type()!=null)return V.literal("java.lang.String",type.type());}
+            V literal=StaticMapConstants.lookup(value,job,h,this,depth);if(literal!=null)return literal;
+        }
         if(value.kind().equals("field")){
             // A mutable field's observed heap value is not proof that other lifecycle writes
             // cannot occur. Keep both guard branches unless the field is immutable.
@@ -1194,6 +1213,7 @@ final class CapabilityEngine {
                     for(CharSequence t:m.getParameterTypes())args.add(V.of("unknown",CapabilityIndex.cls(t.toString()),"constructor_parameter"));
                     Job nested=new Job(m,args,job.path,true);
                     for(Write w:init.writes())if(w.field().equals(v.id()))result=union(result,eval(w.value(),nested,h,depth+1,new HashSet<>(visiting)));
+                    if(result!=null&&idx.map(v.type()))StaticMapConstants.populate(v.id(),init,nested,result,this,h);
                 }
             }
             if(receiver.kind().equals("static")&&c!=null){
@@ -1205,6 +1225,7 @@ final class CapabilityEngine {
         if(v.kind().startsWith("return")){
             if(ManifestProtocols.pure(idx,v.id())){V semantic=ManifestProtocols.resolve(v,this,job,h,0);if(!semantic.equals(UNKNOWN)){if(semantic.kind().equals("unknown")&&semantic.id().startsWith("manifest_class_unresolved:"))h.gaps.add(semantic.id());return semantic.kind().equals("manifest_new")?materializeManifest(semantic,job,h,depth,visiting):semantic;}}
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
+            V integerConstant=IntegerConstants.resolve(v.id(),args);if(integerConstant!=null)return integerConstant;
             V staticReflection=StaticReflection.resolve(v,args,this,job,h);if(staticReflection!=null)return staticReflection;
             V reflectiveFactory=ReflectiveFactories.resolve(v,args,this,job,h,depth,visiting);if(reflectiveFactory!=null)return reflectiveFactory;
             if(v.id().equals("Ljava/lang/Class;->getName()Ljava/lang/String;")&&args.size()==1){
@@ -1343,6 +1364,8 @@ final class CapabilityEngine {
         return result;
     }
     void applyWrite(Host h,String field,V receiver,V value){
+        for(V actual:alternatives(receiver))if(field.equals("$map_entry")||field.startsWith("$map_mutation:"))h.constantMapSnapshots.remove(actual.id());
+        for(V alias:alternatives(value))h.constantMapSnapshots.remove(alias.id());
         if(field.startsWith("$map_mutation:")){h.gaps.add("map_mutation_order_unresolved:"+field.substring(14));return;}
         if(field.equals("$map_entry")){
             if(!value.kind().equals("map_entry")||value.args().size()!=2){h.gaps.add("unresolved_map_entry");return;}

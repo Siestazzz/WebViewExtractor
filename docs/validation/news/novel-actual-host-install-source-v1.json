@@ -1,0 +1,66 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+  "audit_mode": "fresh source-only development; no reports or holdouts read",
+  "source_evidence": [
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/tad/business/novel/WebNovelActivity.java",
+      "sha256": "416706707148b705c6db4f883c87d0c7c8958502d13ad23d184c0c8262592084"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/tad/business/novel/NovelWebView.java",
+      "sha256": "6a819821f70ecc9bf43e1e2978a5a46ff425f910f0adaec03665eb8e3592a055"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/tad/business/novel/NovelLoadingWebView.java",
+      "sha256": "39c6b4441d9fbfebc2c5561d1b6723ce1f882cc27119c618b29a45219dfda4f2"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/tad/business/ui/landing/AdWebView.java",
+      "sha256": "487cb95a109a150d050f6f0c6818b387f3e4122d1ca21aace2c960ac6d511c61"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/tad/g.java",
+      "sha256": "a7408359d858690b0ab6b86188ee5a788b5f5e2ea821aaa002437c8e7773ae45"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/resources/res/layout/web_novel_layout.xml",
+      "sha256": "ece96c518032299f7adf8248200c3f13aa8eb0ef80666e5dd847468ad5c7ec6a"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/resources/res/layout/web_advert_view_layout_novel.xml",
+      "sha256": "3bec0f9271f8e10c340f95acfed766e46cfa3be764ea68d2a3e9e1f9b4461c71"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/resources/res/layout/ad_loading_web_view_novel.xml",
+      "sha256": "c348a9ed94c2ca9e55ec1b1f2cbc5d9fb903f43c4a1df257e0d44e76f5ffedf0"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/resources/res/values/public.xml",
+      "sha256": "4f86974ebe67cd13b0bb075c6553259887a4d33625c1d17d20d35ba9f5f5998f"
+    }
+  ],
+  "actual_webview_type": "com.tencent.news.tad.business.ui.landing.AdWebView",
+  "binding_chain": [
+    "WebNovelActivity.onCreate lines772-786 -> setContentView(m125784) -> web_novel_layout XML NovelWebView",
+    "NovelWebView(context,AttributeSet) lines34-43 -> init lines57-73 -> inflate web_advert_view_layout_novel -> NovelLoadingWebView",
+    "NovelLoadingWebView.initialize lines37-64 -> inflate ad_loading_web_view_novel -> XML actual AdWebView id web_detail_webview -> mWebView field",
+    "WebNovelActivity.initView lines711-716 -> getLoadingWebView.getWebView -> same actual view f101623 -> WebViewBridge",
+    "initView -> m125788 -> parseIntent m125782, f101606=true -> m125787; nonnull URL guard -> actual NovelWebView.setWebViewSettings lines147-185",
+    "initListener lines693-700 -> new novel.d(this,same f101623) -> actual new activity.e Chrome and activity.f Client on same view"
+  ],
+  "source_positive": true,
+  "whole_host_deep_complete": false,
+  "remaining_unknown": [
+    "CommonAbility registry startup/selection and inherited ability implementation surface",
+    "remaining parent Activity surfaces",
+    "public synthetic H5 accessor body",
+    "secondary SDK delegation closure"
+  ],
+  "negative_controls": [
+    "AdWebView.initWebViewSettings declaration is not proof of a call on this host",
+    "NovelWebView.fixWebView declaration is not called by its constructor/init path",
+    "onDestroy null client assignments are cleanup, not positive callback installation"
+  ],
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable"
+}

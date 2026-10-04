@@ -1,0 +1,20 @@
+{
+  "problem": "A callback member with explicit source implementation matched another concrete Client inheriting the same declared member.",
+  "change": "Require implementation equality when source callback member specifies it; leave source without concrete identity signature-only and binding acceptance unproven.",
+  "scoring_version": 7,
+  "test_command": "python3 -m unittest discover -s scripts -p test_evaluate.py",
+  "baseline": "14 tests; new sibling-client negative fails, 1 != 0",
+  "fixed": "14 tests pass",
+  "logs": [
+    {
+      "path": "test/runs/generic-v19-callback-scoring-baseline.log",
+      "sha256": "a33f9284f74eefeedb52e1370d8ddc4d4a8da2b485029828a97e92bddb936f3b"
+    },
+    {
+      "path": "test/runs/generic-v19-callback-scoring-tests.log",
+      "sha256": "1cbabc6667e31c05f7c617a3e9259b78b2d7af1593d943d68073d5360ec89ff8"
+    }
+  ],
+  "old_results": "v18 score files preserved unchanged; scorer7 baseline is generic-v19-scoring-v7-baseline/ on v18 APK reports and reviewed v18 oracle. This is an evaluation correction, not analyzer gain.",
+  "source_review": "Requested independent confirmation of implementation field semantics for new News, FreeReels and Breaking inherited/delegated client facts."
+}

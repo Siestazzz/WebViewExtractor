@@ -1,0 +1,983 @@
+{
+  "oracle_sha256": "4ff31d1d5bef800d857b9454c8a0fb80162dcef0834d3db91e1745ed7bd40442",
+  "report_sha256": "1af24dc1f1412ba1a539f425cbd602a1c8227d1f049f3bb101e530c47b7add87",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v18-reviewed-facts/breaking-news.jsonl",
+  "apk_sha256": "2f815b97847ec9121ed301f1ed048e042f16c1926083ff8e19cd5c13f1f36dac",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 16,
+      "matched": 16,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 94,
+      "matched": 34,
+      "explicit_matched": 30,
+      "unscorable": 0,
+      "recall": 0.3617021276595745,
+      "explicit_recall": 0.3191489361702128
+    },
+    "bridge": {
+      "expected": 70,
+      "matched": 70,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lhkd$b;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lhkd$b;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Likd;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Ldmh$g;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Ldmh$g;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getVisitedHistory",
+      "signature": "Ldmh$g;->getVisitedHistory(Landroid/webkit/ValueCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getVisitedHistory",
+      "signature": "Ldmh$g;->getVisitedHistory(Landroid/webkit/ValueCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Ldmh$g;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Ldmh$g;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Ldmh$g;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Ldmh$g;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Ldmh$g;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Ldmh$g;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onExceededDatabaseQuota",
+      "signature": "Ldmh$g;->onExceededDatabaseQuota(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onExceededDatabaseQuota",
+      "signature": "Ldmh$g;->onExceededDatabaseQuota(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onGeolocationPermissionsHidePrompt",
+      "signature": "Ldmh$g;->onGeolocationPermissionsHidePrompt()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onGeolocationPermissionsHidePrompt",
+      "signature": "Ldmh$g;->onGeolocationPermissionsHidePrompt()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Ldmh$g;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Ldmh$g;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Ldmh$g;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Ldmh$g;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Ldmh$g;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Ldmh$g;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Ldmh$g;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Ldmh$g;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Ldmh$g;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Ldmh$g;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Ldmh$g;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Ldmh$g;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsTimeout",
+      "signature": "Ldmh$g;->onJsTimeout()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsTimeout",
+      "signature": "Ldmh$g;->onJsTimeout()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Ldmh$g;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Ldmh$g;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPermissionRequestCanceled",
+      "signature": "Ldmh$g;->onPermissionRequestCanceled(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPermissionRequestCanceled",
+      "signature": "Ldmh$g;->onPermissionRequestCanceled(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Ldmh$g;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Ldmh$g;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Ldmh$g;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Ldmh$g;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Ldmh$g;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Ldmh$g;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Ldmh$g;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Ldmh$g;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRequestFocus",
+      "signature": "Ldmh$g;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRequestFocus",
+      "signature": "Ldmh$g;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Ldmh$g;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Ldmh$g;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Ldmh$g;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Ldmh$g;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Ldmh$g;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Ldmh$g;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Ldmh$g;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Ldmh$g;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lhkd$b;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lhkd$b;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lhkd$b;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lhkd$b;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Likd;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Likd;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "hkd",
+          "yt7",
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Likd;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 22,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 7,
+  "scorer_sha256": "fb9ceb4e06ea058293922da9d7ff0912cce2ed3023c3a440b44d52b9d22f1e13",
+  "webview_constraint_coverage": {
+    "expected": 180,
+    "with_source_type_constraint": 180,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 3,
+    "matched": 3,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 2,
+  "capability_granularity": {
+    "setting": {
+      "expected": 16,
+      "matched": 16,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 94,
+      "matched": 34,
+      "recall": 0.3617021276595745
+    },
+    "bridge_registration": {
+      "expected": 2,
+      "matched": 2,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 68,
+      "matched": 68,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 22
+    },
+    "emitted": 22,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 22,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

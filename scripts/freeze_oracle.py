@@ -46,6 +46,8 @@ def main():
  # Validate/read all sources before creating the new freeze.
  prepared=[]
  for row in previous:
+  if hashlib.sha256(pathlib.Path(row['oracle']).read_bytes()).hexdigest()!=row.get('sha256'):
+   raise ValueError('Previous oracle no longer matches frozen manifest: '+row['oracle'])
   raw,meta=union_sources([row['oracle'],*extra[row['app']]],a.require_append_verdicts)
   target=dest/(row['app']+'.jsonl');new=dict(package=row['package'],app=row['app'],oracle=str(target),sha256=hashlib.sha256(raw).hexdigest(),**meta,note='All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout.')
   prepared.append((target,raw,new))

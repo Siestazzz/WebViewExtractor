@@ -1,0 +1,16 @@
+{
+  "problem": "Unsupported native-name-free transport identities and runtime-expression settings were sometimes labeled not_matched when no same-kind report candidate existed, because support checks ran inside candidate matching.",
+  "change": "Classify these two evaluator limitations independently of candidates. Preserve denominator, zero matches and an explicit scoring_limitation reason. No invented native registration name or wildcard expression match.",
+  "tests": "New empty/unrelated-output cases fail before fix; all15 evaluator tests pass after.",
+  "logs": [
+    {
+      "path": "test/runs/generic-v19-unscorable-baseline.log",
+      "sha256": "2bb2520bbb0eabb597a8a53edc1b9389d2fb88769995ce30e2bdadad7f90c824"
+    },
+    {
+      "path": "test/runs/generic-v19-evaluator-final-tests.log",
+      "sha256": "69d44c3ead651a253b07bfc0f452788188b6715151313d5c28a994823c703077"
+    }
+  ],
+  "scorer_sha256": "b22eb10f904db752d06b1de1a18b8d12177ba9ab752af2d087231040e79e87db"
+}

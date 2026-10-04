@@ -1,0 +1,48 @@
+{
+  "input": "canonical-novel-installed-clients-source-v1.jsonl",
+  "input_sha256": "fe0e9a53b5d634673aeb92027d3e49765808f53c81a739aa09307937e892265d",
+  "output": "canonical-novel-installed-clients-source-v1-receiver-normalized.jsonl",
+  "output_sha256": "e89a274059000758f35a529ceec946cd4125996cd2ed281a9f4cd085b1ffe153",
+  "changes": [
+    {
+      "line": 5,
+      "field": "implementation",
+      "before": "com.tencent.news.webview.api.system.SysWebChromeClient",
+      "after": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+      "reason": "source installed e/f receiver; inherited declaration retains same normalized_signature"
+    },
+    {
+      "line": 6,
+      "field": "implementation",
+      "before": "com.tencent.news.webview.api.system.SysWebChromeClient",
+      "after": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+      "reason": "source installed e/f receiver; inherited declaration retains same normalized_signature"
+    },
+    {
+      "line": 7,
+      "field": "implementation",
+      "before": "com.tencent.news.webview.api.system.SysWebChromeClient",
+      "after": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+      "reason": "source installed e/f receiver; inherited declaration retains same normalized_signature"
+    },
+    {
+      "line": 15,
+      "field": "implementation",
+      "before": "com.tencent.news.webview.api.system.SysWebViewClient",
+      "after": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+      "reason": "source installed e/f receiver; inherited declaration retains same normalized_signature"
+    },
+    {
+      "line": 16,
+      "field": "implementation",
+      "before": "com.tencent.news.webview.api.system.SysWebViewClient",
+      "after": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+      "reason": "source installed e/f receiver; inherited declaration retains same normalized_signature"
+    }
+  ],
+  "rows": 18,
+  "positive_acceptance_true": true,
+  "source_binding": "WebNovelActivity.initListener693-695 actual new e/f installed on retained XML AdWebView",
+  "semantic_correction": "original callback implementation named declaring owner for five inherited callbacks; corrected to actual installed receiver, retaining declaring_implementation and normalized_signature",
+  "facts_semantic_change": "no capability added/deleted; disambiguates receiver identity for strict scoring v7"
+}

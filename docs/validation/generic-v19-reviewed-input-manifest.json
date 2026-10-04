@@ -1,0 +1,195 @@
+[
+  {
+    "package": "com.tencent.news",
+    "app": "news",
+    "oracle": "docs/validation/news/v18-callback-receiver-reviewed-view-v2/reviewed.jsonl",
+    "sha256": "d84882640ccca676ef001ca97916d42ec47c4f33fb51ad3a7947145f0625abf1",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/news.jsonl",
+        "sha256": "a82cdb0ae27810faf93dd0932714b93f3b19c3eae8d8dc003e9b498a8732f430",
+        "rows": 2219
+      }
+    ],
+    "input_rows": 2219,
+    "unique_rows": 2219,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "ac646065137755cfcbef0a1989850941be6d2bb90dc30887dbff4daac19b389c",
+    "note": "Hash-bound source receiver corrections; original source rows and ledger retained alongside view.",
+    "previous_oracle": "docs/validation/generic-v18-reviewed-facts/news.jsonl"
+  },
+  {
+    "package": "com.hunantv.imgo.activity",
+    "app": "mango",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/mango.jsonl",
+    "sha256": "5e0c780e0cc4b2be451cd7f402b4d06f1cc8af9660f3cb6c9f9c235fd3485bc7",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/mango.jsonl",
+        "sha256": "5e0c780e0cc4b2be451cd7f402b4d06f1cc8af9660f3cb6c9f9c235fd3485bc7",
+        "rows": 2601
+      }
+    ],
+    "input_rows": 2601,
+    "unique_rows": 2601,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "cd77fd05708c2628da1bb96e731e14acf764c2f734cce3b703d7b6cad3cf9bd9",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "ctrip.android.view",
+    "app": "ctrip",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/ctrip.jsonl",
+    "sha256": "65e8bcb1cd11c21ec50858c5d38064240d692ed3cc02d050395409f4e320d7f8",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/ctrip.jsonl",
+        "sha256": "65e8bcb1cd11c21ec50858c5d38064240d692ed3cc02d050395409f4e320d7f8",
+        "rows": 4944
+      }
+    ],
+    "input_rows": 4944,
+    "unique_rows": 4944,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "4104dc2c4e9611f7c84f2af6c4e53a17c4e85420a01da3a65a570f336a0c36a9",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "com.ss.android.article.video",
+    "app": "xigua",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/xigua.jsonl",
+    "sha256": "2fbd63cd0440c6fc109a08895fc90213545c83b563d802f17f42704582adb441",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/xigua.jsonl",
+        "sha256": "2fbd63cd0440c6fc109a08895fc90213545c83b563d802f17f42704582adb441",
+        "rows": 825
+      }
+    ],
+    "input_rows": 825,
+    "unique_rows": 825,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "bed596058e518999e3ae2b546ba40dfbfc1c39bab912eaeab98d283f498d90c9",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "com.freereels.app",
+    "app": "freereels",
+    "oracle": "docs/validation/generic-v19-receiver-corrections/freereels-history-reviewed/reviewed.jsonl",
+    "sha256": "89c001c4c63ff111097c6958abb9216f8d40b89b2b1454b75e273f36679a98f2",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/freereels.jsonl",
+        "sha256": "720654d08233ecfd849cd2daf7bc959cf49176a7f64f1ce5a9422157dba41c75",
+        "rows": 884
+      },
+      {
+        "path": "docs/validation/freereels/canonical-source-verified-v18-1008.jsonl",
+        "sha256": "b220f1055ecf184543911ec319d40d7fda1a5e1689dfa3b615b36f8b4cb5a7b8",
+        "rows": 1008
+      }
+    ],
+    "input_rows": 1892,
+    "unique_rows": 1010,
+    "identical_rows_deduplicated": 882,
+    "unique_set_sha256": "946d909ee746171929bafb2e86a8aa1f377e10b1a9a711e4054d4f34aef46cf6",
+    "note": "Hash-bound source receiver corrections; original source rows and ledger retained alongside view.",
+    "previous_oracle": "docs/validation/generic-v18-reviewed-facts/freereels.jsonl"
+  },
+  {
+    "package": "com.cctv.yangshipin.app.androidp",
+    "app": "yangshipin",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/yangshipin.jsonl",
+    "sha256": "3d1960a05f9b28f9c82f391de12819430c5752ee0694be81862ddbac81dbe1e4",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/yangshipin.jsonl",
+        "sha256": "3d1960a05f9b28f9c82f391de12819430c5752ee0694be81862ddbac81dbe1e4",
+        "rows": 929
+      }
+    ],
+    "input_rows": 929,
+    "unique_rows": 929,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "af1f375394e6412f886df76aae408de4807ff51ab69c65d9ee76bca8ab07a5fd",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "com.tencent.weishi",
+    "app": "txws",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/txws.jsonl",
+    "sha256": "9b902ed0fcb44c636482baef35917778cc24e550388887a2f3e1c5ef96c230f0",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/txws.jsonl",
+        "sha256": "9b902ed0fcb44c636482baef35917778cc24e550388887a2f3e1c5ef96c230f0",
+        "rows": 388
+      }
+    ],
+    "input_rows": 388,
+    "unique_rows": 388,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "b55dad796dba5a19fb9e35b6991864adad98ae227fff5baed052b034dd130cb6",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "com.sohu.sohuvideo",
+    "app": "sohuvideo",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/sohuvideo.jsonl",
+    "sha256": "bcfe16d0d816395accc31d34ac7845964350d38e6a7126ebdd452d1117bee914",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/sohuvideo.jsonl",
+        "sha256": "bcfe16d0d816395accc31d34ac7845964350d38e6a7126ebdd452d1117bee914",
+        "rows": 2804
+      }
+    ],
+    "input_rows": 2804,
+    "unique_rows": 2804,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "a6da36dbc8bead6beb26aac8efe2ea276fe56ec1b3a9cea1ae8d4ea3c899dd31",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "com.dragon.read",
+    "app": "fanqiexiaoshuo",
+    "oracle": "docs/validation/generic-v18-reviewed-facts/fanqiexiaoshuo.jsonl",
+    "sha256": "a71d36e7de04d6bf310e67cb22bc59e6f4c299b0b324a4564dfb2da40bea238c",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/fanqiexiaoshuo.jsonl",
+        "sha256": "a71d36e7de04d6bf310e67cb22bc59e6f4c299b0b324a4564dfb2da40bea238c",
+        "rows": 49
+      }
+    ],
+    "input_rows": 49,
+    "unique_rows": 49,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "2f9bbf1da1ce875d579fb734a61ae8985ee6a05f7cbd33926e1a9c24cf0b632a",
+    "note": "All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout."
+  },
+  {
+    "package": "com.news.app.global",
+    "app": "breaking-news",
+    "oracle": "docs/validation/generic-v19-receiver-corrections/breaking-news-history-reviewed/reviewed.jsonl",
+    "sha256": "71eeeaf3fdaadfa9112d0aeee8715fcf32c4bb28ddfb98a4ae44121f7340f14b",
+    "sources": [
+      {
+        "path": "docs/validation/generic-v17-reviewed-facts/breaking-news.jsonl",
+        "sha256": "89168472fac5882a3d2a923cbd6daf3b1df39d642ad29a5fb53b8a503596e9de",
+        "rows": 32
+      },
+      {
+        "path": "docs/validation/breaking-news/source-closure-v18-reviewed-normalized.jsonl",
+        "sha256": "0ce5096a85b94a9f73abc5e6dba91906adf1337210cf65e6b58f59947315f54f",
+        "rows": 150
+      }
+    ],
+    "input_rows": 182,
+    "unique_rows": 182,
+    "identical_rows_deduplicated": 0,
+    "unique_set_sha256": "15bccb5cddacf01a4f8ed598d8db9967252b66fd5e46d6f144927445b06e6486",
+    "note": "Hash-bound source receiver corrections; original source rows and ledger retained alongside view.",
+    "previous_oracle": "docs/validation/generic-v18-reviewed-facts/breaking-news.jsonl"
+  }
+]

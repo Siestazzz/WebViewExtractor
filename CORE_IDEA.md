@@ -1,6 +1,6 @@
 # WebView 能力提取的当前核心思路
 
-最新实测为 [generic v18](docs/validation/GENERIC_V18.md)：十 App 约 51～592 秒，全部仍为 partial，严格验收 **0/10**。新增精确公共无参构造器反射支持及必要调用点预筛；在同一经独立复核的扩充事实集上，十个 App 命中计数均未提升。Breaking News 子集的满分不代表全 App 完整；西瓜服务工厂传播、能力精度、完整源审、新样本及三次隔离性能测试仍待完成。以下旧版本说明保留作为历史记录。
+最新实测为 [generic v19](docs/validation/GENERIC_V19.md)，严格验收 **0/10**。九个 App 在同一修订事实集上命中计数未提升；芒果 TV 因新增逻辑空指针提前失败，番茄小说触及硬时限。本版作为失败迭代保留，修复版 v20 正在重跑。源码与评分修正不等于工具改善，完整源审、精度、新样本和隔离重复性能测试仍未完成。以下旧版本说明保留作为历史记录。
 
 
 当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。最近完成十 App 实测的是 [generic v14](docs/validation/GENERIC_V14.md)：包含通用对象传播、已安装 Client 的委托调用、按宿主并行调度、摘要缓存和报告收尾预算。v11 新增跨 Client 完整签名委托、有限反射工厂与 Manifest 模块协议，新闻增加 4 条回调命中；v12 收紧 Class 捕获的全局相关性后恢复芒果性能，但携程部分命中回退仍在，不能宣称质量验收通过。v13 在 Activity 前追踪实际 Application 初始化并复制静态对象状态，新增受限静态反射；真实样本召回尚无提升，初始化预算仍有超限。v14 增加构造捕获与实际安装 Fragment 的字段委托，但实测暴露 AndroidX SDK 方法体边界误判并造成回退，正在修复。旧版类关系图通过 `--legacy` 保留，见 [旧版设计](docs/LEGACY_CORE_IDEA.md)。

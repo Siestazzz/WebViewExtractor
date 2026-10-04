@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "file": "canonical-novel-installed-settings-source-v1-normalized.jsonl",
+      "sha256": "5e8f69312b5a18897b97f80663863ff7c6c8ca7c093014e8d8661d886250b8b6",
+      "rows": 12,
+      "kinds": {
+        "setting": 12
+      },
+      "positive": 12,
+      "false": 0,
+      "schema_errors": [],
+      "scorer_limitation": null
+    },
+    {
+      "file": "canonical-novel-public-reflection-source-v1.jsonl",
+      "sha256": "c210910c99588a8064e46f96822e7bfd0cb1d4e076ec32c6b8ff42ae8c3baeb3",
+      "rows": 282,
+      "kinds": {
+        "message_handler": 282
+      },
+      "positive": 281,
+      "false": 1,
+      "schema_errors": [],
+      "scorer_limitation": "prompt transport has no native registration_name and remains unscorable until generic transport identity supported"
+    },
+    {
+      "file": "canonical-novel-installed-clients-source-v1.jsonl",
+      "sha256": "fe0e9a53b5d634673aeb92027d3e49765808f53c81a739aa09307937e892265d",
+      "rows": 18,
+      "kinds": {
+        "callback": 16,
+        "callback_registration": 2
+      },
+      "positive": 18,
+      "false": 0,
+      "schema_errors": [],
+      "scorer_limitation": null
+    },
+    {
+      "file": "canonical-novel-dtbridge-source-v1.jsonl",
+      "sha256": "131e408df6205295459908af3624c9fb7e604a164ff674c5b4569ac99caa019e",
+      "rows": 9,
+      "kinds": {
+        "bridge_method": 2,
+        "message_handler": 5,
+        "bridge": 2
+      },
+      "positive": 9,
+      "false": 0,
+      "schema_errors": [],
+      "scorer_limitation": null
+    }
+  ],
+  "reports_read": false,
+  "holdouts_read": false,
+  "acceptance_claim": false
+}

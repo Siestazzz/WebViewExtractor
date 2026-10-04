@@ -1,0 +1,796 @@
+{
+  "schema": "generic_reflection_transport_certificate_requirements/v1",
+  "audit_mode": "development source-only; no tool output or holdout read",
+  "based_on_report": false,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "reviewer": "GPT-6 Codex; exact runtime identifier unavailable",
+  "scope": "recognition requirements, not new positive oracle or whole-host deep acceptance",
+  "generic_requirements": [
+    {
+      "id": "installed_entry",
+      "requirement": "Prove a platform client setter attaches the concrete client to this actual WebView. Resolve virtual entry to installed receiver; a constructed but uninstalled client is insufficient."
+    },
+    {
+      "id": "capture_identity",
+      "requirement": "Prove constructor/field copies from the concrete script allocation through client -> router -> final target field. Same-class distinct allocation is not same-object."
+    },
+    {
+      "id": "input_provenance",
+      "requirement": "Prove message JSON provides method, types and args to this entry; preserve any protocol prefix, URL, result-null and rate gates."
+    },
+    {
+      "id": "selector_slots",
+      "requirement": "Prove each types slot determines the exact Class slot and the corresponding value conversion in the same-index argument slot; allocation lengths and loop bounds must agree."
+    },
+    {
+      "id": "lookup_anchor",
+      "requirement": "Class.getMethod must use target.getClass(), selected name and that same Class array. Enumerate only that proven receiver hierarchy and parser-representable exact parameter signatures."
+    },
+    {
+      "id": "sink_identity",
+      "requirement": "Returned Method must reach Method.invoke using the same target allocation and argument array, possibly through a proven forwarding wrapper. A wrapper with replacement logic needs branch-qualified sink evidence."
+    },
+    {
+      "id": "virtual_resolution",
+      "requirement": "For nonstatic members resolve actual target dispatch and most-specific override; keep declaring implementation separate from actual receiver."
+    },
+    {
+      "id": "async_capture",
+      "requirement": "If scheduled, establish runnable Method/array capture and enclosing-router target identity; scheduling must itself be reachable."
+    },
+    {
+      "id": "failure_separation",
+      "requirement": "Lookup null, parse errors and CommonAbility fallback do not certify successful invocation of the selected reflective member."
+    },
+    {
+      "id": "transport_identity",
+      "requirement": "Use actual prompt entry + WebView + router/target provenance. No native addJavascriptInterface registration name exists here; null means not applicable, not unknown."
+    }
+  ],
+  "parser_tokens": {
+    "string": {
+      "class": "Ljava/lang/String;",
+      "value": "null or JSONArray.getString(i)"
+    },
+    "number": {
+      "class": "I",
+      "value": "boxed getInt(i)"
+    },
+    "boolean": {
+      "class": "Z",
+      "value": "boxed getBoolean(i)"
+    },
+    "object": {
+      "class": "Lorg/json/JSONObject;",
+      "value": "null or new JSONObject(getString(i))"
+    },
+    "function": {
+      "class": null,
+      "value": null,
+      "side_effect": "creates out-of-band callback"
+    }
+  },
+  "boundaries": {
+    "parse_failure": "Malformed JSON or required missing keys exits through exception handling; error callback may remain, selected member not proven invoked.",
+    "unknown_type": "Leaves Class and Object slots unset; no exact selector certificate. Do not widen to all public methods.",
+    "function": "Creates JavascriptCallback but leaves Class[i] and Object[i] unset; does not make callback-parameter members reachable.",
+    "arity": "N=types.length; Class[N],Object[N],loop N. No explicit args.length equality. Extra args ignored; missing nullable string/object can map null; numeric/boolean/function indexed getter may fail.",
+    "nullable": "String/JSONObject target parameter identity remains exact even for null argument values.",
+    "covariant": "Lookup key has name+parameter types, not return type. Resolve effective method and any bridge duplicates according to platform lookup/virtual semantics; never expose each return variant independently. No Novel-specific covariant case asserted.",
+    "override": "Novel subclass setStatusBarColor(int) overrides parent without super; parent body is not an independent dispatch target.",
+    "static": "Public static members are not filtered in source. Method.invoke ignores receiver for static execution, but lookup still anchored in actual target Class. No blanket synthetic/static exclusion.",
+    "annotation": "No exposure annotation predicate at getMethod. SyncMethod controls async selection only; unannotated public methods with representable exact signatures remain eligible.",
+    "constructor": "Constructors are not getMethod members; private/protected/package methods are not public lookup candidates.",
+    "platform_inherited": "Object inherited public surface not yet fully audited; retain explicit unresolved scope instead of annotation-based exclusion.",
+    "monitor": "Packaged declaring-class replacement keys omit script hierarchy; ordinary fallback is evidenced. Registry is mutable public Map/list and hotpatch paths exist, so packaged/no dynamic replacement condition must stay explicit."
+  },
+  "evidence": [
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/tad/business/novel/WebNovelActivity.java",
+      "sha256": "416706707148b705c6db4f883c87d0c7c8958502d13ad23d184c0c8262592084",
+      "lines": [
+        693,
+        716
+      ],
+      "claim": "actual e/f clients constructed with same script; retained nested WebView binding"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/api/system/SysWebChromeClient.java",
+      "sha256": "0bd66058459319f68cfecdecb068821485ebbde7a364a628c3bd6e27f3bade0f",
+      "lines": [
+        65,
+        80
+      ],
+      "claim": "installed inherited prompt callback consumes message; only result-null early exit, no URL/prefix gate"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/jsbridge/JavascriptBridge.java",
+      "sha256": "ee069856c516ae101dd322dd6b4206025406c2fea3c328b4b51969d156441984",
+      "lines": [
+        35,
+        75
+      ],
+      "claim": "final target field; asynchronous Method and argument-array captures preserve identities"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/jsbridge/JavascriptBridge.java",
+      "sha256": "ee069856c516ae101dd322dd6b4206025406c2fea3c328b4b51969d156441984",
+      "lines": [
+        164,
+        175
+      ],
+      "claim": "constructor stores exact script target"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/jsbridge/JavascriptBridge.java",
+      "sha256": "ee069856c516ae101dd322dd6b4206025406c2fea3c328b4b51969d156441984",
+      "lines": [
+        193,
+        264
+      ],
+      "claim": "JSON selectors and same-length arrays; lookup result sink; failure callback distinct"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/jsbridge/JavascriptBridge.java",
+      "sha256": "ee069856c516ae101dd322dd6b4206025406c2fea3c328b4b51969d156441984",
+      "lines": [
+        300,
+        377
+      ],
+      "claim": "public lookup by exact Class array; parse slot assignments"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qmethod/pandoraex/monitor/y.java",
+      "sha256": "768591e129cf323a0985f22e70174c839381ae1362530c14f18c229e3effbd92",
+      "lines": [
+        37,
+        69
+      ],
+      "claim": "normal wrapper branch Method.setAccessible and Method.invoke(obj,objArr); replacement branch must not be silently ignored"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qmethod/pandoraex/core/reflect/a.java",
+      "sha256": "5ca3898953ce238d48da78cc7998c1855e8ac94cc6218d2f9afba1ad2360110c",
+      "lines": [
+        41,
+        248
+      ],
+      "claim": "packaged replacement declarations and declaring-class keyed map assembly"
+    }
+  ],
+  "packaged_monitor_declaring_class_keys": [
+    "android/app/Activity",
+    "android/app/ActivityManager",
+    "android/bluetooth/BluetoothAdapter",
+    "android/bluetooth/le/BluetoothLeScanner",
+    "android/content/ClipboardManager",
+    "android/content/ContentResolver",
+    "android/content/pm/PackageManager",
+    "android/hardware/Camera",
+    "android/hardware/SensorManager",
+    "android/hardware/camera2/CameraCaptureSession",
+    "android/hardware/camera2/CameraDevice",
+    "android/hardware/camera2/CameraManager",
+    "android/location/Location",
+    "android/location/LocationManager",
+    "android/location/LocationProvider",
+    "android/media/AudioRecord",
+    "android/media/MediaRecorder",
+    "android/net/ConnectivityManager",
+    "android/net/NetworkCapabilities",
+    "android/net/NetworkInfo",
+    "android/net/wifi/WifiInfo",
+    "android/net/wifi/WifiManager",
+    "android/os/Build",
+    "android/os/IBinder",
+    "android/os/Parcel",
+    "android/os/SystemProperties",
+    "android/provider/Settings$Global",
+    "android/provider/Settings$Secure",
+    "android/provider/Settings$System",
+    "android/telephony/CellIdentityCdma",
+    "android/telephony/CellIdentityGsm",
+    "android/telephony/CellIdentityLte",
+    "android/telephony/CellIdentityTdscdma",
+    "android/telephony/CellIdentityWcdma",
+    "android/telephony/SmsManager",
+    "android/telephony/SubscriptionInfo",
+    "android/telephony/SubscriptionManager",
+    "android/telephony/TelephonyManager",
+    "android/telephony/cdma/CdmaCellLocation",
+    "android/telephony/gsm/GsmCellLocation",
+    "android/text/ClipboardManager",
+    "com/android/id/impl/IdProviderImpl",
+    "com/tencent/qmethod/pandoraex/monitor/ReceiverMonitor",
+    "java/lang/Runtime",
+    "java/lang/reflect/Method",
+    "java/net/NetworkInterface"
+  ],
+  "negative_public_inventory": {
+    "input_path": "docs/validation/news/novel-public-reflection-surface-source-v1.json",
+    "input_sha256": "0f24659db6d90127b2020f1525cfa683862773436f1ca1f4a4fb89666dd58662",
+    "count": 61,
+    "members": [
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$000(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lcom/tencent/news/location/model/location/City;ILjava/lang/String;Lorg/json/JSONObject;)Lcom/tencent/news/webview/jsbridge/JsCallback;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lcom/tencent/news/location/model/location/City;",
+          "I",
+          "Ljava/lang/String;",
+          "Lorg/json/JSONObject;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$100(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1000(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1100(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1102(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1200(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1202(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1300(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1302(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1400(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/util/HashMap;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/util/HashMap;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1500(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/util/HashMap;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/util/HashMap;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$1600(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$200(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;[Ljava/lang/Object;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;",
+          "[Ljava/lang/Object;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$300(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;)Ljava/util/concurrent/atomic/AtomicBoolean;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$400(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;ILjava/lang/String;Lorg/json/JSONObject;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "I",
+          "Ljava/lang/String;",
+          "Lorg/json/JSONObject;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$600(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$700(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lcom/tencent/news/model/pojo/Item;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lcom/tencent/news/model/pojo/Item;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$800(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;)I",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$802(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;I)I",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "I"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$900(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->access$902(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;)Ljava/lang/String;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->previewDetailImage(Landroid/content/Context;ILorg/json/JSONObject;)V",
+        "parameter_types": [
+          "Landroid/content/Context;",
+          "I",
+          "Lorg/json/JSONObject;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->previewDetailImage(Landroid/content/Context;ILorg/json/JSONObject;Lcom/tencent/news/gallery/GalleryPhotoPosition;Z)V",
+        "parameter_types": [
+          "Landroid/content/Context;",
+          "I",
+          "Lorg/json/JSONObject;",
+          "Lcom/tencent/news/gallery/GalleryPhotoPosition;",
+          "Z"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ʻʻ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Landroid/graphics/Bitmap;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Landroid/graphics/Bitmap;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ʼʼ(Lcom/tencent/news/tad/common/manager/g;)Lorg/json/JSONArray;",
+        "parameter_types": [
+          "Lcom/tencent/news/tad/common/manager/g;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ʽʽ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Lcom/tencent/news/shortcuts/ad/a$a;Lcom/tencent/news/shortcuts/ad/b;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Lcom/tencent/news/shortcuts/ad/a$a;",
+          "Lcom/tencent/news/shortcuts/ad/b;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ʾʾ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/Boolean;)Lkotlin/w;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/Boolean;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ʿʿ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lcom/tencent/news/model/UserInfoModel$Data;Lcom/tencent/news/v;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lcom/tencent/news/model/UserInfoModel$Data;",
+          "Lcom/tencent/news/v;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˆ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lcom/tencent/news/tad/business/utils/v2;)Ljava/util/HashMap;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lcom/tencent/news/tad/business/utils/v2;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˆˆ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/lang/String;Ljava/lang/Object;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/lang/String;",
+          "Ljava/lang/Object;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˈ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/lang/Boolean;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/lang/Boolean;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˈˈ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/lang/Boolean;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/lang/Boolean;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˉ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Landroid/graphics/Bitmap;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Landroid/graphics/Bitmap;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˉˉ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;ILjava/lang/String;Ljava/lang/String;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "I",
+          "Ljava/lang/String;",
+          "Ljava/lang/String;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˊ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Lcom/tencent/news/biz/weibo/api/d;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Lcom/tencent/news/biz/weibo/api/d;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˋˋ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/lang/Throwable;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/lang/Throwable;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˎ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/util/List;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/util/List;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˏ(Ljava/util/Map;Lcom/tencent/news/hippy/api/c;)V",
+        "parameter_types": [
+          "Ljava/util/Map;",
+          "Lcom/tencent/news/hippy/api/c;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ˑ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/util/ArrayList;Landroid/content/Intent;Lcom/tencent/news/gallery/api/d;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/util/ArrayList;",
+          "Landroid/content/Intent;",
+          "Lcom/tencent/news/gallery/api/d;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->י(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Ljava/util/ArrayList;Landroid/content/Intent;Lcom/tencent/news/gallery/api/d;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Ljava/util/ArrayList;",
+          "Landroid/content/Intent;",
+          "Lcom/tencent/news/gallery/api/d;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ـ(Lcom/tencent/news/shortcuts/ad/a$a;Lcom/tencent/news/shortcuts/ad/b;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/shortcuts/ad/a$a;",
+          "Lcom/tencent/news/shortcuts/ad/b;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ــ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lcom/tencent/news/tad/business/utils/v2;)Ljava/util/HashMap;",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lcom/tencent/news/tad/business/utils/v2;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ٴ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;Ljava/lang/Boolean;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;",
+          "Ljava/lang/Boolean;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ᐧ(Landroid/content/Context;Ljava/util/ArrayList;ILcom/tencent/news/gallery/GalleryPhotoPosition;ZZLandroid/content/Intent;Lcom/tencent/news/gallery/api/d;)V",
+        "parameter_types": [
+          "Landroid/content/Context;",
+          "Ljava/util/ArrayList;",
+          "I",
+          "Lcom/tencent/news/gallery/GalleryPhotoPosition;",
+          "Z",
+          "Z",
+          "Landroid/content/Intent;",
+          "Lcom/tencent/news/gallery/api/d;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ᴵ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Landroid/graphics/Bitmap;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Landroid/graphics/Bitmap;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->ᵎ(Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;Lorg/json/JSONObject;)Z",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;",
+          "Lorg/json/JSONObject;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->callBack(Lcom/tencent/news/webview/jsbridge/IJsResult;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsbridge/IJsResult;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->callBack(Lcom/tencent/news/webview/jsbridge/IJsResult;Z)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsbridge/IJsResult;",
+          "Z"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->callJs(Ljava/lang/String;Ljava/lang/Object;)V",
+        "parameter_types": [
+          "Ljava/lang/String;",
+          "Ljava/lang/Object;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->callJsOnUi(Ljava/lang/String;Ljava/lang/Object;)V",
+        "parameter_types": [
+          "Ljava/lang/String;",
+          "Ljava/lang/Object;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->callJsToJson(Ljava/lang/String;Ljava/lang/Object;)V",
+        "parameter_types": [
+          "Ljava/lang/String;",
+          "Ljava/lang/Object;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->getBindBuilder(ILcom/tencent/news/webview/jsapi/H5JsApiScriptInterface$y0;)Lcom/tencent/news/oauth/x$c;",
+        "parameter_types": [
+          "I",
+          "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface$y0;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->isDebugWebViewDead(Lcom/tencent/smtt/sdk/WebView;)Z",
+        "parameter_types": [
+          "Lcom/tencent/smtt/sdk/WebView;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->post(Ljava/lang/Object;)V",
+        "parameter_types": [
+          "Ljava/lang/Object;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->removeCallBack(Lcom/tencent/news/webview/jsbridge/IJsResult;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/jsbridge/IJsResult;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setContextInfoHolder(Lcom/tencent/news/model/pojo/ContextInfoHolder;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/model/pojo/ContextInfoHolder;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setDataProvider(Lcom/tencent/news/module/webdetails/webpage/viewmanager/c;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/module/webdetails/webpage/viewmanager/c;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setPageGenerator(Lcom/tencent/news/module/webdetails/webpage/viewmanager/e;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/module/webdetails/webpage/viewmanager/e;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setShareDialog(Lcom/tencent/news/share/l;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/share/l;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setWebContentLoadCallback(Lcom/tencent/news/ui/view/gg;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/ui/view/gg;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      },
+      {
+        "normalized_signature": "Lcom/tencent/news/webview/jsapi/H5JsApiScriptInterface;->setWebViewFullScreenControl(Lcom/tencent/news/webview/utils/IWebViewFullScreenController;)V",
+        "parameter_types": [
+          "Lcom/tencent/news/webview/utils/IWebViewFullScreenController;"
+        ],
+        "reason": "At least one exact parameter Class has no parser token; function does not populate a Class slot.",
+        "source_sha256": "ca5c186d1a7859714eca8d194bed4ca0a1058d7fd6043cede9fde60ce946802d"
+      }
+    ]
+  },
+  "references": [
+    {
+      "url": "https://developer.android.com/reference/org/json/JSONArray#isNull(int)",
+      "supports": "missing index counts as null; relevant to nullable missing-argument boundary"
+    }
+  ],
+  "remaining_unknown": [
+    "dynamic hotpatch/replacement registry mutations outside packaged normal fallback",
+    "platform inherited Object public methods",
+    "whole-host secondary/common API closure"
+  ]
+}

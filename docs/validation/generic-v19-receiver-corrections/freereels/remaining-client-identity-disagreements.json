@@ -1,0 +1,140 @@
+{
+  "diagnostic_only": true,
+  "not_a_source_verdict": true,
+  "rows": [
+    {
+      "source": {
+        "activity": "com.fyber.ads.ofw.OfferWallActivity",
+        "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+        "binding_status": "explicit",
+        "condition": "SDKinitialized branch actual samefield installer",
+        "dex_identity_evidence": "offerwall-installed-members-source-dex.json",
+        "evaluation_tier": "core_required",
+        "evidence": [
+          {
+            "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+            "line": 162,
+            "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0",
+            "text": "this.webView.setWebViewClient(c5423j);"
+          },
+          {
+            "file": "sources/com/fyber/fairbid/xw.java",
+            "line": 69,
+            "sha256": "0c3ff1ba239bd26457d594b9fe5b22f8e0fa9654ca116c26f08027074027f185",
+            "text": "public final boolean shouldOverrideUrlLoading(WebView webView, String str) {"
+          }
+        ],
+        "group_id": "source-first-offerwall-complete-client",
+        "host_evidence": [
+          {
+            "file": "resources/AndroidManifest.xml",
+            "line": 875,
+            "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3",
+            "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\""
+          },
+          {
+            "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+            "line": 152,
+            "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0",
+            "text": "WebView webView = new WebView(getApplicationContext());"
+          },
+          {
+            "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+            "line": 156,
+            "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0",
+            "text": "setContentView(this.webView);"
+          }
+        ],
+        "implementation": "com.fyber.fairbid.xw",
+        "installed_implementation": "com.fyber.fairbid.j",
+        "kind": "callback",
+        "name": "shouldOverrideUrlLoading",
+        "normalized_api": null,
+        "normalized_signature": "Lcom/fyber/fairbid/xw;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "positive_acceptance": true,
+        "provenance": "source-first",
+        "registration_name": null,
+        "reviewer": "GPT-6.1 Sol",
+        "signature_in_apk": true,
+        "taxonomy": "standard_android_client",
+        "value": null
+      },
+      "emitted_implementations": [
+        "com.fyber.fairbid.j"
+      ]
+    },
+    {
+      "source": {
+        "activity": "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity",
+        "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+        "binding_status": "explicit",
+        "condition": "InheritedactualClientmember afteractualsameviewnativeinstaller; runtimeeventAPI>=26, cleanupRunnable removes/destroyscapturedview.",
+        "dex_identity_evidence": "ttwebsite-installed-members-source-dex.json",
+        "evaluation_tier": "core_required",
+        "evidence": [
+          {
+            "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+            "line": 314,
+            "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0",
+            "text": "this.f39079da.setWebViewClient(new jHN.uOO() { // from class: com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity.6"
+          },
+          {
+            "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+            "line": 136,
+            "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea",
+            "text": "public boolean onRenderProcessGone(final WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {"
+          }
+        ],
+        "group_id": "source-first-ttwebsite-native-client-inherited-surface",
+        "host_evidence": [
+          {
+            "file": "resources/AndroidManifest.xml",
+            "line": 1203,
+            "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3",
+            "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity\""
+          },
+          {
+            "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+            "line": 108,
+            "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0",
+            "text": "setContentView(ueU);"
+          },
+          {
+            "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+            "line": 193,
+            "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0",
+            "text": "WebView webView = new WebView(getApplicationContext());"
+          },
+          {
+            "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+            "line": 194,
+            "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0",
+            "text": "this.f39079da = webView;"
+          },
+          {
+            "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+            "line": 196,
+            "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0",
+            "text": "ueU.addView(this.f39079da, new ViewGroup.LayoutParams(-1, -1));"
+          }
+        ],
+        "implementation": "com.bytedance.sdk.component.JP.jHN$uOO",
+        "installed_implementation": "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity$6",
+        "kind": "callback",
+        "name": "onRenderProcessGone",
+        "normalized_api": null,
+        "normalized_signature": "Lcom/bytedance/sdk/component/JP/jHN$uOO;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "positive_acceptance": true,
+        "provenance": "source-first",
+        "registration_name": null,
+        "reviewer": "GPT-6.1 Sol",
+        "signature_in_apk": true,
+        "taxonomy": "standard_android_client",
+        "value": null
+      },
+      "emitted_implementations": [
+        "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity$6"
+      ]
+    }
+  ]
+}

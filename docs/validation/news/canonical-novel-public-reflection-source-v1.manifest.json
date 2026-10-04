@@ -1,0 +1,25 @@
+{
+  "snapshot": "canonical-novel-public-reflection-source-v1.jsonl",
+  "sha256": "c210910c99588a8064e46f96822e7bfd0cb1d4e076ec32c6b8ff42ae8c3baeb3",
+  "rows": 282,
+  "positive_rows": 281,
+  "unconfirmed_rows": 1,
+  "inline_flags_verified": true,
+  "whole_host_deep_complete": false,
+  "scope": "direct public exact-signature selector surface only; common API fallback not included; platform Object inherited surface separately unknown",
+  "source_inventory_sha256": "0f24659db6d90127b2020f1525cfa683862773436f1ca1f4a4fb89666dd58662",
+  "overrides_removed": [
+    "H5JsApiScriptInterface.setStatusBarColor(I)V superseded by novel.d.setStatusBarColor(I)V"
+  ],
+  "unconfirmed_reason": "public static synthetic H5 method ˋ(String)String flags4105 is declared in DEX but omitted by JADX; body unresolved",
+  "registration_identity": {
+    "registration_name": null,
+    "meaning": "no addJavascriptInterface name; actual setWebChromeClient registration and inherited onJsPrompt SDK entry, not invented logical name",
+    "receiver_chain": "actual XML AdWebView -> Activity.f101623 -> setWebChromeClient(new Activity.e(novel.d)) -> SysWebChromeClient.jsBridge -> JavascriptBridge.interfaceObj=actual novel.d",
+    "prompt_gate": "nonnull JsPromptResult and valid message JSON; no URL scheme or defaultValue prefix gate",
+    "secondary_url_route": "inherited SysWebViewClient.onLoadResource -> WebViewClientBridge -> jsbridge://get_with_json_data URI json -> same JavascriptBridge selector; overridden legacy shouldOverrideUrlLoading does not invoke parent and must not be used as this route",
+    "exact_selector": "JSON method; JSON types map string->String,number->int,boolean->boolean,object->JSONObject; function leaves Class[] element unset",
+    "registration_name_status": "not_applicable(no native injected name), not unknown"
+  },
+  "scorability": "current scorer registration_name=null protocol identity support pending; preserve true source facts and real prompt transport, never invent injection name"
+}

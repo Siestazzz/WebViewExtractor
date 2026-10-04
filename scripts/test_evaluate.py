@@ -43,6 +43,29 @@ class EvaluationTest(unittest.TestCase):
    self.assertEqual(self.replay([g],[bad])['metrics']['callback']['matched'],0)
   member=dict(kind='callback',name='onPageFinished',normalized_signature='LClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V')
   self.assertEqual(self.replay([g,member],[f])['metrics']['callback']['matched'],1)
+ def test_unsupported_oracle_is_unscorable_even_without_candidate(self):
+  gold=[dict(kind='bridge_method',name='promptTarget',registration_name=None,normalized_signature='LTarget;->go()V'),dict(kind='setting',name='setJavaScriptEnabled',normalized_api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',value_kind='runtime_expression',value='remote.flag')]
+  for g in gold:
+   category='bridge' if g['kind']=='bridge_method' else 'setting'
+   for facts in [[],[dict(kind='callback',members=[])]]:
+    r=self.replay([g],facts)
+    self.assertEqual(r['metrics'][category]['matched'],0)
+    self.assertEqual(r['metrics'][category]['unscorable'],1)
+    self.assertEqual(r['missing'][0]['reason'],'unscorable_oracle')
+    self.assertTrue(r['missing'][0]['scoring_limitation'])
+ def test_inherited_callback_requires_source_concrete_client(self):
+  # Sibling clients inherit the same body, but are distinct installed objects.
+  g=dict(kind='callback',name='onPageFinished',implementation='InstalledChild',normalized_signature='LParent;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V')
+  f=dict(kind='callback',implementation='OtherChild',members=[dict(signature=g['normalized_signature'])])
+  self.assertEqual(self.replay([g],[f])['metrics']['callback']['matched'],0)
+  f['implementation']='InstalledChild'
+  self.assertEqual(self.replay([g],[f])['metrics']['callback']['matched'],1)
+  del f['implementation']
+  self.assertEqual(self.replay([g],[f])['metrics']['callback']['matched'],0)
+  # Legacy source without a concrete identity remains signature-only, explicitly
+  # covered by the evaluator's existing unproven binding/precision status.
+  del g['implementation']
+  self.assertEqual(self.replay([g],[f])['metrics']['callback']['matched'],1)
  def test_operation_is_separate_from_three_capability_categories(self):
   g=dict(kind='webview_operation',name='loadUrl',normalized_signature='Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V',value_kind='dynamic_string')
   f=dict(kind='webview_operation',api=g['normalized_signature'],arguments=[dict(id='view'),dict(kind='unknown')])

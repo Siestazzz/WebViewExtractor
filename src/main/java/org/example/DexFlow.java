@@ -24,7 +24,7 @@ final class DexFlow {
     final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>(), reportedRefinementBudget=new HashSet<>();
     final long deadline;
     final Map<String,List<V>> baseGuardProbes=new HashMap<>();
-    final Set<String> numericGuardOnly=new HashSet<>(),largeClassFactories=new HashSet<>();
+    final Set<String> numericGuardOnly=new HashSet<>(),largeClassFactories=new HashSet<>(),largeSwitchFactories=new HashSet<>();
     int decoded,refined;
     DexFlow(CapabilityIndex i,long deadline){idx=i;this.deadline=deadline;}
     static V union(V a,V b){
@@ -64,10 +64,15 @@ final class DexFlow {
                 if(count<=4096){refinable.add(key);largeClassFactories.add(key);}
                 else idx.diagnostics.add("summary_class_factory_budget:"+key);
             }
+            else if(count>500&&switchFactory(m)){
+                if(count<=4096){refinable.add(key);largeSwitchFactories.add(key);}
+                else idx.diagnostics.add("summary_switch_factory_budget:"+key);
+            }
             if(numericGuard&&!contextualGuard&&!ManifestProtocols.consumer(idx,m))numericGuardOnly.add(key);
         }
         if(!refinable.contains(key))return base;
         if(largeClassFactories.contains(key)&&baseGuardProbes.getOrDefault(key,List.of()).stream().noneMatch(v->!knownClass(v)&&knownClass(resolver.apply(v))))return base;
+        if(largeSwitchFactories.contains(key)&&baseGuardProbes.getOrDefault(key,List.of()).stream().noneMatch(v->number(v)==null&&number(resolver.apply(v))!=null))return base;
         // Ordinary integer/boolean guards need specialization only when this actual
         // context resolves a previously nonconstant operand. Unknown calls reuse base.
         if(numericGuardOnly.contains(key)&&baseGuardProbes.getOrDefault(key,List.of()).stream()
@@ -210,7 +215,21 @@ final class DexFlow {
             if(opcode.startsWith("goto")||opcode.contains("switch"))return false;
         }return constant&&branch;
     }
+    static boolean switchFactory(Method method){
+        if((method.getAccessFlags()&8)==0||!method.getReturnType().startsWith("L"))return false;
+        int switches=0,count=0;boolean allocation=false,objectReturn=false;
+        for(Instruction instruction:method.getImplementation().getInstructions()){
+            if(++count>4096)return switches==1&&allocation&&objectReturn;
+            String op=instruction.getOpcode().name;
+            if(op.equals("new-instance"))allocation=true;if(op.equals("return-object"))objectReturn=true;
+            if((op.startsWith("if-")||op.startsWith("goto"))&&instruction instanceof OffsetInstruction jump&&jump.getCodeOffset()<=0)return false;
+            if(op.equals("packed-switch")||op.equals("sparse-switch")){if(++switches>1)return false;}
+            if(instruction instanceof SwitchPayload payload&&payload.getSwitchElements().stream().anyMatch(element->element.getOffset()<=0))return false;
+        }
+        return switches==1&&allocation&&objectReturn;
+    }
     static Boolean condition(String op,V left,V right){
+        if(left.kind().equals("boxed_integer")&&Long.valueOf(0).equals(number(right))&&Set.of("if-eqz","if-nez","if-eq","if-ne").contains(op))return op.startsWith("if-ne");
         if(Set.of("if-eq","if-ne").contains(op)&&knownClass(left)&&knownClass(right))return op.equals("if-eq")==left.type().equals(right.type());
         Long a=number(left),b=number(right);
         if(a==null||b==null)return null;

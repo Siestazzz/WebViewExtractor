@@ -1,0 +1,341 @@
+{
+  "diagnostic_only": true,
+  "scope": "Three selected packaged classes; exact factory call only; no Application bootstrap, plugin routing, Activity traversal or new WebView attribution",
+  "classpath_before": "selected probe classes + frozen generic-v18.jar",
+  "classpath_after": "selected probe classes + frozen generic-v19.jar",
+  "cpus": "32-39",
+  "heap_gib": 4,
+  "timeout_seconds": 25,
+  "apk": "test/apks/com.ss.android.article.video.apk",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "selected_classes": [
+    "com.jupiter.builddependencies.dependency.ServiceManager",
+    "com.jupiter.builddependencies.dependency.IServiceFactory",
+    "com.ixigua.browser.specific.impl.BrowserServiceFactory"
+  ],
+  "method": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;",
+  "input": "com.ixigua.browser.protocol.IBrowserService",
+  "results": {
+    "before": {
+      "diagnostic_only": true,
+      "seconds": 1.951955642,
+      "selected_classes": [
+        "com.ixigua.browser.specific.impl.BrowserServiceFactory",
+        "com.jupiter.builddependencies.dependency.ServiceManager",
+        "com.jupiter.builddependencies.dependency.IServiceFactory"
+      ],
+      "method": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;",
+      "actual_literal_input": "com.ixigua.browser.protocol.IBrowserService",
+      "result": {
+        "kind": "unknown",
+        "id": "unknown",
+        "args": []
+      },
+      "decoded": 1,
+      "refined": 0,
+      "gaps": [],
+      "index_diagnostics": [],
+      "constant_map_certificates": [],
+      "map_sizes": {},
+      "probes": {
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;": [
+          {
+            "kind": "cast",
+            "type": "java.lang.Integer",
+            "id": "cast",
+            "args": [
+              {
+                "kind": "return",
+                "type": "java.lang.Object",
+                "id": "Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+                "args": [
+                  {
+                    "kind": "field",
+                    "type": "java.util.HashMap",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->apiIdMap:Ljava/util/HashMap;",
+                    "args": [
+                      {
+                        "kind": "static",
+                        "type": "com.jupiter.builddependencies.dependency.ServiceManager",
+                        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "param",
+                    "type": "java.lang.String",
+                    "id": "0",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "return",
+            "id": "Ljava/lang/Integer;->intValue()I",
+            "args": [
+              {
+                "kind": "cast",
+                "type": "java.lang.Integer",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "field",
+                        "type": "java.util.HashMap",
+                        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->apiIdMap:Ljava/util/HashMap;",
+                        "args": [
+                          {
+                            "kind": "static",
+                            "type": "com.jupiter.builddependencies.dependency.ServiceManager",
+                            "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "param",
+                        "type": "java.lang.String",
+                        "id": "0",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "after": {
+      "diagnostic_only": true,
+      "seconds": 2.504487049,
+      "selected_classes": [
+        "com.ixigua.browser.specific.impl.BrowserServiceFactory",
+        "com.jupiter.builddependencies.dependency.ServiceManager",
+        "com.jupiter.builddependencies.dependency.IServiceFactory"
+      ],
+      "method": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;",
+      "actual_literal_input": "com.ixigua.browser.protocol.IBrowserService",
+      "result": {
+        "kind": "object",
+        "type": "com.ixigua.browser.specific.impl.BrowserServiceFactory",
+        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;@572|com.ixigua.browser.protocol.IBrowserService",
+        "args": []
+      },
+      "decoded": 3,
+      "refined": 1,
+      "gaps": [],
+      "index_diagnostics": [],
+      "constant_map_certificates": [
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;-><clinit>()V@21|static"
+      ],
+      "map_sizes": {
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;-><clinit>()V@21|static": 223
+      },
+      "probes": {
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;": [
+          {
+            "kind": "cast",
+            "type": "java.lang.Integer",
+            "id": "cast",
+            "args": [
+              {
+                "kind": "return",
+                "type": "java.lang.Object",
+                "id": "Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+                "args": [
+                  {
+                    "kind": "field",
+                    "type": "java.util.HashMap",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->apiIdMap:Ljava/util/HashMap;",
+                    "args": [
+                      {
+                        "kind": "static",
+                        "type": "com.jupiter.builddependencies.dependency.ServiceManager",
+                        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "param",
+                    "type": "java.lang.String",
+                    "id": "0",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "return",
+            "id": "Ljava/lang/Integer;->intValue()I",
+            "args": [
+              {
+                "kind": "cast",
+                "type": "java.lang.Integer",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "field",
+                        "type": "java.util.HashMap",
+                        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->apiIdMap:Ljava/util/HashMap;",
+                        "args": [
+                          {
+                            "kind": "static",
+                            "type": "com.jupiter.builddependencies.dependency.ServiceManager",
+                            "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "param",
+                        "type": "java.lang.String",
+                        "id": "0",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;-><clinit>()V": [],
+        "Lcom/ixigua/browser/specific/impl/BrowserServiceFactory;-><init>()V": []
+      }
+    },
+    "absent_key": {
+      "diagnostic_only": true,
+      "seconds": 2.648259507,
+      "selected_classes": [
+        "com.ixigua.browser.specific.impl.BrowserServiceFactory",
+        "com.jupiter.builddependencies.dependency.ServiceManager",
+        "com.jupiter.builddependencies.dependency.IServiceFactory"
+      ],
+      "method": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;",
+      "actual_literal_input": "diagnostic.AbsentService",
+      "result": {
+        "kind": "literal",
+        "type": "number",
+        "id": "0",
+        "literal": "0",
+        "args": []
+      },
+      "decoded": 2,
+      "refined": 1,
+      "gaps": [],
+      "index_diagnostics": [],
+      "constant_map_certificates": [
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;-><clinit>()V@21|static"
+      ],
+      "map_sizes": {
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;-><clinit>()V@21|static": 223
+      },
+      "probes": {
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;->createFactory(Ljava/lang/String;)Lcom/jupiter/builddependencies/dependency/IServiceFactory;": [
+          {
+            "kind": "cast",
+            "type": "java.lang.Integer",
+            "id": "cast",
+            "args": [
+              {
+                "kind": "return",
+                "type": "java.lang.Object",
+                "id": "Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+                "args": [
+                  {
+                    "kind": "field",
+                    "type": "java.util.HashMap",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->apiIdMap:Ljava/util/HashMap;",
+                    "args": [
+                      {
+                        "kind": "static",
+                        "type": "com.jupiter.builddependencies.dependency.ServiceManager",
+                        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "param",
+                    "type": "java.lang.String",
+                    "id": "0",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "return",
+            "id": "Ljava/lang/Integer;->intValue()I",
+            "args": [
+              {
+                "kind": "cast",
+                "type": "java.lang.Integer",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "field",
+                        "type": "java.util.HashMap",
+                        "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->apiIdMap:Ljava/util/HashMap;",
+                        "args": [
+                          {
+                            "kind": "static",
+                            "type": "com.jupiter.builddependencies.dependency.ServiceManager",
+                            "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "param",
+                        "type": "java.lang.String",
+                        "id": "0",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Lcom/jupiter/builddependencies/dependency/ServiceManager;-><clinit>()V": []
+      }
+    }
+  },
+  "artifact_sha256": {
+    "test/runs/xigua-v19-selected-factory/before.json": "596117a1e884658f3536d1ddc142d16ecacfb605403df97e2461d55cccca3fd4",
+    "test/runs/xigua-v19-selected-factory/after-final.json": "23e1559efc989f7c3f8c2ccd5b07710e379bee4683f14c210025d92f939fca5c",
+    "test/runs/xigua-v19-selected-factory/missing-final.json": "b21a6f53c5d92d8a0402cba0abb2d666da17fa862e24efd38879650533649e1c",
+    "test/runs/xigua-v19-selected-factory/before.log": "42c91be5ea74fda325d6db8070a29df92447e5d0e0d5098702bf2e271e8f0615",
+    "test/runs/xigua-v19-selected-factory/after-final.log": "34650cb6be294839ceee734f6fac92bcb2f3dbf04223d8bd6a50d4c2d76cad39",
+    "test/runs/xigua-v19-selected-factory/missing-final.log": "adbde433becec926baf94df11460a3c5c5e2532137a95f0c4c8c0ad60d3af4d2",
+    "test/runs/generic-v18.jar": "afc52bcb7c7ff9ae1cc78dc432c11b0bdbd6ebfb42e8a9de0c1eb6aaacd3234c",
+    "test/runs/generic-v19.jar": "47dab88ae21c4c9849515ee8685cfc82734fa98b864eb4b4815b658c13f8c9f0",
+    "test/diagnostics/SelectedFactoryReplayProbe.java": "ad54d7d0cfde5d074f30ec875b003360e3305a5bb51c5145f10552b51d6e1426",
+    "test/runs/generic-v19-integer-factory-full.log": "d4e19e632718c2df134e22046fd6380ae4231ecf473810b714976a038d56046a",
+    "docs/validation/xigua/browser-service-and-scene-reflection-source-v1.json": "f9ae1290815d1e06f944bbe667381c9773dc8c588612ead1f0694422a0c8bdbb"
+  }
+}

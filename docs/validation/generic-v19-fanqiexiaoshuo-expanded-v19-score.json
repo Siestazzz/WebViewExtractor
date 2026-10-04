@@ -1,0 +1,185 @@
+{
+  "oracle_sha256": "a71d36e7de04d6bf310e67cb22bc59e6f4c299b0b324a4564dfb2da40bea238c",
+  "report_sha256": "92845fc6c8334fe77c48b04574a98151fb1230334804cc9fce8472e4f70823bf",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v19-reviewed-facts/fanqiexiaoshuo.jsonl",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "report_status": "timeout",
+  "metrics": {
+    "setting": {
+      "expected": 21,
+      "matched": 21,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 12,
+      "matched": 12,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 16,
+      "matched": 10,
+      "explicit_matched": 5,
+      "unscorable": 0,
+      "recall": 0.625,
+      "explicit_recall": 0.3125
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    }
+  ],
+  "emitted_activities": 47,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 7,
+  "scorer_sha256": "b22eb10f904db752d06b1de1a18b8d12177ba9ab752af2d087231040e79e87db",
+  "webview_constraint_coverage": {
+    "expected": 49,
+    "with_source_type_constraint": 49,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 3,
+    "matched": 3,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 0,
+  "capability_granularity": {
+    "setting": {
+      "expected": 21,
+      "matched": 21,
+      "recall": 1.0
+    },
+    "bridge_registration": {
+      "expected": 2,
+      "matched": 2,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 10,
+      "matched": 10,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 16,
+      "matched": 10,
+      "recall": 0.625
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 47
+    },
+    "emitted": 47,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 47,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}
