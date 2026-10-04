@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "scope": "generic synthetic layer isolation, not actual APK acceptance",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "artifacts": [
+    {
+      "path": "test/runs/generic-v12.jar",
+      "sha256": "153037dce2e818432ee3e555064c5d55cf5860a2ff0672f6c9c6e1ab1bbce6c6"
+    },
+    {
+      "path": "src/test/java/org/example/ServiceConstructorArrayProbe.java",
+      "sha256": "b402a01e05d2cff9b42ace4f9ab5abf2aabf5f4682e14110056540dd942a7f2a"
+    },
+    {
+      "path": "src/test/java/org/example/LifecycleContainerFactoryProbe.java",
+      "sha256": "2d140acd8e3c0bdb377cbb688c27e767c08688c23fdb1e0531f0e3cc919467b1"
+    },
+    {
+      "path": "src/test/java/org/example/LifecycleLayerBoundaryProbe.java",
+      "sha256": "a151fcdc6a1b5fda6567d3d76eed0982d16ca060c6c7a3944d5359b9f8a712e5"
+    },
+    {
+      "path": "test/run-lifecycle-layer-probe.sh",
+      "sha256": "b78b7be1e6906bd09b73411f7a554ff1f218b83b99a96059ecdda2d63bb35cc2"
+    },
+    {
+      "path": "test/runs/xigua-layer-probe-v12/results.txt",
+      "sha256": "1dc8b3cc4c4938494f4650e8396f36019dafca9def3a2c7a141bb636eaf4dbfb"
+    },
+    {
+      "path": "test/runs/xigua-layer-probe-v12/results.json",
+      "sha256": "0829c6ff583e0d3c64c4a672f9a3a13ec40ba114a13f3df11ed154f27449ac8c"
+    },
+    {
+      "path": "docs/validation/xigua/scene-installation-source-chain.json",
+      "sha256": "5c0d52c9213b41644d1c36e050cfd381bd9a31b6d3c4c1afe90d43422a8d5579"
+    }
+  ],
+  "results": {
+    "schema_version": 1,
+    "jar_sha256": "153037dce2e818432ee3e555064c5d55cf5860a2ff0672f6c9c6e1ab1bbce6c6",
+    "cases": {
+      "direct-navigation": {
+        "facts_by_kind": {
+          "bridge": 0,
+          "setting": 0,
+          "callback": 0
+        },
+        "raw_report": "[]",
+        "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/RootFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+        "analysis_seconds": 0.291912529,
+        "expected_source_positive": true,
+        "three_categories_present": false,
+        "verdict": "missing"
+      },
+      "fragment-create": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=container.Host, declared=true, facts=[{activity=container.Host, kind=bridge, name=addJavascriptInterface, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@25, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@18|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=capturedRoot, literal=capturedRoot, args=[]]], registration_name=capturedRoot, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=container.Host, kind=callback, name=setWebViewClient, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@15, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@10|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=container.Host, kind=setting, name=setJavaScriptEnabled, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@7, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onCreate(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[xml_lookup_unresolved_candidate]}]",
+        "diagnostics": "[container.Host:xml_lookup_unresolved_candidate]",
+        "analysis_seconds": 0.153284478,
+        "expected_source_positive": true,
+        "three_categories_present": true,
+        "verdict": "matched"
+      },
+      "fragment-activity-created": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=container.Host, declared=true, facts=[{activity=container.Host, kind=bridge, name=addJavascriptInterface, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@25, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@18|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=capturedRoot, literal=capturedRoot, args=[]]], registration_name=capturedRoot, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=container.Host, kind=callback, name=setWebViewClient, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@15, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@10|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=container.Host, kind=setting, name=setJavaScriptEnabled, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@7, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[xml_lookup_unresolved_candidate]}]",
+        "diagnostics": "[container.Host:xml_lookup_unresolved_candidate]",
+        "analysis_seconds": 0.120949669,
+        "expected_source_positive": true,
+        "three_categories_present": true,
+        "verdict": "matched"
+      },
+      "fragment-uninstalled": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=container.Host, declared=true, facts=[{activity=container.Host, kind=bridge, name=addJavascriptInterface, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@25, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@18|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=capturedRoot, literal=capturedRoot, args=[]]], registration_name=capturedRoot, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=container.Host, kind=callback, name=setWebViewClient, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@15, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@10|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=container.Host, kind=setting, name=setJavaScriptEnabled, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@7, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@36, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[xml_lookup_unresolved_candidate]}]",
+        "diagnostics": "[container.Host:xml_lookup_unresolved_candidate]",
+        "analysis_seconds": 0.11106954,
+        "expected_source_positive": false,
+        "three_categories_present": true,
+        "verdict": "wrong"
+      }
+    },
+    "acceptance_claim": false,
+    "analysis_budget_seconds_per_case": 30
+  },
+  "conclusions": [
+    "Installed android.app.Fragment onCreate and onActivityCreated each reach directly allocated Content and all three capabilities; do not diagnose a universally missing onActivityCreated entry.",
+    "Uninstalled Fragment with identical direct Content callback still produces all three candidate facts, exposing install/host ownership overapproximation masked by earlier factory loss.",
+    "Direct Navigation holding factory in a constructor field remains missing on frozen v12; this is consistent with captured-field identity issue, not proof of an additional Navigation-specific rule requirement."
+  ],
+  "source_basis": "Reuse scene-installation-source-chain.json; actual Activity installs the Fragment and actual dispatcher drives factory-returned content. Synthetic uninstalled case deliberately removes transaction install.",
+  "limitations": [
+    "One isolated run per case, not three-run performance acceptance.",
+    "Actual App task budget and any additional semantic gaps remain separate; no claim that all 480 missing facts are recovered.",
+    "Candidate ownership and capability precision are separate; fixture negative tests concrete lack of installation."
+  ],
+  "acceptance_claim": false
+}

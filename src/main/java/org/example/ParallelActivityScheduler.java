@@ -25,7 +25,8 @@ final class ParallelActivityScheduler implements AutoCloseable {
         if(workers<1||workers>8)throw new IllegalArgumentException("analysis workers must be between 1 and 8");
         this.roots=List.copyOf(roots);this.start=start;this.deadline=deadline;this.targetDeadline=targetDeadline;
         DexFlow shared=new DexFlow(index,deadline);aggregate=new CapabilityEngine(index,apk,deadline,shared);
-        for(int i=0;i<workers;i++)lanes.add(new Lane(new CapabilityEngine(index,apk,deadline,shared)));
+        ApplicationBootstrap.State bootstrap=aggregate.applicationBootstrap();
+        for(int i=0;i<workers;i++){var engine=new CapabilityEngine(index,apk,deadline,shared);engine.bootstrapState=bootstrap;lanes.add(new Lane(engine));}
         for(int i=0;i<roots.size();i++)lanes.get(i%workers).roots.add(roots.get(i));
         AtomicInteger ids=new AtomicInteger();
         executor=Executors.newFixedThreadPool(workers,task->{Thread thread=new Thread(task,"activity-analysis-"+ids.incrementAndGet());thread.setDaemon(true);return thread;});
@@ -52,6 +53,7 @@ final class ParallelActivityScheduler implements AutoCloseable {
     void refreshAggregate(){
         if(!quiescent)throw new IllegalStateException("Snapshot while workers mutate hosts");
         aggregate.states.clear();aggregate.boundSites.clear();aggregate.diagnostics.clear();
+        if(aggregate.bootstrapState!=null)aggregate.diagnostics.addAll(aggregate.bootstrapState.diagnostics());
         for(String root:roots)for(Lane lane:lanes){var state=lane.engine.states.get(root);if(state!=null){aggregate.states.put(root,state);break;}}
         for(Lane lane:lanes){aggregate.boundSites.addAll(lane.engine.boundSites);aggregate.diagnostics.addAll(lane.engine.diagnostics);}
         Collections.sort(aggregate.diagnostics);

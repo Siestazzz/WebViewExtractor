@@ -1,0 +1,1169 @@
+{
+  "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": true,
+  "categories": {
+    "bridge": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 8
+    },
+    "setting": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 2
+    },
+    "callback": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 8
+    }
+  },
+  "creation": "n7.b(Context,String)\u2192n7.a(Context,String,false)\u2192newnativeWebView(context)\u2192privateActivityfieldf38066c\u2192setContentView(view); setSupportMultipleWindowsfalse/JStrue thennewActivity$a. Factoryz=true branch Client n7$b notinstalled on thisroute. Concretefactory returnnull branch finishes no view.",
+  "recovery": "onRenderProcessGone checks callbackview==currentfield, destroysold andnullsfield; UI Runnable outera(sdk) retries onlySDKflag &&CAS(false,true). Success callsactivitya(sdk), which creates NEWnativeWebView, storesfield, attachesandrepeatssameknownsettings/client; wrapperloadUrl onNEWfield mayinjectSafeDKinterface. LaterloadUrl resetsCASfalse. No falseidentity propagation from destroyed oldview.",
+  "bridge": "Onlyactual AppLovinNetworkBridge lateURLload passeshostprivatefield; conditionalSafeDK SDKfactory addInterface(newSafeDKWebAppInterface(context),SafeDKWebAppInterface). Sevenactualannotatedmembers signaturesverifiedDEX. Metadata resource attachment may retain view, but no additionalbridgeobject/class or settings/client setter in SDKreceiverentryinventory; inheritedAppLovinDiscovery responseb(WebView,String) empty.",
+  "callbacks": "ActualownActivity$a7 standard members verifiedallDEX declarations. t4parent same7override shapes, invokedsuper bodies not independentinheritedeffectivemembers. NoChrome/download/touchlistenerinstaller on hostview. SDKURI EventListener interface declaration exists, but wholedevelopment sourcecaller reverse scan found k7.a.onActivityCreated loadUrl(url,null) only; defaultfieldnull andthisnullarg do not install a concreteonReceivedEvent handler; not fabricatepositivecallback frominterface alone.",
+  "sdk_metadata_scope": "Privatefixedmap AppLovin\u2192discoveries.c extendsd. c has weakviewmetadata onlyandno directnativeconfigmutation; base b(WebView,String) and a(WebView,Object) empty. Resourceattachment e receivescurrentviewbutpuremetadata; exhaustivelyinventorySDK capabilitymutations/reflectiveentrypoints, not recursivebusinessmeaning. OnlynativeSDKconfigoutsideSafeDKinterface is URLresolver j.c NEWWebView(SafeDKapplicationContext), setJStrue+newj$3, detachedbackgroundview. No evidence linkingthatfreshreceiver toActivityhostview; do not assignitssettings/client toprivatehostfield. Globalbackgroundownershipoutsidecurrentboundviews remainsunresolved.",
+  "sdk_mutation_entries": [
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "line": 308,
+      "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    },
+    {
+      "file": "sources/com/safedk/android/utils/m.java",
+      "line": 218,
+      "text": "Method method = obj.getClass().getMethod(str, new Class[0]);",
+      "sha256": "8b8e1b57b935343e8f10078b4f3a571a94cd927a9468fd07c0c1519d338a7b9c"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+      "line": 141,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/UnityCoreNetworkBridge.java",
+      "line": 132,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "130d83ffb80967af506c2dd8e837eea20838305aa4992e2b2e831dab26d25e00"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/PangleNetworkBridge.java",
+      "line": 145,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "fc13b0dac863b8cd6d177e545414ba393e056788c9cc7154e068cb9d957ce927"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/NetworkBridge.java",
+      "line": 139,
+      "text": "Method declaredMethod = Class.forName(className).getDeclaredMethod(methodName, parametersTypes);",
+      "sha256": "008e29f153dc5a28cd922b30d86d7a5dc8abc27256a502cc4d1ce11fbd91fc08"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/InMobiNetworkBridge.java",
+      "line": 159,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "eb396ca311020320e121616ecaf0bf0919e65c067f04d7aa2799625c13365403"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/UnityAdsNetworkBridge.java",
+      "line": 70,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "97951d2812ae4d19ea7f209ef8d920d56fab58f8f8b5f26a05eb9b02cdb4a377"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/AdMobNetworkBridge.java",
+      "line": 136,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "04c15b0ba2ab0e2c90f980cd4a5ed7e742a6fed11dd587155f0245098d21fa12"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/j.java",
+      "line": 207,
+      "text": "webView.getSettings().setJavaScriptEnabled(true);",
+      "sha256": "eb400d947bf66f530a6888466bb9446540d0f64de3295c48cd858d9b75da0568"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/j.java",
+      "line": 208,
+      "text": "webView.setWebViewClient(new AnonymousClass3(str, atomicBoolean, str2, str3, str4));",
+      "sha256": "eb400d947bf66f530a6888466bb9446540d0f64de3295c48cd858d9b75da0568"
+    }
+  ],
+  "reflective_boundaries": [
+    "m.b(Object,String) reflection fixedzeroarguments, no setting/client/interface setters compatible; sourcecapabilitycall inventory has nofollow-up setter on reflectedsettings result.",
+    "NetworkBridge.invokeMethod arbitrarysignature utility declaration; developmentsource reverseindex excludingholdoutbodies foundzeroactualcaller; sourceinventory safedk-reflective-network-entry-source-inventory.json. No dynamicWebSettings invocation asserted."
+  ],
+  "negative_candidates": [
+    {
+      "name": "n7$b factoryClient",
+      "positive_acceptance": false,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/impl/n7.java",
+          "line": 702,
+          "text": "return a(context, str, false);",
+          "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+        },
+        {
+          "file": "sources/com/applovin/impl/n7.java",
+          "line": 1187,
+          "text": "webView.setWebViewClient(new b(str));",
+          "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+        }
+      ],
+      "reason": "factoryguard z false actualargument"
+    },
+    {
+      "name": "AppLovinWebViewActivity.EventListener.onReceivedEvent",
+      "positive_acceptance": false,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/impl/k7.java",
+          "line": 59,
+          "text": "((AppLovinWebViewActivity) activity).loadUrl(this.f35587a, null);",
+          "sha256": "3f71a62c5c8f81b6d6fb2f125f0181a4255125069ae641566bb185a1f1f14b91"
+        }
+      ],
+      "reason": "No actualnonnulllistener installation found; declaredinterfacealone notactualcallback"
+    }
+  ],
+  "files": [
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+    },
+    {
+      "file": "sources/com/applovin/impl/t4.java",
+      "sha256": "3f05b094b45a3b3a5c206c91e960840fd498e9d8f841bf5081c59f12c4b73d26"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+      "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+    },
+    {
+      "file": "sources/com/applovin/impl/k7.java",
+      "sha256": "3f71a62c5c8f81b6d6fb2f125f0181a4255125069ae641566bb185a1f1f14b91"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/c.java",
+      "sha256": "6b6449f20f0906fd74749435f7d6a528318082c7a57f1433ee935702f5c790f6"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/e.java",
+      "sha256": "1fc22cc10d5432fb0a22ba2e2988bd91006282a1c71af8cd2597a573d04122d6"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/j.java",
+      "sha256": "eb400d947bf66f530a6888466bb9446540d0f64de3295c48cd858d9b75da0568"
+    },
+    {
+      "file": "sources/com/safedk/android/utils/m.java",
+      "sha256": "8b8e1b57b935343e8f10078b4f3a571a94cd927a9468fd07c0c1519d338a7b9c"
+    }
+  ],
+  "added_facts": [
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onLoadResource",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 80,
+          "text": "public void onLoadResource(WebView view, String url) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 86,
+          "text": "public void onPageFinished(WebView view, String url) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 92,
+          "text": "public void onPageStarted(WebView view, String url, Bitmap favicon) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 98,
+          "text": "public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 121,
+          "text": "public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 104,
+          "text": "public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest webResourceRequest) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "registration_name": null,
+      "implementation": "com.applovin.sdk.AppLovinWebViewActivity$a",
+      "normalized_signature": "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 245,
+          "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 109,
+          "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "condition": "Initial a(sdk) creates fieldview then installs; RendererGone recovery calls same a(sdk) on a NEWnativeWebView when SDKflag &&AtomicBoolean CAS succeeds; oldview destroyed, never transfer itsidentity to replacement.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge",
+      "name": "SafeDKWebAppInterface",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "value": "SafeDKWebAppInterface",
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "postMessage",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->postMessage(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 96,
+          "text": "public void postMessage(String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "logMessage",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->logMessage(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 173,
+          "text": "public void logMessage(String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "interceptXmlHttpRequest",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->interceptXmlHttpRequest(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 178,
+          "text": "public void interceptXmlHttpRequest(String message) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "requestNoSampling",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->requestNoSampling(Ljava/lang/String;Ljava/lang/String;II)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 193,
+          "text": "public void requestNoSampling(String sdkPackageName, String address, int height, int width) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "setContent",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setContent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 217,
+          "text": "public void setContent(String packageName, String webviewAddress, String texts) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "setComments",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setComments(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 241,
+          "text": "public void setComments(String packageName, String webViewAddress, String comments) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 931,
+          "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 232,
+          "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        }
+      ],
+      "group_id": "source-first-applovin-host-installed-surface",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "onResourcesCollected",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->onResourcesCollected(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+          "line": 217,
+          "text": "AppLovinNetworkBridge.webviewLoadUrl(webView, str);",
+          "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/AppLovinNetworkBridge.java",
+          "line": 101,
+          "text": "SafeDKWebAppInterface.a(g.f104626a, targetInstance, url);",
+          "sha256": "d4315cf6efcae6914786daa110970ea1248cc86565c7a24f463ee2ed923f416b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 347,
+          "text": "public void onResourcesCollected(String packageName, String webviewAddress, String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Actual late public loadUrl or renderer-recovery wrapper on current hostfield view; SafeDKinstance p(), URLnonnull/nonjavascript, supported AppLovin provider, SDKinitmodeguards; capturedsameview UI Runnable installsinterface. Initial onCreate rawnative.loadUrl is not substituted into wrapperproof.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "applovin-native-installed-members-source-dex.json"
+    }
+  ],
+  "remaining_runtime_values": [
+    "SDK recoveryflag/runtimeURL/interfaceinstallation guards unknown; keepconditionalpositive observedconfiguration APIs. No unknownhostsetter API admitted."
+  ],
+  "scope_limits": [
+    "CurrentmatchedbaseAPK, noabsentdynamic splitinstallation claims.",
+    "Sourcepositive18 notcomplete164Manifest inventory or30gate.",
+    "SDKglobalbackground freshhelper view ownership is notthe samehostprivatefield; globallyunresolved nohostpositiveassignment."
+  ]
+}

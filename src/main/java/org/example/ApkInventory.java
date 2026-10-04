@@ -7,7 +7,7 @@ import pxb.android.axml.*;
 
 /** Binary XML inventory; no decompiler or Android SDK executable required. */
 final class ApkInventory {
-    String packageName="", version="";
+    String packageName="", version="", applicationName="";
     int targetSdk;
     final Set<String> activities=new TreeSet<>();
     final Map<String,String> aliases=new TreeMap<>();
@@ -81,6 +81,7 @@ final class ApkInventory {
             @Override public void end(){
                 if(layout!=null){if(tag.contains(".")||tag.equals("WebView"))layoutTypes.computeIfAbsent(layout,k->new TreeSet<>()).add(tag);return;}
                 if(name!=null&&tag.equals("meta-data")&&parent!=null&&parent.type.equals("application")&&metadataValue!=null)applicationMetadata.put(name,metadataValue);
+                if(name!=null&&tag.equals("application"))applicationName=full(name);
                 if(name!=null&&tag.equals("activity"))activities.add(full(name));
                 if(name!=null&&target!=null&&tag.equals("activity-alias"))aliases.put(full(name),full(target));
             }

@@ -18,10 +18,14 @@ final class CapabilityEngine {
     final List<String> diagnostics=new ArrayList<>();
     final Map<String,V> constants=new HashMap<>();
     final Map<String,List<Map<String,Object>>> callbackCache=new HashMap<>();
+    final Map<String,StaticReflection.Reach> staticReflectionReachable=new HashMap<>();
+    long staticReflectionGraphQueries;
     final Map<String,Set<Integer>> lazyFactoryParameters=new HashMap<>();
     final Map<String,Boolean> objectFieldSetters=new HashMap<>(), receiverRelevance=new HashMap<>(), callbackCarrierTypes=new HashMap<>();
     Runnable checkpoint=()->{};
     Host currentHost;
+    ApplicationBootstrap.State bootstrapState;
+    ApplicationBootstrap.State applicationBootstrap(){if(bootstrapState==null){bootstrapState=ApplicationBootstrap.build(this);diagnostics.addAll(bootstrapState.diagnostics());}return bootstrapState;}
     int activeEvaluations, evaluationSteps, evaluationStepLimit=12000;
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
     CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this(idx,apk,deadline,new DexFlow(idx,deadline));}
@@ -51,6 +55,8 @@ final class CapabilityEngine {
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
         final Set<String> gaps=new LinkedHashSet<>();
         V activeClientContext,activeManifestEntry;
+        long localDeadline=Long.MAX_VALUE;
+        boolean applicationStartup;
         final Set<String> transportMaps=new HashSet<>();
         Host(String a){activity=a;}
     }
@@ -60,7 +66,8 @@ final class CapabilityEngine {
         final String activity;
         int phase, jobs, slices, discardedContexts, provisionalFacts, terminalXmlConsumers, terminalDeferredFields;
         final int[] phaseJobs=new int[2];
-        long nanos, checkpointNanos;
+        long nanos, checkpointNanos,bootstrapImportNanos;
+        int bootstrapImportedEntries;
         boolean done, limited, initialPass;
         Map<String,Object> completedReport;
         Map<String,Map<String,Object>> previousFacts=new TreeMap<>();
@@ -69,6 +76,7 @@ final class CapabilityEngine {
     ActivityState beginActivity(String activity){
         ActivityState existing=states.get(activity);if(existing!=null)return existing;
         ActivityState state=new ActivityState(activity);states.put(activity,state);
+        ApplicationBootstrap.State snapshot=applicationBootstrap();long importStart=System.nanoTime();snapshot.install(state.host);state.bootstrapImportNanos=System.nanoTime()-importStart;state.bootstrapImportedEntries=snapshot.entryCount();
         long start=System.nanoTime();
         seed(state.host,activity,V.of("host",activity,"activity:"+activity),List.of(activity),false);
         state.nanos+=System.nanoTime()-start;return state;
@@ -179,6 +187,7 @@ final class CapabilityEngine {
             row.put("phase",s==null?0:s.phase+1);row.put("contexts_processed",s==null?0:s.jobs);row.put("pending_contexts",s==null||s.host==null?0:s.host.queue.size());row.put("analysis_seconds",s==null?0:s.nanos/1e9);row.put("slices",s==null?0:s.slices);
             row.put("pending_priority_contexts",s==null||s.host==null?0:s.host.queue.prioritySize());
             row.put("pending_ordinary_contexts",s==null||s.host==null?0:s.host.queue.ordinarySize());
+            row.put("application_bootstrap_import_seconds",s==null?0:s.bootstrapImportNanos/1e9);row.put("application_bootstrap_import_entries",s==null?0:s.bootstrapImportedEntries);
             row.put("pending_method_sample",s==null||s.host==null?List.of():s.host.queue.diagnostics(12));
             row.put("discarded_contexts",s==null?0:s.discardedContexts);row.put("phase_contexts",s==null?List.of(0,0):List.of(s.phaseJobs[0],s.phaseJobs[1]));
             row.put("tracked_xml_consumers",s==null?0:s.host==null?s.terminalXmlConsumers:s.host.xmlConsumers.size());
@@ -209,6 +218,11 @@ final class CapabilityEngine {
                 for(Call call:summary.calls()){
                     Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
+                    if(call.method().equals(StaticReflection.INVOKE)){
+                        List<V> actual=call.args().stream().map(argument->eval(argument,job,h,0,new HashSet<>())).toList();
+                        boolean knownStatic=!actual.isEmpty()&&alternatives(actual.get(0)).stream().anyMatch(value->value.kind().equals("reflect_static_method"));
+                        if(knownStatic||h.activeClientContext==null){StaticReflection.resolve(new V("return",null,call.method(),null,call.args()),actual,this,job,h);continue;}
+                    }
                     if(h.activeManifestEntry!=null&&(call.method().equals(ManifestProtocols.FOR_NAME)||call.method().equals(ManifestProtocols.NEW_INSTANCE))){
                         eval(new V("return_manifest_native:"+call.offset(),call.method().equals(ManifestProtocols.FOR_NAME)?"java.lang.Class":"java.lang.Object",call.method(),null,call.args()),job,h,0,new HashSet<>());continue;
                     }
@@ -225,10 +239,10 @@ final class CapabilityEngine {
                         eval(expr("return_fragment_factory:"+call.offset(),owner(call.method()),call.method(),call.args()),job,h,0,new HashSet<>());continue;
                     }
                     List<AsyncRegistrations.Entry> registrations=async.entries(call.method());
-                    boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner)||idx.classValueCarriers.contains(owner));
+                    boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner)||idx.classValueCarriers.contains(owner)||h.applicationStartup&&idx.subtype(owner,"android.app.Application"));
                     boolean fieldSetter=target!=null&&objectFieldSetter(target);
                     boolean registryWrite=target!=null&&(reflection.writer(target)||idx.keyedRegistryWrites.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.keyedRegistryWrites.contains(CapabilityIndex.key(m))));
-                    boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||h.activeClientContext!=null&&(idx.clientDelegationReachable(target)||reflection.reachable(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
+                    boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||h.activeClientContext!=null&&(idx.clientDelegationReachable(target)||reflection.reachable(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m)))||StaticReflection.reachable(target,this,h));
                     boolean receiverRelevant=false;
                     if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&target!=null&&!call.isStatic()&&!call.args().isEmpty()){
                         V hint=dispatchHint(call.args().get(0),job,h,0);
@@ -929,7 +943,7 @@ final class CapabilityEngine {
         long work;
     }
     long lastRefreshWork;
-    void refreshDeadline(){if(System.nanoTime()>=deadline)throw new RefreshExpired();}
+    void refreshDeadline(){if(System.nanoTime()>=deadline||currentHost!=null&&System.nanoTime()>=currentHost.localDeadline)throw new RefreshExpired();}
     V refreshBinding(V value,Host h,int depth,Set<String> seen){
         RefreshTraversal traversal=new RefreshTraversal();
         try{return refreshBinding(value,h,depth,seen,traversal);}
@@ -1046,7 +1060,7 @@ final class CapabilityEngine {
         }finally{activeEvaluations--;}
     }
     V evalInner(V v,Job job,Host h,int depth,Set<String> visiting){
-        if(System.nanoTime()>deadline){h.gaps.add("global_deadline");return V.of("unknown",v.type(),"global_deadline");}
+        if(System.nanoTime()>Math.min(deadline,h.localDeadline)){String reason=System.nanoTime()>deadline?"global_deadline":"application_bootstrap_time_budget";h.gaps.add(reason);return V.of("unknown",v.type(),reason);}
         if(depth>14){h.gaps.add("resolve_depth");return V.of("unknown",v.type(),"resolve_depth");}
         if(v.kind().equals("param")){int i=Integer.parseInt(v.id());if(i>=job.args.size())return V.of("unknown",v.type(),"parameter");V arg=job.args.get(i);return arg.kind().equals("fragment_view")?fragmentView(arg.args().get(0),job,h,depth+1,visiting):refreshBinding(arg,h,0,new HashSet<>());}
         if(v.kind().equals("fragment_view"))return fragmentView(v.args().get(0),job,h,depth+1,visiting);
@@ -1120,6 +1134,7 @@ final class CapabilityEngine {
         if(v.kind().startsWith("return")){
             if(ManifestProtocols.pure(idx,v.id())){V semantic=ManifestProtocols.resolve(v,this,job,h,0);if(!semantic.equals(UNKNOWN)){if(semantic.kind().equals("unknown")&&semantic.id().startsWith("manifest_class_unresolved:"))h.gaps.add(semantic.id());return semantic.kind().equals("manifest_new")?materializeManifest(semantic,job,h,depth,visiting):semantic;}}
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
+            V staticReflection=StaticReflection.resolve(v,args,this,job,h);if(staticReflection!=null)return staticReflection;
             V reflectiveFactory=ReflectiveFactories.resolve(v,args,this,job,h,depth,visiting);if(reflectiveFactory!=null)return reflectiveFactory;
             if(v.id().equals("Ljava/lang/Class;->getName()Ljava/lang/String;")&&args.size()==1){
                 V result=null;for(V clazz:alternatives(args.get(0)))
@@ -1613,10 +1628,11 @@ final class CapabilityEngine {
         report.put("webviews",new ArrayList<>(views.values()));report.put("limitations",h.gaps.stream().distinct().sorted().toList());return report;
     }
     Map<String,Object> report(String hash,String status,Map<String,Object> metrics){
-        List<Map<String,Object>> unbound=new ArrayList<>();
+        List<Map<String,Object>> unbound=new ArrayList<>();Set<Object> bootstrapSites=new HashSet<>();
+        if(bootstrapState!=null)for(var fact:bootstrapState.facts()){unbound.add(Map.of("reason","application_bootstrap_no_activity_owner","fact",fact));bootstrapSites.add(fact.get("site"));}
         for(String id:idx.seeds){Method m=idx.methods.get(id);if(m==null)continue;Summary s=flow.cache.get(id);
             if(s==null){unbound.add(Map.of("method",id,"reason","not_expanded"));continue;}
-            for(Call call:s.calls())if(kind(call.method())!=null&&!boundSites.contains(id+"@"+call.offset()))unbound.add(Map.of("site",id+"@"+call.offset(),"api",call.method(),"reason","no_activity_owner"));
+            for(Call call:s.calls())if(kind(call.method())!=null&&!boundSites.contains(id+"@"+call.offset())&&!bootstrapSites.contains(id+"@"+call.offset()))unbound.add(Map.of("site",id+"@"+call.offset(),"api",call.method(),"reason","no_activity_owner"));
         }
         Map<String,Object> out=new LinkedHashMap<>();out.put("schema_version",1);out.put("package",apk.packageName);out.put("version",apk.version);out.put("apk_sha256",hash);out.put("status",status);List<Map<String,Object>> snapshots=new ArrayList<>();for(ActivityState state:states.values()){Map<String,Object> snapshot=stateReport(state);if(!((List<?>)snapshot.get("facts")).isEmpty())snapshots.add(snapshot);}out.put("activities",snapshots);out.put("activity_coverage",coverage(apk.activities.isEmpty()?new ArrayList<>(states.keySet()):new ArrayList<>(apk.activities)));out.put("unattributed",unbound);out.put("diagnostics",diagnostics);out.put("index_diagnostics",idx.diagnostics.stream().sorted().toList());out.put("manifest_diagnostics",apk.errors);out.put("metrics",metrics);out.put("semantics","Static binding evidence; explicit does not prove runtime execution. Candidate bindings are retained. Settings are observed operations, not final runtime state.");return out;
     }

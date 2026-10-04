@@ -1,0 +1,264 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": true,
+  "hosts": [
+    "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+    "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity"
+  ],
+  "source_checkpoint": "inneractive-two-host-source-surface-checkpoint.json",
+  "actual_metadata_chain": "onResourceLoaded sdk literalcom.inneractive \u2192CreativeInfoManager.c\u2192privatefixedmap FyberDiscovery extendsd\u2192WEBVIEW_LOOKUP\u2192resourceattachment e.a retaininghostview/address. This branch EXISTS, unlikeTapjoyabsentprovider. Capabilitysurface review: e metadata collections and viewgeometry/getContext/viewIDs; Fyberprovider weakviewmetadata andbaseResponse hookempty; no additionalhostnativeClient/Chrome/setting mutation. SDKwhole category-entry inventory and exactreceiver classification reused independently, not tooloutput.",
+  "sdk_mutation_entries": [
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "line": 308,
+      "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    },
+    {
+      "file": "sources/com/safedk/android/utils/m.java",
+      "line": 218,
+      "text": "Method method = obj.getClass().getMethod(str, new Class[0]);",
+      "sha256": "8b8e1b57b935343e8f10078b4f3a571a94cd927a9468fd07c0c1519d338a7b9c"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+      "line": 141,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/UnityCoreNetworkBridge.java",
+      "line": 132,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "130d83ffb80967af506c2dd8e837eea20838305aa4992e2b2e831dab26d25e00"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/PangleNetworkBridge.java",
+      "line": 145,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "fc13b0dac863b8cd6d177e545414ba393e056788c9cc7154e068cb9d957ce927"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/NetworkBridge.java",
+      "line": 139,
+      "text": "Method declaredMethod = Class.forName(className).getDeclaredMethod(methodName, parametersTypes);",
+      "sha256": "008e29f153dc5a28cd922b30d86d7a5dc8abc27256a502cc4d1ce11fbd91fc08"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/InMobiNetworkBridge.java",
+      "line": 159,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "eb396ca311020320e121616ecaf0bf0919e65c067f04d7aa2799625c13365403"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/UnityAdsNetworkBridge.java",
+      "line": 70,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "97951d2812ae4d19ea7f209ef8d920d56fab58f8f8b5f26a05eb9b02cdb4a377"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/AdMobNetworkBridge.java",
+      "line": 136,
+      "text": "targetInstance.addJavascriptInterface(object, name);",
+      "sha256": "04c15b0ba2ab0e2c90f980cd4a5ed7e742a6fed11dd587155f0245098d21fa12"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/j.java",
+      "line": 207,
+      "text": "webView.getSettings().setJavaScriptEnabled(true);",
+      "sha256": "eb400d947bf66f530a6888466bb9446540d0f64de3295c48cd858d9b75da0568"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/j.java",
+      "line": 208,
+      "text": "webView.setWebViewClient(new AnonymousClass3(str, atomicBoolean, str2, str3, str4));",
+      "sha256": "eb400d947bf66f530a6888466bb9446540d0f64de3295c48cd858d9b75da0568"
+    }
+  ],
+  "reflection_boundaries": [
+    "m.b(Object,String) reflection fixedzeroarguments, no setting/client/interface setters compatible; sourcecapabilitycall inventory has nofollow-up setter on reflectedsettings result.",
+    "NetworkBridge.invokeMethod arbitrarysignature utility declaration; developmentsource reverseindex excludingholdoutbodies foundzeroactualcaller; sourceinventory safedk-reflective-network-entry-source-inventory.json. No dynamicWebSettings invocation asserted."
+  ],
+  "sdk_cross_object_boundary": "SafeDK onlysameview capabilitycreation entry SafeDKWebAppInterface.b(WebView,...) callsaddInterface exactlyknownclass/constant, subsequentJS evalnull callback. Cross-brandpartialonAddJavaInterface callsforwardtheiractualpassedobject/name, notcalledbyInneractive hostcreation/lifecycle. OthernativeJSsetting+Client inSDK URLresolver j.c allocatesNEWWebView(SDKapplicationContext), notcapturedhostview; no sourcebindingtohostprivatefield, globallyunresolveddetachedbackgroundownership excludedfromboundviews.",
+  "negative_candidates": [
+    {
+      "name": "SafeDKWebAppInterface.a(String)",
+      "positive_acceptance": false,
+      "reason": "OnlyremoveSDKtrackingmapo address entry, noWebViewreceiver/no removeJavascriptInterface; doesnoteraseearlieractualBridge registration.",
+      "evidence": [
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 487,
+          "text": "if (o.remove(str) != null) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ]
+    },
+    {
+      "name": "FyberDiscovery.b(WebView,String)",
+      "positive_acceptance": false,
+      "reason": "Actualproviderinheritsdemptybody; do notinventlateconfigurationfromSDKhookname.",
+      "evidence": [
+        {
+          "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+          "line": 1653,
+          "text": "public void b(WebView webView, String str) {",
+          "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+        }
+      ]
+    },
+    {
+      "name": "ReportChrome",
+      "positive_acceptance": false,
+      "reason": "NoReportChromeinstallation anywhereinReport/nativeparent/knownhelpers; InternalinstallsactualeChromeprogress1. DeclarationonanotherSDKobjectnotReportpositive."
+    },
+    {
+      "name": "InternalordinaryURLBridge",
+      "positive_acceptance": false,
+      "reason": "OrdinaryonCreate loadUrl/loadData are rawnativecalls. Actualsameview SDKinterfaceinjection proof ONLYClient f testingcrashurlwrapperbranch; no broadinitialURLwrapperassumption."
+    }
+  ],
+  "settings_inventory": "Report5initial + repeatedzoomtrue2 + synchronousnewutil.o0.run displayfalse =8actualobservations; Internal6initial + repeatedzoomtrue2 + displayfalse =9. Repeatedcalls preservedseparately andsamefieldbindingproven. No runtimeunknownargument concealed asliteral.",
+  "callback_inventory": "Reportinstalleda7 declaredcompatiblemembers; Internalinstalledf7 plusChromee1. DirectnativeWebViewClient/WebChromeClientparents, no SDKwrappersdropcalls. Full actualAPKDEXmembers inventoried ininneractive-safedk-members-source-dex.json. NativeActivityparentInneractiveBase onlywindow/rootinsets/backevent APIs, notWebViewClient slots.",
+  "bridge_inventory": "ReportinitialDTExchangewrapper load knownURL\u2192conditionalSafeDKUIcapture nativeinterface; InternalClientf branchj1.a(URL) testingconfig nonempty +prefixfyberInternalTesting +containscrash\u2192DTExchangewrapper chrome://crash, conditionalinterface. BothoneclassSafeDKWebAppInterface with7annotatedvoidmethods preciseDEXsignatures. No inventedSDKdispatchmethods withoutJavaannotation.",
+  "lifecycle": "DestroyremoveAllViews\u2192utilv.a(View) onlyremoveView(parent)\u2192destroy/null field; Internalpause/resume callutilo.g()/f() BOTHempty andzeroargs, notunreviewedprovider. Reportno additionalpauseconfig. RendererGone callbacksremove/destroyfield; no secondaryhostWebView/newregistration beyondknownconcretecreation.",
+  "source_evidence": [
+    {
+      "file": "sources/com/fyber/inneractive/sdk/util/v.java",
+      "line": 97,
+      "text": "public static void a(View view) {",
+      "sha256": "a37081c9e64e66dc798b5b608fe68b613a7a0b2dba254e5b87def6262c141779"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/util/v.java",
+      "line": 103,
+      "text": "((ViewGroup) view.getParent()).removeView(view);",
+      "sha256": "a37081c9e64e66dc798b5b608fe68b613a7a0b2dba254e5b87def6262c141779"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/util/o.java",
+      "line": 140,
+      "text": "public static void f() {",
+      "sha256": "b9532dd49e4dc87aa680d9eafc65c54e496f9f94d07be13634b873712eaa5d8d"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/util/o.java",
+      "line": 143,
+      "text": "public static void g() {",
+      "sha256": "b9532dd49e4dc87aa680d9eafc65c54e496f9f94d07be13634b873712eaa5d8d"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/FyberDiscovery.java",
+      "line": 677,
+      "text": "return AdNetworkDiscovery.WebViewResourceMatchingMethod.WEBVIEW_LOOKUP;",
+      "sha256": "6299051d5215333916b02a9872ecfd766caebbc3f09d0a157a3c9ce572ff352d"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+      "line": 869,
+      "text": "e.a(str, webView, str2, map);",
+      "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "line": 1272,
+      "text": "next.a((Object) webView);",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    }
+  ],
+  "metadata_files": [
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/FyberDiscovery.java",
+      "sha256": "6299051d5215333916b02a9872ecfd766caebbc3f09d0a157a3c9ce572ff352d"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/e.java",
+      "sha256": "1fc22cc10d5432fb0a22ba2e2988bd91006282a1c71af8cd2597a573d04122d6"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+      "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    }
+  ],
+  "prior_host_files": [
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+      "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/util/o0.java",
+      "sha256": "0c39e1183eb7884ee8a82da4c28e4d28f136f24e5f047584d5c4f332fcef17b1"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+      "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveBaseActivity.java",
+      "sha256": "98a29202194382727f551753a2b18d10381c08a70da0470b6ca47e999364a5c1"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+      "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/e.java",
+      "sha256": "e9af482f885cd6dfc45707c93a0b2a2b9d162d3bd504f1286662a6af12260413"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+      "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/g.java",
+      "sha256": "a6df32e9502d7fac8c89d9affbf558cd9f376908dc324f111557b5b83f8945eb"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/h.java",
+      "sha256": "8cf98f57a2cf6495ba8a470778cc3f367cc26d93a2703064d07f86d48ac2774e"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/i.java",
+      "sha256": "cc1c2b74cd993fb2694881188935f4509e098bb16c313ae0472ebbd7f9e2aa1f"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/j.java",
+      "sha256": "f8d9c13a307f4b0406099bafa447176f1d4f5c45b88e340e1f31777d35cda719"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/k.java",
+      "sha256": "741e37ba80ec5010f4ec8cfeb1d780ef74d8df44922aa217d9e608e3f4681f2d"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/l.java",
+      "sha256": "20af5ed12a5b59fc8e3f0cf8d993ee5753ffb905bb002a6e0f095b01426389a7"
+    }
+  ],
+  "complete_scope": "ActualcurrentbaseAPK boundhostWebViewBridge/Settings/Clientcallbackcategorysurface; scopeclosure isnot recursivebusinesssemantics nor globalSDKdetachedhelper ownership resolution.",
+  "remaining_runtime_conditions": [
+    "SafeDKenabledmode/scriptconfig andruntimeurl/event timing retainedexplicitly; actualAPIclasses/valuesknown. Internaltestsystemproperty may beabsent at runtime but branch remainsconditionalpositive."
+  ],
+  "app_acceptance_limits": [
+    "18sourcepositive of164Manifest isnotexhaustive inventory/\u226530gate.",
+    "SDKglobaldetachedfreshURLresolver ownershipgloballyunresolved, notassigned toexistinghostreceiver."
+  ]
+}

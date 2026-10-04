@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "acceptance_claim": false,
+  "scope": "synthetic independent heap and queued-receiver diagnostics",
+  "artifacts": [
+    {
+      "path": "test/diagnostics/FragmentReceiverTrace.java",
+      "sha256": "44eba427e4b18ca7d968587407b4431c973bbe15982fbf4495d9f5d8df1b3c31"
+    },
+    {
+      "path": "test/runs/xigua-fragment-trace-v12/frozen-installed.txt",
+      "sha256": "38f93a5a2441cc99985a0e49bb53a61c9c097f209ff13ff8c44979d00f7e3b8e"
+    },
+    {
+      "path": "test/runs/xigua-fragment-trace-v12/experimental-installed.txt",
+      "sha256": "38f93a5a2441cc99985a0e49bb53a61c9c097f209ff13ff8c44979d00f7e3b8e"
+    },
+    {
+      "path": "test/runs/xigua-fragment-trace-v12/experimental-injected.txt",
+      "sha256": "7d56da7ef0fc935fb12704407cda9ad72e3c6f2b4faabc19899c9e767d1176a9"
+    },
+    {
+      "path": "test/runs/lifecycle-root-diagnostic/experimental/CapabilityEngine.java",
+      "sha256": "59259f1007b615ad497b541899f2fc1fbb89396906a55b6fd4af04d5613f3024"
+    },
+    {
+      "path": "test/runs/lifecycle-root-diagnostic/experimental/org/example/CapabilityEngine.class",
+      "sha256": "ce4ad7881b9c677ab914e962f1dcb350303b6b04b1fbe24c1f812a3db5a8542f"
+    },
+    {
+      "path": "test/runs/generic-v12.jar",
+      "sha256": "153037dce2e818432ee3e555064c5d55cf5860a2ff0672f6c9c6e1ab1bbce6c6"
+    }
+  ],
+  "observations": {
+    "test/runs/xigua-fragment-trace-v12/frozen-installed.txt": {
+      "categories": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "lifecycle_jobs": [],
+      "delegate_heap": [
+        "HEAP Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34|activity:container.Host::Lcontainer/LifecycleFragment;->delegate:Lcontainer/ReadyCallback;=V[kind=object, type=container.Dispatcher, id=Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@29|activity:container.Host, literal=null, args=[]]"
+      ],
+      "interventions": [],
+      "diagnostics": [
+        "DIAG []"
+      ]
+    },
+    "test/runs/xigua-fragment-trace-v12/experimental-installed.txt": {
+      "categories": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "lifecycle_jobs": [],
+      "delegate_heap": [
+        "HEAP Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34|activity:container.Host::Lcontainer/LifecycleFragment;->delegate:Lcontainer/ReadyCallback;=V[kind=object, type=container.Dispatcher, id=Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@29|activity:container.Host, literal=null, args=[]]"
+      ],
+      "interventions": [],
+      "diagnostics": [
+        "DIAG []"
+      ]
+    },
+    "test/runs/xigua-fragment-trace-v12/experimental-injected.txt": {
+      "categories": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      },
+      "lifecycle_jobs": [
+        "JOB Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V ARGS [V[kind=object, type=container.LifecycleFragment, id=Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34|activity:container.Host, literal=null, args=[]], V[kind=unknown, type=android.os.Bundle, id=diagnostic_actual_state, literal=null, args=[]]] PATH [diagnostic_actual_installed_fragment, Lcontainer/LifecycleFragment;->onActivityCreated(Landroid/os/Bundle;)V]"
+      ],
+      "delegate_heap": [
+        "HEAP Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34|activity:container.Host::Lcontainer/LifecycleFragment;->delegate:Lcontainer/ReadyCallback;=V[kind=object, type=container.Dispatcher, id=Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@29|activity:container.Host, literal=null, args=[]]"
+      ],
+      "interventions": [
+        "INTERVENTION actual_receiver=V[kind=object, type=container.LifecycleFragment, id=Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@34|activity:container.Host, literal=null, args=[]] relevance=false"
+      ],
+      "diagnostics": [
+        "DIAG []"
+      ]
+    }
+  },
+  "conclusion": "No alternate lifecycle receiver ID was observed: there is no lifecycle job in baseline. Real allocation and setDelegate receiver share ID and heap. componentEntry true, receiver relevance false. Diagnostic explicit same-ID lifecycle enqueue recovers all three categories in experimental constructor-capture engine.",
+  "minimal_fix_boundary": "Use actual installed component provenance and actual field-held delegate graph for lifecycle relevance; do not seed all allocated uninstalled fragments or apply Scene/App-specific rules.",
+  "limitations": [
+    "Injection is diagnostic intervention, not frozen engine or actual APK recovery.",
+    "Separate uninstalled-fragment false positive remains and must be tested.",
+    "Actual App queue unfinished/budget remains independent."
+  ]
+}

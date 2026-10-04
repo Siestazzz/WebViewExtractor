@@ -1,0 +1,121 @@
+{
+  "status": "isolated_experiment_not_production",
+  "base_jar_sha256": "153037dce2e818432ee3e555064c5d55cf5860a2ff0672f6c9c6e1ab1bbce6c6",
+  "base_engine_sha256": "e04d90952439966171726920eaca40924c8ac38001b5cdcb27582cae6c48d6e3",
+  "experimental_engine_sha256": "7f9a6c714f0df4557e9c82a4cfdd75b6af7f852d1c1610bd3956410e725ef55c",
+  "cases": [
+    {
+      "case": "direct-node",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-unconditional",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-new",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-nodefield",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-valueparam",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-concrete",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-new",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-unconditional",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "installed",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    },
+    {
+      "case": "late-setter",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    },
+    {
+      "case": "uninstalled",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    },
+    {
+      "case": "wrong-selector",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    }
+  ],
+  "note": "First experiment uses the probe before explicit container setId correction; rerun the corrected probe before treating installed Fragment semantics as valid. Direct factory cases are unchanged by that correction. No real-App recovery claim."
+}

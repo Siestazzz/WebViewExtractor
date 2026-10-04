@@ -1,0 +1,125 @@
+{
+  "status": "isolated_experiment_not_production",
+  "base_jar_sha256": "153037dce2e818432ee3e555064c5d55cf5860a2ff0672f6c9c6e1ab1bbce6c6",
+  "fixture_sha256": "2d140acd8e3c0bdb377cbb688c27e767c08688c23fdb1e0531f0e3cc919467b1",
+  "experimental_engine_sha256": "59259f1007b615ad497b541899f2fc1fbb89396906a55b6fd4af04d5613f3024",
+  "cases": [
+    {
+      "case": "direct-node",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-unconditional",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-new",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-nodefield",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-call-valueparam",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-concrete",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-factory-new",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct-unconditional",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "direct",
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      }
+    },
+    {
+      "case": "installed",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    },
+    {
+      "case": "late-setter",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    },
+    {
+      "case": "uninstalled",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    },
+    {
+      "case": "wrong-selector",
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      }
+    }
+  ],
+  "constructor_time_regression": {
+    "lazy_argument_expressions": "FAIL: binds new-content after outer field overwrite",
+    "allocation_time_argument_values": "PASS: retains old-content"
+  },
+  "note": "Corrected fixture uses standard onCreate(Bundle) and owned container setId matching FragmentTransaction.add. Installed Fragment paths still missing; no App recovery claim."
+}

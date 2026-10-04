@@ -1,0 +1,298 @@
+{
+  "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": true,
+  "categories": {
+    "bridge": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 8,
+      "members_or_calls": [
+        {
+          "kind": "bridge",
+          "name": "SafeDKWebAppInterface",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": "SafeDKWebAppInterface",
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "postMessage",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->postMessage(Ljava/lang/String;)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "logMessage",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->logMessage(Ljava/lang/String;)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "interceptXmlHttpRequest",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->interceptXmlHttpRequest(Ljava/lang/String;)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "requestNoSampling",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->requestNoSampling(Ljava/lang/String;Ljava/lang/String;II)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "setContent",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setContent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "setComments",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setComments(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        },
+        {
+          "kind": "bridge_method",
+          "name": "onResourcesCollected",
+          "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->onResourcesCollected(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "value_kind": "literal",
+          "value": null,
+          "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+        }
+      ]
+    },
+    "setting": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 8,
+      "members_or_calls": [
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadWithOverviewMode",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": "Second actual configuration call in disableWebviewZoomControls, initial calls retained."
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": true,
+          "condition": "Second actual configuration call in disableWebviewZoomControls, initial calls retained."
+        },
+        {
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "normalized_signature": null,
+          "value_kind": "literal",
+          "value": false,
+          "condition": "Explicit synchronous o0.run on sameWebView argument, no scheduler uncertainty."
+        }
+      ]
+    },
+    "callback": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 8,
+      "members_or_calls": [
+        {
+          "kind": "callback_registration",
+          "name": "setWebViewClient",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "normalized_signature": null,
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "onLoadResource",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "onPageStarted",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "onPageFinished",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "onReceivedError",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "shouldInterceptRequest",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "shouldOverrideUrlLoading",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        },
+        {
+          "kind": "callback",
+          "name": "onRenderProcessGone",
+          "implementation": "com.fyber.inneractive.sdk.activities.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+          "value_kind": null,
+          "value": null,
+          "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+        }
+      ]
+    }
+  },
+  "shared_proof": "inneractive-shared-sdk-retained-surface-closure.json",
+  "host_binding_evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1441,
+      "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "line": 73,
+      "text": "setContentView(a());",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "line": 110,
+      "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "line": 137,
+      "text": "frameLayout.addView(webView, -1, -1);",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    }
+  ]
+}

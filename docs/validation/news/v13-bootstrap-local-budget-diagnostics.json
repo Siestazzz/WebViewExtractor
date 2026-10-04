@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "scope": "isolated actual-APK bootstrap performance diagnosis, no Activity analysis",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "artifacts": [
+    {
+      "path": "test/runs/generic-v13.jar",
+      "sha256": "893801996f1b4822fdeb79c006544527e071a2b381d743c913025cb03ec2f22a"
+    },
+    {
+      "path": "test/diagnostics/BootstrapTimingProbe.java",
+      "sha256": "661898ca8f6cfc27201d40a05393d265e9510322fa4e9a3eaf370535171d12ab"
+    },
+    {
+      "path": "test/runs/news-bootstrap-probe-v13/timing-stacks.txt",
+      "sha256": "67f8f31273a6283687e8a4e07a9fd1a93d0a452d475a0bfbddaa38054a55fe83"
+    },
+    {
+      "path": "test/runs/news-bootstrap-probe-v13/ReflectionProtocols.javap.txt",
+      "sha256": "e3edad3351c7300a11345f3faa1727bd38a8dd3c0b8e0b08468648f48bdb0139"
+    },
+    {
+      "path": "test/runs/news-bootstrap-probe-v13/ApplicationBootstrap.javap.txt",
+      "sha256": "5b1a9b38b3fdc80b6af3a04b5953bb656af6a545949fc786e2e18a1b775948b3"
+    },
+    {
+      "path": "test/runs/news-bootstrap-probe-v13/CapabilityEngine.javap.txt",
+      "sha256": "ad4c5404d6dfdc3c0df6aadd17d87dc577c0b7f5f56972789f82a5f858cb5ce5"
+    }
+  ],
+  "timing": {
+    "index_seconds": 57.04726623,
+    "bootstrap_wall_seconds": 12.405046526,
+    "bootstrap_main_thread_cpu_seconds": 12.155224846,
+    "local_bootstrap_budget_seconds": 1,
+    "contexts": 1,
+    "static_heap": 0
+  },
+  "first_entry": {
+    "method": "Lcom/tencent/news/system/TNApplication;-><init>()V",
+    "basis": "frozen ApplicationBootstrap javap orders constructor first; diagnostic contexts=1; observed stack processJob->writer"
+  },
+  "retained_top30_sample_counts": {
+    "ReflectionProtocols.discoverFields": 503,
+    "DexFlow.decode": 270,
+    "CapabilityEngine.prepareLayouts": 0
+  },
+  "retained_samples_total": 503,
+  "sample_period_ms": 10,
+  "sampling_limit": "Top30 distinct stacks retained; counts are not fractions of all samples or exact CPU attribution.",
+  "root_cause": "First processJob evaluates reflection.writer(target), which lazily invokes discoverFields over all indexed methods. That discovery runs plans/flow.summary/decode and second-pass map/subtype predicates under shared/global deadline rather than host.localDeadline in frozen v13.",
+  "minimum_generic_boundary": [
+    "Propagate caller localDeadline through discovery, summary decode and expensive per-method/per-call operations.",
+    "Do not mark partial discovery complete or cache partial negatives after expiration.",
+    "Prefer cheap exact Map put signature checks before repeated type hierarchy queries, with bounded/cached hierarchy work.",
+    "Static-discovery work may be shared; its accounting and initialization must be explicit rather than hidden in an atomic method context."
+  ],
+  "acceptance_claim": false,
+  "limitations": [
+    "Single run only; concurrent batch load differs from original15.3857s.",
+    "Sampling helper uses10ms daemon and adds overhead; CPU/wall near-equality supports CPU-bound work rather than queue waiting.",
+    "No claim all bootstrap missing state is due only to performance.",
+    "Production source changed while sampling; frozen jar javap is authoritative for this diagnosis."
+  ]
+}

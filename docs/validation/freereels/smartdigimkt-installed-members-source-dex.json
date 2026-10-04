@@ -1,0 +1,903 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "parse_method": "DEX class_defs/class_data encoded method declarations, method_ids/proto_ids/type_ids/string_ids; all interface declarations, no name-based callback inference.",
+  "classes": [
+    {
+      "class_descriptor": "Lcom/smartdigimkt/b6/f$a;",
+      "superclass_descriptor": "Landroid/webkit/WebChromeClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1594892,
+      "class_access_flags": 0,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/smartdigimkt/b6/f.java",
+      "source_sha256": "3d0d17c17c97f3ea18be2f63fa5deceefaa9ac060e1a49f83d57ce19546871aa",
+      "methods": [
+        {
+          "method_id": 47406,
+          "method_id_offset": 1213932,
+          "access_flags": 65537,
+          "code_offset": 9033000,
+          "name": "<init>",
+          "descriptor": "(Landroid/webkit/WebChromeClient;)V"
+        },
+        {
+          "method_id": 47407,
+          "method_id_offset": 1213940,
+          "access_flags": 1,
+          "code_offset": 9033028,
+          "name": "onConsoleMessage",
+          "descriptor": "(Landroid/webkit/ConsoleMessage;)Z"
+        },
+        {
+          "method_id": 47408,
+          "method_id_offset": 1213948,
+          "access_flags": 1,
+          "code_offset": 9033068,
+          "name": "onJsAlert",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 47409,
+          "method_id_offset": 1213956,
+          "access_flags": 1,
+          "code_offset": 9033096,
+          "name": "onJsBeforeUnload",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 47410,
+          "method_id_offset": 1213964,
+          "access_flags": 1,
+          "code_offset": 9033124,
+          "name": "onJsConfirm",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        },
+        {
+          "method_id": 47411,
+          "method_id_offset": 1213972,
+          "access_flags": 1,
+          "code_offset": 9033152,
+          "name": "onJsPrompt",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/smartdigimkt/sdk/basead/ui/web/BaseWebView;",
+      "superclass_descriptor": "Landroid/webkit/WebView;",
+      "interface_descriptors": [],
+      "class_def_offset": 1611020,
+      "class_access_flags": 1,
+      "dex": "classes2.dex",
+      "dex_sha256": "f1687447a452c400fcfb6a1ece247c474698eadf1709f2e92b92982e418ec3f6",
+      "source_file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "source_sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55",
+      "methods": [
+        {
+          "method_id": 49908,
+          "method_id_offset": 1227644,
+          "access_flags": 65537,
+          "code_offset": 9177692,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;)V"
+        },
+        {
+          "method_id": 49909,
+          "method_id_offset": 1227652,
+          "access_flags": 65537,
+          "code_offset": 9177724,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Landroid/util/AttributeSet;)V"
+        },
+        {
+          "method_id": 49910,
+          "method_id_offset": 1227660,
+          "access_flags": 65537,
+          "code_offset": 9177756,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Landroid/util/AttributeSet;I)V"
+        },
+        {
+          "method_id": 49912,
+          "method_id_offset": 1227676,
+          "access_flags": 2,
+          "code_offset": 9177788,
+          "name": "a",
+          "descriptor": "(Landroid/content/Context;)V"
+        },
+        {
+          "method_id": 49914,
+          "method_id_offset": 1227692,
+          "access_flags": 2,
+          "code_offset": 9177808,
+          "name": "c",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49911,
+          "method_id_offset": 1227668,
+          "access_flags": 1,
+          "code_offset": 9177884,
+          "name": "a",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49913,
+          "method_id_offset": 1227684,
+          "access_flags": 1,
+          "code_offset": 9177948,
+          "name": "b",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49915,
+          "method_id_offset": 1227700,
+          "access_flags": 1,
+          "code_offset": 9178012,
+          "name": "destroy",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49916,
+          "method_id_offset": 1227708,
+          "access_flags": 1,
+          "code_offset": 9178124,
+          "name": "isDestroyed",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 49917,
+          "method_id_offset": 1227716,
+          "access_flags": 1,
+          "code_offset": 9178148,
+          "name": "onAttachedToWindow",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/smartdigimkt/c6/a;",
+      "superclass_descriptor": "Landroid/webkit/WebViewClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1610932,
+      "class_access_flags": 1,
+      "dex": "classes4.dex",
+      "dex_sha256": "9f4e7a075c5fe23755b698b1f3efd425be6b17ce855465e4b23b9b6edfee0315",
+      "source_file": "sources/com/smartdigimkt/c6/a.java",
+      "source_sha256": "deaebdcf91fb6d0285af102257aa7bc46efe19d132baf70b6f9e3283f94fcc38",
+      "methods": [
+        {
+          "method_id": 45950,
+          "method_id_offset": 1167900,
+          "access_flags": 65537,
+          "code_offset": 9920228,
+          "name": "<init>",
+          "descriptor": "(Lcom/smartdigimkt/c6/b;)V"
+        },
+        {
+          "method_id": 45952,
+          "method_id_offset": 1167916,
+          "access_flags": 2,
+          "code_offset": 9920276,
+          "name": "a",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 45951,
+          "method_id_offset": 1167908,
+          "access_flags": 1,
+          "code_offset": 9920420,
+          "name": "a",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 45953,
+          "method_id_offset": 1167924,
+          "access_flags": 1,
+          "code_offset": 9920512,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 45954,
+          "method_id_offset": 1167932,
+          "access_flags": 1,
+          "code_offset": 9920552,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 45955,
+          "method_id_offset": 1167940,
+          "access_flags": 1,
+          "code_offset": 9920620,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 45956,
+          "method_id_offset": 1167948,
+          "access_flags": 1,
+          "code_offset": 9920652,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 45957,
+          "method_id_offset": 1167956,
+          "access_flags": 1,
+          "code_offset": 9920688,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/smartdigimkt/c6/b;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1610964,
+      "class_access_flags": 1537,
+      "dex": "classes4.dex",
+      "dex_sha256": "9f4e7a075c5fe23755b698b1f3efd425be6b17ce855465e4b23b9b6edfee0315",
+      "source_file": "sources/com/smartdigimkt/c6/b.java",
+      "source_sha256": "a873234ccfd40764fc8dd9d0b37d88278a1228cda87c4223a46631be72305637",
+      "methods": [
+        {
+          "method_id": 45958,
+          "method_id_offset": 1167964,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "callbackClickResult",
+          "descriptor": "(Lcom/smartdigimkt/x6/o;)V"
+        },
+        {
+          "method_id": 45959,
+          "method_id_offset": 1167972,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "getBaseAdContent",
+          "descriptor": "()Lcom/smartdigimkt/x6/f;"
+        },
+        {
+          "method_id": 45960,
+          "method_id_offset": 1167980,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "getBaseAdRequestInfo",
+          "descriptor": "()Lcom/smartdigimkt/w6/a;"
+        },
+        {
+          "method_id": 45961,
+          "method_id_offset": 1167988,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "getOriginalUrl",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 45962,
+          "method_id_offset": 1167996,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "getWebProgressBarView",
+          "descriptor": "()Lcom/smartdigimkt/sdk/basead/ui/web/WebProgressBarView;"
+        },
+        {
+          "method_id": 45963,
+          "method_id_offset": 1168004,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onWebFinish",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 45964,
+          "method_id_offset": 1168012,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onWebPageFinish",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 45965,
+          "method_id_offset": 1168020,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onWebPageLoadError",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 45966,
+          "method_id_offset": 1168028,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onWebPageStart",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 45967,
+          "method_id_offset": 1168036,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "recordRedirectUrl",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 45968,
+          "method_id_offset": 1168044,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "supportDeeplinkJump",
+          "descriptor": "()Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$c;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/webkit/DownloadListener;"
+      ],
+      "class_def_offset": 1552620,
+      "class_access_flags": 0,
+      "dex": "classes9.dex",
+      "dex_sha256": "ce2c8462a58280bdd3c226dcbe0b2115be0f0e07c1dcaacee79cff4f5934bc03",
+      "source_file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "source_sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f",
+      "methods": [
+        {
+          "method_id": 46456,
+          "method_id_offset": 1192116,
+          "access_flags": 65537,
+          "code_offset": 8319276,
+          "name": "<init>",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)V"
+        },
+        {
+          "method_id": 46457,
+          "method_id_offset": 1192124,
+          "access_flags": 1,
+          "code_offset": 8319304,
+          "name": "onDownloadStart",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$h;",
+      "superclass_descriptor": "Landroid/webkit/WebChromeClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1552812,
+      "class_access_flags": 0,
+      "dex": "classes9.dex",
+      "dex_sha256": "ce2c8462a58280bdd3c226dcbe0b2115be0f0e07c1dcaacee79cff4f5934bc03",
+      "source_file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "source_sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f",
+      "methods": [
+        {
+          "method_id": 46468,
+          "method_id_offset": 1192212,
+          "access_flags": 65537,
+          "code_offset": 8320316,
+          "name": "<init>",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)V"
+        },
+        {
+          "method_id": 46473,
+          "method_id_offset": 1192252,
+          "access_flags": 9,
+          "code_offset": 8320344,
+          "name": "safedk_Activity_startActivityForResult_206f42f0b65887e835d87ee52d14d221",
+          "descriptor": "(Landroid/app/Activity;Landroid/content/Intent;I)V"
+        },
+        {
+          "method_id": 46469,
+          "method_id_offset": 1192220,
+          "access_flags": 1,
+          "code_offset": 8320384,
+          "name": "onGeolocationPermissionsShowPrompt",
+          "descriptor": "(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V"
+        },
+        {
+          "method_id": 46470,
+          "method_id_offset": 1192228,
+          "access_flags": 1,
+          "code_offset": 8320420,
+          "name": "onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        },
+        {
+          "method_id": 46471,
+          "method_id_offset": 1192236,
+          "access_flags": 1,
+          "code_offset": 8320604,
+          "name": "onReceivedTitle",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46472,
+          "method_id_offset": 1192244,
+          "access_flags": 1,
+          "code_offset": 8320716,
+          "name": "onShowFileChooser",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;",
+      "superclass_descriptor": "Landroid/app/Activity;",
+      "interface_descriptors": [
+        "Lcom/smartdigimkt/c6/b;"
+      ],
+      "class_def_offset": 1552908,
+      "class_access_flags": 1,
+      "dex": "classes9.dex",
+      "dex_sha256": "ce2c8462a58280bdd3c226dcbe0b2115be0f0e07c1dcaacee79cff4f5934bc03",
+      "source_file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "source_sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f",
+      "methods": [
+        {
+          "method_id": 46478,
+          "method_id_offset": 1192292,
+          "access_flags": 65537,
+          "code_offset": 8321120,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46479,
+          "method_id_offset": 1192300,
+          "access_flags": 4105,
+          "code_offset": 8321236,
+          "name": "a",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;I)I"
+        },
+        {
+          "method_id": 46480,
+          "method_id_offset": 1192308,
+          "access_flags": 4105,
+          "code_offset": 8321260,
+          "name": "a",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;Landroid/webkit/ValueCallback;)Landroid/webkit/ValueCallback;"
+        },
+        {
+          "method_id": 46481,
+          "method_id_offset": 1192316,
+          "access_flags": 2,
+          "code_offset": 8321284,
+          "name": "a",
+          "descriptor": "(Landroid/graphics/drawable/Drawable;)Landroid/widget/ImageView;"
+        },
+        {
+          "method_id": 46482,
+          "method_id_offset": 1192324,
+          "access_flags": 2,
+          "code_offset": 8321408,
+          "name": "a",
+          "descriptor": "()Landroid/widget/RelativeLayout;"
+        },
+        {
+          "method_id": 46483,
+          "method_id_offset": 1192332,
+          "access_flags": 4105,
+          "code_offset": 8321988,
+          "name": "a",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Lcom/smartdigimkt/sdk/basead/ui/web/WebLoadFailRefrshView;"
+        },
+        {
+          "method_id": 46484,
+          "method_id_offset": 1192340,
+          "access_flags": 9,
+          "code_offset": 8322012,
+          "name": "a",
+          "descriptor": "(Landroid/content/Context;Lcom/smartdigimkt/x6/c;)V"
+        },
+        {
+          "method_id": 46485,
+          "method_id_offset": 1192348,
+          "access_flags": 9,
+          "code_offset": 8322168,
+          "name": "a",
+          "descriptor": "(Landroid/content/Context;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46486,
+          "method_id_offset": 1192356,
+          "access_flags": 4105,
+          "code_offset": 8322208,
+          "name": "a",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 46487,
+          "method_id_offset": 1192364,
+          "access_flags": 2,
+          "code_offset": 8322232,
+          "name": "a",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46488,
+          "method_id_offset": 1192372,
+          "access_flags": 2,
+          "code_offset": 8322336,
+          "name": "a",
+          "descriptor": "(Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 46489,
+          "method_id_offset": 1192380,
+          "access_flags": 2,
+          "code_offset": 8322376,
+          "name": "a",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 46490,
+          "method_id_offset": 1192388,
+          "access_flags": 4105,
+          "code_offset": 8322396,
+          "name": "a",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;Z)Z"
+        },
+        {
+          "method_id": 46491,
+          "method_id_offset": 1192396,
+          "access_flags": 4105,
+          "code_offset": 8322420,
+          "name": "b",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;I)I"
+        },
+        {
+          "method_id": 46492,
+          "method_id_offset": 1192404,
+          "access_flags": 4105,
+          "code_offset": 8322444,
+          "name": "b",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Landroid/webkit/WebView;"
+        },
+        {
+          "method_id": 46493,
+          "method_id_offset": 1192412,
+          "access_flags": 2,
+          "code_offset": 8322468,
+          "name": "b",
+          "descriptor": "()Landroid/widget/TextView;"
+        },
+        {
+          "method_id": 46494,
+          "method_id_offset": 1192420,
+          "access_flags": 4105,
+          "code_offset": 8322592,
+          "name": "b",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 46495,
+          "method_id_offset": 1192428,
+          "access_flags": 2,
+          "code_offset": 8322616,
+          "name": "b",
+          "descriptor": "(Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 46496,
+          "method_id_offset": 1192436,
+          "access_flags": 2,
+          "code_offset": 8322804,
+          "name": "b",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 46497,
+          "method_id_offset": 1192444,
+          "access_flags": 2,
+          "code_offset": 8322824,
+          "name": "c",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46498,
+          "method_id_offset": 1192452,
+          "access_flags": 4105,
+          "code_offset": 8322884,
+          "name": "c",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)V"
+        },
+        {
+          "method_id": 46500,
+          "method_id_offset": 1192468,
+          "access_flags": 4105,
+          "code_offset": 8322908,
+          "name": "d",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Lcom/smartdigimkt/sdk/basead/ui/web/WebProgressBarView;"
+        },
+        {
+          "method_id": 46501,
+          "method_id_offset": 1192476,
+          "access_flags": 2,
+          "code_offset": 8322932,
+          "name": "d",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46503,
+          "method_id_offset": 1192492,
+          "access_flags": 4105,
+          "code_offset": 8322996,
+          "name": "e",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Landroid/animation/ValueAnimator;"
+        },
+        {
+          "method_id": 46504,
+          "method_id_offset": 1192500,
+          "access_flags": 2,
+          "code_offset": 8323020,
+          "name": "e",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 46505,
+          "method_id_offset": 1192508,
+          "access_flags": 4105,
+          "code_offset": 8323072,
+          "name": "f",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Landroid/widget/TextView;"
+        },
+        {
+          "method_id": 46506,
+          "method_id_offset": 1192516,
+          "access_flags": 2,
+          "code_offset": 8323096,
+          "name": "f",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46508,
+          "method_id_offset": 1192532,
+          "access_flags": 4105,
+          "code_offset": 8323452,
+          "name": "g",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Ljava/lang/String;"
+        },
+        {
+          "method_id": 46513,
+          "method_id_offset": 1192572,
+          "access_flags": 4105,
+          "code_offset": 8323476,
+          "name": "h",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)V"
+        },
+        {
+          "method_id": 46514,
+          "method_id_offset": 1192580,
+          "access_flags": 4105,
+          "code_offset": 8323500,
+          "name": "i",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)I"
+        },
+        {
+          "method_id": 46515,
+          "method_id_offset": 1192588,
+          "access_flags": 4105,
+          "code_offset": 8323524,
+          "name": "j",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Ljava/util/Random;"
+        },
+        {
+          "method_id": 46516,
+          "method_id_offset": 1192596,
+          "access_flags": 4105,
+          "code_offset": 8323548,
+          "name": "k",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Lcom/smartdigimkt/w6/a;"
+        },
+        {
+          "method_id": 46517,
+          "method_id_offset": 1192604,
+          "access_flags": 4105,
+          "code_offset": 8323572,
+          "name": "l",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Lcom/smartdigimkt/x6/f;"
+        },
+        {
+          "method_id": 46518,
+          "method_id_offset": 1192612,
+          "access_flags": 4105,
+          "code_offset": 8323596,
+          "name": "m",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Lcom/smartdigimkt/sdk/api/IOfferClickHandler;"
+        },
+        {
+          "method_id": 46519,
+          "method_id_offset": 1192620,
+          "access_flags": 4105,
+          "code_offset": 8323620,
+          "name": "n",
+          "descriptor": "(Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;)Z"
+        },
+        {
+          "method_id": 46532,
+          "method_id_offset": 1192724,
+          "access_flags": 9,
+          "code_offset": 8323648,
+          "name": "safedk_Context_startActivity_97cb3195734cf5c9cc3418feeafa6dd6",
+          "descriptor": "(Landroid/content/Context;Landroid/content/Intent;)V"
+        },
+        {
+          "method_id": 46499,
+          "method_id_offset": 1192460,
+          "access_flags": 1,
+          "code_offset": 8323688,
+          "name": "callbackClickResult",
+          "descriptor": "(Lcom/smartdigimkt/x6/o;)V"
+        },
+        {
+          "method_id": 46502,
+          "method_id_offset": 1192484,
+          "access_flags": 1,
+          "code_offset": 8323808,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 46507,
+          "method_id_offset": 1192524,
+          "access_flags": 1,
+          "code_offset": 8323864,
+          "name": "finish",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46509,
+          "method_id_offset": 1192540,
+          "access_flags": 1,
+          "code_offset": 8324096,
+          "name": "getBaseAdContent",
+          "descriptor": "()Lcom/smartdigimkt/x6/f;"
+        },
+        {
+          "method_id": 46510,
+          "method_id_offset": 1192548,
+          "access_flags": 1,
+          "code_offset": 8324120,
+          "name": "getBaseAdRequestInfo",
+          "descriptor": "()Lcom/smartdigimkt/w6/a;"
+        },
+        {
+          "method_id": 46511,
+          "method_id_offset": 1192556,
+          "access_flags": 1,
+          "code_offset": 8324144,
+          "name": "getOriginalUrl",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 46512,
+          "method_id_offset": 1192564,
+          "access_flags": 1,
+          "code_offset": 8324168,
+          "name": "getWebProgressBarView",
+          "descriptor": "()Lcom/smartdigimkt/sdk/basead/ui/web/WebProgressBarView;"
+        },
+        {
+          "method_id": 46520,
+          "method_id_offset": 1192628,
+          "access_flags": 1,
+          "code_offset": 8324192,
+          "name": "onActivityResult",
+          "descriptor": "(IILandroid/content/Intent;)V"
+        },
+        {
+          "method_id": 46521,
+          "method_id_offset": 1192636,
+          "access_flags": 1,
+          "code_offset": 8324400,
+          "name": "onBackPressed",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46522,
+          "method_id_offset": 1192644,
+          "access_flags": 1,
+          "code_offset": 8324456,
+          "name": "onCreate",
+          "descriptor": "(Landroid/os/Bundle;)V"
+        },
+        {
+          "method_id": 46523,
+          "method_id_offset": 1192652,
+          "access_flags": 1,
+          "code_offset": 8324748,
+          "name": "onDestroy",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46524,
+          "method_id_offset": 1192660,
+          "access_flags": 1,
+          "code_offset": 8324936,
+          "name": "onPause",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46525,
+          "method_id_offset": 1192668,
+          "access_flags": 1,
+          "code_offset": 8325008,
+          "name": "onResume",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46526,
+          "method_id_offset": 1192676,
+          "access_flags": 1,
+          "code_offset": 8325080,
+          "name": "onStart",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46527,
+          "method_id_offset": 1192684,
+          "access_flags": 1,
+          "code_offset": 8325104,
+          "name": "onWebFinish",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 46528,
+          "method_id_offset": 1192692,
+          "access_flags": 1,
+          "code_offset": 8325128,
+          "name": "onWebPageFinish",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46529,
+          "method_id_offset": 1192700,
+          "access_flags": 1,
+          "code_offset": 8325372,
+          "name": "onWebPageLoadError",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46530,
+          "method_id_offset": 1192708,
+          "access_flags": 1,
+          "code_offset": 8325516,
+          "name": "onWebPageStart",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46531,
+          "method_id_offset": 1192716,
+          "access_flags": 1,
+          "code_offset": 8325680,
+          "name": "recordRedirectUrl",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 46533,
+          "method_id_offset": 1192732,
+          "access_flags": 1,
+          "code_offset": 8325944,
+          "name": "supportDeeplinkJump",
+          "descriptor": "()Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    }
+  ]
+}

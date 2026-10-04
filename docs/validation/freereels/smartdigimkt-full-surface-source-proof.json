@@ -1,0 +1,830 @@
+{
+  "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": true,
+  "categories": {
+    "bridge": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 0,
+      "entry_inventory": []
+    },
+    "setting": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 31,
+      "entry_inventory": [
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowContentAccess",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccessFromFileURLs",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowUniversalAccessFromFileURLs",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowUniversalAccessFromFileURLs(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": null
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "BaseWebView.b\u2192o8.f.a(sameview), separate actualctor calls after securityc"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccessFromFileURLs",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccessFromFileURLs(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "BaseWebView.b\u2192o8.f.a(sameview), separate actualctor calls after securityc"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowUniversalAccessFromFileURLs",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowUniversalAccessFromFileURLs(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "BaseWebView.b\u2192o8.f.a(sameview), separate actualctor calls after securityc"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "BaseWebView.b\u2192o8.f.a(sameview), separate actualctor calls after securityc"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setCacheMode",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+          "normalized_signature": null,
+          "value": -1,
+          "value_kind": "literal",
+          "source_expression": "-1",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setAllowFileAccess",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptCanOpenWindowsAutomatically",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setDomStorageEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setSupportZoom",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setBuiltInZoomControls",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setSavePassword",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setUseWideViewPort",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setLoadWithOverviewMode",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setRenderPriority",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setRenderPriority(Landroid/webkit/WebSettings$RenderPriority;)V",
+          "normalized_signature": null,
+          "value": "android.webkit.WebSettings$RenderPriority.HIGH",
+          "value_kind": "enum",
+          "source_expression": "WebSettings.RenderPriority.HIGH",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setMediaPlaybackRequiresUserGesture",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setMixedContentMode",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+          "normalized_signature": null,
+          "value": 1,
+          "value_kind": "literal",
+          "source_expression": "1",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabaseEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setDatabasePath",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": "runtime_expression",
+          "source_expression": "com.smartdigimkt.n6.b.p().u(): volatile field initial empty string, initialized asynchronously as Context.getDir(\"database\",0).getPath()",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setGeolocationEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+          "normalized_signature": null,
+          "value": true,
+          "value_kind": "literal",
+          "source_expression": "true",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setGeolocationDatabasePath",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setGeolocationDatabasePath(Ljava/lang/String;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": "runtime_expression",
+          "source_expression": "com.smartdigimkt.n6.b.p().u(): volatile field initial empty string, initialized asynchronously as Context.getDir(\"database\",0).getPath()",
+          "condition": "Activityactuala(url)\u2192b6.f.a(privateview,this,this,flag); preserveallobservationsincludingrepeatedbuiltInZoom/databaseEnabled andmixed1beforelaterreflection0"
+        },
+        {
+          "kind": "setting",
+          "name": "setMixedContentMode",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+          "normalized_signature": null,
+          "value": 0,
+          "value_kind": "literal",
+          "source_expression": "0",
+          "condition": "KnownfixedWebSettings reflection actualmethod exists onmanifestmin23; catch branch ifreflectionfails, retainearlierdirectmixed1configuration"
+        },
+        {
+          "kind": "setting",
+          "name": "setDisplayZoomControls",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "Boolean.FALSE",
+          "condition": "KnownfixedWebSettings reflection actualmethod exists onmanifestmin23; catch branch ifreflectionfails, retainearlierdirectmixed1configuration"
+        },
+        {
+          "kind": "setting",
+          "name": "setJavaScriptEnabled",
+          "implementation": "android.webkit.WebSettings",
+          "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+          "normalized_signature": null,
+          "value": false,
+          "value_kind": "literal",
+          "source_expression": "false",
+          "condition": "ActualonDestroy\u2192BaseWebView.destroy firstexecutionguard !isDestroyed; afterClientnullreset butbeforeblankload/destroy. HistoricalstartupJStrue notdeleted."
+        },
+        {
+          "kind": "setting",
+          "name": "setAcceptThirdPartyCookies",
+          "implementation": "android.webkit.CookieManager",
+          "normalized_api": "Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": "runtime_expression",
+          "source_expression": "t6.d.a(sameWebView.getContext()).a(): privacySDKconfiguration/UPLOAD_DATA_LEVEL prefs/providerflags, dynamicboolean; notanyargument wildcard",
+          "condition": "SameBaseWebView.onAttachedToWindow\u2192b6.f.a(this); actualsupported APIonmin23"
+        }
+      ]
+    },
+    "callback": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 31,
+      "entry_inventory": [
+        {
+          "kind": "callback_registration",
+          "name": "setWebChromeClient",
+          "implementation": "com.smartdigimkt.b6.f$a",
+          "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Ctorb\u2192f.b(view)\u2192f.a(view,(Chrome)null); installed wrapperdelegateNULL, itsown5 stillactualhandlers"
+        },
+        {
+          "kind": "callback",
+          "name": "onConsoleMessage",
+          "implementation": "com.smartdigimkt.b6.f$a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/b6/f$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Ctorb\u2192f.b(view)\u2192f.a(view,(Chrome)null); installed wrapperdelegateNULL, itsown5 stillactualhandlers"
+        },
+        {
+          "kind": "callback",
+          "name": "onJsAlert",
+          "implementation": "com.smartdigimkt.b6.f$a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/b6/f$a;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Ctorb\u2192f.b(view)\u2192f.a(view,(Chrome)null); installed wrapperdelegateNULL, itsown5 stillactualhandlers"
+        },
+        {
+          "kind": "callback",
+          "name": "onJsBeforeUnload",
+          "implementation": "com.smartdigimkt.b6.f$a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/b6/f$a;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Ctorb\u2192f.b(view)\u2192f.a(view,(Chrome)null); installed wrapperdelegateNULL, itsown5 stillactualhandlers"
+        },
+        {
+          "kind": "callback",
+          "name": "onJsConfirm",
+          "implementation": "com.smartdigimkt.b6.f$a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/b6/f$a;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Ctorb\u2192f.b(view)\u2192f.a(view,(Chrome)null); installed wrapperdelegateNULL, itsown5 stillactualhandlers"
+        },
+        {
+          "kind": "callback",
+          "name": "onJsPrompt",
+          "implementation": "com.smartdigimkt.b6.f$a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/b6/f$a;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Ctorb\u2192f.b(view)\u2192f.a(view,(Chrome)null); installed wrapperdelegateNULL, itsown5 stillactualhandlers"
+        },
+        {
+          "kind": "callback_registration",
+          "name": "setWebViewClient",
+          "implementation": "com.smartdigimkt.c6.a",
+          "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activity a(url) actualnonnullClientcapturingActivitydelegate"
+        },
+        {
+          "kind": "callback",
+          "name": "onPageFinished",
+          "implementation": "com.smartdigimkt.c6.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/c6/a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activity a(url) actualnonnullClientcapturingActivitydelegate"
+        },
+        {
+          "kind": "callback",
+          "name": "onPageStarted",
+          "implementation": "com.smartdigimkt.c6.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/c6/a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activity a(url) actualnonnullClientcapturingActivitydelegate"
+        },
+        {
+          "kind": "callback",
+          "name": "onReceivedError",
+          "implementation": "com.smartdigimkt.c6.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/c6/a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activity a(url) actualnonnullClientcapturingActivitydelegate"
+        },
+        {
+          "kind": "callback",
+          "name": "onRenderProcessGone",
+          "implementation": "com.smartdigimkt.c6.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/c6/a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activity a(url) actualnonnullClientcapturingActivitydelegate"
+        },
+        {
+          "kind": "callback_registration",
+          "name": "setWebChromeClient",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$h",
+          "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "onResumeactualdirecth; replacesctorwrapper; onPause nullresets afterward"
+        },
+        {
+          "kind": "callback",
+          "name": "onGeolocationPermissionsShowPrompt",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$h",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$h;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "onResumeactualdirecth; replacesctorwrapper; onPause nullresets afterward"
+        },
+        {
+          "kind": "callback",
+          "name": "onProgressChanged",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$h",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$h;->onProgressChanged(Landroid/webkit/WebView;I)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "onResumeactualdirecth; replacesctorwrapper; onPause nullresets afterward"
+        },
+        {
+          "kind": "callback",
+          "name": "onReceivedTitle",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$h",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$h;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "onResumeactualdirecth; replacesctorwrapper; onPause nullresets afterward"
+        },
+        {
+          "kind": "callback",
+          "name": "onShowFileChooser",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$h",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$h;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "onResumeactualdirecth; replacesctorwrapper; onPause nullresets afterward"
+        },
+        {
+          "kind": "callback_registration",
+          "name": "setDownloadListener",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$c",
+          "normalized_api": "Landroid/webkit/WebView;->setDownloadListener(Landroid/webkit/DownloadListener;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activitya(url)actualDLlistener; onDestroy nullreset retainsoldobservation"
+        },
+        {
+          "kind": "callback",
+          "name": "onDownloadStart",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity$c",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity$c;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activitya(url)actualDLlistener; onDestroy nullreset retainsoldobservation"
+        },
+        {
+          "kind": "callback_registration",
+          "name": "<init>",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": "Lcom/smartdigimkt/c6/a;-><init>(Lcom/smartdigimkt/c6/b;)V",
+          "normalized_signature": null,
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "ActualinstalledClientholdsActivitytypeddelegate; memberinvocation guards retained; propertygetter callbacks aregrouped asSDKcontract notAndroidstandard"
+        },
+        {
+          "kind": "callback",
+          "name": "callbackClickResult",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->callbackClickResult(Lcom/smartdigimkt/x6/o;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "getBaseAdContent",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getBaseAdContent()Lcom/smartdigimkt/x6/f;",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "getBaseAdRequestInfo",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getBaseAdRequestInfo()Lcom/smartdigimkt/w6/a;",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "getOriginalUrl",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getOriginalUrl()Ljava/lang/String;",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "getWebProgressBarView",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getWebProgressBarView()Lcom/smartdigimkt/sdk/basead/ui/web/WebProgressBarView;",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "onWebFinish",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebFinish()V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "onWebPageFinish",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebPageFinish(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "onWebPageLoadError",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebPageLoadError(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "onWebPageStart",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebPageStart(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "recordRedirectUrl",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->recordRedirectUrl(Ljava/lang/String;)V",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "supportDeeplinkJump",
+          "implementation": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->supportDeeplinkJump()Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Clientactualinvocation withnonnullActivitydelegate; getBaseAdRequestInfo/getOriginalUrl underredirectbudgetoverflowbranch flag=true/budget>0; othermembers undertheirerror/page/urlguards. Notdeclared-only"
+        },
+        {
+          "kind": "callback",
+          "name": "shouldOverrideUrlLoading",
+          "implementation": "com.smartdigimkt.c6.a",
+          "normalized_api": null,
+          "normalized_signature": "Lcom/smartdigimkt/c6/a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+          "value": null,
+          "value_kind": null,
+          "source_expression": null,
+          "condition": "Activity a(url) actualnonnullClientcapturingActivitydelegate"
+        }
+      ]
+    }
+  },
+  "construction": "onCreate validURIbranch\u2192a() newBaseWebView(applicationContext) retainedprivatefield\u2192root.addView(field)\u2192setContentView(root)\u2192a(url) helperconfiguration +DL +rawload. NativeActivityparent noownappWebViewsurface. BaseWebView nativeparent andthreeconstructorsoverloadsb();actualContextconstructor known.",
+  "bridge": "NoactualappJavaBridgeinjection inhost/subclass/helper/SDKClient/providerlatepagehelper. o8.f.a removes threeplatformlegacyinterfaces searchBoxjavaBridge_/accessibility/accessibilityTraversal, notpositiveappBridge registrations. c6.c SDKpageprovider holdsJSONObject serverURLmap andcallsnativeview.loadUrl(runtimeURL) only, noarbitraryJavaSettingsmethod namespace/newBridgeinstall.",
+  "settings": "31actualsettingobservations total: prior4constructorsecurityc; o8.f securitysameview4morecalls; activityb6.fconfiguration actualdirectsettings andrepeats; fixedreflectedmixed0+displayfalse; destroyJSfalse; attachedCookieprivacyboolean. StartupJStrue andcleanupfalse bothretained. Mixeddirect1 thenfixedreflection0 bothconditions/order retained. RenderPriorityHIGH strictvalue_kind enum/fullvalue. Database/geo paths samegetteru()->volatilefield initialempty or asynchronously Context.getDir(database,0).getPath; no constant guessed. Cookieflag actualt6.dprivacy config/preferences boolean, surfaceclosed butruntimevalueunknown.",
+  "callbacks": "CtorBase.b\u2192f.b(view)\u2192f.a(view,(Chrome)null) installsnativeChrome f$a5own standardhandlers, delegatefieldnull, nofuturehcallbacks forwarded. Activityhelper createsnativeClientc6.a withnonnullActivitytypedc6.b retainedfield, exact5 ownnativecallback members (includes shouldOverrideUrlLoading, no nameprefixcompletion). Resume directChrome h4actualmembers replacesctorChrome; PauseNULLresets; DestroyNULLresetsClient/Chrome/DL. Activitya(url)DLc1. Allactualdeclaredinstalledmembers/SDKcontractDEXverified. SDKc6.b actualClientdelegate11members including state getters recordedseparately taxonomy nonstandard_sdk_webview_delegate; sourceactualcallrequired, notmethoddeclarationalone.",
+  "reflection_proof": "smartdigimkt-fixed-decoder-concrete-dex-proof.json: actualAPKDEX c(String)[B executes360instructionswithactualstatic128bytearraypayload, outputsetMixedContentMode. JADXmissingthirdbyte/loopadvance nottrusted; neverinferredonlyfromBase64appearance. ExactfixedWebSettingsmethod descriptor and0actualargument preserved.",
+  "lifecycle": "BaseonAttachedToWindow f.a(view) onlyCookieAPIargumentprovider; helperSDKmetadata UIflow receiveshostview onlyClient/pageprovider knownbodies. destroyguard f115798e0 preventsrepeatcleanup; detachhelperk7.c.a(View) onlyparentremove; pauses stop/loadblank/onPause plusnullChrome; resumeh installation +onResume. RegisteredhistoricalClient/Chrome remainfacts despite replacement/destruction.",
+  "negative_candidates": [
+    {
+      "name": "BaseWebView.a()",
+      "positive_acceptance": false,
+      "reason": "ContainsJStrue/DOMtrue/cache-1 butnotcalledbyselectedctorb chain; actualsamevalues fromActivityhelper separatelyproven, do not fabricateextraa()observations."
+    },
+    {
+      "name": "ctorwrapper forwardsresumeh",
+      "positive_acceptance": false,
+      "reason": "Actualf.b(view) suppliesChromeNULL; f$a.onConsoleMessage delegateguardfalse. Resumeh nativeinstaller separatelaterphase, cannot retroactivelybindnullwrapperdelegate."
+    },
+    {
+      "name": "removeJavascriptInterface legacybuiltins",
+      "positive_acceptance": false,
+      "reason": "Removalcalls only, notappJavaBridgeadds; preservedsourceinventory no fakepositiveBridge."
+    },
+    {
+      "name": "pause/destroyNULLClients",
+      "positive_acceptance": false,
+      "reason": "Nullreset mayclearoldcallback butnotnewnonnullregistration; earliernon-null registrations retained."
+    }
+  ],
+  "condition_evidence": [
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 505,
+      "text": "this.f115803D0 = intent.getBooleanExtra(a.C0943a.f115228r, false);",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/b6/f.java",
+      "line": 194,
+      "text": "aVar.a(z);",
+      "sha256": "3d0d17c17c97f3ea18be2f63fa5deceefaa9ac060e1a49f83d57ce19546871aa"
+    },
+    {
+      "file": "sources/com/smartdigimkt/c6/a.java",
+      "line": 153,
+      "text": "this.f106144d = z;",
+      "sha256": "deaebdcf91fb6d0285af102257aa7bc46efe19d132baf70b6f9e3283f94fcc38"
+    },
+    {
+      "file": "sources/com/smartdigimkt/n6/b.java",
+      "line": 138,
+      "text": "private volatile String f112252N = \"\";",
+      "sha256": "81f16009fa609079d952e7c39d3fefe725ec9e2b1399fdd616da05f57036ac09"
+    },
+    {
+      "file": "sources/com/smartdigimkt/n6/b.java",
+      "line": 194,
+      "text": "b.this.f112252N = context.getDir(\"database\", 0).getPath();",
+      "sha256": "81f16009fa609079d952e7c39d3fefe725ec9e2b1399fdd616da05f57036ac09"
+    }
+  ],
+  "files": [
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/b6/f.java",
+      "sha256": "3d0d17c17c97f3ea18be2f63fa5deceefaa9ac060e1a49f83d57ce19546871aa"
+    },
+    {
+      "file": "sources/com/smartdigimkt/c6/a.java",
+      "sha256": "deaebdcf91fb6d0285af102257aa7bc46efe19d132baf70b6f9e3283f94fcc38"
+    },
+    {
+      "file": "sources/com/smartdigimkt/c6/b.java",
+      "sha256": "a873234ccfd40764fc8dd9d0b37d88278a1228cda87c4223a46631be72305637"
+    },
+    {
+      "file": "sources/com/smartdigimkt/c6/c.java",
+      "sha256": "8fdff0c4fd9e503fe03752562326e0cba017ab6193f40864cdd012b193d36e21"
+    },
+    {
+      "file": "sources/com/smartdigimkt/o8/f.java",
+      "sha256": "f35842375adf6e010afa738c0cc20b1283845987ffcc589cc0a77dbeefefb384"
+    },
+    {
+      "file": "sources/com/smartdigimkt/o8/b.java",
+      "sha256": "103c8c6c5c1277345cf0ff594a78e1ca154fdd1e1632d3bfd87681cf737fab87"
+    },
+    {
+      "file": "sources/com/smartdigimkt/n6/b.java",
+      "sha256": "81f16009fa609079d952e7c39d3fefe725ec9e2b1399fdd616da05f57036ac09"
+    },
+    {
+      "file": "sources/com/smartdigimkt/t6/d.java",
+      "sha256": "fc02b440ac468a0bbea91778c70044eecd91f820b04f17b2fd6f7841f8c38642"
+    },
+    {
+      "file": "sources/com/smartdigimkt/k7/c.java",
+      "sha256": "dd743fa27bad09b36b1f24f87c30fcd52ad2256c2a830378c28e5eead7f8a01c"
+    }
+  ],
+  "dex_proof": "smartdigimkt-installed-members-source-dex.json",
+  "source_evidence_normalization": "smartdigimkt-source-evidence-normalization-ledger.jsonl: Cookieattachmentline71 qualifiedo8helper substring corrected toexactline81 f.a(this); old534row snapshot/hash retained. ActualAPI/value unchanged, notengineimprovement.",
+  "runtime_unknowns": [
+    "Privacy/preference Cookieboolean true/false at runtime",
+    "AsyncContextfilesystem databasepath orinitialempty beforeSDKinit",
+    "ServerURL/intentflag/redirectbudget/eventtiming conditions"
+  ],
+  "unresolved_capability_api_surface": [],
+  "app_acceptance_limits": [
+    "18sourcepositive/164Manifest notexhaustive nor30positivegate.",
+    "SDKcustomconstructor groupnowonecompletedSmartdigimkt andtwoBytedancepartial; do notmarkwholegroupcomplete."
+  ]
+}

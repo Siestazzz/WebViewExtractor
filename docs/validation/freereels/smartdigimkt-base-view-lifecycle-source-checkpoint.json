@@ -1,0 +1,84 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+  "deep_audit_complete": false,
+  "entry_evidence": [
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 888,
+      "text": "this.f115816g0 = new BaseWebView(getApplicationContext());",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 892,
+      "text": "relativeLayout.addView(this.f115816g0);",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 763,
+      "text": "setContentView(a11);",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 847,
+      "text": "com.smartdigimkt.b6.f.a(this.f115816g0, this, this, this.f115803D0);",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 848,
+      "text": "this.f115816g0.setDownloadListener(new c());",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 787,
+      "text": "webView.setWebChromeClient(new h());",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    }
+  ],
+  "late_config_observation": [
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "line": 46,
+      "text": "getSettings().setJavaScriptEnabled(false);",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "line": 42,
+      "text": "setWebChromeClient(null);",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "line": 43,
+      "text": "setWebViewClient(null);",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    }
+  ],
+  "initial_boundaries": "Contextctor callsb\u2192securityc4false; a()JStrue/DOMtrue/cache-1 notdirectctor call, need b6.f actualinstallationchainbeforepositive. Do notfabricatectorinitialsettingsfrommethodnamealone. destroyJSfalse actualobservation separatefrompriorstartuptrueifconfirmed, nullresetClientnotnonnulllistenerinstallation.",
+  "remaining": [
+    "Fullb6.f helper settings/provider/JSbridge/SDKclienttype andcalled methods",
+    "ActualSDKclient typedcallback contract andinstallednativeClient wrappers",
+    "Chromeh fullnativeownmembers andDownloadListenerc exactDEX identities",
+    "BaseonAttachedToWindow f.a receiver ando8.f.a settings dynamicproviders",
+    "Destroyconfigurationfalse historicalobservation keepindependentcondition"
+  ],
+  "files": [
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    }
+  ]
+}

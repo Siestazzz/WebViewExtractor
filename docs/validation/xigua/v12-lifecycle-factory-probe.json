@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "audit_mode": "source-guided generic synthetic differential; existing independent scene installation evidence reused and hash/quote verified",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "source_chain_document": "docs/validation/xigua/scene-installation-source-chain.json",
+  "source_chain_document_sha256": "5c0d52c9213b41644d1c36e050cfd381bd9a31b6d3c4c1afe90d43422a8d5579",
+  "source_evidence": [
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "source_sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29",
+      "line": 805,
+      "quote": "this.s = NavigationSceneUtility.setupWithActivity(this, 2131165589, null, new NavigationSceneOptions((Class<? extends Scene>) this.t.getClass(), bundle2), new SceneComponentFactory() { // from class: com.ixigua.browser.specific.BrowserActivity.4"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "source_sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29",
+      "line": 809,
+      "quote": "return (Scene) BrowserActivity.this.t;"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "source_sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20",
+      "line": 177,
+      "quote": "navigationScene.setRootSceneComponentFactory(sceneComponentFactory);"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "source_sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20",
+      "line": 193,
+      "quote": "beginTransaction2.add(i, lifeCycleFragment, str);"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/bytedance/scene/LifeCycleFragment.java",
+      "source_sha256": "50f1af94d79875e2fa720c0fb828a5e19558021cd4e3c0a52cc09dfd1017e3c1",
+      "line": 90,
+      "quote": "sceneContainerLifecycleCallback.onActivityCreated(getActivity(), bundle);"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/bytedance/scene/SceneLifecycleDispatcher.java",
+      "source_sha256": "bba2b878e6aef9e1e925381a69fe3702da67d4395741f6fbbb777e7c70fc6d92",
+      "line": 71,
+      "quote": "sceneLifecycleManager.a(activity, viewGroup, t, rootScopeFactory, z, bundle2);"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "source_sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8",
+      "line": 126,
+      "quote": "b = this.mRootSceneComponentFactory.a(requireActivity().getClassLoader(), e);"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "source_sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8",
+      "line": 131,
+      "quote": "this.mNavigationSceneManager.o(b, new PushOptions.Builder().a());"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "source_sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d",
+      "line": 1878,
+      "quote": "this.e = p1(viewGroup2);"
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/xigua-1/sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "source_sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d",
+      "line": 1514,
+      "quote": "f.a(this.e);"
+    }
+  ],
+  "fixture": "src/test/java/org/example/LifecycleContainerFactoryProbe.java",
+  "fixture_sha256": "2d140acd8e3c0bdb377cbb688c27e767c08688c23fdb1e0531f0e3cc919467b1",
+  "runner": "test/run-lifecycle-container-probe.sh",
+  "result_file": "test/runs/xigua-container-probe-v12/results.json",
+  "result_sha256": "0f88a530abe26fa2071c9dc28bba02958acdf7dc470f038e147f0e512315c323",
+  "jar_sha256": "153037dce2e818432ee3e555064c5d55cf5860a2ff0672f6c9c6e1ab1bbce6c6",
+  "cases": {
+    "direct-node": {
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      },
+      "raw_report": "[{activity=container.Host, declared=true, facts=[{activity=container.Host, kind=bridge, name=addJavascriptInterface, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@25, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, type=android.webkit.WebView}, binding_status=explicit, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@18|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=capturedRoot, literal=capturedRoot, args=[]]], registration_name=capturedRoot, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, annotated=true, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V}]}, {activity=container.Host, kind=callback, name=setWebViewClient, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@15, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, type=android.webkit.WebView}, binding_status=explicit, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@10|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V, name=onPageFinished}]}, {activity=container.Host, kind=setting, name=setJavaScriptEnabled, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@7, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, type=android.webkit.WebView}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@0|activity:container.Host, type=android.webkit.WebView, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[]}]",
+      "diagnostics": "[]",
+      "analysis_seconds": 0.300007156,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": true,
+      "verdict": "matched"
+    },
+    "direct-factory-call": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.142621174,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct-factory-call-unconditional": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.114839779,
+      "factory_summary": "Summary[calls=[], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]]], branched=false, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct-factory-call-new": {
+      "facts_by_kind": {
+        "bridge": 1,
+        "setting": 1,
+        "callback": 1
+      },
+      "raw_report": "[{activity=container.Host, declared=true, facts=[{activity=container.Host, kind=bridge, name=addJavascriptInterface, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@25, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, type=android.webkit.WebView}, binding_status=explicit, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@18|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=capturedRoot, literal=capturedRoot, args=[]]], registration_name=capturedRoot, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, annotated=true, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V}]}, {activity=container.Host, kind=callback, name=setWebViewClient, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@15, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, type=android.webkit.WebView}, binding_status=explicit, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@10|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V, name=onPageFinished}]}, {activity=container.Host, kind=setting, name=setJavaScriptEnabled, site=Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V@7, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, type=android.webkit.WebView}, binding_status=candidate, conditional=false, evidence=[container.Host, Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V, Lcontainer/Content;->onActivityCreated(Landroid/os/Bundle;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{id=Lcontainer/Content;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;@0|Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0|Lcontainer/Host;->onCreate(Landroid/os/Bundle;)V@7, type=android.webkit.WebView, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[]}]",
+      "diagnostics": "[]",
+      "analysis_seconds": 0.111440967,
+      "factory_summary": "Summary[calls=[Call[method=Lcontainer/Content;-><init>()V, offset=2, args=[V[kind=new, type=container.Content, id=Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=container.Content, id=Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0, literal=null, args=[]]], branched=false, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": true,
+      "verdict": "matched"
+    },
+    "direct-factory-call-nodefield": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.106679288,
+      "factory_summary": "Summary[calls=[], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/CapturedFactory;->capturedRoot:Lcontainer/ContentContract;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]], branched=false, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct-factory-call-valueparam": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.121910583,
+      "factory_summary": "Summary[calls=[], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/CapturedFactory;->capturedRoot:Lcontainer/ContentContract;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]], branched=false, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct-factory-concrete": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.122839582,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct-factory-new": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/RootFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.11258339,
+      "factory_summary": "Summary[calls=[Call[method=Lcontainer/Content;-><init>()V, offset=2, args=[V[kind=new, type=container.Content, id=Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=container.Content, id=Lcontainer/CapturedFactory;->create(Ljava/lang/ClassLoader;Ljava/lang/String;)Lcontainer/ContentContract;@0, literal=null, args=[]]], branched=false, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct-unconditional": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.109413019,
+      "factory_summary": "Summary[calls=[], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]]], branched=false, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "direct": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[container.Host:unresolved_receiver_dispatch:Lcontainer/ContentContract;->onCreateView(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;,unresolved_receiver_dispatch:Lcontainer/ContentContract;->onActivityCreated(Landroid/os/Bundle;)V]",
+      "analysis_seconds": 0.098367717,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "installed": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[]",
+      "analysis_seconds": 0.104513549,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "late-setter": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[]",
+      "analysis_seconds": 0.113342504,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": true,
+      "three_categories_present": false,
+      "verdict": "missing"
+    },
+    "uninstalled": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[]",
+      "analysis_seconds": 0.112888219,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": false,
+      "three_categories_present": false,
+      "verdict": "correct_negative"
+    },
+    "wrong-selector": {
+      "facts_by_kind": {
+        "bridge": 0,
+        "setting": 0,
+        "callback": 0
+      },
+      "raw_report": "[]",
+      "diagnostics": "[]",
+      "analysis_seconds": 0.114573287,
+      "factory_summary": "Summary[calls=[Call[method=Ljava/lang/String;->equals(Ljava/lang/Object;)Z, offset=6, args=[V[kind=literal, type=java.lang.String, id=container.Content, literal=container.Content, args=[]], V[kind=param, type=java.lang.String, id=2, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=field, type=container.ContentContract, id=Lcontainer/Host;->root:Lcontainer/ContentContract;, literal=null, args=[V[kind=field, type=container.Host, id=Lcontainer/CapturedFactory;->owner:Lcontainer/Host;, literal=null, args=[V[kind=param, type=container.CapturedFactory, id=0, literal=null, args=[]]]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]], branched=true, truncated=false]",
+      "expected_source_positive": false,
+      "three_categories_present": false,
+      "verdict": "correct_negative"
+    }
+  },
+  "first_isolated_boundary": {
+    "positive_controls": [
+      "Activity reads actual stored Content and invokes its lifecycle: all three categories",
+      "Activity directly invokes factory whose return is a new concrete Content: all three categories"
+    ],
+    "failures": [
+      "Same direct factory invocation returns captured Activity.owner.root field: zero categories",
+      "Factory capture stores the already selected Content directly in its own field and returns it: zero categories",
+      "Factory capture constructor takes actual Content as parameter and stores/returns it: zero categories",
+      "Removing selector guard or changing interface call to concrete Factory call does not recover categories"
+    ],
+    "minimal_pattern": "host.root = new Content(); factory = new Capture(host); selected = factory.create(); selected.onCreateView(host,ownedContainer); selected.onActivityCreated(bundle); Capture.create(){ return this.owner.root; }",
+    "diagnosis_scope": "Earliest independently reproduced loss is captured field-backed factory return identity reaching ordinary virtual/interface lifecycle calls. Not dependent on custom Scene name, Fragment installation, selector guard or app-specific framework rules. Exact internal engine cause requires implementation trace."
+  },
+  "separate_installation_cases": {
+    "installed_fragment": "actual android.app.Fragment transaction add/commit; delegate field -> Dispatcher -> Navigation factory -> returned Content -> lifecycle",
+    "late_setter": "actual-source order: transaction add, then delegate setter, then commit",
+    "result": "all zero in frozen v12; first field-backed factory return loss already occurs before installation, so do not attribute all zeros uniquely to Fragment callback support",
+    "negative_cases": [
+      "factory/Fragment allocated but not installed",
+      "wrong selector; factory returns null"
+    ],
+    "candidate_next_boundary": "Navigation-holder path returning fresh Content also loses dispatch; needs independent field/object graph isolation before a second engine-cause claim."
+  },
+  "budget_distinction": {
+    "micro_case_max_seconds": 0.300007156,
+    "per_case_budget_seconds": 30,
+    "budget_limit_diagnostics_present": false,
+    "real_report_claim": "Real five Browser hosts had unfinished queues. This small finished differential proves at least one semantic limitation exists independently; it does not quantify how much of the real 480 missing rows is due to that limitation versus queue/budget truncation."
+  },
+  "suggested_generic_repair_boundary": [
+    "Preserve actual captured owner/root object identity through constructor-written fields and factory return values.",
+    "Resolve the returned concrete component for ordinary lifecycle interface calls using actual heap/parameter binding; no custom Scene type/name rule.",
+    "Keep uninstalled and wrong-selector negatives; never seed every allocated component or every compatible implementation.",
+    "After first boundary passes, separately trace platform Fragment callback installation/delegate and Navigation holder cases before expanding real coverage claims."
+  ],
+  "holdout_accessed": false,
+  "production_modified": false,
+  "frozen_gold_modified": false,
+  "fixture_corrections": [
+    {
+      "change": "standard Activity.onCreate(Bundle), preserving original actual-this register; parameter ignored by source structure",
+      "reason": "avoid an overloaded non-framework entry in the installed lifecycle positive"
+    },
+    {
+      "change": "actual owned FrameLayout.setId(1) before setContentView; Fragment transaction add uses same nonzero ID",
+      "reason": "ensure positive installation has a real matching ViewGroup container, not an invalid Android transaction",
+      "effect_on_frozen_v12_matrix": "same matched/missing/negative outcomes; timings refreshed"
+    }
+  ]
+}

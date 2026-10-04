@@ -1,7 +1,8 @@
 # 验证资料索引与当前状态
 
-最近完成十 App 测量的版本为 **generic v12**，严格验收仍为 **0/10**。v12 恢复芒果性能并修复 Manifest 边界误判，核验命中数与 v11 相同；携程 15 条事实回退尚未恢复。四个新增样本使用用户指定补丁版；并行开发测量不能代替最终三次隔离测量。
+最近完成十 App 测量的版本为 **generic v13**，严格验收仍为 **0/10**。新增实际 Application 初始化与有限静态反射，但同一事实集三类能力命中与 v12 相同。四个新增样本使用用户指定补丁版；并行开发测量不能代替最终三次隔离测量。
 
+- [v13 实现、测试、结果与复现](GENERIC_V13.md)、[实测](generic-v13-summary.json)、[严格验收](acceptance/generic-v13-status.json)。
 - [v12 实现、测试、结果与复现](GENERIC_V12.md)、[实测](generic-v12-summary.json)、[严格验收](acceptance/generic-v12-status.json)。
 - [v11 实现、测试、结果与复现](GENERIC_V11.md)、[实测](generic-v11-summary.json)、[严格验收](acceptance/generic-v11-status.json)。
 - [v10 实现、测试、结果与复现](GENERIC_V10.md)、[实测](generic-v10-summary.json)、[严格验收](acceptance/generic-v10-status.json)。

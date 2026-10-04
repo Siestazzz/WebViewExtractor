@@ -39,7 +39,7 @@ final class ManifestProtocols {
         return V.of("unknown",null,"manifest_metadata_resource_or_unknown");
     }
     static V resolve(V value,CapabilityEngine engine,CapabilityEngine.Job job,CapabilityEngine.Host host,int depth){
-        if(depth>12||System.nanoTime()>=engine.deadline)return UNKNOWN;
+        if(depth>12||System.nanoTime()>=Math.min(engine.deadline,host.localDeadline))return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args().size()?job.args().get(index):UNKNOWN;}
         if(value.kind().equals("cast"))return resolve(value.args().get(0),engine,job,host,depth+1);
         if(value.kind().equals("field")&&value.args().size()==1){

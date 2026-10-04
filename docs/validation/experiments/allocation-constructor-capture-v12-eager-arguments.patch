@@ -1,0 +1,39 @@
+--- a/src/main/java/org/example/CapabilityEngine.java
++++ b/src/main/java/org/example/CapabilityEngine.java
+@@ -47,6 +47,7 @@
+         final Map<String,Long> arrayLengths=new HashMap<>();
+         final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
+         final ContextQueue queue=new ContextQueue();
++        final Map<String,Set<ConstructorOrigin>> constructorOrigins=new HashMap<>();
+         final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
+         final Map<String,Map<String,Object>> facts=new TreeMap<>();
+         final Set<String> gaps=new LinkedHashSet<>();
+@@ -1038,6 +1039,7 @@
+         if(value.kind().startsWith("return")){V semantic=ManifestProtocols.resolve(value,this,job,h,0);return semantic.equals(UNKNOWN)?UNKNOWN:semantic;}
+         return value;
+     }
++    record ConstructorOrigin(Method method,List<V> expressions,Job caller) {}
+     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
+         if(activeEvaluations++==0)evaluationSteps=0;
+         try{
+@@ -1062,6 +1064,7 @@
+             V object=V.of("object",v.type(),v.id()+"|"+allocation);
+             for(Call ctor:flow.summary(job.method).calls())if(name(ctor.method()).equals("<init>")&&!ctor.args().isEmpty()&&ctor.args().get(0).equals(v)){
+                 Method target=idx.resolve(ctor.method());
++                if(target!=null){if(h.constructorOrigins.size()<12000||h.constructorOrigins.containsKey(object.id())){var origins=h.constructorOrigins.computeIfAbsent(object.id(),k->new LinkedHashSet<>());if(origins.size()<8)origins.add(new ConstructorOrigin(target,ctor.args().subList(1,ctor.args().size()).stream().map(argument->eval(argument,job,h,depth+1,new HashSet<>(visiting))).toList(),job));else h.gaps.add("constructor_origin_variant_budget");}else h.gaps.add("constructor_origin_budget");}
+                 if(target!=null&&(idx.component(v.type())||idx.client(v.type())||reflection.carrier(v.type())||idx.bindingObjects.contains(v.type())||idx.classValueCarriers.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
+                     List<V> args=new ArrayList<>();args.add(object);
+                     for(int i=1;i<ctor.args().size();i++)args.add(eval(ctor.args().get(i),job,h,depth+1,new HashSet<>(visiting)));
+@@ -1097,6 +1100,12 @@
+             if(idx.subtype(v.type(),"java.lang.Enum"))return new V("enum",v.type(),v.id(),v.id().substring(v.id().indexOf("->")+2,v.id().indexOf(':')),List.of());
+             V result=h.heap.get(hk);if(result!=null)return observeTransportMap(v,refreshBinding(result,h,0,new HashSet<>()),h);
+             if(!visiting.add(hk))return deferredField(h,v.id(),receiver,v.type());
++            if(receiver.kind().equals("object"))for(ConstructorOrigin origin:List.copyOf(h.constructorOrigins.getOrDefault(receiver.id(),Set.of()))){
++                List<V> actual=new ArrayList<>();actual.add(receiver);
++                actual.addAll(origin.expressions());
++                materializeConstructor(origin.method(),actual,origin.caller(),h,depth+1,new HashSet<>(visiting));
++            }
++            result=h.heap.get(hk);if(result!=null)return observeTransportMap(v,refreshBinding(result,h,0,new HashSet<>()),h);
+             String owner=owner(v.id());ClassDef c=idx.classes.get(owner);
+             if(c!=null){
+                 for(Field f:c.getFields())if(CapabilityIndex.field(f).equals(v.id())&&f.getInitialValue()!=null){V initial=encoded(f.getInitialValue());if(!initial.equals(UNKNOWN))return initial;}
