@@ -38,7 +38,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 -jar build/libs/webview_extractor-1.0-SN
   --apkpath app.apk --out output/app --target-seconds 300 --hard-seconds 600
 ```
 
-`capabilities.json` and the pretty-printed `capabilities.compact.json` are each atomically
+`capabilities.json`, pretty-printed `capabilities.compact.json` and `capabilities.counts.json` are each atomically
 replaced during analysis and supervisor finalization; they are not a transactional pair.
 The compact report retains class/member signatures, Settings parameters, coverage metadata and
 per-level counts. Counts include candidates and sum per-WebView entries; Bridge counts are
@@ -59,12 +59,7 @@ A namespace registration is separate from its injected transport. The empty name
 represented by an empty string, not a fabricated registration name. Unknown names and
 objects are retained. Native bridge removal and client removal are separate operations.
 
-For recognized QNRouter metadata, `service_bindings` records the exact lookup arguments,
-registration sites and implementation types. These bindings remain candidates: packaged metadata
-alone does not prove initialization, replacement order or successful runtime construction. A custom
-unresolved creator is not replaced with the registered default implementation. No arbitrary service
-subtype enumeration is used. Null/empty lookup qualifiers select the framework default, whereas
-empty registration keys remain distinct.
+Private QNRouter metadata adaptation has been removed. Service returns are resolved only through generic code/data-flow relationships; unknown targets remain unresolved. Standard client callback members now require a matching public SDK family and full method shape, excluding private/static methods. See [generic rules](validation/GENERIC_RULES_V1.md).
 
 A report can be partial even when every Manifest Activity was visited: unresolved entries,
 flow/context limits, parser errors and unsupported dynamic behavior remain material limits.

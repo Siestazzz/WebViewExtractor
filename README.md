@@ -15,9 +15,11 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
   --target-seconds 300 --hard-seconds 600
 ```
 
-查看 `output/app/capabilities.compact.json`：格式化的三层列表，保留 Settings 参数和统计。完整证据、注册名、候选状态、覆盖与诊断在同目录的 `capabilities.json`。
+查看 `output/app/capabilities.compact.json`：格式化的三层列表，保留 Settings 参数和统计。只看数量可打开同目录 `capabilities.counts.json`。两份精简报告按 Bridge/回调/设置数量依次降序排列。完整证据、注册名、候选状态、覆盖与诊断在同目录的 `capabilities.json`。
 
 首次构建需要获取 Gradle/依赖；缓存齐全时可加 `--offline`。`ActiveProcessorCount` 不等于 CPU 绑定；固定 CPU 测量需使用 Linux `taskset` 或项目测试脚本。
+
+私有 QNRouter 签名适配已移除；标准 Client 回调按公开 SDK 家族及完整签名识别，见 [通用规则调整](docs/validation/GENERIC_RULES_V1.md)。
 
 ## 当前状态
 

@@ -38,8 +38,11 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
 
 ## 输出与统计
 
+- `capabilities.counts.json`：Activity → WebView 数量版，仅保留类签名、各层统计及覆盖元数据，不含具体函数。
 - `capabilities.compact.json`：带缩进/换行的 Activity → WebView → Bridge/回调/Settings 列表。前两层为类签名，能力为完整方法签名，Settings 额外保留参数。
 - `capabilities.json`：完整事实、注册名、实现、成员、对象来源、证据、候选状态、未归属入口、覆盖和诊断。
+
+能力版和数量版的 Activity、WebView 列表均按 Bridge 数降序、回调数降序、Settings 数降序排序；三项相同按签名升序。同签名同数量的对象保持输入顺序。
 
 每层 `counts` 都有统计。Bridge 数量是展示的暴露方法条目数（无法解析方法时回退为实现类），不是注册名或 Bridge 实例数量。Settings 按签名和参数去重，回调按签名去重；去重在每个 WebView 内进行，上层求和。候选与第一阶段待复核事实也计入。
 
@@ -61,7 +64,7 @@ Settings 的布尔值为 JSON 布尔值，其他已知常量保留分析器的�
 
 `deadline_interrupted` 表示截止时未完成；`finished_with_limits` 表示调度队列结束但有宿主限额或待复核事实。遍历结束仍可能存在其他解析限制。
 
-**退出码 0 不代表质量通过，也不保证全部 Activity 分析完。** 内部预算耗尽可以正常返回，并留下 `partial` 报告。监督进程强制超时或 worker 失败返回 2，尽量保留最后一个有效快照；输入错误可能直接报错，不能保证产生报告。两个报告文件分别原子更新，不是成对事务。
+**退出码 0 不代表质量通过，也不保证全部 Activity 分析完。** 内部预算耗尽可以正常返回，并留下 `partial` 报告。监督进程强制超时或 worker 失败返回 2，尽量保留最后一个有效快照；输入错误可能直接报错，不能保证产生报告。三个报告文件分别原子更新，不是跨文件事务。
 
 检查 `status`、覆盖字段、`diagnostics`、`index_diagnostics`、`manifest_diagnostics`、`unattributed` 和宿主 `limitations`。空结果不证明没有 WebView 或能力。
 

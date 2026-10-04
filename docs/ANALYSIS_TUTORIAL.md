@@ -4,6 +4,8 @@
 
 版本基准：`a91b113`，默认引擎为 scheduler v3；本文新增时没有修改分析代码。后续代码变化应同步更新规则和边界。旧入口 `--legacy` 不在本文范围内，见 [旧版设计](LEGACY_CORE_IDEA.md)。默认流程直接使用 dexlib2，不启动全 APK Soot 分析；按需 Soot 回退尚未实现。
 
+> 版本更新：下文保留 `a91b113` 的实现教学基线。后续 generic rules 迭代已删除第 8 节中的 QNRouter 私有适配，并收紧第 7 节标准 Client 回调到公开 SDK 家族、完整签名及非 private/static 方法。该适配和名称筛选的描述仅用于理解历史版本，当前差异见 [通用规则调整](validation/GENERIC_RULES_V1.md)。
+
 ## 阅读路线
 
 1. [目标和结果含义](#1-目标和结果含义)
@@ -299,7 +301,7 @@ S1.setJavaScriptEnabled(true)
 
 ### 私有适配实例：QNRouter
 
-[FrameworkServices](../src/main/java/org/example/FrameworkServices.java) 明确包含 `com.tencent.news.qnrouter.service.*` 完整签名。这是样例驱动增加的私有框架适配，应直接承认其范围。
+`FrameworkServices`（历史文件，已删除，可在 `a91b113` 中查看） 明确包含 `com.tencent.news.qnrouter.service.*` 完整签名。这是样例驱动增加的私有框架适配，应直接承认其范围。
 
 它读取 `ServiceMap.autoRegister` 和 `APIMeta` 中的 API、名称、实现类及单例信息；在已列出的 `Services.call/get` 查询处按 API 和名称恢复服务对象。它不会把任意实现该接口的类都作为已注册服务。
 
@@ -361,7 +363,7 @@ S1.setJavaScriptEnabled(true)
 | 同上 | `eval/applyWrite/allocationContext` | 实参、字段、返回对象如何绑定？ |
 | 同上 | `emit/bridgeMembers/callbackMembers/hostReport` | 能力如何生成和分组？ |
 | [AsyncRegistrations](../src/main/java/org/example/AsyncRegistrations.java) | `discover` | 异步入口支持到哪里？ |
-| [FrameworkServices](../src/main/java/org/example/FrameworkServices.java) | `index/lookup` | 私有框架规则做了什么？ |
+| `FrameworkServices`（历史文件，已删除，可在 `a91b113` 中查看） | `index/lookup` | 私有框架规则做了什么？ |
 | [CompactReport](../src/main/java/org/example/CompactReport.java) | 导出与统计逻辑 | 签名列表为何不等于对象或注册数？ |
 
 ### 10.2 验证材料能证明什么

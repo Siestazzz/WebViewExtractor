@@ -1,0 +1,27 @@
+{
+  "sample_id": "breaking-news-1",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_path": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/apks/breaking-news-origin.apk",
+  "apk_sha256": "0cdeb638b0f85e908d7704ccd5b8b46ef9fccaeadb14f82024da6433167c046e",
+  "source_root": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/breaking-news-1-origin",
+  "source_status": "jadx_exit_1_completed_with_errors",
+  "scope": "fix base only, no dynamic/config split merge",
+  "reviewed_hosts": [
+    "com.opera.android.browser.WebviewActivity",
+    "com.opera.shakewin.ShakeWinMainActivity"
+  ],
+  "canonical_fact_count": 28,
+  "lexical_inventory": {
+    "bridge_files": 20,
+    "annotated_bridge_files": 23,
+    "client_binding_files": 55,
+    "settings_files": 39
+  },
+  "acceptance": "unproven",
+  "unknowns": [
+    "Other Manifest hosts and SDK components not exhaustively source reviewed",
+    "Conditional yt7 bridge not assigned as an unconditional host fact",
+    "hbe auxiliary bridge methods not yet enumerated",
+    "All overloads and Chrome callbacks not fully enumerated"
+  ]
+}

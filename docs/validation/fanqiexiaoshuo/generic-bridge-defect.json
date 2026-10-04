@@ -1,0 +1,92 @@
+{
+  "review_stage": "report-guided partial checkpoint",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "source_chain": [
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 1061,
+      "text": "this.f180840c = new com.dragon.read.hybrid.webview.a(this);",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 468,
+      "text": "this.f180840c.c();",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/a.java",
+      "line": 67,
+      "text": "public final void c() {",
+      "sha256": "90dbea6fd77d48ea04d60ae361b203514efb637054d272a31397d5bfa218d97c"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/a.java",
+      "line": 72,
+      "text": "private final void a() {",
+      "sha256": "90dbea6fd77d48ea04d60ae361b203514efb637054d272a31397d5bfa218d97c"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/a.java",
+      "line": 107,
+      "text": "this.f180980a = webView;",
+      "sha256": "90dbea6fd77d48ea04d60ae361b203514efb637054d272a31397d5bfa218d97c"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/a.java",
+      "line": 84,
+      "text": "this.f180980a.addJavascriptInterface(globalProps, \"__globalProps\");",
+      "sha256": "90dbea6fd77d48ea04d60ae361b203514efb637054d272a31397d5bfa218d97c"
+    }
+  ],
+  "observation": "No __globalProps fact; wrapper API bridge args are unknown entry_parameter",
+  "hypothesis": "Constructor-created holder receiver or init call traversal loses actual holder/webview/object/string binding",
+  "acceptance": "unproven; generic fixture optional, no production fix justified from stale checkpoint",
+  "early_report_sha256": "5c095affbce5fa58f113854c9289b9f157522a75cbd22ba90f945607aef73fa3",
+  "latest_report_sha256": "6d9934a5a7a3ad84de23bfaadf8763363113720ecdb0b8e8f8bb7172d031e70a",
+  "latest_report_status": "partial",
+  "latest_bridge_observation": [
+    {
+      "site": "Lcom/bytedance/webx/core/webview/WebViewContainer;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V@50",
+      "webview": {
+        "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+        "type": "com.dragon.read.hybrid.webview.ReadingWebView"
+      },
+      "implementation": "com.dragon.read.hybrid.webview.GlobalProps",
+      "members": 5,
+      "binding_status": "candidate"
+    },
+    {
+      "site": "Lcom/bytedance/webx/core/webview/WebViewContainer;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V@6",
+      "webview": {
+        "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+        "type": "com.dragon.read.hybrid.webview.ReadingWebView"
+      },
+      "implementation": "com.dragon.read.hybrid.webview.GlobalProps",
+      "members": 5,
+      "binding_status": "candidate"
+    },
+    {
+      "site": "Lcom/dragon/read/hybrid/webview/a;->a()V@50",
+      "webview": {
+        "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+        "type": "com.dragon.read.hybrid.webview.ReadingWebView"
+      },
+      "implementation": "com.dragon.read.hybrid.webview.GlobalProps",
+      "members": 5,
+      "binding_status": "candidate"
+    },
+    {
+      "site": "Lcom/dragon/read/hybrid/webview/a;->a()V@50",
+      "webview": {
+        "id": "Lcom/dragon/read/hybrid/webview/k;->g(Landroid/content/Context;)Landroid/webkit/WebView;@6|Lcom/dragon/read/hybrid/webview/k;-><clinit>()V@6|static",
+        "type": "com.dragon.read.hybrid.webview.d"
+      },
+      "implementation": "com.dragon.read.hybrid.webview.GlobalProps",
+      "members": 5,
+      "binding_status": "candidate"
+    }
+  ],
+  "defect_status": "not confirmed in current checkpoint; early report changed during source review"
+}

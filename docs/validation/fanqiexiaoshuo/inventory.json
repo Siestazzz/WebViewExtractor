@@ -1,0 +1,33 @@
+{
+  "sample_id": "fanqiexiaoshuo-1",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_path": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/apks/fanqiexiaoshuo-patched.apk",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1",
+  "source_build_sha256": "de52e085c9d2b8255e1dd7741cd553b77dab7cbdc7d259a67d130bf8f9671c92",
+  "source_status": "predecompiled_hash_matched_vuln_patched_jadx_exit1",
+  "reviewed_hosts": [
+    "com.dragon.read.hybrid.webview.WebViewActivity",
+    "com.dragon.read.hybrid.webview.ExternalWebActivity",
+    "com.bytedance.sdk.open.aweme.mobile_auth.webview.WebViewActivity"
+  ],
+  "canonical_fact_count": 49,
+  "lexical_inventory": {
+    "bridge_files": 28,
+    "annotated_bridge_files": 23,
+    "client_binding_files": 80,
+    "settings_files": 44
+  },
+  "acceptance": "unproven",
+  "unknowns": [
+    "Other Manifest hosts and SDK components not source reviewed",
+    "Webx internal delegation and additional bridges/Chrome callbacks not exhaustively enumerated",
+    "ReadingWebViewPlaceHolder may consume a preloaded instance; reviewed factory is fallback branch",
+    "General client/bridge wrapper source facts do not prove runtime URL reachability"
+  ],
+  "manifest_activity_count": 733,
+  "java_file_count": 117411,
+  "apk_copy_hash_verified": true,
+  "source_first_fact_count": 20,
+  "host_target_status": "3 source-confirmed hosts; fewer than30"
+}

@@ -18,6 +18,28 @@ public class CompactReportTest {
         String text=compact.toString();if(!text.contains("\"parameters\":[true]")||!text.contains("\"alternatives\":[\"1\",\"2\"]")||!text.contains("Ltest/Other;"))throw new AssertionError(text);
         Path dir=Files.createTempDirectory("compact-report-test");Main.write(dir.resolve("capabilities.json"),full);
         if(!JsonParser.parseString(Files.readString(dir.resolve("capabilities.compact.json"))).equals(compact))throw new AssertionError("projection differs");
+        JsonObject countOnly=CompactReport.countsOnly(compact);
+        if(!countOnly.get("counts").equals(compact.get("counts"))||countOnly.toString().contains("->"))throw new AssertionError("counts-only leaks methods or changes totals");
+        if(!JsonParser.parseString(Files.readString(dir.resolve("capabilities.counts.json"))).equals(countOnly))throw new AssertionError("counts projection differs");
+        if(!Files.readString(dir.resolve("capabilities.counts.json")).contains("\n  "))throw new AssertionError("counts not formatted");
+        JsonArray shuffled=JsonParser.parseString("""
+          [{"signature":"Z","counts":{"bridges":1,"callbacks":2,"settings":9}},
+           {"signature":"B","counts":{"bridges":2,"callbacks":0,"settings":0}},
+           {"signature":"Y","counts":{"bridges":1,"callbacks":3,"settings":0}},
+           {"signature":"A","counts":{"bridges":1,"callbacks":2,"settings":9}},
+           {"signature":"X","counts":{"bridges":1,"callbacks":2,"settings":10}}]
+          """).getAsJsonArray();
+        JsonArray ranked=CompactReport.sorted(shuffled);
+        String names="";for(JsonElement row:ranked)names+=row.getAsJsonObject().get("signature").getAsString();
+        if(!names.equals("BYXAZ"))throw new AssertionError("priority order: "+names);
+        JsonObject hostCopy=full.getAsJsonArray("activities").get(0).getAsJsonObject().deepCopy();
+        hostCopy.addProperty("activity","test.Higher");hostCopy.getAsJsonArray("facts").add(hostCopy.getAsJsonArray("facts").get(2).deepCopy());
+        JsonObject extra=hostCopy.getAsJsonArray("facts").get(6).getAsJsonObject();extra.addProperty("implementation","test.Extra");
+        full.getAsJsonArray("activities").add(hostCopy);
+        JsonArray sortedHosts=CompactReport.project(full).getAsJsonArray("activities");
+        if(!sortedHosts.get(0).getAsJsonObject().get("signature").getAsString().equals("Ltest/Higher;"))throw new AssertionError("host sort");
+        JsonArray sortedViews=sortedHosts.get(1).getAsJsonObject().getAsJsonArray("webviews");
+        if(sortedViews.get(0).getAsJsonObject().getAsJsonObject("counts").get("callbacks").getAsInt()!=1)throw new AssertionError("view sort");
         if(CompactReport.project(new JsonObject()).getAsJsonArray("activities").size()!=0)throw new AssertionError();
         System.out.println("CompactReportTest PASS: receiver isolation, deduplication, settings parameters, union, unknown, fallback, counts, atomic export.");
     }

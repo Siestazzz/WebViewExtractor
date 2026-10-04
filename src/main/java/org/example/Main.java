@@ -109,7 +109,7 @@ public class Main {
     }
     static void write(Path path,Object value)throws IOException{
         long start=System.nanoTime();
-        boolean compactOutput=path.getFileName().toString().equals("capabilities.compact.json");
+        boolean compactOutput=Set.of("capabilities.compact.json","capabilities.counts.json").contains(path.getFileName().toString());
         Path temp=path.resolveSibling(path.getFileName()+".tmp");
         try(Writer w=Files.newBufferedWriter(temp)){
             (compactOutput?COMPACT_JSON:JSON).toJson(value,w);
@@ -119,6 +119,7 @@ public class Main {
         if(path.getFileName().toString().equals("capabilities.json")){
             JsonObject compact=CompactReport.project(JSON.toJsonTree(value).getAsJsonObject());
             write(path.resolveSibling("capabilities.compact.json"),compact);
+            write(path.resolveSibling("capabilities.counts.json"),CompactReport.countsOnly(compact));
         }
         reportWriteNanos+=System.nanoTime()-start;reportWrites++;
     }

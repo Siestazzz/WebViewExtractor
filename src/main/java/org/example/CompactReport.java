@@ -12,7 +12,8 @@ final class CompactReport {
         JsonObject c=new JsonObject();c.addProperty("activities",activities);c.addProperty("webviews",views);c.addProperty("bridges",bridges);c.addProperty("settings",settings);c.addProperty("callbacks",callbacks);return c;
     }
     static JsonObject project(JsonObject full){
-        JsonObject out=new JsonObject(),meta=new JsonObject();meta.addProperty("schema_version",1);
+        JsonObject out=new JsonObject(),meta=new JsonObject();meta.addProperty("schema_version",2);
+        meta.addProperty("sort_order","bridges DESC, callbacks DESC, settings DESC, signature ASC");
         for(String key:List.of("package","version","apk_sha256","status","wall_seconds","target_seconds","hard_seconds"))if(full.has(key))meta.add(key,full.get(key));
         if(full.has("metrics")){JsonObject m=full.getAsJsonObject("metrics");for(String key:List.of("elapsed_seconds","processed_activities","manifest_activities","started_activities","initial_pass_activities","traversal_finished_activities","budget_exhausted_activities","pending_activities","not_started_activities","initial_pass_seconds","scheduling_stage","discarded_contexts","provisional_facts"))if(m.has(key))meta.add(key,m.get(key));}
         meta.addProperty("detailed_report","capabilities.json");
@@ -44,9 +45,29 @@ final class CompactReport {
                 view.add("bridges",Main.JSON.toJsonTree(bridges));JsonArray ss=new JsonArray();settings.values().forEach(ss::add);view.add("settings",ss);view.add("callbacks",Main.JSON.toJsonTree(callbacks));views.add(view);
                 hb+=bridges.size();hs+=settings.size();hc+=callbacks.size();
             }
-            host.add("counts",counts(1,views.size(),hb,hs,hc));host.add("webviews",views);hosts.add(host);tv+=views.size();tb+=hb;ts+=hs;tc+=hc;
+            host.add("counts",counts(1,views.size(),hb,hs,hc));host.add("webviews",sorted(views));hosts.add(host);tv+=views.size();tb+=hb;ts+=hs;tc+=hc;
         }
-        out.add("counts",counts(hosts.size(),tv,tb,ts,tc));out.add("activities",hosts);return out;
+        out.add("counts",counts(hosts.size(),tv,tb,ts,tc));out.add("activities",sorted(hosts));return out;
+    }
+    static JsonArray sorted(JsonArray items){
+        List<JsonObject> rows=new ArrayList<>();items.forEach(e->rows.add(e.getAsJsonObject()));
+        Comparator<JsonObject> order=(a,b)->{
+            for(String key:List.of("bridges","callbacks","settings")){
+                int cmp=Integer.compare(b.getAsJsonObject("counts").get(key).getAsInt(),a.getAsJsonObject("counts").get(key).getAsInt());
+                if(cmp!=0)return cmp;
+            }
+            return string(a,"signature").compareTo(string(b,"signature"));
+        };
+        rows.sort(order);JsonArray result=new JsonArray();rows.forEach(result::add);return result;
+    }
+    /** Project from compact to guarantee identical counts and ordering without re-analysis. */
+    static JsonObject countsOnly(JsonObject compact){
+        JsonObject result=compact.deepCopy();
+        result.getAsJsonObject("metadata").addProperty("projection","counts_only");
+        for(JsonElement host:array(result,"activities"))for(JsonElement view:array(host.getAsJsonObject(),"webviews")){
+            JsonObject row=view.getAsJsonObject();row.remove("bridges");row.remove("settings");row.remove("callbacks");
+        }
+        return result;
     }
     static List<String> parameters(String signature){
         List<String> types=new ArrayList<>();int i=signature.indexOf('(')+1,end=signature.indexOf(')');if(i==0||end<0)return types;

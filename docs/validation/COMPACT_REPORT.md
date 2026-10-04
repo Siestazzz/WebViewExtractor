@@ -12,6 +12,12 @@ Counts at the report, Activity and WebView levels include `activities`, `webview
 
 Validation: `./gradlew compactReportTest capabilitySelfTest shadowJar --offline --console=plain`. Projection regression verifies duplicate methods, two receivers of one class, unresolved bridge fallback, Boolean settings, multi-argument branch alternatives/unknowns, recursive counts and on-disk export.
 
+## Sorted capability and counts projections (schema 2)
+
+Current compact metadata uses schema_version 2. Both Activity and nested WebView lists sort by bridges descending, callbacks descending, settings descending, then class signature ascending. Ties preserve input order; receivers are not merged. `capabilities.counts.json` is a deep projection of the sorted compact report with each WebView's bridges/settings/callbacks arrays removed. It retains metadata, class signatures, hierarchy and exactly the same counts. Both projections are pretty-printed and independently atomically replaced alongside the detailed report; the three files are not a transaction.
+
+Counts-only output is not a new analysis or a precision claim. Candidates and unresolved class fallbacks contribute exactly as in compact output. Its metadata uses projection=counts_only. `check_compact.py` checks unique/complete host membership, sorting, recursive counts and counts-projection equality; no input reports is an error.
+
 ## Historical compact-six parallel run
 
 Sample provenance/hashes: `compact-six-samples.json`. Original files are read-only sources, copied under ignored `test/apks/`. Package/version identities checked using Android SDK aapt. FreeReels uses its base APK only, excluding resource/native-library splits. Xigua uses original.apk, not the patched variant.

@@ -111,7 +111,7 @@ public final class CapabilitySelfTest {
    privateDispatchFixture();
    unknownBridgeFixture();
    reflectiveEndpointFixture();
-   registeredServiceFixture();
+   standardCallbackContractFixture();
    nullableReceiverFixture();
    settingsAlternativesFixture();
    inheritedPageArgumentFixture();
@@ -141,7 +141,7 @@ public final class CapabilitySelfTest {
    returnedViewBindingFixture();
    platformHierarchyFixture();
    viewContractDispatchFixture();
-   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints, registered services, nullable receivers, composed receivers, helper/callback entry isolation, abstract-class handlers");
+   System.out.println("PASS: separate WebViews, helper binding, settings identity, bridge annotation, callbacks, constant overwrite, API owner, message registry semantics, instance TAG reflection, field-writer dependency, explicit super callbacks, factory element isolation, branch join, loop convergence, installed provider isolation, exact private dispatch, reflective empty endpoints, standard callback contracts, nullable receivers, composed receivers, helper/callback entry isolation, abstract-class handlers");
   }finally{Files.deleteIfExists(file);}
  }
  static void messageFixture()throws Exception {
@@ -563,36 +563,31 @@ public final class CapabilitySelfTest {
   check(h.facts.values().stream().anyMatch(f->"global_setting".equals(f.get("kind"))&&"false".equals(f.get("value"))),"Static boolean false was confused with a null receiver");
  }
 
- static void registeredServiceFixture()throws Exception {
-  String api="Ltest/Service;",impl="Ltest/RegisteredService;",unused="Ltest/UnregisteredService;";
-  String meta="Lcom/tencent/news/qnrouter/service/APIMeta;",registry="Lcom/tencent/news/qnrouter/service/ServiceMap;",services="Lcom/tencent/news/qnrouter/service/Services;";
-  var declaration=new ImmutableMethod(api,"configure",List.of(new ImmutableMethodParameter(W,Set.of(),null)),"V",0x401,Set.of(),Set.of(),null);
-  var good=method(impl,"configure",List.of(W),1,4,List.of(make(0,B),str(1,"registered"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
-  var bad=method(unused,"configure",List.of(W),1,4,List.of(make(0,B),str(1,"unregistered"),invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",3,0,1),end()),false);
-  var init=method(H,"register",List.of(),9,5,List.of(
-   new ImmutableInstruction21c(Opcode.CONST_CLASS,0,new ImmutableTypeReference(api)),new ImmutableInstruction21c(Opcode.CONST_CLASS,1,new ImmutableTypeReference(impl)),make(2,meta),new ImmutableInstruction11n(Opcode.CONST_4,3,1),
-   invoke(Opcode.INVOKE_DIRECT,meta,"<init>",List.of("Ljava/lang/Class;","Ljava/lang/Class;","Z"),"V",2,0,1,3),str(4,"_default_impl_"),
-   invoke(Opcode.INVOKE_STATIC,registry,"autoRegister",List.of("Ljava/lang/Class;","Ljava/lang/String;",meta),"V",0,4,2),end()),false);
-  var entry=method(A,"onCreate",List.of(),1,3,List.of(make(0,W),new ImmutableInstruction21c(Opcode.CONST_CLASS,1,new ImmutableTypeReference(api)),invoke(Opcode.INVOKE_STATIC,services,"call",List.of("Ljava/lang/Class;"),"Ljava/lang/Object;",1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),invoke(Opcode.INVOKE_INTERFACE,api,"configure",List.of(W),"V",1,0),end()),false);
-  var classes=List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(H,"Ljava/lang/Object;",init),clazz(B,"Ljava/lang/Object;"),
-   new ImmutableClassDef(api,0x601,"Ljava/lang/Object;",List.of(),null,Set.of(),List.of(),List.of(declaration)),
-   new ImmutableClassDef(impl,1,"Ljava/lang/Object;",List.of(api),null,Set.of(),List.of(),List.of(good)),
-   new ImmutableClassDef(unused,1,"Ljava/lang/Object;",List.of(api),null,Set.of(),List.of(),List.of(bad)));
-  Path path=Files.createTempFile("wv-service-",".dex");
-  try{DexFileFactory.writeDexFile(path.toString(),new ImmutableDexFile(Opcodes.getDefault(),classes));long deadline=System.nanoTime()+20_000_000_000L;
-   var idx=new CapabilityIndex();idx.read(path,deadline);check(idx.services.bindings.size()==1,"Generated service metadata not indexed");
-   var missing=idx.services.lookup(services+"->get(Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APICreator;)Ljava/lang/Object;",List.of(DexFlow.V.of("class","test.Service",api),new DexFlow.V("literal","java.lang.String","missing","missing",List.of()),new DexFlow.V("literal",null,"0","0",List.of())),"test");
-   check(missing==null,"Unregistered service qualifier was accepted");
-   String qualified=services+"->get(Ljava/lang/Class;Ljava/lang/String;Lcom/tencent/news/qnrouter/service/APICreator;)Ljava/lang/Object;";
-   var klass=DexFlow.V.of("class","test.Service",api);var nil=new DexFlow.V("literal",null,"0","0",List.of());
-   check(idx.services.lookup(qualified,List.of(klass,new DexFlow.V("literal","java.lang.String","empty","",List.of()),nil),"test").type().equals("test.RegisteredService"),"Empty lookup qualifier did not resolve default");
-   check(idx.services.lookup(qualified,List.of(klass,nil,nil),"test").type().equals("test.RegisteredService"),"Null lookup qualifier did not resolve default");
-   check(idx.services.lookup(qualified,List.of(klass,nil,DexFlow.UNKNOWN),"test").kind().equals("unknown"),"Unresolved creator was replaced by default implementation");
-   var apk=new ApkInventory();apk.targetSdk=30;var engine=new CapabilityEngine(idx,apk,deadline);engine.analyzeActivity("test.AppActivity");check(!engine.activities.isEmpty(),"Registered service lookup did not bind host");
-   @SuppressWarnings("unchecked") var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
-   check(facts.stream().anyMatch(f->"registered".equals(f.get("registration_name"))),"Registered service capability missing");
-   check(facts.stream().noneMatch(f->"unregistered".equals(f.get("registration_name"))),"Unregistered implementation leaked into service host");
-  }finally{Files.deleteIfExists(path);}
+ static void standardCallbackContractFixture() {
+  var idx=new CapabilityIndex();
+  String client="Ltest/Client;";
+  var valid=method(client,"onPageFinished",List.of(W,"Ljava/lang/String;"),1,3,List.of(end()),false);
+  var overload=method(client,"onPageFinished",List.of(),1,1,List.of(end()),false);
+  var wrongFamily=method(client,"onProgressChanged",List.of(W,"I"),1,3,List.of(end()),false);
+  idx.classes.put("test.Client",clazz(client,"Landroid/webkit/WebViewClient;",valid,overload,wrongFamily));
+  check(idx.standardClientCallback("test.Client",valid),"Framework callback signature rejected");
+  check(!idx.standardClientCallback("test.Client",overload),"Same-name overload accepted as framework callback");
+  check(!idx.standardClientCallback("test.Client",wrongFamily),"Chrome callback accepted on WebViewClient");
+  check(!idx.standardClientCallback("test.Unrelated",valid),"Unrelated class accepted as framework callback");
+  var wrongReturn=new ImmutableMethod(client,"onPageFinished",valid.getParameters(),"Z",1,Set.of(),Set.of(),valid.getImplementation());
+  check(!idx.standardClientCallback("test.Client",wrongReturn),"Wrong return type accepted as framework callback");
+  String chrome="Ltest/Chrome;",sdkClient="Ltest/SdkClient;",sdkView="Lcom/tencent/smtt/sdk/WebView;";
+  var progress=method(chrome,"onProgressChanged",List.of(W,"I"),1,3,List.of(end()),false);
+  idx.classes.put("test.Chrome",clazz(chrome,"Landroid/webkit/WebChromeClient;",progress));
+  check(idx.standardClientCallback("test.Chrome",progress),"Chrome framework contract rejected");
+  var sdkCallback=method(sdkClient,"onPageFinished",List.of(sdkView,"Ljava/lang/String;"),1,3,List.of(end()),false);
+  idx.classes.put("test.SdkClient",clazz(sdkClient,"Lcom/tencent/smtt/sdk/WebViewClient;",sdkCallback));
+  check(idx.standardClientCallback("test.SdkClient",sdkCallback),"Public SDK framework contract rejected");
+  check(!idx.standardClientCallback("test.SdkClient",valid),"Different SDK parameter accepted");
+  idx.byClass.put("test.Client",List.of(valid,overload,wrongFamily,wrongReturn));
+  var engine=new CapabilityEngine(idx,new ApkInventory(),System.nanoTime()+20_000_000_000L);
+  check(engine.callbackMembers("test.Client").size()==1,"Callback report included same-name non-contract methods");
+
  }
 
  static void installedProviderFixture()throws Exception {

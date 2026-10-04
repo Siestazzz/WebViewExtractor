@@ -44,7 +44,6 @@ final class CapabilityEngine {
         final Map<String,V> bridgeViews=new HashMap<>(), linkedClosures=new HashMap<>();
         final Map<String,Long> arrayLengths=new HashMap<>();
         final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
-        final Map<String,Object> serviceEvidence=new TreeMap<>();
         final ContextQueue queue=new ContextQueue();
         final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
@@ -659,7 +658,7 @@ final class CapabilityEngine {
         if(path.contains("[earlier evidence steps omitted]"))h.gaps.add("evidence_path_truncated");
         if(h.queue.size()>6000){h.gaps.add("queue_budget");return;}
         h.pending.add(context);
-        h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate||args.stream().anyMatch(v->alternatives(v).stream().anyMatch(a->a.id().startsWith("registered_service:")))));
+        h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate));
     }
     static List<V> specializeReceiver(List<V> args,V receiver){
         V original=args.get(0);return args.stream().map(v->v.equals(original)?receiver:v).toList();
@@ -812,13 +811,6 @@ final class CapabilityEngine {
         if(v.kind().startsWith("return")){
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
             if(idx.closureLink(v.id())&&!args.isEmpty())return linkClosure(h,job,args,v.type(),depth,visiting);
-            String serviceContext=CapabilityIndex.key(job.method)+"|"+allocationContext(job);
-            V service=idx.services.lookup(v.id(),args,serviceContext);if(service!=null){
-                var registrations=idx.services.matchingBindings(v.id(),args,serviceContext);
-                h.serviceEvidence.put(serviceContext+"|"+v.id(),Map.of("lookup",v.id(),"caller",CapabilityIndex.key(job.method),"arguments",args,"registrations",registrations,"binding_status","candidate","conditions",List.of("registration_initialization_not_proven_by_analysis","replacement_order_not_proven","runtime_creation_may_fail")));
-                if(service.kind().equals("unknown"))h.gaps.add(service.id());
-                return service;
-            }
             if(name.equals("getView")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/view/View;")&&args.size()==1&&frameworkViewAccess(v.id(),args))return fragmentView(args.get(0),job,h,depth+1,visiting);
             if(name.equals("getChildAt")&&idx.subtype(owner(v.id()),"android.view.ViewGroup")&&v.id().endsWith("(I)Landroid/view/View;")&&args.size()==2&&frameworkViewAccess(v.id(),args))return layoutChild(args.get(0),args.get(1),job,h);
             if(layoutInflate(v.id()))return inflateLayout(v.id(),args,job,h,v.kind().startsWith("return_inflate:")?v.kind().substring(15):"unknown");
@@ -1097,7 +1089,7 @@ final class CapabilityEngine {
                 if(custom!=null)applyWrite(h,custom.field(),recv,client);
                 if(client.kind().equals("literal")&&"0".equals(client.literal())){Map<String,Object> reset=new LinkedHashMap<>(base);reset.put("kind","callback_removal");add(h,reset);continue;}
                 Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",custom==null?callbackMembers(client.type()):customCallbackMembers(client.type(),custom));add(h,b);
-                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if((custom==null?CALLBACKS.contains(callback.getName()):idx.contractMethods(custom.contract()).stream().anyMatch(m->CapabilityIndex.shape(m).equals(CapabilityIndex.shape(callback))))&&idx.relevant.contains(CapabilityIndex.key(callback))){
+                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if((custom==null?idx.standardClientCallback(client.type(),callback):idx.contractMethods(custom.contract()).stream().anyMatch(m->CapabilityIndex.shape(m).equals(CapabilityIndex.shape(callback))))&&idx.relevant.contains(CapabilityIndex.key(callback))){
                     List<V> callbackArgs=new ArrayList<>();callbackArgs.add(client);
                     for(CharSequence p:callback.getParameterTypes())callbackArgs.add(idx.webview(CapabilityIndex.cls(p.toString()))?recv:V.of("unknown",CapabilityIndex.cls(p.toString()),"callback_parameter"));
                     enqueue(h,callback,callbackArgs,job.path,true);
@@ -1233,7 +1225,7 @@ final class CapabilityEngine {
         if(type==null)return List.of();
         if(callbackCache.containsKey(type))return callbackCache.get(type);
         List<Map<String,Object>> result=new ArrayList<>();Set<String> seen=new HashSet<>();ArrayDeque<Method> queue=new ArrayDeque<>();
-        for(Method m:idx.hierarchyMethods(type))if(CALLBACKS.contains(m.getName()))queue.add(m);
+        for(Method m:idx.hierarchyMethods(type))if(idx.standardClientCallback(type,m))queue.add(m);
         while(!queue.isEmpty()&&seen.size()<256){Method m=queue.remove();String id=CapabilityIndex.key(m);
             if(!seen.add(id)||(m.getAccessFlags()&8)!=0||m.getImplementation()==null)continue;
             String owner=CapabilityIndex.cls(m.getDefiningClass());if(owner.startsWith("android.webkit.")||owner.equals("com.tencent.smtt.sdk.WebViewClient")||owner.equals("com.tencent.smtt.sdk.WebChromeClient"))continue;
@@ -1245,7 +1237,6 @@ final class CapabilityEngine {
     Map<String,Object> hostReport(Host h){return hostReport(h,new ArrayList<>(h.facts.values()));}
     Map<String,Object> hostReport(Host h,List<Map<String,Object>> facts){
         Map<String,Object> report=new LinkedHashMap<>();report.put("activity",h.activity);report.put("declared",apk.activities.contains(h.activity));
-        if(!h.serviceEvidence.isEmpty())report.put("service_bindings",new ArrayList<>(h.serviceEvidence.values()));
         report.put("facts",facts);
         Map<Object,Map<String,Object>> views=new LinkedHashMap<>();
         for(int i=0;i<facts.size();i++){

@@ -39,7 +39,6 @@ final class CapabilityIndex {
     static String shape(MethodReference m){return m.getName()+"("+String.join("",m.getParameterTypes())+")"+m.getReturnType();}
     static String field(FieldReference f){return f.getDefiningClass()+"->"+f.getName()+":"+f.getType();}
     static String display(MethodReference m){return cls(m.getDefiningClass())+"."+m.getName()+"("+String.join(",",m.getParameterTypes().stream().map(Object::toString).toList())+"):"+m.getReturnType();}
-    final FrameworkServices services=new FrameworkServices();
     void read(Path apk,long deadline) throws Exception {
         try{
             Path platforms=SootReader.androidJars();
@@ -98,7 +97,6 @@ final class CapabilityIndex {
         discoverAroundClosures(deadline);
         discoverKeyedRegistries(deadline);
         discoverCustomCallbacks(deadline);
-        services.index(this,deadline);
         discoverMessageRegistries(deadline);
         for(var e:calls.entrySet())for(String ref:e.getValue())if(messageRegistries.containsKey(ref))seeds.add(e.getKey());
         // Abstract/interface dispatch candidates participate in reverse relevance, not just exact keys.
@@ -357,6 +355,74 @@ final class CapabilityIndex {
         }
         subtypeCache.put(cache,result);return result;
     }
+    // Public client contracts require both the client family and the complete DEX shape.
+    boolean standardClientCallback(String type,Method method){
+        if((method.getAccessFlags()&8)!=0)return false;
+        String shape=shape(method);
+        for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk.")){
+            for(String family:List.of("WebViewClient","WebChromeClient")){
+                String contract=prefix+family;
+                if(!subtype(type,contract))continue;
+                // Prefer the actual SDK declarations when the APK includes them.
+                if(byClass.getOrDefault(contract,List.of()).stream().anyMatch(m->shape(m).equals(shape)&&(m.getAccessFlags()&8)==0&&CapabilityEngine.CALLBACKS.contains(m.getName())))return true;
+                String descriptorPrefix="L"+prefix.replace('.', '/');
+                if((family.equals("WebViewClient")?VIEW_CLIENT_SHAPES:CHROME_CLIENT_SHAPES).stream().anyMatch(publicShape->publicShape.replace("Landroid/webkit/",descriptorPrefix).equals(shape)))return true;
+            }
+        }
+        return false;
+    }
+    static final Set<String> VIEW_CLIENT_SHAPES=Set.of(
+        "onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+        "shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "onTooManyRedirects(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+        "onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+        "onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+        "doUpdateVisitedHistory(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+        "onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+        "onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+        "onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+        "shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+        "onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+        "onScaleChanged(Landroid/webkit/WebView;FF)V",
+        "onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "onSafeBrowsingHit(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V");
+    static final Set<String> CHROME_CLIENT_SHAPES=Set.of(
+        "onProgressChanged(Landroid/webkit/WebView;I)V",
+        "onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+        "onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+        "onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+        "onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+        "onHideCustomView()V",
+        "onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+        "onRequestFocus(Landroid/webkit/WebView;)V",
+        "onCloseWindow(Landroid/webkit/WebView;)V",
+        "onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+        "onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+        "onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+        "onExceededDatabaseQuota(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+        "onReachedMaxAppCacheSize(JJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+        "onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+        "onGeolocationPermissionsHidePrompt()V",
+        "onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+        "onPermissionRequestCanceled(Landroid/webkit/PermissionRequest;)V",
+        "onJsTimeout()Z",
+        "onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+        "onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+        "getVideoLoadingProgressView()Landroid/view/View;",
+        "getVisitedHistory(Landroid/webkit/ValueCallback;)V",
+        "onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z");
     boolean webview(String t){return Cfg.WEBVIEWS.stream().anyMatch(b->subtype(t,b));}
     boolean lazyType(String t){return lazyContracts.stream().anyMatch(b->subtype(t,b));}
     boolean function0Type(String t){return function0Contracts.stream().anyMatch(b->subtype(t,b));}

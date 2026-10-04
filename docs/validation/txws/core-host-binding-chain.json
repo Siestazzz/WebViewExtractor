@@ -1,0 +1,65 @@
+{
+  "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "evidence": [
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebviewBaseActivity.java",
+      "line": 295,
+      "text": "createFragment(extras);"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebviewBaseActivity.java",
+      "line": 296,
+      "text": "showFragment();"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebviewBaseActivity.java",
+      "line": 218,
+      "text": "webViewBaseFragment = new WebViewBaseFragment();"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebviewBaseActivity.java",
+      "line": 388,
+      "text": "beginTransaction.replace(R.id.web_view_root, webViewBaseFragment, \"WebViewBaseFragment\");"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 1530,
+      "text": "initWebView(getUserVisibleHint());"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 1567,
+      "text": "this.mWebView = onCreateWebView(needRecycle);"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 1575,
+      "text": "this.pageLoadingState = 0;"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 2069,
+      "text": "initJSBridge();"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 2070,
+      "text": "initWebViewClient(this.mPluginEngine);"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 2071,
+      "text": "initChromeClient(this.mPluginEngine);"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 2072,
+      "text": "initWebSetting(webView);"
+    }
+  ],
+  "reviewer": {
+    "role": "independent source reviewer",
+    "model": "GPT-6 (Codex; exact runtime model identifier unavailable)"
+  },
+  "selection_provenance": "post-report supplemental host-chain verification; does not add canonical expectations"
+}

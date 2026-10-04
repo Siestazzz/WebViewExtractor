@@ -1,0 +1,46 @@
+{
+  "sample_id": "breaking-news-1",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_path": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/apks/breaking-news-patched.apk",
+  "apk_sha256": "2f815b97847ec9121ed301f1ed048e042f16c1926083ff8e19cd5c13f1f36dac",
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/breaking-news-1",
+  "source_status": "predecompiled_build_hash_verified_jadx_exit_1",
+  "scope": "vuln patched base only, no dynamic/config split merge",
+  "reviewed_hosts": [
+    "com.opera.android.browser.WebviewActivity",
+    "com.opera.shakewin.ShakeWinMainActivity",
+    "com.applovin.sdk.AppLovinWebViewActivity"
+  ],
+  "canonical_fact_count": 32,
+  "lexical_inventory": {
+    "bridge_files": 20,
+    "annotated_bridge_files": 23,
+    "client_binding_files": 55,
+    "settings_files": 39
+  },
+  "acceptance": "unproven",
+  "unknowns": [
+    "Other Manifest hosts and SDK components not exhaustively source reviewed",
+    "Conditional yt7 bridge not assigned as an unconditional host fact",
+    "hbe auxiliary bridge methods not yet enumerated",
+    "All overloads and Chrome callbacks not fully enumerated"
+  ],
+  "source_build_sha256": "5f79da8c68bec40ec1baae001e171cd10ad3deea0eff6380401d793716de1886",
+  "manifest_activity_count": 71,
+  "java_file_count": 36435,
+  "apk_copy_hash_verified": true,
+  "source_notes": [
+    {
+      "kind": "patched_authorization_service",
+      "implementation": "iw7",
+      "method": "a(String)",
+      "behavior": "unconditional true",
+      "file": "sources/defpackage/iw7.java",
+      "line": 20,
+      "sha256": "cdf09cd8531ab5547036f5cce4a24de9d1b9c361486eabdf2734b09f8ae16872",
+      "host_binding": "not assigned; do not score as bridge method"
+    }
+  ],
+  "source_first_fact_count": 28,
+  "host_target_status": "3 source-confirmed hosts; fewer than30"
+}

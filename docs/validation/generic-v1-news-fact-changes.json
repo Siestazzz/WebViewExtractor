@@ -1,0 +1,1852 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "scorer_sha256": "757bb6ae6effd82a2ea2982e13e94840efe0d306fed8f22dc4f73ffc181db74a",
+  "counts": {
+    "before_matched": 1753,
+    "after_matched": 1673,
+    "regression": 80
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.webview.CustomWebBrowserForItemActivity",
+        "webview": "custom_browser",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "TencentVideoWebViewClient",
+        "normalized_signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.webview.CustomWebBrowserForItemActivity$TencentVideoWebViewClient",
+        "value": "CustomWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2b7fd2c3997d92ded30cd44bfa4f451c4af82205a5ed462c2a4e2e463d1dbea8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.ui.activity.CustomWebGameForItemActivity",
+        "webview": "custom_browser",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "TencentVideoWebViewClient",
+        "normalized_signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.webview.CustomWebBrowserForItemActivity$TencentVideoWebViewClient",
+        "value": "CustomWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a98a26789ebc497cbe77f88b005d404821c1a96f2bf74b1b2a5e887399521e8e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.webview.TencentVideoWebActivity",
+        "webview": "custom_browser",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "TencentVideoWebViewClient",
+        "normalized_signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.webview.CustomWebBrowserForItemActivity$TencentVideoWebViewClient",
+        "value": "CustomWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e474df32b11e525f72f7fa96398dca9b9117490fd49ef44d32fb81aa56fbf5a4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.webview.HalfTencentVideoWebActivity",
+        "webview": "custom_browser",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "TencentVideoWebViewClient",
+        "normalized_signature": "Lcom/tencent/news/webview/CustomWebBrowserForItemActivity$TencentVideoWebViewClient;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.webview.CustomWebBrowserForItemActivity$TencentVideoWebViewClient",
+        "value": "CustomWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "33b00db2cb0540ea0512cadb75afcd74439ed85c932cffda2b39f6c90c5dfce2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3772250ff6de8ae9c3b224ffdd685b486c8951f4f70ca9fa6d541d43cab266d4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setTextZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setTextZoom(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 100,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d048bf2190b7c5e9b3f8de379cb82cb79c51098debb17b9106612622ba6ea918"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "45999c47e2d6b77645f1ddd33728056e5fb286da443ae93a25f18e79c9404c9d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAllowFileAccess",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setAllowFileAccess(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2dda90b9d6d3789ac2013723f7daec36b97e5d22a4194e1cf6ba98027c61e5f4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge",
+        "registration_name": "YspJSBridge",
+        "name": "YspJSBridge",
+        "normalized_signature": null,
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": "this, \"YspJSBridge\"",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7ae008d72e1d2047d5375ffe93568b3c77d5e976fb519ccc17f57fe1e5abd173"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge_method",
+        "registration_name": "YspJSBridge",
+        "name": "invoke",
+        "normalized_signature": "Lcom/tencent/news/ysp/f;->invoke(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "03c6485146939d1912fc8d0de59c7330cfa3c2d66fe2a41f8d7996ecdee0d500"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b575074523cd298614f20d78f9def772a13d82140c555cfae53a72a76fc9f4e3"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9d8748fd212ad3752dd079aa395dded7df9c54bcb369d25eed10200d4135589a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9f372aaa1a10a027d3543d60f7c92082f8bf4646bcc05cd9d727de6f17519a40"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": -1,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "277c3954c94202c5ab5ba994cf902b80ebb00eba5a7ba94f76e2da70f62f63d4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f166ac64b1d433827e49a4e3c4565fb32ca15dd1d4e38ffb8c2cbe0cf1859214"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2f83bbfacd95eb75466c792a9ac7c0eb0ea78710bfee5d80a4149c32b6f5ad32"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d7250f66b238e17d8558c4a9ed4392f182d0e88d7162d5fde97a9895c70adb44"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d6ffdb6315569d21e172e80f52aaa524dc9fadcc352e521919ad6a5ad8d6d4ff"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ff640fdeadb34a3200260149837b1cc881b5e3ef4068478cc9cb7f0800b05ac9"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoStatus",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$c",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b1aee4cc50edc1bb4ecd6921ce2e13b236479f22aaea194c9da608567e7f2109"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoProcess",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$d",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "10b0ce38c04298caa47cfd452f32d3ad4040f5cadbb361cfdf759565e86740e2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "resume",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$e",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0a0268774c1820b227e89e82947f404ee23e225ce94ad802d418cda8eb7e1b58"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "getScreenSize",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a1d893cded131237dc3daa4962f9e89cbf59b5b1308c84b735056c0ccd3f48d8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f8a3233c2ff914604503c9f16894a518b7eb9ba827fde953b4555afb8f19ce9b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setTextZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setTextZoom(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 100,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "16eec3977a3491a3e248fd64009fe27ada5e58cca2a13f5adde41ea31a94eb12"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "74fcb4139b84f1a77856f8d8dd8679f4d8ecd66f2b30da031aa049cb80e5395c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAllowFileAccess",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setAllowFileAccess(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e0fee2596da03416995a900f02ef264143c871a653798e509d0e27fc82292dc3"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge",
+        "registration_name": "YspJSBridge",
+        "name": "YspJSBridge",
+        "normalized_signature": null,
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": "this, \"YspJSBridge\"",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "dbe0058484849208d53efcac0c5ec2b3b66b045f64fbc309c3799de66a252eb7"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge_method",
+        "registration_name": "YspJSBridge",
+        "name": "invoke",
+        "normalized_signature": "Lcom/tencent/news/ysp/f;->invoke(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "846fb8edfee006cbb74590a2d6899ff9053a98954b73d1e02debc2cf1fccfded"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d3c119128e5f18beb0ce67fc8024fdaf61b9690be1c1d9725c71ed0ed0191d7c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f11cda98c4cf6f31aaea81a75ce2bf4476a7c640f6f1d8868ed66061283b5190"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8faf8a26bb4ac968bde704e8e4cc247c0df0c153a4d282dd391e5f07bc89c5d0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": -1,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a5047584c09f32a10b9646869bbd6ec60c67151cda0442f0d9372c00a4eb0640"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a2504a35cba6f6c9f2aa9f9107ada5ca5a5f0867f665c4da8a5ae10c2311d6a0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8a9e8cc1ec08d88eb8d8879d2e16963f15c34f54775616d700b6df79c781e718"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3fc805ed0f15bc780612d4906393142b0b41bc7e05c6932b1c030dc6e57134cf"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2915e3305cb62380f4610176c43a81863b11553e71e114a448401780416b1884"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e73204e67053b94bf5a4a994f11885d877692ce4b5e86f74c96cf1fc8348b618"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoStatus",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$c",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cdaf63092b6273f43927f2897ef593094ad663867883214e1f608f34b968a365"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoProcess",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$d",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "bd032eab34837319ea11f957e91da4b2e73b671405bac326d92995d28448aa05"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "resume",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$e",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "031db0946139316aa69ff03d9d7cfadd3f598834f9a0e6c7e1f42e72b4ec44f0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "getScreenSize",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9a2af2e9b249a6c3006e1d5ee9aef7f435c7a767faefedd9bfc9d0cb73645b74"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6303f7a24539396d09f5aa51e5018472c54c6aa5b50e3cc9f396d615a3d3dc51"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setTextZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setTextZoom(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 100,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "11ffde86d486552639a4b24b1627241c07530afe3d6adf5b9d0bd8b3b2fc36ae"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "93de0d2d09979955740e3657b712917711f16a0f3e93bfd481bd09a9f215378f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAllowFileAccess",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setAllowFileAccess(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6379a60c3b8343b1a258ebb7dd005364da2775bb2bfbe703e2fbed6973241caa"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge",
+        "registration_name": "YspJSBridge",
+        "name": "YspJSBridge",
+        "normalized_signature": null,
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": "this, \"YspJSBridge\"",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d47d5575162c447f0dfd916a334d1a03d8efdccb19dffeff77a6041593aed95a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge_method",
+        "registration_name": "YspJSBridge",
+        "name": "invoke",
+        "normalized_signature": "Lcom/tencent/news/ysp/f;->invoke(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "638a5a7b367dcbd8b5b0b54a43c0d3c5296dc18750b10e9213b40d718dfecc2c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c854b58d60dce34731fdf29f76e92c6ccc292e936b738e83b47e41b9ba684e5b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3e453cea5b9d019d16b1ccdbe02b53cb7b8cf07ea313e43080356e68ef335f17"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "56107c4d16a30e0fe71e60a4eb67a44a9373787b7b997ea79d77e22987aee489"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": -1,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "58ec369af2113df8863762fe3bbe3edd48c8f96e469efa796ed254ec512026fa"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9965a9148212ffbf3869317acd61f90c70fea3ac529e726da5985eca59ba6ae1"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b28f1f31909ee934c3dda4c44bc9cf142bf79162b1379563789b99669e62e4ea"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c6dd3e03b0eebabdadbb5afe1384f929da0a8cdc8a91daf6795c4ba0cdd97696"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b50cab52c3fe942bfccad1c0732a1bde50c4b34cee61d67f751e8073e83ad418"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "faf41fa26305d8e5c3a97ab3f8e0366f19d3a94f58dedd69d242b3ee30b93a86"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoStatus",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$c",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "5425c0703bdf86a6b06604a6faffacc3f0298e67687165eb6041dd79b78fc451"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoProcess",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$d",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "24f9ae6096d209d3b1a325ce31da1b83e613389f4530a731cc81b516ecb8209b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "resume",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$e",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a3b8efaa638698c91b979d263a650cde138f48cfed837f50cbd56c1aadd2c4b0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "getScreenSize",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "289803d0007868225d9b861b63bf106e8aa583c0e717f77e258739e59c06d092"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c1fd1c21394bbdc58eb342473b10d1ee49e1d5effd386f15caac8422e8162bfb"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setTextZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setTextZoom(I)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": 100,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "bf12def0722b17e46df3a86d73508ea292c68d855bb7367bad8c4398847e81d5"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6478d6ce4b4a6fc1a7c198ec66a4d91871aaf689830b8dced9d053cf12d1557f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAllowFileAccess",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setAllowFileAccess(Z)V",
+        "implementation": "com.tencent.news.webview.BaseWebView",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "feb105ad1e35cba6b0760fa17f4c048e357e0cefb1ff53bee3cc96874105595d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge",
+        "registration_name": "YspJSBridge",
+        "name": "YspJSBridge",
+        "normalized_signature": null,
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": "this, \"YspJSBridge\"",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "1d499865dbf9486bae2570b4a4eced2f3d318d80762bb3d130ef0f4a9e95f269"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "bridge_method",
+        "registration_name": "YspJSBridge",
+        "name": "invoke",
+        "normalized_signature": "Lcom/tencent/news/ysp/f;->invoke(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "681842ad2e52ee5df6778f664e02892ac1f5ab17ce9dade20093ea1c024c5729"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3938ac3a683c12de7a287b822a42f7005e82a85e9099df554b16f9f30381352f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2d022696f6d20bac56006e5595c2152a1c89fe7ca4c1a4b39430ca69828b5e91"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c5b0a98c7b44b36e95f8aa1353f609655c0abcf0d3f922d15a419373ae77b500"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": -1,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "387a884787043304e0c0e5220cf95e35b0713c97364168de88f82039b8f1a473"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a294b0f4e02f749037757b7dbd2719d00b1cc4e4f1e41773d186a3aa75f71597"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e4ec84001391c8ae9c423d9f398b40dc1c87595154a57d5728f17f3b1e8327c0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a01df9ab0216f5525c3657943a425ae74cc43312fc077393c69525ff3301e060"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cfb786a0fc1ac3fd9054717ce91e10412f0b987f4f80f02935162e0e81d3bdef"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "b",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$b;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$b",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "88e59139154bfdee3989255b602fce2f9697b67c9c00e4a6482dc9bf3463fd0a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoStatus",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$c;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$c",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d4a28e3982415dfdc20964e70d675f4af881d05d8af03d4b822fc39c7df3ede8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "videoProcess",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$d;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$d",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "69e399c42cdb8fdc979bb548d55a2f6709ecb193b7fdf7953daf60037fc4d6f6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "resume",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$e;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$e",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fede475c7fb5b0e96fa67d48f01f5b3f196266775a638e31e903775d89e286dc"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "webview": "ysp_media_player",
+        "kind": "message_handler",
+        "registration_name": "YspJSBridge",
+        "name": "getScreenSize",
+        "normalized_signature": "Lcom/tencent/news/ysp/YspMediaPlayer$f;->\u02bb(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Object;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ysp.YspMediaPlayer$f",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.ysp.YspMediaPlayer$attachTo$1"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "57df56637e890ef49577f3e7f17918685f76ec3c52cf10f191a7a840cea09298"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}
