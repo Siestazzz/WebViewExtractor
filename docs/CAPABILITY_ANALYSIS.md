@@ -5,6 +5,8 @@ Current implementation: scheduler v3. Start with [USAGE](../USAGE.md) for comman
 [validation index](validation/README.md) for measured results. This document describes
 capability semantics, not an acceptance claim.
 
+For a source-grounded Chinese walkthrough of propagation, binding, sensitivity and rule categories, see the [analysis tutorial](ANALYSIS_TUTORIAL.md).
+
 ## Current scheduling and coverage
 
 All Manifest Activity roots receive an initial slice (up to 8 method contexts or a cooperative

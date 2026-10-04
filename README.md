@@ -29,6 +29,7 @@ APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。�
 
 - [使用说明](USAGE.md)：单 APK、多个 APK、参数、输出和退出状态。
 - [核心设计](CORE_IDEA.md)：当前流程与初版区别。
+- [分析原理教程](docs/ANALYSIS_TUTORIAL.md)：对象传播、能力绑定、上下文敏感性、通用规则与私有适配。
 - [能力与报告语义](docs/CAPABILITY_ANALYSIS.md)：绑定、覆盖、候选和评估边界。
 - [验证资料索引](docs/validation/README.md)：当前结果、历史记录和已知问题。
 - [两轮调度最终记录](docs/validation/SCHEDULER_V3.md)：实现、六 App 结果、独立复核及限制。

@@ -2,6 +2,8 @@
 
 当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文对应两轮调度实现；旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
 
+需要逐步理解传播算法和精度边界，可继续阅读 [分析原理教程](docs/ANALYSIS_TUTORIAL.md)。
+
 ## 与最初版的区别
 
 | 维度 | 最初版 | 当前默认实现 |
