@@ -1,0 +1,1092 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "reviewer": {
+    "role": "independent source reviewer",
+    "model": "GPT-6 (Codex; exact runtime model identifier unavailable)"
+  },
+  "source_selection": "report-guided; no holdout hosts",
+  "closed_hosts": [
+    {
+      "activity": "com.sohu.sohuvideo.ui.LocationChooseActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.NewFansListActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.MessageListActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.AccountSafeActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.PushTransparentActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.OperatePageActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    },
+    {
+      "activity": "com.sohu.sohuvideo.workcollection.WorksActivity",
+      "scope": "host-owned restored native-banner WebView and all source-visible SDK bridge/settings/registered-client surfaces",
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "conditions": "non-null saved Bundle retaining NewAbsPlayerInputData.nativeBanner, ad clickType 1 and non-empty landing URL; individually proved Activity same-Bundle super.onCreate chain",
+      "evidence": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+          "sha256": "c51073fd91a63f111faf8da0b5c05f276e22fadd648dca42d703d4ca33551fd7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source.json",
+          "sha256": "5df485717b6e3edc1162f488757c97c83fa24f173a71cab19241ce21a955f6bc"
+        },
+        {
+          "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+          "sha256": "158758346f8f4c11ad84f0410dfe8445aa51748789ac3ca356638fc4f9d696ae"
+        }
+      ],
+      "surface_inventory": [
+        "SohuWebView constructor settings, Android.logJsError bridge",
+        "final SohuCloseWebView client plus constructor download and override download",
+        "NBS onPageStarted injected bridges; static and instance annotated tables",
+        "Progress Chrome with superclass callbacks",
+        "NBS loadUrl Chrome wrapper 27 member surface and delegate"
+      ],
+      "exclusions": [
+        "External class loading/code not contained in patched APK",
+        "Other unaudited owned WebViews are not silently covered by this shared receiver audit"
+      ]
+    }
+  ],
+  "gold_failures_preserved": true,
+  "acceptance": "unproven"
+}

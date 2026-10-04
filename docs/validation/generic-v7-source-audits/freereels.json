@@ -1,0 +1,670 @@
+{
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 578,
+      "text": "android:name=\"com.dramawave.feature.web.WebPageActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageActivity.java",
+      "line": 162,
+      "text": "this.mWebPageFragment = companion.newInstance(str4, false, false, true, z12, valueOf, valueOf2, z10, webPageArgs3 != null ? webPageArgs3.getCloseWhenRedirectDramawave() : false);",
+      "sha256": "1c1e647008651a6692fd5cd78a8f1e741785e6bb78a19c0f161c3e020c90298a"
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageFragment.java",
+      "line": 324,
+      "text": "WebPageFragment webPageFragment = new WebPageFragment();",
+      "sha256": "da10f77f7a20f35071cdd1bba521c2b574b56d449bc4458cda02bddde9e1dcb1"
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageFragment.java",
+      "line": 487,
+      "text": "U3((WebView) view.findViewById(R$id.i));",
+      "sha256": "da10f77f7a20f35071cdd1bba521c2b574b56d449bc4458cda02bddde9e1dcb1"
+    },
+    {
+      "file": "resources/res/layout/fragment_webpage.xml",
+      "line": 42,
+      "text": "<WebView",
+      "sha256": "9a6dcfa6536ffa419f5495018573cff810bc334b98a37e25a1b286ca9fb2d102"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 906,
+      "text": "android:name=\"com.tapjoy.TJWebViewActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/tapjoy/TJWebViewActivity.java",
+      "line": 186,
+      "text": "TJWebView tJWebView = new TJWebView(this);",
+      "sha256": "bf2dbaedeb709f840403ee8e64c3a54fd53262281a67e109a7c2ad3b37e43fb9"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 931,
+      "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 232,
+      "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 875,
+      "text": "android:name=\"com.fyber.ads.ofw.OfferWallActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+      "line": 152,
+      "text": "WebView webView = new WebView(getApplicationContext());",
+      "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+    },
+    {
+      "file": "sources/com/fyber/ads/ofw/OfferWallActivity.java",
+      "line": 156,
+      "text": "setContentView(this.webView);",
+      "sha256": "a7570387d2f9270c5d0f7c8cba2bf877798b72eb919bcc2b7aa2028700a801c0"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 900,
+      "text": "android:name=\"com.tapjoy.TJAdUnitActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 103,
+      "text": "this.f119807f = new TJAdUnit();",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 107,
+      "text": "this.f119807f.load(this.f119808g, false, this);",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnit.java",
+      "line": 52,
+      "text": "TapjoyUtil.runOnMainThread(new c(this, context, tJPlacementData, z));",
+      "sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811"
+    },
+    {
+      "file": "sources/com/tapjoy/c.java",
+      "line": 41,
+      "text": "TJWebView tJWebView = new TJWebView(context);",
+      "sha256": "7e3de98a87faf9b582db458db5531862f372ef1779e75f004b4eeccaabba86af"
+    },
+    {
+      "file": "sources/com/tapjoy/c.java",
+      "line": 42,
+      "text": "tJAdUnit.f119800e = tJWebView;",
+      "sha256": "7e3de98a87faf9b582db458db5531862f372ef1779e75f004b4eeccaabba86af"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnit.java",
+      "line": 135,
+      "text": "return this.f119800e;",
+      "sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 123,
+      "text": "this.f119792a.addView(webView);",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1330,
+      "text": "android:name=\"com.taurusx.tax.ui.TaxWebViewActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaxWebViewActivity.java",
+      "line": 176,
+      "text": "WebView webView = new WebView(this);",
+      "sha256": "746d92720907b2ea79a3ec703a5ef61ba6d01b622236373ee03cb99cf1c890e1"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaxWebViewActivity.java",
+      "line": 178,
+      "text": "frameLayout.addView(webView);",
+      "sha256": "746d92720907b2ea79a3ec703a5ef61ba6d01b622236373ee03cb99cf1c890e1"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaxWebViewActivity.java",
+      "line": 180,
+      "text": "w(this.f121336c);",
+      "sha256": "746d92720907b2ea79a3ec703a5ef61ba6d01b622236373ee03cb99cf1c890e1"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1349,
+      "text": "android:name=\"com.taurusx.tax.utils.webview.TaxBrowserActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 184,
+      "text": "setContentView(R.layout.taurusx_activity_web_view);",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 185,
+      "text": "a();",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 106,
+      "text": "t();",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 124,
+      "text": "WebView webView = new WebView(this);",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "sources/com/taurusx/tax/utils/webview/TaxBrowserActivity.java",
+      "line": 126,
+      "text": "frameLayout.addView(webView);",
+      "sha256": "f0cc6b481849f4d0106557330bc4c41ac6d981a5e05ae40adfe03f7aa72b088e"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1420,
+      "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+      "line": 152,
+      "text": "setContentView(a());",
+      "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+      "line": 305,
+      "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+      "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+      "line": 312,
+      "text": "relativeLayout.addView(this.f84455e);",
+      "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1441,
+      "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "line": 73,
+      "text": "setContentView(a());",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "line": 110,
+      "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "line": 137,
+      "text": "frameLayout.addView(webView, -1, -1);",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1527,
+      "text": "android:name=\"com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 757,
+      "text": "RelativeLayout a11 = a();",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 763,
+      "text": "setContentView(a11);",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 888,
+      "text": "this.f115816g0 = new BaseWebView(getApplicationContext());",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity.java",
+      "line": 892,
+      "text": "relativeLayout.addView(this.f115816g0);",
+      "sha256": "3a1a996750e9b9aa214ba4f4dd98e8c24aac80b6024818626ee8e6fa2836d49f"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "line": 11,
+      "text": "public class BaseWebView extends WebView {",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "line": 21,
+      "text": "b();",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    },
+    {
+      "file": "sources/com/smartdigimkt/sdk/basead/ui/web/BaseWebView.java",
+      "line": 69,
+      "text": "c();",
+      "sha256": "3f89151c5a2ebdb492a8ce65c1e72fbc8c04015a773dacf99f6731740b06af55"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1352,
+      "text": "android:name=\"com.taurusx.tax.mraid.MraidBrowser\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 224,
+      "text": "setContentView(w());",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 225,
+      "text": "z(getIntent());",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 189,
+      "text": "this.z = new WebView(this);",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "sources/com/taurusx/tax/mraid/MraidBrowser.java",
+      "line": 193,
+      "text": "relativeLayout.addView(this.z);",
+      "sha256": "8f578e3fceb69ba6347c0e2ce7b2dff2572683aef1b2fe9bcc60e12a7efac14c"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1203,
+      "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+      "line": 108,
+      "text": "setContentView(ueU);",
+      "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+      "line": 193,
+      "text": "WebView webView = new WebView(getApplicationContext());",
+      "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+      "line": 194,
+      "text": "this.f39079da = webView;",
+      "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+      "line": 196,
+      "text": "ueU.addView(this.f39079da, new ViewGroup.LayoutParams(-1, -1));",
+      "sha256": "2d779c0d8ea81df8624c1e748a78f20eeb6d45a07a17b58174cac1a73838c6d0"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 739,
+      "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivity.java",
+      "line": 45,
+      "text": "createController.onCreate(bundle);",
+      "sha256": "4f5d2061c461793038ad42a24710b7c1472dceeaf346f7e9dfff936234d518c6"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivity.java",
+      "line": 140,
+      "text": "this._controller.onResume();",
+      "sha256": "4f5d2061c461793038ad42a24710b7c1472dceeaf346f7e9dfff936234d518c6"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 192,
+      "text": "return this._adUnitViewHandlerFactory.createViewHandler(str);",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitViewHandlerFactory.java",
+      "line": 21,
+      "text": "return (IAdUnitViewHandler) adUnitViewHandlers.get(str).newInstance();",
+      "sha256": "ecec1e639f5891f7160cc64f634f9198ab1e4f2ca8b2b406a232075908e4e25d"
+    },
+    {
+      "file": "sources/com/unity3d/services/core/configuration/Configuration.java",
+      "line": 64,
+      "text": "this._moduleConfigurationList = new Class[]{CoreModuleConfiguration.class, AdsModuleConfiguration.class, AnalyticsModuleConfiguration.class, BannersModuleConfiguration.class, StoreModuleConfiguration.class};",
+      "sha256": "34e976bc868be8eb693521482e9da5f5b34b8d67169f30bbebb91e10ae1f15d2"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/configuration/AdsModuleConfiguration.java",
+      "line": 37,
+      "text": "hashMap.put(\"webplayer\", WebPlayerHandler.class);",
+      "sha256": "40a7bdc3c25d995cc1301dc1f625fe092a515f7ccb5b970d90886850fffd7284"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/WebPlayerHandler.java",
+      "line": 40,
+      "text": "WebPlayerView webPlayerView = new WebPlayerView(context, str, webPlayerSettingsCache.getWebSettings(str), webPlayerSettingsCache.getWebPlayerSettings(webPlayerViewId));",
+      "sha256": "32f10f2f8608d7f87a64f0ca75471206e46bccde4a22440817dee66f2c8b68e8"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/WebPlayerHandler.java",
+      "line": 61,
+      "text": "return this._webPlayerView;",
+      "sha256": "32f10f2f8608d7f87a64f0ca75471206e46bccde4a22440817dee66f2c8b68e8"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 286,
+      "text": "setViews(this._views);",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 184,
+      "text": "if (!handleViewPlacement(viewHandler.getView())) {",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 57,
+      "text": "this._layout.addView(view, layoutParams);",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+      "line": 50,
+      "text": "public class WebPlayerView extends WebView {",
+      "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 745,
+      "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitTransparentActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitTransparentActivity.java",
+      "line": 11,
+      "text": "public class AdUnitTransparentActivity extends AdUnitActivity {",
+      "sha256": "9520c4ff8ed563a9678823ebd9eb8655de0cbbb4b5880d84d38f6a44a644d37d"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 751,
+      "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitTransparentSoftwareActivity.java",
+      "line": 7,
+      "text": "public class AdUnitTransparentSoftwareActivity extends AdUnitTransparentActivity {",
+      "sha256": "ce84c17c65ab7782d2b32a2be4bc49ce96f52cde1c0dd489391a12a73911bb2f"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 757,
+      "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitSoftwareActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitSoftwareActivity.java",
+      "line": 7,
+      "text": "public class AdUnitSoftwareActivity extends AdUnitActivity {",
+      "sha256": "fbdb155eca5fdaeafcd5f27700c645870fe6b09e16ca7fcd4ef42bb3e99d0536"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1168,
+      "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "line": 226,
+      "text": "this.tu = uOO((AttributeSet) null, 0);",
+      "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "line": 935,
+      "text": "return new WebView(uOO(this.tfO));",
+      "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "line": 495,
+      "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+      "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "line": 235,
+      "text": "Qq();",
+      "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 207,
+      "text": "setContentView(krg());",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 626,
+      "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 627,
+      "text": "jhn.setId(dcc.Tp);",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 628,
+      "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 240,
+      "text": "SWs();",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 438,
+      "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "line": 249,
+      "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+      "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1159,
+      "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "line": 77,
+      "text": "uOO(this, daVar);",
+      "sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "line": 78,
+      "text": "setContentView(daVar);",
+      "sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "line": 91,
+      "text": "this.hsE = new com.bytedance.sdk.component.JP.jHN(context);",
+      "sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "line": 92,
+      "text": "frameLayout.addView(this.hsE, new FrameLayout.LayoutParams(-1, -1));",
+      "sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46"
+    },
+    {
+      "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+      "line": 208,
+      "text": "initUserAuthAndUserAgent();",
+      "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+    },
+    {
+      "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+      "line": 198,
+      "text": "b bVar = new b();",
+      "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+    },
+    {
+      "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+      "line": 200,
+      "text": "g1.f.e(bVar);",
+      "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+    },
+    {
+      "file": "sources/g1/f.java",
+      "line": 75,
+      "text": "f125097d = proxy;",
+      "sha256": "ba8a2b891efa85db16d619e6f42644ef803a507ced3a5dbbda7055865b058e4a"
+    },
+    {
+      "file": "sources/g1/f.java",
+      "line": 68,
+      "text": "return aVar.b();",
+      "sha256": "ba8a2b891efa85db16d619e6f42644ef803a507ced3a5dbbda7055865b058e4a"
+    },
+    {
+      "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+      "line": 71,
+      "text": "String str2 = Build.VERSION.RELEASE;",
+      "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+    },
+    {
+      "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+      "line": 103,
+      "text": "String uuid = UUID.randomUUID().toString();",
+      "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+    },
+    {
+      "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+      "line": 120,
+      "text": "return sb3;",
+      "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+    }
+  ],
+  "deep_positive_activities": [
+    "com.dramawave.feature.web.WebPageActivity"
+  ],
+  "present_strata": {
+    "fragment_resource": [
+      "com.dramawave.feature.web.WebPageActivity"
+    ]
+  },
+  "exhaustive_positive_inventory": false,
+  "manifest_activity_count": 164,
+  "acceptance": "unproven; source-first work in progress",
+  "holdout_disjoint": true,
+  "source_positive_activities": [
+    "com.applovin.sdk.AppLovinWebViewActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity",
+    "com.dramawave.feature.web.WebPageActivity",
+    "com.fyber.ads.ofw.OfferWallActivity",
+    "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+    "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+    "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+    "com.tapjoy.TJAdUnitActivity",
+    "com.tapjoy.TJWebViewActivity",
+    "com.taurusx.tax.mraid.MraidBrowser",
+    "com.taurusx.tax.ui.TaxWebViewActivity",
+    "com.taurusx.tax.utils.webview.TaxBrowserActivity",
+    "com.unity3d.services.ads.adunit.AdUnitActivity",
+    "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+    "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+    "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+  ],
+  "source_positive_binding_strata": {
+    "fragment_resource": [
+      "com.dramawave.feature.web.WebPageActivity"
+    ],
+    "sdk_direct_webview": [
+      "com.tapjoy.TJWebViewActivity",
+      "com.applovin.sdk.AppLovinWebViewActivity",
+      "com.fyber.ads.ofw.OfferWallActivity",
+      "com.taurusx.tax.ui.TaxWebViewActivity",
+      "com.taurusx.tax.utils.webview.TaxBrowserActivity",
+      "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "com.taurusx.tax.mraid.MraidBrowser",
+      "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity"
+    ],
+    "sdk_unit_retained_webview": [
+      "com.tapjoy.TJAdUnitActivity"
+    ],
+    "sdk_custom_view_constructor": [
+      "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity"
+    ],
+    "sdk_reflective_module_factory": [
+      "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+    ]
+  },
+  "deep_audit_status": "one shared native WebPage host full three-category surface complete; other positives partial",
+  "coverage_correction": "Prior numeric deep_positive count represented only binding positives. Corrected to contract list and empty until per-host category surfaces are completed."
+}

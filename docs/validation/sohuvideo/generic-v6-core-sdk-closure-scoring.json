@@ -1,0 +1,709 @@
+{
+  "oracle_sha256": "2f10e6b1ce3803239e2e74a323ff288df699ae200e18bd46f6c8719911dfad19",
+  "report_sha256": "54a3de5c4bcb51ee124a6e717be66b59733d87912157cc1a6e840f98fccc28d5",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/sohuvideo/canonical-core-sdk-closure-report-guided.jsonl",
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "report_status": "timeout",
+  "metrics": {
+    "bridge": {
+      "expected": 48,
+      "matched": 0,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 118,
+      "matched": 118,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logJsError",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;IILjava/lang/String;JI)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logJsResult",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsResult(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logRes",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logRes(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->postMessage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "its",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->its()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logDebug",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logDebug(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "onEvent",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "parseArguments",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->parseArguments(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sfp",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfp()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sfs",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfs()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "spt",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->spt()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "onEvent",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logDebug",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->logDebug(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->postMessage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logJsError",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;IILjava/lang/String;JI)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logJsResult",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsResult(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logRes",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logRes(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->postMessage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "its",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->its()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logDebug",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logDebug(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "onEvent",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "parseArguments",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->parseArguments(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sfp",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfp()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sfs",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfs()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "spt",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->spt()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "onEvent",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logDebug",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->logDebug(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->postMessage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logJsError",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;IILjava/lang/String;JI)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logJsResult",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsResult(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logRes",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logRes(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->postMessage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "its",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->its()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logDebug",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logDebug(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "onEvent",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "parseArguments",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->parseArguments(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sfp",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfp()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sfs",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfs()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "spt",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->spt()I",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "onEvent",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "logDebug",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->logDebug(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->postMessage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 305,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 6,
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "webview_constraint_coverage": {
+    "expected": 166,
+    "with_source_type_constraint": 166,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 4,
+    "matched": 4,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 0,
+  "capability_granularity": {
+    "bridge_registration": {
+      "expected": 6,
+      "matched": 0,
+      "recall": 0.0
+    },
+    "bridge_member": {
+      "expected": 42,
+      "matched": 0,
+      "recall": 0.0
+    },
+    "callback_registration": {
+      "expected": 7,
+      "matched": 7,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 111,
+      "matched": 111,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "valid": 275,
+      "unresolved": 30
+    },
+    "emitted": 305,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 30,
+    "conservative_error_upper_bound": 0.09836065573770492
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations.",
+  "ownership_review_file": "docs/validation/sohuvideo/generic-v6-all-host-ownership.jsonl",
+  "ownership_review_sha256": "731332f37a2ad811c586dc23cd717e45ae1a7ad850c1ed743d11ecd4ef803ae7",
+  "ownership_metric_rebound_to_source_updated_verdicts": true
+}

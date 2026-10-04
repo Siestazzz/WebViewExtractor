@@ -1,0 +1,424 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "files": [
+    {
+      "file": "sources/com/tencent/smtt/sdk/i.java",
+      "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372",
+      "delegate_calls": [
+        {
+          "line": 76,
+          "text": "this.f12795a.doUpdateVisitedHistory(this.f12796b, str, z2);"
+        },
+        {
+          "line": 82,
+          "text": "this.f12795a.onDetectedBlankScreen(str, i);"
+        },
+        {
+          "line": 88,
+          "text": "this.f12795a.onFormResubmission(this.f12796b, message, message2);"
+        },
+        {
+          "line": 94,
+          "text": "this.f12795a.onLoadResource(this.f12796b, str);"
+        },
+        {
+          "line": 100,
+          "text": "this.f12795a.onPageCommitVisible(this.f12796b, str);"
+        },
+        {
+          "line": 113,
+          "text": "this.f12795a.onPageFinished(this.f12796b, str);"
+        },
+        {
+          "line": 143,
+          "text": "this.f12795a.onPageStarted(this.f12796b, str, bitmap);"
+        },
+        {
+          "line": 154,
+          "text": "this.f12795a.onReceivedClientCertRequest(this.f12796b, clientCertRequest);"
+        },
+        {
+          "line": 167,
+          "text": "this.f12795a.onReceivedError(this.f12796b, i, str, str2);"
+        },
+        {
+          "line": 173,
+          "text": "this.f12795a.onReceivedError(this.f12796b, webResourceRequest, webResourceError);"
+        },
+        {
+          "line": 179,
+          "text": "this.f12795a.onReceivedHttpAuthRequest(this.f12796b, httpAuthHandler, str, str2);"
+        },
+        {
+          "line": 185,
+          "text": "this.f12795a.onReceivedHttpError(this.f12796b, webResourceRequest, webResourceResponse);"
+        },
+        {
+          "line": 191,
+          "text": "this.f12795a.onReceivedLoginRequest(this.f12796b, str, str2, str3);"
+        },
+        {
+          "line": 197,
+          "text": "this.f12795a.onReceivedSslError(this.f12796b, sslErrorHandler, sslError);"
+        },
+        {
+          "line": 202,
+          "text": "return this.f12795a.onRenderProcessGone(this.f12796b, new WebViewClient.RenderProcessGoneDetail() { // from class: com.tencent.smtt.sdk.i.2"
+        },
+        {
+          "line": 218,
+          "text": "this.f12795a.onScaleChanged(this.f12796b, f, f2);"
+        },
+        {
+          "line": 224,
+          "text": "this.f12795a.onTooManyRedirects(this.f12796b, message, message2);"
+        },
+        {
+          "line": 230,
+          "text": "this.f12795a.onUnhandledKeyEvent(this.f12796b, keyEvent);"
+        },
+        {
+          "line": 236,
+          "text": "return this.f12795a.shouldInterceptRequest(this.f12796b, webResourceRequest);"
+        },
+        {
+          "line": 242,
+          "text": "return this.f12795a.shouldInterceptRequest(this.f12796b, webResourceRequest, bundle);"
+        },
+        {
+          "line": 248,
+          "text": "return this.f12795a.shouldInterceptRequest(this.f12796b, str);"
+        },
+        {
+          "line": 254,
+          "text": "return this.f12795a.shouldOverrideKeyEvent(this.f12796b, keyEvent);"
+        },
+        {
+          "line": 264,
+          "text": "boolean shouldOverrideUrlLoading = this.f12795a.shouldOverrideUrlLoading(this.f12796b, webResourceRequest);"
+        },
+        {
+          "line": 284,
+          "text": "boolean shouldOverrideUrlLoading = this.f12795a.shouldOverrideUrlLoading(this.f12796b, str);"
+        }
+      ],
+      "scope": "Observed explicit delegate invocations; signatures/source branches require member-level review. No all-members inference."
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/h.java",
+      "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4",
+      "delegate_calls": [
+        {
+          "line": 53,
+          "text": "return this.f12782b.getDefaultVideoPoster();"
+        },
+        {
+          "line": 63,
+          "text": "this.f12782b.onCloseWindow(this.f12781a);"
+        },
+        {
+          "line": 72,
+          "text": "return this.f12782b.onConsoleMessage(consoleMessage);"
+        },
+        {
+          "line": 91,
+          "text": "return this.f12782b.onCreateWindow(this.f12781a, z2, z3, obtain);"
+        },
+        {
+          "line": 96,
+          "text": "this.f12782b.onExceededDatabaseQuota(str, str2, j, j2, j3, new a(quotaUpdater));"
+        },
+        {
+          "line": 101,
+          "text": "this.f12782b.onGeolocationPermissionsHidePrompt();"
+        },
+        {
+          "line": 106,
+          "text": "this.f12782b.onGeolocationPermissionsShowPrompt(str, geolocationPermissionsCallback);"
+        },
+        {
+          "line": 111,
+          "text": "this.f12782b.onHideCustomView();"
+        },
+        {
+          "line": 117,
+          "text": "return this.f12782b.onJsAlert(this.f12781a, str, str2, jsResult);"
+        },
+        {
+          "line": 123,
+          "text": "return this.f12782b.onJsBeforeUnload(this.f12781a, str, str2, jsResult);"
+        },
+        {
+          "line": 129,
+          "text": "return this.f12782b.onJsConfirm(this.f12781a, str, str2, jsResult);"
+        },
+        {
+          "line": 135,
+          "text": "return this.f12782b.onJsPrompt(this.f12781a, str, str2, str3, jsPromptResult);"
+        },
+        {
+          "line": 140,
+          "text": "return this.f12782b.onJsTimeout();"
+        },
+        {
+          "line": 146,
+          "text": "this.f12782b.onProgressChanged(this.f12781a, i);"
+        },
+        {
+          "line": 151,
+          "text": "this.f12782b.onReachedMaxAppCacheSize(j, j2, new a(quotaUpdater));"
+        },
+        {
+          "line": 157,
+          "text": "this.f12782b.onReceivedIcon(this.f12781a, bitmap);"
+        },
+        {
+          "line": 163,
+          "text": "this.f12782b.onReceivedTitle(this.f12781a, str);"
+        },
+        {
+          "line": 169,
+          "text": "this.f12782b.onReceivedTouchIconUrl(this.f12781a, str, z2);"
+        },
+        {
+          "line": 175,
+          "text": "this.f12782b.onRequestFocus(this.f12781a);"
+        },
+        {
+          "line": 180,
+          "text": "this.f12782b.onShowCustomView(view, i, customViewCallback);"
+        },
+        {
+          "line": 185,
+          "text": "this.f12782b.onShowCustomView(view, customViewCallback);"
+        },
+        {
+          "line": 229,
+          "text": "return this.f12782b.onShowFileChooser(this.f12781a, valueCallback2, fileChooserParams2);"
+        },
+        {
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2"
+        }
+      ],
+      "scope": "Observed explicit delegate invocations; signatures/source branches require member-level review. No all-members inference."
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+      "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2",
+      "delegate_calls": [
+        {
+          "line": 356,
+          "text": "return this.f12610a.onRenderProcessGone(this.f12611b, new WebViewClient.RenderProcessGoneDetail() { // from class: com.tencent.smtt.sdk.SystemWebViewClient.3"
+        },
+        {
+          "line": 372,
+          "text": "this.f12610a.doUpdateVisitedHistory(this.f12611b, str, z2);"
+        },
+        {
+          "line": 378,
+          "text": "this.f12610a.onFormResubmission(this.f12611b, message, message2);"
+        },
+        {
+          "line": 384,
+          "text": "this.f12610a.onLoadResource(this.f12611b, str);"
+        },
+        {
+          "line": 390,
+          "text": "this.f12610a.onPageCommitVisible(this.f12611b, str);"
+        },
+        {
+          "line": 403,
+          "text": "this.f12610a.onPageFinished(this.f12611b, str);"
+        },
+        {
+          "line": 424,
+          "text": "this.f12610a.onPageStarted(this.f12611b, str, bitmap);"
+        },
+        {
+          "line": 431,
+          "text": "this.f12610a.onReceivedClientCertRequest(this.f12611b, new a(clientCertRequest));"
+        },
+        {
+          "line": 438,
+          "text": "this.f12610a.onReceivedError(this.f12611b, i, str, str2);"
+        },
+        {
+          "line": 444,
+          "text": "this.f12610a.onReceivedError(this.f12611b, webResourceRequest != null ? new f(webResourceRequest) : null, webResourceError != null ? new com.tencent.smtt.export.external.interfaces.WebResourceError() { // from class: com.tencent.smtt.sdk.SystemWebViewClient.2"
+        },
+        {
+          "line": 460,
+          "text": "this.f12610a.onReceivedHttpAuthRequest(this.f12611b, new b(httpAuthHandler), str, str2);"
+        },
+        {
+          "line": 466,
+          "text": "this.f12610a.onReceivedHttpError(this.f12611b, new f(webResourceRequest), new g(webResourceResponse));"
+        },
+        {
+          "line": 474,
+          "text": "this.f12610a.onReceivedLoginRequest(this.f12611b, str, str2, str3);"
+        },
+        {
+          "line": 483,
+          "text": "this.f12610a.onReceivedSslError(this.f12611b, new c(sslErrorHandler), new d(sslError));"
+        },
+        {
+          "line": 495,
+          "text": "this.f12610a.onScaleChanged(this.f12611b, f2, f3);"
+        },
+        {
+          "line": 501,
+          "text": "this.f12610a.onTooManyRedirects(this.f12611b, message, message2);"
+        },
+        {
+          "line": 507,
+          "text": "this.f12610a.onUnhandledKeyEvent(this.f12611b, keyEvent);"
+        },
+        {
+          "line": 527,
+          "text": "shouldInterceptRequest = this.f12610a.shouldInterceptRequest(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));"
+        },
+        {
+          "line": 542,
+          "text": "shouldInterceptRequest = this.f12610a.shouldInterceptRequest(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));"
+        },
+        {
+          "line": 551,
+          "text": "if (Build.VERSION.SDK_INT >= 11 && (shouldInterceptRequest = this.f12610a.shouldInterceptRequest(this.f12611b, str)) != null) {"
+        },
+        {
+          "line": 560,
+          "text": "return this.f12610a.shouldOverrideKeyEvent(this.f12611b, keyEvent);"
+        },
+        {
+          "line": 575,
+          "text": "return this.f12610a.shouldOverrideUrlLoading(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));"
+        },
+        {
+          "line": 579,
+          "text": "return this.f12610a.shouldOverrideUrlLoading(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));"
+        },
+        {
+          "line": 588,
+          "text": "return this.f12610a.shouldOverrideUrlLoading(this.f12611b, str);"
+        }
+      ],
+      "scope": "Observed explicit delegate invocations; signatures/source branches require member-level review. No all-members inference."
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+      "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17",
+      "delegate_calls": [
+        {
+          "line": 181,
+          "text": "Bitmap defaultVideoPoster = this.f12579a.getDefaultVideoPoster();"
+        },
+        {
+          "line": 195,
+          "text": "return this.f12579a.getVideoLoadingProgressView();"
+        },
+        {
+          "line": 200,
+          "text": "this.f12579a.getVisitedHistory(new ValueCallback<String[]>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.1"
+        },
+        {
+          "line": 212,
+          "text": "this.f12579a.onCloseWindow(this.f12580b);"
+        },
+        {
+          "line": 217,
+          "text": "this.f12579a.onConsoleMessage(new a(str, str2, i));"
+        },
+        {
+          "line": 222,
+          "text": "return this.f12579a.onConsoleMessage(new a(consoleMessage));"
+        },
+        {
+          "line": 241,
+          "text": "return this.f12579a.onCreateWindow(this.f12580b, z2, z3, obtain);"
+        },
+        {
+          "line": 248,
+          "text": "this.f12579a.onExceededDatabaseQuota(str, str2, j, j2, j3, new f(quotaUpdater));"
+        },
+        {
+          "line": 254,
+          "text": "this.f12579a.onGeolocationPermissionsHidePrompt();"
+        },
+        {
+          "line": 260,
+          "text": "this.f12579a.onGeolocationPermissionsShowPrompt(str, new c(callback));"
+        },
+        {
+          "line": 266,
+          "text": "return this.f12579a.onJsAlert(this.f12580b, str, str2, new e(jsResult));"
+        },
+        {
+          "line": 272,
+          "text": "return this.f12579a.onJsBeforeUnload(this.f12580b, str, str2, new e(jsResult));"
+        },
+        {
+          "line": 278,
+          "text": "return this.f12579a.onJsConfirm(this.f12580b, str, str2, new e(jsResult));"
+        },
+        {
+          "line": 284,
+          "text": "return this.f12579a.onJsPrompt(this.f12580b, str, str2, str3, new d(jsPromptResult));"
+        },
+        {
+          "line": 290,
+          "text": "return this.f12579a.onJsTimeout();"
+        },
+        {
+          "line": 295,
+          "text": "this.f12579a.onPermissionRequest(new com.tencent.smtt.export.external.interfaces.PermissionRequest() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.6"
+        },
+        {
+          "line": 327,
+          "text": "this.f12579a.onPermissionRequestCanceled(new com.tencent.smtt.export.external.interfaces.PermissionRequest() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.7"
+        },
+        {
+          "line": 360,
+          "text": "this.f12579a.onProgressChanged(this.f12580b, i);"
+        },
+        {
+          "line": 366,
+          "text": "this.f12579a.onReachedMaxAppCacheSize(j, j2, new f(quotaUpdater));"
+        },
+        {
+          "line": 372,
+          "text": "this.f12579a.onReceivedIcon(this.f12580b, bitmap);"
+        },
+        {
+          "line": 378,
+          "text": "this.f12579a.onReceivedTitle(this.f12580b, str);"
+        },
+        {
+          "line": 385,
+          "text": "this.f12579a.onReceivedTouchIconUrl(this.f12580b, str, z2);"
+        },
+        {
+          "line": 391,
+          "text": "this.f12579a.onRequestFocus(this.f12580b);"
+        },
+        {
+          "line": 435,
+          "text": "return this.f12579a.onShowFileChooser(this.f12580b, valueCallback2, fileChooserParams2);"
+        },
+        {
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3"
+        }
+      ],
+      "scope": "Observed explicit delegate invocations; signatures/source branches require member-level review. No all-members inference."
+    }
+  ],
+  "findings": [
+    "X5 WebView.setWebViewClient retains input then installs proxy i for X5 or SystemWebViewClient for Android fallback. Both adapters have explicit standard signature forwarding.",
+    "X5 WebView.setWebChromeClient selects proxy h for X5. Android path selects SDK class c when both show/hideCustomView are overridden (MttWebChromeClient meets this condition), otherwise SystemWebChromeClient. Need SDK class c inherited forwarding review, not merely SystemWebChromeClient.",
+    "Mtt shouldInterceptRequest(request,Bundle) is only actual X5 extension dispatch, not declared Android callback. Preserve normalized X5 signature and runtime core condition."
+  ]
+}

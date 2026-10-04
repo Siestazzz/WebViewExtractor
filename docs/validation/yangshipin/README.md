@@ -11,3 +11,7 @@ Reviewer: GPT-6.1 Sol。APK SHA-256 `16ce4954ebbf29effe54c73736863acbd78808895a6
 尚欠全输出activity_host归属审核、capability_precision、最终评分和holdout truth/evaluation；这些不从当前小样本匹配推定。
 
 覆盖口径纠正：source-positive仅证明宿主有真实View绑定，不等于完成该宿主全Bridge/Settings/Client表面深审。host-deep-audit-coverage.jsonl逐宿主三类别记partial/unknown；deep_positive_activities暂为空集合，source_positive_activities单列。旧数值deep计数已纠正，不作为验收证据。
+
+Source-first shared-surface expansion: 8 H5 hosts now include 21 initialization settings plus first UA setter (empty constructor UA input selects existing-UA/version branch), and 18 effective custom Client/Chrome callback signatures. Dynamic paths and UA preserve source expressions without wildcard value acceptance. Whole-host deep completion remains pending custom host entry overrides and SDK initialization/wrapper branches. Original frozen source facts are retained.
+
+Early safe-client lifecycle audit adds conditional X5SafeWebViewClient registration before Mtt replacement: config gate + SDK >=26 + null/platform-default current client. Its 21 custom members are recorded, including onRenderProcessGone returning true without delegate forward. Total current canonical facts: 530; source-positive hosts: 11; deep-complete hosts: 0 pending the documented whole-host closure. Evidence line/text/SHA validation passed across 33 source files; holdout hosts remain excluded.

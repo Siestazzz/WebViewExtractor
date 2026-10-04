@@ -840,28 +840,91 @@ final class CapabilityEngine {
         String key=heapKey(field,receiver);h.deferredFields.putIfAbsent(key,new DeferredField(field,receiver));
         return V.of("field_object",type,key);
     }
+    record RefreshKey(int depth,Set<String> relevantSeen){}
+    record RefreshOutcome(V value,Set<String> addedSeen){}
+    record RefreshDependency(V value,int remaining){}
+    static final class RefreshExpired extends RuntimeException {
+        RefreshExpired(){super(null,null,false,false);}
+    }
+    static final class RefreshTraversal {
+        final IdentityHashMap<V,Map<RefreshKey,RefreshOutcome>> memo=new IdentityHashMap<>();
+        final IdentityHashMap<V,Map<Integer,Set<String>>> dependencies=new IdentityHashMap<>();
+        Map<String,List<V>> heapByField;
+        long work;
+    }
+    long lastRefreshWork;
+    void refreshDeadline(){if(System.nanoTime()>=deadline)throw new RefreshExpired();}
     V refreshBinding(V value,Host h,int depth,Set<String> seen){
+        RefreshTraversal traversal=new RefreshTraversal();
+        try{return refreshBinding(value,h,depth,seen,traversal);}
+        catch(RefreshExpired expired){h.gaps.add("deferred_binding_deadline");return value;}
+        finally{lastRefreshWork=traversal.work;}
+    }
+    Set<String> refreshDependencies(V root,Host h,int remaining,RefreshTraversal traversal){
+        Map<Integer,Set<String>> depths=traversal.dependencies.computeIfAbsent(root,k->new HashMap<>());
+        Set<String> cached=depths.get(remaining);if(cached!=null)return cached;
+        Set<String> fields=new HashSet<>();IdentityHashMap<V,Integer> explored=new IdentityHashMap<>();
+        ArrayDeque<RefreshDependency> pending=new ArrayDeque<>();pending.add(new RefreshDependency(root,remaining));
+        while(!pending.isEmpty()){
+            refreshDeadline();var item=pending.remove();V value=item.value();int left=item.remaining();
+            if(left<0||explored.getOrDefault(value,-1)>=left)continue;explored.put(value,left);
+            if(value.kind().equals("union")){for(V choice:alternatives(value)){refreshDeadline();pending.add(new RefreshDependency(choice,left-1));}continue;}
+            if(!value.kind().equals("field_object"))continue;
+            fields.add(value.id());DeferredField field=h.deferredFields.get(value.id());if(field==null)continue;
+            pending.add(new RefreshDependency(field.receiver(),left-1));
+            ArrayDeque<V> receivers=new ArrayDeque<>();receivers.add(field.receiver());List<V> direct=new ArrayList<>();boolean dynamic=false;
+            while(!receivers.isEmpty()){
+                refreshDeadline();V receiver=receivers.remove();
+                if(receiver.kind().equals("union"))receivers.addAll(alternatives(receiver));
+                else if(receiver.kind().equals("field_object"))dynamic=true;
+                else direct.add(receiver);
+            }
+            for(V receiver:direct){refreshDeadline();V stored=h.heap.get(heapKey(field.field(),receiver));if(stored!=null)pending.add(new RefreshDependency(stored,left-1));}
+            if(dynamic){
+                // Receiver refresh can change its identity. Every same-field heap value
+                // is a safe dependency superset, not an evaluation/aliasing join.
+                if(traversal.heapByField==null){
+                    traversal.heapByField=new HashMap<>();
+                    for(var entry:h.heap.entrySet()){
+                        refreshDeadline();int separator=entry.getKey().lastIndexOf("::");
+                        if(separator>=0)traversal.heapByField.computeIfAbsent(entry.getKey().substring(separator+2),k->new ArrayList<>()).add(entry.getValue());
+                    }
+                }
+                for(V stored:traversal.heapByField.getOrDefault(field.field(),List.of())){refreshDeadline();pending.add(new RefreshDependency(stored,left-1));}
+            }
+        }
+        Set<String> result=Set.copyOf(fields);depths.put(remaining,result);return result;
+    }
+    V refreshBinding(V value,Host h,int depth,Set<String> seen,RefreshTraversal traversal){
+        refreshDeadline();
         if(depth>12){h.gaps.add("deferred_binding_depth");return value;}
-        if(value.kind().equals("union")){V result=null;for(V choice:alternatives(value))result=union(result,refreshBinding(choice,h,depth+1,new HashSet<>(seen)));return result==null?value:result;}
-        if(value.kind().equals("field_object")){
-            DeferredField field=h.deferredFields.get(value.id());if(field==null||!seen.add(value.id()))return value;
-            V receiver=refreshBinding(field.receiver(),h,depth+1,seen),result=null;
-            for(V actual:alternatives(receiver)){
-                V stored=h.heap.get(heapKey(field.field(),actual));
-                if(stored!=null&&!stored.equals(value))result=union(result,refreshBinding(stored,h,depth+1,new HashSet<>(seen)));
+        Set<String> dependencies=refreshDependencies(value,h,12-depth,traversal),relevantSeen=new HashSet<>();
+        for(String field:seen)if(dependencies.contains(field))relevantSeen.add(field);
+        RefreshKey key=new RefreshKey(depth,Set.copyOf(relevantSeen));
+        Map<RefreshKey,RefreshOutcome> outcomes=traversal.memo.computeIfAbsent(value,k->new HashMap<>());
+        RefreshOutcome cached=outcomes.get(key);if(cached!=null){seen.addAll(cached.addedSeen());return cached.value();}
+        traversal.work++;Set<String> before=new HashSet<>(seen);V result=value;
+        if(value.kind().equals("union")){
+            V joined=null;for(V choice:alternatives(value)){refreshDeadline();joined=union(joined,refreshBinding(choice,h,depth+1,new HashSet<>(seen),traversal));}
+            if(joined!=null)result=joined;
+        }else if(value.kind().equals("field_object")){
+            DeferredField field=h.deferredFields.get(value.id());
+            if(field!=null&&seen.add(value.id())){
+                V receiver=refreshBinding(field.receiver(),h,depth+1,seen,traversal),joined=null;
+                for(V actual:alternatives(receiver)){
+                    refreshDeadline();V stored=h.heap.get(heapKey(field.field(),actual));
+                    if(stored!=null&&!stored.equals(value))joined=union(joined,refreshBinding(stored,h,depth+1,new HashSet<>(seen),traversal));
+                }
+                if(joined!=null){h.gaps.add("deferred_field_order_unproven");result=joined;}
             }
-            if(result!=null)h.gaps.add("deferred_field_order_unproven");
-            return result==null?value:result;
-        }
-        if(value.kind().equals("view")){
-            V result=null;
-            for(var binding:h.xmlBindings.getOrDefault(value.id(),Set.of())){
-                String concrete=(String)binding.get("concrete_type");
-                if(value.type()==null||idx.subtype(concrete,value.type()))result=union(result,V.of("view",concrete,value.id()));
+        }else if(value.kind().equals("view")){
+            V joined=null;for(var binding:h.xmlBindings.getOrDefault(value.id(),Set.of())){
+                refreshDeadline();String concrete=(String)binding.get("concrete_type");
+                if(value.type()==null||idx.subtype(concrete,value.type()))joined=union(joined,V.of("view",concrete,value.id()));
             }
-            return result==null?value:result;
+            if(joined!=null)result=joined;
         }
-        return value;
+        Set<String> added=new HashSet<>(seen);added.removeAll(before);outcomes.put(key,new RefreshOutcome(result,Set.copyOf(added)));return result;
     }
     V guardValue(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;

@@ -1,0 +1,177 @@
+{
+  "scope": "capability_precision",
+  "report_sha256": "54a3de5c4bcb51ee124a6e717be66b59733d87912157cc1a6e840f98fccc28d5",
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+  "activity_host_verdict": "valid",
+  "verdict": "wrong",
+  "source_evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 130,
+      "text": "    private WriteHandlingWebViewClient getWebViewClientDelegate(boolean webviewIntercept) {",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 134,
+      "text": "        return new WriteHandlingWebViewClient(this);",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 515,
+      "text": "    public SohuWebView(Context context, AttributeSet attr) {",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 522,
+      "text": "        init(false);",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+      "line": 29,
+      "text": "    public SohuProgressWebView(Context context) {",
+      "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+      "line": 30,
+      "text": "        this(context, false);",
+      "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+    }
+  ],
+  "wrong_report_facts": [
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "site": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;-><init>(Landroid/webkit/WebView;)V@17",
+      "api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "webview": {
+        "id": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView;->initView(Z)V@54|Lcom/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView;->initView()V@28|Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSv(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z@75",
+        "type": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+      },
+      "binding_status": "candidate",
+      "conditional": false,
+      "evidence": [
+        "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity;->detailPageView:Lcom/sohu/app/ads/sdk/common/widget/CustomDetailPageView;",
+        "Lcom/sohu/app/ads/sdk/common/widget/CustomDetailPageView;->mWebView:Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->init(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->initWebView(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView$1;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->parserAction(Ljava/lang/String;)Z",
+        "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z",
+        "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forward(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;Lcom/sohu/app/ads/download/IDownloadNotifier;)Z",
+        "Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSv(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView;-><init>(Landroid/content/Context;)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView;->initView()V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView;-><init>(Landroid/content/Context;)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView;-><init>(Landroid/content/Context;Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView;->initView(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;-><init>(Landroid/content/Context;Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->init(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->initWebView(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;-><init>(Landroid/webkit/WebView;)V"
+      ],
+      "arguments": [
+        {
+          "kind": "object",
+          "type": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView",
+          "id": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView;->initView(Z)V@54|Lcom/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView;->initView()V@28|Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil;->forwardToSv(Landroid/content/Context;Lcom/sohu/app/ads/sdk/common/adjump/bean/JumpInfo;Ljava/lang/String;Lcom/sohu/app/ads/sdk/common/adjump/JumpUtil$JumpCallback;)Z@75",
+          "args": []
+        },
+        {
+          "kind": "object",
+          "type": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface",
+          "id": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;-><init>(Landroid/webkit/WebView;)V@10|Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->getWebViewClientDelegate(Z)Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;@8|Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView;->initView(Z)V@54",
+          "args": []
+        },
+        {
+          "kind": "literal",
+          "type": "java.lang.String",
+          "id": "interception",
+          "literal": "interception",
+          "args": []
+        }
+      ],
+      "registration_name": "interception",
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface",
+      "members": [
+        {
+          "annotated": true,
+          "signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/AjaxInterceptJavascriptInterface;->customAjax(Ljava/lang/String;Ljava/lang/String;)V",
+          "display": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface.customAjax(Ljava/lang/String;,Ljava/lang/String;):V"
+        }
+      ]
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "site": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;-><init>(Landroid/webkit/WebView;)V@17",
+      "api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "webview": {
+        "id": "activity:com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity/view:2131297691/view:2131306011",
+        "type": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+      },
+      "binding_status": "candidate",
+      "conditional": false,
+      "evidence": [
+        "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity;->detailPageView:Lcom/sohu/app/ads/sdk/common/widget/CustomDetailPageView;",
+        "Lcom/sohu/app/ads/sdk/common/widget/CustomDetailPageView;->mWebView:Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->init(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->initWebView(Z)V",
+        "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;-><init>(Landroid/webkit/WebView;)V"
+      ],
+      "arguments": [
+        {
+          "kind": "view",
+          "type": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView",
+          "id": "activity:com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity/view:2131297691/view:2131306011",
+          "args": []
+        },
+        {
+          "kind": "object",
+          "type": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface",
+          "id": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;-><init>(Landroid/webkit/WebView;)V@10|Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebView;->getWebViewClientDelegate(Z)Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient;@8|activity:com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity/view:2131297691/view:2131306011",
+          "args": []
+        },
+        {
+          "kind": "literal",
+          "type": "java.lang.String",
+          "id": "interception",
+          "literal": "interception",
+          "args": []
+        }
+      ],
+      "xml_binding_evidence": [
+        {
+          "lookup_root": "activity:com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity/view:2131297691",
+          "concrete_type": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView",
+          "layout": "res/layout/custom_detail_layout.xml",
+          "view_resource_id": 2131306011
+        }
+      ],
+      "xml_binding_semantics": "possible layout receivers; branch/configuration and repeated-instance cooccurrence not proven",
+      "registration_name": "interception",
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface",
+      "members": [
+        {
+          "annotated": true,
+          "signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/AjaxInterceptJavascriptInterface;->customAjax(Ljava/lang/String;Ljava/lang/String;)V",
+          "display": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface.customAjax(Ljava/lang/String;,Ljava/lang/String;):V"
+        }
+      ]
+    }
+  ],
+  "minimal_structure": "XML constructor calls configure(false); alternate Boolean constructor calls configure(flag); configure only registers bridge if flag true. Unknown helper-entry flag cannot justify bridge on actual XML receiver.",
+  "source_rejected_gold": "shared-sdk-surface-source-rejected-v6.json",
+  "note": "False-positive capability, not invalid Activity ownership; frozen six disputed gold rows remain unchanged."
+}

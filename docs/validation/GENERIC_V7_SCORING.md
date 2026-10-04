@@ -1,0 +1,5 @@
+# v7 scoring correction: exact string settings
+
+The prior scorer lowercased every literal setting value, including String arguments. That could count a wrong-case User-Agent, path or encoding as a hit, and stripped significant whitespace from unquoted String literals. The new regression fails on v6's scorer and passes after the correction. String settings now compare exact case and whitespace; boolean settings retain boolean normalization. The change strengthens the test, not the extraction algorithm, and preserves every oracle row. Dynamic expressions remain unresolved under the existing rules rather than accepting an invented constant.
+
+`python3 scripts/test_evaluate.py` passes13 tests. Reproduction logs: test/runs/generic-v7-scorer-before.log (failure) and generic-v7-scorer-after.log (success). Scoring version6 records the scorer SHA256 in results. Historical scores are not overwritten; v6 and v7 reports will be replayed with this same scorer to separate measurement changes from extraction changes. Type constraints still do not establish exact instance identity or capability precision.

@@ -1,0 +1,84 @@
+{
+  "oracle_sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7",
+  "report_sha256": "54a3de5c4bcb51ee124a6e717be66b59733d87912157cc1a6e840f98fccc28d5",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "report_status": "timeout",
+  "metrics": {
+    "bridge": {
+      "expected": 420,
+      "matched": 420,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 204,
+      "matched": 204,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [],
+  "emitted_activities": 305,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 6,
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "webview_constraint_coverage": {
+    "expected": 624,
+    "with_source_type_constraint": 624,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 26,
+    "matched": 26,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 0,
+  "capability_granularity": {
+    "bridge_registration": {
+      "expected": 54,
+      "matched": 54,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 366,
+      "matched": 366,
+      "recall": 1.0
+    },
+    "callback_registration": {
+      "expected": 26,
+      "matched": 26,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 178,
+      "matched": 178,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "valid": 275,
+      "unresolved": 30
+    },
+    "emitted": 305,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 30,
+    "conservative_error_upper_bound": 0.09836065573770492
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations.",
+  "ownership_review_file": "docs/validation/sohuvideo/generic-v6-all-host-ownership.jsonl",
+  "ownership_review_sha256": "731332f37a2ad811c586dc23cd717e45ae1a7ad850c1ed743d11ecd4ef803ae7",
+  "ownership_metric_rebound_to_source_updated_verdicts": true
+}

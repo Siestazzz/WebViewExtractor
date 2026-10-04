@@ -1,0 +1,983 @@
+{
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "reviewer": "GPT-6.1 Sol",
+  "evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 735,
+      "text": "android:name=\"com.ixigua.browser.specific.BrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 789,
+      "text": "this.t = r2;",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 969,
+      "text": "return (AppSettings.inst().mSearchConfigSettings.A().enable() && w2()) ? ((IBrowserService) ServiceManager.getService(IBrowserService.class)).getSearchChildBrowserScene() : ((IBrowserService) ServiceManager.getService(IBrowserService.class)).getArticleBrowserScene();",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/impl/BrowserServiceImpl.java",
+      "line": 112,
+      "text": "return new ArticleBrowserScene();",
+      "sha256": "86c41dac228e8a6fa90c40561429b7d3e795c727343efe8d5a00bf69f8645073"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/ArticleBrowserScene.java",
+      "line": 143,
+      "text": "public class ArticleBrowserScene extends BrowserScene implements BrowserScene.OnPageLoadListener {",
+      "sha256": "17cfc354adbbadebf37939e12a2b17cb7374bf5d053192da015d53889f8d0319"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 805,
+      "text": "this.s = NavigationSceneUtility.setupWithActivity(this, 2131165589, null, new NavigationSceneOptions((Class<? extends Scene>) this.t.getClass(), bundle2), new SceneComponentFactory() { // from class: com.ixigua.browser.specific.BrowserActivity.4",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 809,
+      "text": "return (Scene) BrowserActivity.this.t;",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "line": 177,
+      "text": "navigationScene.setRootSceneComponentFactory(sceneComponentFactory);",
+      "sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20"
+    },
+    {
+      "file": "sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "line": 193,
+      "text": "beginTransaction2.add(i, lifeCycleFragment, str);",
+      "sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20"
+    },
+    {
+      "file": "sources/com/bytedance/scene/LifeCycleFragment.java",
+      "line": 90,
+      "text": "sceneContainerLifecycleCallback.onActivityCreated(getActivity(), bundle);",
+      "sha256": "50f1af94d79875e2fa720c0fb828a5e19558021cd4e3c0a52cc09dfd1017e3c1"
+    },
+    {
+      "file": "sources/com/bytedance/scene/SceneLifecycleDispatcher.java",
+      "line": 71,
+      "text": "sceneLifecycleManager.a(activity, viewGroup, t, rootScopeFactory, z, bundle2);",
+      "sha256": "bba2b878e6aef9e1e925381a69fe3702da67d4395741f6fbbb777e7c70fc6d92"
+    },
+    {
+      "file": "sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "line": 126,
+      "text": "b = this.mRootSceneComponentFactory.a(requireActivity().getClassLoader(), e);",
+      "sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8"
+    },
+    {
+      "file": "sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "line": 131,
+      "text": "this.mNavigationSceneManager.o(b, new PushOptions.Builder().a());",
+      "sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "line": 1878,
+      "text": "this.e = p1(viewGroup2);",
+      "sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "line": 1514,
+      "text": "f.a(this.e);",
+      "sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 744,
+      "text": "android:name=\"com.ixigua.browser.specific.PureBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/PureBrowserActivity.java",
+      "line": 6,
+      "text": "public final class PureBrowserActivity extends BrowserActivity {",
+      "sha256": "32c28af6d70b9988d40fe392530504448e2ae081ff290d229bcad5e88ff2059d"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 748,
+      "text": "android:name=\"com.ixigua.browser.specific.AggregationBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/AggregationBrowserActivity.java",
+      "line": 43,
+      "text": "public final class AggregationBrowserActivity extends BrowserActivity {",
+      "sha256": "92820c3809505eb9078194207798b3891838b5c89c6766cb5723b3f4dc3e8592"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 739,
+      "text": "android:name=\"com.ixigua.browser.specific.pad.PadBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/pad/PadBrowserActivity.java",
+      "line": 17,
+      "text": "public final class PadBrowserActivity extends BrowserActivity {",
+      "sha256": "5400ae620923d290263da9549eaad4217a694a06b76873165c4e437bddb02f76"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1695,
+      "text": "android:name=\"com.ixigua.browser.specific.pad.PadBrowserDialogActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/pad/PadBrowserDialogActivity.java",
+      "line": 38,
+      "text": "public final class PadBrowserDialogActivity extends BrowserActivity implements IPageTrackNode {",
+      "sha256": "f964d70ba04292246bf8760b313b9ca6c9be439be46ae0b0dfc94579a665ba18"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3960,
+      "text": "android:name=\"com.bytedance.bdturing.comonui.CommonWebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "line": 126,
+      "text": "this.e = (TuringVerifyWebView) findViewById(2131178759);",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "line": 128,
+      "text": "this.e.b(new VerifyWebViewListener() { // from class: com.bytedance.bdturing.comonui.CommonWebActivity.1",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/TuringVerifyWebView.java",
+      "line": 41,
+      "text": "public class TuringVerifyWebView extends WebView {",
+      "sha256": "48dad07225b4538df9cc3489a2a2395a0db4b762a813b1d3478e2d167e987f71"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "line": 163,
+      "text": "new JsBridgeModule(this.g, this.e);",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3894,
+      "text": "android:name=\"com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "line": 207,
+      "text": "TuringVerifyWebView turingVerifyWebView = (TuringVerifyWebView) findViewById(2131167810);",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "line": 209,
+      "text": "turingVerifyWebView.b(this.j, true, this.d);",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "line": 220,
+      "text": "new JsBridgeModule(this.i, this.a);",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2240,
+      "text": "<activity android:name=\"com.ss.android.downloadlib.addownload.compliance.AppRegInfoActivity\"/>",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppRegInfoActivity.java",
+      "line": 160,
+      "text": "setContentView(2131561706);",
+      "sha256": "5c779a16c45a600200dfbaf197375395b682d910c853e78e8e73b5b85e6be5c2"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppRegInfoActivity.java",
+      "line": 162,
+      "text": "initView();",
+      "sha256": "5c779a16c45a600200dfbaf197375395b682d910c853e78e8e73b5b85e6be5c2"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppRegInfoActivity.java",
+      "line": 66,
+      "text": "WebView webView = (WebView) findViewById(2131175717);",
+      "sha256": "5c779a16c45a600200dfbaf197375395b682d910c853e78e8e73b5b85e6be5c2"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2239,
+      "text": "<activity android:name=\"com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity\"/>",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppPrivacyPolicyActivity.java",
+      "line": 164,
+      "text": "setContentView(2131561705);",
+      "sha256": "0b0b0ac34c45b07d3397f80d4cfae95ac1b7a66c2836b3ceb120a76f243485d2"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppPrivacyPolicyActivity.java",
+      "line": 166,
+      "text": "initView();",
+      "sha256": "0b0b0ac34c45b07d3397f80d4cfae95ac1b7a66c2836b3ceb120a76f243485d2"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppPrivacyPolicyActivity.java",
+      "line": 70,
+      "text": "this.webView = (WebView) findViewById(2131175201);",
+      "sha256": "0b0b0ac34c45b07d3397f80d4cfae95ac1b7a66c2836b3ceb120a76f243485d2"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2241,
+      "text": "<activity android:name=\"com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity\"/>",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppDetailInfoActivity.java",
+      "line": 123,
+      "text": "setContentView(2131561704);",
+      "sha256": "8081048633efff6ad29d2a8087cb48114439e249c95661f7c62795359c732f75"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppDetailInfoActivity.java",
+      "line": 127,
+      "text": "initView(h, o);",
+      "sha256": "8081048633efff6ad29d2a8087cb48114439e249c95661f7c62795359c732f75"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppDetailInfoActivity.java",
+      "line": 136,
+      "text": "this.webView = (WebView) findViewById(2131174884);",
+      "sha256": "8081048633efff6ad29d2a8087cb48114439e249c95661f7c62795359c732f75"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2242,
+      "text": "<activity android:name=\"com.ss.android.downloadlib.addownload.compliance.AppDescriptionInfoActivity\"/>",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppDescriptionInfoActivity.java",
+      "line": 164,
+      "text": "setContentView(2131561703);",
+      "sha256": "3c075115d9425d7fbf5b044a3b56efe46fdad522a77943a4023646a6ba68d39d"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppDescriptionInfoActivity.java",
+      "line": 166,
+      "text": "initView();",
+      "sha256": "3c075115d9425d7fbf5b044a3b56efe46fdad522a77943a4023646a6ba68d39d"
+    },
+    {
+      "file": "sources/com/ss/android/downloadlib/addownload/compliance/AppDescriptionInfoActivity.java",
+      "line": 70,
+      "text": "this.webView = (WebView) findViewById(2131170113);",
+      "sha256": "3c075115d9425d7fbf5b044a3b56efe46fdad522a77943a4023646a6ba68d39d"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3813,
+      "text": "android:name=\"com.bytedance.sdk.open.aweme.mobile_auth.webview.WebViewActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/mobile_auth/webview/WebViewActivity.java",
+      "line": 291,
+      "text": "a();",
+      "sha256": "b26c6ccbdc5b41c06817622a05697ec1d565bf024a0a3dab14a2fe4275bc8fb5"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/mobile_auth/webview/WebViewActivity.java",
+      "line": 113,
+      "text": "a((Context) this);",
+      "sha256": "b26c6ccbdc5b41c06817622a05697ec1d565bf024a0a3dab14a2fe4275bc8fb5"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/mobile_auth/webview/WebViewActivity.java",
+      "line": 265,
+      "text": "this.e = new WebView(context);",
+      "sha256": "b26c6ccbdc5b41c06817622a05697ec1d565bf024a0a3dab14a2fe4275bc8fb5"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/mobile_auth/webview/WebViewActivity.java",
+      "line": 118,
+      "text": "this.a.addView(this.e);",
+      "sha256": "b26c6ccbdc5b41c06817622a05697ec1d565bf024a0a3dab14a2fe4275bc8fb5"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3945,
+      "text": "android:name=\"com.bytedance.bdturing.livedetect.TuringLiveDetectWebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/livedetect/TuringLiveDetectWebActivity.java",
+      "line": 142,
+      "text": "setContentView(2131558584);",
+      "sha256": "a05c75193301d29ecce21b655211bdbf5da7de836509c893e616ecc98259c7c9"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/livedetect/TuringLiveDetectWebActivity.java",
+      "line": 146,
+      "text": "WebView webView = (WebView) findViewById(2131178752);",
+      "sha256": "a05c75193301d29ecce21b655211bdbf5da7de836509c893e616ecc98259c7c9"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/livedetect/TuringLiveDetectWebActivity.java",
+      "line": 147,
+      "text": "this.a = webView;",
+      "sha256": "a05c75193301d29ecce21b655211bdbf5da7de836509c893e616ecc98259c7c9"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 780,
+      "text": "android:name=\"com.bytedance.ies.outertest.web.OuterTestWebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/ies/outertest/web/OuterTestWebActivity.java",
+      "line": 364,
+      "text": "setContentView(2131560911);",
+      "sha256": "4681560d862d2f14269fd205bcc24982334ae566d295878714ac86c37cd4e971"
+    },
+    {
+      "file": "sources/com/bytedance/ies/outertest/web/OuterTestWebActivity.java",
+      "line": 542,
+      "text": "WebView webView4 = (WebView) _$_findCachedViewById(2131178761);",
+      "sha256": "4681560d862d2f14269fd205bcc24982334ae566d295878714ac86c37cd4e971"
+    },
+    {
+      "file": "sources/com/bytedance/ies/outertest/web/OuterTestWebActivity.java",
+      "line": 544,
+      "text": "WebSettings settings = webView4.getSettings();",
+      "sha256": "4681560d862d2f14269fd205bcc24982334ae566d295878714ac86c37cd4e971"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3887,
+      "text": "android:name=\"com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivity.java",
+      "line": 202,
+      "text": "VerifyWebView verifyWebView = (VerifyWebView) findViewById(2131167810);",
+      "sha256": "b276fc2004f1d2c98c804fb0652e800d42b2c7020217129d54623b1f32fb67c9"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivity.java",
+      "line": 204,
+      "text": "verifyWebView.a(this.i);",
+      "sha256": "b276fc2004f1d2c98c804fb0652e800d42b2c7020217129d54623b1f32fb67c9"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/VerifyWebView.java",
+      "line": 38,
+      "text": "public class VerifyWebView extends WebView {",
+      "sha256": "260f4b67d055b52f9fe5a4c3474fa823c153c2a2e7674072e5429ffd8aaa76eb"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2677,
+      "text": "android:name=\"com.android.ttcjpaysdk.cybs.ui.StepUpIFrameActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/cybs/ui/StepUpIFrameActivity.java",
+      "line": 35,
+      "text": "public final class StepUpIFrameActivity extends MvpBaseLoggerActivity<PresentorNothing, StepUpLogger> {",
+      "sha256": "e59781ef83e357cb3526279eeced6b3b0b25c9fed66050a4597a26253c301792"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/base/mvp/base/MvpBaseActivity.java",
+      "line": 291,
+      "text": "bindViews();",
+      "sha256": "c1929a86942c961bba8ef53785c7eceb6c0df2f859062a57999dfe298a041b49"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/base/framework/mvp/MvpBaseLoggerActivity.java",
+      "line": 319,
+      "text": "initViews();",
+      "sha256": "ae8012aeb7be035f10717f10088cc8b2430f53c0e6abfd63d29395b978086ab2"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/cybs/ui/StepUpIFrameActivity.java",
+      "line": 212,
+      "text": "this.webView = (WebView) findViewById(2131169005);",
+      "sha256": "e59781ef83e357cb3526279eeced6b3b0b25c9fed66050a4597a26253c301792"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/cybs/ui/StepUpIFrameActivity.java",
+      "line": 66,
+      "text": "WebView webView = this.webView;",
+      "sha256": "e59781ef83e357cb3526279eeced6b3b0b25c9fed66050a4597a26253c301792"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2362,
+      "text": "android:name=\"com.android.ttcjpaysdk.verify.activity.DyStepUpIFrameActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/verify/activity/DyStepUpIFrameActivity.java",
+      "line": 36,
+      "text": "public final class DyStepUpIFrameActivity extends MvpBaseLoggerActivity<PresentorNothing, LoggerNothing> {",
+      "sha256": "09eb17fb4c9c278b8a4775cf668a1a487e5c86d34ea48fcb05460be43a34b624"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/verify/activity/DyStepUpIFrameActivity.java",
+      "line": 194,
+      "text": "this.webView = (WebView) findViewById(2131169005);",
+      "sha256": "09eb17fb4c9c278b8a4775cf668a1a487e5c86d34ea48fcb05460be43a34b624"
+    },
+    {
+      "file": "sources/com/android/ttcjpaysdk/verify/activity/DyStepUpIFrameActivity.java",
+      "line": 67,
+      "text": "WebView webView = this.webView;",
+      "sha256": "09eb17fb4c9c278b8a4775cf668a1a487e5c86d34ea48fcb05460be43a34b624"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3981,
+      "text": "android:name=\"com.learning.learningsdk.activity.LearningArticleActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/base/LearningBaseActivity.java",
+      "line": 112,
+      "text": "setContentView(getLayoutId());",
+      "sha256": "756cf4e082fb8353a1256b4c896145045b6bd9e9eabcf46feb1b8fca1c292e65"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/base/LearningBaseActivity.java",
+      "line": 116,
+      "text": "bindViews();",
+      "sha256": "756cf4e082fb8353a1256b4c896145045b6bd9e9eabcf46feb1b8fca1c292e65"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/base/LearningBaseActivity.java",
+      "line": 118,
+      "text": "initView();",
+      "sha256": "756cf4e082fb8353a1256b4c896145045b6bd9e9eabcf46feb1b8fca1c292e65"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningArticleActivity.java",
+      "line": 90,
+      "text": "this.f = (LearningWebView) findViewById(2131172586);",
+      "sha256": "37d166f840211b3932b52897151d3952de9b74ea9eb88713b2206a5c5edcee30"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/webview/LearningWebView.java",
+      "line": 17,
+      "text": "public class LearningWebView extends ScrollWebView implements Scrollable {",
+      "sha256": "4fd7f1eed50eb5c194568d8cf5dca67e19754c0d6136845e8b4d255b7cd15a03"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/webview/ScrollWebView.java",
+      "line": 15,
+      "text": "public class ScrollWebView extends SSWebView {",
+      "sha256": "d2ee3d129a0e98db7ff1f57d5cc7c6d31168b44f627009e585367321efb48594"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/webview/SSWebView.java",
+      "line": 18,
+      "text": "public class SSWebView extends WebView {",
+      "sha256": "bb7b29ccd67f1eff014df7c4f8b4ad7baa089e00f85380124ba0a1b509482334"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 5687,
+      "text": "android:name=\"com.unionpay.UPPayWapActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/unionpay/UPPayWapActivity.java",
+      "line": 93,
+      "text": "this.a = new WebView(this);",
+      "sha256": "9e867e81e2bff5201e1305a5fcc8bd229e81bac4258d0dc372b9978f91457809"
+    },
+    {
+      "file": "sources/com/unionpay/UPPayWapActivity.java",
+      "line": 153,
+      "text": "linearLayout.addView(this.a);",
+      "sha256": "9e867e81e2bff5201e1305a5fcc8bd229e81bac4258d0dc372b9978f91457809"
+    },
+    {
+      "file": "sources/com/unionpay/UPPayWapActivity.java",
+      "line": 154,
+      "text": "WebViewJavascriptBridge webViewJavascriptBridge = new WebViewJavascriptBridge(this, this.a, null);",
+      "sha256": "9e867e81e2bff5201e1305a5fcc8bd229e81bac4258d0dc372b9978f91457809"
+    },
+    {
+      "file": "sources/com/unionpay/WebViewJavascriptBridge.java",
+      "line": 93,
+      "text": "this.mWebView = webView;",
+      "sha256": "1b4a2001652bf4ccd8031e61b955099639f0e7baedbb0aa72ca3a5bf6870b832"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2349,
+      "text": "android:name=\"com.bytedance.sdk.account.twice_verify.TwiceVerifyWebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/account/twice_verify/TwiceVerifyWebActivity.java",
+      "line": 87,
+      "text": "setContentView(2131558528);",
+      "sha256": "fb22de8388e079633f6d6ffe31a675e3721fd9b80b1197cf609142422653134b"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/account/twice_verify/TwiceVerifyWebActivity.java",
+      "line": 90,
+      "text": "WebView webView = (WebView) findViewById(2131169353);",
+      "sha256": "fb22de8388e079633f6d6ffe31a675e3721fd9b80b1197cf609142422653134b"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/account/twice_verify/TwiceVerifyWebActivity.java",
+      "line": 91,
+      "text": "this.a = webView;",
+      "sha256": "fb22de8388e079633f6d6ffe31a675e3721fd9b80b1197cf609142422653134b"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 5496,
+      "text": "android:name=\"com.bytedance.sdk.open.douyin.ui.DouYinWebAuthorizeActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/douyin/ui/DouYinWebAuthorizeActivity.java",
+      "line": 34,
+      "text": "public class DouYinWebAuthorizeActivity extends BaseWebAuthorizeActivity {",
+      "sha256": "06cabd0ea5861c33d2e90d3ef57e6c509a478e7cd9a421126892fb49d3767fc5"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/authorize/ui/BaseWebAuthorizeActivity.java",
+      "line": 471,
+      "text": "initView();",
+      "sha256": "353084bc521a375578d1fcf820b4dc1ce21dae6f6bb15ae3e055cbed00cc1e35"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/authorize/ui/BaseWebAuthorizeActivity.java",
+      "line": 171,
+      "text": "initWebView(this);",
+      "sha256": "353084bc521a375578d1fcf820b4dc1ce21dae6f6bb15ae3e055cbed00cc1e35"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/authorize/ui/BaseWebAuthorizeActivity.java",
+      "line": 337,
+      "text": "this.mContentWebView = new WebView(context);",
+      "sha256": "353084bc521a375578d1fcf820b4dc1ce21dae6f6bb15ae3e055cbed00cc1e35"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/open/aweme/authorize/ui/BaseWebAuthorizeActivity.java",
+      "line": 179,
+      "text": "this.mContainer.addView(this.mContentWebView);",
+      "sha256": "353084bc521a375578d1fcf820b4dc1ce21dae6f6bb15ae3e055cbed00cc1e35"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 879,
+      "text": "android:name=\"com.learning.learningsdk.activity.LearningAudioActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningAudioActivity.java",
+      "line": 329,
+      "text": "this.o = (LearningWebView) relativeLayout.findViewById(2131165857);",
+      "sha256": "d14586d7d82f73dffabb12ad283118a35f77eae42c98ebaf5b17998ef00f8c5a"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningAudioActivity.java",
+      "line": 338,
+      "text": "this.r.addHeaderView(this.q, null, false);",
+      "sha256": "d14586d7d82f73dffabb12ad283118a35f77eae42c98ebaf5b17998ef00f8c5a"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningAudioActivity.java",
+      "line": 333,
+      "text": "this.o.setWebViewClient(l2().getWebViewClient());",
+      "sha256": "d14586d7d82f73dffabb12ad283118a35f77eae42c98ebaf5b17998ef00f8c5a"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/presenter/LearningAudioPresenter.java",
+      "line": 448,
+      "text": "return this.l;",
+      "sha256": "959ea748816f3cff020bd72d6c6b2a32cf39ba0199e0d50e3d4842a2fe76223b"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/presenter/LearningAudioPresenter.java",
+      "line": 612,
+      "text": "this.l = new LearningWebViewClientV11(this, P().toString());",
+      "sha256": "959ea748816f3cff020bd72d6c6b2a32cf39ba0199e0d50e3d4842a2fe76223b"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/webview/core/LearningWebViewClientV11.java",
+      "line": 15,
+      "text": "public class LearningWebViewClientV11 extends LearningWebViewClient {",
+      "sha256": "75c4b1b3757f000aa5f57c7b307a2598f4906d3d69617623e357cf6b7aac8965"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/base/LearningBaseActivity.java",
+      "line": 115,
+      "text": "this.a.onCreate(LearningRouterUtil.b(getIntent().getData()));",
+      "sha256": "756cf4e082fb8353a1256b4c896145045b6bd9e9eabcf46feb1b8fca1c292e65"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3969,
+      "text": "android:name=\"com.learning.learningsdk.activity.LearningVideoActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningVideoActivity.java",
+      "line": 338,
+      "text": "this.m = (LearningWebView) relativeLayout.findViewById(2131165857);",
+      "sha256": "8aa577cd6975d72d4d541621c1c8aef362cdf15173717de28646c430f0c42d41"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningVideoActivity.java",
+      "line": 350,
+      "text": "this.o.addHeaderView(this.n, null, false);",
+      "sha256": "8aa577cd6975d72d4d541621c1c8aef362cdf15173717de28646c430f0c42d41"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/activity/LearningVideoActivity.java",
+      "line": 344,
+      "text": "this.m.setWebViewClient(l2().getWebViewClient());",
+      "sha256": "8aa577cd6975d72d4d541621c1c8aef362cdf15173717de28646c430f0c42d41"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/presenter/LearningVideoPresenter.java",
+      "line": 291,
+      "text": "return this.r;",
+      "sha256": "3d235a61b3fca8b153bcb603b7ac1019fb8558b5de9e7fbed8be0eab6d062afe"
+    },
+    {
+      "file": "sources/com/learning/learningsdk/presenter/LearningVideoPresenter.java",
+      "line": 617,
+      "text": "this.r = new LearningWebViewClientV11(this, P().toString());",
+      "sha256": "3d235a61b3fca8b153bcb603b7ac1019fb8558b5de9e7fbed8be0eab6d062afe"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3901,
+      "text": "android:name=\"com.bytedance.bdturing.BdTuringVerifyActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringVerifyActivity.java",
+      "line": 527,
+      "text": "setContentView(2131558805);",
+      "sha256": "b796d7e512a60a2127dceb7cac16ca1530b400d417f9456ad423bc9590417eee"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringVerifyActivity.java",
+      "line": 472,
+      "text": "this.j = (TuringVerifyWebView) findViewById(2131178222);",
+      "sha256": "b796d7e512a60a2127dceb7cac16ca1530b400d417f9456ad423bc9590417eee"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringVerifyActivity.java",
+      "line": 482,
+      "text": "this.j.b(this.r, true, this.a);",
+      "sha256": "b796d7e512a60a2127dceb7cac16ca1530b400d417f9456ad423bc9590417eee"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringVerifyActivity.java",
+      "line": 550,
+      "text": "this.n = new JsBridgeModule(this.s, this.j);",
+      "sha256": "b796d7e512a60a2127dceb7cac16ca1530b400d417f9456ad423bc9590417eee"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringVerifyActivity.java",
+      "line": 539,
+      "text": "initView();",
+      "sha256": "b796d7e512a60a2127dceb7cac16ca1530b400d417f9456ad423bc9590417eee"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3916,
+      "text": "android:name=\"com.bytedance.bdturing.BdTuringQaSmsVerifyActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringQaSmsVerifyActivity.java",
+      "line": 483,
+      "text": "setContentView(2131558802);",
+      "sha256": "1a0b8dc7ba198715ea09599b22e0b4c52aeb0eee08d710979ac5438517ab9d9f"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringQaSmsVerifyActivity.java",
+      "line": 499,
+      "text": "this.j = (VerifyWebView) findViewById(2131178222);",
+      "sha256": "1a0b8dc7ba198715ea09599b22e0b4c52aeb0eee08d710979ac5438517ab9d9f"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringQaSmsVerifyActivity.java",
+      "line": 509,
+      "text": "this.j.a(this.q);",
+      "sha256": "1a0b8dc7ba198715ea09599b22e0b4c52aeb0eee08d710979ac5438517ab9d9f"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringQaSmsVerifyActivity.java",
+      "line": 523,
+      "text": "this.n = new JsBridgeModule(this.r, this.j);",
+      "sha256": "1a0b8dc7ba198715ea09599b22e0b4c52aeb0eee08d710979ac5438517ab9d9f"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3953,
+      "text": "android:name=\"com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/VerifyConfirmDialogActivity.java",
+      "line": 348,
+      "text": "setContentView(2131558798);",
+      "sha256": "58f6dccb49d1597aad2eb84714eb75e20ae125773894a135ceaf60d5a8040663"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/VerifyConfirmDialogActivity.java",
+      "line": 376,
+      "text": "this.i = (TuringVerifyWebView) findViewById(2131178222);",
+      "sha256": "58f6dccb49d1597aad2eb84714eb75e20ae125773894a135ceaf60d5a8040663"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/VerifyConfirmDialogActivity.java",
+      "line": 380,
+      "text": "this.i.b(new VerifyWebViewListener() { // from class: com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity.3",
+      "sha256": "58f6dccb49d1597aad2eb84714eb75e20ae125773894a135ceaf60d5a8040663"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/VerifyConfirmDialogActivity.java",
+      "line": 420,
+      "text": "this.h = new JsBridgeModule(this.o, this.i);",
+      "sha256": "58f6dccb49d1597aad2eb84714eb75e20ae125773894a135ceaf60d5a8040663"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 3908,
+      "text": "android:name=\"com.bytedance.bdturing.BdTuringWebLiveActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringWebLiveActivity.java",
+      "line": 23,
+      "text": "public class BdTuringWebLiveActivity extends BdTuringVerifyActivity {",
+      "sha256": "8ad640f8faefddbbd903d80a065f5c9a126ca62b1a632e2094af9a1511ef4d22"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringWebLiveActivity.java",
+      "line": 171,
+      "text": "super.onCreate(bundle);",
+      "sha256": "8ad640f8faefddbbd903d80a065f5c9a126ca62b1a632e2094af9a1511ef4d22"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 5890,
+      "text": "android:name=\"com.sina.weibo.sdk.web.WebActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/sina/weibo/sdk/web/WebActivity.java",
+      "line": 119,
+      "text": "this.ap = new WebView(getApplicationContext());",
+      "sha256": "1e0900496b4c44dcbae64789d01e47c4bd69eb5a6c9ded0ff8e7e514dc8fcd48"
+    },
+    {
+      "file": "sources/com/sina/weibo/sdk/web/WebActivity.java",
+      "line": 122,
+      "text": "relativeLayout.addView(this.ap, layoutParams3);",
+      "sha256": "1e0900496b4c44dcbae64789d01e47c4bd69eb5a6c9ded0ff8e7e514dc8fcd48"
+    },
+    {
+      "file": "sources/com/sina/weibo/sdk/web/WebActivity.java",
+      "line": 182,
+      "text": "setContentView(relativeLayout);",
+      "sha256": "1e0900496b4c44dcbae64789d01e47c4bd69eb5a6c9ded0ff8e7e514dc8fcd48"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 2087,
+      "text": "android:name=\"com.bytedance.ug.sdk.luckycat.impl.browser.LuckyCatBrowserActivity\"",
+      "sha256": "c256a2aae32e828a7466bc48f2ca9caa5eaad5bd9a8a101b2a01c396e1c02a57"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserActivity.java",
+      "line": 353,
+      "text": "addBrowserFragment(bundle);",
+      "sha256": "b5ca1d8f57df87bb8e0746282843394b4876005bfadfe4e30731048dd28a9403"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserActivity.java",
+      "line": 137,
+      "text": "return new LuckyCatBrowserFragment();",
+      "sha256": "b5ca1d8f57df87bb8e0746282843394b4876005bfadfe4e30731048dd28a9403"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserActivity.java",
+      "line": 409,
+      "text": "beginTransaction.add(2131165589, browserFragment, \"browser_fragment_tag\");",
+      "sha256": "b5ca1d8f57df87bb8e0746282843394b4876005bfadfe4e30731048dd28a9403"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserActivity.java",
+      "line": 414,
+      "text": "beginTransaction.commit();",
+      "sha256": "b5ca1d8f57df87bb8e0746282843394b4876005bfadfe4e30731048dd28a9403"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserFragment.java",
+      "line": 687,
+      "text": "F5(viewGroup2);",
+      "sha256": "189a0877198e47562a88742a98818839cf425c05d25dce8c0729a64df0679cc1"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserFragment.java",
+      "line": 356,
+      "text": "this.a = new LuckyCatWebView(getContext());",
+      "sha256": "189a0877198e47562a88742a98818839cf425c05d25dce8c0729a64df0679cc1"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/LuckyCatBrowserFragment.java",
+      "line": 398,
+      "text": "viewGroup.addView(this.a, 0, new ViewGroup.LayoutParams(-1, -1));",
+      "sha256": "189a0877198e47562a88742a98818839cf425c05d25dce8c0729a64df0679cc1"
+    },
+    {
+      "file": "sources/com/bytedance/ug/sdk/luckycat/impl/browser/webview/LuckyCatWebView.java",
+      "line": 227,
+      "text": "g();",
+      "sha256": "b9493fdc80b9f26dc76957d0868cebee24fe9800da6e4fa3b22d543428353f9d"
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivity.java",
+      "line": 208,
+      "text": "new JsBridgeModule(this.h, this.a);",
+      "sha256": "b276fc2004f1d2c98c804fb0652e800d42b2c7020217129d54623b1f32fb67c9"
+    }
+  ],
+  "deep_positive_activities": [
+    "com.bytedance.bdturing.comonui.CommonWebActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+    "com.bytedance.bdturing.BdTuringVerifyActivity",
+    "com.bytedance.bdturing.BdTuringWebLiveActivity",
+    "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity",
+    "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity"
+  ],
+  "present_strata": {
+    "sdk_xml_custom_webview": [
+      "com.bytedance.bdturing.comonui.CommonWebActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+      "com.bytedance.bdturing.BdTuringVerifyActivity",
+      "com.bytedance.bdturing.BdTuringWebLiveActivity",
+      "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity",
+      "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity"
+    ]
+  },
+  "exhaustive_positive_inventory": false,
+  "manifest_activity_count": 628,
+  "acceptance": "unproven; source-first work in progress",
+  "holdout_disjoint": true,
+  "source_first_expansion_evidence": {
+    "hosts": [
+      "com.bytedance.bdturing.comonui.CommonWebActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2"
+    ],
+    "canonical_fact_count": 83,
+    "provenance": "source-first; no extractor output read"
+  },
+  "source_positive_activities": [
+    "com.android.ttcjpaysdk.cybs.ui.StepUpIFrameActivity",
+    "com.android.ttcjpaysdk.verify.activity.DyStepUpIFrameActivity",
+    "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity",
+    "com.bytedance.bdturing.BdTuringVerifyActivity",
+    "com.bytedance.bdturing.BdTuringWebLiveActivity",
+    "com.bytedance.bdturing.comonui.CommonWebActivity",
+    "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+    "com.bytedance.bdturing.livedetect.TuringLiveDetectWebActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+    "com.bytedance.ies.outertest.web.OuterTestWebActivity",
+    "com.bytedance.sdk.account.twice_verify.TwiceVerifyWebActivity",
+    "com.bytedance.sdk.open.aweme.mobile_auth.webview.WebViewActivity",
+    "com.bytedance.sdk.open.douyin.ui.DouYinWebAuthorizeActivity",
+    "com.bytedance.ug.sdk.luckycat.impl.browser.LuckyCatBrowserActivity",
+    "com.ixigua.browser.specific.AggregationBrowserActivity",
+    "com.ixigua.browser.specific.BrowserActivity",
+    "com.ixigua.browser.specific.PureBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+    "com.learning.learningsdk.activity.LearningArticleActivity",
+    "com.learning.learningsdk.activity.LearningAudioActivity",
+    "com.learning.learningsdk.activity.LearningVideoActivity",
+    "com.sina.weibo.sdk.web.WebActivity",
+    "com.ss.android.downloadlib.addownload.compliance.AppDescriptionInfoActivity",
+    "com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity",
+    "com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity",
+    "com.ss.android.downloadlib.addownload.compliance.AppRegInfoActivity",
+    "com.unionpay.UPPayWapActivity"
+  ],
+  "source_positive_binding_strata": {
+    "service_factory_scene": [
+      "com.ixigua.browser.specific.BrowserActivity",
+      "com.ixigua.browser.specific.PureBrowserActivity",
+      "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+    ],
+    "sdk_xml_custom_webview": [
+      "com.bytedance.bdturing.comonui.CommonWebActivity",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+      "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity",
+      "com.learning.learningsdk.activity.LearningArticleActivity",
+      "com.learning.learningsdk.activity.LearningAudioActivity",
+      "com.learning.learningsdk.activity.LearningVideoActivity",
+      "com.bytedance.bdturing.BdTuringVerifyActivity",
+      "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity",
+      "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+      "com.bytedance.bdturing.BdTuringWebLiveActivity"
+    ],
+    "android_layout_webview": [
+      "com.ss.android.downloadlib.addownload.compliance.AppRegInfoActivity",
+      "com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity",
+      "com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity",
+      "com.ss.android.downloadlib.addownload.compliance.AppDescriptionInfoActivity",
+      "com.bytedance.bdturing.livedetect.TuringLiveDetectWebActivity",
+      "com.bytedance.ies.outertest.web.OuterTestWebActivity",
+      "com.android.ttcjpaysdk.cybs.ui.StepUpIFrameActivity",
+      "com.android.ttcjpaysdk.verify.activity.DyStepUpIFrameActivity",
+      "com.bytedance.sdk.account.twice_verify.TwiceVerifyWebActivity"
+    ],
+    "sdk_direct_webview": [
+      "com.bytedance.sdk.open.aweme.mobile_auth.webview.WebViewActivity",
+      "com.unionpay.UPPayWapActivity",
+      "com.bytedance.sdk.open.douyin.ui.DouYinWebAuthorizeActivity",
+      "com.sina.weibo.sdk.web.WebActivity"
+    ],
+    "sdk_fragment_dynamic_custom_view": [
+      "com.bytedance.ug.sdk.luckycat.impl.browser.LuckyCatBrowserActivity"
+    ]
+  },
+  "deep_audit_status": "Turing SDK seven host surfaces complete; other binding positives partial",
+  "coverage_correction": "Prior numeric deep_positive count represented only binding positives. Corrected to contract list and empty until per-host category surfaces are completed.",
+  "deep_audit_inventory": "turing-full-surface-source-inventory.json"
+}

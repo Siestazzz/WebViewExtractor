@@ -1,0 +1,5 @@
+# Sohu v6 all-output Activity ownership
+
+All 305 current output Activities are represented: 278 source-supported valid, 27 unresolved, zero proven wrong. Conservative error upper bound is 8.85%; the numerical 10% gate is met, while whole source scope and capability precision remain unproven. Report SHA256 `54a3de5c4bcb51ee124a6e717be66b59733d87912157cc1a6e840f98fccc28d5`.
+
+Existing quoted source evidence was re-read with file hashes and source lines checked, and current per-host receiver types/fact counts rebound. Additional BaseViewBindingActivity hosts have their own same-Bundle delegation and import/class evidence in base-view-binding-family-ownership-source.jsonl. Six lifecycle-finish cases remain quarantined; six separately proved non-finish branches are documented in conditional-finish-host-source.json. These verdicts concern Activity ownership; they do not certify every reported bridge or capability receiver. Actual init(false) Ajax false positives remain independently documented. No holdout facts were used to repair the engine.

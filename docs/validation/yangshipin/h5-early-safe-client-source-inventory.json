@@ -1,0 +1,240 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "16ce4954ebbf29effe54c73736863acbd78808895a6be2cfff71ceddc81bad1a",
+  "source_first": true,
+  "scope": "Conditional historical registration on same selected WebView; preserve registration even though later overwritten.",
+  "members": [
+    {
+      "name": "doUpdateVisitedHistory",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->doUpdateVisitedHistory(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Z)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 24,
+        "text": "public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onFormResubmission",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onFormResubmission(Lcom/tencent/smtt/sdk/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 34,
+        "text": "public void onFormResubmission(WebView view, Message dontResend, Message resend) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onLoadResource",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onLoadResource(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 44,
+        "text": "public void onLoadResource(WebView view, String url) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onPageCommitVisible",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onPageCommitVisible(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 55,
+        "text": "public void onPageCommitVisible(WebView view, String url) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onPageFinished",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 65,
+        "text": "public void onPageFinished(WebView view, String url) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onPageStarted",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 75,
+        "text": "public void onPageStarted(WebView view, String url, Bitmap favicon) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedClientCertRequest",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedClientCertRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/ClientCertRequest;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 85,
+        "text": "public void onReceivedClientCertRequest(WebView view, ClientCertRequest request) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedError",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 95,
+        "text": "public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedHttpAuthRequest",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedHttpAuthRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 105,
+        "text": "public void onReceivedHttpAuthRequest(WebView view, HttpAuthHandler handler, String host, String realm) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedHttpError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 116,
+        "text": "public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedLoginRequest",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedLoginRequest(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 126,
+        "text": "public void onReceivedLoginRequest(WebView view, String realm, String account, String args) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedSslError",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedSslError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/SslErrorHandler;Lcom/tencent/smtt/export/external/interfaces/SslError;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 136,
+        "text": "public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onRenderProcessGone(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/WebViewClient$RenderProcessGoneDetail;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 146,
+        "text": "public boolean onRenderProcessGone(WebView view, WebViewClient.RenderProcessGoneDetail detail) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onScaleChanged",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onScaleChanged(Lcom/tencent/smtt/sdk/WebView;FF)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 155,
+        "text": "public void onScaleChanged(WebView view, float oldScale, float newScale) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onTooManyRedirects",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onTooManyRedirects(Lcom/tencent/smtt/sdk/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 165,
+        "text": "public void onTooManyRedirects(WebView view, Message cancelMsg, Message continueMsg) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 175,
+        "text": "public WebResourceResponse shouldInterceptRequest(WebView view, String url) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "shouldOverrideKeyEvent",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->shouldOverrideKeyEvent(Lcom/tencent/smtt/sdk/WebView;Landroid/view/KeyEvent;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 181,
+        "text": "public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 188,
+        "text": "public boolean shouldOverrideUrlLoading(WebView view, String url) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "onReceivedError",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceError;)V",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 195,
+        "text": "public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 205,
+        "text": "public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    },
+    {
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/tencent/videolite/android/aop/X5SafeWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+        "line": 212,
+        "text": "public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {",
+        "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+      }
+    }
+  ],
+  "registration_chain": [
+    {
+      "file": "sources/u/y/h0/a/t3/h.java",
+      "line": 164,
+      "text": "IWebSetting settings = this.f32165a.getSettings();",
+      "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomWebView.java",
+      "line": 59,
+      "text": "WebViewHooker.setX5SafeWebViewClient(webView);",
+      "sha256": "a57423496a8aca3bf9642decc8e5c45d9435c247594c026860e44921403610e6"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/aop/WebViewHooker.java",
+      "line": 67,
+      "text": "webView.setWebViewClient(new X5SafeWebViewClient(new com.tencent.smtt.sdk.WebViewClient()));",
+      "sha256": "3c3665f27c6f6c0c33396628ab0c973d2af8c381772f6ab899bab6f087db9238"
+    }
+  ],
+  "delegate_semantics": "20 members call standard delegate signatures; onRenderProcessGone returns true and does not call delegate. Delegate is concrete platform-default X5 WebViewClient, not MttWebViewClient.",
+  "remaining": "Whole-host deep closure still pending base activity ancestry and remaining runtime JSAPI/provider entry checks."
+}

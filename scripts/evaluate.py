@@ -19,8 +19,14 @@ def match(g,f):
   if f['kind']!='setting':return False
   if not api:return None
   if f['api']!=api:return False
-  val=str(g.get('value')).strip(); vk=g.get('value_kind')
+  raw=str(g.get('value'));val=raw.strip(); vk=g.get('value_kind')
   if vk=='dynamic':return bool(f.get('arguments'))
+  # String values (UA, paths, encoding) preserve case and significant whitespace.
+  # A string spelling TRUE is not interchangeable with the boolean true.
+  if '(Ljava/lang/String;)' in api or raw.startswith('"') and raw.endswith('"'):
+   if vk not in ('literal',None):return None
+   expected=raw[1:-1] if raw.startswith('"') and raw.endswith('"') else raw
+   return expected in [str(v) for v in f.get('values',[])]
   if val.startswith('"') and val.endswith('"'):val=val[1:-1]
   if vk=='enum' or re.fullmatch(r'(?:[A-Za-z_$][\w$]*\.)+[A-Z_]+',val):
    member=val.split('.')[-1]
@@ -89,7 +95,8 @@ for g in unique.values():
 for s in submetrics.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None
 for s in stats.values():s['recall']=s['matched']/s['expected'] if s['expected'] else None;s['explicit_recall']=s['explicit_matched']/s['expected'] if s['expected'] else None
 out=dict(oracle_sha256=hashlib.sha256(pathlib.Path(a.oracle).read_bytes()).hexdigest(),report_sha256=hashlib.sha256(pathlib.Path(a.report).read_bytes()).hexdigest(),unassigned_oracle_facts=sum(g.get('activity') is None for g in truth),oracle_file=a.oracle,apk_sha256=r.get('apk_sha256'),report_status=r['status'],metrics=stats,missing=failures,emitted_activities=len(actual),acceptance='unproven',note='Candidate-inclusive fact recall is measured; independent output ownership review and full oracle scope are still required.')
-out['scoring_version']=5
+out['scoring_version']=6
+out['scorer_sha256']=hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest()
 scored=[g for g in unique.values() if g.get('activity') and g['kind']!='activity_binding' and g.get('positive_acceptance') is not False]
 constrained=sum(g.get('webview_constraint') is not None for g in scored)
 out['webview_constraint_coverage']=dict(expected=len(scored),with_source_type_constraint=constrained,activity_only=len(scored)-constrained,exact_instance_identity_verified=False)

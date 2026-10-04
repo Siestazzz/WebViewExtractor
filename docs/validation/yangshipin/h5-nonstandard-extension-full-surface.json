@@ -1,0 +1,992 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "16ce4954ebbf29effe54c73736863acbd78808895a6be2cfff71ceddc81bad1a",
+  "source_first": true,
+  "report_read": false,
+  "scope": "Complete two nonstandard callback registrations and 16 declared custom members compatible with actual contracts.",
+  "registration_chain": [
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+      "line": 115,
+      "text": "setWebViewClientExtension(new X5WebViewEventHandler(this));",
+      "sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+      "line": 261,
+      "text": "customMttWebView.setWebViewCallbackClient(this.callbackClient);",
+      "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 2288,
+      "text": "this.mWebViewCallbackClient = webViewCallbackClient;",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 2308,
+      "text": "this.d.getX5WebViewExtension().setWebViewClientExtension(iX5WebViewClientExtension);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    }
+  ],
+  "members": [
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "computeScroll",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->computeScroll(Landroid/view/View;)V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 25,
+        "text": "public void computeScroll(View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 8,
+        "text": "void computeScroll(View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "dispatchTouchEvent",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->dispatchTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 34,
+        "text": "public boolean dispatchTouchEvent(MotionEvent motionEvent, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 10,
+        "text": "boolean dispatchTouchEvent(MotionEvent motionEvent, View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "invalidate",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->invalidate()V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 43,
+        "text": "public void invalidate() {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 12,
+        "text": "void invalidate();",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "onInterceptTouchEvent",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->onInterceptTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 47,
+        "text": "public boolean onInterceptTouchEvent(MotionEvent motionEvent, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 14,
+        "text": "boolean onInterceptTouchEvent(MotionEvent motionEvent, View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "onOverScrolled",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->onOverScrolled(IIZZLandroid/view/View;)V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 56,
+        "text": "public void onOverScrolled(int i, int i2, boolean z2, boolean z3, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 16,
+        "text": "void onOverScrolled(int i, int i2, boolean z2, boolean z3, View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "onScrollChanged",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->onScrollChanged(IIIILandroid/view/View;)V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 65,
+        "text": "public void onScrollChanged(int i, int i2, int i3, int i4, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 18,
+        "text": "void onScrollChanged(int i, int i2, int i3, int i4, View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "onTouchEvent",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->onTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 74,
+        "text": "public boolean onTouchEvent(MotionEvent motionEvent, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 20,
+        "text": "boolean onTouchEvent(MotionEvent motionEvent, View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler$1",
+      "name": "overScrollBy",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler$1;->overScrollBy(IIIIIIIIZLandroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 83,
+        "text": "public boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z2, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+        "line": 22,
+        "text": "boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z2, View view);",
+        "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "computeScroll",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->computeScroll(Landroid/view/View;)V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 25,
+        "text": "public void computeScroll(View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 32,
+        "text": "void computeScroll(View view);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "dispatchTouchEvent",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->dispatchTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 34,
+        "text": "public boolean dispatchTouchEvent(MotionEvent motionEvent, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 36,
+        "text": "boolean dispatchTouchEvent(MotionEvent motionEvent, View view);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "onInterceptTouchEvent",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onInterceptTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 47,
+        "text": "public boolean onInterceptTouchEvent(MotionEvent motionEvent, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 68,
+        "text": "boolean onInterceptTouchEvent(MotionEvent motionEvent, View view);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "onMiscCallBack",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onMiscCallBack(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Object;",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 183,
+        "text": "public Object onMiscCallBack(String str, Bundle bundle) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 72,
+        "text": "Object onMiscCallBack(String str, Bundle bundle);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "onOverScrolled",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onOverScrolled(IIZZLandroid/view/View;)V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 56,
+        "text": "public void onOverScrolled(int i, int i2, boolean z2, boolean z3, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 80,
+        "text": "void onOverScrolled(int i, int i2, boolean z2, boolean z3, View view);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "onScrollChanged",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onScrollChanged(IIIILandroid/view/View;)V",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 65,
+        "text": "public void onScrollChanged(int i, int i2, int i3, int i4, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 106,
+        "text": "void onScrollChanged(int i, int i2, int i3, int i4);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "onTouchEvent",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 74,
+        "text": "public boolean onTouchEvent(MotionEvent motionEvent, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 124,
+        "text": "boolean onTouchEvent(MotionEvent motionEvent, View view);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    },
+    {
+      "implementation": "com.tencent.qqlive.module.jsapi.webview.X5WebViewEventHandler",
+      "name": "overScrollBy",
+      "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->overScrollBy(IIIIIIIIZLandroid/view/View;)Z",
+      "evidence": {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+        "line": 83,
+        "text": "public boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z2, View view) {",
+        "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+      },
+      "contract_evidence": {
+        "file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+        "line": 134,
+        "text": "boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z2, View view);",
+        "sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933"
+      }
+    }
+  ],
+  "not_registered_chrome_extension_only": [
+    {
+      "line": 94,
+      "name": "getMttWebView",
+      "comment": "/* JADX INFO: Access modifiers changed from: private */",
+      "text": "public CustomMttWebView getMttWebView() {"
+    },
+    {
+      "line": 99,
+      "name": "acquireWakeLock",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void acquireWakeLock() {"
+    },
+    {
+      "line": 103,
+      "name": "addFlashView",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void addFlashView(View view, ViewGroup.LayoutParams layoutParams) {"
+    },
+    {
+      "line": 117,
+      "name": "exitFullScreenFlash",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void exitFullScreenFlash() {"
+    },
+    {
+      "line": 121,
+      "name": "getApplicationContex",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public Context getApplicationContex() {"
+    },
+    {
+      "line": 126,
+      "name": "getVideoLoadingProgressView",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public View getVideoLoadingProgressView() {"
+    },
+    {
+      "line": 131,
+      "name": "getX5WebChromeClientInstance",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public Object getX5WebChromeClientInstance() {"
+    },
+    {
+      "line": 136,
+      "name": "h5videoExitFullScreen",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void h5videoExitFullScreen(String str) {"
+    },
+    {
+      "line": 140,
+      "name": "h5videoRequestFullScreen",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void h5videoRequestFullScreen(String str) {"
+    },
+    {
+      "line": 144,
+      "name": "jsExitFullScreen",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void jsExitFullScreen() {"
+    },
+    {
+      "line": 148,
+      "name": "jsRequestFullScreen",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void jsRequestFullScreen() {"
+    },
+    {
+      "line": 152,
+      "name": "onAddFavorite",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public boolean onAddFavorite(IX5WebViewExtension iX5WebViewExtension, String str, String str2, JsResult jsResult) {"
+    },
+    {
+      "line": 157,
+      "name": "onAllMetaDataFinished",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onAllMetaDataFinished(IX5WebViewExtension iX5WebViewExtension, HashMap<String, String> hashMap) {"
+    },
+    {
+      "line": 161,
+      "name": "onBackforwardFinished",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onBackforwardFinished(int i) {"
+    },
+    {
+      "line": 165,
+      "name": "onColorModeChanged",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onColorModeChanged(long j) {"
+    },
+    {
+      "line": 169,
+      "name": "onHitTestResultFinished",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onHitTestResultFinished(IX5WebViewExtension iX5WebViewExtension, IX5WebViewBase.HitTestResult hitTestResult) {"
+    },
+    {
+      "line": 173,
+      "name": "onHitTestResultForPluginFinished",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onHitTestResultForPluginFinished(IX5WebViewExtension iX5WebViewExtension, IX5WebViewBase.HitTestResult hitTestResult, Bundle bundle) {"
+    },
+    {
+      "line": 193,
+      "name": "onPageNotResponding",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public boolean onPageNotResponding(Runnable runnable) {"
+    },
+    {
+      "line": 198,
+      "name": "onPermissionRequest",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public boolean onPermissionRequest(String str, long j, MediaAccessPermissionsCallback mediaAccessPermissionsCallback) {"
+    },
+    {
+      "line": 203,
+      "name": "onPrepareX5ReadPageDataFinished",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onPrepareX5ReadPageDataFinished(IX5WebViewExtension iX5WebViewExtension, HashMap<String, String> hashMap) {"
+    },
+    {
+      "line": 207,
+      "name": "onPrintPage",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onPrintPage() {"
+    },
+    {
+      "line": 211,
+      "name": "onPromptNotScalable",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onPromptNotScalable(IX5WebViewExtension iX5WebViewExtension) {"
+    },
+    {
+      "line": 215,
+      "name": "onPromptScaleSaved",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onPromptScaleSaved(IX5WebViewExtension iX5WebViewExtension) {"
+    },
+    {
+      "line": 219,
+      "name": "onSavePassword",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public boolean onSavePassword(ValueCallback<String> valueCallback, String str, String str2, String str3, String str4, String str5, boolean z2) {"
+    },
+    {
+      "line": 224,
+      "name": "onSavePassword",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public boolean onSavePassword(String str, String str2, String str3, boolean z2, Message message) {"
+    },
+    {
+      "line": 239,
+      "name": "onX5ReadModeAvailableChecked",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void onX5ReadModeAvailableChecked(HashMap<String, String> hashMap) {"
+    },
+    {
+      "line": 243,
+      "name": "openFileChooser",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void openFileChooser(ValueCallback<Uri[]> valueCallback, String str, String str2) {"
+    },
+    {
+      "line": 252,
+      "name": "releaseWakeLock",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void releaseWakeLock() {"
+    },
+    {
+      "line": 256,
+      "name": "requestFullScreenFlash",
+      "comment": "@Override // com.tencent.smtt.export.external.extension.interfaces.IX5WebChromeClientExtension",
+      "text": "public void requestFullScreenFlash() {"
+    }
+  ],
+  "corrections": [
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "normalized_signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "SDK-dispatch source review, independent of all reports: installed X5/native adapter only invokes delegate 3args; declaration is retained but not an actual callback endpoint.",
+      "evidence": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 439,
+          "text": "openFileChooser(valueCallback, null, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 443,
+          "text": "openFileChooser(valueCallback, str, null);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    }
+  ],
+  "original_snapshot": {
+    "path": "docs/validation/yangshipin/canonical-before-sdk-dispatch-correction.jsonl",
+    "sha256": "9539aa0f1ccc61745c3fe3ac51a2b5b5cccd5b67056ca16b89adf4e640cff813"
+  },
+  "notes": [
+    "8 outer registered IX5WebViewClientExtension members; 8 nested registered WebViewCallbackClient members.",
+    "24 ChromeExtension-only/ordinary declarations are not compatible members of the installed ClientExtension contract and are not fabricated as registered Chrome callbacks.",
+    "The SDK client-extension proxy inherited default methods are SDK fallback implementations, not custom handler overrides.",
+    "The native SDK inner WebView reads mWebViewCallbackClient and dispatches each of the eight same signatures; X5 handler forwards its seven touch/scroll methods through the same retained callbackClient (onMiscCallBack directly returns null).",
+    "Legacy Mtt Chrome1/2 declarations retained with source-declared-unforwarded status; immutable original530 snapshot retained; not a tool improvement."
+  ]
+}

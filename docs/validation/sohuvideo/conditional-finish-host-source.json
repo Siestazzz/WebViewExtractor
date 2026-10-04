@@ -1,0 +1,283 @@
+[
+  {
+    "activity": "com.sohu.sohuvideo.FirstNavigationActivityGroup",
+    "condition": "Intent startType equals not_launch_system, so needSkip false; guarded finish is avoided, independent of saved nativeBanner.",
+    "evidence": [
+      {
+        "file": "sources/com/sohu/sohuvideo/FirstNavigationActivityGroup.java",
+        "line": 65,
+        "text": "private boolean needSkip() {",
+        "sha256": "d662d2e8bb1fd46e302d569f4e7e7da35677bbecf98aaab570607c40fe3151c1",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/FirstNavigationActivityGroup.java",
+        "line": 68,
+        "text": "str = getIntent().getStringExtra(com.sohu.sohuvideo.system.lifecycle.e.E);",
+        "sha256": "d662d2e8bb1fd46e302d569f4e7e7da35677bbecf98aaab570607c40fe3151c1",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/FirstNavigationActivityGroup.java",
+        "line": 73,
+        "text": "return !com.sohu.sohuvideo.system.lifecycle.e.F.equals(str);",
+        "sha256": "d662d2e8bb1fd46e302d569f4e7e7da35677bbecf98aaab570607c40fe3151c1",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/FirstNavigationActivityGroup.java",
+        "line": 118,
+        "text": "if (needSkip()) {",
+        "sha256": "d662d2e8bb1fd46e302d569f4e7e7da35677bbecf98aaab570607c40fe3151c1",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/FirstNavigationActivityGroup.java",
+        "line": 128,
+        "text": "setContentView(R.layout.act_splash);",
+        "sha256": "d662d2e8bb1fd46e302d569f4e7e7da35677bbecf98aaab570607c40fe3151c1",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/system/lifecycle/e.java",
+        "line": 50,
+        "text": "public static final String E = \"com.sohu.sohuvideo.startType\";",
+        "sha256": "6dfd85f77012cf34d20fca2fc4664e20186803e50a02d7d65b5d53b5eaf932a4",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/system/lifecycle/e.java",
+        "line": 51,
+        "text": "public static final String F = \"not_launch_system\";",
+        "sha256": "6dfd85f77012cf34d20fca2fc4664e20186803e50a02d7d65b5d53b5eaf932a4",
+        "re_reviewed": true
+      }
+    ],
+    "scope": "activity_host",
+    "source_binding_reused": "restored-player-family-source.json",
+    "finish_not_assumed_absent": true
+  },
+  {
+    "activity": "com.sohu.sohuvideo.chat.ConversationActivity",
+    "condition": "Nonblank targetUserId from actual Intent extras and non-null logged-in SohuUser make checkDataIsAvailable true; guarded finish avoided.",
+    "evidence": [
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ConversationActivity.java",
+        "line": 1268,
+        "text": "private boolean checkDataIsAvailable() {",
+        "sha256": "0db158f3e683d6258a4e253828f5197cab8fa9071600b73a89414ba423e0be68",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ConversationActivity.java",
+        "line": 1269,
+        "text": "if (com.android.sohu.sdk.common.toolbox.a0.r(this.targetUserId)) {",
+        "sha256": "0db158f3e683d6258a4e253828f5197cab8fa9071600b73a89414ba423e0be68",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ConversationActivity.java",
+        "line": 1273,
+        "text": "if (SohuUserManager.getInstance().isLogin()) {",
+        "sha256": "0db158f3e683d6258a4e253828f5197cab8fa9071600b73a89414ba423e0be68",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ConversationActivity.java",
+        "line": 1420,
+        "text": "this.targetUserId = extras.getString(IntentTools.V3);",
+        "sha256": "0db158f3e683d6258a4e253828f5197cab8fa9071600b73a89414ba423e0be68",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ConversationActivity.java",
+        "line": 2014,
+        "text": "if (!checkDataIsAvailable()) {",
+        "sha256": "0db158f3e683d6258a4e253828f5197cab8fa9071600b73a89414ba423e0be68",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ConversationActivity.java",
+        "line": 2019,
+        "text": "postInitData();",
+        "sha256": "0db158f3e683d6258a4e253828f5197cab8fa9071600b73a89414ba423e0be68",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 311,
+        "text": "public boolean isLogin() {",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 312,
+        "text": "return this.mSohuUser != null;",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      }
+    ],
+    "scope": "activity_host",
+    "source_binding_reused": "restored-player-family-source.json",
+    "finish_not_assumed_absent": true
+  },
+  {
+    "activity": "com.sohu.sohuvideo.chat.SessionListActivity",
+    "condition": "Non-null logged-in SohuUser selects else branch and avoids finish, compatible with saved input/nativeBanner.",
+    "evidence": [
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/SessionListActivity.java",
+        "line": 791,
+        "text": "if (!SohuUserManager.getInstance().isLogin()) {",
+        "sha256": "9e7141d628178c92ae665198cfff9e17ce4d4968d825a616af4cb4e7af7e37c5",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/SessionListActivity.java",
+        "line": 789,
+        "text": "setContentView(d2.getRoot());",
+        "sha256": "9e7141d628178c92ae665198cfff9e17ce4d4968d825a616af4cb4e7af7e37c5",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 311,
+        "text": "public boolean isLogin() {",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 312,
+        "text": "return this.mSohuUser != null;",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      }
+    ],
+    "scope": "activity_host",
+    "source_binding_reused": "restored-player-family-source.json",
+    "finish_not_assumed_absent": true
+  },
+  {
+    "activity": "com.sohu.sohuvideo.ui.record.RecordActivity",
+    "condition": "A non-frozen user (including null SohuUser) makes isFrozen false; the only direct finish in onCreate is skipped. Full method body re-read and preserved.",
+    "evidence": [
+      {
+        "file": "sources/com/sohu/sohuvideo/ui/record/RecordActivity.java",
+        "line": 2061,
+        "text": "if (SohuUserManager.getInstance().isFrozen()) {",
+        "sha256": "af077d2858e9848a3b0cc4d6d593c6870848318019c7c64ff844253dcd82c327",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/ui/record/RecordActivity.java",
+        "line": 2057,
+        "text": "super.onCreate(bundle);",
+        "sha256": "af077d2858e9848a3b0cc4d6d593c6870848318019c7c64ff844253dcd82c327",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 302,
+        "text": "public boolean isFrozen() {",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 304,
+        "text": "return sohuUser != null && sohuUser.getStatus() == -1;",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      }
+    ],
+    "onCreate_body": "protected void onCreate(Bundle bundle) {\n        ArrayList<EffectData> value;\n        NBSAppInstrumentation.activityCreateBeginIns(this);\n        getWindow().addFlags(128);\n        super.onCreate(bundle);\n        LogUtils.e(\"RecordActivity\", \"timeTest RecordActivity create start\");\n        PublishMonitor.f22192a.a();\n        FloatAudioPlayManager.A.a().t(false);\n        if (SohuUserManager.getInstance().isFrozen()) {\n            LogUtils.e(\"RecordActivity\", \"onCreate(): 用户被冻结，不允许发布\");\n            d0.a(SohuApplication.f().getApplicationContext(), R.string.video_user_froze);\n            finish();\n            NBSAppInstrumentation.activityCreateEndIns();\n            return;\n        }\n        int i2 = Build.VERSION.SDK_INT;\n        if (i2 >= 16) {\n            getWindow().getDecorView().setSystemUiVisibility(1028);\n        }\n        RecordVideoManager.N().T().g();\n        if (getIntent() != null && getIntent().getIntExtra(IntentTools.B3, 0) == 1) {\n            RecordConfigPreference.o().J(-1);\n            RecordVideoManager.N().T().j(false, false, false);\n            RecordVideoManager.N().T().i(2);\n            reportFireworkEventExposure();\n        }\n        setContentView(R.layout.activity_record);\n        this.viewModel = (RecordViewModel) ViewModelProviders.of(this).get(RecordViewModel.class);\n        initParams();\n        initView();\n        initListener();\n        m1.j().z();\n        RecordVideoManager.N().g1(false);\n        RecordVideoManager.N().c0();\n        UploadConfigUtil.getInstance().refreshUserSetting();\n        this.viewModel.w().observe(this, new Observer() { // from class: com.sohu.sohuvideo.ui.record.d\n            @Override // androidx.lifecycle.Observer\n            public final void onChanged(Object obj) {\n                RecordActivity.K((MusicModel) obj);\n            }\n        });\n        this.viewModel.m.observe(this, new n());\n        this.viewModel.n.observe(this, new o());\n        c1.j().u();\n        if (i2 >= 22) {\n            setExitSharedElementCallback(new p());\n        }\n        LiveDataBus.get().with(LiveDataBusConst.F8, Boolean.class).c(this.releaseObserer);\n        LiveDataBus.get().with(LiveDataBusConst.T0, Integer.class).h(this, new Observer() { // from class: com.sohu.sohuvideo.ui.record.g\n            @Override // androidx.lifecycle.Observer\n            public final void onChanged(Object obj) {\n                RecordActivity.this.N((Integer) obj);\n            }\n        });\n        if (is2022NewYearEvent() && (value = this.viewModel.n().getValue()) != null) {\n            i0.q().v(value);\n        }\n        waitSdkInitIfNeed();\n        LogUtils.e(\"RecordActivity\", \"timeTest RecordActivity create end\");\n        NBSAppInstrumentation.activityCreateEndIns();\n    }",
+    "scope": "activity_host",
+    "source_binding_reused": "restored-player-family-source.json",
+    "finish_not_assumed_absent": true
+  },
+  {
+    "activity": "com.sohu.sohuvideo.ui.record.RecordSimpleActivity",
+    "condition": "A non-frozen user (including null SohuUser) makes isFrozen false; the only direct finish in onCreate is skipped. Full method body re-read and preserved.",
+    "evidence": [
+      {
+        "file": "sources/com/sohu/sohuvideo/ui/record/RecordSimpleActivity.java",
+        "line": 1546,
+        "text": "if (SohuUserManager.getInstance().isFrozen()) {",
+        "sha256": "7412af710155ff9a4ceb699c198c6bdbeec4d8e557bf2e8b171118ce0460611a",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/ui/record/RecordSimpleActivity.java",
+        "line": 1543,
+        "text": "super.onCreate(bundle);",
+        "sha256": "7412af710155ff9a4ceb699c198c6bdbeec4d8e557bf2e8b171118ce0460611a",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 302,
+        "text": "public boolean isFrozen() {",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/sdk/android/user/SohuUserManager.java",
+        "line": 304,
+        "text": "return sohuUser != null && sohuUser.getStatus() == -1;",
+        "sha256": "e59972749bdbc7ece3de008372a54081dee9cd8886737b6107d334f24f8a163d",
+        "re_reviewed": true
+      }
+    ],
+    "onCreate_body": "protected void onCreate(Bundle bundle) {\n        NBSAppInstrumentation.activityCreateBeginIns(this);\n        getWindow().addFlags(128);\n        super.onCreate(bundle);\n        LogUtils.e(\"RecordActivity\", \"timeTest RecordActivity create start\");\n        FloatAudioPlayManager.A.a().t(false);\n        if (SohuUserManager.getInstance().isFrozen()) {\n            LogUtils.e(\"RecordActivity\", \"onCreate(): 用户被冻结，不允许发布\");\n            d0.a(SohuApplication.f().getApplicationContext(), R.string.video_user_froze);\n            finish();\n            NBSAppInstrumentation.activityCreateEndIns();\n            return;\n        }\n        if (Build.VERSION.SDK_INT >= 16) {\n            getWindow().getDecorView().setSystemUiVisibility(1028);\n        }\n        RecordVideoManager.N().T().g();\n        if (getIntent().getIntExtra(IntentTools.B3, 0) == 2 || getIntent().getIntExtra(IntentTools.B3, 0) == 3) {\n            RecordConfigPreference.o().J(-1);\n        }\n        setContentView(R.layout.activity_simple_record);\n        this.viewModel = (RecordViewModel) ViewModelProviders.of(this).get(RecordViewModel.class);\n        initParams();\n        initView();\n        initListener();\n        m1.j().z();\n        RecordVideoManager.N().g1(true);\n        RecordVideoManager.N().c0();\n        UploadConfigUtil.getInstance().refreshUserSetting();\n        c1.j().u();\n        LiveDataBus.get().with(LiveDataBusConst.T0, Integer.class).h(this, new Observer() { // from class: com.sohu.sohuvideo.ui.record.t\n            @Override // androidx.lifecycle.Observer\n            public final void onChanged(Object obj) {\n                RecordSimpleActivity.this.H((Integer) obj);\n            }\n        });\n        waitSdkInitIfNeed();\n        LogUtils.e(\"RecordActivity\", \"timeTest RecordActivity create end\");\n        NBSAppInstrumentation.activityCreateEndIns();\n    }",
+    "scope": "activity_host",
+    "source_binding_reused": "restored-player-family-source.json",
+    "finish_not_assumed_absent": true
+  },
+  {
+    "activity": "com.sohu.sohuvideo.chat.ChatReadActivity",
+    "condition": "Non-null Intent containing nonblank chat content avoids both finish guards; inherited saved-Bundle banner remains independent.",
+    "evidence": [
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ChatReadActivity.java",
+        "line": 86,
+        "text": "if (getIntent() == null) {",
+        "sha256": "afe7907114e71e2028fff30335a82e510db24bcc408621af35a53d91b1381e34",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ChatReadActivity.java",
+        "line": 89,
+        "text": "String stringExtra = getIntent().getStringExtra(IntentTools.p);",
+        "sha256": "afe7907114e71e2028fff30335a82e510db24bcc408621af35a53d91b1381e34",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ChatReadActivity.java",
+        "line": 91,
+        "text": "if (com.android.sohu.sdk.common.toolbox.a0.r(stringExtra)) {",
+        "sha256": "afe7907114e71e2028fff30335a82e510db24bcc408621af35a53d91b1381e34",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/sohu/sohuvideo/chat/ChatReadActivity.java",
+        "line": 98,
+        "text": "textView.setText(EmotionHelper.getSpannableEmotionString(textView, stringExtra));",
+        "sha256": "afe7907114e71e2028fff30335a82e510db24bcc408621af35a53d91b1381e34",
+        "re_reviewed": true
+      },
+      {
+        "file": "sources/com/android/sohu/sdk/common/toolbox/a0.java",
+        "line": 259,
+        "text": "return str == null || D(str).length() <= 0;",
+        "sha256": "79215bfceb81676127b4b4c84034389152cedf72aceb8f76d9def3baefa6d25b",
+        "re_reviewed": true
+      }
+    ],
+    "onCreate_body": "protected void onCreate(Bundle bundle) {\n        NBSAppInstrumentation.activityCreateBeginIns(this);\n        super.onCreate(bundle);\n        setContentView(R.layout.act_chat_read);\n        if (getIntent() == null) {\n            finish();\n        }\n        String stringExtra = getIntent().getStringExtra(IntentTools.p);\n        LogUtils.d(TAG, \"chatContent:\" + stringExtra);\n        if (com.android.sohu.sdk.common.toolbox.a0.r(stringExtra)) {\n            finish();\n            NBSAppInstrumentation.activityCreateEndIns();\n            return;\n        }\n        ScrollView scrollView = (ScrollView) findViewById(R.id.sv_chat_read);\n        TextView textView = (TextView) findViewById(R.id.tv_chat_content);\n        textView.setText(EmotionHelper.getSpannableEmotionString(textView, stringExtra));\n        final GestureDetector gestureDetector = new GestureDetector(this, new a());\n        scrollView.setOnTouchListener(new View.OnTouchListener() { // from class: com.sohu.sohuvideo.chat.d\n            @Override // android.view.View.OnTouchListener\n            public final boolean onTouch(View view, MotionEvent motionEvent) {\n                boolean onTouchEvent;\n                onTouchEvent = gestureDetector.onTouchEvent(motionEvent);\n                return onTouchEvent;\n            }\n        });\n        textView.getViewTreeObserver().addOnPreDrawListener(new b(textView, scrollView));\n        NBSAppInstrumentation.activityCreateEndIns();\n    }",
+    "scope": "activity_host",
+    "source_binding_reused": "restored-player-family-source.json",
+    "finish_not_assumed_absent": true
+  }
+]

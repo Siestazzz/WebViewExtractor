@@ -1,0 +1,270 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "whole_host_complete": false,
+  "files": [
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+      "sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2",
+      "capability_entry_lines": [
+        {
+          "line": 24,
+          "text": "removeJavascriptInterface(\"searchBoxJavaBridge_\");"
+        },
+        {
+          "line": 25,
+          "text": "removeJavascriptInterface(\"accessibility\");"
+        },
+        {
+          "line": 26,
+          "text": "removeJavascriptInterface(\"accessibilityTraversal\");"
+        },
+        {
+          "line": 115,
+          "text": "setWebViewClientExtension(new X5WebViewEventHandler(this));"
+        },
+        {
+          "line": 122,
+          "text": "setWebViewClientExtension(new X5WebViewEventHandler(this));"
+        },
+        {
+          "line": 129,
+          "text": "setWebViewClientExtension(new X5WebViewEventHandler(this));"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+      "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691",
+      "capability_entry_lines": [
+        {
+          "line": 261,
+          "text": "customMttWebView.setWebViewCallbackClient(this.callbackClient);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/webcreator/CustomWebViewWrapper.java",
+      "sha256": "329bdf2ee2b9c0723f6e4072698d5878c70cbb64fcb846475f4d061b9a03c663",
+      "capability_entry_lines": [
+        {
+          "line": 64,
+          "text": "customWebView.removeJavascriptInterface(JsCallJava.JAVA_SCRIPT_INTERFACE_NAME);"
+        },
+        {
+          "line": 100,
+          "text": "CustomWebViewWrapper.a(CustomWebViewWrapper.this).removeJavascriptInterface(JsCallJava.JAVA_SCRIPT_INTERFACE_NAME);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a",
+      "capability_entry_lines": [
+        {
+          "line": 229,
+          "text": "return super.getSettings();"
+        },
+        {
+          "line": 299,
+          "text": "public android.webkit.WebSettings getSettings() {"
+        },
+        {
+          "line": 484,
+          "text": "removeJavascriptInterface(\"searchBoxJavaBridge_\");"
+        },
+        {
+          "line": 485,
+          "text": "removeJavascriptInterface(\"accessibility\");"
+        },
+        {
+          "line": 486,
+          "text": "removeJavascriptInterface(\"accessibilityTraversal\");"
+        },
+        {
+          "line": 499,
+          "text": "this.d.getX5WebViewExtension().setWebViewClientExtension(new X5ProxyWebViewClientExtension(u.a().a(true).k()) { // from class: com.tencent.smtt.sdk.WebView.1"
+        },
+        {
+          "line": 514,
+          "text": "removeJavascriptInterface(\"searchBoxJavaBridge_\");"
+        },
+        {
+          "line": 515,
+          "text": "removeJavascriptInterface(\"accessibility\");"
+        },
+        {
+          "line": 516,
+          "text": "removeJavascriptInterface(\"accessibilityTraversal\");"
+        },
+        {
+          "line": 572,
+          "text": "return aVar.getSettings();"
+        },
+        {
+          "line": 1108,
+          "text": "public void addJavascriptInterface(Object obj, String str) {"
+        },
+        {
+          "line": 1110,
+          "text": "this.d.addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 1112,
+          "text": "this.e.addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 1597,
+          "text": "public WebSettings getSettings() {"
+        },
+        {
+          "line": 1602,
+          "text": "WebSettings webSettings2 = this.f12719c ? new WebSettings(this.d.getSettings()) : new WebSettings(INVOKEVIRTUAL_com_tencent_smtt_sdk_WebView_com_tencent_videolite_android_aop_WebViewWeaver_getWebSettings(this.e));"
+        },
+        {
+          "line": 1896,
+          "text": "public void removeJavascriptInterface(String str) {"
+        },
+        {
+          "line": 1898,
+          "text": "this.d.removeJavascriptInterface(str);"
+        },
+        {
+          "line": 1900,
+          "text": "com.tencent.smtt.utils.j.a(this.e, \"removeJavascriptInterface\", (Class<?>[]) new Class[]{String.class}, str);"
+        },
+        {
+          "line": 2261,
+          "text": "public void setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 2265,
+          "text": "this.d.setWebChromeClient(webChromeClient != null ? new h(u.a().a(true).i(), this, webChromeClient) : null);"
+        },
+        {
+          "line": 2276,
+          "text": "aVar.setWebChromeClient(webChromeClient2);"
+        },
+        {
+          "line": 2281,
+          "text": "public void setWebChromeClientExtension(IX5WebChromeClientExtension iX5WebChromeClientExtension) {"
+        },
+        {
+          "line": 2283,
+          "text": "this.d.getX5WebViewExtension().setWebChromeClientExtension(iX5WebChromeClientExtension);"
+        },
+        {
+          "line": 2287,
+          "text": "public void setWebViewCallbackClient(WebViewCallbackClient webViewCallbackClient) {"
+        },
+        {
+          "line": 2294,
+          "text": "getX5WebViewExtension().invokeMiscMethod(\"setWebViewCallbackClientFlag\", bundle);"
+        },
+        {
+          "line": 2297,
+          "text": "public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 2299,
+          "text": "this.d.setWebViewClient(webViewClient != null ? new i(u.a().a(true).j(), this, webViewClient) : null);"
+        },
+        {
+          "line": 2301,
+          "text": "this.e.setWebViewClient(webViewClient != null ? new SystemWebViewClient(this, webViewClient) : null);"
+        },
+        {
+          "line": 2306,
+          "text": "public void setWebViewClientExtension(IX5WebViewClientExtension iX5WebViewClientExtension) {"
+        },
+        {
+          "line": 2308,
+          "text": "this.d.getX5WebViewExtension().setWebViewClientExtension(iX5WebViewClientExtension);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractView.java",
+      "sha256": "beb1e11976fcb70d85e3824aa0e2cf8a93c118f78699308ddb43212bead5a913",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractStandardActivity.java",
+      "sha256": "1ed8284ec5ed366aec7291b391fc9cf8beeb7908a1dd8eda4ce6b1711fc73930",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractStandardFullScreenActivity.java",
+      "sha256": "d881084a2637c05b2c50e0e7d320f159cc84525fac3cf1581e981017cd40a3d4",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/H5BaseActivity.java",
+      "sha256": "dc6e6407820da471765bc4bbbfbd9bd5d33e1ee099c55f468ad0fec8a0ac3215",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/TitleBarActivity.java",
+      "sha256": "a1ec6a73597d5474bc131fb4cf409e10b1754c880d1aece75203cf6d4a004e87",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/basiccomponent/activity/CommonActivity.java",
+      "sha256": "c7c2145ead7aeefa89eb197cfe3411b9025ace8cab1f90672da5d283504f89c5",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/reportapi/EventActivity.java",
+      "sha256": "a483495abe164728dac8ef5abcddde2d80c412237c725accef7928cf46ea5bbd",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/H5CommonJsApi.java",
+      "sha256": "0f89bcd5c0507bb6ffc90c1ac5484a4c320e85d04eb5f2eea231debbb2ef147b",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/jsapi/BusinessCommonJSApi.java",
+      "sha256": "799f974dbcf4ab09ed35e760197042ea50f25d06bef5b0395541c5a7ea21080c",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/e.java",
+      "sha256": "7d112f222f204efe9a962840d39662c35951da02206ed7e388c10594095787eb",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/f.java",
+      "sha256": "656592f1c5d491348625f39d325c42f463bd03879f433c809bdb3863399c64c4",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/c.java",
+      "sha256": "d8e28f841902c649dfda8a7411489037c6c13bae82c0e9377d4931461c9398ba",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/a.java",
+      "sha256": "325fcb1cd1629975596a9be6bf33d2cd1f3ab6b763655323aceec523c2a2384d",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/d.java",
+      "sha256": "31aed3a8bb18a3ee801dad79b7841133223f502e2da8a07f7844a20c4a76af2d",
+      "capability_entry_lines": []
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/g.java",
+      "sha256": "5120b0b27ba889a86e4d195d8682c80f366a5064a0ac36c0c4533d4e1a10ca44",
+      "capability_entry_lines": []
+    }
+  ],
+  "findings": [
+    "CustomMttWebView constructor registers X5WebViewEventHandler via setWebViewClientExtension; handler has non-standard extension/touch/scroll callbacks, recorded separately from standard Client/Chrome canonical signatures. Its constructor also registers WebViewCallbackClient; do not silently ignore extension surface.",
+    "CustomMttWebView ctor removes three legacy interface names; h.G additionally removes searchBoxJavaBridge conditional SDK path. Historical QQLive registration retained.",
+    "CustomWebViewWrapper.d removes QQLive interface before and after delayed about:blank reset; this is lifecycle removal, not grounds to delete earlier bridge registration.",
+    "H5InteractStandardActivity and FullScreenActivity own overrides only change layout/bind H5InteractView; H5InteractView overrides JSAPI provider and touch dispatch, not standard installed Client/Chrome setters. H5BaseActivity shared initialization and complete custom activity ancestry still require final review.",
+    "SDK WebView.setWebViewClient selects X5 proxy i or native SystemWebViewClient; Chrome selects h, SystemWebChromeClient or class c. These SDK adaptation paths must be traced before whole wrapper callback closure."
+  ]
+}

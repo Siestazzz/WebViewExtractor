@@ -53,6 +53,21 @@ class EvaluationTest(unittest.TestCase):
   f=dict(kind='setting',api='Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V',values=['true'])
   self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],0)
 
+ def test_string_setting_values_are_case_sensitive(self):
+  g=dict(kind='setting',name='setUserAgentString',normalized_api='Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V',value='"Agent/ABC"',value_kind='literal')
+  f=dict(kind='setting',api=g['normalized_api'],values=['agent/abc'])
+  self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],0)
+  f['values']=['Agent/ABC']
+  self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],1)
+  # An unquoted source literal and its significant whitespace are also exact.
+  g['value']=' Agent/ABC ';f['values']=['Agent/ABC']
+  self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],0)
+  f['values']=[' Agent/ABC ']
+  self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],1)
+  # Boolean-shaped strings are not boolean settings.
+  g['value']='"TRUE"';f['values']=['true']
+  self.assertEqual(self.replay([g],[f])['metrics']['setting']['matched'],0)
+
  def test_same_activity_wrong_webview_is_not_a_match(self):
   pairs=[
    (dict(kind='setting',name='setJavaScriptEnabled',normalized_api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',value='true',value_kind='literal'),dict(kind='setting',api='Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V',values=['true']),'setting'),
