@@ -1,0 +1,5 @@
+# sohuvideo v7 current-output source ownership
+
+Report SHA256 `433d6b04135fb2690174d8555e09ed9518cecedcffb8904332f8247a8d989d8f`. Current 299 Activities: {'valid': 273, 'unresolved': 26}; conservative error upper bound 8.70%. All 9848 available quoted source evidence locations were read anew, checked against source file SHA256 and exact source line, and rebound to the current receiver inventory. This applies already-proved concrete host lifecycle/layout chains; it does not certify every capability receiver.
+
+No new output hosts. Removed from v6: ['com.sohu.sohuvideo.ui.LiveAdvanceActivity', 'com.sohu.sohuvideo.ui.SearchActivity', 'com.sohu.sohuvideo.ui.homepage.MainActivity', 'com.sohu.sohuvideo.ui.movie.MovieMainActivity', 'com.sohu.sohuvideo.ui.videoEdit.NewVideoEditActivity', 'com.sohu.sohuvideo.voice.VoiceDetailActivity']. Host disappearance is recorded, not source proof that those hosts never own WebViews. Previously unresolved verdicts remain unresolved. All-output source scope, sealed holdouts and performance acceptance remain incomplete.

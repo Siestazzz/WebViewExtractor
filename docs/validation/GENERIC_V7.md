@@ -44,9 +44,10 @@ See GENERIC_V7_REFRESH_MEMO.md: invocation-local memo includes object identity, 
 
 - Ctrip fixed-gold Bridge rises2123→3680, settings295→343, callbacks334→397 compared with v6. It remains below95% in every category and at592.1s; normal exit does not mean traversal/quality completion.
 - News124.1→259.7s and Mango204.6→245.2s expose additional memo-dependency cost. News index time and decoded/refined/context counts stay unchanged; extra analysis time concentrates in NewsDetail/PushDetail. Lazy per-host field indexes are being prepared for the next version, with no speedup claim yet.
+- Expanded Sohu facts reveal a major regression hidden by the old small set: v7 settings152/488, bridge411/663, callbacks540/1514. Host ownership passing does not imply retained capability coverage. Per-closure replay and profiling are required; added runtime cost is a hypothesis, not yet a proved sole cause.
 - Source-confirmed false constructor-flag Bridge binding is reproduced generically; its numeric IF refinement repair is next-version work.
 - Reflection/prompt/console registration, scene/framework routing, X5 extension callbacks, source deep-audit scope, all-output precision and fresh holdouts remain open.
-- Ownership reviews bound to v6 hashes cannot certify v7. Rebinding current output is underway. Unknown hosts remain in the conservative error bound.
+- Independently rebound v7 ownership: Txws15/15 valid; Sohu273 valid/26 unresolved out of299 (8.70% conservative upper bound). Six previously emitted Sohu hosts disappear, including five source-positive hosts; disappearance is not a negative source conclusion. Capability precision and other audit gates remain unproven.
 - No three isolated final performance repetitions have been qualified. Current parallel development timings are not final acceptance measurements. Strict combined acceptance remains0/10.
 
 ## Reproduction
