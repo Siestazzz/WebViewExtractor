@@ -55,6 +55,7 @@
     "com.tencent.feedback.activity.FeedbackWebActivity",
     "com.tencent.feedback.activity.WebViewBrowser",
     "com.tencent.oscar.common.security.captcha.TCaptchaPopupActivity",
+    "com.tencent.oscar.module.main.MainActivity",
     "com.tencent.oscar.module.webview.BrowserMainActivity",
     "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
     "com.tencent.oscar.module.webview.WebviewBaseActivity",
@@ -80,5 +81,14 @@
     "Holdout reservations are not sealed gold or passed recall.",
     "Manifest unreviewed entries are unknown, not negative evidence."
   ],
-  "acceptance": "unproven"
+  "acceptance": "unproven",
+  "source_coverage_per_host": {
+    "com.tencent.oscar.module.main.MainActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "evidence_file": "docs/validation/txws/main-router-schema-source-probe.json",
+      "scope": "Positive application registry + callback + Fragment host chain; whole Main capability audit incomplete"
+    }
+  }
 }

@@ -1,0 +1,1382 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "16ce4954ebbf29effe54c73736863acbd78808895a6be2cfff71ceddc81bad1a",
+  "source_first": true,
+  "report_read": false,
+  "scope": "Exhausted source-visible custom Bridge, Settings and installed Client/Chrome/IX5/WebViewCallbackClient surfaces for selected H5 view, including declared inherited custom implementations and all currently reachable lifecycle installers. Not a report-recall claim.",
+  "implementation_inventory": [
+    {
+      "file": "sources/com/tencent/videolite/android/webview/H5BaseView.java",
+      "sha256": "ea41212d258c3be36ab00a58f96051a66c2d1f91303e1fa2ce398cc4f4856275"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractView.java",
+      "sha256": "beb1e11976fcb70d85e3824aa0e2cf8a93c118f78699308ddb43212bead5a913"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/H5BaseActivity.java",
+      "sha256": "dc6e6407820da471765bc4bbbfbd9bd5d33e1ee099c55f468ad0fec8a0ac3215"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/TitleBarActivity.java",
+      "sha256": "a1ec6a73597d5474bc131fb4cf409e10b1754c880d1aece75203cf6d4a004e87"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/basiccomponent/activity/CommonActivity.java",
+      "sha256": "c7c2145ead7aeefa89eb197cfe3411b9025ace8cab1f90672da5d283504f89c5"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/reportapi/EventActivity.java",
+      "sha256": "a483495abe164728dac8ef5abcddde2d80c412237c725accef7928cf46ea5bbd"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/reportapi/FontLockActivity.java",
+      "sha256": "52286cfcf3912a2d59cc5cd28a65de41beb1f4ad80c1fb3b804d31643825277e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/jsapi/BusinessCommonJSApi.java",
+      "sha256": "799f974dbcf4ab09ed35e760197042ea50f25d06bef5b0395541c5a7ea21080c"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/H5CommonJsApi.java",
+      "sha256": "0f89bcd5c0507bb6ffc90c1ac5484a4c320e85d04eb5f2eea231debbb2ef147b"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/api/BaseJsApi.java",
+      "sha256": "43a109679a4b9662743698db838eedc9d5e211dd3ba805a328aec1355ae412b8"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomWebView.java",
+      "sha256": "a57423496a8aca3bf9642decc8e5c45d9435c247594c026860e44921403610e6"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+      "sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+      "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/webclient/mtt/MttInjectedChromeClient.java",
+      "sha256": "303fe48689ec69d7d863fe04500a76e64a0f3eb761ea3477eb4ebb71f1c80fbd"
+    },
+    {
+      "file": "sources/com/tencent/qqlive/module/jsapi/utils/JSApiUtils.java",
+      "sha256": "b65cdedfaf81893cfbb1f63224c5c14b60321929de1d714ce367a6e2ee56ba58"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/webclient/mtt/MttWebViewClient.java",
+      "sha256": "8640a6e5b9640e90e35600d2065d1b28b170008d857acfc380a4d4a06fc14e59"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/webclient/mtt/MttWebChromeClient.java",
+      "sha256": "562c36c7d522a76254cf919fdb738cd85ff217a7c0fce7c011599c7cd811702b"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient.java",
+      "sha256": "46d954147ca31dfd5c0126a93eae3ce90f61a1a8c90197b342916605d1cffa8a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebViewClient.java",
+      "sha256": "c8113ad622455ac2b076b5de064e3e786f8e9a0fd6d98b00296379ad93e1f64b"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebChromeClient.java",
+      "sha256": "7979b9579b6f1ec7715e9b49f89a59993166ac88a707b16c7f51284aa448e70c"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+      "sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/i.java",
+      "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/h.java",
+      "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/c.java",
+      "sha256": "4860ca069272eb81c8b512c0db676ef205131e613237c9fa1b9087bdba006b90"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+      "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+      "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/aop/WebViewHooker.java",
+      "sha256": "3c3665f27c6f6c0c33396628ab0c973d2af8c381772f6ab899bab6f087db9238"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/aop/X5SafeWebViewClient.java",
+      "sha256": "dc98d9bc5c2e5a67a2c951c7538d876af3649319877e85025463d99ca187abd8"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/webview/webcreator/CustomWebViewWrapper.java",
+      "sha256": "329bdf2ee2b9c0723f6e4072698d5878c70cbb64fcb846475f4d061b9a03c663"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/a.java",
+      "sha256": "325fcb1cd1629975596a9be6bf33d2cd1f3ab6b763655323aceec523c2a2384d"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/b.java",
+      "sha256": "878fd23d2d0f983ee4fb28106410747d420c38d0de869959454a8f72f7019d07"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/c.java",
+      "sha256": "d8e28f841902c649dfda8a7411489037c6c13bae82c0e9377d4931461c9398ba"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/d.java",
+      "sha256": "31aed3a8bb18a3ee801dad79b7841133223f502e2da8a07f7844a20c4a76af2d"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/e.java",
+      "sha256": "7d112f222f204efe9a962840d39662c35951da02206ed7e388c10594095787eb"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/f.java",
+      "sha256": "656592f1c5d491348625f39d325c42f463bd03879f433c809bdb3863399c64c4"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/k/g.java",
+      "sha256": "5120b0b27ba889a86e4d195d8682c80f366a5064a0ac36c0c4533d4e1a10ca44"
+    },
+    {
+      "file": "sources/u/y/h0/a/t3/h.java",
+      "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractStandardActivity.java",
+      "sha256": "1ed8284ec5ed366aec7291b391fc9cf8beeb7908a1dd8eda4ce6b1711fc73930"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractStandardFullScreenActivity.java",
+      "sha256": "d881084a2637c05b2c50e0e7d320f159cc84525fac3cf1581e981017cd40a3d4"
+    },
+    {
+      "file": "resources/res/layout/layout_interact_h5.xml",
+      "sha256": "9a7d3d2a532aefb1e8f61140cd8090c6a32d8da8127c61499c1bb1fc14ac4926"
+    },
+    {
+      "file": "resources/res/layout/layout_full_scren_interact_h5.xml",
+      "sha256": "024caa88bcdf855cf043130ab6c1db3bc4f30971da465b6587203d4c3567c084"
+    }
+  ],
+  "sdk_wrapper_forwarding": [
+    {
+      "file": "sources/com/tencent/smtt/sdk/i.java",
+      "delegate_field": "f12795a",
+      "method_declarations": [
+        {
+          "line": 35,
+          "text": "public i(IX5WebViewClient iX5WebViewClient, WebView webView, WebViewClient webViewClient) {"
+        },
+        {
+          "line": 45,
+          "text": "public static void INVOKEVIRTUAL_com_tencent_smtt_sdk_i_com_tencent_videolite_android_aop_ThreadWeaver_startThread(Thread thread) {"
+        },
+        {
+          "line": 52,
+          "text": "public void a(WebView webView, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 56,
+          "text": "public void a(String str) {"
+        },
+        {
+          "line": 69,
+          "text": "public void countPVContentCacheCallBack(String str) {"
+        },
+        {
+          "line": 74,
+          "text": "public void doUpdateVisitedHistory(IX5WebViewBase iX5WebViewBase, String str, boolean z2) {"
+        },
+        {
+          "line": 80,
+          "text": "public void onDetectedBlankScreen(IX5WebViewBase iX5WebViewBase, String str, int i) {"
+        },
+        {
+          "line": 86,
+          "text": "public void onFormResubmission(IX5WebViewBase iX5WebViewBase, Message message, Message message2) {"
+        },
+        {
+          "line": 92,
+          "text": "public void onLoadResource(IX5WebViewBase iX5WebViewBase, String str) {"
+        },
+        {
+          "line": 98,
+          "text": "public void onPageCommitVisible(IX5WebViewBase iX5WebViewBase, String str) {"
+        },
+        {
+          "line": 104,
+          "text": "public void onPageFinished(IX5WebViewBase iX5WebViewBase, int i, int i2, String str) {"
+        },
+        {
+          "line": 136,
+          "text": "public void onPageFinished(IX5WebViewBase iX5WebViewBase, String str) {"
+        },
+        {
+          "line": 141,
+          "text": "public void onPageStarted(IX5WebViewBase iX5WebViewBase, int i, int i2, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 147,
+          "text": "public void onPageStarted(IX5WebViewBase iX5WebViewBase, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 152,
+          "text": "public void onReceivedClientCertRequest(IX5WebViewBase iX5WebViewBase, ClientCertRequest clientCertRequest) {"
+        },
+        {
+          "line": 158,
+          "text": "public void onReceivedError(IX5WebViewBase iX5WebViewBase, int i, String str, String str2) {"
+        },
+        {
+          "line": 171,
+          "text": "public void onReceivedError(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {"
+        },
+        {
+          "line": 177,
+          "text": "public void onReceivedHttpAuthRequest(IX5WebViewBase iX5WebViewBase, HttpAuthHandler httpAuthHandler, String str, String str2) {"
+        },
+        {
+          "line": 183,
+          "text": "public void onReceivedHttpError(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {"
+        },
+        {
+          "line": 189,
+          "text": "public void onReceivedLoginRequest(IX5WebViewBase iX5WebViewBase, String str, String str2, String str3) {"
+        },
+        {
+          "line": 195,
+          "text": "public void onReceivedSslError(IX5WebViewBase iX5WebViewBase, SslErrorHandler sslErrorHandler, SslError sslError) {"
+        },
+        {
+          "line": 201,
+          "text": "public boolean onRenderProcessGone(IX5WebViewBase iX5WebViewBase, final boolean z2, final int i) {"
+        },
+        {
+          "line": 216,
+          "text": "public void onScaleChanged(IX5WebViewBase iX5WebViewBase, float f, float f2) {"
+        },
+        {
+          "line": 222,
+          "text": "public void onTooManyRedirects(IX5WebViewBase iX5WebViewBase, Message message, Message message2) {"
+        },
+        {
+          "line": 228,
+          "text": "public void onUnhandledKeyEvent(IX5WebViewBase iX5WebViewBase, KeyEvent keyEvent) {"
+        },
+        {
+          "line": 234,
+          "text": "public WebResourceResponse shouldInterceptRequest(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 240,
+          "text": "public WebResourceResponse shouldInterceptRequest(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest, Bundle bundle) {"
+        },
+        {
+          "line": 246,
+          "text": "public WebResourceResponse shouldInterceptRequest(IX5WebViewBase iX5WebViewBase, String str) {"
+        },
+        {
+          "line": 252,
+          "text": "public boolean shouldOverrideKeyEvent(IX5WebViewBase iX5WebViewBase, KeyEvent keyEvent) {"
+        },
+        {
+          "line": 258,
+          "text": "public boolean shouldOverrideUrlLoading(IX5WebViewBase iX5WebViewBase, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 279,
+          "text": "public boolean shouldOverrideUrlLoading(IX5WebViewBase iX5WebViewBase, String str) {"
+        }
+      ],
+      "actual_calls": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 76,
+          "text": "this.f12795a.doUpdateVisitedHistory(this.f12796b, str, z2);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 82,
+          "text": "this.f12795a.onDetectedBlankScreen(str, i);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 88,
+          "text": "this.f12795a.onFormResubmission(this.f12796b, message, message2);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 94,
+          "text": "this.f12795a.onLoadResource(this.f12796b, str);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 100,
+          "text": "this.f12795a.onPageCommitVisible(this.f12796b, str);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 113,
+          "text": "this.f12795a.onPageFinished(this.f12796b, str);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 143,
+          "text": "this.f12795a.onPageStarted(this.f12796b, str, bitmap);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 154,
+          "text": "this.f12795a.onReceivedClientCertRequest(this.f12796b, clientCertRequest);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 167,
+          "text": "this.f12795a.onReceivedError(this.f12796b, i, str, str2);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 173,
+          "text": "this.f12795a.onReceivedError(this.f12796b, webResourceRequest, webResourceError);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 179,
+          "text": "this.f12795a.onReceivedHttpAuthRequest(this.f12796b, httpAuthHandler, str, str2);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 185,
+          "text": "this.f12795a.onReceivedHttpError(this.f12796b, webResourceRequest, webResourceResponse);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 191,
+          "text": "this.f12795a.onReceivedLoginRequest(this.f12796b, str, str2, str3);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 197,
+          "text": "this.f12795a.onReceivedSslError(this.f12796b, sslErrorHandler, sslError);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 202,
+          "text": "return this.f12795a.onRenderProcessGone(this.f12796b, new WebViewClient.RenderProcessGoneDetail() { // from class: com.tencent.smtt.sdk.i.2",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 218,
+          "text": "this.f12795a.onScaleChanged(this.f12796b, f, f2);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 224,
+          "text": "this.f12795a.onTooManyRedirects(this.f12796b, message, message2);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 230,
+          "text": "this.f12795a.onUnhandledKeyEvent(this.f12796b, keyEvent);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 236,
+          "text": "return this.f12795a.shouldInterceptRequest(this.f12796b, webResourceRequest);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 242,
+          "text": "return this.f12795a.shouldInterceptRequest(this.f12796b, webResourceRequest, bundle);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 248,
+          "text": "return this.f12795a.shouldInterceptRequest(this.f12796b, str);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 254,
+          "text": "return this.f12795a.shouldOverrideKeyEvent(this.f12796b, keyEvent);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 264,
+          "text": "boolean shouldOverrideUrlLoading = this.f12795a.shouldOverrideUrlLoading(this.f12796b, webResourceRequest);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/i.java",
+          "line": 284,
+          "text": "boolean shouldOverrideUrlLoading = this.f12795a.shouldOverrideUrlLoading(this.f12796b, str);",
+          "sha256": "0440d7343dc44ae0d0f32029e084416676e0a967ddf1d7af2d09f2155a050372"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/h.java",
+      "delegate_field": "f12782b",
+      "method_declarations": [
+        {
+          "line": 45,
+          "text": "public h(IX5WebChromeClient iX5WebChromeClient, WebView webView, WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 52,
+          "text": "public Bitmap getDefaultVideoPoster() {"
+        },
+        {
+          "line": 57,
+          "text": "public void getVisitedHistory(android.webkit.ValueCallback<String[]> valueCallback) {"
+        },
+        {
+          "line": 61,
+          "text": "public void onCloseWindow(IX5WebViewBase iX5WebViewBase) {"
+        },
+        {
+          "line": 67,
+          "text": "public void onConsoleMessage(String str, int i, String str2) {"
+        },
+        {
+          "line": 71,
+          "text": "public boolean onConsoleMessage(ConsoleMessage consoleMessage) {"
+        },
+        {
+          "line": 76,
+          "text": "public boolean onCreateWindow(IX5WebViewBase iX5WebViewBase, boolean z2, boolean z3, final Message message) {"
+        },
+        {
+          "line": 95,
+          "text": "public void onExceededDatabaseQuota(String str, String str2, long j, long j2, long j3, QuotaUpdater quotaUpdater) {"
+        },
+        {
+          "line": 100,
+          "text": "public void onGeolocationPermissionsHidePrompt() {"
+        },
+        {
+          "line": 105,
+          "text": "public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissionsCallback geolocationPermissionsCallback) {"
+        },
+        {
+          "line": 110,
+          "text": "public void onHideCustomView() {"
+        },
+        {
+          "line": 115,
+          "text": "public boolean onJsAlert(IX5WebViewBase iX5WebViewBase, String str, String str2, JsResult jsResult) {"
+        },
+        {
+          "line": 121,
+          "text": "public boolean onJsBeforeUnload(IX5WebViewBase iX5WebViewBase, String str, String str2, JsResult jsResult) {"
+        },
+        {
+          "line": 127,
+          "text": "public boolean onJsConfirm(IX5WebViewBase iX5WebViewBase, String str, String str2, JsResult jsResult) {"
+        },
+        {
+          "line": 133,
+          "text": "public boolean onJsPrompt(IX5WebViewBase iX5WebViewBase, String str, String str2, String str3, JsPromptResult jsPromptResult) {"
+        },
+        {
+          "line": 139,
+          "text": "public boolean onJsTimeout() {"
+        },
+        {
+          "line": 144,
+          "text": "public void onProgressChanged(IX5WebViewBase iX5WebViewBase, int i) {"
+        },
+        {
+          "line": 150,
+          "text": "public void onReachedMaxAppCacheSize(long j, long j2, QuotaUpdater quotaUpdater) {"
+        },
+        {
+          "line": 155,
+          "text": "public void onReceivedIcon(IX5WebViewBase iX5WebViewBase, Bitmap bitmap) {"
+        },
+        {
+          "line": 161,
+          "text": "public void onReceivedTitle(IX5WebViewBase iX5WebViewBase, String str) {"
+        },
+        {
+          "line": 167,
+          "text": "public void onReceivedTouchIconUrl(IX5WebViewBase iX5WebViewBase, String str, boolean z2) {"
+        },
+        {
+          "line": 173,
+          "text": "public void onRequestFocus(IX5WebViewBase iX5WebViewBase) {"
+        },
+        {
+          "line": 179,
+          "text": "public void onShowCustomView(View view, int i, IX5WebChromeClient.CustomViewCallback customViewCallback) {"
+        },
+        {
+          "line": 184,
+          "text": "public void onShowCustomView(View view, IX5WebChromeClient.CustomViewCallback customViewCallback) {"
+        },
+        {
+          "line": 189,
+          "text": "public boolean onShowFileChooser(IX5WebViewBase iX5WebViewBase, final android.webkit.ValueCallback<Uri[]> valueCallback, final IX5WebChromeClient.FileChooserParams fileChooserParams) {"
+        },
+        {
+          "line": 233,
+          "text": "public void openFileChooser(final android.webkit.ValueCallback<Uri[]> valueCallback, String str, String str2, boolean z2) {"
+        }
+      ],
+      "actual_calls": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 53,
+          "text": "return this.f12782b.getDefaultVideoPoster();",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 63,
+          "text": "this.f12782b.onCloseWindow(this.f12781a);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 72,
+          "text": "return this.f12782b.onConsoleMessage(consoleMessage);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 91,
+          "text": "return this.f12782b.onCreateWindow(this.f12781a, z2, z3, obtain);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 96,
+          "text": "this.f12782b.onExceededDatabaseQuota(str, str2, j, j2, j3, new a(quotaUpdater));",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 101,
+          "text": "this.f12782b.onGeolocationPermissionsHidePrompt();",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 106,
+          "text": "this.f12782b.onGeolocationPermissionsShowPrompt(str, geolocationPermissionsCallback);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 111,
+          "text": "this.f12782b.onHideCustomView();",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 117,
+          "text": "return this.f12782b.onJsAlert(this.f12781a, str, str2, jsResult);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 123,
+          "text": "return this.f12782b.onJsBeforeUnload(this.f12781a, str, str2, jsResult);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 129,
+          "text": "return this.f12782b.onJsConfirm(this.f12781a, str, str2, jsResult);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 135,
+          "text": "return this.f12782b.onJsPrompt(this.f12781a, str, str2, str3, jsPromptResult);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 140,
+          "text": "return this.f12782b.onJsTimeout();",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 146,
+          "text": "this.f12782b.onProgressChanged(this.f12781a, i);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 151,
+          "text": "this.f12782b.onReachedMaxAppCacheSize(j, j2, new a(quotaUpdater));",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 157,
+          "text": "this.f12782b.onReceivedIcon(this.f12781a, bitmap);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 163,
+          "text": "this.f12782b.onReceivedTitle(this.f12781a, str);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 169,
+          "text": "this.f12782b.onReceivedTouchIconUrl(this.f12781a, str, z2);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 175,
+          "text": "this.f12782b.onRequestFocus(this.f12781a);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 180,
+          "text": "this.f12782b.onShowCustomView(view, i, customViewCallback);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 185,
+          "text": "this.f12782b.onShowCustomView(view, customViewCallback);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 229,
+          "text": "return this.f12782b.onShowFileChooser(this.f12781a, valueCallback2, fileChooserParams2);",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/h.java",
+          "line": 234,
+          "text": "this.f12782b.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.h.2",
+          "sha256": "6bfb114f644c776df3057c05609cdd3895e670ca3111568f78599f3ba0d68ec4"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+      "delegate_field": "f12610a",
+      "method_declarations": [
+        {
+          "line": 331,
+          "text": "public SystemWebViewClient(WebView webView, WebViewClient webViewClient) {"
+        },
+        {
+          "line": 339,
+          "text": "public static void INVOKEVIRTUAL_com_tencent_smtt_sdk_SystemWebViewClient_com_tencent_videolite_android_aop_ThreadWeaver_startThread(Thread thread) {"
+        },
+        {
+          "line": 349,
+          "text": "public static boolean com_tencent_smtt_sdk_SystemWebViewClient_com_tencent_videolite_android_aop_WebViewWeaver_onRenderProcessGone(SystemWebViewClient systemWebViewClient, android.webkit.WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {"
+        },
+        {
+          "line": 354,
+          "text": "public boolean SystemWebViewClient__onRenderProcessGone$___twin___(android.webkit.WebView webView, final RenderProcessGoneDetail renderProcessGoneDetail) {"
+        },
+        {
+          "line": 370,
+          "text": "public void doUpdateVisitedHistory(android.webkit.WebView webView, String str, boolean z2) {"
+        },
+        {
+          "line": 376,
+          "text": "public void onFormResubmission(android.webkit.WebView webView, Message message, Message message2) {"
+        },
+        {
+          "line": 382,
+          "text": "public void onLoadResource(android.webkit.WebView webView, String str) {"
+        },
+        {
+          "line": 388,
+          "text": "public void onPageCommitVisible(android.webkit.WebView webView, String str) {"
+        },
+        {
+          "line": 394,
+          "text": "public void onPageFinished(android.webkit.WebView webView, String str) {"
+        },
+        {
+          "line": 422,
+          "text": "public void onPageStarted(android.webkit.WebView webView, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 428,
+          "text": "public void onReceivedClientCertRequest(android.webkit.WebView webView, android.webkit.ClientCertRequest clientCertRequest) {"
+        },
+        {
+          "line": 436,
+          "text": "public void onReceivedError(android.webkit.WebView webView, int i, String str, String str2) {"
+        },
+        {
+          "line": 442,
+          "text": "public void onReceivedError(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest, final WebResourceError webResourceError) {"
+        },
+        {
+          "line": 458,
+          "text": "public void onReceivedHttpAuthRequest(android.webkit.WebView webView, android.webkit.HttpAuthHandler httpAuthHandler, String str, String str2) {"
+        },
+        {
+          "line": 464,
+          "text": "public void onReceivedHttpError(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest, android.webkit.WebResourceResponse webResourceResponse) {"
+        },
+        {
+          "line": 471,
+          "text": "public void onReceivedLoginRequest(android.webkit.WebView webView, String str, String str2, String str3) {"
+        },
+        {
+          "line": 480,
+          "text": "public void onReceivedSslError(android.webkit.WebView webView, android.webkit.SslErrorHandler sslErrorHandler, android.net.http.SslError sslError) {"
+        },
+        {
+          "line": 488,
+          "text": "public boolean onRenderProcessGone(android.webkit.WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {"
+        },
+        {
+          "line": 493,
+          "text": "public void onScaleChanged(android.webkit.WebView webView, float f2, float f3) {"
+        },
+        {
+          "line": 499,
+          "text": "public void onTooManyRedirects(android.webkit.WebView webView, Message message, Message message2) {"
+        },
+        {
+          "line": 505,
+          "text": "public void onUnhandledKeyEvent(android.webkit.WebView webView, KeyEvent keyEvent) {"
+        },
+        {
+          "line": 516,
+          "text": "public android.webkit.WebResourceResponse shouldInterceptRequest(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 549,
+          "text": "public android.webkit.WebResourceResponse shouldInterceptRequest(android.webkit.WebView webView, String str) {"
+        },
+        {
+          "line": 558,
+          "text": "public boolean shouldOverrideKeyEvent(android.webkit.WebView webView, KeyEvent keyEvent) {"
+        },
+        {
+          "line": 564,
+          "text": "public boolean shouldOverrideUrlLoading(android.webkit.WebView webView, android.webkit.WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 583,
+          "text": "public boolean shouldOverrideUrlLoading(android.webkit.WebView webView, String str) {"
+        }
+      ],
+      "actual_calls": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 356,
+          "text": "return this.f12610a.onRenderProcessGone(this.f12611b, new WebViewClient.RenderProcessGoneDetail() { // from class: com.tencent.smtt.sdk.SystemWebViewClient.3",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 372,
+          "text": "this.f12610a.doUpdateVisitedHistory(this.f12611b, str, z2);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 378,
+          "text": "this.f12610a.onFormResubmission(this.f12611b, message, message2);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 384,
+          "text": "this.f12610a.onLoadResource(this.f12611b, str);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 390,
+          "text": "this.f12610a.onPageCommitVisible(this.f12611b, str);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 403,
+          "text": "this.f12610a.onPageFinished(this.f12611b, str);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 424,
+          "text": "this.f12610a.onPageStarted(this.f12611b, str, bitmap);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 431,
+          "text": "this.f12610a.onReceivedClientCertRequest(this.f12611b, new a(clientCertRequest));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 438,
+          "text": "this.f12610a.onReceivedError(this.f12611b, i, str, str2);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 444,
+          "text": "this.f12610a.onReceivedError(this.f12611b, webResourceRequest != null ? new f(webResourceRequest) : null, webResourceError != null ? new com.tencent.smtt.export.external.interfaces.WebResourceError() { // from class: com.tencent.smtt.sdk.SystemWebViewClient.2",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 460,
+          "text": "this.f12610a.onReceivedHttpAuthRequest(this.f12611b, new b(httpAuthHandler), str, str2);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 466,
+          "text": "this.f12610a.onReceivedHttpError(this.f12611b, new f(webResourceRequest), new g(webResourceResponse));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 474,
+          "text": "this.f12610a.onReceivedLoginRequest(this.f12611b, str, str2, str3);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 483,
+          "text": "this.f12610a.onReceivedSslError(this.f12611b, new c(sslErrorHandler), new d(sslError));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 495,
+          "text": "this.f12610a.onScaleChanged(this.f12611b, f2, f3);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 501,
+          "text": "this.f12610a.onTooManyRedirects(this.f12611b, message, message2);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 507,
+          "text": "this.f12610a.onUnhandledKeyEvent(this.f12611b, keyEvent);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 527,
+          "text": "shouldInterceptRequest = this.f12610a.shouldInterceptRequest(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 542,
+          "text": "shouldInterceptRequest = this.f12610a.shouldInterceptRequest(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 551,
+          "text": "if (Build.VERSION.SDK_INT >= 11 && (shouldInterceptRequest = this.f12610a.shouldInterceptRequest(this.f12611b, str)) != null) {",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 560,
+          "text": "return this.f12610a.shouldOverrideKeyEvent(this.f12611b, keyEvent);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 575,
+          "text": "return this.f12610a.shouldOverrideUrlLoading(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 579,
+          "text": "return this.f12610a.shouldOverrideUrlLoading(this.f12611b, new e(webResourceRequest.getUrl().toString(), webResourceRequest.isForMainFrame(), z2, webResourceRequest.hasGesture(), webResourceRequest.getMethod(), webResourceRequest.getRequestHeaders()));",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebViewClient.java",
+          "line": 588,
+          "text": "return this.f12610a.shouldOverrideUrlLoading(this.f12611b, str);",
+          "sha256": "55e893d439fb8a797695df90224c3be862054691d49b94cd3f9c5608ed2427b2"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+      "delegate_field": "f12579a",
+      "method_declarations": [
+        {
+          "line": 173,
+          "text": "public SystemWebChromeClient(WebView webView, WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 180,
+          "text": "public Bitmap getDefaultVideoPoster() {"
+        },
+        {
+          "line": 194,
+          "text": "public View getVideoLoadingProgressView() {"
+        },
+        {
+          "line": 199,
+          "text": "public void getVisitedHistory(final android.webkit.ValueCallback<String[]> valueCallback) {"
+        },
+        {
+          "line": 210,
+          "text": "public void onCloseWindow(android.webkit.WebView webView) {"
+        },
+        {
+          "line": 216,
+          "text": "public void onConsoleMessage(String str, int i, String str2) {"
+        },
+        {
+          "line": 221,
+          "text": "public boolean onConsoleMessage(android.webkit.ConsoleMessage consoleMessage) {"
+        },
+        {
+          "line": 226,
+          "text": "public boolean onCreateWindow(android.webkit.WebView webView, boolean z2, boolean z3, final Message message) {"
+        },
+        {
+          "line": 247,
+          "text": "public void onExceededDatabaseQuota(String str, String str2, long j, long j2, long j3, WebStorage.QuotaUpdater quotaUpdater) {"
+        },
+        {
+          "line": 253,
+          "text": "public void onGeolocationPermissionsHidePrompt() {"
+        },
+        {
+          "line": 259,
+          "text": "public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissions.Callback callback) {"
+        },
+        {
+          "line": 264,
+          "text": "public boolean onJsAlert(android.webkit.WebView webView, String str, String str2, android.webkit.JsResult jsResult) {"
+        },
+        {
+          "line": 270,
+          "text": "public boolean onJsBeforeUnload(android.webkit.WebView webView, String str, String str2, android.webkit.JsResult jsResult) {"
+        },
+        {
+          "line": 276,
+          "text": "public boolean onJsConfirm(android.webkit.WebView webView, String str, String str2, android.webkit.JsResult jsResult) {"
+        },
+        {
+          "line": 282,
+          "text": "public boolean onJsPrompt(android.webkit.WebView webView, String str, String str2, String str3, android.webkit.JsPromptResult jsPromptResult) {"
+        },
+        {
+          "line": 289,
+          "text": "public boolean onJsTimeout() {"
+        },
+        {
+          "line": 294,
+          "text": "public void onPermissionRequest(final PermissionRequest permissionRequest) {"
+        },
+        {
+          "line": 326,
+          "text": "public void onPermissionRequestCanceled(final PermissionRequest permissionRequest) {"
+        },
+        {
+          "line": 358,
+          "text": "public void onProgressChanged(android.webkit.WebView webView, int i) {"
+        },
+        {
+          "line": 365,
+          "text": "public void onReachedMaxAppCacheSize(long j, long j2, WebStorage.QuotaUpdater quotaUpdater) {"
+        },
+        {
+          "line": 370,
+          "text": "public void onReceivedIcon(android.webkit.WebView webView, Bitmap bitmap) {"
+        },
+        {
+          "line": 376,
+          "text": "public void onReceivedTitle(android.webkit.WebView webView, String str) {"
+        },
+        {
+          "line": 383,
+          "text": "public void onReceivedTouchIconUrl(android.webkit.WebView webView, String str, boolean z2) {"
+        },
+        {
+          "line": 389,
+          "text": "public void onRequestFocus(android.webkit.WebView webView) {"
+        },
+        {
+          "line": 395,
+          "text": "public boolean onShowFileChooser(android.webkit.WebView webView, final android.webkit.ValueCallback<Uri[]> valueCallback, final WebChromeClient.FileChooserParams fileChooserParams) {"
+        },
+        {
+          "line": 438,
+          "text": "public void openFileChooser(android.webkit.ValueCallback<Uri> valueCallback) {"
+        },
+        {
+          "line": 442,
+          "text": "public void openFileChooser(android.webkit.ValueCallback<Uri> valueCallback, String str) {"
+        },
+        {
+          "line": 446,
+          "text": "public void openFileChooser(final android.webkit.ValueCallback<Uri> valueCallback, String str, String str2) {"
+        },
+        {
+          "line": 456,
+          "text": "public void setupAutoFill(Message message) {"
+        }
+      ],
+      "actual_calls": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 181,
+          "text": "Bitmap defaultVideoPoster = this.f12579a.getDefaultVideoPoster();",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 195,
+          "text": "return this.f12579a.getVideoLoadingProgressView();",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 200,
+          "text": "this.f12579a.getVisitedHistory(new ValueCallback<String[]>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.1",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 212,
+          "text": "this.f12579a.onCloseWindow(this.f12580b);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 217,
+          "text": "this.f12579a.onConsoleMessage(new a(str, str2, i));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 222,
+          "text": "return this.f12579a.onConsoleMessage(new a(consoleMessage));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 241,
+          "text": "return this.f12579a.onCreateWindow(this.f12580b, z2, z3, obtain);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 248,
+          "text": "this.f12579a.onExceededDatabaseQuota(str, str2, j, j2, j3, new f(quotaUpdater));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 254,
+          "text": "this.f12579a.onGeolocationPermissionsHidePrompt();",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 260,
+          "text": "this.f12579a.onGeolocationPermissionsShowPrompt(str, new c(callback));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 266,
+          "text": "return this.f12579a.onJsAlert(this.f12580b, str, str2, new e(jsResult));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 272,
+          "text": "return this.f12579a.onJsBeforeUnload(this.f12580b, str, str2, new e(jsResult));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 278,
+          "text": "return this.f12579a.onJsConfirm(this.f12580b, str, str2, new e(jsResult));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 284,
+          "text": "return this.f12579a.onJsPrompt(this.f12580b, str, str2, str3, new d(jsPromptResult));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 290,
+          "text": "return this.f12579a.onJsTimeout();",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 295,
+          "text": "this.f12579a.onPermissionRequest(new com.tencent.smtt.export.external.interfaces.PermissionRequest() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.6",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 327,
+          "text": "this.f12579a.onPermissionRequestCanceled(new com.tencent.smtt.export.external.interfaces.PermissionRequest() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.7",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 360,
+          "text": "this.f12579a.onProgressChanged(this.f12580b, i);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 366,
+          "text": "this.f12579a.onReachedMaxAppCacheSize(j, j2, new f(quotaUpdater));",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 372,
+          "text": "this.f12579a.onReceivedIcon(this.f12580b, bitmap);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 378,
+          "text": "this.f12579a.onReceivedTitle(this.f12580b, str);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 385,
+          "text": "this.f12579a.onReceivedTouchIconUrl(this.f12580b, str, z2);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 391,
+          "text": "this.f12579a.onRequestFocus(this.f12580b);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 435,
+          "text": "return this.f12579a.onShowFileChooser(this.f12580b, valueCallback2, fileChooserParams2);",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/SystemWebChromeClient.java",
+          "line": 447,
+          "text": "this.f12579a.openFileChooser(new ValueCallback<Uri>() { // from class: com.tencent.smtt.sdk.SystemWebChromeClient.3",
+          "sha256": "8192bb69d57eb4af53f04ebc61ab48495cd1a33deff291876b7b666ed69a3c17"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/c.java",
+      "delegate_field": "f12579a",
+      "method_declarations": [
+        {
+          "line": 10,
+          "text": "public c(WebView webView, WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 16,
+          "text": "public void onHideCustomView() {"
+        },
+        {
+          "line": 23,
+          "text": "public void onShowCustomView(View view, int i, WebChromeClient.CustomViewCallback customViewCallback) {"
+        },
+        {
+          "line": 29,
+          "text": "public void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {"
+        }
+      ],
+      "actual_calls": [
+        {
+          "file": "sources/com/tencent/smtt/sdk/c.java",
+          "line": 17,
+          "text": "this.f12579a.onHideCustomView();",
+          "sha256": "4860ca069272eb81c8b512c0db676ef205131e613237c9fa1b9087bdba006b90"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/c.java",
+          "line": 24,
+          "text": "this.f12579a.onShowCustomView(view, i, new SystemWebChromeClient.b(customViewCallback));",
+          "sha256": "4860ca069272eb81c8b512c0db676ef205131e613237c9fa1b9087bdba006b90"
+        },
+        {
+          "file": "sources/com/tencent/smtt/sdk/c.java",
+          "line": 30,
+          "text": "this.f12579a.onShowCustomView(view, new SystemWebChromeClient.b(customViewCallback));",
+          "sha256": "4860ca069272eb81c8b512c0db676ef205131e613237c9fa1b9087bdba006b90"
+        }
+      ]
+    }
+  ],
+  "bridge_inventory": {
+    "registrations": [
+      "QQLiveJavaInterface"
+    ],
+    "members": [
+      "Lcom/tencent/qqlive/module/jsapi/webclient/mtt/MttInjectedChromeClient$JavaScriptInterface;->invoke(Ljava/lang/String;)Ljava/lang/String;"
+    ],
+    "conditions": [
+      "SDK>=17, retained MttInjectedChromeClient attachment, once-per-client mHasAddJavaInterface",
+      "H5BaseView getJsApiImpl supplies BusinessCommonJSApi; that JS dispatcher is not separately registered as Java interface."
+    ],
+    "historical_removals": [
+      {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+        "line": 24,
+        "text": "removeJavascriptInterface(\"searchBoxJavaBridge_\");",
+        "sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2"
+      },
+      {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+        "line": 25,
+        "text": "removeJavascriptInterface(\"accessibility\");",
+        "sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2"
+      },
+      {
+        "file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+        "line": 26,
+        "text": "removeJavascriptInterface(\"accessibilityTraversal\");",
+        "sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2"
+      },
+      {
+        "file": "sources/u/y/h0/a/t3/h.java",
+        "line": 76,
+        "text": "webView.removeJavascriptInterface(\"searchBoxJavaBridge_\");",
+        "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
+      },
+      {
+        "file": "sources/com/tencent/videolite/android/webview/webcreator/CustomWebViewWrapper.java",
+        "line": 64,
+        "text": "customWebView.removeJavascriptInterface(JsCallJava.JAVA_SCRIPT_INTERFACE_NAME);",
+        "sha256": "329bdf2ee2b9c0723f6e4072698d5878c70cbb64fcb846475f4d061b9a03c663"
+      }
+    ]
+  },
+  "settings_inventory": {
+    "observed_initial_setter_count": 22,
+    "mapping_file": "setting-wrapper-dispatch-mappings.jsonl",
+    "runtime_value_boundaries": [
+      "App cache/database/geolocation paths depend on current app Context directories; expressions retained.",
+      "UA current constructor input initialized empty; first branch uses current underlying UA plus app-version suffix; current UA can reflect runtime kernel/pool reuse, so no guessed constant.",
+      "Alternate initialization UA branch and public h.N/h.K method bodies exist; H5BaseView never calls these methods and field f18814w has no other source owner references. Retained as unbound declarations rather than reached settings."
+    ],
+    "reachability_evidence": [
+      {
+        "file": "sources/com/tencent/videolite/android/webview/H5BaseView.java",
+        "line": 1227,
+        "text": "this.f18810s = \"\";",
+        "sha256": "ea41212d258c3be36ab00a58f96051a66c2d1f91303e1fa2ce398cc4f4856275"
+      },
+      {
+        "file": "sources/com/tencent/videolite/android/webview/H5BaseView.java",
+        "line": 300,
+        "text": "u.y.h0.a.t3.h hVar = new u.y.h0.a.t3.h(getContext(), this.f18805n, this.f18810s, isNeedOverScroll, false);",
+        "sha256": "ea41212d258c3be36ab00a58f96051a66c2d1f91303e1fa2ce398cc4f4856275"
+      },
+      {
+        "file": "sources/u/y/h0/a/t3/h.java",
+        "line": 682,
+        "text": "w(context, isUseCache, userAgent, needOverScroll);",
+        "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
+      },
+      {
+        "file": "sources/u/y/h0/a/t3/h.java",
+        "line": 141,
+        "text": "x(context, isUseCache, userAgent, needOverScroll);",
+        "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
+      }
+    ]
+  },
+  "client_inventory": {
+    "standard_custom_client_members": 8,
+    "standard_effective_chrome_members": 8,
+    "historical_safe_client_members": 21,
+    "nonstandard_registered_callback_members": 16,
+    "nonstandard_registration_count": 2,
+    "member_files": [
+      "h5-shared-callback-surface-source-inventory.json",
+      "h5-early-safe-client-source-inventory.json",
+      "h5-nonstandard-extension-full-surface.json"
+    ],
+    "boundaries": [
+      "SDK native/System adapters and actual-X5 i/h dispatch inspected; source callback signatures retain X5 types. Bundle intercept only actual-X5 adapter dispatch.",
+      "SDK h/SystemChrome forward only3arg filechooser;1/2declared Mtt overloads retained as source-declared-unforwarded, not positives.",
+      "SDK c is selected because concrete MttChrome overrides show/hide; c extendsSystemChrome and implements exact show/hide forwarding. Direct DEX constructor prototype proof resolves jadx import error.",
+      "CustomMttWebView installs ClientExtension handler and WebViewCallbackClient; ChromeExtension-only declarations are incompatible with installed interface and kept separate.",
+      "Inherited SDK/platform callback defaults are not fabricated as custom implementation overrides.",
+      "Safety-hook early registration only configtrue/SDK>=26/default-or-null current client; pooled business client suppresses early re-registration. Subsequent business setter installsnewMtt object; historical original bridge/settings/client registrations remain."
+    ]
+  },
+  "runtime_boundary": [
+    "qfix hotpatch redirectors may replace code at runtime; this audit covers packaged nonredirect source paths, records gates, does not assume remote patch implementation.",
+    "Pool creator c/d/g all create core1 CustomWebView and preserve identity through MutableContextWrapper rebinding; current host applies the same initialization settings and new business clients. Previous host clients in pool are not attributed as current-host setters.",
+    "X5 availability is runtime; both packaged native/X5 adaptation paths have been audited and conditionally preserved."
+  ],
+  "unresolved_source_surface": []
+}

@@ -173,7 +173,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->computeScroll(Landroid/view/View;)V",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 25,
+        "line": 107,
         "text": "public void computeScroll(View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -190,7 +190,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->dispatchTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 34,
+        "line": 112,
         "text": "public boolean dispatchTouchEvent(MotionEvent motionEvent, View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -207,7 +207,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onInterceptTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 47,
+        "line": 178,
         "text": "public boolean onInterceptTouchEvent(MotionEvent motionEvent, View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -241,7 +241,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onOverScrolled(IIZZLandroid/view/View;)V",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 56,
+        "line": 188,
         "text": "public void onOverScrolled(int i, int i2, boolean z2, boolean z3, View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -258,7 +258,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onScrollChanged(IIIILandroid/view/View;)V",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 65,
+        "line": 229,
         "text": "public void onScrollChanged(int i, int i2, int i3, int i4, View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -275,7 +275,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->onTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 74,
+        "line": 234,
         "text": "public boolean onTouchEvent(MotionEvent motionEvent, View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -292,7 +292,7 @@
       "signature": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;->overScrollBy(IIIIIIIIZLandroid/view/View;)Z",
       "evidence": {
         "file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
-        "line": 83,
+        "line": 247,
         "text": "public boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z2, View view) {",
         "sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691"
       },
@@ -984,9 +984,59 @@
   },
   "notes": [
     "8 outer registered IX5WebViewClientExtension members; 8 nested registered WebViewCallbackClient members.",
-    "24 ChromeExtension-only/ordinary declarations are not compatible members of the installed ClientExtension contract and are not fabricated as registered Chrome callbacks.",
+    "29 incompatible ChromeExtension-only/ordinary declarations retained in the declaration ledger; not installed Chrome callbacks.",
     "The SDK client-extension proxy inherited default methods are SDK fallback implementations, not custom handler overrides.",
     "The native SDK inner WebView reads mWebViewCallbackClient and dispatches each of the eight same signatures; X5 handler forwards its seven touch/scroll methods through the same retained callbackClient (onMiscCallBack directly returns null).",
     "Legacy Mtt Chrome1/2 declarations retained with source-declared-unforwarded status; immutable original530 snapshot retained; not a tool improvement."
+  ],
+  "native_dispatch_evidence": [
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 271,
+      "text": "webViewCallbackClient.computeScroll(this);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 295,
+      "text": "return webViewCallbackClient != null ? webViewCallbackClient.dispatchTouchEvent(motionEvent, this) : super.dispatchTouchEvent(motionEvent);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 313,
+      "text": "webViewCallbackClient.invalidate();",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 320,
+      "text": "return webViewCallbackClient != null ? webViewCallbackClient.onInterceptTouchEvent(motionEvent, this) : super.onInterceptTouchEvent(motionEvent);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 328,
+      "text": "webViewCallbackClient.onOverScrolled(i, i2, z2, z3, this);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 338,
+      "text": "webViewCallbackClient.onScrollChanged(i, i2, i3, i4, this);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 353,
+      "text": "return webViewCallbackClient.onTouchEvent(motionEvent, this);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    },
+    {
+      "file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 368,
+      "text": "return webViewCallbackClient.overScrollBy(i, i2, i3, i4, i5, i6, i7, i8, z2, this);",
+      "sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a"
+    }
   ]
 }

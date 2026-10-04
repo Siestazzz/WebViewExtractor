@@ -11,3 +11,5 @@ Reviewer: GPT-6.1 Sol。APK SHA-256 `8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2
 尚欠全输出activity_host归属审核、capability_precision、最终评分和holdout truth/evaluation；这些不从当前小样本匹配推定。
 
 覆盖口径纠正：source-positive仅证明宿主有真实View绑定，不等于完成该宿主全Bridge/Settings/Client表面深审。host-deep-audit-coverage.jsonl逐宿主三类别记partial/unknown；deep_positive_activities暂为空集合，source_positive_activities单列。旧数值deep计数已纠正，不作为验收证据。
+
+Taurus native SDK framework two-host deep audit completed: TaxWebViewActivity and TaxBrowserActivity (exact real p9.b synthetic touch listener class proven from DEX). Full settings include reflected constant display-zoom false and dynamic cache-directory expression; all standard/custom Client/Chrome/touch entry surfaces checked; bridge absence proven for both. Current166 rows,18source-positive,3deep (nativefragment1 + SDKdirect2). This is not complete164Manifest coverage nor acceptance. Unity settings runtime reflection namespace remains a separate unresolved surface and was not silently used as a deep-complete substitute.

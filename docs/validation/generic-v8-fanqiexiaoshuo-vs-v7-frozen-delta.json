@@ -1,0 +1,62 @@
+{
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "counts": {
+    "before_matched": 45,
+    "after_matched": 43,
+    "regression": 2
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageFinished",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.ReadingWebView$m",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView",
+            "com.dragon.read.hybrid.webview.e",
+            "com.dragon.read.hybrid.webview.d"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "e7ca3202edbe104ba55888802f27bbfe2ac4d06e1b701a5eb8dafbf91adc9f62"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.ReadingWebView$m",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView",
+            "com.dragon.read.hybrid.webview.e",
+            "com.dragon.read.hybrid.webview.d"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "6e3f57e652672fe69e174ad7b198d120c285e2ab421dec812f8378d4c3a367a7"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

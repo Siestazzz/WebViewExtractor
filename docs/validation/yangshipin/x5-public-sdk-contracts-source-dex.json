@@ -1,0 +1,616 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "16ce4954ebbf29effe54c73736863acbd78808895a6be2cfff71ceddc81bad1a",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "parse_method": "DEX class_defs/class_data encoded method declarations, method_ids/proto_ids/type_ids/string_ids; all interface declarations, no name-based callback inference.",
+  "classes": [
+    {
+      "class_descriptor": "Lcom/tencent/qqlive/module/jsapi/webview/CustomMttWebView;",
+      "superclass_descriptor": "Lcom/tencent/smtt/sdk/WebView;",
+      "interface_descriptors": [],
+      "class_def_offset": 1622644,
+      "class_access_flags": 1,
+      "dex": "classes4.dex",
+      "dex_sha256": "926b601e39b1eaaa50018278c50e3ebf3eab5ca5355ba0f664fb1fd6da8f4b0e",
+      "source_file": "sources/com/tencent/qqlive/module/jsapi/webview/CustomMttWebView.java",
+      "source_sha256": "36dc81b9f17a33f31acd7901fb1e925145eefebb4153d6dfe1084249f7a6cdc2",
+      "methods": [],
+      "member_scope": "exact setters or class hierarchy only"
+    },
+    {
+      "class_descriptor": "Lcom/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler;",
+      "superclass_descriptor": "Lcom/tencent/smtt/export/external/extension/proxy/ProxyWebViewClientExtension;",
+      "interface_descriptors": [
+        "Lcom/tencent/smtt/export/external/extension/interfaces/IX5WebChromeClientExtension;"
+      ],
+      "class_def_offset": 1622868,
+      "class_access_flags": 1,
+      "dex": "classes4.dex",
+      "dex_sha256": "926b601e39b1eaaa50018278c50e3ebf3eab5ca5355ba0f664fb1fd6da8f4b0e",
+      "source_file": "sources/com/tencent/qqlive/module/jsapi/webview/X5WebViewEventHandler.java",
+      "source_sha256": "24fcb30755afdc71af3e627577aa8c97841bbe1df9096ad17daf5bc70db7d691",
+      "methods": [],
+      "member_scope": "exact setters or class hierarchy only"
+    },
+    {
+      "class_descriptor": "Lcom/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1577060,
+      "class_access_flags": 1537,
+      "dex": "classes5.dex",
+      "dex_sha256": "fffcd16f1af76c110d1a84acd3aa9ab8c016188cafcd53f20bf9a2cd54a21f71",
+      "source_file": "sources/com/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension.java",
+      "source_sha256": "31e8ac3a736879cdf1867b81e05b043f51a14c2e81558ba7eab21132ffd1b933",
+      "methods": [
+        {
+          "method_id": 20032,
+          "method_id_offset": 1170620,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "allowJavaScriptOpenWindowAutomatically",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 20033,
+          "method_id_offset": 1170628,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "computeScroll",
+          "descriptor": "(Landroid/view/View;)V"
+        },
+        {
+          "method_id": 20034,
+          "method_id_offset": 1170636,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "didFirstVisuallyNonEmptyPaint",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20035,
+          "method_id_offset": 1170644,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;Landroid/view/View;)Z"
+        },
+        {
+          "method_id": 20036,
+          "method_id_offset": 1170652,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "documentAvailableInMainFrame",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20037,
+          "method_id_offset": 1170660,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "getHostByName",
+          "descriptor": "(Ljava/lang/String;Ljava/util/List;)I"
+        },
+        {
+          "method_id": 20038,
+          "method_id_offset": 1170668,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "handlePluginTag",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)V"
+        },
+        {
+          "method_id": 20039,
+          "method_id_offset": 1170676,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "hideAddressBar",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20040,
+          "method_id_offset": 1170684,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "invalidate",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20041,
+          "method_id_offset": 1170692,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "notifyAutoAudioPlay",
+          "descriptor": "(Ljava/lang/String;Lcom/tencent/smtt/export/external/interfaces/JsResult;)Z"
+        },
+        {
+          "method_id": 20042,
+          "method_id_offset": 1170700,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "notifyJavaScriptOpenWindowsBlocked",
+          "descriptor": "(Ljava/lang/String;[Ljava/lang/String;Landroid/webkit/ValueCallback;Z)Z"
+        },
+        {
+          "method_id": 20043,
+          "method_id_offset": 1170708,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onCreateInputConnectionSetEditInfo",
+          "descriptor": "(Landroid/view/inputmethod/EditorInfo;)V"
+        },
+        {
+          "method_id": 20044,
+          "method_id_offset": 1170716,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onDoubleTapStart",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20045,
+          "method_id_offset": 1170724,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onFakeLoginRecognised",
+          "descriptor": "(Landroid/os/Bundle;)V"
+        },
+        {
+          "method_id": 20046,
+          "method_id_offset": 1170732,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onFlingScrollBegin",
+          "descriptor": "(III)V"
+        },
+        {
+          "method_id": 20047,
+          "method_id_offset": 1170740,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onFlingScrollEnd",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20048,
+          "method_id_offset": 1170748,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onHideListBox",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20049,
+          "method_id_offset": 1170756,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onHistoryItemChanged",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20050,
+          "method_id_offset": 1170764,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onInputBoxTextChanged",
+          "descriptor": "(Lcom/tencent/smtt/export/external/extension/interfaces/IX5WebViewExtension;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 20051,
+          "method_id_offset": 1170772,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onInterceptTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;Landroid/view/View;)Z"
+        },
+        {
+          "method_id": 20052,
+          "method_id_offset": 1170780,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onMetricsSavedCountReceived",
+          "descriptor": "(Ljava/lang/String;ZJLjava/lang/String;I)V"
+        },
+        {
+          "method_id": 20053,
+          "method_id_offset": 1170788,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onMiscCallBack",
+          "descriptor": "(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Object;"
+        },
+        {
+          "method_id": 20054,
+          "method_id_offset": 1170796,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onMiscCallBack",
+          "descriptor": "(Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+        },
+        {
+          "method_id": 20055,
+          "method_id_offset": 1170804,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onMissingPluginClicked",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 20056,
+          "method_id_offset": 1170812,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onNativeCrashReport",
+          "descriptor": "(ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 20057,
+          "method_id_offset": 1170820,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onOverScrolled",
+          "descriptor": "(IIZZLandroid/view/View;)V"
+        },
+        {
+          "method_id": 20058,
+          "method_id_offset": 1170828,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onPinchToZoomStart",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20059,
+          "method_id_offset": 1170836,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onPreReadFinished",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20060,
+          "method_id_offset": 1170844,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onPrefetchResourceHit",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 20061,
+          "method_id_offset": 1170852,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onPreloadCallback",
+          "descriptor": "(ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 20062,
+          "method_id_offset": 1170860,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onPromptScaleSaved",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20063,
+          "method_id_offset": 1170868,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReceivedSslErrorCancel",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20064,
+          "method_id_offset": 1170876,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReceivedViewSource",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 20065,
+          "method_id_offset": 1170884,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReportAdFilterInfo",
+          "descriptor": "(IILjava/lang/String;Z)V"
+        },
+        {
+          "method_id": 20066,
+          "method_id_offset": 1170892,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReportHtmlInfo",
+          "descriptor": "(ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 20067,
+          "method_id_offset": 1170900,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReportMemoryCachedResponse",
+          "descriptor": "(Ljava/lang/String;ILjava/util/HashMap;)V"
+        },
+        {
+          "method_id": 20068,
+          "method_id_offset": 1170908,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReportResponseHeaders",
+          "descriptor": "(Ljava/lang/String;ILjava/util/HashMap;)V"
+        },
+        {
+          "method_id": 20069,
+          "method_id_offset": 1170916,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onResponseReceived",
+          "descriptor": "(Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;I)V"
+        },
+        {
+          "method_id": 20070,
+          "method_id_offset": 1170924,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onScrollChanged",
+          "descriptor": "(IIII)V"
+        },
+        {
+          "method_id": 20071,
+          "method_id_offset": 1170932,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onScrollChanged",
+          "descriptor": "(IIIILandroid/view/View;)V"
+        },
+        {
+          "method_id": 20072,
+          "method_id_offset": 1170940,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onSetButtonStatus",
+          "descriptor": "(ZZ)V"
+        },
+        {
+          "method_id": 20073,
+          "method_id_offset": 1170948,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onShowListBox",
+          "descriptor": "([Ljava/lang/String;[I[II)V"
+        },
+        {
+          "method_id": 20074,
+          "method_id_offset": 1170956,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onShowLongClickPopupMenu",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 20075,
+          "method_id_offset": 1170964,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onShowMutilListBox",
+          "descriptor": "([Ljava/lang/String;[I[I[I)V"
+        },
+        {
+          "method_id": 20076,
+          "method_id_offset": 1170972,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onSlidingTitleOffScreen",
+          "descriptor": "(II)V"
+        },
+        {
+          "method_id": 20077,
+          "method_id_offset": 1170980,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onSoftKeyBoardHide",
+          "descriptor": "(I)V"
+        },
+        {
+          "method_id": 20078,
+          "method_id_offset": 1170988,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onSoftKeyBoardShow",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20079,
+          "method_id_offset": 1170996,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;Landroid/view/View;)Z"
+        },
+        {
+          "method_id": 20080,
+          "method_id_offset": 1171004,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onTransitionToCommitted",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 20081,
+          "method_id_offset": 1171012,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onUploadProgressChange",
+          "descriptor": "(IILjava/lang/String;)V"
+        },
+        {
+          "method_id": 20082,
+          "method_id_offset": 1171020,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onUploadProgressStart",
+          "descriptor": "(I)V"
+        },
+        {
+          "method_id": 20083,
+          "method_id_offset": 1171028,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onUrlChange",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 20084,
+          "method_id_offset": 1171036,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "overScrollBy",
+          "descriptor": "(IIIIIIIIZLandroid/view/View;)Z"
+        },
+        {
+          "method_id": 20085,
+          "method_id_offset": 1171044,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "preShouldOverrideUrlLoading",
+          "descriptor": "(Lcom/tencent/smtt/export/external/extension/interfaces/IX5WebViewExtension;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 20086,
+          "method_id_offset": 1171052,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "showTranslateBubble",
+          "descriptor": "(ILjava/lang/String;Ljava/lang/String;I)V"
+        }
+      ],
+      "member_scope": "all encoded declared contract methods"
+    },
+    {
+      "class_descriptor": "Lcom/tencent/smtt/export/external/extension/proxy/ProxyWebViewClientExtension;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Lcom/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension;"
+      ],
+      "class_def_offset": 1577156,
+      "class_access_flags": 1025,
+      "dex": "classes5.dex",
+      "dex_sha256": "fffcd16f1af76c110d1a84acd3aa9ab8c016188cafcd53f20bf9a2cd54a21f71",
+      "source_file": "sources/com/tencent/smtt/export/external/extension/proxy/ProxyWebViewClientExtension.java",
+      "source_sha256": "eaffbb989f98414c6f9981b1ad5f31747720daeb19a924783e2241e34e250c6c",
+      "methods": [],
+      "member_scope": "exact setters or class hierarchy only"
+    },
+    {
+      "class_descriptor": "Lcom/tencent/smtt/sdk/WebView;",
+      "superclass_descriptor": "Landroid/widget/FrameLayout;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnLongClickListener;"
+      ],
+      "class_def_offset": 1584228,
+      "class_access_flags": 1,
+      "dex": "classes5.dex",
+      "dex_sha256": "fffcd16f1af76c110d1a84acd3aa9ab8c016188cafcd53f20bf9a2cd54a21f71",
+      "source_file": "sources/com/tencent/smtt/sdk/WebView.java",
+      "source_sha256": "2e723788eaea0a39b26b5c50e00f06036a99746b6e76ff4efec996a3c9ffd32a",
+      "methods": [
+        {
+          "method_id": 22553,
+          "method_id_offset": 1190788,
+          "access_flags": 1,
+          "code_offset": 6455280,
+          "name": "setWebViewCallbackClient",
+          "descriptor": "(Lcom/tencent/smtt/sdk/WebViewCallbackClient;)V"
+        },
+        {
+          "method_id": 22555,
+          "method_id_offset": 1190804,
+          "access_flags": 1,
+          "code_offset": 6455480,
+          "name": "setWebViewClientExtension",
+          "descriptor": "(Lcom/tencent/smtt/export/external/extension/interfaces/IX5WebViewClientExtension;)V"
+        }
+      ],
+      "member_scope": "exact setters or class hierarchy only"
+    },
+    {
+      "class_descriptor": "Lcom/tencent/smtt/sdk/WebViewCallbackClient;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1584260,
+      "class_access_flags": 1537,
+      "dex": "classes5.dex",
+      "dex_sha256": "fffcd16f1af76c110d1a84acd3aa9ab8c016188cafcd53f20bf9a2cd54a21f71",
+      "source_file": "sources/com/tencent/smtt/sdk/WebViewCallbackClient.java",
+      "source_sha256": "229a5416106d5ce91f6174d8ee72526ef2a07a1f533887636d5b24dee9a34f66",
+      "methods": [
+        {
+          "method_id": 22570,
+          "method_id_offset": 1190924,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "computeScroll",
+          "descriptor": "(Landroid/view/View;)V"
+        },
+        {
+          "method_id": 22571,
+          "method_id_offset": 1190932,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;Landroid/view/View;)Z"
+        },
+        {
+          "method_id": 22572,
+          "method_id_offset": 1190940,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "invalidate",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 22573,
+          "method_id_offset": 1190948,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onInterceptTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;Landroid/view/View;)Z"
+        },
+        {
+          "method_id": 22574,
+          "method_id_offset": 1190956,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onOverScrolled",
+          "descriptor": "(IIZZLandroid/view/View;)V"
+        },
+        {
+          "method_id": 22575,
+          "method_id_offset": 1190964,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onScrollChanged",
+          "descriptor": "(IIIILandroid/view/View;)V"
+        },
+        {
+          "method_id": 22576,
+          "method_id_offset": 1190972,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;Landroid/view/View;)Z"
+        },
+        {
+          "method_id": 22577,
+          "method_id_offset": 1190980,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "overScrollBy",
+          "descriptor": "(IIIIIIIIZLandroid/view/View;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared contract methods"
+    }
+  ]
+}

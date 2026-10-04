@@ -36,6 +36,10 @@ public final class CapabilitySelfTest {
   ClientDelegationFixture.run();
   FrameworkFactoryBoundaryFixture.run();
   RefreshBindingFixture.run();
+  ConditionalInitFixture.run();
+  FieldHeapFixture.run();
+  InstalledReflectionFixture.run();
+  SdkExtensionFixture.run();
   StaticBridgeFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
@@ -598,13 +602,13 @@ public final class CapabilitySelfTest {
   check(!idx.standardClientCallback("test.SdkClient",valid),"Different SDK parameter accepted");
   idx.byClass.put("test.Client",List.of(valid,overload,wrongFamily,wrongReturn));
   var engine=new CapabilityEngine(idx,new ApkInventory(),System.nanoTime()+20_000_000_000L);
-  check(engine.callbackMembers("test.Client").size()==1,"Callback report included same-name non-contract methods");
+  check(engine.callbackMembers("test.Client","android.webkit.WebViewClient").size()==1,"Callback report included same-name non-contract methods");
   String privateClient="Ltest/PrivateClient;";
   var privateCallback=method(privateClient,"onPageFinished",List.of(W,"Ljava/lang/String;"),2,3,List.of(end()),false);
   idx.classes.put("test.PrivateClient",clazz(privateClient,"Landroid/webkit/WebViewClient;",privateCallback));
   idx.byClass.put("test.PrivateClient",List.of(privateCallback));
   check(!idx.standardClientCallback("test.PrivateClient",privateCallback),"Private same-signature method accepted as virtual callback");
-  check(engine.callbackMembers("test.PrivateClient").isEmpty(),"Callback report included private same-signature method");
+  check(engine.callbackMembers("test.PrivateClient","android.webkit.WebViewClient").isEmpty(),"Callback report included private same-signature method");
   var staticCallback=method(client,"onPageFinished",List.of(W,"Ljava/lang/String;"),9,2,List.of(end()),false);
   check(!idx.standardClientCallback("test.Client",staticCallback),"Static same-signature method accepted as virtual callback");
   String sdkContract="android.webkit.WebChromeClient";

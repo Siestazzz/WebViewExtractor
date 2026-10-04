@@ -389,17 +389,18 @@ final class CapabilityIndex {
         subtypeCache.put(cache,result);return result;
     }
     // Public client contracts require both the client family and the complete DEX shape.
+    final SdkClientContracts clientContracts=new SdkClientContracts(this);
     boolean standardClientCallback(String type,Method method){
         // Private/direct and static methods do not override virtual client callbacks.
         if((method.getAccessFlags()&(2|8))!=0)return false;
         String shape=shape(method);
         if((method.getAccessFlags()&1)!=0&&(subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&
             shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V"))return true;
-        return standardClientShape(type,shape);
+        return standardClientShape(type,shape)||clientContracts.extensionMember(type,method);
     }
     boolean standardClientReference(MethodReference reference){
         String type=cls(reference.getDefiningClass()),shape=shape(reference);
-        return standardClientShape(type,shape)||
+        return standardClientShape(type,shape)||clientContracts.extensionShape(type,shape)||
             (subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V");
     }
     boolean standardClientShape(String type,String shape){
@@ -475,7 +476,7 @@ final class CapabilityIndex {
     boolean map(String t){return t!=null&&(Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.util.TreeMap","java.util.concurrent.ConcurrentMap","java.util.concurrent.ConcurrentHashMap").contains(t)||subtype(t,"java.util.Map"));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
-    boolean client(String type){return subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
+    boolean client(String type){return clientContracts.extensionType(type)||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
     boolean componentEntry(String type,Method method){
         if((method.getAccessFlags()&(2|8))!=0||(method.getAccessFlags()&(1|4))==0)return false;
         String contract=shape(method);
@@ -547,7 +548,7 @@ final class CapabilityIndex {
                 if(p.equals(List.of("L"+prefix.replace('.', '/')+"DownloadListener;"))&&subtype(owner,prefix+"WebView"))return "callback";
             if((n.equals("loadUrl")||n.equals("loadData")||n.equals("loadDataWithBaseURL")||n.equals("evaluateJavascript"))&&!p.isEmpty()&&p.get(0).equals("Ljava/lang/String;"))return "webview_operation";
             if(n.equals("addJavascriptInterface")&&p.size()==2&&p.get(0).equals("Ljava/lang/Object;")&&p.get(1).equals("Ljava/lang/String;"))return "bridge";
-            if((n.equals("setWebViewClient")||n.equals("setWebChromeClient"))&&p.size()==1)return "callback";
+            if(clientContracts.setter(m))return "callback";
             if(n.equals("removeJavascriptInterface")&&p.size()==1)return "bridge_removal";
             if(n.equals("setWebContentsDebuggingEnabled")&&p.size()==1)return "global_setting";
         }

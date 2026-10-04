@@ -1,0 +1,58 @@
+{
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "counts": {
+    "before_matched": 4422,
+    "after_matched": 4424,
+    "gain": 2
+  },
+  "changes": [
+    {
+      "change": "gain",
+      "fact": {
+        "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+        "webview": null,
+        "kind": "bridge",
+        "registration_name": "_VideoEnabledWebView",
+        "name": "addJavascriptInterface",
+        "normalized_signature": null,
+        "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "ctrip.android.view.h5v2.view.VideoEnabledWebView$a",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "ctrip.android.view.h5v2.view.H5WebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "071c3297c13a98dcba8d1d481b1cfe394b1d237ffe2301cbcc7ad0b78bda5c2c"
+    },
+    {
+      "change": "gain",
+      "fact": {
+        "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+        "webview": null,
+        "kind": "bridge_method",
+        "registration_name": "_VideoEnabledWebView",
+        "name": "notifyVideoEnd",
+        "normalized_signature": "Lctrip/android/view/h5v2/view/VideoEnabledWebView$a;->notifyVideoEnd()V",
+        "normalized_api": null,
+        "implementation": "ctrip.android.view.h5v2.view.VideoEnabledWebView$a",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "ctrip.android.view.h5v2.view.H5WebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "9eb5b571b671d2b092b5079c0c353ac836cb00e7be531851831754cf86c6656d"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

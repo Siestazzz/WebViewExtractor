@@ -23,6 +23,8 @@ final class DexFlow {
     final Map<String,List<Refinement>> refinements=new HashMap<>();
     final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>(), reportedRefinementBudget=new HashSet<>();
     final long deadline;
+    final Map<String,List<V>> baseGuardProbes=new HashMap<>();
+    final Set<String> numericGuardOnly=new HashSet<>();
     int decoded,refined;
     DexFlow(CapabilityIndex i,long deadline){idx=i;this.deadline=deadline;}
     static V union(V a,V b){
@@ -41,17 +43,27 @@ final class DexFlow {
     static int depth(V v){return v.args.isEmpty()?0:1+v.args.stream().mapToInt(DexFlow::depth).max().orElse(0);}
     Summary summary(Method m){
         String key=CapabilityIndex.key(m);Summary old=cache.get(key);if(old!=null)return old;
-        Summary result=decode(m);cache.put(key,result);decoded++;return result;
+        Set<V> probes=new LinkedHashSet<>();
+        Summary result=decode(m,v->{probes.add(v);return v;});baseGuardProbes.put(key,List.copyOf(probes));cache.put(key,result);decoded++;return result;
     }
     Summary summary(Method m,java.util.function.UnaryOperator<V> resolver){
         Summary base=summary(m);if(!base.branched())return base;
         String key=CapabilityIndex.key(m);
         if(checkedRefinement.add(key)){
-            int count=0;boolean contextualGuard=false;
-            for(Instruction instruction:m.getImplementation().getInstructions()){count++;if(Set.of(org.jf.dexlib2.Opcode.INSTANCE_OF,org.jf.dexlib2.Opcode.PACKED_SWITCH,org.jf.dexlib2.Opcode.SPARSE_SWITCH).contains(instruction.getOpcode()))contextualGuard=true;}
-            if(contextualGuard&&count<=500)refinable.add(key);
+            int count=0;boolean contextualGuard=false,numericGuard=false;
+            for(Instruction instruction:m.getImplementation().getInstructions()){
+                count++;var opcode=instruction.getOpcode();
+                if(Set.of(org.jf.dexlib2.Opcode.INSTANCE_OF,org.jf.dexlib2.Opcode.PACKED_SWITCH,org.jf.dexlib2.Opcode.SPARSE_SWITCH).contains(opcode))contextualGuard=true;
+                if(opcode.name.startsWith("if-"))numericGuard=true;
+            }
+            if((contextualGuard||numericGuard)&&count<=500)refinable.add(key);
+            if(numericGuard&&!contextualGuard)numericGuardOnly.add(key);
         }
         if(!refinable.contains(key))return base;
+        // Ordinary integer/boolean guards need specialization only when this actual
+        // context resolves a previously nonconstant operand. Unknown calls reuse base.
+        if(numericGuardOnly.contains(key)&&baseGuardProbes.getOrDefault(key,List.of()).stream()
+                .noneMatch(v->number(v)==null&&number(resolver.apply(v))!=null))return base;
         List<Refinement> variants=refinements.computeIfAbsent(key,k->new ArrayList<>());
         for(Refinement variant:variants){boolean matches=true;for(int i=0;i<variant.probes.size();i++)if(!Objects.equals(resolver.apply(variant.probes.get(i)),variant.values.get(i))){matches=false;break;}if(matches)return variant.summary;}
         // Retain the conservative summary when specialization would exceed its budget.

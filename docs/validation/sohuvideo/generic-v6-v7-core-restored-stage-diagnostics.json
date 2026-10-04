@@ -1,0 +1,1883 @@
+{
+  "v6": {
+    "com.sohu.sohuvideo.ui.LocationChooseActivity": {
+      "activity": "com.sohu.sohuvideo.ui.LocationChooseActivity",
+      "status": "pending_deep_analysis",
+      "phase": 1,
+      "contexts_processed": 4641,
+      "pending_contexts": 888,
+      "analysis_seconds": 1.479088101,
+      "slices": 48,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 888,
+      "pending_method_sample": [
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 166,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 78,
+          "example_argument_kinds": [
+            "union",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V",
+            "Landroidx/fragment/app/Fragment;->performActivityCreated(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchActivityCreated()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+          "priority": 0,
+          "ordinary": 49,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->performActivityCreated(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchActivityCreated()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 40,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/BasePlayFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->initListener()V",
+            "Lcom/sohu/sohuvideo/mvp/util/VideoDetailEventDispacher;->n(Lcom/sohu/sohuvideo/mvp/ui/fragment/BasePlayFragment;Lcom/sohu/sohuvideo/playerbase/playdataprovider/presenter/f;Lz/fm1;)V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 35,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/playdataprovider/presenter/j;-><init>(Lz/do1;Landroid/content/Context;)V",
+            "Landroidx/lifecycle/SohuLiveData;->observeForeverUnSticky(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V",
+          "priority": 0,
+          "ordinary": 34,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->cancelTransaction()V",
+            "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 33,
+          "example_argument_kinds": [
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V",
+          "priority": 0,
+          "ordinary": 30,
+          "example_argument_kinds": [
+            "object",
+            "object",
+            "object",
+            "unknown",
+            "unknown",
+            "literal",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 29,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 27,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "union",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "Landroidx/fragment/app/FragmentStateManager;->createView(Landroidx/fragment/app/FragmentContainer;)V",
+            "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+          "priority": 0,
+          "ordinary": 27,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V",
+            "Landroidx/lifecycle/LiveData;->setValue(Ljava/lang/Object;)V",
+            "Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+            "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 25,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "Landroidx/fragment/app/Fragment;->performCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        4641,
+        0
+      ],
+      "tracked_xml_consumers": 103,
+      "tracked_deferred_fields": 1878,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000342422
+    },
+    "com.sohu.sohuvideo.ui.WebViewActivity": {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "status": "pending_deep_analysis",
+      "phase": 1,
+      "contexts_processed": 4572,
+      "pending_contexts": 744,
+      "analysis_seconds": 1.572312954,
+      "slices": 48,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 744,
+      "pending_method_sample": [
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 107,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 42,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+            "xml_view:2131299929:com.sohu.sohuvideo.ui.view.LiteLiveLinkUsersLayout",
+            "Lcom/sohu/sohuvideo/ui/view/LiteLiveLinkUsersLayout;->onDetachedFromWindow()V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 40,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->detach(Landroidx/fragment/app/FragmentManagerViewModel;)V",
+            "Landroidx/fragment/app/Fragment;->performDetach()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+          "priority": 0,
+          "ordinary": 35,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 29,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 27,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/playdataprovider/presenter/j;-><init>(Lz/do1;Landroid/content/Context;)V",
+            "Landroidx/lifecycle/SohuLiveData;->observeForeverUnSticky(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 22,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->initListener()V",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/MVPWrapperContainerFragment;->setPresenters(Lz/fm1;Lcom/sohu/sohuvideo/mvp/presenter/impl/ad/AdPresenter;Lcom/sohu/sohuvideo/playerbase/playdataprovider/presenter/f;)V",
+            "Lcom/sohu/sohuvideo/ui/view/wheelview/VideoDetailDanmuSendView;->observerDanmuState(Landroidx/lifecycle/LifecycleOwner;)V",
+            "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 20,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "literal",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "Landroidx/fragment/app/FragmentStateManager;->ensureInflatedView()V",
+            "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V",
+          "priority": 0,
+          "ordinary": 19,
+          "example_argument_kinds": [
+            "object",
+            "object",
+            "object",
+            "unknown",
+            "unknown",
+            "literal",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+          "priority": 0,
+          "ordinary": 19,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+            "Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+            "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/ui/template/vlayout/view/RCFrameLayout;->setStrategy(Lcom/sohu/sohuvideo/ui/template/vlayout/view/roundcorner/a;)V",
+          "priority": 0,
+          "ordinary": 19,
+          "example_argument_kinds": [
+            "view",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/template/vlayout/view/RCFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+            "Lcom/sohu/sohuvideo/ui/template/vlayout/view/RCFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+            "Lcom/sohu/sohuvideo/ui/template/vlayout/view/RCFrameLayout;->initRoundCornerStrategy()V",
+            "Lcom/sohu/sohuvideo/ui/template/vlayout/view/RCFrameLayout;->setStrategy(Lcom/sohu/sohuvideo/ui/template/vlayout/view/roundcorner/a;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        4572,
+        0
+      ],
+      "tracked_xml_consumers": 346,
+      "tracked_deferred_fields": 1858,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.155576672
+    },
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity": {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "status": "pending_deep_analysis",
+      "phase": 1,
+      "contexts_processed": 4519,
+      "pending_contexts": 939,
+      "analysis_seconds": 1.746056456,
+      "slices": 48,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 939,
+      "pending_method_sample": [
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 102,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 59,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/BottomNavigationHandler;->d()Lcom/sohu/sohuvideo/mvp/ui/fragment/BottomNavigationHandler;",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 52,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V@0",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->onDestroy()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 51,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/base/BaseFragment;->onActivityCreated(Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;->initListener(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->initListener(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 39,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->destroyFragmentView(Landroidx/fragment/app/Fragment;)V",
+            "Landroidx/fragment/app/Fragment;->performDestroyView()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchDestroyView()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuObserverWrapper;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;IZLandroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 35,
+          "example_argument_kinds": [
+            "object",
+            "field_object",
+            "literal",
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;->initListener(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->initListener(Landroid/content/Context;)V",
+            "Landroidx/lifecycle/SohuLiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/SohuObserverWrapper;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;IZLandroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+          "priority": 0,
+          "ordinary": 34,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/BaseBottomSheetDialogFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+            "Lcom/sohu/sohuvideo/ui/fragment/BaseBottomSheetDialogFragment;->initFragment()V",
+            "Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "field_object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 31,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 30,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 29,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V@0",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->onDestroy()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        4519,
+        0
+      ],
+      "tracked_xml_consumers": 288,
+      "tracked_deferred_fields": 2275,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000340222
+    },
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity": {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "status": "pending_deep_analysis",
+      "phase": 1,
+      "contexts_processed": 4573,
+      "pending_contexts": 760,
+      "analysis_seconds": 1.479925087,
+      "slices": 48,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 760,
+      "pending_method_sample": [
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 128,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+          "priority": 0,
+          "ordinary": 49,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->executePostponedTransaction(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->cancelTransaction()V",
+            "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 43,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 36,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/BottomNavigationHandler;->c()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->setFoldRightLayoutVisit(I)V@106",
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 28,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V",
+          "priority": 0,
+          "ordinary": 25,
+          "example_argument_kinds": [
+            "object",
+            "object",
+            "object",
+            "unknown",
+            "unknown",
+            "literal",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V",
+          "priority": 0,
+          "ordinary": 22,
+          "example_argument_kinds": [
+            "field_object",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->cancelTransaction()V",
+            "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+          "priority": 0,
+          "ordinary": 22,
+          "example_argument_kinds": [
+            "field_object",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+            "Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+            "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 20,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "literal",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "Landroidx/fragment/app/FragmentStateManager;->ensureInflatedView()V",
+            "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 20,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "Landroidx/fragment/app/Fragment;->performCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        4573,
+        0
+      ],
+      "tracked_xml_consumers": 217,
+      "tracked_deferred_fields": 1900,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000328699
+    }
+  },
+  "v7": {
+    "com.sohu.sohuvideo.ui.LocationChooseActivity": {
+      "activity": "com.sohu.sohuvideo.ui.LocationChooseActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 1370,
+      "pending_contexts": 605,
+      "analysis_seconds": 1.619212213,
+      "slices": 30,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 605,
+      "pending_method_sample": [
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 39,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;->newInstance()Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;@2",
+            "Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;->initListener(Landroid/view/View;)V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V",
+          "priority": 0,
+          "ordinary": 30,
+          "example_argument_kinds": [
+            "object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/cover/streampage/NewsDetailCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/StreamLiteControllerACover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 30,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 29,
+          "example_argument_kinds": [
+            "field_object",
+            "union",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 25,
+          "example_argument_kinds": [
+            "field_object",
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;->newInstance()Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;@2",
+            "Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/LocationChooseFragment;->initListener(Landroid/view/View;)V",
+            "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 17,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/manager/h;->c(Landroid/view/ViewGroup;Lcom/sohu/baseplayer/widget/BaseVideoView;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/LiteControllerCover;-><init>(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/LiteControllerCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 16,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 15,
+          "example_argument_kinds": [
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+          "priority": 0,
+          "ordinary": 8,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOps(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/BackStackRecord;->executePopOps(Z)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        1370,
+        0
+      ],
+      "tracked_xml_consumers": 79,
+      "tracked_deferred_fields": 786,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000117124
+    },
+    "com.sohu.sohuvideo.ui.WebViewActivity": {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 1659,
+      "pending_contexts": 643,
+      "analysis_seconds": 1.670724583,
+      "slices": 29,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 643,
+      "pending_method_sample": [
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 42,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "fragment_factory:Landroidx/fragment/app/Fragment;->instantiate(Landroid/content/Context;Ljava/lang/String;)Landroidx/fragment/app/Fragment;",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V",
+          "priority": 0,
+          "ordinary": 30,
+          "example_argument_kinds": [
+            "object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/cover/streampage/NewsDetailCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/StreamLiteControllerACover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 23,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 18,
+          "example_argument_kinds": [
+            "field_object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 17,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/manager/h;->c(Landroid/view/ViewGroup;Lcom/sohu/baseplayer/widget/BaseVideoView;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/LiteControllerCover;-><init>(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/LiteControllerCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 15,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "fragment_factory:Landroidx/fragment/app/Fragment;->instantiate(Landroid/content/Context;Ljava/lang/String;)Landroidx/fragment/app/Fragment;",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 12,
+          "example_argument_kinds": [
+            "object",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 12,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 11,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentController;->dispatchCreate()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 10,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        1659,
+        0
+      ],
+      "tracked_xml_consumers": 143,
+      "tracked_deferred_fields": 843,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000134721
+    },
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity": {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 1413,
+      "pending_contexts": 791,
+      "analysis_seconds": 1.829769537,
+      "slices": 30,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 791,
+      "pending_method_sample": [
+        {
+          "method": "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 66,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "fragment_factory:Landroidx/fragment/app/Fragment;->instantiate(Landroid/content/Context;Ljava/lang/String;)Landroidx/fragment/app/Fragment;",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 50,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V@0",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 36,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V@0",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->onDestroy()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 35,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/secondary/FarmVideosFragment;-><init>()V@0",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V",
+          "priority": 0,
+          "ordinary": 31,
+          "example_argument_kinds": [
+            "object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/cover/SearchHotVideoCover;-><init>(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/SearchHotVideoCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 16,
+          "example_argument_kinds": [
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/NormalChannelFragment;-><init>()V@0",
+            "Lcom/sohu/sohuvideo/channel/fragment/homepage/channel/BaseChannelFragment;->onDestroy()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 16,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/cover/streampage/NewsDetailCover;-><init>(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/streampage/NewsDetailCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/StreamLiteControllerACover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 15,
+          "example_argument_kinds": [
+            "field_object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 14,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuObserverWrapper;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;IZLandroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 12,
+          "example_argument_kinds": [
+            "object",
+            "field_object",
+            "literal",
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/FarmExerciseActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/lifecycle/SohuLiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/SohuObserverWrapper;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;IZLandroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 8,
+          "example_argument_kinds": [
+            "object",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 8,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        1413,
+        0
+      ],
+      "tracked_xml_consumers": 100,
+      "tracked_deferred_fields": 976,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000134696
+    },
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity": {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 1575,
+      "pending_contexts": 572,
+      "analysis_seconds": 1.599357284,
+      "slices": 29,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 572,
+      "pending_method_sample": [
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 42,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "class"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "fragment_factory:Landroidx/fragment/app/Fragment;->instantiate(Landroid/content/Context;Ljava/lang/String;)Landroidx/fragment/app/Fragment;",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;Ljava/lang/Class;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;",
+          "priority": 0,
+          "ordinary": 32,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus;->with(Ljava/lang/String;)Lcom/sohu/sohuvideo/system/liveeventbus/LiveDataBus$d;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V",
+          "priority": 0,
+          "ordinary": 30,
+          "example_argument_kinds": [
+            "object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/cover/streampage/NewsDetailCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/StreamLiteControllerACover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/g;-><init>(Landroid/content/Context;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+          "priority": 0,
+          "ordinary": 27,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentController;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 19,
+          "example_argument_kinds": [
+            "field_object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/fragment/WebViewFragment;->initListener()V",
+            "Landroidx/lifecycle/SohuLiveData;->observeUnSticky(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+          "priority": 0,
+          "ordinary": 17,
+          "example_argument_kinds": [
+            "object",
+            "unknown",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/playerbase/manager/h;->c(Landroid/view/ViewGroup;Lcom/sohu/baseplayer/widget/BaseVideoView;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/LiteControllerCover;-><init>(Landroid/content/Context;)V",
+            "Lcom/sohu/sohuvideo/playerbase/cover/LiteControllerCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V",
+            "Lcom/sohu/baseplayer/receiver/BaseCover;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 16,
+          "example_argument_kinds": [
+            "object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V@21",
+            "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "object",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->onCreate(Landroid/os/Bundle;)V",
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "union"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/ui/BaseActivity;->restoreState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;",
+            "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 13,
+          "example_argument_kinds": [
+            "field_object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/SohuLiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+          "priority": 0,
+          "ordinary": 10,
+          "example_argument_kinds": [
+            "field_object",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/ui/fragment/DetailPlayFragment;->onDestroy()V",
+            "Lcom/sohu/sohuvideo/channel/view/NewBottomNavigationView;->clearViewModelObserver()V",
+            "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/lifecycle/SohuLiveData;->observeForeverUnSticky(Landroidx/lifecycle/Observer;)V",
+          "priority": 0,
+          "ordinary": 8,
+          "example_argument_kinds": [
+            "field_object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/sohu/sohuvideo/mvp/factory/c;->s(Lcom/sohu/sohuvideo/mvp/model/enums/PlayerType;Landroid/content/Context;Lcom/sohu/sohuvideo/mvp/dao/e;Lz/do1;Lcom/sohu/sohuvideo/mvp/model/playerdata/NewAbsPlayerInputData;)V",
+            "Lcom/sohu/sohuvideo/mvp/factory/c;->a(Lcom/sohu/sohuvideo/mvp/model/playerdata/NewAbsPlayerInputData;Landroid/content/Context;Lcom/sohu/sohuvideo/mvp/dao/e;Lz/do1;)V",
+            "Lcom/sohu/sohuvideo/playerbase/playdataprovider/presenter/j;-><init>(Lz/do1;Landroid/content/Context;)V",
+            "Landroidx/lifecycle/SohuLiveData;->observeForeverUnSticky(Landroidx/lifecycle/Observer;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        1575,
+        0
+      ],
+      "tracked_xml_consumers": 127,
+      "tracked_deferred_fields": 824,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.0001291
+    }
+  }
+}

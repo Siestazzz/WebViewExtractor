@@ -1,0 +1,9 @@
+# Public X5 extension callback contracts
+
+Independent source-first review found actual X5 extension installations beyond standard Client/Chrome callbacks. `yangshipin/x5-public-sdk-contracts-source-dex.json` records the exact two public WebView setter descriptors, all55 IX5WebViewClientExtension and8 WebViewCallbackClient declarations, DEX offsets/hash and inheritance evidence. This is public SDK API recognition, not private application matching.
+
+SdkClientContracts recognizes exact setter names, parameter types, void return and the matching Android/Tencent WebView family. Existing setWebViewClient/setWebChromeClient are tightened as well: a same-name one-parameter overload or cross-family parameter no longer qualifies. Extension members must be public instance methods whose complete shape occurs in the installed SDK interface contract, including inherited contract declarations. Unknown SDK declarations produce a diagnostic instead of inventing method signatures.
+
+An actual installation selects its own contract. Callback-member caching now includes both concrete implementation type and installed contract, and callback entry traversal uses that contract. An object implementing two callback interfaces does not expose both through one setter. Actual inherited implementation signatures and object identities remain in the output. Merely implementing IX5 Chrome extension does not install it, and no setWebChromeClientExtension support is inferred from the client-extension registration.
+
+SdkExtensionFixture installs one dual-interface object on two different WebViews using the two separate setters. Each installation exposes only its own inherited member. Wrong family, return type and same-name overload negatives are included. Frozen v7 fails the wrong-family setter assertion; updated code passes. Logs: test/runs/sdk-extension-v7-repro.log and sdk-extension-fixed.log. Real recall/precision/cost changes await the complete frozen v8 run.

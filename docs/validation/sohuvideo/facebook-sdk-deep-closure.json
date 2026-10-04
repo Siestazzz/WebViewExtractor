@@ -1,0 +1,92 @@
+{
+  "activity": "com.facebook.FacebookActivity",
+  "scope": "Actual WebDialog own WebView primary surface, ordinary/fallback builder alternatives",
+  "source_coverage": {
+    "bridge": "done",
+    "setting": "done",
+    "callback": "done"
+  },
+  "source_evidence": [
+    {
+      "file": "sources/com/facebook/FacebookActivity.java",
+      "line": 121,
+      "text": "this.singleFragment = getFragment();",
+      "sha256": "964dc45bd89b72a2ac42b670fc017404df14b62cda81b653ab4c44355a4b8fc2",
+      "re_reviewed": true
+    },
+    {
+      "file": "sources/com/facebook/FacebookActivity.java",
+      "line": 74,
+      "text": "FacebookDialogFragment facebookDialogFragment = new FacebookDialogFragment();",
+      "sha256": "964dc45bd89b72a2ac42b670fc017404df14b62cda81b653ab4c44355a4b8fc2",
+      "re_reviewed": true
+    },
+    {
+      "file": "sources/com/facebook/FacebookActivity.java",
+      "line": 76,
+      "text": "facebookDialogFragment.show(supportFragmentManager, FRAGMENT_TAG);",
+      "sha256": "964dc45bd89b72a2ac42b670fc017404df14b62cda81b653ab4c44355a4b8fc2",
+      "re_reviewed": true
+    },
+    {
+      "file": "sources/com/facebook/internal/FacebookDialogFragment.java",
+      "line": 93,
+      "text": "newInstance = new WebDialog.e(activity, string2, bundle2).h(new a()).a();",
+      "sha256": "0168372bdee6c86933893aae7013c748ae6075b45362d34b6c8999e706d3867d",
+      "re_reviewed": true
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 483,
+      "text": "c cVar = new c(getContext());",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd",
+      "re_reviewed": true
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 484,
+      "text": "this.webView = cVar;",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd",
+      "re_reviewed": true
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 118,
+      "text": "class c extends WebView {",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd"
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 483,
+      "text": "c cVar = new c(getContext());",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd"
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 484,
+      "text": "this.webView = cVar;",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd"
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 516,
+      "text": "this.contentFrameLayout.addView(linearLayout);",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd"
+    },
+    {
+      "file": "sources/com/facebook/internal/WebDialog.java",
+      "line": 517,
+      "text": "}",
+      "sha256": "3253122180bbcef862d358d4d1afd36132ff5532b51c1d2334b3aa1b53c3addd"
+    }
+  ],
+  "surfaces": "Three settings, registered Dialog Client five overrides +NBS HTTP/new-error inherited, actual NBS onPageStarted bridge16, loadUrl Chrome wrapper27+registration. No own Chrome or Download registration in WebDialog; fallback inherits same binding/surface.",
+  "raw_source_rows": 55,
+  "no_other_bridge_members": "WebDialog$c only overrides window-focus callback; no API override suppressing addJavascriptInterface. initCallback optional global hook has no packaged-source setter caller; future external reflection hooks not certified.",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable",
+    "role": "source reviewer"
+  },
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "acceptance": "unproven"
+}

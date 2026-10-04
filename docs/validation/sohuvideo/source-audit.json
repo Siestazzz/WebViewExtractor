@@ -34,10 +34,12 @@
     }
   ],
   "deep_positive_activities": [
+    "com.facebook.FacebookActivity",
     "com.sina.weibo.sdk.web.WebActivity",
     "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
     "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
     "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.qfsdk.course.preview.ui.PreviewActivity",
     "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
     "com.sohu.sohuvideo.ui.AccountSafeActivity",
     "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
@@ -84,7 +86,8 @@
       "com.sohu.passport.core.WebViewActivity"
     ],
     "DialogFragment host": [
-      "com.facebook.FacebookActivity"
+      "com.facebook.FacebookActivity",
+      "com.sohu.qfsdk.course.preview.ui.PreviewActivity"
     ],
     "saved-state manager attachment -> XML child Fragment -> native-banner custom WebView": [
       "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
@@ -135,6 +138,7 @@
     "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
     "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
     "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.qfsdk.course.preview.ui.PreviewActivity",
     "com.sohu.sohuvideo.FirstNavigationActivityGroup",
     "com.sohu.sohuvideo.audio.AudioDetailActivity",
     "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
@@ -859,10 +863,11 @@
       "scope": "ownership evidence only; complete capability surface not certified"
     },
     "com.facebook.FacebookActivity": {
-      "bridge": "partial",
-      "setting": "partial",
-      "callback": "partial",
-      "scope": "ownership evidence only; complete capability surface not certified"
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Actual WebDialog own WebView primary surface, ordinary/fallback builder alternatives",
+      "evidence_file": "docs/validation/sohuvideo/facebook-sdk-deep-closure.json"
     },
     "com.kepler.jd.sdk.WebViewActivity": {
       "bridge": "unknown",
@@ -883,10 +888,12 @@
       "scope": "ownership evidence only; complete capability surface not certified"
     },
     "com.sohu.qfsdk.course.preview.ui.PreviewActivity": {
-      "bridge": "unknown",
-      "setting": "unknown",
-      "callback": "unknown",
-      "scope": "ownership evidence only; complete capability surface not certified"
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Actual default About-button DialogFragment WebView and complete APK-visible injected endpoint/settings/registered-client SDK surfaces",
+      "evidence_file": "docs/validation/sohuvideo/qf-preview-sdk-deep-closure.json",
+      "dynamic_value_identity_certified": false
     },
     "com.sohu.qianfan.base.ui.view.webapp.QFWebViewActivity": {
       "bridge": "unknown",

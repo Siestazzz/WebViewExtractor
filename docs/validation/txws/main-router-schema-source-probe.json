@@ -1,0 +1,202 @@
+{
+  "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1",
+  "activity": "com.tencent.oscar.module.main.MainActivity",
+  "scope": "source-owned conditional WebView host",
+  "source_positive": true,
+  "deep_complete": false,
+  "selection_provenance": "development source omission probe; no held-out hosts used",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable"
+  },
+  "source_chain": "Application router installs ModuleProvider -> ModuleWeb binding WebViewService factory -> WebViewServiceImpl returns WebViewBaseFragment. MainActivity owns MainModuleImpl FragmentPagerAdapter -> MainFragment -> schema tab WebViewBaseFragment -> actual child FragmentTransaction.add/commitNow. The WebViewBaseFragment binding/SDK surface is previously audited independently.",
+  "conditions": "Configured bottom tab is schema type with accepted WebView URL; actual Main tab callback invokes getFragmentNew/showFragmentNew chain. Configuration is dynamic and legitimate, not every MainActivity launch.",
+  "source_evidence": [
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainActivity.java",
+      "line": 110,
+      "text": "public void afterOnCreate(Bundle bundle) {",
+      "sha256": "f20b81eb58c82a17c731945928adfbbd2c0dad91f80e8c3547dd38112c38e20f"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainActivity.java",
+      "line": 112,
+      "text": "this.mMainModuleImpl = new MainModuleImpl(this);",
+      "sha256": "f20b81eb58c82a17c731945928adfbbd2c0dad91f80e8c3547dd38112c38e20f"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainActivity.java",
+      "line": 115,
+      "text": "this.mMainModuleImpl.attachViewPager(fixOneDirectionViewPager);",
+      "sha256": "f20b81eb58c82a17c731945928adfbbd2c0dad91f80e8c3547dd38112c38e20f"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainActivity.java",
+      "line": 511,
+      "text": "afterOnCreate(bundle);",
+      "sha256": "f20b81eb58c82a17c731945928adfbbd2c0dad91f80e8c3547dd38112c38e20f"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/IMainModule.java",
+      "line": 65,
+      "text": "this.mPagerAdapter = new FragmentPagerAdapter(this.mMainActivity.getSupportFragmentManager()) { // from class: com.tencent.oscar.module.main.IMainModule.2",
+      "sha256": "41f9bd977c948f1a9788ec6c4f282aeda16a2b8fdcb602dd039ac38b89de14ad"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/IMainModule.java",
+      "line": 74,
+      "text": "return IMainModule.this.getFragmentItem(i10);",
+      "sha256": "41f9bd977c948f1a9788ec6c4f282aeda16a2b8fdcb602dd039ac38b89de14ad"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/IMainModule.java",
+      "line": 179,
+      "text": "fixOneDirectionViewPager.setAdapter(this.mPagerAdapter);",
+      "sha256": "41f9bd977c948f1a9788ec6c4f282aeda16a2b8fdcb602dd039ac38b89de14ad"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainModuleImpl.java",
+      "line": 46,
+      "text": "this.mMainFragment = new MainFragment();",
+      "sha256": "b4fb6876533612e8878fbcacc13d179888488b759ce81d637ff50c21e67fa5b5"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainModuleImpl.java",
+      "line": 48,
+      "text": "return this.mMainFragment;",
+      "sha256": "b4fb6876533612e8878fbcacc13d179888488b759ce81d637ff50c21e67fa5b5"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 817,
+      "text": "private Fragment getWebFragment(TabBottomConf tabBottomConf) {",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 821,
+      "text": "Fragment asFragment = ((WebViewService) Router.service(WebViewService.class)).createWebViewBaseFragment().asFragment();",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 791,
+      "text": "return getWebFragment(tabBottomConf);",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 767,
+      "text": "case 5:",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 1683,
+      "text": "fragmentTransaction.add(R.id.fl_main_fragment_container, fragment, getFragmentTagNew(this.mBottomBarModule.getTabID(i10)));",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 1685,
+      "text": "fragmentTransaction.commitNowAllowingStateLoss();",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/weishi/base/web/ModuleWebKt.java",
+      "line": 45,
+      "text": "AbstractModule.register$default(module, s0.d(WebViewService.class), null, mode, null, ModuleWebKt$moduleWeb$1$3.INSTANCE, 10, null);",
+      "sha256": "ec4eb321c956e5d55fb87f87ca7f99118d2d374eb0c69508fcc0528c598ead79"
+    },
+    {
+      "file": "sources/com/tencent/weishi/base/web/ModuleWebKt$moduleWeb$1$3.java",
+      "line": 17,
+      "text": "return new WebViewServiceImpl();",
+      "sha256": "3d910c531598885c029c0432ccb04801950c7d4af23e8264a9ef10188fe4589f"
+    },
+    {
+      "file": "sources/com/tencent/oscar/service/WebViewServiceImpl.java",
+      "line": 67,
+      "text": "public IWebViewBaseFragment createWebViewBaseFragment() {",
+      "sha256": "23525aa3f53b94873ed8b31069348d9413bce9c498fd2f74a507c00ce1cb410c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/service/WebViewServiceImpl.java",
+      "line": 68,
+      "text": "return new WebViewBaseFragment();",
+      "sha256": "23525aa3f53b94873ed8b31069348d9413bce9c498fd2f74a507c00ce1cb410c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/utils/RouterInitializerKt.java",
+      "line": 39,
+      "text": "Object newInstance = ModuleProvider.class.newInstance();",
+      "sha256": "84a7d6be9e89177b5208d25f4de29c85a1d5e05f0f628f9b5f4fa78a1233543e"
+    },
+    {
+      "file": "sources/com/tencent/oscar/utils/RouterInitializerKt.java",
+      "line": 41,
+      "text": "Module[] moduleArr = (Module[]) ((IModuleProvider) newInstance).getModules().toArray(new Module[0]);",
+      "sha256": "84a7d6be9e89177b5208d25f4de29c85a1d5e05f0f628f9b5f4fa78a1233543e"
+    },
+    {
+      "file": "sources/com/tencent/oscar/utils/RouterInitializerKt.java",
+      "line": 42,
+      "text": "startRouter.modules((Module[]) Arrays.copyOf(moduleArr, moduleArr.length));",
+      "sha256": "84a7d6be9e89177b5208d25f4de29c85a1d5e05f0f628f9b5f4fa78a1233543e"
+    },
+    {
+      "file": "sources/com/tencent/weishi/app/router/ModuleProvider.java",
+      "line": 93,
+      "text": "return f0.Q(ModuleAppKt.getModuleApp(), ModuleAttentionKt.getModuleAttention(), ModuleAuthKt.getModuleAuth(), ModuleClipboardKt.getModuleClipboard(), ModuleCollectionKt.getModuleCollection(), ModuleCommentKt.getModuleComment(), ModuleCommercialKt.getModuleCommercial(), ModuleCommercialRewardAdModuleKt.getModuleCommercialRewardAd(), ModuleCommercialSplashKt.getModuleCommercialSplash(), ModuleCommercialProfileKt.getModuleCommercialProfile(), ModuleDanmakuKt.getModuleDanmaku(), ModuleDbKt.getModuleDb(), ModuleDebugKt.getModuleDebug(), ModuleDownloaderKt.getModuleDownloader(), ModuleDramaKt.getModuleDrama(), ModuelDynamicKt.getModuleDynamic(), ModuleErrorCollectorKt.getModuleErrorCollector(), ModuleFeedKt.getModuleFeed(), ModuleFeedbackKt.getModuleFeedback(), ModuleFreeDataKt.getModuleFreeData(), ModuleGameCenterKt.getModuleGameCenter(), ModuleHomeKt.getModuleHome(), ModuleHorizontalVideoKt.getModuleHorizontalVideo(), ModuleHotSpotKt.getModuleHotSpot(), ModuleImKt.getModuleIm(), ModuleInteractHippyKt.getModuleInteractHippy(), ModuleKingCardKt.getModuleKingCard(), ModuleKuiklyKt.getModuleKuikly(), ModuleLikeKt.getModuleLike(), ModuleLikeBackKt.getModuleLikeBack(), ModuleLoginKt.getModuleLogin(), ModuleMainKt.getModuleMain(), ModuleMaterialKt.getModuleMaterial(), ModuleMiniViewKt.getModuleMiniView(), ModuleMonitorKt.getModuleMonitor(), ModuleMsgKt.getModuleMsg(), ModuleNetworkKt.getModuleNetwork(), ModuleOmPlatformKt.getModuleOmPlatform(), ModuleOperationKt.getModuleOperation(), ModulePerformanceKt.getModulePerformance(), ModulePermissionKt.getModulePermission(), ModulePMonitorKt.getModulePMonitor(), ModulePopKt.getModulePop(), ModulePrivacyKt.getModulePrivacy(), ModuleProfileKt.getModuleProfile(), ModulePublishKt.getModulePublish(), ModulePublishBaseKt.getModulePublishBase(), ModuleCameraKt.getModulePublishCamera(), ModulePublishEditKt.getModulePublishEdit(), ModulePublishMainKt.getModulePublishMain(), ModulePublisherStoreKt.getModulePublishStore(), ModulePushKt.getModulePush(), ModuleQAPMKt.getModuleQAPM(), ModuleQQKt.getModuleQQ(), ModuleReportKt.getModuleReport(), ModuleReshubKt.getModuleReshub(), ModuleSchemaKt.getModuleSchema(), ModuleSearchKt.getModuleSearch(), ModuleKt.getModuleSecurity(), ModuleSettingsKt.getModuleSettings(), ModuleShareKt.getModuleShare(), ModuleSplashKt.getModuleSplash(), ModuleStartupKt.getModuleStartup(), ModuleTeenKt.getModuleTeen(), ModuleToolsKt.getModuleTools(), ModuleUpdateKt.getModuleUpdate(), ModuleUserKt.getModuleUser(), ModuleVerifyKt.getModuleVerify(), ModuleVideoKt.getModuleVideo(), ModuleFeedsPageKt.getModuleFeedsPage(), ModuleWebKt.getModuleWeb(), ModuleWechatKt.getModuleWechat(), ModuleWelfareKt.getModuleWelfare(), ModuleWindowKt.getModuleWindow(), ModuleWxaKt.getModuleWxa(), AppWidgetModuleKt.getModuleAppWidget(), ModuleLandPageKt.getModuleLandPage());",
+      "sha256": "088ac7a544c893fa2c165fab8e2c3c6051b6a06e8a7ebc494d8949c459258d0e"
+    },
+    {
+      "file": "sources/com/tencent/oscar/app/ApplicationProcessBaseLike.java",
+      "line": 117,
+      "text": "RouterInitializerKt.initRouter(this.mApplication);",
+      "sha256": "9a65dda974457c2e449aca60d544bf4c94d792af2a88a85c138198d3b9e45354"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 1991,
+      "text": "return getFragmentByTab(this.mBottomBarModule.getTabs().get(i10));",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 1660,
+      "text": "Fragment fragmentNew2 = getFragmentNew(i10);",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 749,
+      "text": "Fragment fragmentFromTab = getFragmentFromTab(tabBottomConf);",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 1055,
+      "text": "this.mBottomBarModule.setOnTabChangeListener(this);",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 2556,
+      "text": "public void onTabReselected(int i10, Bundle bundle) {",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    },
+    {
+      "file": "sources/com/tencent/oscar/module/main/MainFragment.java",
+      "line": 1588,
+      "text": "showFragment(i10, bundle);",
+      "sha256": "04e6a754539b393bbfaa2ac5c4fdc83d599a4c1c68435a8ff872eb286c790b9c"
+    }
+  ],
+  "report_observation": {
+    "report_sha256": "b22a659688bc969ad329eda3ba8a946916a6a2ae86336117746abe69deeedd59",
+    "v7_host_present": false
+  },
+  "generic_minimal_pattern": "Application.install(KnownService.class, () -> new Implementation()); Activity attaches PagerAdapter child; tab factory service(KnownService.class).createFragment() returns concrete WebFragment; fragmentTransaction.add on Activity-owned child manager. Must propagate bootstrap factory map and returned Fragment identity through service lookup and pager ownership.",
+  "unknown": "Engine internal root cause not proved; source binding is positive independently of output. Complete Primary Main/Profile inventory still pending."
+}
