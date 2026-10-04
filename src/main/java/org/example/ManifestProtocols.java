@@ -54,6 +54,13 @@ final class ManifestProtocols {
         // Only native framework identities are modeled; application overrides keep their bodies.
         Method implementation=engine.idx.resolve(value.id());
         if(implementation!=null&&implementation.getImplementation()!=null&&!CapabilityIndex.cls(implementation.getDefiningClass()).startsWith("android."))return UNKNOWN;
+        if(!value.kind().equals("return_super")&&!value.kind().startsWith("return_manifest_native_super:")&&!args.isEmpty()&&(api.startsWith("Landroid/content/Context;->")||api.equals(APPLICATION_INFO))){
+            String shape=value.id().substring(value.id().indexOf("->")+2);
+            for(V receiver:alternatives(args.get(0))){
+                Method actual=receiver.type()==null?null:engine.idx.resolve(CapabilityEngine.desc(receiver.type())+"->"+shape);
+                if(actual!=null&&actual.getImplementation()!=null&&!CapabilityIndex.cls(actual.getDefiningClass()).startsWith("android."))return UNKNOWN;
+            }
+        }
         if(api.equals("Landroid/content/Context;->getPackageName()Ljava/lang/String;")&&args.size()==1&&currentContext(args.get(0),engine,host))return V.literal("java.lang.String",engine.apk.packageName);
         if(api.equals("Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;")&&args.size()==1&&currentContext(args.get(0),engine,host))return V.of("manifest_package_manager","android.content.pm.PackageManager","manifest_manager:"+engine.apk.packageName);
         if(api.equals(APPLICATION_INFO)&&args.size()==3&&args.get(0).kind().equals("manifest_package_manager")){
@@ -72,7 +79,12 @@ final class ManifestProtocols {
             if(api.contains("->getString(")&&result.type()!=null&&!result.type().equals("java.lang.String"))return UNKNOWN;
             return new V(result.kind(),result.type(),result.id(),result.literal(),List.of(V.of("manifest_value_origin",null,args.get(0).id()+":"+args.get(1).literal())));
         }
-        if((api.equals("Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z")||api.equals("Ljava/lang/String;->equals(Ljava/lang/Object;)Z"))&&args.size()==2&&args.get(0).literal()!=null&&args.get(1).literal()!=null&&args.stream().anyMatch(v->v.args().stream().anyMatch(marker->marker.kind().equals("manifest_value_origin"))))return V.literal("number",args.get(0).literal().equals(args.get(1).literal())?"1":"0");
+        if((api.equals("Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z")||api.equals("Ljava/lang/String;->equals(Ljava/lang/Object;)Z"))&&args.size()==2&&args.stream().anyMatch(v->v.args().stream().anyMatch(marker->marker.kind().equals("manifest_value_origin")))){
+            V left=args.get(0),right=args.get(1);boolean leftNull=metadataNull(left),rightNull=metadataNull(right);
+            if(api.startsWith("Ljava/lang/String;")&&leftNull)return UNKNOWN;
+            if((leftNull||metadataString(left))&&(rightNull||metadataString(right)))return V.literal("number",leftNull||rightNull?(leftNull&&rightNull?"1":"0"):(left.literal().equals(right.literal())?"1":"0"));
+            return UNKNOWN;
+        }
         if(api.equals("Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z")&&args.size()==2&&args.get(0).kind().equals("class")&&args.get(1).type()!=null&&args.get(1).args().stream().anyMatch(marker->marker.kind().equals("manifest_value_origin")))return V.literal("number",engine.idx.subtype(args.get(1).type(),args.get(0).type())||Objects.equals(args.get(1).type(),args.get(0).type())?"1":"0");
         if(api.equals(FOR_NAME)&&args.size()==1&&args.get(0).literal()!=null&&selection!=null&&args.get(0).args().stream().anyMatch(v->v.kind().equals("manifest_key_origin")&&v.id().equals(selection.id()))){
             String type=args.get(0).literal();if(engine.idx.classes.containsKey(type))return new V("class",type,CapabilityEngine.desc(type),null,List.of(V.of("manifest_class_origin",null,selection.id())));
@@ -82,6 +94,8 @@ final class ManifestProtocols {
             return new V("manifest_new",args.get(0).type(),CapabilityIndex.key(job.method())+"@"+value.kind()+":"+args.get(0).id(),null,List.of(args.get(0)));
         return UNKNOWN;
     }
+    static boolean metadataNull(V value){return value.kind().equals("literal")&&value.type()==null&&"0".equals(value.literal());}
+    static boolean metadataString(V value){return value.kind().equals("literal")&&"java.lang.String".equals(value.type())&&value.literal()!=null;}
     static boolean currentContext(V context,CapabilityEngine engine,CapabilityEngine.Host host){
         if(engine.apk.packageName.isEmpty())return false;
         if(context.kind().equals("union"))return context.args().stream().allMatch(value->currentContext(value,engine,host));

@@ -225,7 +225,7 @@ final class CapabilityEngine {
                         eval(expr("return_fragment_factory:"+call.offset(),owner(call.method()),call.method(),call.args()),job,h,0,new HashSet<>());continue;
                     }
                     List<AsyncRegistrations.Entry> registrations=async.entries(call.method());
-                    boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
+                    boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner)||idx.classValueCarriers.contains(owner));
                     boolean fieldSetter=target!=null&&objectFieldSetter(target);
                     boolean registryWrite=target!=null&&(reflection.writer(target)||idx.keyedRegistryWrites.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.keyedRegistryWrites.contains(CapabilityIndex.key(m))));
                     boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||h.activeClientContext!=null&&(idx.clientDelegationReachable(target)||reflection.reachable(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
@@ -1062,7 +1062,7 @@ final class CapabilityEngine {
             V object=V.of("object",v.type(),v.id()+"|"+allocation);
             for(Call ctor:flow.summary(job.method).calls())if(name(ctor.method()).equals("<init>")&&!ctor.args().isEmpty()&&ctor.args().get(0).equals(v)){
                 Method target=idx.resolve(ctor.method());
-                if(target!=null&&(idx.component(v.type())||idx.client(v.type())||reflection.carrier(v.type())||idx.bindingObjects.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
+                if(target!=null&&(idx.component(v.type())||idx.client(v.type())||reflection.carrier(v.type())||idx.bindingObjects.contains(v.type())||idx.classValueCarriers.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
                     List<V> args=new ArrayList<>();args.add(object);
                     for(int i=1;i<ctor.args().size();i++)args.add(eval(ctor.args().get(i),job,h,depth+1,new HashSet<>(visiting)));
                     materializeConstructor(target,args,job,h,depth+1,visiting);

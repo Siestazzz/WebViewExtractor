@@ -1,0 +1,75 @@
+{
+  "scope": "One selected Activity only. Excluded from ten-App recall and all performance gates; other Activity facts intentionally not analyzed.",
+  "probe": "test/diagnostics/SingleHostProbe.java",
+  "probe_sha256": "3bb84703775057740f55a03f492ba146c5e1eece2764289476c1944421a76bc9",
+  "runs": [
+    {
+      "version": "v10",
+      "report_sha256": "0fc9bf023c1e48fd7eff1804e93e8d3a7b299351a429b36527c33413242475c4",
+      "metrics": {
+        "diagnostic_only": true,
+        "selected_host": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+        "index_and_inventory_seconds": 37.170561521,
+        "seconds": 75.363239942
+      },
+      "coverage": {
+        "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+        "status": "budget_exhausted",
+        "phase": 2,
+        "contexts_processed": 19669,
+        "pending_contexts": 0,
+        "analysis_seconds": 38.183821003,
+        "slices": 1,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 5131,
+        "phase_contexts": [
+          7668,
+          12001
+        ],
+        "tracked_xml_consumers": 31,
+        "tracked_deferred_fields": 3300,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.004221623
+      },
+      "fact_count": 14
+    },
+    {
+      "version": "v12",
+      "report_sha256": "bae96e7230ad63c004e32624db8b17e37b067424b6741c2d827756b0d5a80507",
+      "metrics": {
+        "diagnostic_only": true,
+        "selected_host": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+        "index_and_inventory_seconds": 38.927041826,
+        "seconds": 79.94799696
+      },
+      "coverage": {
+        "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+        "status": "budget_exhausted",
+        "phase": 2,
+        "contexts_processed": 21613,
+        "pending_contexts": 0,
+        "analysis_seconds": 41.010929801,
+        "slices": 1,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 5138,
+        "phase_contexts": [
+          9612,
+          12001
+        ],
+        "tracked_xml_consumers": 31,
+        "tracked_deferred_fields": 3300,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.004429903
+      },
+      "fact_count": 14
+    }
+  ],
+  "semantic_delta": {
+    "before_matched": 15,
+    "after_matched": 15
+  }
+}

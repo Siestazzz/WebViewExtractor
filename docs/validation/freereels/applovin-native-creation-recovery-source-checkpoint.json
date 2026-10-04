@@ -1,0 +1,90 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+  "deep_audit_complete": false,
+  "creation_attach": [
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 232,
+      "text": "WebView b10 = n7.b(this, \"WebView Activity\");",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 702,
+      "text": "return a(context, str, false);",
+      "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 1185,
+      "text": "WebView webView = new WebView(context);",
+      "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 233,
+      "text": "this.f38066c = b10;",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 238,
+      "text": "setContentView(b10);",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    }
+  ],
+  "known_settings": [
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 240,
+      "text": "settings.setSupportMultipleWindows(false);",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 241,
+      "text": "settings.setJavaScriptEnabled(true);",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    }
+  ],
+  "known_client": [
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 245,
+      "text": "this.f38066c.setWebViewClient(new a(c2085k));",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    }
+  ],
+  "nonpositive_factory_client": {
+    "declaration": {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 1187,
+      "text": "webView.setWebViewClient(new b(str));",
+      "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+    },
+    "condition": "z=true; currentactivitycallsn7.b\u2192a(context,str,false), so thisfactoryClient notactuallyinstalledforcurrenthost. Do notfabricateadditionalinitialregistration."
+  },
+  "actual_callback_members": "Own7 standardmembers in AppLovinWebViewActivity$a extends t4; parent overrides same7 shapes, helpersa()Map notcallbacks. ExactDEXverification pending. RendererGone recovery createsnewnativeWebView and repeatsknownsettings/clientinstallation ratherthanonlycleanup.",
+  "late_sdk_unresolved": [
+    "AppLovin SafeDK discovery provider is PRESENT fixedmap, so Tapjoy absentprovider closure cannot be reused. Fullretainedresourceattachment/conditionalSDKBridge late surface remains toreview.",
+    "PublicloadUrl(String,EventListener) stores eventlistenerandactualnativeclientdispatches onReceivedEvent(String), sourceactualcallers/implementers notyetfullybound."
+  ],
+  "files": [
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "sha256": "a1912d9336f7b785f1148165d0a2468915bf9fb9f0c31f3200508ab50c2cec09"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "sha256": "93691db41b29c385c2e0fdd479e955db9305112c40971e0196bda165c7f1e1b0"
+    },
+    {
+      "file": "sources/com/applovin/impl/t4.java",
+      "sha256": "3f05b094b45a3b3a5c206c91e960840fd498e9d8f841bf5081c59f12c4b73d26"
+    }
+  ]
+}

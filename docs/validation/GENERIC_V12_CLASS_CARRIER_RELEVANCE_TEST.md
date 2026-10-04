@@ -1,0 +1,9 @@
+# Class-only carrier relevance regression
+
+`ClassCarrierRelevanceFixture` tests global relevance separately from actual constructor capture. The synthetic Controller.configure method reads an incidental metadata field and invokes a real WebSettings setter. The metadata holder contains only a Class field. A separate Controller method writes that holder through a factory, and an unrelated method calls the same factory. None of those factory methods invokes a capability or has a actual capability method call on the metadata receiver.
+
+Against frozen v11 (SHA256 `63d636f46a8e913653406c30a877c09ef8027145bf2d624612d44428f1e16238`), the actual setter is correctly relevant but the Class-only holder's bindingObjects membership also pulls the unrelated writer, factory and factory caller into relevant. The exact failed set is retained in `test/runs/generic-v12-class-relevance-v11/result.log`. This proves the broad Class field rule expands the global closure; it does not attribute any specific real APK time change solely to that rule.
+
+V12 assertions require the actual capability seed to remain relevant and all three unrelated methods to stay outside relevant. The holder must not remain a global bindingObjects carrier. The same fixture then runs the twelve complete reflective service construction regressions, proving reached Class captures still support public Class/Constructor construction, nested registry and singleton cache, actual Bridge/setting/callback, and absent-key reflection negatives. CapabilitySelfTest calls this fixture instead of separately duplicating those twelve service runs.
+
+This is a test-only addition over the root agent's classValueCarriers production separation. It introduces no production changes, private names, new analysis limits or assumptions about fields being immutable. It does not solve the existing direct-new absent-key false positive.

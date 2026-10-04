@@ -553,11 +553,25 @@
       "line": 92,
       "text": "frameLayout.addView(this.hsE, new FrameLayout.LayoutParams(-1, -1));",
       "sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46"
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "line": 101,
+      "text": "this.f119807f = TJPlacementManager.a(this.f119808g.getKey()).getAdUnit();",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460"
+    },
+    {
+      "file": "sources/com/tapjoy/TapjoyUtil.java",
+      "line": 236,
+      "text": "runnable.run();",
+      "sha256": "32f94dec7ad8ef4b48f6d1788e6292780ca0f3f87040cf9b3e6f78fa44121f0c"
     }
   ],
   "deep_positive_activities": [
     "com.dramawave.feature.web.WebPageActivity",
     "com.fyber.ads.ofw.OfferWallActivity",
+    "com.tapjoy.TJAdUnitActivity",
+    "com.tapjoy.TJWebViewActivity",
     "com.taurusx.tax.mraid.MraidBrowser",
     "com.taurusx.tax.ui.TaxWebViewActivity",
     "com.taurusx.tax.utils.webview.TaxBrowserActivity"
@@ -567,10 +581,14 @@
       "com.dramawave.feature.web.WebPageActivity"
     ],
     "sdk_direct_webview": [
+      "com.tapjoy.TJWebViewActivity",
       "com.fyber.ads.ofw.OfferWallActivity",
       "com.taurusx.tax.ui.TaxWebViewActivity",
       "com.taurusx.tax.utils.webview.TaxBrowserActivity",
       "com.taurusx.tax.mraid.MraidBrowser"
+    ],
+    "sdk_unit_retained_webview": [
+      "com.tapjoy.TJAdUnitActivity"
     ]
   },
   "exhaustive_positive_inventory": false,
@@ -3256,6 +3274,48 @@
         }
       ],
       "provider_closure_evidence": "safedk-fixed-discovery-provider-source-proof.json"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "reviewer": "GPT-6.1 Sol",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "deep_audit_complete": true,
+      "proof": "TJWebViewActivity-full-surface-source-proof.json",
+      "categories": {
+        "bridge": {
+          "status": "done",
+          "unresolved": []
+        },
+        "setting": {
+          "status": "done",
+          "unresolved": []
+        },
+        "callback": {
+          "status": "done",
+          "unresolved": []
+        }
+      }
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "reviewer": "GPT-6.1 Sol",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "deep_audit_complete": true,
+      "proof": "TJAdUnitActivity-full-surface-source-proof.json",
+      "categories": {
+        "bridge": {
+          "status": "done",
+          "unresolved": []
+        },
+        "setting": {
+          "status": "done",
+          "unresolved": []
+        },
+        "callback": {
+          "status": "done",
+          "unresolved": []
+        }
+      }
     }
   ]
 }

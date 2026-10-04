@@ -24,7 +24,7 @@ final class CapabilityIndex {
     final Map<String,Set<List<String>>> namespaceRegistries=new HashMap<>();
     final Map<String,Set<String>> registryHandlerShapes=new HashMap<>();
     final Map<String,List<String>> subtypeCandidates=new java.util.concurrent.ConcurrentHashMap<>();
-    final Set<String> bindingObjects=new HashSet<>();
+    final Set<String> bindingObjects=new HashSet<>(), classValueCarriers=new HashSet<>();
     final Set<String> fragmentFactoryFields=new HashSet<>(), componentProtocols=new HashSet<>();
     final Set<String> clientDelegations=new HashSet<>();
     final Map<String,Boolean> clientDelegationReachability=new java.util.concurrent.ConcurrentHashMap<>();
@@ -96,7 +96,12 @@ final class CapabilityIndex {
         // Keep their actual allocation-local constructor captures through bind/inflate returns.
         for(String type:classes.keySet())if(subtype(type,"androidx.viewbinding.ViewBinding"))bindingObjects.add(type);
         for(String type:classes.keySet())if(subtype(type,"androidx.viewpager2.adapter.FragmentStateAdapter"))bindingObjects.add(type);
-        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))||client(cls(f.getType()))||f.getType().equals("Ljava/lang/Class;")))bindingObjects.add(cls(c.getType()));
+        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0){
+            if(webview(cls(f.getType()))||settings(cls(f.getType()))||client(cls(f.getType())))bindingObjects.add(cls(c.getType()));
+            // Preserve Class captures at reached allocations without marking every metadata
+            // holder and its callers globally capability-relevant.
+            if(f.getType().equals("Ljava/lang/Class;"))classValueCarriers.add(cls(c.getType()));
+        }
         for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&(webview(cls(m.getReturnType()))||function0Type(cls(m.getDefiningClass()))))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
             if(System.nanoTime()>deadline)throw new IllegalStateException("index_deadline");

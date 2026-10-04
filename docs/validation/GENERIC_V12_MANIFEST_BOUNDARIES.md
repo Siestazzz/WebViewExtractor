@@ -1,0 +1,11 @@
+# Generic v12 Manifest resolver precision boundaries
+
+Frozen v11 standalone evidence is retained in `GENERIC_V11_RULE_BOUNDARY_AUDIT.md` and `test/runs/generic-v11-boundary-audit/manifest-results.txt`. This change does not reclassify those failed observations.
+
+The metadata-native shortcut now checks actual receiver alternatives for Context getter and PackageManager application-info virtual calls. If any resolvable application method supplies an implementation, it declines the shortcut so ordinary body analysis can follow that implementation. A base MethodReference no longer overrides actual Application dispatch. Explicit super calls retain native semantics; metadata summary expressions now preserve the invoke-super identity instead of losing it when marked as native metadata cutpoints. Existing declared-owner override protection remains.
+
+Metadata equality separates String values from null and other typed literals. An absent Bundle entry retains the existing null representation but cannot equal String "0". TextUtils.equals(null,null) is true, null/string is false, and actual String "0" still equals String "0". A null receiver for String.equals remains unknown/exceptional; incompatible numeric/string operands remain unknown rather than comparing serialized text. No public API, App module name, metadata key or selector is hardcoded.
+
+`ManifestBoundaryAuditProbe.runRegression` joins the capability self-test. It covers the base-typed actual override, receiver union containing that override, explicit super positive, absent/null equality, null receiver, actual string-zero positive and incompatible typed numeric equality. The original standalone main prints diagnostic results and can be run against frozen v11 to preserve the reproduction. Full metadata module constructor/static-cache/interface-init and two-WebView/two-Activity fixtures remain in the suite.
+
+The older direct-new nested-Map absent-key error is unchanged. Closed-map absence and receiver-presence semantics need a separate general repair; no blanket missing-observed-entry→null shortcut is introduced. Reflection absent-key regressions remain enforced. Bounds, deadlines and all sixteen summary variants are unchanged.

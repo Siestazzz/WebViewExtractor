@@ -1,6 +1,6 @@
 # WebView 能力提取的当前核心思路
 
-当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。最近完成十 App 实测的是 [generic v11](docs/validation/GENERIC_V11.md)：包含通用对象传播、已安装 Client 的委托调用、按宿主并行调度、摘要缓存和报告收尾预算。v11 新增跨 Client 完整签名委托、有限反射工厂与 Manifest 模块协议，新闻增加 4 条回调命中，但芒果性能和携程部分命中回退，不能宣称质量验收通过。旧版类关系图通过 `--legacy` 保留，见 [旧版设计](docs/LEGACY_CORE_IDEA.md)。
+当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。最近完成十 App 实测的是 [generic v12](docs/validation/GENERIC_V12.md)：包含通用对象传播、已安装 Client 的委托调用、按宿主并行调度、摘要缓存和报告收尾预算。v11 新增跨 Client 完整签名委托、有限反射工厂与 Manifest 模块协议，新闻增加 4 条回调命中；v12 收紧 Class 捕获的全局相关性后恢复芒果性能，但携程部分命中回退仍在，不能宣称质量验收通过。旧版类关系图通过 `--legacy` 保留，见 [旧版设计](docs/LEGACY_CORE_IDEA.md)。
 
 需要逐步理解传播算法和精度边界，可继续阅读 [分析原理教程](docs/ANALYSIS_TUTORIAL.md)。
 
@@ -75,6 +75,6 @@ generic v9 起支持 `--analysis-workers`（1～8）：不同 Activity 固定分
 - `capabilities.compact.json`：格式化的三层列表，仅展示签名、Settings 参数和各层统计，保留覆盖元数据。
 - `activity_coverage`：区分未开始、初扫/待深入、截止中断、遍历结束、内部预算耗尽。遍历结束不等于能力完整。
 
-历史 scheduler v3 六 App 调度测试见下方链接。generic v11 十 App 实测约 40～591 秒，全部报告仍为 partial，严格验收 0/10；最终三次隔离运行、完整能力精度审计及新样本核验尚未完成。各版本必须在相同事实集上比较，不能把扩充核验样本带来的比例变化归因于算法。
+历史 scheduler v3 六 App 调度测试见下方链接。generic v12 十 App 实测约 40～589 秒，全部报告仍为 partial，严格验收 0/10；最终三次隔离运行、完整能力精度审计及新样本核验尚未完成。各版本必须在相同事实集上比较，不能把扩充核验样本带来的比例变化归因于算法。
 
 实现细节、测试、实际结果和残留问题见 [两轮调度记录](docs/validation/SCHEDULER_V3.md)、[能力分析说明](docs/CAPABILITY_ANALYSIS.md) 和 [迭代总账](docs/validation/ITERATIONS.md)。使用命令见 [USAGE.md](USAGE.md)。

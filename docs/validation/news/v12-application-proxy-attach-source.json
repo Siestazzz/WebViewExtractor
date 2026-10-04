@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "audit_mode": "source/platform-contract evidence; no App-name-based hidden-call inference",
+  "platform_evidence": {
+    "official_source_url": "https://android.googlesource.com/platform/frameworks/base/+/99b01a65cc4c104933788b3143285ab6bae65827/core/java/android/app/Application.java",
+    "revision": "99b01a65cc4c104933788b3143285ab6bae65827",
+    "branch_at_retrieval": "android16-release",
+    "source_sha256": "8188ce4d0164602b0d784d60041c9a994322f95470f7350bf4cf27869295c0ab",
+    "retrieved_at_utc": "2026-10-04T18:40:18.844671+00:00",
+    "location": [
+      {
+        "line": 345,
+        "quote": "/* package */ final void attach(Context context) {"
+      },
+      {
+        "line": 346,
+        "quote": "attachBaseContext(context);"
+      }
+    ],
+    "method_descriptor": "Landroid/app/Application;->attach(Landroid/content/Context;)V",
+    "access": "package-private final hidden framework method",
+    "side_effect": "ordinary virtual call attachBaseContext(Context) on same this and same Context",
+    "claim_limit": "This is an AOSP Android 16 platform contract, not proof of the exact benchmark device runtime implementation or hidden-API accessibility under every runtime policy. Reflective invocation success remains a runtime precondition."
+  },
+  "app_chain": [
+    "manifest TNApplication -> literal delegate class selected in its constructor",
+    "proxy attachBaseContext -> Class.forName(delegateClassName,true,currentClassLoader).newInstance",
+    "actual packaged delegate Application -> BaseApplication -> RePluginApplication -> android.app.Application",
+    "invokeMethod(actualDelegate,attach,Context[] args)",
+    "ShareReflectUtil.findMethod starts actual target getClass and loops getSuperclass, exact getDeclaredMethod(name,paramTypes), setAccessible(true)",
+    "Method.invoke(actualDelegate,actualContext[]) targets framework Application.attach when no packaged override is found",
+    "official framework method virtual-dispatches same receiver attachBaseContext to BaseApplication implementation",
+    "BaseApplication.attachBaseContext then executes Services.init(false) -> generated service registration chain"
+  ],
+  "packaged_attach_override_proof": {
+    "complete_packaged_chain": true,
+    "all_declared_attach_methods": [],
+    "lookup_conclusion": "No packaged class in delegate Application -> BaseApplication -> RePluginApplication declares attach. DEX hierarchy reaches android.app.Application; exact Context-parameter reflective lookup therefore selects framework attach if accessible. BaseApplication declares attachBaseContext(Context), and actual delegate declares no override of it.",
+    "runtime_success_precondition_retained": true
+  },
+  "source_evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/system/TNApplication.java",
+      "source_sha256": "88f71b7440ab58b22c11a89c717ce925f30fa8ced5957511ffe6c9de3740e36c",
+      "locations": [
+        {
+          "line": 8,
+          "quote": "public class TNApplication extends RFixProxyApplication {"
+        },
+        {
+          "line": 9,
+          "quote": "public TNApplication() {"
+        },
+        {
+          "line": 10,
+          "quote": "super(\"com.tencent.news.system.Application\", null);"
+        },
+        {
+          "line": 11,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(127, (short) 1);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/rfix/loader/app/RFixProxyApplication.java",
+      "source_sha256": "1b7c27a9779d91a7d233b4c076dc55eea6b7cc624aa3c5227e5393dcae29884f",
+      "locations": [
+        {
+          "line": 52,
+          "quote": "private void invokeMethod(Object obj, String str, Class<?>[] clsArr, Object[] objArr) throws Exception {"
+        },
+        {
+          "line": 53,
+          "quote": "ShareReflectUtil.findMethod(obj, str, clsArr).invoke(obj, objArr);"
+        },
+        {
+          "line": 54,
+          "quote": "}"
+        },
+        {
+          "line": 97,
+          "quote": "@Override // com.tencent.tinker.loader.app.TinkerApplication, android.content.ContextWrapper"
+        },
+        {
+          "line": 98,
+          "quote": "public void attachBaseContext(Context context) {"
+        },
+        {
+          "line": 99,
+          "quote": "super.attachBaseContext(context);"
+        },
+        {
+          "line": 100,
+          "quote": "this.interceptPackageName = true;"
+        },
+        {
+          "line": 101,
+          "quote": "initDelegateApplication(context);"
+        },
+        {
+          "line": 102,
+          "quote": "revertBackupCallbacks();"
+        },
+        {
+          "line": 103,
+          "quote": "}"
+        },
+        {
+          "line": 126,
+          "quote": "public void initDelegateApplication(Context context) {"
+        },
+        {
+          "line": 127,
+          "quote": "long elapsedRealtime = SystemClock.elapsedRealtime();"
+        },
+        {
+          "line": 128,
+          "quote": "try {"
+        },
+        {
+          "line": 129,
+          "quote": "Application application = (Application) Class.forName(this.delegateClassName, true, this.mCurrentClassLoader).newInstance();"
+        },
+        {
+          "line": 130,
+          "quote": "invokeMethod(application, \"attach\", new Class[]{Context.class}, new Object[]{context});"
+        },
+        {
+          "line": 131,
+          "quote": "Object newInstance = Class.forName(CLASS_INLINE_FENCE, false, this.mCurrentClassLoader).getConstructor(Application.class).newInstance(application);"
+        },
+        {
+          "line": 132,
+          "quote": "this.delegateApplication = application;"
+        },
+        {
+          "line": 133,
+          "quote": "this.applicationInlineFence = (Handler) newInstance;"
+        },
+        {
+          "line": 134,
+          "quote": "RFixLog.i(TAG, \"initDelegateApplication time cost: \" + (SystemClock.elapsedRealtime() - elapsedRealtime));"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/system/Application.java",
+      "source_sha256": "2863bd738c21cf2aeda021ad71bb27eca294dcbf53fb955be1355d9fdaa11281",
+      "locations": [
+        {
+          "line": 9,
+          "quote": "public final class Application extends BaseApplication {"
+        },
+        {
+          "line": 10,
+          "quote": "public Application() {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/system/BaseApplication.java",
+      "source_sha256": "72560c8a0c7426e24af4c73f017a932836d58a03b5602738b49e49ac095e8cea",
+      "locations": [
+        {
+          "line": 34,
+          "quote": "public class BaseApplication extends RePluginApplication {"
+        },
+        {
+          "line": 285,
+          "quote": "public void attachBaseContext(Context context) {"
+        },
+        {
+          "line": 286,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(13183, (short) 2);"
+        },
+        {
+          "line": 287,
+          "quote": "if (redirector != null) {"
+        },
+        {
+          "line": 288,
+          "quote": "redirector.redirect((short) 2, (Object) this, (Object) context);"
+        },
+        {
+          "line": 289,
+          "quote": "return;"
+        },
+        {
+          "line": 290,
+          "quote": "}"
+        },
+        {
+          "line": 291,
+          "quote": "com.tencent.news.utils.b.m149504(this);"
+        },
+        {
+          "line": 292,
+          "quote": "g0.f99562.m122006(this, com.tencent.news.utils.status.a.m151321(), com.tencent.news.utils.status.a.m151308(context));"
+        },
+        {
+          "line": 293,
+          "quote": "attachPluginContext(context);"
+        },
+        {
+          "line": 294,
+          "quote": "r.m124531(this);"
+        },
+        {
+          "line": 295,
+          "quote": "RheaTrace3.init(context);"
+        },
+        {
+          "line": 296,
+          "quote": "Services.init(false);"
+        },
+        {
+          "line": 297,
+          "quote": "com.tencent.news.pmonitor.m.m112675(this);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/qihoo360/replugin/RePluginApplication.java",
+      "source_sha256": "5e711b579e9b78e00f0f7536395734f5e12866743d3c8471a6b3fac61549d10f",
+      "locations": [
+        {
+          "line": 3,
+          "quote": "import android.app.Application;"
+        },
+        {
+          "line": 4,
+          "quote": "import android.content.Context;"
+        },
+        {
+          "line": 5,
+          "quote": "import android.content.res.Configuration;"
+        },
+        {
+          "line": 6,
+          "quote": "import com.qihoo360.replugin.RePlugin;"
+        },
+        {
+          "line": 7,
+          "quote": ""
+        },
+        {
+          "line": 8,
+          "quote": "/* loaded from: classes7.dex */"
+        },
+        {
+          "line": 9,
+          "quote": "public abstract class RePluginApplication extends Application {"
+        },
+        {
+          "line": 10,
+          "quote": "protected boolean enableReplugin = true;"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/tinker/loader/shareutil/ShareReflectUtil.java",
+      "source_sha256": "c7e29efb5c43e0f2772a3636747b57e6a425ee5db1368f01ac05ae0b26eda247",
+      "locations": [
+        {
+          "line": 39,
+          "quote": "public static Method findMethod(Object obj, String str, Class<?>... clsArr) throws NoSuchMethodException {"
+        },
+        {
+          "line": 40,
+          "quote": "for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {"
+        },
+        {
+          "line": 41,
+          "quote": "try {"
+        },
+        {
+          "line": 42,
+          "quote": "Method declaredMethod = cls.getDeclaredMethod(str, clsArr);"
+        },
+        {
+          "line": 43,
+          "quote": "if (!declaredMethod.isAccessible()) {"
+        },
+        {
+          "line": 44,
+          "quote": "declaredMethod.setAccessible(true);"
+        },
+        {
+          "line": 45,
+          "quote": "}"
+        },
+        {
+          "line": 46,
+          "quote": "return declaredMethod;"
+        },
+        {
+          "line": 47,
+          "quote": "} catch (NoSuchMethodException unused) {"
+        },
+        {
+          "line": 48,
+          "quote": "}"
+        },
+        {
+          "line": 49,
+          "quote": "}"
+        },
+        {
+          "line": 50,
+          "quote": "throw new NoSuchMethodException(\"Method \" + str + \" with parameters \" + Arrays.asList(clsArr) + \" not found in \" + obj.getClass());"
+        }
+      ]
+    }
+  ],
+  "production_modified": false,
+  "holdout_accessed": false,
+  "packaged_hierarchy_dex": [
+    {
+      "class_descriptor": "Lcom/tencent/news/system/BaseApplication;",
+      "superclass_descriptor": "Lcom/qihoo360/replugin/RePluginApplication;",
+      "interface_descriptors": [],
+      "class_def_offset": 1458944,
+      "class_access_flags": 1,
+      "dex": "classes13.dex",
+      "dex_sha256": "108f7b22895e1eb5be9e5081b61a0d0474d01b073e64c3275a2d766e783234c5",
+      "source_file": "sources/com/tencent/news/system/BaseApplication.java",
+      "source_sha256": "72560c8a0c7426e24af4c73f017a932836d58a03b5602738b49e49ac095e8cea",
+      "methods": [
+        {
+          "method_id": 60004,
+          "method_id_offset": 1087928,
+          "access_flags": 1,
+          "code_offset": 5727504,
+          "name": "attachBaseContext",
+          "descriptor": "(Landroid/content/Context;)V"
+        }
+      ],
+      "member_scope": "all declared attach and attachBaseContext encoded methods; all method declarations checked before this exact-name filter"
+    },
+    {
+      "class_descriptor": "Lcom/tencent/news/system/Application;",
+      "superclass_descriptor": "Lcom/tencent/news/system/BaseApplication;",
+      "interface_descriptors": [],
+      "class_def_offset": 1458976,
+      "class_access_flags": 17,
+      "dex": "classes13.dex",
+      "dex_sha256": "108f7b22895e1eb5be9e5081b61a0d0474d01b073e64c3275a2d766e783234c5",
+      "source_file": "sources/com/tencent/news/system/Application.java",
+      "source_sha256": "2863bd738c21cf2aeda021ad71bb27eca294dcbf53fb955be1355d9fdaa11281",
+      "methods": [],
+      "member_scope": "all declared attach and attachBaseContext encoded methods; all method declarations checked before this exact-name filter"
+    },
+    {
+      "class_descriptor": "Lcom/qihoo360/replugin/RePluginApplication;",
+      "superclass_descriptor": "Landroid/app/Application;",
+      "interface_descriptors": [],
+      "class_def_offset": 1434696,
+      "class_access_flags": 1025,
+      "dex": "classes7.dex",
+      "dex_sha256": "1aaea0e5ee2e1788824de92739f4df1d9b91e072e8994e60d1432c0040492cff",
+      "source_file": "sources/com/qihoo360/replugin/RePluginApplication.java",
+      "source_sha256": "5e711b579e9b78e00f0f7536395734f5e12866743d3c8471a6b3fac61549d10f",
+      "methods": [
+        {
+          "method_id": 8959,
+          "method_id_offset": 953696,
+          "access_flags": 1,
+          "code_offset": 2146340,
+          "name": "attachBaseContext",
+          "descriptor": "(Landroid/content/Context;)V"
+        }
+      ],
+      "member_scope": "all declared attach and attachBaseContext encoded methods; all method declarations checked before this exact-name filter"
+    }
+  ]
+}

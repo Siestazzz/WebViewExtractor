@@ -1,0 +1,837 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "parse_method": "DEX class_defs/class_data encoded method declarations, method_ids/proto_ids/type_ids/string_ids; all interface declarations, no name-based callback inference.",
+  "classes": [
+    {
+      "class_descriptor": "Lcom/tapjoy/c;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Ljava/lang/Runnable;"
+      ],
+      "class_def_offset": 1607276,
+      "class_access_flags": 17,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/tapjoy/c.java",
+      "source_sha256": "7e3de98a87faf9b582db458db5531862f372ef1779e75f004b4eeccaabba86af",
+      "methods": [
+        {
+          "method_id": 51232,
+          "method_id_offset": 1244540,
+          "access_flags": 65537,
+          "code_offset": 9216912,
+          "name": "<init>",
+          "descriptor": "(Lcom/tapjoy/TJAdUnit;Landroid/content/Context;Lcom/tapjoy/TJPlacementData;Z)V"
+        },
+        {
+          "method_id": 51233,
+          "method_id_offset": 1244548,
+          "access_flags": 17,
+          "code_offset": 9216952,
+          "name": "run",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/d;",
+      "superclass_descriptor": "Landroid/webkit/WebViewClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1607308,
+      "class_access_flags": 17,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/tapjoy/d.java",
+      "source_sha256": "6cf7a6aed92aa0a2f4173140cfb3b2188de1a448d6cb034a493abc40d2cf6dcc",
+      "methods": [
+        {
+          "method_id": 51234,
+          "method_id_offset": 1244556,
+          "access_flags": 65537,
+          "code_offset": 9217448,
+          "name": "<init>",
+          "descriptor": "(Lcom/tapjoy/TJAdUnit;)V"
+        },
+        {
+          "method_id": 51241,
+          "method_id_offset": 1244612,
+          "access_flags": 9,
+          "code_offset": 9217476,
+          "name": "safedk_Context_startActivity_97cb3195734cf5c9cc3418feeafa6dd6",
+          "descriptor": "(Landroid/content/Context;Landroid/content/Intent;)V"
+        },
+        {
+          "method_id": 51235,
+          "method_id_offset": 1244564,
+          "access_flags": 17,
+          "code_offset": 9217528,
+          "name": "a",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 51236,
+          "method_id_offset": 1244572,
+          "access_flags": 17,
+          "code_offset": 9218164,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 51237,
+          "method_id_offset": 1244580,
+          "access_flags": 17,
+          "code_offset": 9218184,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 51238,
+          "method_id_offset": 1244588,
+          "access_flags": 17,
+          "code_offset": 9218320,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 51239,
+          "method_id_offset": 1244596,
+          "access_flags": 17,
+          "code_offset": 9218400,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 51240,
+          "method_id_offset": 1244604,
+          "access_flags": 17,
+          "code_offset": 9218564,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 51242,
+          "method_id_offset": 1244620,
+          "access_flags": 1,
+          "code_offset": 9218856,
+          "name": "safedk_d_shouldOverrideUrlLoading_1eb01a65cd38506ea6eba0a00ef33006",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+        },
+        {
+          "method_id": 51243,
+          "method_id_offset": 1244628,
+          "access_flags": 1,
+          "code_offset": 9218900,
+          "name": "safedk_d_shouldOverrideUrlLoading_da23a640b7f4d20227de53a4ac725168",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 51244,
+          "method_id_offset": 1244636,
+          "access_flags": 17,
+          "code_offset": 9218928,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 51245,
+          "method_id_offset": 1244644,
+          "access_flags": 17,
+          "code_offset": 9219096,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+        },
+        {
+          "method_id": 51246,
+          "method_id_offset": 1244652,
+          "access_flags": 17,
+          "code_offset": 9219148,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/e;",
+      "superclass_descriptor": "Landroid/webkit/WebChromeClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1607340,
+      "class_access_flags": 17,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/tapjoy/e.java",
+      "source_sha256": "c4e9b1abf423b5b03aed0bce0b2bff3bcbc9a667f61a6c671e4cd121f3d43da7",
+      "methods": [
+        {
+          "method_id": 51247,
+          "method_id_offset": 1244660,
+          "access_flags": 65537,
+          "code_offset": 9219200,
+          "name": "<init>",
+          "descriptor": "(Lcom/tapjoy/TJAdUnit;)V"
+        },
+        {
+          "method_id": 51248,
+          "method_id_offset": 1244668,
+          "access_flags": 17,
+          "code_offset": 9219228,
+          "name": "onConsoleMessage",
+          "descriptor": "(Landroid/webkit/ConsoleMessage;)Z"
+        },
+        {
+          "method_id": 51249,
+          "method_id_offset": 1244676,
+          "access_flags": 17,
+          "code_offset": 9219360,
+          "name": "onJsAlert",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/g;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Ljava/lang/Runnable;"
+      ],
+      "class_def_offset": 1607404,
+      "class_access_flags": 17,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/tapjoy/g.java",
+      "source_sha256": "c34f2bbeceaa324cb7610c2c0744e5f798c54ba82e6b1ac9f50b41dea230dc4b",
+      "methods": [
+        {
+          "method_id": 51252,
+          "method_id_offset": 1244700,
+          "access_flags": 65537,
+          "code_offset": 9219628,
+          "name": "<init>",
+          "descriptor": "(Lcom/tapjoy/k;F)V"
+        },
+        {
+          "method_id": 51253,
+          "method_id_offset": 1244708,
+          "access_flags": 17,
+          "code_offset": 9219660,
+          "name": "run",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/k;",
+      "superclass_descriptor": "Lcom/tapjoy/TJJSBridgeDelegate;",
+      "interface_descriptors": [],
+      "class_def_offset": 1607948,
+      "class_access_flags": 17,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/tapjoy/k.java",
+      "source_sha256": "5f1d05b79c6a68e053599c2ba8f2f35ac42496fec8c465c09949794d5d6b3a27",
+      "methods": [
+        {
+          "method_id": 51307,
+          "method_id_offset": 1245140,
+          "access_flags": 65537,
+          "code_offset": 9221836,
+          "name": "<init>",
+          "descriptor": "(Lcom/tapjoy/TJAdUnit;)V"
+        },
+        {
+          "method_id": 51308,
+          "method_id_offset": 1245148,
+          "access_flags": 17,
+          "code_offset": 9221864,
+          "name": "dismiss",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 51309,
+          "method_id_offset": 1245156,
+          "access_flags": 17,
+          "code_offset": 9221900,
+          "name": "fireContentReady",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 51310,
+          "method_id_offset": 1245164,
+          "access_flags": 17,
+          "code_offset": 9221932,
+          "name": "getContext",
+          "descriptor": "()Landroid/content/Context;"
+        },
+        {
+          "method_id": 51311,
+          "method_id_offset": 1245172,
+          "access_flags": 17,
+          "code_offset": 9221984,
+          "name": "getOrientation",
+          "descriptor": "()Ljava/util/Map;"
+        },
+        {
+          "method_id": 51312,
+          "method_id_offset": 1245180,
+          "access_flags": 17,
+          "code_offset": 9222128,
+          "name": "getStatusBarHeight",
+          "descriptor": "()I"
+        },
+        {
+          "method_id": 51313,
+          "method_id_offset": 1245188,
+          "access_flags": 17,
+          "code_offset": 9222176,
+          "name": "getTextZoom",
+          "descriptor": "(Lcom/tapjoy/TJTaskHandler;)V"
+        },
+        {
+          "method_id": 51314,
+          "method_id_offset": 1245196,
+          "access_flags": 17,
+          "code_offset": 9222212,
+          "name": "getWebView",
+          "descriptor": "()Landroid/webkit/WebView;"
+        },
+        {
+          "method_id": 51315,
+          "method_id_offset": 1245204,
+          "access_flags": 17,
+          "code_offset": 9222240,
+          "name": "setBackgroundColor",
+          "descriptor": "(Ljava/lang/String;Lcom/tapjoy/TJTaskHandler;)V"
+        },
+        {
+          "method_id": 51316,
+          "method_id_offset": 1245212,
+          "access_flags": 17,
+          "code_offset": 9222276,
+          "name": "setCloseButtonClickable",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 51317,
+          "method_id_offset": 1245220,
+          "access_flags": 17,
+          "code_offset": 9222312,
+          "name": "setCloseButtonVisible",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 51318,
+          "method_id_offset": 1245228,
+          "access_flags": 17,
+          "code_offset": 9222348,
+          "name": "setOrientation",
+          "descriptor": "(I)Z"
+        },
+        {
+          "method_id": 51319,
+          "method_id_offset": 1245236,
+          "access_flags": 17,
+          "code_offset": 9222388,
+          "name": "setTextZoom",
+          "descriptor": "(F)V"
+        },
+        {
+          "method_id": 51320,
+          "method_id_offset": 1245244,
+          "access_flags": 17,
+          "code_offset": 9222424,
+          "name": "setupSdkBeacons",
+          "descriptor": "(Lcom/tapjoy/internal/g0;)V"
+        },
+        {
+          "method_id": 51321,
+          "method_id_offset": 1245252,
+          "access_flags": 17,
+          "code_offset": 9222524,
+          "name": "shouldClose",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 51322,
+          "method_id_offset": 1245260,
+          "access_flags": 17,
+          "code_offset": 9222564,
+          "name": "unsetOrientation",
+          "descriptor": "()Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/z;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Lcom/tapjoy/TJAdUnit$TJAdUnitWebViewListener;"
+      ],
+      "class_def_offset": 1608428,
+      "class_access_flags": 17,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/tapjoy/z.java",
+      "source_sha256": "dede390e954d9c43377a01d9e80bcd0cbd29c28860a4bc678df94f23448f189d",
+      "methods": [
+        {
+          "method_id": 51353,
+          "method_id_offset": 1245508,
+          "access_flags": 65537,
+          "code_offset": 9224752,
+          "name": "<init>",
+          "descriptor": "(Lcom/tapjoy/TJCorePlacement;)V"
+        },
+        {
+          "method_id": 51354,
+          "method_id_offset": 1245516,
+          "access_flags": 17,
+          "code_offset": 9224780,
+          "name": "onClosed",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51355,
+          "method_id_offset": 1245524,
+          "access_flags": 17,
+          "code_offset": 9224888,
+          "name": "onContentReady",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/TJActivity;",
+      "superclass_descriptor": "Landroid/app/Activity;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnClickListener;"
+      ],
+      "class_def_offset": 1627656,
+      "class_access_flags": 1,
+      "dex": "classes12.dex",
+      "dex_sha256": "63061c6aae5ad8b5e246b3a4e38a2184468a6efabe36444cec936b2de871eaa0",
+      "source_file": "sources/com/tapjoy/TJActivity.java",
+      "source_sha256": "3cee3bc2e99b9ccd647aad8e3efd4407092a02528c0084d7ecd2222f6e305218",
+      "methods": [
+        {
+          "method_id": 49996,
+          "method_id_offset": 1245504,
+          "access_flags": 65537,
+          "code_offset": 9163636,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49997,
+          "method_id_offset": 1245512,
+          "access_flags": 4105,
+          "code_offset": 9163668,
+          "name": "a",
+          "descriptor": "(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;"
+        },
+        {
+          "method_id": 49998,
+          "method_id_offset": 1245520,
+          "access_flags": 1,
+          "code_offset": 9163688,
+          "name": "a",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 49999,
+          "method_id_offset": 1245528,
+          "access_flags": 1,
+          "code_offset": 9163708,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 50000,
+          "method_id_offset": 1245536,
+          "access_flags": 1,
+          "code_offset": 9163744,
+          "name": "onBackPressed",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50001,
+          "method_id_offset": 1245544,
+          "access_flags": 1,
+          "code_offset": 9163780,
+          "name": "onClick",
+          "descriptor": "(Landroid/view/View;)V"
+        },
+        {
+          "method_id": 50002,
+          "method_id_offset": 1245552,
+          "access_flags": 1,
+          "code_offset": 9163804,
+          "name": "onCreate",
+          "descriptor": "(Landroid/os/Bundle;)V"
+        },
+        {
+          "method_id": 50003,
+          "method_id_offset": 1245560,
+          "access_flags": 1,
+          "code_offset": 9164192,
+          "name": "setCloseButtonClickable",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 50004,
+          "method_id_offset": 1245568,
+          "access_flags": 1,
+          "code_offset": 9164220,
+          "name": "setCloseButtonVisibility",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 50005,
+          "method_id_offset": 1245576,
+          "access_flags": 1,
+          "code_offset": 9164268,
+          "name": "setProgressSpinnerVisibility",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 50006,
+          "method_id_offset": 1245584,
+          "access_flags": 1,
+          "code_offset": 9164304,
+          "name": "showErrorDialog",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/TJAdUnitActivity;",
+      "superclass_descriptor": "Lcom/tapjoy/TJActivity;",
+      "interface_descriptors": [],
+      "class_def_offset": 1627688,
+      "class_access_flags": 1,
+      "dex": "classes12.dex",
+      "dex_sha256": "63061c6aae5ad8b5e246b3a4e38a2184468a6efabe36444cec936b2de871eaa0",
+      "source_file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "source_sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460",
+      "methods": [
+        {
+          "method_id": 50020,
+          "method_id_offset": 1245696,
+          "access_flags": 65537,
+          "code_offset": 9164400,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50021,
+          "method_id_offset": 1245704,
+          "access_flags": 17,
+          "code_offset": 9164452,
+          "name": "a",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50022,
+          "method_id_offset": 1245712,
+          "access_flags": 17,
+          "code_offset": 9164480,
+          "name": "a",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 50023,
+          "method_id_offset": 1245720,
+          "access_flags": 17,
+          "code_offset": 9164604,
+          "name": "b",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50024,
+          "method_id_offset": 1245728,
+          "access_flags": 1,
+          "code_offset": 9164812,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 50025,
+          "method_id_offset": 1245736,
+          "access_flags": 1,
+          "code_offset": 9164848,
+          "name": "onClick",
+          "descriptor": "(Landroid/view/View;)V"
+        },
+        {
+          "method_id": 50026,
+          "method_id_offset": 1245744,
+          "access_flags": 1,
+          "code_offset": 9164876,
+          "name": "onConfigurationChanged",
+          "descriptor": "(Landroid/content/res/Configuration;)V"
+        },
+        {
+          "method_id": 50027,
+          "method_id_offset": 1245752,
+          "access_flags": 17,
+          "code_offset": 9164916,
+          "name": "onCreate",
+          "descriptor": "(Landroid/os/Bundle;)V"
+        },
+        {
+          "method_id": 50028,
+          "method_id_offset": 1245760,
+          "access_flags": 17,
+          "code_offset": 9165492,
+          "name": "onDestroy",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50029,
+          "method_id_offset": 1245768,
+          "access_flags": 17,
+          "code_offset": 9165536,
+          "name": "onPause",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50030,
+          "method_id_offset": 1245776,
+          "access_flags": 17,
+          "code_offset": 9165640,
+          "name": "onResume",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50031,
+          "method_id_offset": 1245784,
+          "access_flags": 17,
+          "code_offset": 9165688,
+          "name": "onStart",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50032,
+          "method_id_offset": 1245792,
+          "access_flags": 17,
+          "code_offset": 9165724,
+          "name": "onStop",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/TJAdUnit$TJAdUnitWebViewListener;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1612812,
+      "class_access_flags": 1537,
+      "dex": "classes2.dex",
+      "dex_sha256": "f1687447a452c400fcfb6a1ece247c474698eadf1709f2e92b92982e418ec3f6",
+      "source_file": "sources/com/tapjoy/TJAdUnit.java",
+      "source_sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811",
+      "methods": [
+        {
+          "method_id": 50684,
+          "method_id_offset": 1233852,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onClosed",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50685,
+          "method_id_offset": 1233860,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onContentReady",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/tapjoy/TJAdUnit;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1612844,
+      "class_access_flags": 1,
+      "dex": "classes2.dex",
+      "dex_sha256": "f1687447a452c400fcfb6a1ece247c474698eadf1709f2e92b92982e418ec3f6",
+      "source_file": "sources/com/tapjoy/TJAdUnit.java",
+      "source_sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811",
+      "methods": [
+        {
+          "method_id": 50686,
+          "method_id_offset": 1233868,
+          "access_flags": 65537,
+          "code_offset": 9211700,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50687,
+          "method_id_offset": 1233876,
+          "access_flags": 1,
+          "code_offset": 9211752,
+          "name": "closeRequested",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 50688,
+          "method_id_offset": 1233884,
+          "access_flags": 1,
+          "code_offset": 9211788,
+          "name": "destroy",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50689,
+          "method_id_offset": 1233892,
+          "access_flags": 1,
+          "code_offset": 9211916,
+          "name": "fireContentReady",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50690,
+          "method_id_offset": 1233900,
+          "access_flags": 1,
+          "code_offset": 9211948,
+          "name": "getBackgroundView",
+          "descriptor": "()Landroid/view/View;"
+        },
+        {
+          "method_id": 50691,
+          "method_id_offset": 1233908,
+          "access_flags": 1,
+          "code_offset": 9211972,
+          "name": "getCloseRequested",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 50692,
+          "method_id_offset": 1233916,
+          "access_flags": 1,
+          "code_offset": 9212000,
+          "name": "getSdkBeacon",
+          "descriptor": "()Lcom/tapjoy/internal/g0;"
+        },
+        {
+          "method_id": 50693,
+          "method_id_offset": 1233924,
+          "access_flags": 1,
+          "code_offset": 9212024,
+          "name": "getWebView",
+          "descriptor": "()Lcom/tapjoy/TJWebView;"
+        },
+        {
+          "method_id": 50694,
+          "method_id_offset": 1233932,
+          "access_flags": 1,
+          "code_offset": 9212048,
+          "name": "hasCalledLoad",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 50695,
+          "method_id_offset": 1233940,
+          "access_flags": 129,
+          "code_offset": 9212072,
+          "name": "invokeBridgeCallback",
+          "descriptor": "(Ljava/lang/String;[Ljava/lang/Object;)V"
+        },
+        {
+          "method_id": 50696,
+          "method_id_offset": 1233948,
+          "access_flags": 1,
+          "code_offset": 9212108,
+          "name": "isPrerendered",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 50697,
+          "method_id_offset": 1233956,
+          "access_flags": 1,
+          "code_offset": 9212132,
+          "name": "load",
+          "descriptor": "(Lcom/tapjoy/TJPlacementData;ZLandroid/content/Context;)V"
+        },
+        {
+          "method_id": 50698,
+          "method_id_offset": 1233964,
+          "access_flags": 1,
+          "code_offset": 9212172,
+          "name": "notifyOrientationChanged",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50699,
+          "method_id_offset": 1233972,
+          "access_flags": 1,
+          "code_offset": 9212248,
+          "name": "pause",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50700,
+          "method_id_offset": 1233980,
+          "access_flags": 1,
+          "code_offset": 9212292,
+          "name": "preload",
+          "descriptor": "(Lcom/tapjoy/TJPlacementData;Landroid/content/Context;)Z"
+        },
+        {
+          "method_id": 50701,
+          "method_id_offset": 1233988,
+          "access_flags": 1,
+          "code_offset": 9212432,
+          "name": "resetContentLoadState",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50702,
+          "method_id_offset": 1233996,
+          "access_flags": 1,
+          "code_offset": 9212464,
+          "name": "resume",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 50703,
+          "method_id_offset": 1234004,
+          "access_flags": 1,
+          "code_offset": 9212624,
+          "name": "setAdUnitActivity",
+          "descriptor": "(Lcom/tapjoy/TJAdUnitActivity;)V"
+        },
+        {
+          "method_id": 50704,
+          "method_id_offset": 1234012,
+          "access_flags": 1,
+          "code_offset": 9212648,
+          "name": "setVisible",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 50705,
+          "method_id_offset": 1234020,
+          "access_flags": 1,
+          "code_offset": 9212756,
+          "name": "setWebViewListener",
+          "descriptor": "(Lcom/tapjoy/TJAdUnit$TJAdUnitWebViewListener;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    }
+  ]
+}

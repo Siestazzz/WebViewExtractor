@@ -1,0 +1,376 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": true,
+  "host_scope": "Current base APK host-bound WebView capability surface, including actual split view, AndroidClient/Chrome, typedSDKWebView listener and JSBridge listener; not entire installation with absent splits.",
+  "settings": "Primary constructor JStrue/DOMtrue/mediaGesturefalse; JS setTextZoom exact JSONfloat*100castint through concrete delegate primary field. Split distinct TJWebView repeats constructor settings +viewporttrue and JSONnullable UA. Runtime value unknowns do not hide unresolved setter API.",
+  "bridge": "One primary AndroidJavascriptInterface injected object TJWebViewJSInterface, exactlyone JavascriptInterface dispatchMethod(String)V. Listener constructor retainedsameprimary + actual onDispatchMethod SDKcontract. Reflection fixed owner TJAdUnitJSBridge and fixed JSONObject,String shape; reachable command surface enumerated from DEX60 declaredmembers, view-mutating targets explicitly reviewed. No second splitbridge installation; original finaldelegate remainsprimary. appJSMessageHandler metadata absent baseManifest, app factory branch unreachable for currentpackage.",
+  "callbacks": "q0 primary7; retainedunit d primary8 and eChrome2 including onConsoleMessage(ConsoleMessage)Z (not assumeallcallbacksstartWebView). Sharedsplit i0 7 and f0Chrome1 conditional toolbar.show. Each actual concrete nativeinstaller has fullDEX own members reviewed, immediate nativeSDKbase contributes no app-ownedcustomoverrides. CorePlacement cachedunit additionallyz typedWebViewListener2; fresh fallbackunit hasnone. GestureDetector newr1 notassignednotinstalled, nativeUIbutton/window callbacks inventoriedbutnotinventedWebViewClient slots.",
+  "lifecycle": "Primaryconstruction/reference/attach and late lifecycle reviewed. load/reset/preload/pause/resume/visibility trigger JSqueue/network/UI, not new settings namespaces. RendererGone cleanup removes/destroys/nullfields; JSBridgecleanup/dismissSplit removes views. Keep earlier registration observations even when later destroyed. Fixedowner reflection not UnityruntimearbitraryWebSettings lookup.",
+  "sdk_hooks": "Tapjoy g.j=com.tapjoy absent private fixed9key discoverymap per existingproof. CreativeInfoManager responsei->null; resource c eventually privatea(String,WebView,String,Map,String) ALSO requires nonnulladNetworkDiscoveries.get(str) before e.a retainedresourceattachment; therefore no lateattachment receiver forTapjoy. Mraid redirecthandleri->null. BrandSafetyUtils override rettrue UIexecutor discoveryi->null before passing view; PageStarted retains address String only; DetectTouchUtils.viewOnTouch derives address String and metadata, no captured liveWebView passedlate. These exact guards close previously unreviewed metadata entry for these twohosts; Inneractive stillpartialbecauseitsmapproviderexists.",
+  "nonpositive_inventory": [
+    {
+      "method": "TapjoyUtil.scaleDisplayAd",
+      "setting": "setSupportZoom(true)",
+      "reason": "SDKglobalutility declaration has no caller in Tapjoyhost chains and no accepted currenthost argument binding; not countedpositive."
+    },
+    {
+      "method": "TJWebView(Context,AttributeSet)",
+      "reason": "Currenthosts instantiate Contextconstructor; XMLoverloadonlysuper not selected."
+    },
+    {
+      "method": "newGestureDetector(newr1())",
+      "reason": "No retained field or actualWebView listenerinstallation"
+    }
+  ],
+  "dex_proofs": [
+    "tapjoy-two-view-members-source-dex.json",
+    "tapjoy-retained-unit-members-source-dex.json",
+    "tapjoy-split-layout-dex-invocations.json"
+  ],
+  "geometry_warning": "TJSplitWebView.a(II)V had JADX geometry warning. Complete DEXinstructionwalk emits all37invoke targets: UIrotation/density/layout/outline/background only, noWebSettings/Client/Bridge/reflectiveconfiguration. No unresolved category relies on guessed omitted geometrybranch.",
+  "files": [
+    {
+      "file": "sources/com/tapjoy/TJActivity.java",
+      "sha256": "3cee3bc2e99b9ccd647aad8e3efd4407092a02528c0084d7ecd2222f6e305218",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJWebViewActivity.java",
+      "sha256": "bf2dbaedeb709f840403ee8e64c3a54fd53262281a67e109a7c2ad3b37e43fb9",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 188,
+          "text": "tJWebView.setWebViewClient(new q0(this));"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitActivity.java",
+      "sha256": "76f6b180e095ade8b8163e27b651836f2e16b93d5f09379e2826a96c3316b460",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnit.java",
+      "sha256": "041944fd1850bdb36ca0e913e049e9d127d222e8a4940968d4784ce409db5811",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/c.java",
+      "sha256": "7e3de98a87faf9b582db458db5531862f372ef1779e75f004b4eeccaabba86af",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 43,
+          "text": "tJWebView.setWebViewClient(tJAdUnit.f119805l);"
+        },
+        {
+          "line": 44,
+          "text": "tJAdUnit.f119800e.setWebChromeClient(tJAdUnit.m);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/d.java",
+      "sha256": "6cf7a6aed92aa0a2f4173140cfb3b2188de1a448d6cb034a493abc40d2cf6dcc",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/e.java",
+      "sha256": "c4e9b1abf423b5b03aed0bce0b2bff3bcbc9a667f61a6c671e4cd121f3d43da7",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/f.java",
+      "sha256": "d74db28a99a18b0fa8bc8eec24ea6161da8c7737d3914b49e6679d8ca02d154d",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 21,
+          "text": "if (tJWebView == null || tJWebView.getSettings() == null) {"
+        },
+        {
+          "line": 24,
+          "text": "this.f120032a.onComplete(Float.valueOf(this.f120033b.f120301a.f119800e.getSettings().getTextZoom() / 100.0f));"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/g.java",
+      "sha256": "c34f2bbeceaa324cb7610c2c0744e5f798c54ba82e6b1ac9f50b41dea230dc4b",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 20,
+          "text": "if (tJWebView == null || tJWebView.getSettings() == null) {"
+        },
+        {
+          "line": 23,
+          "text": "this.f120036b.f120301a.f119800e.getSettings().setTextZoom((int) (this.f120035a * 100.0f));"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/h.java",
+      "sha256": "65106c046cd1a9d7603f3f9968547829794918eafb9e7d34bd34ca7facf08e03",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/i.java",
+      "sha256": "159f5c3f7d8be0422f6561ec82283a2e7f4e6ccfb03112d191a12c8981e1c6bb",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/j.java",
+      "sha256": "33831a168e4a2986c48ef2ff1fa83e6fc681022c8b44de20ca0ce358acb955b9",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/k.java",
+      "sha256": "5f1d05b79c6a68e053599c2ba8f2f35ac42496fec8c465c09949794d5d6b3a27",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/l.java",
+      "sha256": "7b492489872ac528714b35323e9c91866b96e5df5e8b98f789598963fa7b96bf",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJCorePlacement.java",
+      "sha256": "f58225cef77b154ef88315804436841bcee6b12d99f7bf7f64625f16570a8058",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJPlacementManager.java",
+      "sha256": "57a5f3a6ad790976f85033dd6b74b4df9e5da48082cfe2e814d5c458dad06913",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/z.java",
+      "sha256": "dede390e954d9c43377a01d9e80bcd0cbd29c28860a4bc678df94f23448f189d",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJWebView.java",
+      "sha256": "a972ee96b509766ddb380461868b85c3f6311c4b968756cf8db53e3c78430093",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 22,
+          "text": "if (getSettings() != null) {"
+        },
+        {
+          "line": 23,
+          "text": "getSettings().setJavaScriptEnabled(true);"
+        },
+        {
+          "line": 24,
+          "text": "getSettings().setDomStorageEnabled(true);"
+        },
+        {
+          "line": 25,
+          "text": "getSettings().setMediaPlaybackRequiresUserGesture(false);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitJSBridge.java",
+      "sha256": "65cc3e37d781a36ebeff709428cd5f0354361a7cb5ddbf2c72ae1247591875b1",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 77,
+          "text": "webView.addJavascriptInterface(tJWebViewJSInterface, TJAdUnitConstants.JAVASCRIPT_INTERFACE_ID);"
+        },
+        {
+          "line": 84,
+          "text": "f119810g = Class.forName(bundle.getString(\"appJSMessageHandler\")).newInstance();"
+        },
+        {
+          "line": 441,
+          "text": "Method method = TJAdUnitJSBridge.class.getMethod(str, JSONObject.class, String.class);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/TJJSBridgeDelegate.java",
+      "sha256": "4724bf33448dcdb7c330d09fc37478e2b09bb0c321c71e9c2ead453ac33dbbe7",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJWebViewJSInterface.java",
+      "sha256": "bb283c864e369289fc33ecf69cfc5ca907e70f58bfa2502852ed98e6a4786974",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJWebViewJSInterfaceListener.java",
+      "sha256": "20dcf37bc2cd0a18e53718d9a56e466c56a2c37a4c8326800da54a30150729b6",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TJSplitWebView.java",
+      "sha256": "d462ddabc8791779f212f063e01dfdfb7930cc2984dc68cf1e6e2b25f3f3ffc3",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 302,
+          "text": "this.f119924a.getSettings().setUseWideViewPort(true);"
+        },
+        {
+          "line": 303,
+          "text": "this.f119924a.setWebViewClient(new i0(this));"
+        },
+        {
+          "line": 433,
+          "text": "tJSplitWebView.f119924a.setWebChromeClient(new f0(tJSplitWebView));"
+        },
+        {
+          "line": 560,
+          "text": "this.f119924a.getSettings().setUserAgentString(str);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/q0.java",
+      "sha256": "00281dba22f7eb5e0ebbfec8cfffb3b648150aee9262a650a94721934e1a4cbb",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/i0.java",
+      "sha256": "4d86c05c1da3739ce76641ffc55db23e00645eed7ec7330770c352e45bd15392",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/f0.java",
+      "sha256": "4838c84c99ed6bb811266c0aa4242627819dc409f8570181c48425b1688d9ca0",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/p0.java",
+      "sha256": "55e2d527d45c407f08ae69db0212c936340a24a3025161a73f99407df6019f5d",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 21,
+          "text": "if (this.f120321b.getWebView() == null || this.f120321b.getWebView().getSettings() == null) {"
+        },
+        {
+          "line": 24,
+          "text": "this.f120321b.getWebView().getSettings().setTextZoom((int) (this.f120320a * 100.0f));"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/o0.java",
+      "sha256": "02f7f570c26c65caf03443b0ef122f714b0b802fc144436e23994b09a8b6b221",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 22,
+          "text": "if (this.f120317b.getWebView() == null || this.f120317b.getWebView().getSettings() == null) {"
+        },
+        {
+          "line": 25,
+          "text": "this.f120316a.onComplete(Float.valueOf(this.f120317b.getWebView().getSettings().getTextZoom() / 100.0f));"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/l0.java",
+      "sha256": "007b86b65f024a05286558932d65c22c82229cf49953cb8471c03752110f2de6",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/m0.java",
+      "sha256": "c9fa81ef845d029db8659f6a8db648a71f12f2639f653ccebb6886738de9f9bb",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/n0.java",
+      "sha256": "5d165eebc1f4761def7cf4e85a8119d707325b1802151318372571d0af7fda6f",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/k0.java",
+      "sha256": "09bfd9a41438069e1ab7f2c9e9b5d166ddce185a184b11198bb6eb0a47790039",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/v.java",
+      "sha256": "df17af64bab85efbc48d97d98de0972561f6e4793becd674b17c78ba04ba561e",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/r0.java",
+      "sha256": "5cadc87feb7b2fa5b24ef06aebacb26dc838cbda839286e5980f57ce5759d1cc",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/u.java",
+      "sha256": "0c74138b38efb1c26e414dac9621dd7ba45decc01a785ca7999fbfaaea5ed690",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/m.java",
+      "sha256": "c30162812706150394c714ac7a4b83bc997eea8119ae5e0ae1352832dbfc2f81",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/n.java",
+      "sha256": "062bf0d4b91c711bb82fd1cc48dc83220d703c136e60c5c0e31d983778623f2b",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/o.java",
+      "sha256": "729c052ac27e17b4b05d427d8af04e3c6f6d9be53a4898ab135a6e70aa950742",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/p.java",
+      "sha256": "4301e02d34a9980287880048deaad0e0aac3fa2a4223202ea2dd4c11ee5114a1",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/q.java",
+      "sha256": "28682e2f3c371073bf6dca72749353b9f94620a6df6a843a0c62240bf40baf7d",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/s.java",
+      "sha256": "fa5f9ad5028c2fcb130633e95790b4c7c0a74027e61b648b0cd5ac7d8fcd80e8",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/t.java",
+      "sha256": "31d975db8c786dc0f4cbf40029ebfcd4d94cc3885a44bc99cf2b806eb26c5bf7",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/tapjoy/TapjoyUtil.java",
+      "sha256": "32f94dec7ad8ef4b48f6d1788e6292780ca0f3f87040cf9b3e6f78fa44121f0c",
+      "sdk_capability_entry_lines": [
+        {
+          "line": 249,
+          "text": "webView.getSettings().setSupportZoom(true);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/tapjoy/TJAdUnitConstants.java",
+      "sha256": "09a1de599ff5535fbc2903811f8184665c3be99eede90940b0836dabb89055d9",
+      "sdk_capability_entry_lines": []
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/BrandSafetyUtils.java",
+      "sha256": "c328dec72aaf154fbc1b6fd0b614db3cd5ebe770325aff84ebd252de7a1d95fb"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/DetectTouchUtils.java",
+      "sha256": "8c99e19f2c123d1c85d4c960a33bf3da5f88f9805ab83ae495003776342d4100"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+      "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+    }
+  ],
+  "supporting_existing_proof": "safedk-fixed-discovery-provider-source-proof.json",
+  "boundary": [
+    "All164Manifest hosts remain globallyunresolved exceptindividualaudits. Sourcepositive18 not exhaustiveinventory/30gate.",
+    "SDK_unit_retained_webview stilloneactualhost; do not merge withdirectstructure to fakegroup2.",
+    "Runtime commandavailability and serverJSON values retainedasconditions, no guessedUAtext/textzoomnumber."
+  ]
+}

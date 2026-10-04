@@ -23,7 +23,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
 
 ## 当前状态
 
-最近完成十 App 实测的版本为 generic v11；四个新增样本使用补丁版。十个进程正常结束（约 40～591 秒），新闻补回 4 条回调，但芒果性能退化、携程丢失部分设置/回调命中，严格验收仍为 0/10。v12 正在复测边界修复及相关性收紧，尚不计为效果提升。详见 [v11 结果](docs/validation/GENERIC_V11.md) 和 [严格验收口径](docs/validation/acceptance/README.md)。
+最近完成十 App 实测的版本为 generic v12；四个新增样本使用补丁版。十个进程正常结束（约 40～589 秒），芒果从 v11 的约 588 秒恢复到约 147 秒，三类能力命中数与 v11 相同；携程此前丢失的 15 条事实仍未恢复，严格验收为 0/10。详见 [v12 结果](docs/validation/GENERIC_V12.md) 和 [严格验收口径](docs/validation/acceptance/README.md)。
 
 APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。文档里的 `test/runs/...` 是本地实验产物；克隆后需自行构建并提供 APK。
 

@@ -1,6 +1,6 @@
 # Activity capability analysis
 
-Latest measured implementation: generic v11 on the resumable scheduler. See [measured iteration](validation/GENERIC_V11.md) for ten-App results and limits. v11 gains four News callbacks but regresses Mango performance and some Ctrip matches; strict acceptance remains 0/10. Start with [USAGE](../USAGE.md) for commands,
+Latest measured implementation: generic v12 on the resumable scheduler. See [measured iteration](validation/GENERIC_V12.md) for ten-App results and limits. v12 recovers Mango performance with unchanged v11 fact matches; Ctrip regressions remain unresolved and strict acceptance remains 0/10. Start with [USAGE](../USAGE.md) for commands,
 [core design](../CORE_IDEA.md) for the current/legacy distinction, and the
 [validation index](validation/README.md) for measured results. This document describes
 capability semantics, not an acceptance claim.

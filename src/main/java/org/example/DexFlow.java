@@ -157,7 +157,7 @@ final class DexFlow {
                 else if(!target.getReturnType().equals("V")){
                     String resultKind=CapabilityIndex.fragmentFactory(targetKey)?"return_fragment_factory:"+at:target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-super")?"return_super":op.startsWith("invoke-direct")?"return_direct":"return";
                     if(metadataConsumer&&ManifestProtocols.pure(idx,targetKey)){
-                        V raw=new V("return_manifest_native:"+at,CapabilityIndex.cls(target.getReturnType()),targetKey,null,List.copyOf(args));
+                        V raw=new V((op.startsWith("invoke-super")?"return_manifest_native_super:":"return_manifest_native:")+at,CapabilityIndex.cls(target.getReturnType()),targetKey,null,List.copyOf(args));
                         V resolved=resolver.apply(raw);s.put(-1,resolved.equals(UNKNOWN)?raw:resolved);
                     }else s.put(-1,expr(resultKind,CapabilityIndex.cls(target.getReturnType()),targetKey,args));
                 }

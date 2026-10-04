@@ -1,0 +1,1186 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "audit_mode": "source-first real-vs-synthetic structure comparison after parent-confirmed terminal v11; frozen oracle unchanged",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "real_chain": [
+    "Manifest TNApplication -> ctor literal delegate class name",
+    "RFixProxyApplication.attachBaseContext -> Class.forName(name,true,classloader).newInstance -> helper ShareReflectUtil.findMethod(delegate,attach,Context[]).invoke(delegate,Context[])",
+    "actual delegate system.Application extends BaseApplication; hidden Android Application.attach to virtual attachBaseContext edge not independently audited here",
+    "BaseApplication.attachBaseContext -> Services.init(false)",
+    "utils.g.init -> literal Loader.class.getMethod(init,emptyClassArray)",
+    "pandora wrapper sets Method accessible -> Method.invoke(null,emptyObjectArray)",
+    "Loader.init -> module RouterEntry.init -> generated registry initializer",
+    "static ConcurrentHashMap outer[class.getName] -> custom ConcurrentHashMap subclass inner[_default_impl_] -> APIMeta",
+    "Meta-selected default creator -> selected class constructor -> singleton cache -> concrete service/product -> actual player container attach"
+  ],
+  "probe_omissions": [
+    {
+      "shape": "Application/proxy startup and cross-entry static registry state",
+      "status": "source confirmed; proxy hidden framework attach bridge not closed",
+      "old_probe": "registration directly in Activity onCreate; instance HashMap table"
+    },
+    {
+      "shape": "ordinary static Method.invoke with side-effect registration through a wrapper",
+      "status": "source and new minimal differential reproduced",
+      "old_probe": "direct ordinary register call"
+    },
+    {
+      "shape": "static ConcurrentHashMap outer plus custom inner putWithCheck calling inherited virtual put",
+      "status": "source confirmed; not yet independently isolated in new probe",
+      "old_probe": "plain instance HashMap outer/inner, direct put"
+    },
+    {
+      "shape": "many facade wrappers/null-default branches/synchronized singleton cache",
+      "status": "source confirmed; partly simplified in both probes",
+      "old_probe": "one Registry.get and simple cache guard"
+    }
+  ],
+  "new_probe": {
+    "source": "src/test/java/org/example/ServiceStartupRegistrationProbe.java",
+    "source_sha256": "f41df9f3fd9b587ad6127562eec46ae4e77655920206739a0a6670bafb88f609",
+    "runner": "test/run-service-startup-probe.sh",
+    "result_file": "test/runs/news-startup-probe-v11/results.json",
+    "result_sha256": "083353017d9d11c85fce17da588aa668862ce2f575b8142a65380d59b47e7ade",
+    "jar_sha256": "63d636f46a8e913653406c30a877c09ef8027145bf2d624612d44428f1e16238",
+    "cases": {
+      "direct/direct": {
+        "facts_by_kind": {
+          "bridge": 2,
+          "setting": 2,
+          "callback": 2
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:02143c8f-1120-3ba9-992f-cb5bf8ad42f7, capability_indices={bridge=[0], callback=[2], setting=[4]}}, {type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, capability_indices={bridge=[1], callback=[3], setting=[5]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": true,
+        "verdict": "matched"
+      },
+      "direct/reflect": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": true,
+        "verdict": "matched"
+      },
+      "direct/reflect-noinvoke": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": false,
+        "verdict": "wrong"
+      },
+      "direct/application-direct": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Application attach exists but harness does not explicitly seed its lifecycle",
+        "all_categories_present": true,
+        "expected_source_positive": null,
+        "verdict": "unseeded_harness_unresolved"
+      },
+      "direct/application-reflect": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:a4ea0a9d-db8d-3d40-a91c-452383a23d41, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Application attach exists but harness does not explicitly seed its lifecycle",
+        "all_categories_present": true,
+        "expected_source_positive": null,
+        "verdict": "unseeded_harness_unresolved"
+      },
+      "classconstant/direct": {
+        "facts_by_kind": {
+          "bridge": 2,
+          "setting": 2,
+          "callback": 2
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:406efc8a-b2b5-362c-ba39-dbd3a776a32e, capability_indices={bridge=[0], callback=[2], setting=[4]}}, {type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, capability_indices={bridge=[1], callback=[3], setting=[5]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": true,
+        "verdict": "matched"
+      },
+      "classconstant/reflect": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": true,
+        "verdict": "matched"
+      },
+      "classconstant/reflect-noinvoke": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": false,
+        "verdict": "wrong"
+      },
+      "classconstant/application-direct": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Application attach exists but harness does not explicitly seed its lifecycle",
+        "all_categories_present": true,
+        "expected_source_positive": null,
+        "verdict": "unseeded_harness_unresolved"
+      },
+      "classconstant/application-reflect": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=explicit, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:e9449c6d-f3e0-37ac-9bac-5c270bf5eced, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+        "harness_scope": "Application attach exists but harness does not explicitly seed its lifecycle",
+        "all_categories_present": true,
+        "expected_source_positive": null,
+        "verdict": "unseeded_harness_unresolved"
+      },
+      "array/direct": {
+        "facts_by_kind": {
+          "bridge": 1,
+          "setting": 1,
+          "callback": 1
+        },
+        "raw_report": "[{activity=probe.Activity, declared=true, facts=[{activity=probe.Activity, kind=bridge, name=addJavascriptInterface, site=Lprobe/Bridge;->bind()V@4, api=Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, Lprobe/Bridge;->bind()V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577, literal=null, args=[]], V[kind=object, type=probe.Bridge, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@23|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577, literal=null, args=[]], V[kind=literal, type=java.lang.String, id=genericBridge, literal=genericBridge, args=[]]], registration_name=genericBridge, implementation=probe.Bridge, members=[{display=probe.Bridge.invoke(Ljava/lang/String;):V, signature=Lprobe/Bridge;->invoke(Ljava/lang/String;)V, annotated=true}]}, {activity=probe.Activity, kind=callback, name=setWebViewClient, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@20, api=Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577, literal=null, args=[]], V[kind=object, type=probe.Client, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@15|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577, literal=null, args=[]]], implementation=probe.Client, members=[{display=probe.Client.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V, name=onPageFinished, signature=Lprobe/Client;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V}]}, {activity=probe.Activity, kind=setting, name=setJavaScriptEnabled, site=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@12, api=Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V, webview={type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577}, binding_status=candidate, conditional=false, evidence=[probe.Activity, Lprobe/Activity;->onCreate()V, Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V], arguments=[V[kind=settings, type=android.webkit.WebSettings, id=settings, literal=null, args=[V[kind=object, type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577, literal=null, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], values=[true], value=true}], webviews=[{type=android.webkit.WebView, id=Lprobe/Player;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V@0|Lprobe/Implementation;->create()Lprobe/Product;@0|union:57ca0b63-fab1-3972-8162-b57f36db1577, capability_indices={bridge=[0], callback=[1], setting=[2]}}], limitations=[reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V, unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]}]",
+        "diagnostics": "[probe.Activity:reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": true,
+        "expected_source_positive": true,
+        "verdict": "matched"
+      },
+      "array/reflect": {
+        "facts_by_kind": {
+          "bridge": 0,
+          "setting": 0,
+          "callback": 0
+        },
+        "raw_report": "[]",
+        "diagnostics": "[probe.Activity:reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": false,
+        "expected_source_positive": true,
+        "verdict": "missing"
+      },
+      "array/reflect-noinvoke": {
+        "facts_by_kind": {
+          "bridge": 0,
+          "setting": 0,
+          "callback": 0
+        },
+        "raw_report": "[]",
+        "diagnostics": "[probe.Activity:reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+        "harness_scope": "Activity explicitly invokes startup",
+        "all_categories_present": false,
+        "expected_source_positive": false,
+        "verdict": "correct_negative"
+      },
+      "array/application-direct": {
+        "facts_by_kind": {
+          "bridge": 0,
+          "setting": 0,
+          "callback": 0
+        },
+        "raw_report": "[]",
+        "diagnostics": "[probe.Activity:reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+        "harness_scope": "Application attach exists but harness does not explicitly seed its lifecycle",
+        "all_categories_present": false,
+        "expected_source_positive": null,
+        "verdict": "unseeded_harness_unresolved"
+      },
+      "array/application-reflect": {
+        "facts_by_kind": {
+          "bridge": 0,
+          "setting": 0,
+          "callback": 0
+        },
+        "raw_report": "[]",
+        "diagnostics": "[probe.Activity:reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+        "harness_scope": "Application attach exists but harness does not explicitly seed its lifecycle",
+        "all_categories_present": false,
+        "expected_source_positive": null,
+        "verdict": "unseeded_harness_unresolved"
+      }
+    },
+    "isolated_observation": "array/direct retains three capability categories; array/reflect loses all, when only startup changes from direct GeneratedLoader.init to Class.getMethod + wrapper Method.invoke(null,emptyarray).",
+    "interpretation_limit": "Concrete service Class from Meta depends on startup state. Constant-Class creator can yield capability even without a proven registration path; those cases do not establish reflected startup execution. Application-only cases are unseeded in this direct Activity harness, so cannot by themselves prove complete APK Application lifecycle behavior. Counts include duplicate receiver alternatives; no capability-precision pass is claimed.",
+    "negative_case": "array/reflect-noinvoke selects same Method but never calls Method.invoke; stays 0/0/0. Preserve this negative when adding ordinary static reflective side effects."
+  },
+  "minimum_generic_boundary": [
+    "Resolve actual selected public static method and invoke it for ordinary side effects with actual target/argument binding and wrapper propagation. Do not require a JavascriptInterface/transport annotation for an initialization method.",
+    "Preserve static registry writes from actual framework startup across subsequent Activity entry analysis; never create Activity ownership merely because a registration method exists elsewhere.",
+    "Retain actual Meta/Class selection, null/missing-key negatives and ordinary constructor object identity; no App service names or compatible-class enumeration."
+  ],
+  "source_evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/resources/AndroidManifest.xml",
+      "source_sha256": "8cb3b63e6926a0c3da7339e3d411865d4674a52ff8e1d65136374bcd8cf1f29f",
+      "locations": [
+        {
+          "line": 204,
+          "quote": "<application"
+        },
+        {
+          "line": 205,
+          "quote": "android:theme=\"@style/NoShade\""
+        },
+        {
+          "line": 206,
+          "quote": "android:label=\"@string/app_name\""
+        },
+        {
+          "line": 207,
+          "quote": "android:icon=\"@mipmap/icon\""
+        },
+        {
+          "line": 208,
+          "quote": "android:name=\"com.tencent.news.system.TNApplication\""
+        },
+        {
+          "line": 209,
+          "quote": "android:allowBackup=\"false\""
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/system/TNApplication.java",
+      "source_sha256": "88f71b7440ab58b22c11a89c717ce925f30fa8ced5957511ffe6c9de3740e36c",
+      "locations": [
+        {
+          "line": 8,
+          "quote": "public class TNApplication extends RFixProxyApplication {"
+        },
+        {
+          "line": 9,
+          "quote": "public TNApplication() {"
+        },
+        {
+          "line": 10,
+          "quote": "super(\"com.tencent.news.system.Application\", null);"
+        },
+        {
+          "line": 11,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(127, (short) 1);"
+        },
+        {
+          "line": 12,
+          "quote": "if (redirector != null) {"
+        },
+        {
+          "line": 13,
+          "quote": "redirector.redirect((short) 1, (Object) this);"
+        },
+        {
+          "line": 14,
+          "quote": "}"
+        },
+        {
+          "line": 15,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/rfix/loader/app/RFixProxyApplication.java",
+      "source_sha256": "1b7c27a9779d91a7d233b4c076dc55eea6b7cc624aa3c5227e5393dcae29884f",
+      "locations": [
+        {
+          "line": 52,
+          "quote": "private void invokeMethod(Object obj, String str, Class<?>[] clsArr, Object[] objArr) throws Exception {"
+        },
+        {
+          "line": 53,
+          "quote": "ShareReflectUtil.findMethod(obj, str, clsArr).invoke(obj, objArr);"
+        },
+        {
+          "line": 54,
+          "quote": "}"
+        },
+        {
+          "line": 97,
+          "quote": "@Override // com.tencent.tinker.loader.app.TinkerApplication, android.content.ContextWrapper"
+        },
+        {
+          "line": 98,
+          "quote": "public void attachBaseContext(Context context) {"
+        },
+        {
+          "line": 99,
+          "quote": "super.attachBaseContext(context);"
+        },
+        {
+          "line": 100,
+          "quote": "this.interceptPackageName = true;"
+        },
+        {
+          "line": 101,
+          "quote": "initDelegateApplication(context);"
+        },
+        {
+          "line": 102,
+          "quote": "revertBackupCallbacks();"
+        },
+        {
+          "line": 103,
+          "quote": "}"
+        },
+        {
+          "line": 126,
+          "quote": "public void initDelegateApplication(Context context) {"
+        },
+        {
+          "line": 127,
+          "quote": "long elapsedRealtime = SystemClock.elapsedRealtime();"
+        },
+        {
+          "line": 128,
+          "quote": "try {"
+        },
+        {
+          "line": 129,
+          "quote": "Application application = (Application) Class.forName(this.delegateClassName, true, this.mCurrentClassLoader).newInstance();"
+        },
+        {
+          "line": 130,
+          "quote": "invokeMethod(application, \"attach\", new Class[]{Context.class}, new Object[]{context});"
+        },
+        {
+          "line": 131,
+          "quote": "Object newInstance = Class.forName(CLASS_INLINE_FENCE, false, this.mCurrentClassLoader).getConstructor(Application.class).newInstance(application);"
+        },
+        {
+          "line": 132,
+          "quote": "this.delegateApplication = application;"
+        },
+        {
+          "line": 133,
+          "quote": "this.applicationInlineFence = (Handler) newInstance;"
+        },
+        {
+          "line": 134,
+          "quote": "RFixLog.i(TAG, \"initDelegateApplication time cost: \" + (SystemClock.elapsedRealtime() - elapsedRealtime));"
+        },
+        {
+          "line": 135,
+          "quote": "} catch (Throwable th) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/system/Application.java",
+      "source_sha256": "2863bd738c21cf2aeda021ad71bb27eca294dcbf53fb955be1355d9fdaa11281",
+      "locations": [
+        {
+          "line": 9,
+          "quote": "public final class Application extends BaseApplication {"
+        },
+        {
+          "line": 10,
+          "quote": "public Application() {"
+        },
+        {
+          "line": 11,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(119, (short) 1);"
+        },
+        {
+          "line": 12,
+          "quote": "if (redirector != null) {"
+        },
+        {
+          "line": 13,
+          "quote": "redirector.redirect((short) 1, (Object) this);"
+        },
+        {
+          "line": 14,
+          "quote": "}"
+        },
+        {
+          "line": 15,
+          "quote": "}"
+        },
+        {
+          "line": 16,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/system/BaseApplication.java",
+      "source_sha256": "72560c8a0c7426e24af4c73f017a932836d58a03b5602738b49e49ac095e8cea",
+      "locations": [
+        {
+          "line": 285,
+          "quote": "public void attachBaseContext(Context context) {"
+        },
+        {
+          "line": 286,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(13183, (short) 2);"
+        },
+        {
+          "line": 287,
+          "quote": "if (redirector != null) {"
+        },
+        {
+          "line": 288,
+          "quote": "redirector.redirect((short) 2, (Object) this, (Object) context);"
+        },
+        {
+          "line": 289,
+          "quote": "return;"
+        },
+        {
+          "line": 290,
+          "quote": "}"
+        },
+        {
+          "line": 291,
+          "quote": "com.tencent.news.utils.b.m149504(this);"
+        },
+        {
+          "line": 292,
+          "quote": "g0.f99562.m122006(this, com.tencent.news.utils.status.a.m151321(), com.tencent.news.utils.status.a.m151308(context));"
+        },
+        {
+          "line": 293,
+          "quote": "attachPluginContext(context);"
+        },
+        {
+          "line": 294,
+          "quote": "r.m124531(this);"
+        },
+        {
+          "line": 295,
+          "quote": "RheaTrace3.init(context);"
+        },
+        {
+          "line": 296,
+          "quote": "Services.init(false);"
+        },
+        {
+          "line": 297,
+          "quote": "com.tencent.news.pmonitor.m.m112675(this);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/qnrouter/service/Services.java",
+      "source_sha256": "8bdd9d53d86a68c7855fd46ce6cf81392dd142b5c0d1812527872ca7d773ec5c",
+      "locations": [
+        {
+          "line": 34,
+          "quote": "public static final <T> T call(@NotNull Class<T> clazz) {"
+        },
+        {
+          "line": 35,
+          "quote": "u.m173002(clazz, \"clazz\");"
+        },
+        {
+          "line": 36,
+          "quote": "T t = (T) get(clazz, \"_default_impl_\", (APICreator) null);"
+        },
+        {
+          "line": 37,
+          "quote": "u.m172997(t);"
+        },
+        {
+          "line": 38,
+          "quote": "return t;"
+        },
+        {
+          "line": 39,
+          "quote": "}"
+        },
+        {
+          "line": 73,
+          "quote": "return getMayNull(cls, str, obj, lVar);"
+        },
+        {
+          "line": 74,
+          "quote": "}"
+        },
+        {
+          "line": 75,
+          "quote": ""
+        },
+        {
+          "line": 76,
+          "quote": "@JvmStatic"
+        },
+        {
+          "line": 185,
+          "quote": "/* renamed from: \u02bb, reason: contains not printable characters */"
+        },
+        {
+          "line": 186,
+          "quote": "public final Object m118064(APIMeta apiMeta, APICreator creator) {"
+        },
+        {
+          "line": 187,
+          "quote": "if (creator == null) {"
+        },
+        {
+          "line": 188,
+          "quote": "creator = apiMeta.getCreator();"
+        },
+        {
+          "line": 189,
+          "quote": "}"
+        },
+        {
+          "line": 190,
+          "quote": "if (creator != null) {"
+        },
+        {
+          "line": 191,
+          "quote": "try {"
+        },
+        {
+          "line": 192,
+          "quote": "return creator.create(apiMeta.getImplClazz());"
+        },
+        {
+          "line": 193,
+          "quote": "} catch (Exception e) {"
+        },
+        {
+          "line": 194,
+          "quote": "e.printStackTrace();"
+        },
+        {
+          "line": 195,
+          "quote": "}"
+        },
+        {
+          "line": 196,
+          "quote": "}"
+        },
+        {
+          "line": 197,
+          "quote": "return null;"
+        },
+        {
+          "line": 198,
+          "quote": "}"
+        },
+        {
+          "line": 199,
+          "quote": ""
+        },
+        {
+          "line": 200,
+          "quote": "/* renamed from: \u02bc, reason: contains not printable characters */"
+        },
+        {
+          "line": 201,
+          "quote": "public final Object m118065(Map apiMetas, String serviceName, String implName, APICreator creator) {"
+        },
+        {
+          "line": 202,
+          "quote": "Object m118064;"
+        },
+        {
+          "line": 203,
+          "quote": "APIMeta aPIMeta = (implName == null || implName.length() == 0) ? (APIMeta) apiMetas.get(\"_default_impl_\") : (APIMeta) apiMetas.get(implName);"
+        },
+        {
+          "line": 204,
+          "quote": "if (aPIMeta == null) {"
+        },
+        {
+          "line": 205,
+          "quote": "m118068(serviceName, implName);"
+        },
+        {
+          "line": 206,
+          "quote": "return null;"
+        },
+        {
+          "line": 207,
+          "quote": "}"
+        },
+        {
+          "line": 208,
+          "quote": "if (aPIMeta.isSingleton()) {"
+        },
+        {
+          "line": 209,
+          "quote": "m118064 = aPIMeta.m118061();"
+        },
+        {
+          "line": 210,
+          "quote": "if (m118064 == null) {"
+        },
+        {
+          "line": 211,
+          "quote": "synchronized (aPIMeta) {"
+        },
+        {
+          "line": 212,
+          "quote": "try {"
+        },
+        {
+          "line": 213,
+          "quote": "m118064 = aPIMeta.m118061();"
+        },
+        {
+          "line": 214,
+          "quote": "if (m118064 == null) {"
+        },
+        {
+          "line": 215,
+          "quote": "Object m1180642 = INSTANCE.m118064(aPIMeta, creator);"
+        },
+        {
+          "line": 216,
+          "quote": "aPIMeta.m118060(m1180642);"
+        },
+        {
+          "line": 217,
+          "quote": "m118064 = m1180642;"
+        },
+        {
+          "line": 218,
+          "quote": "}"
+        },
+        {
+          "line": 219,
+          "quote": "w wVar = w.f139344;"
+        },
+        {
+          "line": 220,
+          "quote": "} catch (Throwable th) {"
+        },
+        {
+          "line": 221,
+          "quote": "throw th;"
+        },
+        {
+          "line": 222,
+          "quote": "}"
+        },
+        {
+          "line": 223,
+          "quote": "}"
+        },
+        {
+          "line": 224,
+          "quote": "}"
+        },
+        {
+          "line": 225,
+          "quote": "} else {"
+        },
+        {
+          "line": 226,
+          "quote": "m118064 = m118064(aPIMeta, creator);"
+        },
+        {
+          "line": 227,
+          "quote": "}"
+        },
+        {
+          "line": 228,
+          "quote": "if (m118064 == null) {"
+        },
+        {
+          "line": 229,
+          "quote": "m118068(serviceName, implName);"
+        },
+        {
+          "line": 230,
+          "quote": "}"
+        },
+        {
+          "line": 231,
+          "quote": "return m118064;"
+        },
+        {
+          "line": 232,
+          "quote": "}"
+        },
+        {
+          "line": 233,
+          "quote": ""
+        },
+        {
+          "line": 234,
+          "quote": "/* renamed from: \u02bd, reason: contains not printable characters */"
+        },
+        {
+          "line": 235,
+          "quote": "public final Object m118066(String serviceName, String implName, APICreator creator) {"
+        },
+        {
+          "line": 236,
+          "quote": "Map<String, APIMeta> map = ServiceMap.get(serviceName);"
+        },
+        {
+          "line": 237,
+          "quote": "if (map != null) {"
+        },
+        {
+          "line": 319,
+          "quote": "return t;"
+        },
+        {
+          "line": 320,
+          "quote": "}"
+        },
+        {
+          "line": 321,
+          "quote": ""
+        },
+        {
+          "line": 322,
+          "quote": "@JvmStatic"
+        },
+        {
+          "line": 323,
+          "quote": "@Nullable"
+        },
+        {
+          "line": 324,
+          "quote": "public static final <T> T get(@NotNull String name, @Nullable String implName, @Nullable APICreator creator) {"
+        },
+        {
+          "line": 325,
+          "quote": "u.m173002(name, \"name\");"
+        },
+        {
+          "line": 369,
+          "quote": "public static final <T> T get(@NotNull Class<T> clazz, @Nullable String implName, @Nullable APICreator creator) {"
+        },
+        {
+          "line": 370,
+          "quote": "u.m173002(clazz, \"clazz\");"
+        },
+        {
+          "line": 371,
+          "quote": "String name = clazz.getName();"
+        },
+        {
+          "line": 372,
+          "quote": "u.m173000(name, \"getName(...)\");"
+        },
+        {
+          "line": 373,
+          "quote": "return (T) get(name, implName, creator);"
+        },
+        {
+          "line": 374,
+          "quote": "}"
+        },
+        {
+          "line": 375,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/qnrouter/utils/g.java",
+      "source_sha256": "07ccff82475feabda878b0a612724152d6d1c52e9851f1deaa03bcf927b85219",
+      "locations": [
+        {
+          "line": 15,
+          "quote": "public static void m118107(boolean z) {"
+        },
+        {
+          "line": 16,
+          "quote": "f95528 = z;"
+        },
+        {
+          "line": 17,
+          "quote": "try {"
+        },
+        {
+          "line": 18,
+          "quote": "y.m160944(Loader.class.getMethod(\"init\", new Class[0]), null, new Object[0]);"
+        },
+        {
+          "line": 19,
+          "quote": "} catch (Exception e) {"
+        },
+        {
+          "line": 20,
+          "quote": "e.printStackTrace();"
+        },
+        {
+          "line": 21,
+          "quote": "if (f95528) {"
+        },
+        {
+          "line": 22,
+          "quote": "throw new RuntimeException(e);"
+        },
+        {
+          "line": 23,
+          "quote": "}"
+        },
+        {
+          "line": 24,
+          "quote": "}"
+        },
+        {
+          "line": 25,
+          "quote": "}"
+        },
+        {
+          "line": 26,
+          "quote": ""
+        },
+        {
+          "line": 27,
+          "quote": "/* renamed from: \u02bc, reason: contains not printable characters */"
+        },
+        {
+          "line": 28,
+          "quote": "public static void m118108(String str) {"
+        },
+        {
+          "line": 29,
+          "quote": "y.m160944(Class.forName((\"com.tencent.news.\" + m118110(str)) + \".RouterEntry\").getMethod(\"init\", new Class[0]), null, new Object[0]);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qmethod/pandoraex/monitor/y.java",
+      "source_sha256": "768591e129cf323a0985f22e70174c839381ae1362530c14f18c229e3effbd92",
+      "locations": [
+        {
+          "line": 37,
+          "quote": "public static Object m160944(Method method, Object obj, Object... objArr) {"
+        },
+        {
+          "line": 38,
+          "quote": "Class<?> declaringClass = method.getDeclaringClass();"
+        },
+        {
+          "line": 39,
+          "quote": "String name = declaringClass.getName();"
+        },
+        {
+          "line": 40,
+          "quote": "List list = (List) com.tencent.qmethod.pandoraex.core.reflect.a.f128002.get(name);"
+        },
+        {
+          "line": 41,
+          "quote": "if (list != null) {"
+        },
+        {
+          "line": 42,
+          "quote": "Iterator it = list.iterator();"
+        },
+        {
+          "line": 64,
+          "quote": "method.setAccessible(true);"
+        },
+        {
+          "line": 65,
+          "quote": "return method.invoke(obj, objArr);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/qnrouter/Loader.java",
+      "source_sha256": "8d43f4b0c7c1f2c9525001f8373ccbd9ad876ef5bc4dc0dc82e81d479d3fe240",
+      "locations": [
+        {
+          "line": 7,
+          "quote": "public static void init() {"
+        },
+        {
+          "line": 8,
+          "quote": "try {"
+        },
+        {
+          "line": 9,
+          "quote": "RouterEntry.init();"
+        },
+        {
+          "line": 308,
+          "quote": "try {"
+        },
+        {
+          "line": 309,
+          "quote": "com.tencent.news.L4qnplayer.RouterEntry.init();"
+        },
+        {
+          "line": 310,
+          "quote": "} catch (ReflectiveOperationException e61) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/L4qnplayer/RouterEntry.java",
+      "source_sha256": "85d8e3b7d50ef276b8e4c156c323d67ed2fa5b89bc1f4f93f64e86b2aae12436",
+      "locations": [
+        {
+          "line": 18,
+          "quote": "public static final void init() {"
+        },
+        {
+          "line": 19,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4260, (short) 2);"
+        },
+        {
+          "line": 20,
+          "quote": "if (redirector != null) {"
+        },
+        {
+          "line": 21,
+          "quote": "redirector.redirect((short) 2);"
+        },
+        {
+          "line": 22,
+          "quote": "} else {"
+        },
+        {
+          "line": 23,
+          "quote": "ServiceMapGenL4qnplayer.init();"
+        },
+        {
+          "line": 24,
+          "quote": "}"
+        },
+        {
+          "line": 25,
+          "quote": "}"
+        },
+        {
+          "line": 26,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/qnrouter/service/ServiceMapGenL4qnplayer.java",
+      "source_sha256": "ac4a2673af0a9990789ae4cf9c7cfb5c7d167deab39af4dcce72248181fc7d08",
+      "locations": [
+        {
+          "line": 21,
+          "quote": "public static final void init() {"
+        },
+        {
+          "line": 22,
+          "quote": "IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4623, (short) 2);"
+        },
+        {
+          "line": 23,
+          "quote": "if (redirector != null) {"
+        },
+        {
+          "line": 24,
+          "quote": "redirector.redirect((short) 2);"
+        },
+        {
+          "line": 25,
+          "quote": "return;"
+        },
+        {
+          "line": 26,
+          "quote": "}"
+        },
+        {
+          "line": 27,
+          "quote": "ServiceMap.autoRegister(t.class, \"_default_impl_\", new APIMeta(t.class, VideoFeedbackService.class, true));"
+        },
+        {
+          "line": 28,
+          "quote": "ServiceMap.autoRegister(b.class, \"_default_impl_\", new APIMeta(b.class, WatchRecordService.class, true));"
+        },
+        {
+          "line": 29,
+          "quote": "ServiceMap.autoRegister(com.tencent.news.video.player.bridge.b.class, \"_default_impl_\", new APIMeta(com.tencent.news.video.player.bridge.b.class, TNVideoLogoFactory.class, true));"
+        },
+        {
+          "line": 30,
+          "quote": "ServiceMap.autoRegister(com.tencent.news.ysp.b.class, \"_default_impl_\", new APIMeta(com.tencent.news.ysp.b.class, YspPlayerService.class, true));"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/qnrouter/service/ServiceMap.java",
+      "source_sha256": "67ee41ddc1de814feee47a6bde126faca0a4543d5785729a9443f0ef7b0af308",
+      "locations": [
+        {
+          "line": 20,
+          "quote": ""
+        },
+        {
+          "line": 21,
+          "quote": "/* renamed from: \u02bb, reason: contains not printable characters and from kotlin metadata */"
+        },
+        {
+          "line": 22,
+          "quote": "public static final ConcurrentHashMap sImplMap = new ConcurrentHashMap(1024);"
+        },
+        {
+          "line": 23,
+          "quote": ""
+        },
+        {
+          "line": 24,
+          "quote": "/* renamed from: \u02bc, reason: contains not printable characters and from kotlin metadata */"
+        },
+        {
+          "line": 25,
+          "quote": "public static final CheckDuplicateConcurrentHashMap sModuleMap = new CheckDuplicateConcurrentHashMap(512);"
+        },
+        {
+          "line": 26,
+          "quote": ""
+        },
+        {
+          "line": 27,
+          "quote": "@JvmStatic"
+        },
+        {
+          "line": 28,
+          "quote": "public static final void autoRegister(@NotNull Class<?> serviceClass, @NotNull String implName, @NotNull APIMeta apiMeta) throws IllegalStateException {"
+        },
+        {
+          "line": 29,
+          "quote": "u.m173002(serviceClass, \"serviceClass\");"
+        },
+        {
+          "line": 30,
+          "quote": "u.m173002(implName, \"implName\");"
+        },
+        {
+          "line": 31,
+          "quote": "u.m173002(apiMeta, \"apiMeta\");"
+        },
+        {
+          "line": 32,
+          "quote": "INSTANCE.m118063(serviceClass, implName, apiMeta, g.m118109());"
+        },
+        {
+          "line": 89,
+          "quote": "/* renamed from: \u02bc, reason: contains not printable characters */"
+        },
+        {
+          "line": 90,
+          "quote": "public final void m118063(Class serviceClass, String implName, APIMeta apiMeta, boolean checkDuplicate) {"
+        },
+        {
+          "line": 91,
+          "quote": "CheckDuplicateConcurrentHashMap checkDuplicateConcurrentHashMap = (CheckDuplicateConcurrentHashMap) sImplMap.get(serviceClass.getName());"
+        },
+        {
+          "line": 92,
+          "quote": "if (checkDuplicateConcurrentHashMap == null) {"
+        },
+        {
+          "line": 93,
+          "quote": "checkDuplicateConcurrentHashMap = new CheckDuplicateConcurrentHashMap();"
+        },
+        {
+          "line": 94,
+          "quote": "}"
+        },
+        {
+          "line": 95,
+          "quote": "checkDuplicateConcurrentHashMap.putWithCheck(implName, apiMeta, checkDuplicate);"
+        },
+        {
+          "line": 96,
+          "quote": "sImplMap.put(serviceClass.getName(), checkDuplicateConcurrentHashMap);"
+        },
+        {
+          "line": 97,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/qnrouter/utils/CheckDuplicateConcurrentHashMap.java",
+      "source_sha256": "1a849bd7d84b461a9512a9e122d3747ed5f77cda5535cd33a734f5889052fece",
+      "locations": [
+        {
+          "line": 7,
+          "quote": "public class CheckDuplicateConcurrentHashMap<K, V> extends ConcurrentHashMap<K, V> {"
+        },
+        {
+          "line": 8,
+          "quote": "public CheckDuplicateConcurrentHashMap() {"
+        },
+        {
+          "line": 9,
+          "quote": "}"
+        },
+        {
+          "line": 10,
+          "quote": ""
+        },
+        {
+          "line": 11,
+          "quote": "public V putWithCheck(K k, V v, boolean z) {"
+        },
+        {
+          "line": 12,
+          "quote": "V v2;"
+        },
+        {
+          "line": 13,
+          "quote": "if (!z || (v2 = get(k)) == null) {"
+        },
+        {
+          "line": 14,
+          "quote": "return put(k, v);"
+        },
+        {
+          "line": 15,
+          "quote": "}"
+        },
+        {
+          "line": 16,
+          "quote": "throw new IllegalStateException(\"already exist key:\" + k + \" value:\" + v2);"
+        },
+        {
+          "line": 17,
+          "quote": "}"
+        }
+      ]
+    }
+  ],
+  "holdout_accessed": false,
+  "production_modified": false
+}
