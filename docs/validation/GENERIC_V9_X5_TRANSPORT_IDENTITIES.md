@@ -1,0 +1,7 @@
+# Correct X5 transport callback identities
+
+The earlier TransportProtocols matcher and its own fixture incorrectly placed ConsoleMessage, JsPromptResult and WebResourceRequest in com.tencent.smtt.sdk. Independent source/Dex oracle signatures place those parameter contracts in com.tencent.smtt.export.external.interfaces. WebView itself remains com.tencent.smtt.sdk.WebView. The wrong identities prevented the actual X5 modern console, prompt and request-based URL callbacks from starting installed reflective transport traversal.
+
+The helper now distinguishes SDK WebView types from exported interface parameter types and keeps exact return/parameter shapes. Android identities are unchanged. The fixture uses the actual X5 ConsoleMessage and JsPromptResult identities and rejects the invented SDK ConsoleMessage namespace. With the updated fixture but frozen v8 implementation, the real X5 positive fails; updated helper passes. Logs: test/runs/generic-v9-transport-old.log and generic-v9-transport-test.log. The test improvement derives from source-audited facts, not an assumption duplicated between production and fixture.
+
+Evidence includes yangshipin/canonical-facts.jsonl MttInjectedChromeClient.onJsPrompt and txws/canonical-facts.jsonl WebViewBaseFragment$1.onConsoleMessage and CustomWebChromeClient.onJsPrompt. Whole-App recall remains to be measured in the next frozen version; v8 results are not rewritten.

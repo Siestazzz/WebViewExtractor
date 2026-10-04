@@ -1,0 +1,208 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "created_utc": "2026-10-04T17:42:57.160031+00:00",
+  "source_first": true,
+  "report_read": false,
+  "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+  "facts_removed": false,
+  "rows": [
+    {
+      "phase": "activity_initialization",
+      "nonnull_installation": true,
+      "chain": "WebViewActivity.D2 \u2192 lazy.c \u2192 newSwipeRefreshWebView \u2192 placeholder.getWebView stored M \u2192 constructor Q \u2192 M.setWebViewClient(new SwipeRefreshWebView$c) \u2192 ReadingWebView.setWebViewClient(nonnull) \u2192 new ReadingWebView$m with delegate field \u2192 super installed wrapper",
+      "evidence": [
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/WebViewActivity.java",
+          "line": 544,
+          "text": "SwipeRefreshWebView c17 = swipeRefreshWebViewLazyLayout.c(str, a17.f181043b, a17.f181042a, this.f180902b.f181033k);",
+          "sha256": "843ac0a1e6e5051b93acaca773b63ed21bf6154ca4fa68749e6b6595f0487375"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/SwipeRefreshWebViewLazyLayout.java",
+          "line": 129,
+          "text": "SwipeRefreshWebView swipeRefreshWebView = new SwipeRefreshWebView(context, null, str, i17, skeletonScene, z17);",
+          "sha256": "df694b5fdfcfc5c5f39ebf6e8bc16894ebd0cb88f845731e253be83f57d8117f"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/SwipeRefreshWebView.java",
+          "line": 549,
+          "text": "this.M = webView;",
+          "sha256": "8637e82e1a15af3c8896a02bcebd1187c5b3eefaffe00d896049b04f4f4c4860"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/SwipeRefreshWebView.java",
+          "line": 558,
+          "text": "Q();",
+          "sha256": "8637e82e1a15af3c8896a02bcebd1187c5b3eefaffe00d896049b04f4f4c4860"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/SwipeRefreshWebView.java",
+          "line": 281,
+          "text": "this.M.setWebViewClient(new c());",
+          "sha256": "8637e82e1a15af3c8896a02bcebd1187c5b3eefaffe00d896049b04f4f4c4860"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 854,
+          "text": "m mVar = new m(this.f180863z);",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 855,
+          "text": "mVar.f364446a = webViewClient;",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 856,
+          "text": "super.setWebViewClient(mVar);",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        }
+      ]
+    },
+    {
+      "phase": "proven_fresh_factory_branch",
+      "nonnull_installation": true,
+      "condition": "V2 pool miss; oldpreload disabled or miss; k.j(context,url) miss",
+      "chain": "placeholder.d\u2192b\u2192e\u2192NsCommonDepend.IMPL.createReadingWebView(context)\u2192componentNsCommonDependImpl.newReadingWebView(context). All pool branch runtime types not re-audited here; proven fresh fallback alone establishes positive installation.",
+      "evidence": [
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/base/ReadingWebViewPlaceHolder.java",
+          "line": 123,
+          "text": "if (i17 == null) {",
+          "sha256": "0423adbbd90f2b10a44da4c30114c906862ff05d67b79e0759072d72a3973348"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/base/ReadingWebViewPlaceHolder.java",
+          "line": 70,
+          "text": "j17 = NsCommonDepend.IMPL.createReadingWebView(context);",
+          "sha256": "0423adbbd90f2b10a44da4c30114c906862ff05d67b79e0759072d72a3973348"
+        },
+        {
+          "file": "sources/com/dragon/read/component/NsCommonDependImpl.java",
+          "line": 1656,
+          "text": "return new ReadingWebView(context);",
+          "sha256": "c5475f994ea8d539aa9ef2a3baafd5b2348ae8d5b1cad4ce4ff483f1e977af14"
+        }
+      ]
+    },
+    {
+      "phase": "wrapper_own_callbacks",
+      "callbacks": [
+        {
+          "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "evidence": [
+            {
+              "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+              "line": 726,
+              "text": "public void onPageFinished(WebView webView, String str) {",
+              "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+            }
+          ],
+          "exact_override_line": 726
+        },
+        {
+          "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+          "evidence": [
+            {
+              "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+              "line": 747,
+              "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {",
+              "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "activity_cleanup",
+      "nonnull_installation": false,
+      "chain": "Activity.onDestroy\u2192ifReadingWebView.E\u2192x listeners/provider release\u2192t. t mode1detach+destroy, mode2detach+loadblank, mode3detach+t.e\u2192stop/remove/history\u2192setWebViewClient(null)\u2192setChrome(null)\u2192loadblank\u2192destroy. ReadingWebView nullbranch super(null) returns before newm. Therefore cleanup does not fabricate m registration or erase historical actual initialization.",
+      "evidence": [
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/WebViewActivity.java",
+          "line": 518,
+          "text": "((ReadingWebView) webView).E();",
+          "sha256": "843ac0a1e6e5051b93acaca773b63ed21bf6154ca4fa68749e6b6595f0487375"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 391,
+          "text": "this.f180840c.b();",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 333,
+          "text": "Context applicationContext = getContext().getApplicationContext();",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 445,
+          "text": "if (nsUiDepend.enableWebDestroy() == 1) {",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 449,
+          "text": "} else if (nsUiDepend.enableWebDestroy() == 2) {",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 453,
+          "text": "} else if (nsUiDepend.enableWebDestroy() == 3) {",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 456,
+          "text": "t.e(this);",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/t.java",
+          "line": 76,
+          "text": "webView.setWebViewClient(null);",
+          "sha256": "298cd35e299a3edfca6c71129d27d9210951ea5f3870a8cd01f995615d1ce9fd"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 850,
+          "text": "if (webViewClient == null) {",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+          "line": 851,
+          "text": "super.setWebViewClient(null);",
+          "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+        }
+      ]
+    },
+    {
+      "phase": "preloader_initialization_separate",
+      "nonnull_installation": true,
+      "condition": "helper h create success and !d(browser-version veto)",
+      "chain": "t.h\u2192createReadingWebView\u2192newt$a\u2192setWebViewClient(aVar)\u2192ReadingWebView$m. Preload collection cleanup t.l/t.i invokes t.e with null client and is distinct.",
+      "evidence": [
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/t.java",
+          "line": 204,
+          "text": "a aVar = new a(bVar);",
+          "sha256": "298cd35e299a3edfca6c71129d27d9210951ea5f3870a8cd01f995615d1ce9fd"
+        },
+        {
+          "file": "sources/com/dragon/read/hybrid/webview/t.java",
+          "line": 205,
+          "text": "createReadingWebView.setWebViewClient(aVar);",
+          "sha256": "298cd35e299a3edfca6c71129d27d9210951ea5f3870a8cd01f995615d1ce9fd"
+        }
+      ]
+    }
+  ],
+  "boundary": "Source proves actual nonnull fresh initialization wrapper installation. Pool origin classes are outside this focused re-audit; no assertion every runtime branch yields ReadingWebView. Actual null cleanup argument cannot be counted as wrapper registration."
+}

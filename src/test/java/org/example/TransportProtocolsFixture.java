@@ -49,9 +49,15 @@ final class TransportProtocolsFixture {
             check(stat.owner().id().equals("0")&&stat.name().id().equals("1")&&stat.handler().id().equals("2"),"Static argument numbering changed");
             check(TransportProtocols.registrations(index,register,flow.summary(register),Set.of()).isEmpty(),"Map registration alone became a transport");
             for(String owner:List.of("Lprotocol/Chrome;","Lprotocol/X5Chrome;","Lprotocol/Unrelated;")) {
-                String family=owner.contains("X5")?"Lcom/tencent/smtt/sdk/ConsoleMessage;":"Landroid/webkit/ConsoleMessage;";
+                String family=owner.contains("X5")?"Lcom/tencent/smtt/export/external/interfaces/ConsoleMessage;":"Landroid/webkit/ConsoleMessage;";
                 var callback=new ImmutableMethod(owner,"onConsoleMessage",List.of(new ImmutableMethodParameter(family,Set.of(),null)),"Z",1,Set.of(),Set.of(),null);
                 check(TransportProtocols.clientEntry(index,callback)==!owner.contains("Unrelated"),"Transport entry must respect SDK inheritance");
+                if(owner.contains("X5")){
+                    var wrongNamespace=new ImmutableMethod(owner,"onConsoleMessage",List.of(new ImmutableMethodParameter("Lcom/tencent/smtt/sdk/ConsoleMessage;",Set.of(),null)),"Z",1,Set.of(),Set.of(),null);
+                    check(!TransportProtocols.clientEntry(index,wrongNamespace),"Nonexistent SDK namespace accepted for X5 ConsoleMessage");
+                    var prompt=new ImmutableMethod(owner,"onJsPrompt",List.of("Lcom/tencent/smtt/sdk/WebView;","Ljava/lang/String;","Ljava/lang/String;","Ljava/lang/String;","Lcom/tencent/smtt/export/external/interfaces/JsPromptResult;").stream().map(t->new ImmutableMethodParameter(t,Set.of(),null)).toList(),"Z",1,Set.of(),Set.of(),null);
+                    check(TransportProtocols.clientEntry(index,prompt),"Real X5 prompt contract rejected");
+                }
                 var wrong=new ImmutableMethod(owner,"onConsoleMessage",List.of(),"Z",1,Set.of(),Set.of(),null);
                 check(!TransportProtocols.clientEntry(index,wrong),"Same-name overload became a callback");
                 var statik=new ImmutableMethod(owner,"onConsoleMessage",callback.getParameters(),"Z",9,Set.of(),Set.of(),null);

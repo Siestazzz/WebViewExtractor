@@ -10,7 +10,7 @@ final class SdkClientContracts {
  static final String X5_CALLBACK="com.tencent.smtt.sdk.WebViewCallbackClient";
  static final Set<String> EXTENSIONS=Set.of(X5_EXTENSION,X5_CALLBACK);
  final CapabilityIndex index;
- final Map<String,Set<String>> memberShapes=new HashMap<>();
+ final Map<String,Set<String>> memberShapes=new java.util.concurrent.ConcurrentHashMap<>();
  SdkClientContracts(CapabilityIndex index){this.index=index;}
  boolean extensionType(String type){return EXTENSIONS.stream().anyMatch(contract->index.subtype(type,contract));}
  boolean setter(MethodReference method){

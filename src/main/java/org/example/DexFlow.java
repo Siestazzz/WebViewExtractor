@@ -41,12 +41,12 @@ final class DexFlow {
         return new V(kind,type,id,null,List.copyOf(args));
     }
     static int depth(V v){return v.args.isEmpty()?0:1+v.args.stream().mapToInt(DexFlow::depth).max().orElse(0);}
-    Summary summary(Method m){
+    synchronized Summary summary(Method m){
         String key=CapabilityIndex.key(m);Summary old=cache.get(key);if(old!=null)return old;
         Set<V> probes=new LinkedHashSet<>();
         Summary result=decode(m,v->{probes.add(v);return v;});baseGuardProbes.put(key,List.copyOf(probes));cache.put(key,result);decoded++;return result;
     }
-    Summary summary(Method m,java.util.function.UnaryOperator<V> resolver){
+    synchronized Summary summary(Method m,java.util.function.UnaryOperator<V> resolver){
         Summary base=summary(m);if(!base.branched())return base;
         String key=CapabilityIndex.key(m);
         if(checkedRefinement.add(key)){

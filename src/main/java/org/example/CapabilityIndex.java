@@ -23,12 +23,12 @@ final class CapabilityIndex {
     final Map<String,String> messageRegistries=new HashMap<>();
     final Map<String,Set<List<String>>> namespaceRegistries=new HashMap<>();
     final Map<String,Set<String>> registryHandlerShapes=new HashMap<>();
-    final Map<String,List<String>> subtypeCandidates=new HashMap<>();
+    final Map<String,List<String>> subtypeCandidates=new java.util.concurrent.ConcurrentHashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
     final Set<String> fragmentFactoryFields=new HashSet<>(), componentProtocols=new HashSet<>();
     final Set<String> clientDelegations=new HashSet<>();
-    final Map<String,Boolean> clientDelegationReachability=new HashMap<>();
-    final Set<String> clientDelegationBudgetDiagnostics=new HashSet<>();
+    final Map<String,Boolean> clientDelegationReachability=new java.util.concurrent.ConcurrentHashMap<>();
+    final Set<String> clientDelegationBudgetDiagnostics=java.util.concurrent.ConcurrentHashMap.newKeySet();
     static boolean frameworkComponentImplementation(String type){
         return type!=null&&(type.startsWith("android.")||type.startsWith("androidx.fragment.")||type.startsWith("androidx.viewpager2.")||type.startsWith("android.support.v4.app."));
     }
@@ -57,8 +57,8 @@ final class CapabilityIndex {
     final Map<String,Set<String>> callbackEntries=new HashMap<>();
     record CustomCallback(String field,String contract,Set<String> dispatchedShapes){}
     final Map<String,CustomCallback> customCallbacks=new HashMap<>();
-    final Map<String,Boolean> subtypeCache=new HashMap<>();
-    final List<String> diagnostics=new ArrayList<>();
+    final Map<String,Boolean> subtypeCache=new java.util.concurrent.ConcurrentHashMap<>();
+    final List<String> diagnostics=Collections.synchronizedList(new ArrayList<>());
     long instructions;
     static String cls(String desc){return Util.className(desc);}
     static String key(MethodReference m){return m.getDefiningClass()+"->"+shape(m);}

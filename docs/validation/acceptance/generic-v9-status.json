@@ -1,0 +1,478 @@
+{
+  "goal": "Ten APKs; no private App adapters; per-category recall >=95%; wrong+unknown ownership <=10%; hard600; independent audit and repeats",
+  "scope_complete": true,
+  "apps": [
+    {
+      "package": "com.tencent.news",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": false,
+        "setting_recall_95": false,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 1260,
+          "expected": 1393,
+          "candidate_inclusive": 0.9045226130653267
+        },
+        "setting": {
+          "matched": 228,
+          "expected": 366,
+          "candidate_inclusive": 0.6229508196721312
+        },
+        "callback": {
+          "matched": 185,
+          "expected": 240,
+          "candidate_inclusive": 0.7708333333333334
+        }
+      },
+      "ownership": {
+        "emitted": 33,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 33,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.hunantv.imgo.activity",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": true,
+        "setting_recall_95": false,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 1215,
+          "expected": 1259,
+          "candidate_inclusive": 0.9650516282764099
+        },
+        "setting": {
+          "matched": 565,
+          "expected": 608,
+          "candidate_inclusive": 0.9292763157894737
+        },
+        "callback": {
+          "matched": 587,
+          "expected": 662,
+          "candidate_inclusive": 0.8867069486404834
+        }
+      },
+      "ownership": {
+        "emitted": 98,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 98,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "ctrip.android.view",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": false,
+        "setting_recall_95": true,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 3682,
+          "expected": 3970,
+          "candidate_inclusive": 0.927455919395466
+        },
+        "setting": {
+          "matched": 375,
+          "expected": 391,
+          "candidate_inclusive": 0.959079283887468
+        },
+        "callback": {
+          "matched": 421,
+          "expected": 444,
+          "candidate_inclusive": 0.9481981981981982
+        }
+      },
+      "ownership": {
+        "emitted": 53,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 53,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.ss.android.article.video",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": false,
+        "setting_recall_95": false,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 30,
+          "expected": 65,
+          "candidate_inclusive": 0.46153846153846156
+        },
+        "setting": {
+          "matched": 193,
+          "expected": 278,
+          "candidate_inclusive": 0.6942446043165468
+        },
+        "callback": {
+          "matched": 7,
+          "expected": 150,
+          "candidate_inclusive": 0.04666666666666667
+        }
+      },
+      "ownership": {
+        "emitted": 45,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 45,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.freereels.app",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": false,
+        "setting_recall_95": false,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 7,
+          "expected": 15,
+          "candidate_inclusive": 0.4666666666666667
+        },
+        "setting": {
+          "matched": 78,
+          "expected": 122,
+          "candidate_inclusive": 0.639344262295082
+        },
+        "callback": {
+          "matched": 22,
+          "expected": 27,
+          "candidate_inclusive": 0.8148148148148148
+        }
+      },
+      "ownership": {
+        "emitted": 111,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 111,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.cctv.yangshipin.app.androidp",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": true,
+        "setting_recall_95": false,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 17,
+          "expected": 17,
+          "candidate_inclusive": 1.0
+        },
+        "setting": {
+          "matched": 189,
+          "expected": 229,
+          "candidate_inclusive": 0.8253275109170306
+        },
+        "callback": {
+          "matched": 582,
+          "expected": 624,
+          "candidate_inclusive": 0.9326923076923077
+        }
+      },
+      "ownership": {
+        "emitted": 23,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 23,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.tencent.weishi",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": true,
+        "setting_recall_95": false,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 8,
+          "expected": 8,
+          "candidate_inclusive": 1.0
+        },
+        "setting": {
+          "matched": 175,
+          "expected": 188,
+          "candidate_inclusive": 0.9308510638297872
+        },
+        "callback": {
+          "matched": 170,
+          "expected": 190,
+          "candidate_inclusive": 0.8947368421052632
+        }
+      },
+      "ownership": {
+        "emitted": 15,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 15,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.sohu.sohuvideo",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": false,
+        "setting_recall_95": true,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 521,
+          "expected": 703,
+          "candidate_inclusive": 0.7411095305832148
+        },
+        "setting": {
+          "matched": 501,
+          "expected": 501,
+          "candidate_inclusive": 1.0
+        },
+        "callback": {
+          "matched": 1509,
+          "expected": 1591,
+          "candidate_inclusive": 0.9484600879949717
+        }
+      },
+      "ownership": {
+        "emitted": 305,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 305,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.dragon.read",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": true,
+        "setting_recall_95": true,
+        "callback_recall_95": false,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 12,
+          "expected": 12,
+          "candidate_inclusive": 1.0
+        },
+        "setting": {
+          "matched": 21,
+          "expected": 21,
+          "candidate_inclusive": 1.0
+        },
+        "callback": {
+          "matched": 10,
+          "expected": 16,
+          "candidate_inclusive": 0.625
+        }
+      },
+      "ownership": {
+        "emitted": 54,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 54,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    },
+    {
+      "package": "com.news.app.global",
+      "requirements": {
+        "report_identity": true,
+        "score_report_and_oracle_identity": true,
+        "bridge_recall_95": true,
+        "setting_recall_95": true,
+        "callback_recall_95": true,
+        "ownership_error_upper_bound_10": false,
+        "capability_precision_reported": false,
+        "deep_positive_hosts_30_or_exhaustive": false,
+        "two_per_present_stratum": false,
+        "ten_fresh_holdout_hosts": false,
+        "holdout_quality": false,
+        "three_isolated_runs": false,
+        "hard_600_seconds": false
+      },
+      "notes": [],
+      "recall": {
+        "bridge": {
+          "matched": 10,
+          "expected": 10,
+          "candidate_inclusive": 1.0
+        },
+        "setting": {
+          "matched": 14,
+          "expected": 14,
+          "candidate_inclusive": 1.0
+        },
+        "callback": {
+          "matched": 8,
+          "expected": 8,
+          "candidate_inclusive": 1.0
+        }
+      },
+      "ownership": {
+        "emitted": 22,
+        "valid": 0,
+        "wrong": 0,
+        "unresolved_or_unreviewed": 22,
+        "rejected_rows": [],
+        "conservative_error_upper_bound": 1.0
+      },
+      "capability_precision": null,
+      "target_300_seconds": false,
+      "passed": false
+    }
+  ],
+  "note": "Machine checks verify evidence applicability and recorded gates, not the truth of a reviewer assertion. Source audit remains mandatory.",
+  "passed": false
+}

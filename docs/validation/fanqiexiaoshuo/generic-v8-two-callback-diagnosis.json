@@ -1,0 +1,508 @@
+{
+  "scope": "Reports and generic fixture only; no App decompiled source inspected.",
+  "host": "com.dragon.read.hybrid.webview.WebViewActivity",
+  "signatures": [
+    "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+    "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+  ],
+  "versions": {
+    "7": {
+      "report": "test/runs/generic-v7/com.dragon.read/capabilities.json",
+      "report_sha256": "e3e530dfbb0522d645c47c6a5fcb95b945c604a14e702fa473cf66be1878cc6e",
+      "status": "partial",
+      "coverage": {
+        "status": "deadline_interrupted",
+        "phase": 1,
+        "contexts_processed": 1511,
+        "pending_contexts": 593,
+        "analysis_seconds": 1.144958486,
+        "phase_contexts": [
+          1511,
+          0
+        ],
+        "discarded_contexts": 0
+      },
+      "metrics": {
+        "elapsed_seconds": 590.00116673,
+        "index_seconds": 108.59423621,
+        "initial_pass_seconds": 117.530518026,
+        "decoded_methods": 56632,
+        "refined_summaries": 2468,
+        "relevant_methods": 298435,
+        "processed_activities": 441,
+        "pending_activities": 292
+      },
+      "target_wrapper_facts": [
+        {
+          "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "site": "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->WebViewContainerInner__setWebViewClient$___twin___(Landroid/webkit/WebViewClient;)V@14",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "webview": {
+            "type": "com.dragon.read.hybrid.webview.ReadingWebView",
+            "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown"
+          },
+          "binding_status": "candidate",
+          "conditional": true,
+          "evidence": [
+            "com.dragon.read.hybrid.webview.WebViewActivity",
+            "Lcom/dragon/read/hybrid/webview/WebViewActivity;->onDestroy()V",
+            "Lcom/dragon/read/hybrid/webview/ReadingWebView;->E()V",
+            "Lcom/dragon/read/hybrid/webview/ReadingWebView;->t()V",
+            "Lcom/dragon/read/hybrid/webview/t;->e(Landroid/webkit/WebView;)V",
+            "api_override:Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/dragon/read/hybrid/webview/ReadingWebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "api_override:Lcom/bytedance/webx/core/webview/WebViewContainer;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/WebViewContainer;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "api_override:Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->com_bytedance_webx_core_webview_inner_WebViewContainerInner_com_dragon_read_aop_SecurityHoleAop_setWebViewClient(Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->WebViewContainerInner__setWebViewClient$___twin___(Landroid/webkit/WebViewClient;)V"
+          ],
+          "arguments": [
+            {
+              "kind": "object",
+              "type": "com.dragon.read.hybrid.webview.ReadingWebView",
+              "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+              "args": []
+            },
+            {
+              "kind": "object",
+              "type": "com.dragon.read.hybrid.webview.ReadingWebView$m",
+              "id": "Lcom/dragon/read/hybrid/webview/ReadingWebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V@7|Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+              "args": []
+            }
+          ],
+          "implementation": "com.dragon.read.hybrid.webview.ReadingWebView$m",
+          "members": [
+            {
+              "name": "onPageFinished",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageStarted",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            },
+            {
+              "name": "shouldInterceptRequest",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.shouldInterceptRequest(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Landroid/webkit/WebResourceResponse;",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+            },
+            {
+              "name": "shouldOverrideUrlLoading",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Z",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onReceivedError(Landroid/webkit/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onReceivedError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceError;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+            },
+            {
+              "name": "onReceivedHttpError",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onReceivedHttpError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceResponse;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+            },
+            {
+              "name": "onRenderProcessGone",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onRenderProcessGone(Landroid/webkit/WebView;,Landroid/webkit/RenderProcessGoneDetail;):Z",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+            },
+            {
+              "name": "doUpdateVisitedHistory",
+              "display": "r64.j.doUpdateVisitedHistory(Landroid/webkit/WebView;,Ljava/lang/String;,Z):V",
+              "signature": "Lr64/j;->doUpdateVisitedHistory(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+            },
+            {
+              "name": "onFormResubmission",
+              "display": "r64.j.onFormResubmission(Landroid/webkit/WebView;,Landroid/os/Message;,Landroid/os/Message;):V",
+              "signature": "Lr64/j;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+            },
+            {
+              "name": "onLoadResource",
+              "display": "r64.j.onLoadResource(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageCommitVisible",
+              "display": "r64.j.onPageCommitVisible(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedClientCertRequest",
+              "display": "r64.j.onReceivedClientCertRequest(Landroid/webkit/WebView;,Landroid/webkit/ClientCertRequest;):V",
+              "signature": "Lr64/j;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V"
+            },
+            {
+              "name": "onReceivedHttpAuthRequest",
+              "display": "r64.j.onReceivedHttpAuthRequest(Landroid/webkit/WebView;,Landroid/webkit/HttpAuthHandler;,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedLoginRequest",
+              "display": "r64.j.onReceivedLoginRequest(Landroid/webkit/WebView;,Ljava/lang/String;,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedSslError",
+              "display": "r64.j.onReceivedSslError(Landroid/webkit/WebView;,Landroid/webkit/SslErrorHandler;,Landroid/net/http/SslError;):V",
+              "signature": "Lr64/j;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+            },
+            {
+              "name": "onSafeBrowsingHit",
+              "display": "r64.j.onSafeBrowsingHit(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,I,Landroid/webkit/SafeBrowsingResponse;):V",
+              "signature": "Lr64/j;->onSafeBrowsingHit(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V"
+            },
+            {
+              "name": "onScaleChanged",
+              "display": "r64.j.onScaleChanged(Landroid/webkit/WebView;,F,F):V",
+              "signature": "Lr64/j;->onScaleChanged(Landroid/webkit/WebView;FF)V"
+            },
+            {
+              "name": "onTooManyRedirects",
+              "display": "r64.j.onTooManyRedirects(Landroid/webkit/WebView;,Landroid/os/Message;,Landroid/os/Message;):V",
+              "signature": "Lr64/j;->onTooManyRedirects(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+            },
+            {
+              "name": "onUnhandledKeyEvent",
+              "display": "r64.j.onUnhandledKeyEvent(Landroid/webkit/WebView;,Landroid/view/KeyEvent;):V",
+              "signature": "Lr64/j;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V"
+            },
+            {
+              "name": "shouldInterceptRequest",
+              "display": "r64.j.shouldInterceptRequest(Landroid/webkit/WebView;,Ljava/lang/String;):Landroid/webkit/WebResourceResponse;",
+              "signature": "Lr64/j;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+            },
+            {
+              "name": "shouldOverrideKeyEvent",
+              "display": "r64.j.shouldOverrideKeyEvent(Landroid/webkit/WebView;,Landroid/view/KeyEvent;):Z",
+              "signature": "Lr64/j;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z"
+            },
+            {
+              "name": "shouldOverrideUrlLoading",
+              "display": "r64.j.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Ljava/lang/String;):Z",
+              "signature": "Lr64/j;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+            },
+            {
+              "name": "onPageFinished",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageStarted",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            },
+            {
+              "name": "shouldInterceptRequest",
+              "display": "r64.j.shouldInterceptRequest(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Landroid/webkit/WebResourceResponse;",
+              "signature": "Lr64/j;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "r64.j.onReceivedError(Landroid/webkit/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "r64.j.onReceivedError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceError;):V",
+              "signature": "Lr64/j;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+            },
+            {
+              "name": "onReceivedHttpError",
+              "display": "r64.j.onReceivedHttpError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceResponse;):V",
+              "signature": "Lr64/j;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+            },
+            {
+              "name": "onRenderProcessGone",
+              "display": "r64.j.onRenderProcessGone(Landroid/webkit/WebView;,Landroid/webkit/RenderProcessGoneDetail;):Z",
+              "signature": "Lr64/j;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+            },
+            {
+              "name": "onPageFinished",
+              "display": "r64.j.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageStarted",
+              "display": "r64.j.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "signature": "Lr64/j;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            }
+          ]
+        },
+        {
+          "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+          "kind": "callback",
+          "name": "setWebViewClient",
+          "site": "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->WebViewContainerInner__setWebViewClient$___twin___(Landroid/webkit/WebViewClient;)V@6",
+          "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+          "webview": {
+            "type": "com.dragon.read.hybrid.webview.ReadingWebView",
+            "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown"
+          },
+          "binding_status": "candidate",
+          "conditional": true,
+          "evidence": [
+            "com.dragon.read.hybrid.webview.WebViewActivity",
+            "Lcom/dragon/read/hybrid/webview/WebViewActivity;->onDestroy()V",
+            "Lcom/dragon/read/hybrid/webview/ReadingWebView;->E()V",
+            "Lcom/dragon/read/hybrid/webview/ReadingWebView;->t()V",
+            "Lcom/dragon/read/hybrid/webview/t;->e(Landroid/webkit/WebView;)V",
+            "api_override:Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/dragon/read/hybrid/webview/ReadingWebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "api_override:Lcom/bytedance/webx/core/webview/WebViewContainer;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/WebViewContainer;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "api_override:Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->com_bytedance_webx_core_webview_inner_WebViewContainerInner_com_dragon_read_aop_SecurityHoleAop_setWebViewClient(Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;Landroid/webkit/WebViewClient;)V",
+            "Lcom/bytedance/webx/core/webview/inner/WebViewContainerInner;->WebViewContainerInner__setWebViewClient$___twin___(Landroid/webkit/WebViewClient;)V"
+          ],
+          "arguments": [
+            {
+              "kind": "object",
+              "type": "com.dragon.read.hybrid.webview.ReadingWebView",
+              "id": "Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+              "args": []
+            },
+            {
+              "kind": "object",
+              "type": "com.dragon.read.hybrid.webview.ReadingWebView$m",
+              "id": "Lcom/dragon/read/hybrid/webview/ReadingWebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V@7|Lcom/dragon/read/component/NsCommonDependImpl;->createReadingWebView(Landroid/content/Context;)Landroid/webkit/WebView;@0|unknown",
+              "args": []
+            }
+          ],
+          "implementation": "com.dragon.read.hybrid.webview.ReadingWebView$m",
+          "members": [
+            {
+              "name": "onPageFinished",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageStarted",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            },
+            {
+              "name": "shouldInterceptRequest",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.shouldInterceptRequest(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Landroid/webkit/WebResourceResponse;",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+            },
+            {
+              "name": "shouldOverrideUrlLoading",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$m.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Z",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onReceivedError(Landroid/webkit/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onReceivedError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceError;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+            },
+            {
+              "name": "onReceivedHttpError",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onReceivedHttpError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceResponse;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+            },
+            {
+              "name": "onRenderProcessGone",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onRenderProcessGone(Landroid/webkit/WebView;,Landroid/webkit/RenderProcessGoneDetail;):Z",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+            },
+            {
+              "name": "doUpdateVisitedHistory",
+              "display": "r64.j.doUpdateVisitedHistory(Landroid/webkit/WebView;,Ljava/lang/String;,Z):V",
+              "signature": "Lr64/j;->doUpdateVisitedHistory(Landroid/webkit/WebView;Ljava/lang/String;Z)V"
+            },
+            {
+              "name": "onFormResubmission",
+              "display": "r64.j.onFormResubmission(Landroid/webkit/WebView;,Landroid/os/Message;,Landroid/os/Message;):V",
+              "signature": "Lr64/j;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+            },
+            {
+              "name": "onLoadResource",
+              "display": "r64.j.onLoadResource(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageCommitVisible",
+              "display": "r64.j.onPageCommitVisible(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedClientCertRequest",
+              "display": "r64.j.onReceivedClientCertRequest(Landroid/webkit/WebView;,Landroid/webkit/ClientCertRequest;):V",
+              "signature": "Lr64/j;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V"
+            },
+            {
+              "name": "onReceivedHttpAuthRequest",
+              "display": "r64.j.onReceivedHttpAuthRequest(Landroid/webkit/WebView;,Landroid/webkit/HttpAuthHandler;,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedLoginRequest",
+              "display": "r64.j.onReceivedLoginRequest(Landroid/webkit/WebView;,Ljava/lang/String;,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedSslError",
+              "display": "r64.j.onReceivedSslError(Landroid/webkit/WebView;,Landroid/webkit/SslErrorHandler;,Landroid/net/http/SslError;):V",
+              "signature": "Lr64/j;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+            },
+            {
+              "name": "onSafeBrowsingHit",
+              "display": "r64.j.onSafeBrowsingHit(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,I,Landroid/webkit/SafeBrowsingResponse;):V",
+              "signature": "Lr64/j;->onSafeBrowsingHit(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;ILandroid/webkit/SafeBrowsingResponse;)V"
+            },
+            {
+              "name": "onScaleChanged",
+              "display": "r64.j.onScaleChanged(Landroid/webkit/WebView;,F,F):V",
+              "signature": "Lr64/j;->onScaleChanged(Landroid/webkit/WebView;FF)V"
+            },
+            {
+              "name": "onTooManyRedirects",
+              "display": "r64.j.onTooManyRedirects(Landroid/webkit/WebView;,Landroid/os/Message;,Landroid/os/Message;):V",
+              "signature": "Lr64/j;->onTooManyRedirects(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V"
+            },
+            {
+              "name": "onUnhandledKeyEvent",
+              "display": "r64.j.onUnhandledKeyEvent(Landroid/webkit/WebView;,Landroid/view/KeyEvent;):V",
+              "signature": "Lr64/j;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V"
+            },
+            {
+              "name": "shouldInterceptRequest",
+              "display": "r64.j.shouldInterceptRequest(Landroid/webkit/WebView;,Ljava/lang/String;):Landroid/webkit/WebResourceResponse;",
+              "signature": "Lr64/j;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+            },
+            {
+              "name": "shouldOverrideKeyEvent",
+              "display": "r64.j.shouldOverrideKeyEvent(Landroid/webkit/WebView;,Landroid/view/KeyEvent;):Z",
+              "signature": "Lr64/j;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z"
+            },
+            {
+              "name": "shouldOverrideUrlLoading",
+              "display": "r64.j.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Ljava/lang/String;):Z",
+              "signature": "Lr64/j;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+            },
+            {
+              "name": "onPageFinished",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageStarted",
+              "display": "com.dragon.read.hybrid.webview.ReadingWebView$o.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$o;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            },
+            {
+              "name": "shouldInterceptRequest",
+              "display": "r64.j.shouldInterceptRequest(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Landroid/webkit/WebResourceResponse;",
+              "signature": "Lr64/j;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "r64.j.onReceivedError(Landroid/webkit/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onReceivedError",
+              "display": "r64.j.onReceivedError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceError;):V",
+              "signature": "Lr64/j;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+            },
+            {
+              "name": "onReceivedHttpError",
+              "display": "r64.j.onReceivedHttpError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceResponse;):V",
+              "signature": "Lr64/j;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+            },
+            {
+              "name": "onRenderProcessGone",
+              "display": "r64.j.onRenderProcessGone(Landroid/webkit/WebView;,Landroid/webkit/RenderProcessGoneDetail;):Z",
+              "signature": "Lr64/j;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+            },
+            {
+              "name": "onPageFinished",
+              "display": "r64.j.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+              "signature": "Lr64/j;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V"
+            },
+            {
+              "name": "onPageStarted",
+              "display": "r64.j.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+              "signature": "Lr64/j;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+            }
+          ]
+        }
+      ],
+      "other_hosts_preserving_both_signatures": [
+        "com.dragon.read.ad.dark.ui.AdLandingActivity",
+        "com.dragon.read.ad.dark.ui.AdSubmitDialogActivity",
+        "com.dragon.read.ad.dark.ui.NewAdLandingActivity",
+        "com.dragon.read.ad.dark.ui.NewAdSubmitDialogActivity",
+        "com.dragon.read.hybrid.webview.ExternalWebActivity"
+      ]
+    },
+    "8": {
+      "report": "test/runs/generic-v8/com.dragon.read/capabilities.json",
+      "report_sha256": "1a52e7f1e149b91d67820be24040acc1ac645e49da109fe7293c484ce729ca11",
+      "status": "partial",
+      "coverage": {
+        "status": "deadline_interrupted",
+        "phase": 1,
+        "contexts_processed": 1280,
+        "pending_contexts": 549,
+        "analysis_seconds": 0.853901732,
+        "phase_contexts": [
+          1280,
+          0
+        ],
+        "discarded_contexts": 0
+      },
+      "metrics": {
+        "elapsed_seconds": 590.001239744,
+        "index_seconds": 112.339396786,
+        "initial_pass_seconds": 223.420733495,
+        "decoded_methods": 70905,
+        "refined_summaries": 4122,
+        "relevant_methods": 298435,
+        "processed_activities": 441,
+        "pending_activities": 292
+      },
+      "target_wrapper_facts": [],
+      "other_hosts_preserving_both_signatures": [
+        "com.dragon.read.ad.dark.ui.AdLandingActivity",
+        "com.dragon.read.ad.dark.ui.AdSubmitDialogActivity",
+        "com.dragon.read.ad.dark.ui.NewAdLandingActivity",
+        "com.dragon.read.ad.dark.ui.NewAdSubmitDialogActivity",
+        "com.dragon.read.hybrid.webview.ExternalWebActivity"
+      ]
+    }
+  },
+  "generic_fixture": {
+    "source": "src/test/java/org/example/NullClientOverrideDiagnosticFixture.java",
+    "frozen_v7_log": "test/runs/generic-v8-fanqie-nullable-v7.log",
+    "frozen_v8_log": "test/runs/generic-v8-fanqie-nullable-v8.log",
+    "v7_null_reset_false_wrapper": true,
+    "v8_null_reset_false_wrapper": false,
+    "non_null_wrapper_retained_both": true
+  },
+  "conclusion": {
+    "sdk_contract_filtering": "ruled_out_for_these_exact_methods: same implementation/member pair remains in frozen v8 other hosts",
+    "budget": "plausible: both target traversals incomplete in phase 1, v8 processes 231 fewer contexts",
+    "null_guard_precision": "confirmed by independent source proof: cleanup null setter returns super(null) without allocating m; old report installation was infeasible",
+    "app_actual_root_cause": "v8 still omits source-confirmed true non-null initialization; budget versus actual placeholder/field propagation remains unresolved from reports",
+    "production_change": "none; do not revert signature filtering or IF refinement; compare v9 progress before deciding further trace",
+    "canonical_gold": "retain both positives: true initialization is independently proved"
+  },
+  "subsequent_source_proof": "docs/validation/fanqiexiaoshuo/webviewactivity-wrapper-install-vs-cleanup-source-proof.json"
+}

@@ -58,14 +58,15 @@ final class TransportProtocols {
         String owner = CapabilityIndex.cls(method.getDefiningClass()), shape = CapabilityIndex.shape(method);
         for (String family : List.of("android.webkit.", "com.tencent.smtt.sdk.")) {
             String descriptor = "L" + family.replace('.', '/'), view = descriptor + "WebView;";
+            String interfaces=family.equals("android.webkit.")?descriptor:"Lcom/tencent/smtt/export/external/interfaces/";
             if (index.subtype(owner, family + "WebChromeClient") && Set.of(
-                    "onConsoleMessage(" + descriptor + "ConsoleMessage;)Z",
+                    "onConsoleMessage(" + interfaces + "ConsoleMessage;)Z",
                     "onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
-                    "onJsPrompt(" + view + "Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;" + descriptor + "JsPromptResult;)Z"
+                    "onJsPrompt(" + view + "Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;" + interfaces + "JsPromptResult;)Z"
             ).contains(shape)) return true;
             if (index.subtype(owner, family + "WebViewClient") && Set.of(
                     "shouldOverrideUrlLoading(" + view + "Ljava/lang/String;)Z",
-                    "shouldOverrideUrlLoading(" + view + descriptor + "WebResourceRequest;)Z",
+                    "shouldOverrideUrlLoading(" + view + interfaces + "WebResourceRequest;)Z",
                     "onPageFinished(" + view + "Ljava/lang/String;)V"
             ).contains(shape)) return true;
         }

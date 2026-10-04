@@ -27,6 +27,7 @@ public final class CapabilitySelfTest {
  public static void main(String[] args)throws Exception {
   PhaseRetentionFixture.run();
   SchedulerIsolationFixture.run();
+  ParallelActivityFixture.run();
   ContextPriorityFixture.run();
   SwitchOwnershipFixture.run();
   ComponentEntryFixture.run();

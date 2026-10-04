@@ -18,12 +18,13 @@ public class Main {
         Path apk=Path.of(required(options,"--apkpath")).toAbsolutePath();
         if(!Files.isRegularFile(apk))throw new IllegalArgumentException("APK not found: "+apk);
         int hard=number(options,"--hard-seconds",600),target=number(options,"--target-seconds",300);
+        int analysisWorkers=analysisWorkers(options);
         if(target>hard)throw new IllegalArgumentException("target seconds must not exceed hard seconds");
         Path out=Path.of(options.getOrDefault("--out","output/"+Util.apkTag(apk))).toAbsolutePath();Files.createDirectories(out);
-        if(options.containsKey("--worker")){worker(apk,out,target,hard);return;}
+        if(options.containsKey("--worker")){worker(apk,out,target,hard,analysisWorkers);return;}
         long start=System.nanoTime();Path report=out.resolve("capabilities.json");
         write(report,Map.of("schema_version",1,"status","starting","apk",apk.toString(),"activities",List.of(),"unattributed",List.of()));
-        List<String> cmd=new ArrayList<>(List.of(Path.of(System.getProperty("java.home"),"bin","java").toString(),"-Xmx"+Runtime.getRuntime().maxMemory(),"-XX:ActiveProcessorCount="+Runtime.getRuntime().availableProcessors(),"-cp",System.getProperty("java.class.path"),Main.class.getName(),"--worker","--apkpath",apk.toString(),"--out",out.toString(),"--target-seconds",String.valueOf(target),"--hard-seconds",String.valueOf(Math.max(1,hard-5))));
+        List<String> cmd=workerCommand(apk,out,target,hard,analysisWorkers);
         Process process=new ProcessBuilder(cmd).inheritIO().start();
         Thread shutdown=new Thread(()->{process.descendants().forEach(ProcessHandle::destroyForcibly);process.destroyForcibly();});Runtime.getRuntime().addShutdownHook(shutdown);
         boolean done=process.waitFor(Math.max(1,hard-2),TimeUnit.SECONDS);
@@ -38,7 +39,14 @@ public class Main {
         System.out.println("Wrote: "+report+" status="+finalReport.get("status"));
         if(!done||process.exitValue()!=0)System.exit(2);
     }
-    static void worker(Path apk,Path out,int target,int hard) throws Exception {
+    static int analysisWorkers(Map<String,String> options){
+        int workers=number(options,"--analysis-workers",Math.min(8,Runtime.getRuntime().availableProcessors()));
+        if(workers>8)throw new IllegalArgumentException("--analysis-workers must be between 1 and 8");return workers;
+    }
+    static List<String> workerCommand(Path apk,Path out,int target,int hard,int analysisWorkers){
+        return new ArrayList<>(List.of(Path.of(System.getProperty("java.home"),"bin","java").toString(),"-Xmx"+Runtime.getRuntime().maxMemory(),"-XX:ActiveProcessorCount="+Runtime.getRuntime().availableProcessors(),"-cp",System.getProperty("java.class.path"),Main.class.getName(),"--worker","--apkpath",apk.toString(),"--out",out.toString(),"--target-seconds",String.valueOf(target),"--hard-seconds",String.valueOf(Math.max(1,hard-5)),"--analysis-workers",String.valueOf(analysisWorkers)));
+    }
+    static void worker(Path apk,Path out,int target,int hard,int analysisWorkers) throws Exception {
         long start=System.nanoTime(),deadline=start+hard*1_000_000_000L;Map<String,Object> metrics=new LinkedHashMap<>();
         String hash;try(InputStream stream=Files.newInputStream(apk)){MessageDigest digest=MessageDigest.getInstance("SHA-256");byte[] b=new byte[1024*1024];int n;while((n=stream.read(b))!=-1)digest.update(b,0,n);hash=HexFormat.of().formatHex(digest.digest());}
         metrics.put("hash_seconds",(System.nanoTime()-start)/1e9);
@@ -50,10 +58,12 @@ public class Main {
         metrics.put("platform_hierarchy_source",idx.platformSource);metrics.put("platform_hierarchy_classes",idx.platformParents.size());
         metrics.put("index_seconds",(System.nanoTime()-t)/1e9);metrics.put("classes",idx.classes.size());metrics.put("methods",idx.methods.size());metrics.put("instructions",idx.instructions);metrics.put("seed_methods",idx.seeds.size());metrics.put("relevant_methods",idx.relevant.size());metrics.put("manifest_activities",inventory.activities.size());
         System.out.println("Indexed: "+JSON.toJson(metrics));
-        CapabilityEngine engine=new CapabilityEngine(idx,inventory,deadline);List<String> roots=new ArrayList<>(inventory.activities);
+        List<String> roots=new ArrayList<>(inventory.activities);
         if(roots.isEmpty())idx.classes.keySet().stream().filter(idx::activity).sorted().forEach(roots::add);
         // Direct seed hosts first; remaining hosts are still examined, not silently excluded.
         roots.sort(Comparator.comparingInt((String a)->idx.hierarchyMethods(a).stream().anyMatch(m->idx.seeds.contains(CapabilityIndex.key(m)))?0:1).thenComparing(a->a));
+        try(ParallelActivityScheduler scheduler=new ParallelActivityScheduler(idx,inventory,roots,start,deadline,start+target*1_000_000_000L,analysisWorkers)){
+        CapabilityEngine engine=scheduler.aggregate;
         long[] checkpoint={System.nanoTime()};
         engine.checkpoint=()->{
             long now=System.nanoTime();if(now-checkpoint[0]<10_000_000_000L)return;
@@ -65,32 +75,26 @@ public class Main {
         };
         metrics.put("target_seconds",target);metrics.put("worker_budget_seconds",hard);
         metrics.put("analysis_strategy","dex_index_parameterized_summaries");
+        metrics.put("analysis_workers",analysisWorkers);metrics.put("shared_summary_cache",true);
+        metrics.put("checkpoint_consistency","worker_quiescent_barrier");
         write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
         metrics.put("scheduling","initial_pass_then_resumable_round_robin");
         metrics.put("initial_slice_max_contexts",8);metrics.put("initial_slice_max_millis",50);
         metrics.put("deep_slice_max_contexts",100);metrics.put("deep_slice_max_millis",50);
         metrics.put("scheduling_stage","initial_pass");
-        ArrayDeque<CapabilityEngine.ActivityState> pending=new ArrayDeque<>();
-        int attempted=0;
-        for(String activity:roots){
-            if(System.nanoTime()>=deadline)break;
-            long share=Math.max(1_000_000L,(Math.min(deadline,start+target*1_000_000_000L)-System.nanoTime())/Math.max(1,roots.size()-attempted));
-            var state=engine.beginActivity(activity);engine.advanceActivity(state,Math.min(50_000_000L,share),8);state.initialPass=true;attempted++;
-            if(!state.done)pending.add(state);
-        }
+        scheduler.initialPass(engine.checkpoint);
         metrics.put("initial_pass_seconds",(System.nanoTime()-start)/1e9);
         metrics.put("scheduling_stage","deep_analysis");updateCoverage(engine,roots,metrics);
         write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
-        while(!pending.isEmpty()&&System.nanoTime()<deadline){
-            var state=pending.remove();engine.advanceActivity(state,50_000_000L,100);
-            if(!state.done)pending.add(state);
-        }
-        metrics.put("scheduling_stage",pending.isEmpty()&&attempted==roots.size()?(engine.states.values().stream().anyMatch(s0->s0.limited||s0.provisionalFacts>0)?"finished_with_limits":"finished"):"deadline");
+        while(scheduler.pending()&&System.nanoTime()<deadline)scheduler.deepEpoch(10_000_000_000L,engine.checkpoint);
+        metrics.put("scheduling_stage",scheduler.finished()?(engine.states.values().stream().anyMatch(s0->s0.limited||s0.provisionalFacts>0)?"finished_with_limits":"finished"):"deadline");
+        metrics.put("quiescent_barriers",scheduler.barriers);
         updateCoverage(engine,roots,metrics);
         metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);
         metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
-        String status=pending.isEmpty()&&attempted==roots.size()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
+        String status=scheduler.finished()&&engine.diagnostics.isEmpty()&&idx.diagnostics.isEmpty()?"complete":"partial";
         write(out.resolve("capabilities.json"),engine.report(hash,status,metrics));
+        }
     }
     static void updateCoverage(CapabilityEngine engine,List<String> roots,Map<String,Object> metrics){
         metrics.put("started_activities",engine.states.size());
@@ -127,7 +131,7 @@ public class Main {
         reportWriteNanos+=System.nanoTime()-start-nestedNanos;reportWrites++;
     }
     static Map<String,String> options(String[] args){
-        Map<String,String> result=new LinkedHashMap<>();Set<String> allowed=Set.of("--apkpath","--out","--target-seconds","--hard-seconds","--worker","--pathcount");
+        Map<String,String> result=new LinkedHashMap<>();Set<String> allowed=Set.of("--apkpath","--out","--target-seconds","--hard-seconds","--worker","--pathcount","--analysis-workers");
         for(int i=0;i<args.length;i++){
             String key=args[i];if(!allowed.contains(key))throw new IllegalArgumentException("Unknown argument: "+key);
             if(key.equals("--worker")){result.put(key,"true");continue;}
