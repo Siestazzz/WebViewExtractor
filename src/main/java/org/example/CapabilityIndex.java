@@ -25,6 +25,15 @@ final class CapabilityIndex {
     final Map<String,Set<String>> registryHandlerShapes=new HashMap<>();
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
+    final Set<String> fragmentFactoryFields=new HashSet<>(), componentProtocols=new HashSet<>();
+    static boolean fragmentFactory(String id){
+        for(String base:List.of("android.app.Fragment","androidx.fragment.app.Fragment","android.support.v4.app.Fragment")){
+            String d="L"+base.replace('.','/')+";";
+            if(id.equals(d+"->instantiate(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)"+d)||
+               id.equals(d+"->instantiate(Landroid/content/Context;Ljava/lang/String;)"+d))return true;
+        }return false;
+    }
+    static boolean pagerInstall(String id){return id.equals("Landroidx/viewpager2/widget/ViewPager2;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V");}
     final Set<String> keyedRegistryWrites=new HashSet<>();
     final Set<String> aroundClosureBases=new HashSet<>(), joinPointContracts=new HashSet<>(), proceedArgumentMethods=new HashSet<>();
     final Set<String> lazyContracts=new HashSet<>(Set.of("kotlin.Lazy")), function0Contracts=new HashSet<>(Set.of("kotlin.jvm.functions.Function0"));
@@ -69,6 +78,7 @@ final class CapabilityIndex {
         // Generated bindings can hold nested custom Views rather than a direct WebView.
         // Keep their actual allocation-local constructor captures through bind/inflate returns.
         for(String type:classes.keySet())if(subtype(type,"androidx.viewbinding.ViewBinding"))bindingObjects.add(type);
+        for(String type:classes.keySet())if(subtype(type,"androidx.viewpager2.adapter.FragmentStateAdapter"))bindingObjects.add(type);
         for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
         for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&(webview(cls(m.getReturnType()))||function0Type(cls(m.getDefiningClass()))))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
@@ -85,9 +95,13 @@ final class CapabilityIndex {
                 if(i instanceof ReferenceInstruction r&&r.getReference() instanceof MethodReference target && i.getOpcode().name.startsWith("invoke-")){
                     refs.add(key(target));
                     if(kind(target)!=null)seeds.add(id);
+                    if(fragmentFactory(key(target))||pagerInstall(key(target)))componentProtocols.add(id);
                 }
             }}catch(RuntimeException ex){diagnostics.add("method_index_failed:"+id+":"+ex.getClass().getSimpleName());}
             calls.put(id,refs);referencedFields.put(id,fields);
+            if(refs.stream().anyMatch(CapabilityIndex::fragmentFactory)){
+                fragmentFactoryFields.addAll(fields);bindingObjects.add(cls(m.getDefiningClass()));
+            }
             for(String ref:refs)callers.computeIfAbsent(ref,k->new HashSet<>()).add(id);
         }
         // Resolve inherited calls to their actual implementation before reverse closure.
@@ -120,6 +134,7 @@ final class CapabilityIndex {
                 for(String caller:callers.getOrDefault(key(declaration),Set.of()))callers.computeIfAbsent(key(implementation),k->new HashSet<>()).add(caller);
         }
         var queue=new ArrayDeque<>(seeds); relevant.addAll(seeds);
+        for(String protocol:componentProtocols)if(relevant.add(protocol))queue.add(protocol);
         while(!queue.isEmpty()) {
             String callee=queue.remove();
             Set<String> receiverOwners=new HashSet<>();
@@ -129,19 +144,19 @@ final class CapabilityIndex {
                 // Follow only returned WebView/Settings/carrier objects, then discover their
                 // field writers through the same bounded relevance closure.
                 if(target!=null){String returned=cls(target.getReturnType());
-                    if((webview(returned)||settings(returned)||client(returned)||bindingObjects.contains(returned))&&relevant.add(call))queue.add(call);
+                    if((webview(returned)||settings(returned)||client(returned)||bindingObjects.contains(returned)||subtype(returned,"androidx.viewpager2.adapter.FragmentStateAdapter"))&&relevant.add(call))queue.add(call);
                 }
                 if(relevant.contains(call)||target!=null&&target.getImplementation()==null&&byShape.getOrDefault(shape(target),List.of()).stream().anyMatch(m->relevant.contains(key(m))))receiverOwners.add(CapabilityEngine.owner(call));
             }
             for(String field:referencedFields.getOrDefault(callee,Set.of())){
                 String type=cls(field.substring(field.indexOf(':')+1));
-                boolean binding=webview(type)||settings(type)||bindingObjects.contains(type)||collection(type)&&(seeds.contains(callee)||webview(CapabilityEngine.owner(field)))||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");
+                boolean binding=webview(type)||settings(type)||bindingObjects.contains(type)||collection(type)&&(seeds.contains(callee)||webview(CapabilityEngine.owner(field))||subtype(CapabilityEngine.owner(field),"androidx.viewpager2.adapter.FragmentStateAdapter"))||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");
                 // Constructors/setters of a composed receiver are needed even when that receiver
                 // is not itself a WebView carrier (controller -> manager -> factory is common).
                 // Require a relevant call on the field's declared receiver type, not mere co-location.
                 if(!binding&&type!=null&&!type.startsWith("java.")&&!type.startsWith("android.")&&!type.startsWith("kotlin."))
                     for(String receiverOwner:receiverOwners)if(subtype(type,receiverOwner)){binding=true;break;}
-                if(binding)for(String writer:fieldWriters.getOrDefault(field,Set.of()))if(relevant.add(writer))queue.add(writer);
+                if(binding||fragmentFactoryFields.contains(field))for(String writer:fieldWriters.getOrDefault(field,Set.of()))if(relevant.add(writer))queue.add(writer);
             }
             for(String caller:callers.getOrDefault(callee,Set.of()))if(relevant.add(caller))queue.add(caller);
             Method cm=methods.get(callee);
@@ -360,6 +375,8 @@ final class CapabilityIndex {
         // Private/direct and static methods do not override virtual client callbacks.
         if((method.getAccessFlags()&(2|8))!=0)return false;
         String shape=shape(method);
+        if((method.getAccessFlags()&1)!=0&&(subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&
+            shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V"))return true;
         for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk.")){
             for(String family:List.of("WebViewClient","WebChromeClient")){
                 String contract=prefix+family;
@@ -432,7 +449,7 @@ final class CapabilityIndex {
     boolean map(String t){return t!=null&&(Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.util.TreeMap","java.util.concurrent.ConcurrentMap","java.util.concurrent.ConcurrentHashMap").contains(t)||subtype(t,"java.util.Map"));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
-    boolean client(String type){return subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
+    boolean client(String type){return subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
     boolean componentEntry(String type,Method method){
         if((method.getAccessFlags()&(2|8))!=0||(method.getAccessFlags()&(1|4))==0)return false;
         String contract=shape(method);
@@ -500,6 +517,8 @@ final class CapabilityIndex {
         String owner=cls(m.getDefiningClass()),n=m.getName();var p=m.getParameterTypes();
         if(customCallbacks.containsKey(key(m)))return "callback";
         if(webview(owner)){
+            if(n.equals("setDownloadListener")&&m.getReturnType().equals("V"))for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk."))
+                if(p.equals(List.of("L"+prefix.replace('.', '/')+"DownloadListener;"))&&subtype(owner,prefix+"WebView"))return "callback";
             if((n.equals("loadUrl")||n.equals("loadData")||n.equals("loadDataWithBaseURL")||n.equals("evaluateJavascript"))&&!p.isEmpty()&&p.get(0).equals("Ljava/lang/String;"))return "webview_operation";
             if(n.equals("addJavascriptInterface")&&p.size()==2&&p.get(0).equals("Ljava/lang/Object;")&&p.get(1).equals("Ljava/lang/String;"))return "bridge";
             if((n.equals("setWebViewClient")||n.equals("setWebChromeClient"))&&p.size()==1)return "callback";

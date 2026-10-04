@@ -202,6 +202,12 @@ final class CapabilityEngine {
                 for(Call call:summary.calls()){
                     Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
+                    if(CapabilityIndex.pagerInstall(call.method())){
+                        installFragmentAdapter(h,job,call);continue;
+                    }
+                    if(CapabilityIndex.fragmentFactory(call.method())){
+                        eval(expr("return_fragment_factory:"+call.offset(),owner(call.method()),call.method(),call.args()),job,h,0,new HashSet<>());continue;
+                    }
                     List<AsyncRegistrations.Entry> registrations=async.entries(call.method());
                     boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
                     boolean fieldSetter=target!=null&&objectFieldSetter(target);
@@ -265,6 +271,29 @@ final class CapabilityEngine {
 
                     if(name.equals("<init>")&&!args.isEmpty()&&idx.component(owner)&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
                 }
+    }
+    void installFragmentAdapter(Host h,Job job,Call call){
+        List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
+        if(args.size()!=2){h.gaps.add("fragment_adapter_arguments");return;}
+        for(V pager:alternatives(args.get(0)))for(V adapter:alternatives(args.get(1))){
+            if(!Set.of("object","new","view").contains(pager.kind())||!idx.subtype(pager.type(),"androidx.viewpager2.widget.ViewPager2")){
+                h.gaps.add("fragment_adapter_pager_unresolved");continue;
+            }
+            if(adapter.kind().equals("literal")&&"0".equals(adapter.literal()))continue;
+            if(!Set.of("object","new").contains(adapter.kind())||!idx.subtype(adapter.type(),"androidx.viewpager2.adapter.FragmentStateAdapter")){
+                h.gaps.add("fragment_adapter_unresolved");continue;
+            }
+            String signature=desc(adapter.type())+"->createFragment(I)Landroidx/fragment/app/Fragment;";
+            Method creator=idx.resolve(signature);
+            if(creator==null||creator.getImplementation()==null){h.gaps.add("fragment_adapter_factory_unresolved:"+adapter.type());continue;}
+            List<V> bound=List.of(adapter,V.of("unknown","number","fragment_requested_position:"+adapter.id()));
+            List<String> path=extend(job.path,"installed_fragment_adapter:"+call.method()+"@"+call.offset()+":"+pager.id());
+            enqueue(h,creator,bound,path,true);
+            Job installed=new Job(job.method,job.args,path,true);
+            V result=eval(expr("return", "androidx.fragment.app.Fragment",signature,bound),installed,h,0,new HashSet<>());
+            for(V created:alternatives(result))if(created.kind().equals("object")&&fragment(created.type()))
+                seed(h,created.type(),created,extend(path,"adapter_fragment_result:"+signature),true);
+        }
     }
     void dispatchRegistered(Host h,Job job,Call call,List<V> args,List<AsyncRegistrations.Entry> registrations){
         for(var registration:registrations){
@@ -877,6 +906,16 @@ final class CapabilityEngine {
         }
         if(v.kind().startsWith("return")){
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
+            if(v.id().equals("Ljava/lang/Class;->getName()Ljava/lang/String;")&&args.size()==1){
+                V result=null;for(V clazz:alternatives(args.get(0)))
+                    result=union(result,clazz.kind().equals("class")&&clazz.type()!=null?V.literal("java.lang.String",clazz.type()):V.of("unknown","java.lang.String","dynamic_class_name"));
+                return result==null?UNKNOWN:result;
+            }
+            if(CapabilityIndex.fragmentFactory(v.id()))return instantiateFragment(v,args,job,h,depth,visiting);
+            if(name.equals("getArguments")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/os/Bundle;")&&args.size()==1&&frameworkViewAccess(v.id(),args)){
+                V result=null;for(V receiver:alternatives(args.get(0)))result=union(result,h.heap.get(heapKey("$fragment_arguments",receiver)));
+                if(result!=null)return result;
+            }
             if(idx.closureLink(v.id())&&!args.isEmpty())return linkClosure(h,job,args,v.type(),depth,visiting);
             if(name.equals("getView")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/view/View;")&&args.size()==1&&frameworkViewAccess(v.id(),args))return fragmentView(args.get(0),job,h,depth+1,visiting);
             if(name.equals("getChildAt")&&idx.subtype(owner(v.id()),"android.view.ViewGroup")&&v.id().endsWith("(I)Landroid/view/View;")&&args.size()==2&&frameworkViewAccess(v.id(),args))return layoutChild(args.get(0),args.get(1),job,h);
@@ -926,6 +965,30 @@ final class CapabilityEngine {
             return result==null?new V("unknown",v.type(),v.id(),null,List.of()):result;
         }
         return v;
+    }
+    V instantiateFragment(V expression,List<V> args,Job job,Host h,int depth,Set<String> visiting){
+        if(args.size()<2){h.gaps.add("fragment_factory_arguments");return V.of("unknown",expression.type(),"fragment_factory_arguments");}
+        V result=null;
+        for(V name:alternatives(args.get(1))){
+            if(!name.kind().equals("literal")||name.literal()==null){h.gaps.add("fragment_factory_dynamic_name:"+expression.id());result=union(result,V.of("unknown",expression.type(),"dynamic_fragment_factory"));continue;}
+            String type=name.literal();ClassDef declaration=idx.classes.get(type);
+            if(declaration==null||!idx.subtype(type,owner(expression.id()))||(declaration.getAccessFlags()&1)==0||(declaration.getAccessFlags()&0x600)!=0){
+                h.gaps.add("fragment_factory_type_unresolved:"+type);result=union(result,V.of("unknown",expression.type(),"unresolved_fragment_factory:"+type));continue;
+            }
+            Method ctor=idx.resolve(desc(type)+"-><init>()V");
+            if(ctor==null||!CapabilityIndex.cls(ctor.getDefiningClass()).equals(type)||(ctor.getAccessFlags()&1)==0){
+                h.gaps.add("fragment_factory_constructor_unresolved:"+type);result=union(result,V.of("unknown",type,"unresolved_fragment_constructor:"+type));continue;
+            }
+            String identity="fragment_factory:"+expression.id()+"@"+expression.kind()+"|"+allocationContext(job)+"|"+type;
+            V created=V.of("object",type,identity);
+            materializeConstructor(ctor,List.of(created),job,h,depth+1,new HashSet<>(visiting));
+            if(args.size()>2)applyWrite(h,"$fragment_arguments",created,args.get(2));
+            // As with existing allocation entry modeling, construction is conditional,
+            // not proof of attach. Adapter install supplies a separate evidence path.
+            seed(h,type,created,extend(job.path,"fragment_factory:"+expression.id()),true);
+            result=union(result,created);
+        }
+        return result==null?V.of("unknown",expression.type(),"unresolved_fragment_factory"):result;
     }
     void materializeConstructor(Method ctor,List<V> args,Job outer,Host h,int depth,Set<String> visiting){
         if(args.isEmpty())return;

@@ -1,0 +1,1185 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "scorer_sha256": "757bb6ae6effd82a2ea2982e13e94840efe0d306fed8f22dc4f73ffc181db74a",
+  "counts": {
+    "before_matched": 1673,
+    "after_matched": 1622,
+    "regression": 51
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDefaultTextEncodingName",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": "UTF-8",
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2614699cc913f49da302d95e2356d709366584704d72a0d4cd200116efd3eb41"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setSupportZoom(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4961b6fd1816bbbdc0f2ff6c5380a3a0756feec5c16468d7f7254beea0fd6f33"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cf2545f5b02be3e384fc496f1d969a2e347148eb32a4b22448bbaa6bbf8c16ee"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "109dcdd0314c0d1f0740f21a80390ec5dd098b6e276d6e2f2ff01e33d13f4025"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "de7096d0a7c6bb25c8d11c7c047789496672e6ad4fda1da16025acf1ce96c370"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setRenderPriority",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setRenderPriority(Lcom/tencent/smtt/sdk/WebSettings$RenderPriority;)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": "WebSettings.RenderPriority.HIGH",
+        "value_kind": "enum",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2cef4c92e9373ad4ca5447b26c2a96154196edb7bfae827c24ff70c60f08273f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": 2,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "71901d22d747d8c9cac2af1ed6e2bae5a73d64b837c51d953b9aaf04c027a101"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7a463856270f54cc160925b86390a58b6716a3c8df374e60509df96afdbf2d21"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "a",
+        "normalized_signature": "Lcom/tencent/news/startup/privacy/PrivacyAbsWebActivity$a;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity$a",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "22337288ad1b815ac1b1c6f1862cbcfb5fad9cd30f59e23d1d8415c5802bd7d5"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "a",
+        "normalized_signature": "Lcom/tencent/news/startup/privacy/PrivacyAbsWebActivity$a;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity$a",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "166c5fa452fcd5090a03bb3284934a4d63d0259b2e65fecaa4dcba423c0d1ec2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "a",
+        "normalized_signature": "Lcom/tencent/news/startup/privacy/PrivacyAbsWebActivity$a;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity$a",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "427c4f7812a998b159dbcaef90cd7f0c6ddbab465c8ad5f8b0e1f2ba3526a16d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDefaultTextEncodingName",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": "UTF-8",
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d7f3b429554c66578cfd0a7e0e43a92f62c8349b322accc878143baaf6e7429c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setSupportZoom(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "28ba1474b4bb61c27354c174d452ea49e40f94821aed78aed31a290442b4bd2d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "874cd8487575948003065c728f2fe8a0c5ff2ab4d8bd77819641f30ad3c341f9"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0164bae8f0dc72e76dc5e4ac0372efb6c56dda4925feee0ab5c8b4e616bfa0d4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8a5ca78487164527a79b5a280c217e0e871752a39df6df2f018b4079329095fd"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setRenderPriority",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setRenderPriority(Lcom/tencent/smtt/sdk/WebSettings$RenderPriority;)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": "WebSettings.RenderPriority.HIGH",
+        "value_kind": "enum",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "1597f788b14a0edd92402f6db56bc21eef660cc5dc3eab4e443b654e685e4247"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": 2,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7abf464f28e10c32febca089eb893b443fd754346d7ccd7a6eb70a79fae87685"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "541815563d10062349c11cfcbe17e142812e72bb9b0f3aa4a7221a65e5deabbd"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "a",
+        "normalized_signature": "Lcom/tencent/news/startup/privacy/PrivacyAbsWebActivity$a;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity$a",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c5f1ae2c7657d2bd7462f7f10f13250002d7ae155bdc81adf82ab0e5a125df8f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "a",
+        "normalized_signature": "Lcom/tencent/news/startup/privacy/PrivacyAbsWebActivity$a;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity$a",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "5821dcc10071701639e77aecdaf707d1526e6df4ec2948ff3610db534c404d57"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "a",
+        "normalized_signature": "Lcom/tencent/news/startup/privacy/PrivacyAbsWebActivity$a;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.startup.privacy.PrivacyAbsWebActivity$a",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4ced0535cfe775b059018967e4b1bc22b7eb658a5213fd149d655f3600fef691"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.news.ui.SupportActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a90873e642bc312d198d069fef7d48c88b0ea3f36ba94f8a05de36a00169f7e9"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.news.ui.SupportActivity",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7b3d5df83cd1bf07ab17ea92302984d448ada2f3bea55b7162bf6abb76e366e1"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "com.tencent.news.ui.SupportActivity",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "633e301de77aba50af930cc27666046ee7f804986026d7628b87dfda0254d6e2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "d",
+        "normalized_signature": "Lcom/tencent/news/ui/SupportActivity$d;->onProgressChanged(Lcom/tencent/smtt/sdk/WebView;I)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ui.SupportActivity$d",
+        "value": "WebChromeClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "10cb6f0bdd609ffa1592859fce314936584ab5cf02f5c3b2abb2d3871b37be31"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "d",
+        "normalized_signature": "Lcom/tencent/news/ui/SupportActivity$d;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ui.SupportActivity$d",
+        "value": "WebChromeClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3fd05b1a05d2246ae013106c65ebe966d9e4d80163f6c3cd49733911d2288d34"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/ui/SupportActivity$e;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ui.SupportActivity$e",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a3f2e7b063845599f2109cc583d1da64f590b6598de4b3fe9f3703e86b47fe20"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/ui/SupportActivity$e;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ui.SupportActivity$e",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "40bc777fb072726da1fa78e952ab0fe6d5b543c2977b864ed84a78a7acb41bc8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/ui/SupportActivity$e;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ui.SupportActivity$e",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4b424c6ba68496e0bf82c1b02d6d3b17842d0846cbd1e47a07f15434d4244906"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.ui.SupportActivity",
+        "webview": "support_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/ui/SupportActivity$e;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.ui.SupportActivity$e",
+        "value": "WebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.BaseWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2c017696f0bde086f78c9f6e37a857d104f89b6eb853745e29f6fcf806c8e75e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setBlockNetworkImage",
+        "normalized_signature": null,
+        "normalized_api": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "42d68f00813d2ab61b4338a1adc875eb3af080b46bce0a13f020c74de366d085"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$e;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+        "value": "SysWebChromeClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fadab3fe7df2f89c12044ac913de66696602b630348976d13b05bb61445c718c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$e;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+        "value": "SysWebChromeClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "76035bb237f072896d7027fd5ec69588f7bb19ef55b80150365df8f793026340"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$e;->onProgressChanged(Landroid/webkit/WebView;I)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+        "value": "SysWebChromeClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d3124fe9f21df9b42ce2a01c1c13eff80c91b541ffa91bb88a7c75852a6f3b95"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "e",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$e;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$e",
+        "value": "SysWebChromeClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8391f166b5e47dde902bb2dbb09addf59f33d5887d0e70f1546b61687d418f81"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cfab261e746fdea48449c725b557b39c4227050ccf8b8834bc3c334877afcfbb"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "54b6c13ad4d2c152d17d9681f96ca856c88a67d8e7fc307a2ddd551fa08bc7b6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7b5b535c976fe0c6f5a72c88c0a2079e1d2121a2a645d6585d91d5329dc2e0f4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d3d4c408bf5edf8b2b2f13e19bcd97fe4dca0ca66f58be5644408ce730198f34"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "91cbdd26a6d3003328041e67d9c97e03f7b630403fcc0223a27d309d44291ff3"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e041a9b7dd0b8c3e1fd982c784e364bf5628f91a1a315022351b52a9fd8a2038"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.tad.business.novel.WebNovelActivity",
+        "webview": "novel_web",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "f",
+        "normalized_signature": "Lcom/tencent/news/tad/business/novel/WebNovelActivity$f;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.news.tad.business.novel.WebNovelActivity$f",
+        "value": "SysWebViewClient",
+        "value_kind": null,
+        "binding_status": "bound_group",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.tad.business.ui.landing.AdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "59dd8456d163eb1b2d51ba77f9090782fa9ab94ce12d2dd09589f4850b0f630e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "bridge",
+        "registration_name": "DTJsBridgeInterface",
+        "name": "addJavascriptInterface",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "91461a834ea88d2eb23996d0931687b5563c52bd2953298cd39becf0b2e0838c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "bridge_method",
+        "registration_name": "DTJsBridgeInterface",
+        "name": "bridgeCall",
+        "normalized_signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3944aa1e9378b5bea1f1684c867f1eedfeca6a7736483150b1847eb4fd79581e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "bridge",
+        "registration_name": "dtBridge",
+        "name": "addJavascriptInterface",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2a7ad54e60cee3a62547dc6b2a650d249ad33572105902eca8c88f3abb1e592e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebActivity",
+        "webview": "privacy_web",
+        "kind": "bridge_method",
+        "registration_name": "dtBridge",
+        "name": "postMessage",
+        "normalized_signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "21cec5e85e58b6f639cc79f8b33773d6d4d076f014ba56336b83e36cce71ae9b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "bridge",
+        "registration_name": "DTJsBridgeInterface",
+        "name": "addJavascriptInterface",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8dc640c8f8e1a9d790a149bc1f5460433b6e548e1d5495568ad95a3a6eced348"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "bridge_method",
+        "registration_name": "DTJsBridgeInterface",
+        "name": "bridgeCall",
+        "normalized_signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface;->bridgeCall(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v1.BridgeInterface",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "448c011dd91b1a29302404d423645dc14526a4e9754fd6e61b34f55539eda246"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "bridge",
+        "registration_name": "dtBridge",
+        "name": "addJavascriptInterface",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7c3d187ec55107de6b295c73c7d94f9d88210027decaa77feede6e13cc6c3416"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.news.startup.privacy.PrivacyWebItemActivity",
+        "webview": "privacy_web",
+        "kind": "bridge_method",
+        "registration_name": "dtBridge",
+        "name": "postMessage",
+        "normalized_signature": "Lcom/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2;->postMessage(Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": null,
+        "implementation": "com.tencent.qqlive.module.videoreport.inject.webview.jsbridge.v2.JsBridgeInterfaceV2",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "source_confirmed_conditional",
+        "webview_constraint": {
+          "types": [
+            "com.tencent.news.webview.api.X5WrapperWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6c6ca2ef9db998b4d45affbe8ae71fd1aee9e8e5f7bb240d3f140cf1d9fa6e54"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

@@ -32,6 +32,7 @@ public final class CapabilitySelfTest {
   ComponentEntryFixture.run();
   ClientGetterLifecycleFixture.run();
   CapabilityDispatchFixture.run();
+  FragmentFactoryFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction11n(Opcode.CONST_4,1,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",0,1),
@@ -133,6 +134,7 @@ public final class CapabilitySelfTest {
         LazyInvocationFixture.run();
         RegisteredMessageFixture.run();
         TransportProtocolsFixture.run();
+        DownloadListenerFixture.run();
         ActivityArgumentFixture.run();
         ResolutionBudgetFixture.run();
    deepEvidenceFixture();

@@ -1,0 +1,2726 @@
+{
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "scorer_sha256": "757bb6ae6effd82a2ea2982e13e94840efe0d306fed8f22dc4f73ffc181db74a",
+  "counts": {
+    "before_matched": 2311,
+    "after_matched": 2193,
+    "regression": 118
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.platform.oms.ui.LoadingWebActivity",
+        "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.platform.oms.ui.FragmentWebLoadingBase#initView",
+        "value": 2,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.platform.oms.ui.widget.TimeoutCheckWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8f6d2df7677d38dff4aa7b56899b74ed0f1dfaf7bf279e2865f6e6f429a1df5b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAllowFileAccess",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4721de5afeb8531acda624b6214aee99f7b95588827168c24db06abdfcf46abf"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportMultipleWindows",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4fc97c556903f2a67b2f8f0bd17d0a2f6e84082667149aba7585a0d4543907ca"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAppCacheEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8b7f640b8476d0ce10bc2f05bbef3eb578e671b2f753be41c7c0e0ef3a81f566"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "66e1937019065068c32648d2223e26f2561a7e13c50452e78b4aedef07ba2c56"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e225315978f12b5af6debab7eb1bc273a1f903d8bb79a0d7dfd97cb8e00a84c8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "5ba0e4f119b75ddb051ada52b4b1253fe95d30c89dc54d74ce51f5aae4f22596"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setGeolocationEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9caeb1caa82ed3783d07565b30be6125774fab4814388acea2fcf17c117e7c24"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUseWideViewPort",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "bc47563b2d6c88702f8630920ceef77ea1d0b31cf67cb0f04c145b483c8536c6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setBuiltInZoomControls",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "572a8471c20648cc23d5ab2107d3cadcd9cf33f816b746308ba2b709fa950319"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportZoom",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "bad5e331cb9cc7f4afb62be5db2507a428813a5281de8c6f2ccdbb6adc23fa1f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDisplayZoomControls",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a1694b5fa10d83273bb3010cab72731269e5f50ef79188de47a5a1585dd136ac"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": 2,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f571e7b0f70605a1fc624490ba3677b25f33abc68bac5bdcdd947f887c8c5d88"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSavePassword",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "55d85c820aa641b2cf8c29099d9b4d57717cda9dbc47a3126dbee044218b4003"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUseWideViewPort",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c2055cca9b78662edf6c998a9905d5aae8cb24a2658b2a07711a7cc030553182"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setLayoutAlgorithm",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setLayoutAlgorithm(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setLayoutAlgorithm(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": "SINGLE_COLUMN",
+        "value_kind": "enum",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "866f42a7628aad93941dc6f1e0e80a7faa82627c1a7afe4f4e69f1ef5debce78"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setLoadWithOverviewMode",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "76812c42e644ee1b123d99f64f3b5778374e304786c58989785c208234e1dcf6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "39d5233250839f61ba28f76403765910cd2cf6765d63cc66c7be840541d37a15"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": -1,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3af154b74c59b841225138069b325491efccf69d087ce2dede6a6f9725f45ef0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUserAgentString",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": null,
+        "value_kind": "dynamic",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "86037042201b204cfc5fdf9276f3360b7221993c0b6e2acf9d04010882c518be"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAllowFileAccess",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b2fb05324369585274931d84254319562cfc90f1ac35cc91b23d30b009e79643"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportMultipleWindows",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0b8cb1a0978930f85a583b385798369eefccc3ca0a9c573c7a68fe8773356a73"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setAppCacheEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7ad2a03016f9766e9ff0db4dbc11cfb047607e156eef51f6518eb6082788e367"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cf5cb3a357f424835cf0521f16cea4c356aa5b3384b0aa7c42984d65603b12b6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDatabaseEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b28a46f682ce6e109c59ea6597885b2ab586b05699845694d3b72ae1cfde6fc8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "acf44296ec27a6d9b1ba859d49233bbe2f85173ce7a2fc76b74560935e840254"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setGeolocationEnabled",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b08e40966a80cce137e7a1813bf5e3408f454cacd24577924386f351c89cd4f2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUseWideViewPort",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cb4ba8fadcdf0a2049210d7658b24a1627b2c6679ffcd4ac588e970f5d97873c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setBuiltInZoomControls",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "77832bd252c60e090de6ee94f4a1d048b7d104c28d47fb5922b2602643bc7a9e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportZoom",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "77dfeacb42726bd077cd5e9e03bfd1075adf4b59794d16a2685d3b9d58232052"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDisplayZoomControls",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "42f330d533fb3fb5c00d9e189223e1e7194adb95462a9dc348d5f493f1cb7853"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": 2,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "13da0c173b1bb708c05547dff28c6346f97bab2d9b0216414c1132e300d75cbe"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSavePassword",
+        "normalized_signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+        "normalized_api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+        "implementation": "android.webkit.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3d718cfa9b77c2280755e33033c5dd486a1218eb90d273eb26a7b52c7f4e87e7"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "bridge",
+        "registration_name": "JSCore",
+        "name": "addJavascriptInterface",
+        "normalized_signature": "",
+        "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.JSInterface",
+        "value": "JSCore",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "03d290851474d5d3d1de778b61636fd0fb68aa7aa644ac9394a8133a15871517"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "bridge_method",
+        "registration_name": "JSCore",
+        "name": "invokeHandler",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.JSInterface",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ad066e1fe9245d7f86266a07b9c5ee6512d1e6903e249e982f237ccc8178379a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "bridge_method",
+        "registration_name": "JSCore",
+        "name": "invokeHandlerSync",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->invokeHandlerSync(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+        "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.JSInterface",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e5cef209a2e92d14d84fa6592ba243c4263c2b87135535c79cdf19c3a20ba177"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "bridge_method",
+        "registration_name": "JSCore",
+        "name": "log",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->log(Ljava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.JSInterface",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b2056d04c377bcb383d878298b9e2f7b33ce31009a2a0b6a0d6e9e9654cf43e9"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "bridge_method",
+        "registration_name": "JSCore",
+        "name": "publishHandler",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/core/JSInterface;->publishHandler(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.JSInterface",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c8e8333268cd878b34f9f99f545c646be663ca57235741f918b79688408aaa68"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebChromeClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.BaseWebView$a",
+        "value": "com.mgtv.diana.sdk.api.core.BaseWebView$a",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "edb1d958a880f91647d256a555acad6a06d9e49f53d42e24218252c64b3a3425"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebChromeClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$c",
+        "value": "com.mgtv.diana.sdk.api.webview.WebViewContainer$c",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a4fc68b0f1247500d42feebf7f4b560d23a95ee99b589350fa4be451fe6f667e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebViewClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "507b5ec66d837ef31ffc0223f2831b875d4fd1076268887aa3de6180d6c98a71"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebChromeClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$f",
+        "value": "com.mgtv.diana.sdk.api.webview.WebViewContainer$f",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d2b9c285604d44e6036e81dbfda5bb19a71bbc18c5bc727e5c7981ef1ae7fd61"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebViewClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+        "implementation": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0a2f5473afec46ae0b77790c837d3fc98c316d005e57eb8b522cabc77b206f5f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebChromeClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "implementation": "com.mgtv.diana.sdk.api.core.BaseWebView$a",
+        "value": "com.mgtv.diana.sdk.api.core.BaseWebView$a",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9e2fbe29bc86fd1c5b2e0fd3f1a7977f352494cd4ca70b11668a7c1ca5a67a15"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebChromeClient",
+        "normalized_signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+        "implementation": "com.mgtv.diana.sdk.service.view.ServiceWebView$a",
+        "value": "com.mgtv.diana.sdk.service.view.ServiceWebView$a",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "48f09e11ca84ce64d839d21a39b6e39821d8fde6c262ef5826eacc4413bb9c16"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onConsoleMessage",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/core/BaseWebView$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.core.BaseWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0938ae8f001ed27e2c825ef2baf11d36704ba6417e225b0476e7208f2d6cdbf2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "getDefaultVideoPoster",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$c",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2992b0fe8aa1793182b71322dddb721dccbb34c9524e49328fb784045deb3973"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onConsoleMessage",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$c",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6393d350d2acd62716db491a09d1479213d1c30f2e8dd9d4e5a831e742c778e5"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onJsPrompt",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$c",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "51de1e180881ffd51ff4fe3f21c7870b76b18b8451dd999b22fea85872452786"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onProgressChanged",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$c;->onProgressChanged(Landroid/webkit/WebView;I)V",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$c",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "579ad920ce1980280e2bc492f483457d5ecf34ef58acfbbed6fd27f9614a2d49"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageFinished",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f7cb26f4960289b2ffb0423401dd0b6b011487726c0bc0e87e4f4c6a7d254592"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageStarted",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6a1502b10e683e9af63942e3172e0621d4de5ec12d94425f67b5ae18d2e37905"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedError",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8ad397ef3b3be153d443a5d1139a859a5041e1086a8ecf0df1d36727080d826e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedSslError",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8ad26ebaecf274f7e1f39df76db8e5e6d34f30ff14eeb5fc9c5ea87ae4aba3f8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onRenderProcessGone",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8cbf3471a123e9997a9723dde1626448b93251fbcbcae22f56fd57ba26c45b0c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b0b95f4315079f104ac0cdc350f3d6bdf75937f5ac89dd55425dc208d8a192fe"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldOverrideUrlLoading",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "83082338d963036782834fecbeda04d0df33daf7fd46f0e635ebe17562aac5fa"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9d9d9a046b4e59f0a8c07ff6d32cefd9a25f35a8c8a9695ae3ec7f444fdf140a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedError",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$a;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "098fd823b6f9d83337d80245124af26b1ad6a29b5e0590064cb0a4b3b883404f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onHideCustomView",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$f;->onHideCustomView()V",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$f",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0d4562f36b6c1811adb64b1ce33a7573e9783c9d88114d12755b7f4b1f384ade"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onShowCustomView",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/webview/WebViewContainer$f;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.webview.WebViewContainer$f",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ba0c9d78f3f5a61eaff3aea238a24e372adb8c277db4e84c46f154a38279e7d4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageFinished",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e388eb6ac46cc9ce85e856c7fee9541e994085c30f64228048bc4d845db9d0f2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageStarted",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fcf71f043be442b12f7aa7667ace6cac293015fcba285146661bd8bd0a8ccf28"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onRenderProcessGone",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "bece7b1ba545f5a8e2203a2534fdf84091ca28f5cd9e4e1dede837ebd32c01b4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "1ed66e8fc9622ade749dd45ae4d4186f3089c4cb13a030b4f9e820d797e60262"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/page/view/PageWebView$a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": "WebViewClient",
+        "implementation": "com.mgtv.diana.sdk.page.view.PageWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.page.view.PageWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "5a015bee2a71c6cf9e50fa9bee3d7d04404ddab3f5821ca504f3065cddad4618"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onConsoleMessage",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/api/core/BaseWebView$a;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.api.core.BaseWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "beea2020c109549b075d8bbd814a1e96c68898f421047ec997967ec814506cc8"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onJsPrompt",
+        "normalized_signature": "Lcom/mgtv/diana/sdk/service/view/ServiceWebView$a;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+        "normalized_api": "WebChromeClient",
+        "implementation": "com.mgtv.diana.sdk.service.view.ServiceWebView$a",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgtv.diana.sdk.service.view.ServiceWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2e097ddb011fc1000e9cd0b63314bf541ce3551ff9a91dcf208c8021d9e300ec"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "mgTransfer",
+        "name": "mgTransfer",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "1711a194bef5ae69776aa5a6f96b9cf7fd63f90bcd547d2fe2e30571b7766515"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "mgTransfer",
+        "name": "mgTransfer",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->mgTransfer(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9bb6460de7a67e1e550a6b9733293f364b0d9ad1a35ee3f3242fa82165f4f807"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "showMangPushShare",
+        "name": "showMangPushShare",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "735d07fbb3bce77af80abc77e39a00d72f793a49ca60f21f5720a1bc5ab019a5"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "showMangPushShare",
+        "name": "showMangPushShare",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showMangPushShare(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c41c161029020f378806770f88120e02bb2a3b22276f70b73a6c9b0dc921f176"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "openWebview",
+        "name": "openWebview",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$x",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "04d4bca81861cd27035e6f035c3cfebff86e9a9db9f0071398e566979e9c1330"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "openWebview",
+        "name": "handler",
+        "normalized_signature": "Lam/a$x;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$x",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9e93e4e50d60fcc84411cd5b4ff59860063655f935edab461875fe9cf1b2ee00"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "interactReport",
+        "name": "interactReport",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$y",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "38a8e24ee09d596c71574eef20fa1d7e96c3157d50869dcb863bab79ff38d565"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "interactReport",
+        "name": "handler",
+        "normalized_signature": "Lam/a$y;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$y",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2abf4b8f3b574c625ce2bc783e87b0068ea6c213f3605918097d8382a7c2178e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "pageReady",
+        "name": "pageReady",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$z",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b0488d34ffd770501bd06fc857e018a6d3063f3fc94382548e062d0e0ec7d074"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "pageReady",
+        "name": "handler",
+        "normalized_signature": "Lam/a$z;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$z",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4e831440eb6f736e864a2345373a57df9f2dfbb70be61cc067a6058859557437"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "playEnd",
+        "name": "playEnd",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$a0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "11bc8460c40ac5a213922c93502c4c296bad2f0516d099105e5080b0fcccdae9"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "playEnd",
+        "name": "handler",
+        "normalized_signature": "Lam/a$a0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$a0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a8632b21645def71526a39f6608031aecc0944586ec28b48a692d06bf5632e31"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "playError",
+        "name": "playError",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$b0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "00ece6f7d80aef3f00e8c3e072bdc02d9128c1f93f7c45fb78a39945575c2191"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "playError",
+        "name": "handler",
+        "normalized_signature": "Lam/a$b0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$b0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b480d2dad04569336699e1d7a3d3a4139060ed42befa20f9285257fb7301e249"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "muteChange",
+        "name": "muteChange",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$c0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3623a5e2ffe74f1a0b2ad8d05d5ebaf4d6e67598fe308870870b9a304532bd3d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "muteChange",
+        "name": "handler",
+        "normalized_signature": "Lam/a$c0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$c0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "602c698129bab6f3eddfa40365d8afb636a9fd2da65b398d9f6d1eaccd46aff3"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "disableNativeEvent",
+        "name": "disableNativeEvent",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$d0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d3a9dc41f7e0dd085ed4b3779ca737a1d7fdb5c90ca9669ffcd95b10c940ce80"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "disableNativeEvent",
+        "name": "handler",
+        "normalized_signature": "Lam/a$d0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$d0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "91546450292437de1be81db2372182a6a358fa64572c0128536c2acfc3f81330"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "showNativeVoiceButton",
+        "name": "showNativeVoiceButton",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$e0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d6e890b0f9916b71d39072c828fa505a0552eaef77fbde7e6cc0a13be2ac215f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "showNativeVoiceButton",
+        "name": "handler",
+        "normalized_signature": "Lam/a$e0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$e0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fd7b4048fae5d8f86ae2c92acc3af421147e1e64eb28bbe641c8407c779e7e93"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "showNativeCloseButton",
+        "name": "showNativeCloseButton",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$f0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "1b50647b4da67d9fbfb93831139654aa27c616d1b50f2bd51a1765eef119ed6e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "showNativeCloseButton",
+        "name": "handler",
+        "normalized_signature": "Lam/a$f0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$f0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f7d7f4a060c2ccac504474b8cb4e520242a5c5d02423e396e7c352ea63f46e67"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "triggerNativeAction",
+        "name": "triggerNativeAction",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$h0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b53b037b103290f75e4418af36e6cb820dcd03f3b45e47c6d21c2fa5f5d19c02"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "triggerNativeAction",
+        "name": "handler",
+        "normalized_signature": "Lam/a$h0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$h0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3a61d11d063c648b073ecfd7f7813717c85b9055ee6018841d95a939fd9079bc"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "postMessage",
+        "name": "postMessage",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$i0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "acabfa109513df2cd5dfdb525ebf2b03164bab1241c2a4fc75de4944410685c6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "postMessage",
+        "name": "handler",
+        "normalized_signature": "Lam/a$i0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$i0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "eaa58429d4a0a6e0ea1326183c52dcb6ed04776a28c1c29aa60dd6cad07df85a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "getH5Config",
+        "name": "getH5Config",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$j0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "3d09fb2f9869f125a5bf983e4affccbf6fb95d07f3eafdcb743c955e51d32c92"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "getH5Config",
+        "name": "handler",
+        "normalized_signature": "Lam/a$j0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$j0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ece7e237a831d68bda241f216c839351e549f4224c3d9ecfc6ce4a9cb423cf6e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "adEventReport",
+        "name": "adEventReport",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$k0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e5cdb7402da009e35317375176dae25a63d0dfcb829733a91eb8df96f924d64b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "adEventReport",
+        "name": "handler",
+        "normalized_signature": "Lam/a$k0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$k0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "623cd43240ba481c11a82dc364c8867bc8823f0148cbb0ed9a8a8858533ebaa0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "getAdspaceInfo",
+        "name": "getAdspaceInfo",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$l0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "46d6bd04519379f58be5e7d92c8c359f76667557ea6a335673ed92693cc6e774"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "getAdspaceInfo",
+        "name": "handler",
+        "normalized_signature": "Lam/a$l0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$l0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "68e5f26d0769e6312fe74dcab2209ae57f31e0ff8b8aa355acc129553d4be84b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "bridge",
+        "registration_name": "occupyScreenArea",
+        "name": "occupyScreenArea",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/mgadplus/brower/jsbridge/BridgeWebView;->t(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/a;)V",
+        "implementation": "am.a$m0",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fd6e0387c9fa731bfeb023f981e22903fe0d6b51c2070ad2bc7fad27bac76915"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "message_handler",
+        "registration_name": "occupyScreenArea",
+        "name": "handler",
+        "normalized_signature": "Lam/a$m0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "am.a$m0",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "11d362915ed2fdc038cd6641766d01f8dc987e7319ed65fc7117688c7caec2d2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "callback_registration",
+        "registration_name": null,
+        "name": "setWebViewLifeCycleCallback",
+        "normalized_signature": "Lcom/mgadplus/brower/ImgoAdWebView;->setWebViewLifeCycleCallback(Lcom/mgadplus/brower/g;)V",
+        "normalized_api": "Lcom/mgadplus/brower/ImgoAdWebView;->setWebViewLifeCycleCallback(Lcom/mgadplus/brower/g;)V",
+        "implementation": "am.a$w",
+        "value": "am.a$w",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ef7d57448b6cfa615617fef0f6ba838c76c1c930dba08ca4f6df63db419cc3cd"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageFinished",
+        "normalized_signature": "Lam/a$w;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "normalized_api": "com.mgadplus.brower.g",
+        "implementation": "am.a$w",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ef552c7d2cf49996f121408645f2ebd682ccadfb7c3dd8eb047f7d3dca88b2e6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageStarted",
+        "normalized_signature": "Lam/a$w;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": "com.mgadplus.brower.g",
+        "implementation": "am.a$w",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "5ea506309b107ee07c07c7ce8213359c2863a28e305e125d5d278deea47ba11b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedError",
+        "normalized_signature": "Lam/a$w;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": "com.mgadplus.brower.g",
+        "implementation": "am.a$w",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "03fd5867c74098124243f847dd2774113799f50b0dc822cee21dff361b93a4f3"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedError",
+        "normalized_signature": "Lam/a$w;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "normalized_api": "com.mgadplus.brower.g",
+        "implementation": "am.a$w",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "92b446ff73ad49434409948ef4f8193b02f7f3db7b68022227f38b80b34a6c85"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+        "webview": "com.mgadplus.brower.ImgoAdWebView",
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedHttpError",
+        "normalized_signature": "Lam/a$w;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+        "normalized_api": "com.mgadplus.brower.g",
+        "implementation": "am.a$w",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.mgadplus.brower.ImgoAdWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fabc230cbd2e2fbcd5d414874a1bc74ff660bc45bf6a68836fa3966312788b2e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "openSystemSetting",
+        "name": "openSystemSetting",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ef56285e3f8c4f8cc12b76b7be51da32e0f60c90bcb2b6fc23fdf4f198638ac7"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "openSystemSetting",
+        "name": "openSystemSetting",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->openSystemSetting(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "332f770648425eadaa2ca08b9a25e4ac232bc0c25b98f05d8b89bbed615ec9cb"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "sendLocalPixelBarrage",
+        "name": "sendLocalPixelBarrage",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "728098750c25513e3f42f27a11c42d6784d912cf9d99abac81922f3ee433f520"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "sendLocalPixelBarrage",
+        "name": "sendLocalPixelBarrage",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->sendLocalPixelBarrage(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b8fd8f2b8be8a195c5f9560704878f629aa79b55cba84cf738126a890de5a3bf"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "showInteractiveMagicCube",
+        "name": "showInteractiveMagicCube",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "59d98672ac7a8d55702dff216a988150540cc162a16ef04e5e8d9e254579bd3e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "showInteractiveMagicCube",
+        "name": "showInteractiveMagicCube",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->showInteractiveMagicCube(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "49745a77f06921a7826ea6b4e4174e81577f346fbb0e59564f9e789a5d745175"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "VideoInteractionEvent",
+        "name": "VideoInteractionEvent",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e80741e607c578998f46ee085efb07b61e09b6a75b3cf70ea5a5395d0c5d00d4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "VideoInteractionEvent",
+        "name": "VideoInteractionEvent",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->VideoInteractionEvent(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "8da8563a369eb9ba1b71da4dede013c9595469cfbb2cd803dc62d56edaaf20e0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge",
+        "registration_name": "VideoSetPlayerMuted",
+        "name": "VideoSetPlayerMuted",
+        "normalized_signature": "",
+        "normalized_api": "Lcom/hunantv/imgo/h5/jsbridge/BridgeWebView;->registerHandler(Ljava/lang/String;Lcom/hunantv/imgo/h5/jsbridge/BridgeHandler;)V",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": "registered",
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "329e7cdf4809afe571f391bfa29f89a4f1247151df7abc27617c503f9998dd33"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.mgtv.erlang.ErlangLiveActivity",
+        "webview": "com.hunantv.imgo.h5.ImgoWebView",
+        "kind": "bridge_method",
+        "registration_name": "VideoSetPlayerMuted",
+        "name": "VideoSetPlayerMuted",
+        "normalized_signature": "Lcom/mgtv/h5/ImgoWebJavascriptImpl;->VideoSetPlayerMuted(Ljava/lang/String;)V",
+        "normalized_api": "WebView message bridge member",
+        "implementation": "com.mgtv.h5.ImgoWebJavascriptImpl",
+        "value": null,
+        "value_kind": "literal",
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "com.hunantv.imgo.h5.ImgoWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "ede5819374e877170d89e7de3441a257cdeb03b4cd6e297b517cd11af6d3d383"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

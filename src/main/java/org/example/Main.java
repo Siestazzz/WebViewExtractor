@@ -108,7 +108,7 @@ public class Main {
         metrics.put("provisional_facts",engine.states.values().stream().mapToLong(s->s.host==null?s.provisionalFacts:engine.remainingProvisional(s).size()).sum());
     }
     static void write(Path path,Object value)throws IOException{
-        long start=System.nanoTime();
+        long start=System.nanoTime(),priorNanos=reportWriteNanos;
         boolean compactOutput=Set.of("capabilities.compact.json","capabilities.counts.json").contains(path.getFileName().toString());
         Path temp=path.resolveSibling(path.getFileName()+".tmp");
         try(Writer w=Files.newBufferedWriter(temp)){
@@ -121,7 +121,10 @@ public class Main {
             write(path.resolveSibling("capabilities.compact.json"),compact);
             write(path.resolveSibling("capabilities.counts.json"),CompactReport.countsOnly(compact));
         }
-        reportWriteNanos+=System.nanoTime()-start;reportWrites++;
+        // The detailed report recursively writes both projections. Count their time
+        // once, while preserving reportWrites as the number of individual files.
+        long nestedNanos=reportWriteNanos-priorNanos;
+        reportWriteNanos+=System.nanoTime()-start-nestedNanos;reportWrites++;
     }
     static Map<String,String> options(String[] args){
         Map<String,String> result=new LinkedHashMap<>();Set<String> allowed=Set.of("--apkpath","--out","--target-seconds","--hard-seconds","--worker","--pathcount");

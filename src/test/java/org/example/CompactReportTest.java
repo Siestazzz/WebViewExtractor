@@ -16,7 +16,12 @@ public class CompactReportTest {
         JsonObject compact=CompactReport.project(full),counts=compact.getAsJsonObject("counts");
         if(counts.get("webviews").getAsInt()!=2||counts.get("bridges").getAsInt()!=2||counts.get("settings").getAsInt()!=2||counts.get("callbacks").getAsInt()!=1)throw new AssertionError(compact);
         String text=compact.toString();if(!text.contains("\"parameters\":[true]")||!text.contains("\"alternatives\":[\"1\",\"2\"]")||!text.contains("Ltest/Other;"))throw new AssertionError(text);
-        Path dir=Files.createTempDirectory("compact-report-test");Main.write(dir.resolve("capabilities.json"),full);
+        Path dir=Files.createTempDirectory("compact-report-test");
+        long priorNanos=Main.reportWriteNanos,priorFiles=Main.reportWrites,started=System.nanoTime();
+        Main.write(dir.resolve("capabilities.json"),full);
+        long wallNanos=System.nanoTime()-started,reportedNanos=Main.reportWriteNanos-priorNanos;
+        if(reportedNanos<=0||reportedNanos>wallNanos)throw new AssertionError("Report time double counts nested exports");
+        if(Main.reportWrites-priorFiles!=3)throw new AssertionError("Report file count differs");
         if(!JsonParser.parseString(Files.readString(dir.resolve("capabilities.compact.json"))).equals(compact))throw new AssertionError("projection differs");
         JsonObject countOnly=CompactReport.countsOnly(compact);
         if(!countOnly.get("counts").equals(compact.get("counts"))||countOnly.toString().contains("->"))throw new AssertionError("counts-only leaks methods or changes totals");
