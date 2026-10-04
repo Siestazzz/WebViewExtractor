@@ -1,0 +1,100 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "based_on_report": false,
+  "callback_family": "android_webview_render_process_client",
+  "contract_reuse": "vungle-webview-render-process-client-family-source-proof.json",
+  "source_evidence": [
+    {
+      "file": "sources/com/applovin/impl/adview/C1948b.java",
+      "line": 222,
+      "text": "if (AbstractC2052o0.i() && ((Boolean) c2085k.a(x4.f37590Z5)).booleanValue()) {",
+      "sha256": "2efa45263958d2a6ff69a9e265bab86dd2eebf29c9dd869d06a98b14290baa51"
+    },
+    {
+      "file": "sources/com/applovin/impl/AbstractC2052o0.java",
+      "line": 299,
+      "text": "return Build.VERSION.SDK_INT >= 29;",
+      "sha256": "6eebb442114a5b9ecd05db1db615402d68bc68ed5479799236ab74787c1324c4"
+    },
+    {
+      "file": "sources/com/applovin/impl/adview/C1948b.java",
+      "line": 223,
+      "text": "setWebViewRenderProcessClient(new C1950d(c2085k).a());",
+      "sha256": "2efa45263958d2a6ff69a9e265bab86dd2eebf29c9dd869d06a98b14290baa51"
+    },
+    {
+      "file": "sources/com/applovin/impl/adview/C1950d.java",
+      "line": 17,
+      "text": "private final WebViewRenderProcessClient f34879b = new a();",
+      "sha256": "d8f798fd6a106b1ac50ac3ea44f98b11dd0f23209f6eaadcaf762f40eb88dbc4"
+    },
+    {
+      "file": "sources/com/applovin/impl/adview/C1950d.java",
+      "line": 39,
+      "text": "return this.f34879b;",
+      "sha256": "d8f798fd6a106b1ac50ac3ea44f98b11dd0f23209f6eaadcaf762f40eb88dbc4"
+    },
+    {
+      "file": "sources/com/applovin/impl/adview/C1950d.java",
+      "line": 20,
+      "text": "public class a extends WebViewRenderProcessClient {",
+      "sha256": "d8f798fd6a106b1ac50ac3ea44f98b11dd0f23209f6eaadcaf762f40eb88dbc4"
+    }
+  ],
+  "implementation_dex": {
+    "class_descriptor": "Lcom/applovin/impl/adview/d$a;",
+    "superclass_descriptor": "Landroid/webkit/WebViewRenderProcessClient;",
+    "interface_descriptors": [],
+    "class_def_offset": 1425676,
+    "class_access_flags": 0,
+    "dex": "classes9.dex",
+    "dex_sha256": "ce2c8462a58280bdd3c226dcbe0b2115be0f0e07c1dcaacee79cff4f5934bc03",
+    "source_file": "sources/com/applovin/impl/adview/C1950d.java",
+    "source_sha256": "d8f798fd6a106b1ac50ac3ea44f98b11dd0f23209f6eaadcaf762f40eb88dbc4",
+    "methods": [
+      {
+        "method_id": 12015,
+        "method_id_offset": 916588,
+        "access_flags": 65537,
+        "code_offset": 6560156,
+        "name": "<init>",
+        "descriptor": "(Lcom/applovin/impl/adview/d;)V"
+      },
+      {
+        "method_id": 12016,
+        "method_id_offset": 916596,
+        "access_flags": 1,
+        "code_offset": 6560184,
+        "name": "onRenderProcessResponsive",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+      },
+      {
+        "method_id": 12017,
+        "method_id_offset": 916604,
+        "access_flags": 1,
+        "code_offset": 6560204,
+        "name": "onRenderProcessUnresponsive",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+      }
+    ],
+    "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+  },
+  "creation": "Native C1948b/b constructor creates retained wrapper d, whose final field is new d$a; getter a() returns exact renderer instance; same native this receiver setter installs conditionally API29+ and configtrue.",
+  "actual_descriptor_aliases": {
+    "C1950d": "com.applovin.impl.adview.d",
+    "C1948b": "com.applovin.impl.adview.b"
+  },
+  "complete_contract_members": [
+    "onRenderProcessResponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+    "onRenderProcessUnresponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+  ],
+  "scope": "Two already source-positive fullscreen hosts, constructor renderer family only. Both overall hosts still partial; runtime config condition retained, not inferred always true.",
+  "dex_route": "Native b constructor -> hidden R8 androidx.appcompat.widget.b0.c(custom native b, platform renderer client) -> android.webkit.WebView.setWebViewRenderProcessClient; shim source file absent, exact DEX code checked.",
+  "dex_route_artifacts": [
+    "applovin-native-constructor-renderer-dex-invocations.json",
+    "applovin-renderer-api-shim-source-dex.json",
+    "applovin-renderer-api-shim-dex-invocations.json"
+  ]
+}

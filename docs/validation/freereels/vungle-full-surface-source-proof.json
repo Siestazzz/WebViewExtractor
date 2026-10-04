@@ -1,0 +1,720 @@
+{
+  "activity": "com.vungle.ads.internal.ui.VungleActivity",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "based_on_report": false,
+  "deep_audit_complete": true,
+  "categories": {
+    "bridge": {
+      "status": "done",
+      "positive_fact_count": 8,
+      "registration_and_member_inventory": "vungle-full-surface-source-proof.json",
+      "unresolved_surface_entries": []
+    },
+    "setting": {
+      "status": "done",
+      "positive_fact_count": 11,
+      "registration_and_member_inventory": "vungle-full-surface-source-proof.json",
+      "unresolved_surface_entries": []
+    },
+    "callback": {
+      "status": "done",
+      "positive_fact_count": 33,
+      "registration_and_member_inventory": "vungle-full-surface-source-proof.json",
+      "unresolved_surface_entries": []
+    }
+  },
+  "fact_counts": {
+    "setting": 11,
+    "callback_registration": 11,
+    "callback": 22,
+    "bridge": 1,
+    "bridge_method": 7
+  },
+  "source_evidence": [
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 156,
+      "text": "webView = webViewEntry.getWebView();",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 179,
+      "text": "VungleWebClient webViewClient = webViewEntry != null ? webViewEntry.getWebViewClient() : null;",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 159,
+      "text": "webView = new WebView(context);",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 236,
+      "text": "WebView webView = new WebView(context2.getApplicationContext());",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 237,
+      "text": "WebViewUtil.INSTANCE.applyWebSettings(webView, webViewSettings);",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 270,
+      "text": "linkedHashMap2.put(String.valueOf(str2), new WebViewManager.WebViewEntry(webView, vungleWebClient));",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+      "line": 796,
+      "text": "if (!this.advertisement.usePreloading() && (loadMraidAd = loadMraidAd()) != null) {",
+      "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+      "line": 592,
+      "text": "this.adWidget.linkWebView(this.vungleWebClient, this.advertisement.getWebViewSettings());",
+      "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/s.java",
+      "line": 40,
+      "text": "public class s extends d {",
+      "sha256": "c986e83ef73010dc552b0307354263fa9236b621f0ba16f0f306e638af8a8da2"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "line": 1653,
+      "text": "public void b(WebView webView, String str) {",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "line": 1206,
+      "text": "public void a(WebView webView, Object obj) {",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "line": 1313,
+      "text": "SafeDKWebAppInterface.a(a10);",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "line": 487,
+      "text": "if (o.remove(str) != null) {",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/a.java",
+      "line": 76,
+      "text": "this.f100115e = (adSessionContext.getAdSessionContextType() == AdSessionContextType.HTML || adSessionContext.getAdSessionContextType() == AdSessionContextType.JAVASCRIPT) ? new com.iab.omid.library.vungle.publisher.a(str, adSessionContext.getWebView()) : new b(str, adSessionContext.getInjectedResourcesMap(), adSessionContext.getOmidJsScriptContent());",
+      "sha256": "c17bb51d907184f4d32abc2fa47003c706e8000866ba9efa2758df7799bece96"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/AdSessionContext.java",
+      "line": 41,
+      "text": "return new AdSessionContext(partner, webView, null, null, str, str2, AdSessionContextType.HTML, null);",
+      "sha256": "d64760ba39adbda9ed491b5d515736659c6f1218787af0238d6d337b06eadf8a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/h.java",
+      "line": 62,
+      "text": "webView.evaluateJavascript(str, null);",
+      "sha256": "f7565d4f2ce3aac0f277c968be7fe7a4dc09de398675fb9e41eb414f0d544c35"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 191,
+      "text": "webView.setWebViewClient(new WebViewClient());",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 199,
+      "text": "webView.setWebViewRenderProcessClient(null);",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+      "line": 680,
+      "text": "this.adWidget.destroyWebView(this.omTracker.stop(), this.platform.isProblematicMaliDevice());",
+      "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+    }
+  ],
+  "checked_files": [
+    {
+      "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+      "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/PresenterAdOpenCallback.java",
+      "sha256": "047551d0a7335b684abce7f9ee803e17c23c7c5947959512ff0460bd4a440d16"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleActivity.java",
+      "sha256": "c1a1c2599c6c01e423c0d2ab90bcc3b408991d2d76e2ea7b089132633f325f6e"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/WatermarkView.java",
+      "sha256": "bda64f2c1d96b42d1a1d380bc86d4d0c6c3808fc17d156d44f890aefd6560964"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/c.java",
+      "sha256": "f6337bfd14ed5882676979688102c014ec30028b3d0910a3992b1c0528104e32"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MediaView.java",
+      "sha256": "b883490f5f62adc81cdeb69284dd1deb725f160d45663a6ead5bb56476b2ac3e"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/WebViewAPI.java",
+      "sha256": "f08938af71ddbc1c8b4840f4109face80523049dcaf3faf166f87cb6da868cb1"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/AdEventListener.java",
+      "sha256": "9f519cd2d94c2a8639eccb4167d97fcd77758a513ed320c9c341da35c7de754c"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/AdPlayCallback.java",
+      "sha256": "a2cf7e8feecbc6d80c5385fe213d06ac5deff09d1c85e6edaed89cc0c58ca723"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/AdPlayCallbackWrapper.java",
+      "sha256": "7b3a042c2a63ddf98d3fed5864a363e7e1ba32d010fef269de78df0b780aa3b3"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+      "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/NativeAdPresenter.java",
+      "sha256": "70319e457f4866182aba1b02e391e2ddb59053540870e7bcd3164b64ad5d5bbd"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/NativePresenterDelegate.java",
+      "sha256": "33042db40ecc4e5d839209bae14c59f552a358271b593fe220c138b2389083ef"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/PreloadDelegate.java",
+      "sha256": "2b41a135ef25cb9919b66fd9664e64ee89782bf16991daef59adabea9a34936c"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/PresenterDelegate.java",
+      "sha256": "a55a36da24da198a449c4cee6d90a05ccdee33e9e19baa3cc7824f7f9b5d77d2"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/b.java",
+      "sha256": "340e5bead327167797b140430dccbcc808311166f7b8e687d1b128fba5bfdb80"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/platform/AndroidPlatform.java",
+      "sha256": "4c19e60bb46bba676b79538da90037519ab9855a6aba0f356fcbc2876db2e65d"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/platform/DeviceCheckUtils.java",
+      "sha256": "5f0a22648319dbefa262c5ed066a277a41032de3b4815e1b25cbfe1100bd876d"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/platform/Platform.java",
+      "sha256": "eec183477de06a259678309db4ea9f9f411876be75f99dc7186a68e44719265a"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/platform/WebViewUtil.java",
+      "sha256": "b7201e5082793fa011d24e6a45bca50bab6bde7b799fdb2a4d0aebe1914e30cb"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/platform/a.java",
+      "sha256": "8529f277715a89dce050133dd2231f79cb91c2c1a3c9f53c51c573036e9d5497"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/Omid.java",
+      "sha256": "a95191e9950867ac436ea6b2e2c5dcd7ba09cd4c74924dbbccf68ee63f9abe22"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/ScriptInjector.java",
+      "sha256": "ce0edfe197176bf52e219b48b5423b166c016a70fb608f87b1b8885e13f01c32"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/a.java",
+      "sha256": "45b6314b76509e8229caff99b6fe1a0952413561eea012376e205e962e61fc37"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/AdEvents.java",
+      "sha256": "57604b1583a03e01e887f5a37fbccab22bca8c1a5239023501715aecfce2c797"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/AdSession.java",
+      "sha256": "ba1b6d6321221f26624f0e5b3df2e425d56e83bff4191803e521609f64dd5eaa"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/AdSessionConfiguration.java",
+      "sha256": "67d1fdd1c82c45597a35a536017ee86cbe3602721ea2465e11a2adf943421e81"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/AdSessionContext.java",
+      "sha256": "d64760ba39adbda9ed491b5d515736659c6f1218787af0238d6d337b06eadf8a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/AdSessionContextType.java",
+      "sha256": "7643e708d9d522d200bd741e7a7e3ed814cb104799df7e37a5e84d1417016e82"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/CreativeType.java",
+      "sha256": "b292b1abaf64ae8584415064b4d49403bb2b46136b22bf29fe18271c70b4ad8c"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/DeviceCategory.java",
+      "sha256": "069595f780815637294ad49b9ef3fce72c8c08b9c3f5f96d724395378803b676"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/ErrorType.java",
+      "sha256": "c20b96fe9210c0d668815e9d78ea796c45278d6e4a09cdacb287b7ab5b4423df"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/FriendlyObstructionPurpose.java",
+      "sha256": "fc3e71e960d7095bbf0994f29177b175b0f9c37b19d3196a18504b33ea5b02de"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/ImpressionType.java",
+      "sha256": "c4ae31fa67314dc5c1cf1da6137dfb427cbc469d240974063004bacb45edb0ab"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/JavaScriptSessionService.java",
+      "sha256": "6c820fcea45fd18526d55a45e64de784dd190ae1e067fcb3f6e5212afb6f4ded"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/OutputDeviceStatus.java",
+      "sha256": "23850003933bede3e9568018b56ad285a15c3e0d7110eb2d2f64b9e7c81966f6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/Owner.java",
+      "sha256": "b4a1a1e3e779186ebb2861c1651638ce50374373bd5b7948994c3ecdf0f31b42"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/Partner.java",
+      "sha256": "98337e489c981b536ac61213ec3816dd3d95fcbb7eff2261f24adbba70a9de2c"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/PossibleObstructionListener.java",
+      "sha256": "941812545d377c3170899148a067f19b94aa5094232b7364c3e208c2629de815"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/UniversalAdId.java",
+      "sha256": "0363a36452dbf5a21c63e52de75170a73a600107184e5a63d091a56ed9d43080"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/VerificationScriptResource.java",
+      "sha256": "f6349b2e0ef00c68b4870aa8181bded95f27145f3511eb01ca8f8d965ca2abc9"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/a.java",
+      "sha256": "c17bb51d907184f4d32abc2fa47003c706e8000866ba9efa2758df7799bece96"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/media/InteractionType.java",
+      "sha256": "903f192c73c5cffb6f97e6336e80f6650f91af519ec473b1b55498c6bca8d00a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/media/MediaEvents.java",
+      "sha256": "746d5d849dc3f5c1cd6f350c90821f3e0a9e60cc4ac6406b147815336c91801e"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/media/PlayerState.java",
+      "sha256": "b7cfc8883905b3073d180cc98967edceb2a5a85f080478a01f0c0c96add67f6f"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/media/Position.java",
+      "sha256": "1ea7f9eca2a5a4bff82f2f01c509d6db4c7b66af710f7ffd9b48addf68d90364"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/adsession/media/VastProperties.java",
+      "sha256": "6d8aeec790dee17475bcd6f68705bf464a590880afa7dcc3c50682382f80dd64"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/b.java",
+      "sha256": "fbc3f9304d0cdf0f12417bb460c59572421804f5137e36328234af8973431319"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/c.java",
+      "sha256": "a340e7c6c729a2c0f7d7d87abe7d76ed83bba88fe3c87b54a89fd81cdae1efda"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/devicevolume/a.java",
+      "sha256": "fc023bba8d274b38571d1a0abaf01c5c6604ead3a9de610c0f64b8b3d3ba9a0a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/devicevolume/b.java",
+      "sha256": "90ac316f50da7b351badcb17d60b89b1b9eff6426a2a7d885f2d268a29ab100a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/devicevolume/c.java",
+      "sha256": "1115ce073a99668d229168d35ab5b10a1bd54fe675c421e53b3aee86cceefcf7"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/devicevolume/d.java",
+      "sha256": "fdbad9eef51ff7e1cf0646f410cc0f6bc3973bd272a5720de25ccdb9687a46de"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/devicevolume/e.java",
+      "sha256": "3fd70a8cc5414bb5db8bdcb120649575b613383509d0661a0116533212764f65"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/a.java",
+      "sha256": "fe3ca52318849b488b86723da155d1154e6a85db1c8fa2ac15e76b3882d62b70"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/b.java",
+      "sha256": "14c9f71725f4c8552804c9ebe83cceec317102c9ec2ae5a8efec6829d887803c"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/c.java",
+      "sha256": "ec5e496eb2bfb3b654c790edbc0537eef26a6ac0f84f57d4575d4dbc6ee57b6b"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/d.java",
+      "sha256": "7abcad0567830890ebfe00788768b2c3135ac9a12063520309d5cca4d6ef8e5f"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/e.java",
+      "sha256": "b2cf94b0bddef75aa1c8add31a65860db88dbbacee7956284b3ee2a543186316"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/f.java",
+      "sha256": "c9a274f07fc99aaed6a954f456d46f4db728569c1ab742c854e95cfd7a807c28"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/g.java",
+      "sha256": "9e1b289c56e602608d7c1300551a3b76505140a0d74e15b6503ffd3bb275bf87"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/h.java",
+      "sha256": "f7565d4f2ce3aac0f277c968be7fe7a4dc09de398675fb9e41eb414f0d544c35"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/i.java",
+      "sha256": "e4503dc946261ab08dcc54e800b3a86da3d19982f70d67bf9b80c5ef4c4e63b3"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/j.java",
+      "sha256": "609cc19376482cb69f6ac5087c7d163a124d61d1843a87f30d7de673d1703e22"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/processor/a.java",
+      "sha256": "64c3ae7335cd2fef7225dc1bda241698ac2e163978babfa982fd858722c403fa"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/processor/b.java",
+      "sha256": "3761242ef76c03b461f0375745e20ea614468c7302d9df6db472ed92e97110b2"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/processor/c.java",
+      "sha256": "2902fc15e2a1de4bf072f2c48d2efcbf8e9709edb48599a0379c8e538770fc24"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/processor/d.java",
+      "sha256": "6c28fb98f2bac1d5aaaf767b9a8548d0192c6d6aa3b4fac627880dfc03c26b15"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/AdSessionStatePublisher.java",
+      "sha256": "7b63160761b8dfd2b6aca80f97011e4d1c93dfe8ae6f2ec6833544534ca83651"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/a.java",
+      "sha256": "e1e522679b8b3d6b103ab3c7d36d7dddc46bfeefcd53a6ccabf5c4ba5dedb7d6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/b.java",
+      "sha256": "81353b506a353adae4ae10c322c08a85b56829f1072ee1a0336f475e2b08def6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/a.java",
+      "sha256": "447fc50ffc5e41aa2527853d197f0188a8471e1cd00703708dee2756cdfd4c92"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/b.java",
+      "sha256": "feb62b934b14eddb1acf3d4c51d603e376becffce5df1e3a36d9242729698a1a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/c.java",
+      "sha256": "88f3ddb9fbe53ad9a45f19998411e73644974c77d8de0efb8478c85a4c1fb940"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/d.java",
+      "sha256": "7e7235f44eb36ae601d48b3e4a7d557119784486d4c60f750043a19160a101f5"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/e.java",
+      "sha256": "76a095b2376ae5894b766aaf400d060f8718929e469d9b67f6c0244a6f3d5a51"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/f.java",
+      "sha256": "ffdef39519d08a70b820d813649405c6d62514f1180b86e559cc7eaf5037b759"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/g.java",
+      "sha256": "d1caea7b40b1019d950ec53fa3f4578c407fceaa6ba3cc089bdd05c7ccb4aecc"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/h.java",
+      "sha256": "fe06297a0947990d4ab29cc3e1f9fae5f9bc0b97e79108be66e64e83614fa709"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/utils/i.java",
+      "sha256": "4f0c835a08e828073b102203c6ebaeb704ac07364079b7ddbfa5cd177b97776f"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/TreeWalker.java",
+      "sha256": "4da604f61ae7b7496d17c085c89ea19213de1cebba75b20728cbe2448271ff63"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/a.java",
+      "sha256": "3c287f9f59bcce98ce6de90698f7466b8b8a191625bf133328201ca0a33aaffd"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/async/a.java",
+      "sha256": "df83a23480e3096f2e41e3a74a0050a42a67df196c5f63075199ce2134cfbb30"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/async/b.java",
+      "sha256": "d6728e13cf76924b1e8c9b5d0eeb09094085169cf8cdae5b50c6330f7b8510d2"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/async/c.java",
+      "sha256": "0f51c880d913e827a7790cf412adfd5447146addfdc2d297c99bbde631785e1a"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/async/d.java",
+      "sha256": "b1a6597845b8c83f02089f23456ab60935b399eecab70ac75e6af77c25b398c2"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/async/e.java",
+      "sha256": "a1b314678234d355253d862027f98ad5892ae0ff6849559cf1fe1ed421fb7c88"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/async/f.java",
+      "sha256": "18f75ebbd704114908e2d9d04d4963155671019e06681a360c3a25bf420325a5"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/b.java",
+      "sha256": "1ecc49b20644c9dd87df0b6a98752cafef43bf46e6abff77ecff567cfac626dc"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/walking/c.java",
+      "sha256": "8c7939abf4b2d2237887e08397aa0577cc212fb86d88d0a9ebb20967befd7573"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/weakreference/a.java",
+      "sha256": "2bcc9b6e8391c77c0bc64eb40b1702ba0f873739aae20eb427b05a9b2494d344"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/weakreference/b.java",
+      "sha256": "aa42d0803e3c6fc07a5d34dcb5449625f49b0f0ddd03bd420462996dee336665"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/s.java",
+      "sha256": "c986e83ef73010dc552b0307354263fa9236b621f0ba16f0f306e638af8a8da2"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/load/BaseAdLoader.java",
+      "sha256": "d8aeda97a85e87e04074bd602e77db7adb953f8e77fafbd57b36221b5308045f"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/LiftoffMonetizeNetworkBridge.java",
+      "sha256": "553239ccc57608b64626babcae1daad7477bc09472e46490015d1cfd6601d6c0"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    }
+  ],
+  "native_mutation_candidate_inventory": [
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 379,
+      "text": "webView.evaluateJavascript(injectJs, null);",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 878,
+      "text": "view.setWebViewRenderProcessClient(new VungleWebViewRenderProcessClient(this.errorHandler));",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 184,
+      "text": "webView.setWebChromeClient(null);",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 191,
+      "text": "webView.setWebViewClient(new WebViewClient());",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 199,
+      "text": "webView.setWebViewRenderProcessClient(null);",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 297,
+      "text": "webView.setOnTouchListener(new View.OnTouchListener() { // from class: com.vungle.ads.internal.ui.view.a",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "line": 406,
+      "text": "webView.setWebViewClient(vngWebViewClient);",
+      "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+      "line": 785,
+      "text": "if (adConfig != null && (settings = adConfig.getSettings()) > 0) {",
+      "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 159,
+      "text": "webView = new WebView(context);",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 236,
+      "text": "WebView webView = new WebView(context2.getApplicationContext());",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+      "line": 267,
+      "text": "webView.setWebViewClient(vungleWebClient);",
+      "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/platform/WebViewUtil.java",
+      "line": 31,
+      "text": "WebSettings settings = webView.getSettings();",
+      "sha256": "b7201e5082793fa011d24e6a45bca50bab6bde7b799fdb2a4d0aebe1914e30cb"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/internal/h.java",
+      "line": 62,
+      "text": "webView.evaluateJavascript(str, null);",
+      "sha256": "f7565d4f2ce3aac0f277c968be7fe7a4dc09de398675fb9e41eb414f0d544c35"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/a.java",
+      "line": 11,
+      "text": "if (webView != null && !webView.getSettings().getJavaScriptEnabled()) {",
+      "sha256": "e1e522679b8b3d6b103ab3c7d36d7dddc46bfeefcd53a6ccabf5c4ba5dedb7d6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/a.java",
+      "line": 12,
+      "text": "webView.getSettings().setJavaScriptEnabled(true);",
+      "sha256": "e1e522679b8b3d6b103ab3c7d36d7dddc46bfeefcd53a6ccabf5c4ba5dedb7d6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/b.java",
+      "line": 116,
+      "text": "WebView webView = new WebView(g.b().a());",
+      "sha256": "81353b506a353adae4ae10c322c08a85b56829f1072ee1a0336f475e2b08def6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/b.java",
+      "line": 118,
+      "text": "webView.getSettings().setJavaScriptEnabled(true);",
+      "sha256": "81353b506a353adae4ae10c322c08a85b56829f1072ee1a0336f475e2b08def6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/b.java",
+      "line": 119,
+      "text": "this.f100193g.getSettings().setAllowContentAccess(false);",
+      "sha256": "81353b506a353adae4ae10c322c08a85b56829f1072ee1a0336f475e2b08def6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/b.java",
+      "line": 120,
+      "text": "this.f100193g.getSettings().setAllowFileAccess(false);",
+      "sha256": "81353b506a353adae4ae10c322c08a85b56829f1072ee1a0336f475e2b08def6"
+    },
+    {
+      "file": "sources/com/iab/omid/library/vungle/publisher/b.java",
+      "line": 121,
+      "text": "this.f100193g.setWebViewClient(new a());",
+      "sha256": "81353b506a353adae4ae10c322c08a85b56829f1072ee1a0336f475e2b08def6"
+    }
+  ],
+  "creation_and_history": "Native manager has exactly two creations: fresh getOrCreate and preload. Private cache sole put stores nativeview and concrete VungleWebClient. SameeventId Activity retrieves both; nonpreload prepare links settings/client then loads. Preload branch skips link and reuses alreadyconfigured+installed objects, retaining captured preloaddelegate. Missingcache preload can create blank nativeview without installed VungleClient; do not fabricate callback install on this branch.",
+  "bridge": "No directSDK JavaInterface annotation/install in native Vungle UI/presenter. Actual Liftoff wrapper installs conditional SafeDKWebAppInterface on captured same nativeview, seven annotations fully source/DEX checked. Same injection can occur during cleanup about:blank. OM HTML uses same currentview and script evaluateJavascript withNULL result; no nativeJavaInterface added by OM. SDK NATIVE publisher creates different backgroundview, excluded.",
+  "setting": "WebViewUtil11 call/value observations: fixed7 plus eachnullableconfig false/default and runtimegetter branches. Both actual nonpreload link and preload factory call same concrete utility. OM HTML publisher condition !getJavaScriptEnabled() would set true; on observed bound callback route nativeJS alreadytrue from actualutility and no bound false writer in enumerated scope. This conditional declaration is recorded as source-negative candidate, notpositive extra. Native view visibility/layer/pause/scroll flags are notWebSettings APIs.",
+  "callback": "Concrete VungleClient9 exactplatform overrides; renderer2 exactplatform contract members via hiddenstaticshim; nativeTouchaliasa1; actualWidget SDKTouch/Close/Orientation3; actualOMTrackerobserver1; PresenterMraid/error4; retainedpreloaddelegate2. Concrete typed setters/constructor captures and actualinvocations recorded. No nonnull Chrome install: cleanupnull only. Cleanup installs plainplatformbaseWebViewClient, recorded registration only without inventedSDKoverride members. Java renamedsafedk_* wrappers are helpers, notadditionalregistered callbacks.",
+  "provider": "Fixedcom.vungle\u2192discoveries.s extendsd. s has no WebView-typed overridingmember/nativeconfigsetter/JavaInterface/client/reflective invocation; inherited b(WebView,String) and a(WebView,Object) empty. Resource metadata c(WebView,id) storesreferences andSafeDKWebAppInterface.a(address) onlyremoves tracking map entry, notnativeJavaInterface. Reuse independently sourceclosed common metadata/mutation/reflection inventory from AppLovin/Inneractive proof; m.b fixedzeroargs cannot configure WebSettings, arbitraryNetworkBridge.invokeMethod has zero actualdevelopment callers. GlobalURLhelper j.c creates NEWbackgroundnativeview, cannot be substituted for this retained manager object.",
+  "shared_provider_evidence": [
+    "safedk-fixed-discovery-provider-source-proof.json",
+    "safedk-reflective-network-entry-source-inventory.json",
+    "applovin-full-surface-source-proof.json"
+  ],
+  "contract_member_evidence": [
+    "vungle-native-sdk-members-source-dex.json",
+    "vungle-touch-observer-contracts-source-dex.json",
+    "vungle-widget-delegate-contracts-source-dex.json",
+    "vungle-preload-delegate-contracts-source-dex.json",
+    "vungle-webview-render-process-client-family-source-proof.json"
+  ],
+  "unknown_runtime_values": [
+    "Nullable remoteBoolean config exactgetter.booleanValue retained; no wildcard value acceptance",
+    "SafeDK runtime initialization/configuration/URL guards and adpayload/event cache eligibility retained as exact conditions, not assumed always true"
+  ],
+  "unresolved_source_surface": [],
+  "negative_candidates": [
+    {
+      "name": "OM HTML publisher setJavaScriptEnabled(true)",
+      "positive_acceptance": false,
+      "reason": "Alreadytrue configured native on any actual installedClient/OMcallback route; no boundfalse writer. Declaration guard source explicitly retained.",
+      "evidence": {
+        "file": "sources/com/iab/omid/library/vungle/publisher/a.java",
+        "line": 11,
+        "text": "if (webView != null && !webView.getSettings().getJavaScriptEnabled()) {",
+        "sha256": "e1e522679b8b3d6b103ab3c7d36d7dddc46bfeefcd53a6ccabf5c4ba5dedb7d6"
+      }
+    },
+    {
+      "name": "OM NATIVE publisher WebView/client",
+      "positive_acceptance": false,
+      "reason": "Actual createHtmlAdSessionContext returnsHTML; selects existingview publisher.a not separate nativepublisher.b"
+    }
+  ],
+  "scope_limits": [
+    "One SDKhost closed; cached_factory group onlyonepositive, two-host group gate stillnotmet",
+    "30positive is not complete164Manifest audit; holdout remainssealed/notread",
+    "No runtime execution/extractorreport used"
+  ]
+}

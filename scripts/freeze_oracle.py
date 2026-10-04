@@ -5,20 +5,26 @@ import argparse,hashlib,json,pathlib
 def canonical(row):
  return json.dumps(row,ensure_ascii=False,sort_keys=True,separators=(',',':'))
 
-def union_sources(sources):
+def union_sources(sources, require_append_verdicts=False):
  unique={};evidence=[];input_rows=0
- for source in sources:
+ for source_index,source in enumerate(sources):
   source=pathlib.Path(source);raw=source.read_bytes();rows=[json.loads(line) for line in raw.splitlines() if line.strip()]
   if any(not isinstance(row,dict) for row in rows):raise ValueError('Expected JSON objects: '+str(source))
   evidence.append(dict(path=str(source),sha256=hashlib.sha256(raw).hexdigest(),rows=len(rows)))
   input_rows+=len(rows)
-  for row in rows:unique.setdefault(canonical(row),row)
+  for line,row in enumerate(rows,1):
+   key=canonical(row)
+   if require_append_verdicts and source_index>0 and key not in unique and type(row.get('positive_acceptance')) is not bool:
+    raise ValueError(f'New source fact requires explicit boolean positive_acceptance: {source}:{line}')
+   if require_append_verdicts and source_index>0 and key not in unique and row.get('positive_acceptance') is True and row.get('kind') not in {'activity_binding','bridge','bridge_method','message_handler','setting','callback','callback_registration','webview_operation'}:
+    raise ValueError(f'Unsupported positive fact kind: {source}:{line}: {row.get("kind")}')
+   unique.setdefault(key,row)
  # Preserve first occurrence order, including failed, unknown and rejected facts.
  output=('\n'.join(unique)+'\n').encode('utf-8') if unique else b''
  return output,dict(sources=evidence,input_rows=input_rows,unique_rows=len(unique),identical_rows_deduplicated=input_rows-len(unique),unique_set_sha256=hashlib.sha256('\n'.join(sorted(unique)).encode('utf-8')).hexdigest())
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--previous',required=True);p.add_argument('--append',action='append',default=[],metavar='APP=JSONL');p.add_argument('--out',required=True);a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--previous',required=True);p.add_argument('--append',action='append',default=[],metavar='APP=JSONL');p.add_argument('--out',required=True);p.add_argument('--require-append-verdicts',action='store_true',help='Require an explicit source verdict on each new appended row; preserve legacy rows unchanged');a=p.parse_args()
  previous=json.loads(pathlib.Path(a.previous).read_text());names={r['app'] for r in previous};extra={name:[] for name in names}
  for item in a.append:
   name,sep,path=item.partition('=')
@@ -29,7 +35,7 @@ def main():
  # Validate/read all sources before creating the new freeze.
  prepared=[]
  for row in previous:
-  raw,meta=union_sources([row['oracle'],*extra[row['app']]])
+  raw,meta=union_sources([row['oracle'],*extra[row['app']]],a.require_append_verdicts)
   target=dest/(row['app']+'.jsonl');new=dict(package=row['package'],app=row['app'],oracle=str(target),sha256=hashlib.sha256(raw).hexdigest(),**meta,note='All distinct full evidence rows retained; exact semantic duplicates only collapsed. No filtering by verdict, kind, host, failure or acceptance. Development set, not holdout.')
   prepared.append((target,raw,new))
  dest.mkdir(parents=True)

@@ -1,0 +1,3463 @@
+{
+  "oracle_sha256": "720654d08233ecfd849cd2daf7bc959cf49176a7f64f1ce5a9422157dba41c75",
+  "report_sha256": "02b2267c2a5c7cf9b123083e3b03c0c8500e476926959fe6c20da5ffec2f3964",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v17-reviewed-facts/freereels.jsonl",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 286,
+      "matched": 201,
+      "explicit_matched": 0,
+      "unscorable": 11,
+      "recall": 0.7027972027972028,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 90,
+      "matched": 71,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.7888888888888889,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 459,
+      "matched": 193,
+      "explicit_matched": 15,
+      "unscorable": 0,
+      "recall": 0.420479302832244,
+      "explicit_recall": 0.032679738562091505
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabaseEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "dwJsHandler",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "close",
+      "signature": "Lcom/dramawave/shared/web/JsBridge;->close()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "execute",
+      "signature": "Lcom/dramawave/shared/web/JsBridge;->execute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "openBrowser",
+      "signature": "Lcom/dramawave/shared/web/JsBridge;->openBrowser(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "openWebview",
+      "signature": "Lcom/dramawave/shared/web/JsBridge;->openWebview(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dramawave/shared/web/B;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/dramawave/shared/web/B;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/dramawave/shared/web/B;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/dramawave/shared/web/B;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowUniversalAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabaseEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "webplayerbridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "handleEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerBridgeInterface;->handleEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowUniversalAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabaseEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "webplayerbridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "handleEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerBridgeInterface;->handleEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowUniversalAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabaseEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "webplayerbridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "handleEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerBridgeInterface;->handleEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowUniversalAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabaseEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSaveFormData",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "webplayerbridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "handleEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerBridgeInterface;->handleEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDefaultTextEncodingName",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/dramawave/shared/web/B;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/dramawave/shared/web/B;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/dramawave/shared/web/B;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/dramawave/shared/web/B;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/dramawave/shared/web/B;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "getDefaultVideoPoster",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/dramawave/shared/web/SMWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaxWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaxWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaxWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnTouchListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaxWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lp9/b;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setRenderPriority",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRequestFocus",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onFormResubmission",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageCommitVisible",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedClientCertRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpAuthRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedLoginRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onScaleChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onScaleChanged(Landroid/webkit/WebView;FF)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onUnhandledKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setDownloadListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerDownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setRenderPriority",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRequestFocus",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onFormResubmission",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageCommitVisible",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedClientCertRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpAuthRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedLoginRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onScaleChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onScaleChanged(Landroid/webkit/WebView;FF)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onUnhandledKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setDownloadListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerDownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setRenderPriority",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRequestFocus",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onFormResubmission",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageCommitVisible",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedClientCertRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpAuthRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedLoginRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onScaleChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onScaleChanged(Landroid/webkit/WebView;FF)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onUnhandledKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setDownloadListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerDownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setRenderPriority",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedIcon",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRequestFocus",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerChromeClient;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onFormResubmission",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onFormResubmission(Landroid/webkit/WebView;Landroid/os/Message;Landroid/os/Message;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageCommitVisible",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedClientCertRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedClientCertRequest(Landroid/webkit/WebView;Landroid/webkit/ClientCertRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpAuthRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpAuthRequest(Landroid/webkit/WebView;Landroid/webkit/HttpAuthHandler;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedLoginRequest",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onReceivedLoginRequest(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onScaleChanged",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onScaleChanged(Landroid/webkit/WebView;FF)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onUnhandledKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->onUnhandledKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideKeyEvent",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerClient;->shouldOverrideKeyEvent(Landroid/webkit/WebView;Landroid/view/KeyEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setDownloadListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$WebPlayerDownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "addOnLayoutChangeListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLayoutChange",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$1;->onLayoutChange(Landroid/view/View;IIIIIIII)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "addOnLayoutChangeListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLayoutChange",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$1;->onLayoutChange(Landroid/view/View;IIIIIIII)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "addOnLayoutChangeListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLayoutChange",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$1;->onLayoutChange(Landroid/view/View;IIIIIIII)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "addOnLayoutChangeListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLayoutChange",
+      "signature": "Lcom/unity3d/services/ads/webplayer/WebPlayerView$1;->onLayoutChange(Landroid/view/View;IIIIIIII)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/tapjoy/i0;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/tapjoy/i0;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/tapjoy/i0;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/tapjoy/i0;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/tapjoy/i0;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/tapjoy/i0;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/tapjoy/i0;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/tapjoy/f0;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "<init>",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJWebViewActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDispatchMethod",
+      "signature": "Lcom/tapjoy/TJAdUnitJSBridge;->onDispatchMethod(Ljava/lang/String;Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/tapjoy/i0;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/tapjoy/i0;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/tapjoy/i0;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/tapjoy/i0;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/tapjoy/i0;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/tapjoy/i0;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/tapjoy/i0;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/tapjoy/f0;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "<init>",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDispatchMethod",
+      "signature": "Lcom/tapjoy/TJAdUnitJSBridge;->onDispatchMethod(Ljava/lang/String;Lorg/json/JSONObject;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onClosed",
+      "signature": "Lcom/tapjoy/z;->onClosed()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.tapjoy.TJAdUnitActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onContentReady",
+      "signature": "Lcom/tapjoy/z;->onContentReady()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAcceptThirdPartyCookies",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "<init>",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "callbackClickResult",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->callbackClickResult(Lcom/smartdigimkt/x6/o;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "getBaseAdContent",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getBaseAdContent()Lcom/smartdigimkt/x6/f;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "getBaseAdRequestInfo",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getBaseAdRequestInfo()Lcom/smartdigimkt/w6/a;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "getOriginalUrl",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getOriginalUrl()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "getWebProgressBarView",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->getWebProgressBarView()Lcom/smartdigimkt/sdk/basead/ui/web/WebProgressBarView;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onWebFinish",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebFinish()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onWebPageFinish",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebPageFinish(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onWebPageLoadError",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebPageLoadError(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onWebPageStart",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->onWebPageStart(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "recordRedirectUrl",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->recordRedirectUrl(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "supportDeeplinkJump",
+      "signature": "Lcom/smartdigimkt/sdk/basead/ui/web/WebLandPageActivity;->supportDeeplinkJump()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "ToutiaoJSBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/UeU/krg;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "ToutiaoJSBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/UeU/krg;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnTouchListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$da;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnScrollChangeListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onScrollChange",
+      "signature": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$JOE;->onScrollChange(Landroid/view/View;IIII)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setTouchListenerProxy",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/bytedance/sdk/component/JP/uOO;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setTouchListenerProxy",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/bytedance/sdk/component/JP/krg;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "<init>",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "uOO",
+      "signature": "Lcom/bytedance/sdk/component/JP/uOO$1;->uOO()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "uOO",
+      "signature": "Lcom/bytedance/sdk/component/JP/uOO$1;->uOO(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnTouchListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$6;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnScrollChangeListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onScrollChange",
+      "signature": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$7;->onScrollChange(Landroid/view/View;IIII)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setTouchListenerProxy",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/bytedance/sdk/component/JP/uOO;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setTouchListenerProxy",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/bytedance/sdk/component/JP/krg;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "<init>",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "uOO",
+      "signature": "Lcom/bytedance/sdk/component/JP/uOO$1;->uOO()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "uOO",
+      "signature": "Lcom/bytedance/sdk/component/JP/uOO$1;->uOO(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "<init>",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "uOO",
+      "signature": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$3;->uOO()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge",
+      "name": "ToutiaoJSBridge",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/UeU/krg;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccessFromFileURLs",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowUniversalAccessFromFileURLs",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaurusxH5Activity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaurusxH5Activity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle"
+    },
+    {
+      "activity": "com.taurusx.tax.ui.TaurusxH5Activity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setMraidDelegate",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "processCommand",
+      "signature": "Lcom/vungle/ads/internal/presenter/MRAIDPresenter;->processCommand(Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setErrorHandler",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/vungle/ads/internal/presenter/MRAIDPresenter;->onReceivedError(Ljava/lang/String;Z)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onWebRenderingProcessGone",
+      "signature": "Lcom/vungle/ads/internal/presenter/MRAIDPresenter;->onWebRenderingProcessGone(Landroid/webkit/WebView;Ljava/lang/Boolean;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnTouchListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/vungle/ads/internal/ui/view/a;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnViewTouchListener",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/vungle/ads/internal/ui/AdActivity$onCreate$4$2;->onTouch(Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setWebViewObserver",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/vungle/ads/internal/omsdk/OMTracker;->onPageFinished(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setCloseDelegate",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "close",
+      "signature": "Lcom/vungle/ads/internal/ui/AdActivity$onCreate$4$1;->close()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOrientationDelegate",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "setOrientation",
+      "signature": "Lcom/vungle/ads/internal/ui/AdActivity$onCreate$4$3;->setOrientation(I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "constructor PreloadDelegate",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onAdFailedToPlay",
+      "signature": "Lcom/vungle/ads/internal/load/BaseAdLoader$onAdReady$1$1;->onAdFailedToPlay()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onAdReadyToPlay",
+      "signature": "Lcom/vungle/ads/internal/load/BaseAdLoader$onAdReady$1$1;->onAdReadyToPlay()V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 111,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 6,
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "webview_constraint_coverage": {
+    "expected": 835,
+    "with_source_type_constraint": 0,
+    "activity_only": 835,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 30,
+    "matched": 30,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 45,
+  "capability_granularity": {
+    "setting": {
+      "expected": 286,
+      "matched": 201,
+      "recall": 0.7027972027972028
+    },
+    "bridge_registration": {
+      "expected": 21,
+      "matched": 13,
+      "recall": 0.6190476190476191
+    },
+    "bridge_member": {
+      "expected": 69,
+      "matched": 58,
+      "recall": 0.8405797101449275
+    },
+    "callback_member": {
+      "expected": 384,
+      "matched": 162,
+      "recall": 0.421875
+    },
+    "callback_registration": {
+      "expected": 75,
+      "matched": 31,
+      "recall": 0.41333333333333333
+    }
+  },
+  "unknown_target_surfaces": [
+    {
+      "activity": "com.dramawave.feature.web.WebPageActivity",
+      "name": "setUserAgentString",
+      "status": "explicit_value_unknown"
+    }
+  ],
+  "unconfirmed_source_facts": [
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "status": "source-conditional-unresolved",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "webview": null,
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "status": "source-conditional-unresolved",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "status": "source-conditional-unresolved",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "webview": null,
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "status": "source-conditional-unresolved",
+      "reason": "source_host_binding_not_confirmed"
+    }
+  ],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 111
+    },
+    "emitted": 111,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 111,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

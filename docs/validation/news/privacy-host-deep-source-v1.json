@@ -1,0 +1,1711 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "audit_mode": "development source-only fresh closure; no current tool report/holdout read",
+  "hosts": [
+    "com.tencent.news.startup.privacy.PrivacyWebActivity",
+    "com.tencent.news.startup.privacy.PrivacyWebItemActivity"
+  ],
+  "binding_pattern": "XML allocation plus declared-supertype field virtual dispatch through packaged WebView wrappers",
+  "ownership_chain": "Both explicit super onCreate -> PrivacyAbs onCreate setContentView f91788=2131493563 -> XML init_web_browser_layout single X5WrapperWebView @web_detail_webview -> findViewById De=2131303140 -> same webView field -> m122631 configure/client -> virtual child doOtherSettings -> parseIntent loadUrl same receiver",
+  "scope": "Packaged source normal/fallback implementations and their conditional configuration paths; excludes unprovided runtime hotpatch bodies, platform WebView/X5 kernel defaults and unrelated routed destination Activities. Those exclusions are retained unknown rather than asserted absent.",
+  "settings": {
+    "status": "done",
+    "surface": "8 distinct mutations in shared m122631: encoding UTF-8, supportZoom true, JS true, DOM true, database true, renderPriority HIGH, cache2, dynamic UA; supportMultipleWindows() is a getter, not mutation. Item adds mixedContent0. X5Wrapper constructor debug enabled setter is static global config, recorded separately; no other App WebSettings writes on same receiver across audited wrappers."
+  },
+  "callbacks": {
+    "status": "done",
+    "surface": "Shared installed PrivacyAbs$a three declared overrides PageStarted, ReceivedError legacy, modern shouldOverrideUrlLoading. PageStarted JsInjector only clears injection record. WebActivity additionally registers actual synthetic privacy.i DownloadListener with 5-arg signature and retained exact WebView+Activity fields. Item no Download. No App Chrome registered. Wrapper constructor registers this as WebViewCallbackClient and conditional ProxyWebViewClientExtension a, seven WebViewCallbackClient methods and eight IX5WebViewClientExtension methods. They forward into same wrapper; these extension callbacks must remain a separately inventoried callback family, not be silently omitted."
+  },
+  "bridge": {
+    "status": "done",
+    "surface": "Wrapper loadUrl forwards to DtX5.loadUrl then injectBridge conditional allowInjectOnLoad and per-object once flags. XML AttributeSet constructor itself does not inject. Two exact objects: DTJsBridgeInterface BridgeInterface.bridgeCall(String)String, dtBridge JsBridgeInterfaceV2.postMessage(String)String. V1 DtJsBridge:// JSON method/types/args uses public getMethod exact types; registry has getSdkVersion(JSONObject) and reportEvent(JSONObject), no annotation check in router. Inherited Object public zero-argument reflection methods remain potential platform endpoints, inventoried as platform surface instead of App handler facts. V2 JSON handlerName/callbackId/data map selects3 handler objects vr_reportEvent, vr_getSdkVersion, vr_getWebviewVisibility and calls IJsHandler.handle(String,JSONObject)."
+  },
+  "secondary_webviews": {
+    "status": "done",
+    "result": "Layout has one WebView, no includes or secondary view factory. Audited Activity subclasses/base lifecycle/immersive fallback bodies and their WebView-aware load monitors introduce no second WebView. URI navigation routes other Activities and does not assign their views to this host."
+  },
+  "dynamic_unknowns": [
+    "Runtime PatchRedirector bodies absent from provided APK source; not treated as no-op source proof.",
+    "Report configuration controls conditional Dt bridge injection, literals not inferred.",
+    "External router destinations are independently owned Activity contexts."
+  ],
+  "evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/startup/privacy/PrivacyAbsWebActivity.java",
+      "sha256": "4a03d0d85213ee339be3bedef81fb3e122c4a5f6bf5b1dbf5308737b57030654",
+      "line_count": 290,
+      "surface_locations": [
+        {
+          "line": 47,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3834, (short) 1);"
+        },
+        {
+          "line": 54,
+          "quote": "        public void onPageStarted(WebView webView, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 60,
+          "quote": "        public void onReceivedError(WebView webView, int i, String str, String str2) {"
+        },
+        {
+          "line": 61,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3834, (short) 2);"
+        },
+        {
+          "line": 71,
+          "quote": "        public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 72,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3834, (short) 3);"
+        },
+        {
+          "line": 84,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 1);"
+        },
+        {
+          "line": 93,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 14);"
+        },
+        {
+          "line": 108,
+          "quote": "    public boolean dispatchTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 115,
+          "quote": "    public void doOtherSettings() {"
+        },
+        {
+          "line": 116,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 11);"
+        },
+        {
+          "line": 136,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 2);"
+        },
+        {
+          "line": 143,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 6);"
+        },
+        {
+          "line": 149,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 4);"
+        },
+        {
+          "line": 154,
+          "quote": "    public boolean isFullScreenMode() {"
+        },
+        {
+          "line": 155,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 9);"
+        },
+        {
+          "line": 163,
+          "quote": "    public void onBackPressed() {"
+        },
+        {
+          "line": 164,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 12);"
+        },
+        {
+          "line": 176,
+          "quote": "    public void onConfigurationChanged(Configuration configuration) {"
+        },
+        {
+          "line": 182,
+          "quote": "    public void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 183,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 8);"
+        },
+        {
+          "line": 190,
+          "quote": "        setContentView(com.tencent.news.privacy.f.f91788);"
+        },
+        {
+          "line": 191,
+          "quote": "        this.root = (ViewGroup) findViewById(com.tencent.news.res.g.J8);"
+        },
+        {
+          "line": 192,
+          "quote": "        this.customWebBrowserTitleBack = (TextView) findViewById(com.tencent.news.privacy.e.f91677);"
+        },
+        {
+          "line": 193,
+          "quote": "        View findViewById = findViewById(com.tencent.news.res.g.De);"
+        },
+        {
+          "line": 194,
+          "quote": "        u.m172999(findViewById, \"null cannot be cast to non-null type com.tencent.smtt.sdk.WebView\");"
+        },
+        {
+          "line": 195,
+          "quote": "        this.webView = (WebView) findViewById;"
+        },
+        {
+          "line": 196,
+          "quote": "        this.title = (TextView) findViewById(com.tencent.news.privacy.e.f91755);"
+        },
+        {
+          "line": 208,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 3);"
+        },
+        {
+          "line": 217,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 7);"
+        },
+        {
+          "line": 225,
+          "quote": "    public final void setWebView(@Nullable WebView webView) {"
+        },
+        {
+          "line": 226,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 5);"
+        },
+        {
+          "line": 230,
+          "quote": "            this.webView = webView;"
+        },
+        {
+          "line": 241,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 13);"
+        },
+        {
+          "line": 245,
+          "quote": "        WebView webView = this.webView;"
+        },
+        {
+          "line": 246,
+          "quote": "        if (webView == null || !webView.canGoBack()) {"
+        },
+        {
+          "line": 258,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(3896, (short) 10);"
+        },
+        {
+          "line": 263,
+          "quote": "        WebView webView = this.webView;"
+        },
+        {
+          "line": 265,
+          "quote": "            webView.setWebViewClient(new a());"
+        },
+        {
+          "line": 267,
+          "quote": "                webView.getSettings().setDefaultTextEncodingName(\"UTF-8\");"
+        },
+        {
+          "line": 268,
+          "quote": "                webView.getSettings().setSupportZoom(true);"
+        },
+        {
+          "line": 269,
+          "quote": "                webView.getSettings().supportMultipleWindows();"
+        },
+        {
+          "line": 270,
+          "quote": "                webView.getSettings().setJavaScriptEnabled(true);"
+        },
+        {
+          "line": 271,
+          "quote": "                webView.getSettings().setDomStorageEnabled(true);"
+        },
+        {
+          "line": 272,
+          "quote": "                webView.getSettings().setDatabaseEnabled(true);"
+        },
+        {
+          "line": 273,
+          "quote": "                webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);"
+        },
+        {
+          "line": 274,
+          "quote": "                webView.getSettings().setCacheMode(2);"
+        },
+        {
+          "line": 275,
+          "quote": "                webView.getSettings().setUserAgentString(webView.getSettings().getUserAgentString() + \" qqnews/\" + com.tencent.news.c.m45545());"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/startup/privacy/PrivacyWebActivity.java",
+      "sha256": "62f39ff759b30182dd0d745b8b70c12c128072a2314741b3789eab93873a0248",
+      "line_count": 181,
+      "surface_locations": [
+        {
+          "line": 41,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4692, (short) 1);"
+        },
+        {
+          "line": 49,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4692, (short) 6);"
+        },
+        {
+          "line": 71,
+          "quote": "    public boolean dispatchTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 79,
+          "quote": "    public void doOtherSettings() {"
+        },
+        {
+          "line": 80,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4692, (short) 4);"
+        },
+        {
+          "line": 85,
+          "quote": "        final WebView webView = getWebView();"
+        },
+        {
+          "line": 87,
+          "quote": "            webView.setDownloadListener(new DownloadListener() { // from class: com.tencent.news.startup.privacy.i"
+        },
+        {
+          "line": 109,
+          "quote": "    public void onConfigurationChanged(Configuration configuration) {"
+        },
+        {
+          "line": 115,
+          "quote": "    public void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 116,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4692, (short) 2);"
+        },
+        {
+          "line": 125,
+          "quote": "    public boolean overrideUrl(@Nullable WebResourceRequest request) {"
+        },
+        {
+          "line": 130,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4692, (short) 3);"
+        },
+        {
+          "line": 159,
+          "quote": "    public void parseIntent() {"
+        },
+        {
+          "line": 161,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(4692, (short) 5);"
+        },
+        {
+          "line": 171,
+          "quote": "        if (TextUtils.isEmpty(stringExtra) || (webView = getWebView()) == null) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/startup/privacy/PrivacyWebItemActivity.java",
+      "sha256": "19c8ba427ef02ff70d3dec8cc5d838e7b6dd3714a978e05166e99a1f40202b1a",
+      "line_count": 160,
+      "surface_locations": [
+        {
+          "line": 33,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(5119, (short) 1);"
+        },
+        {
+          "line": 45,
+          "quote": "    public boolean dispatchTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 53,
+          "quote": "    public void doOtherSettings() {"
+        },
+        {
+          "line": 55,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(5119, (short) 4);"
+        },
+        {
+          "line": 60,
+          "quote": "        WebView webView = getWebView();"
+        },
+        {
+          "line": 61,
+          "quote": "        if (webView == null || (settings = webView.getSettings()) == null) {"
+        },
+        {
+          "line": 64,
+          "quote": "        settings.setMixedContentMode(0);"
+        },
+        {
+          "line": 80,
+          "quote": "    public void onConfigurationChanged(Configuration configuration) {"
+        },
+        {
+          "line": 86,
+          "quote": "    public void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 87,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(5119, (short) 2);"
+        },
+        {
+          "line": 96,
+          "quote": "    public boolean overrideUrl(@Nullable WebResourceRequest request) {"
+        },
+        {
+          "line": 97,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(5119, (short) 3);"
+        },
+        {
+          "line": 105,
+          "quote": "    public void parseIntent() {"
+        },
+        {
+          "line": 107,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(5119, (short) 5);"
+        },
+        {
+          "line": 139,
+          "quote": "        if (TextUtils.isEmpty(stringExtra) || (webView = getWebView()) == null) {"
+        },
+        {
+          "line": 152,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(5119, (short) 6);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/resources/res/layout/init_web_browser_layout.xml",
+      "sha256": "0318ef4032051057906b865a92f07892707bcc7852ba655d6c1779487d0b83a9",
+      "line_count": 47,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/privacy/f.java",
+      "sha256": "c05653c360d3e5ecbfd2266df4192a7963f0db4ba5259777fb9dd1b3a4e97c8d",
+      "line_count": 116,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/res/g.java",
+      "sha256": "3180b9943b57ba6b083390057551486638fd4bb8280d663b16cd6f70afdba56c",
+      "line_count": 2272,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/base/ImmersiveBaseActivity.java",
+      "sha256": "1089e20ac74c51880bed974a50c9486885f5907c59dc5344d89700e5dd45f2f9",
+      "line_count": 187,
+      "surface_locations": [
+        {
+          "line": 25,
+          "quote": "    public boolean mIsNavigationBarDarkMode;"
+        },
+        {
+          "line": 28,
+          "quote": "    public boolean mIsStatusBarLightMode;"
+        },
+        {
+          "line": 31,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 1);"
+        },
+        {
+          "line": 42,
+          "quote": "    public boolean dispatchTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 51,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 15);"
+        },
+        {
+          "line": 68,
+          "quote": "    public String getNavigationBarColorStr() {"
+        },
+        {
+          "line": 69,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 10);"
+        },
+        {
+          "line": 74,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 9);"
+        },
+        {
+          "line": 81,
+          "quote": "    public boolean isFullScreenMode() {"
+        },
+        {
+          "line": 82,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 4);"
+        },
+        {
+          "line": 90,
+          "quote": "    public boolean isImmersiveEnabled() {"
+        },
+        {
+          "line": 91,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 11);"
+        },
+        {
+          "line": 96,
+          "quote": "    public boolean isInImmersiveBlackList() {"
+        },
+        {
+          "line": 97,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 14);"
+        },
+        {
+          "line": 101,
+          "quote": "    public boolean isNavigationBarDarkMode() {"
+        },
+        {
+          "line": 102,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 8);"
+        },
+        {
+          "line": 106,
+          "quote": "    public boolean isStatusBarLightMode() {"
+        },
+        {
+          "line": 107,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 5);"
+        },
+        {
+          "line": 115,
+          "quote": "    public boolean isSupportTitleBarImmersive() {"
+        },
+        {
+          "line": 116,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 13);"
+        },
+        {
+          "line": 124,
+          "quote": "    public void onConfigurationChanged(Configuration configuration) {"
+        },
+        {
+          "line": 130,
+          "quote": "    public void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 131,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 2);"
+        },
+        {
+          "line": 144,
+          "quote": "    public void setEnableImmersiveMode(boolean isImmersiveEnabled) {"
+        },
+        {
+          "line": 145,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 3);"
+        },
+        {
+          "line": 156,
+          "quote": "    public void setImmersiveNavigationBarDarkMode(boolean darkMode) {"
+        },
+        {
+          "line": 157,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 7);"
+        },
+        {
+          "line": 166,
+          "quote": "    public void setImmersiveStatusBarLightMode(boolean isLightMode) {"
+        },
+        {
+          "line": 167,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 6);"
+        },
+        {
+          "line": 175,
+          "quote": "    public boolean shouldEnableImmersiveMode() {"
+        },
+        {
+          "line": 176,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(TVKEventId.PLAYER_STATE_AB_TEST_EXPOSED, (short) 12);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/base/LifeCycleBaseActivity.java",
+      "sha256": "518105fcebacf3a58489ad0a6809badedc706c5348b7493f500409211a7d75f9",
+      "line_count": 352,
+      "surface_locations": [
+        {
+          "line": 43,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 1);"
+        },
+        {
+          "line": 53,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 13);"
+        },
+        {
+          "line": 59,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 29);"
+        },
+        {
+          "line": 64,
+          "quote": "    public boolean dispatchTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 74,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 26);"
+        },
+        {
+          "line": 84,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 27);"
+        },
+        {
+          "line": 102,
+          "quote": "    public boolean hasExposed(@Nullable String key) {"
+        },
+        {
+          "line": 103,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 24);"
+        },
+        {
+          "line": 110,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 11);"
+        },
+        {
+          "line": 115,
+          "quote": "    public void onConfigurationChanged(@NotNull Configuration newConfig) {"
+        },
+        {
+          "line": 116,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 10);"
+        },
+        {
+          "line": 127,
+          "quote": "    public void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 128,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 2);"
+        },
+        {
+          "line": 140,
+          "quote": "    public void onDestroy() {"
+        },
+        {
+          "line": 141,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 9);"
+        },
+        {
+          "line": 152,
+          "quote": "    public void onNewIntent(Intent intent) {"
+        },
+        {
+          "line": 153,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 3);"
+        },
+        {
+          "line": 163,
+          "quote": "    public void onPause() {"
+        },
+        {
+          "line": 164,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 7);"
+        },
+        {
+          "line": 174,
+          "quote": "    public void onResume() {"
+        },
+        {
+          "line": 175,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 6);"
+        },
+        {
+          "line": 185,
+          "quote": "    public void onSaveInstanceState(@NotNull Bundle outState) {"
+        },
+        {
+          "line": 186,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 28);"
+        },
+        {
+          "line": 198,
+          "quote": "    public void onStart() {"
+        },
+        {
+          "line": 199,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 5);"
+        },
+        {
+          "line": 209,
+          "quote": "    public void onStop() {"
+        },
+        {
+          "line": 210,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 8);"
+        },
+        {
+          "line": 220,
+          "quote": "    public void setHasExposed(@Nullable String key) {"
+        },
+        {
+          "line": 221,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 25);"
+        },
+        {
+          "line": 233,
+          "quote": "    public void setRequestedOrientation(int requestedOrientation) {"
+        },
+        {
+          "line": 234,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 22);"
+        },
+        {
+          "line": 245,
+          "quote": "    public void superFinish() {"
+        },
+        {
+          "line": 246,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 20);"
+        },
+        {
+          "line": 254,
+          "quote": "    public void superOnCreate(@Nullable Bundle savedInstanceState) {"
+        },
+        {
+          "line": 255,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 15);"
+        },
+        {
+          "line": 263,
+          "quote": "    public void superOnDestroy() {"
+        },
+        {
+          "line": 264,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 14);"
+        },
+        {
+          "line": 273,
+          "quote": "    public void superOnNewIntent(@Nullable Intent intent) {"
+        },
+        {
+          "line": 274,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 21);"
+        },
+        {
+          "line": 282,
+          "quote": "    public void superOnPause() {"
+        },
+        {
+          "line": 283,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 17);"
+        },
+        {
+          "line": 291,
+          "quote": "    public void superOnResume() {"
+        },
+        {
+          "line": 292,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 16);"
+        },
+        {
+          "line": 300,
+          "quote": "    public void superOnStart() {"
+        },
+        {
+          "line": 301,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 18);"
+        },
+        {
+          "line": 309,
+          "quote": "    public void superOnStop() {"
+        },
+        {
+          "line": 310,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 19);"
+        },
+        {
+          "line": 324,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 4);"
+        },
+        {
+          "line": 335,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 23);"
+        },
+        {
+          "line": 349,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16266, (short) 12);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/base/a.java",
+      "sha256": "48f9471aff7aecf5b77bb818f5088593d9e7756dbfb38b493994d1e163bbd2d2",
+      "line_count": 76,
+      "surface_locations": [
+        {
+          "line": 18,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(17681, (short) 5);"
+        },
+        {
+          "line": 36,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(17681, (short) 2);"
+        },
+        {
+          "line": 48,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(17681, (short) 4);"
+        },
+        {
+          "line": 54,
+          "quote": "            Method method = ActivityInfo.class.getMethod(\"isTranslucentOrFloating\", TypedArray.class);"
+        },
+        {
+          "line": 73,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(17681, (short) 3);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/api/X5WrapperWebView.java",
+      "sha256": "db7016dfa79418a55c3d8718af7083ffb90d7e43cfb4d734f33000c51469c7f3",
+      "line_count": 359,
+      "surface_locations": [
+        {
+          "line": 34,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 1);"
+        },
+        {
+          "line": 41,
+          "quote": "        public void computeScroll(View view) {"
+        },
+        {
+          "line": 42,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 8);"
+        },
+        {
+          "line": 51,
+          "quote": "        public boolean dispatchTouchEvent(MotionEvent motionEvent, View view) {"
+        },
+        {
+          "line": 52,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 4);"
+        },
+        {
+          "line": 57,
+          "quote": "        public void invalidate() {"
+        },
+        {
+          "line": 58,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 9);"
+        },
+        {
+          "line": 67,
+          "quote": "        public boolean onInterceptTouchEvent(MotionEvent motionEvent, View view) {"
+        },
+        {
+          "line": 68,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 3);"
+        },
+        {
+          "line": 73,
+          "quote": "        public void onOverScrolled(int i, int i2, boolean z, boolean z2, View view) {"
+        },
+        {
+          "line": 74,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 7);"
+        },
+        {
+          "line": 83,
+          "quote": "        public void onScrollChanged(int i, int i2, int i3, int i4, View view) {"
+        },
+        {
+          "line": 84,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 6);"
+        },
+        {
+          "line": 93,
+          "quote": "        public boolean onTouchEvent(MotionEvent motionEvent, View view) {"
+        },
+        {
+          "line": 94,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 2);"
+        },
+        {
+          "line": 99,
+          "quote": "        public boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z, View view) {"
+        },
+        {
+          "line": 100,
+          "quote": "            IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16859, (short) 5);"
+        },
+        {
+          "line": 106,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 28);"
+        },
+        {
+          "line": 116,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 1);"
+        },
+        {
+          "line": 123,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 9);"
+        },
+        {
+          "line": 127,
+          "quote": "            WebView.setWebContentsDebuggingEnabled(com.tencent.news.utils.b.m149521());"
+        },
+        {
+          "line": 132,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 5);"
+        },
+        {
+          "line": 139,
+          "quote": "            getX5WebViewExtension().setWebViewClientExtension(this.mWebViewClientExtension);"
+        },
+        {
+          "line": 147,
+          "quote": "    public void computeScroll() {"
+        },
+        {
+          "line": 148,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 24);"
+        },
+        {
+          "line": 157,
+          "quote": "    public boolean dispatchTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 158,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 20);"
+        },
+        {
+          "line": 163,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 8);"
+        },
+        {
+          "line": 172,
+          "quote": "    public void loadData(String str, @Nullable String str2, @Nullable String str3) {"
+        },
+        {
+          "line": 173,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 11);"
+        },
+        {
+          "line": 184,
+          "quote": "    public void loadDataWithBaseURL(@Nullable String str, String str2, @Nullable String str3, @Nullable String str4, @Nullable String str5) {"
+        },
+        {
+          "line": 185,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 12);"
+        },
+        {
+          "line": 196,
+          "quote": "    public void loadUrl(String str) {"
+        },
+        {
+          "line": 197,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 10);"
+        },
+        {
+          "line": 208,
+          "quote": "    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 209,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 16);"
+        },
+        {
+          "line": 214,
+          "quote": "    public void onOverScrolled(int i, int i2, boolean z, boolean z2) {"
+        },
+        {
+          "line": 215,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 18);"
+        },
+        {
+          "line": 224,
+          "quote": "    public void onScrollChanged(int i, int i2, int i3, int i4) {"
+        },
+        {
+          "line": 225,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 26);"
+        },
+        {
+          "line": 234,
+          "quote": "    public boolean onTouchEvent(MotionEvent motionEvent) {"
+        },
+        {
+          "line": 235,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 14);"
+        },
+        {
+          "line": 240,
+          "quote": "    public boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z) {"
+        },
+        {
+          "line": 241,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 22);"
+        },
+        {
+          "line": 245,
+          "quote": "    public void preloadDataWithBaseURL(@Nullable String str, String str2, @Nullable String str3, @Nullable String str4, @Nullable String str5) {"
+        },
+        {
+          "line": 246,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 13);"
+        },
+        {
+          "line": 255,
+          "quote": "    public void scrollBy(int i, int i2) {"
+        },
+        {
+          "line": 256,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 7);"
+        },
+        {
+          "line": 265,
+          "quote": "    public void scrollTo(int i, int i2) {"
+        },
+        {
+          "line": 266,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 6);"
+        },
+        {
+          "line": 276,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 2);"
+        },
+        {
+          "line": 284,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 25);"
+        },
+        {
+          "line": 294,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 21);"
+        },
+        {
+          "line": 300,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 17);"
+        },
+        {
+          "line": 306,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 19);"
+        },
+        {
+          "line": 316,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 27);"
+        },
+        {
+          "line": 326,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 15);"
+        },
+        {
+          "line": 332,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 23);"
+        },
+        {
+          "line": 338,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 3);"
+        },
+        {
+          "line": 346,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16973, (short) 4);"
+        },
+        {
+          "line": 352,
+          "quote": "        this.webViewBridge = new WebViewBridge(this);"
+        },
+        {
+          "line": 356,
+          "quote": "        setWebViewCallbackClient(this);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/api/WebViewBridge.java",
+      "sha256": "ce87831a2ab9d5b28f7d4e7f348278f6f070bd3276f4b3b9d31bcb260abf0740",
+      "line_count": 391,
+      "surface_locations": [
+        {
+          "line": 28,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 1);"
+        },
+        {
+          "line": 39,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 26);"
+        },
+        {
+          "line": 49,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 27);"
+        },
+        {
+          "line": 57,
+          "quote": "    public final void addJavascriptInterface(@NotNull Object obj, @NotNull String interfaceName) {"
+        },
+        {
+          "line": 58,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 14);"
+        },
+        {
+          "line": 63,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 65,
+          "quote": "            webView.addJavascriptInterface(obj, interfaceName);"
+        },
+        {
+          "line": 70,
+          "quote": "            webView2.addJavascriptInterface(obj, interfaceName);"
+        },
+        {
+          "line": 75,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 17);"
+        },
+        {
+          "line": 79,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 92,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 16);"
+        },
+        {
+          "line": 96,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 103,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 21);"
+        },
+        {
+          "line": 108,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 120,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 15);"
+        },
+        {
+          "line": 125,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 149,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 24);"
+        },
+        {
+          "line": 153,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 166,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 2);"
+        },
+        {
+          "line": 173,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 25);"
+        },
+        {
+          "line": 177,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 191,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 23);"
+        },
+        {
+          "line": 195,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 207,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 22);"
+        },
+        {
+          "line": 211,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 224,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 8);"
+        },
+        {
+          "line": 228,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 234,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 4);"
+        },
+        {
+          "line": 239,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 18);"
+        },
+        {
+          "line": 244,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 256,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 10);"
+        },
+        {
+          "line": 260,
+          "quote": "        View webView = getWebView();"
+        },
+        {
+          "line": 266,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 9);"
+        },
+        {
+          "line": 270,
+          "quote": "        com.tencent.smtt.sdk.WebView webView = this.x5WebView;"
+        },
+        {
+          "line": 276,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 12);"
+        },
+        {
+          "line": 284,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 296,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 20);"
+        },
+        {
+          "line": 301,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 313,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 19);"
+        },
+        {
+          "line": 318,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 330,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 13);"
+        },
+        {
+          "line": 335,
+          "quote": "        WebView webView = this.sysWebView;"
+        },
+        {
+          "line": 349,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 11);"
+        },
+        {
+          "line": 353,
+          "quote": "        View webView = getWebView();"
+        },
+        {
+          "line": 359,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 3);"
+        },
+        {
+          "line": 368,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 5);"
+        },
+        {
+          "line": 378,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 6);"
+        },
+        {
+          "line": 386,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(15287, (short) 7);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/imp/WebViewCallbackDispatcher.java",
+      "sha256": "45e5a2c53c04385e62ba3106146a4e5de81bba6aa5637b5ec32ff054f58482cb",
+      "line_count": 223,
+      "surface_locations": [
+        {
+          "line": 32,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 16);"
+        },
+        {
+          "line": 37,
+          "quote": "        INSTANCE = new WebViewCallbackDispatcher();"
+        },
+        {
+          "line": 47,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 1);"
+        },
+        {
+          "line": 54,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 10);"
+        },
+        {
+          "line": 67,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 13);"
+        },
+        {
+          "line": 77,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 11);"
+        },
+        {
+          "line": 87,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 12);"
+        },
+        {
+          "line": 97,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 14);"
+        },
+        {
+          "line": 107,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 15);"
+        },
+        {
+          "line": 117,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 2);"
+        },
+        {
+          "line": 122,
+          "quote": "    public void onAfterLoad(@NotNull final WebViewBridge webViewBridge) {"
+        },
+        {
+          "line": 123,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 7);"
+        },
+        {
+          "line": 139,
+          "quote": "    public void onLoadData(@NotNull final WebViewBridge webViewBridge, final boolean isPreload, @Nullable final String data) {"
+        },
+        {
+          "line": 140,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 5);"
+        },
+        {
+          "line": 156,
+          "quote": "    public void onLoadUrl(@NotNull final WebViewBridge webViewBridge, @Nullable final String url) {"
+        },
+        {
+          "line": 157,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 6);"
+        },
+        {
+          "line": 173,
+          "quote": "    public void onPageCommitVisible(@NotNull final WebViewBridge webViewBridge, @Nullable final String url) {"
+        },
+        {
+          "line": 174,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 8);"
+        },
+        {
+          "line": 190,
+          "quote": "    public void onPageFinished(@NotNull final WebViewBridge webViewBridge, @Nullable final String url) {"
+        },
+        {
+          "line": 191,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 9);"
+        },
+        {
+          "line": 207,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 3);"
+        },
+        {
+          "line": 216,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16514, (short) 4);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/imp/WebViewPerformanceMonitor.java",
+      "sha256": "77a3d8e81304611d4fed477256cdbe2a7b8f7199e45a9bc8859c064218112f2f",
+      "line_count": 175,
+      "surface_locations": [
+        {
+          "line": 39,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 10);"
+        },
+        {
+          "line": 43,
+          "quote": "            INSTANCE = new WebViewPerformanceMonitor();"
+        },
+        {
+          "line": 49,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 1);"
+        },
+        {
+          "line": 56,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 7);"
+        },
+        {
+          "line": 60,
+          "quote": "        View webView = webViewBridge.getWebView();"
+        },
+        {
+          "line": 68,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 8);"
+        },
+        {
+          "line": 73,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 9);"
+        },
+        {
+          "line": 102,
+          "quote": "    public void onAfterLoad(@NotNull WebViewBridge webViewBridge) {"
+        },
+        {
+          "line": 103,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 4);"
+        },
+        {
+          "line": 115,
+          "quote": "    public void onLoadData(@NotNull WebViewBridge webViewBridge, boolean isPreload, @Nullable String data) {"
+        },
+        {
+          "line": 117,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 2);"
+        },
+        {
+          "line": 129,
+          "quote": "    public void onLoadUrl(@NotNull WebViewBridge webViewBridge, @Nullable String url) {"
+        },
+        {
+          "line": 131,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 3);"
+        },
+        {
+          "line": 143,
+          "quote": "    public void onPageCommitVisible(@NotNull WebViewBridge webViewBridge, @Nullable String url) {"
+        },
+        {
+          "line": 144,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 6);"
+        },
+        {
+          "line": 160,
+          "quote": "    public void onPageFinished(@NotNull WebViewBridge webViewBridge, @Nullable String url) {"
+        },
+        {
+          "line": 161,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16619, (short) 5);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/news/webview/imp/WebViewDebugEditor.java",
+      "sha256": "bd2d0990af21f0060e9f12cdfed3b69a34ffd5aaaa5202b5905bb6025c58ea53",
+      "line_count": 97,
+      "surface_locations": [
+        {
+          "line": 25,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 7);"
+        },
+        {
+          "line": 29,
+          "quote": "            INSTANCE = new WebViewDebugEditor();"
+        },
+        {
+          "line": 34,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 1);"
+        },
+        {
+          "line": 41,
+          "quote": "    public void onAfterLoad(@NotNull WebViewBridge webViewBridge) {"
+        },
+        {
+          "line": 42,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 4);"
+        },
+        {
+          "line": 49,
+          "quote": "    public void onLoadData(@NotNull WebViewBridge webViewBridge, boolean isPreload, @Nullable String data) {"
+        },
+        {
+          "line": 50,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 2);"
+        },
+        {
+          "line": 57,
+          "quote": "    public void onLoadUrl(@NotNull WebViewBridge webViewBridge, @Nullable String url) {"
+        },
+        {
+          "line": 58,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 3);"
+        },
+        {
+          "line": 65,
+          "quote": "    public void onPageCommitVisible(@NotNull WebViewBridge webViewBridge, @Nullable String url) {"
+        },
+        {
+          "line": 66,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 5);"
+        },
+        {
+          "line": 73,
+          "quote": "    public void onPageFinished(@NotNull WebViewBridge webViewBridge, @Nullable String url) {"
+        },
+        {
+          "line": 74,
+          "quote": "        IPatchRedirector redirector = PatchRedirectCenter.getRedirector(16561, (short) 6);"
+        },
+        {
+          "line": 79,
+          "quote": "        View webView = webViewBridge.getWebView();"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/dtwebview/DtX5WebView.java",
+      "sha256": "ce88a9c69f5eab26b254261cf277c39b6027ddef39cfe90ca15231d673833ba8",
+      "line_count": 170,
+      "surface_locations": [
+        {
+          "line": 30,
+          "quote": "        injectBridge();"
+        },
+        {
+          "line": 33,
+          "quote": "    private void injectBridge() {"
+        },
+        {
+          "line": 37,
+          "quote": "                addJavascriptInterface(new BridgeInterface(this), BridgeInterface.JS_OBJECT_NAME);"
+        },
+        {
+          "line": 44,
+          "quote": "            addJavascriptInterface(this.jsBridgeInterfaceV2, JsBridgeInterfaceV2.JS_OBJECT_NAME);"
+        },
+        {
+          "line": 49,
+          "quote": "    public void visibilityCheck() {"
+        },
+        {
+          "line": 64,
+          "quote": "    public void loadData(String str, @Nullable String str2, @Nullable String str3) {"
+        },
+        {
+          "line": 66,
+          "quote": "        injectBridge();"
+        },
+        {
+          "line": 70,
+          "quote": "    public void loadDataWithBaseURL(@Nullable String str, String str2, @Nullable String str3, @Nullable String str4, @Nullable String str5) {"
+        },
+        {
+          "line": 72,
+          "quote": "        injectBridge();"
+        },
+        {
+          "line": 76,
+          "quote": "    public void loadUrl(String str) {"
+        },
+        {
+          "line": 78,
+          "quote": "        injectBridge();"
+        },
+        {
+          "line": 82,
+          "quote": "    public void onAttachedToWindow() {"
+        },
+        {
+          "line": 91,
+          "quote": "    public void onDetachedFromWindow() {"
+        },
+        {
+          "line": 100,
+          "quote": "    public void onScrollChanged() {"
+        },
+        {
+          "line": 113,
+          "quote": "    public void onVisibilityAggregated(boolean z) {"
+        },
+        {
+          "line": 118,
+          "quote": "                public void run() {"
+        },
+        {
+          "line": 126,
+          "quote": "    public void loadUrl(String str, Map<String, String> map) {"
+        },
+        {
+          "line": 128,
+          "quote": "        injectBridge();"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/dtwebview/JsBinderHelper.java",
+      "sha256": "74fdb0b5c7c443744c702030ec52e48002b68fcada412a2e7246df9ee23b5bdf",
+      "line_count": 18,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsinject/JsInjector.java",
+      "sha256": "febf0ace35f9ba1083c204a55e56157f72da179fa745283a0625bd7fa8d30720",
+      "line_count": 86,
+      "surface_locations": [
+        {
+          "line": 65,
+          "quote": "    public void onPageStarted(Object obj) {"
+        },
+        {
+          "line": 72,
+          "quote": "    public void onProgressChanged(Object obj, int i) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/BridgeInterface.java",
+      "sha256": "5bc6daa37128840bcf6fd3486a9862751a85dc6ee084c4c30bd48860efdd3960",
+      "line_count": 21,
+      "surface_locations": [
+        {
+          "line": 16,
+          "quote": "    @JavascriptInterface"
+        },
+        {
+          "line": 17,
+          "quote": "    public String bridgeCall(String str) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/JsHandlerRegistry.java",
+      "sha256": "2c8b1b0d7d5c1a78f2f4fa5ce8baab6ebf921401113c2065b933941bdaa0f656",
+      "line_count": 38,
+      "surface_locations": [
+        {
+          "line": 25,
+          "quote": "        this.mJsHandlers.put(\"reportEvent\", new JsReportHandler(weakReference));"
+        },
+        {
+          "line": 26,
+          "quote": "        this.mJsHandlers.put(KEY_GET_SDK_INFO, new JsSdkInfoHandler(weakReference));"
+        },
+        {
+          "line": 29,
+          "quote": "    @JavascriptInterface"
+        },
+        {
+          "line": 30,
+          "quote": "    public void getSdkVersion(JSONObject jSONObject) {"
+        },
+        {
+          "line": 34,
+          "quote": "    @JavascriptInterface"
+        },
+        {
+          "line": 35,
+          "quote": "    public void reportEvent(JSONObject jSONObject) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/JsSdkInfoHandler.java",
+      "sha256": "498fd7ea59f234c998536fc0a45f43dc784a5f22efd5c4d14ace6fd69f06b89b",
+      "line_count": 17,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/JsBridgeCall.java",
+      "sha256": "604e16103232490442e62e249760e902af1b54f3260b765675cbc1df63f4c3ed",
+      "line_count": 68,
+      "surface_locations": [
+        {
+          "line": 35,
+          "quote": "            return getResponse(200, y.m160944(obj.getClass().getMethod(string, clsArr), obj, objArr));"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/JsReportHandler.java",
+      "sha256": "7d4057be439e6446201149e08924e5bf6620cd77da6bdb24e8cd1d814863957d",
+      "line_count": 17,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v1/JsBridgeController.java",
+      "sha256": "d79491a859a3b83c64577350def1aab4611dca5c33439b2a94c5a0ba9f37af83",
+      "line_count": 52,
+      "surface_locations": [
+        {
+          "line": 45,
+          "quote": "    public String shouldIntercept(Object obj, String str, String str2) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsReportHandlerV2.java",
+      "sha256": "933aba8ec407fc5ece9e3508a918f220cd6f9c472eb87b464f6d388b9ae947b1",
+      "line_count": 17,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeData.java",
+      "sha256": "06bf519e7854121b8f8b85f11901455910ffe4848c4c36b12e83f446489f470d",
+      "line_count": 16,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsHandlerRegistryV2.java",
+      "sha256": "2f2b6c2c601a7d199525259f2c2996d54eef1ba68ed658d975f859d20641885e",
+      "line_count": 32,
+      "surface_locations": [
+        {
+          "line": 17,
+          "quote": "        this.mJsHandlers.put(KEY_REPORT_EVENT_V2, new JsReportHandlerV2(weakReference));"
+        },
+        {
+          "line": 18,
+          "quote": "        this.mJsHandlers.put(KEY_GET_SDK_INFO_V2, new JsSdkInfoHandlerV2(weakReference));"
+        },
+        {
+          "line": 19,
+          "quote": "        this.mJsHandlers.put(KEY_GET_WEB_VIEW_STATE_V2, new JsWebViewStateHandlerV2(weakReference));"
+        },
+        {
+          "line": 22,
+          "quote": "    public void dispatchVisibilityChange(boolean z) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeInterfaceV2.java",
+      "sha256": "b990a644d41ad9f0b1b6752b0da3ca45c8f4523c92350e38948b8172f7bde358",
+      "line_count": 22,
+      "surface_locations": [
+        {
+          "line": 14,
+          "quote": "    public void dispatchVisibilityChange(boolean z) {"
+        },
+        {
+          "line": 18,
+          "quote": "    @JavascriptInterface"
+        },
+        {
+          "line": 19,
+          "quote": "    public String postMessage(String str) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsBridgeControllerV2.java",
+      "sha256": "2460f8b0641fe05de94d75395ca304d1231b01244e5be57ed71b2d0690cb2506",
+      "line_count": 64,
+      "surface_locations": [
+        {
+          "line": 43,
+          "quote": "    public void dispatchVisibilityChange(boolean z) {"
+        },
+        {
+          "line": 47,
+          "quote": "    public String postMessage(String str) {"
+        },
+        {
+          "line": 52,
+          "quote": "    public String processMessage(JsBridgeData jsBridgeData) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsWebViewStateHandlerV2.java",
+      "sha256": "44a71a0963322acd0e888e979593f19f5d0e63680fbe99bd8038acd54a68352b",
+      "line_count": 17,
+      "surface_locations": []
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/qqlive/module/videoreport/inject/webview/jsbridge/v2/JsSdkInfoHandlerV2.java",
+      "sha256": "3a31883c5aa3c7106b45490bd4805778355916ae7f1a35379669b88acb257d51",
+      "line_count": 17,
+      "surface_locations": []
+    }
+  ],
+  "deep_complete": true,
+  "deep_complete_scope": "Complete App-defined bridge/settings/registered callback families on these two source-positive Activities in the specified packaged fallback scope; includes X5 callback extensions as surface inventory. No blind holdout or whole-App acceptance claim.",
+  "acceptance_claim": false
+}

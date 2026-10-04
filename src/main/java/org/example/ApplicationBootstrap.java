@@ -22,7 +22,8 @@ final class ApplicationBootstrap {
   if((declaration.getAccessFlags()&1)==0||(declaration.getAccessFlags()&(0x200|0x400))!=0)return diagnosed("application_bootstrap_class_not_constructible:"+type);
   Method constructor=engine.idx.byClass.getOrDefault(type,List.of()).stream().filter(method->method.getName().equals("<init>")&&method.getParameterTypes().isEmpty()&&(method.getAccessFlags()&1)!=0&&method.getImplementation()!=null).findFirst().orElse(null);
   if(constructor==null)return diagnosed("application_bootstrap_public_noarg_constructor_missing:"+type);
-  V application=V.of("object",type,"application:"+engine.apk.packageName+":"+type);long stop=Math.min(engine.deadline,bootstrapStart+1_000_000_000L);host.localDeadline=stop;
+  V application=V.of("object",type,"application:"+engine.apk.packageName+":"+type);long finish=Math.min(engine.deadline,bootstrapStart+1_000_000_000L);
+  long stop=executionDeadline(bootstrapStart,finish);host.localDeadline=stop;
   // Each exact lifecycle root is completed before the next, preserving attach-before-create.
   for(String shape:List.of("<init>()V","attachBaseContext(Landroid/content/Context;)V","onCreate()V")){
    Method entry=shape.startsWith("<init>")?constructor:engine.idx.resolve(CapabilityEngine.desc(type)+"->"+shape);
@@ -33,6 +34,13 @@ final class ApplicationBootstrap {
    while(!host.queue.isEmpty()&&host.visited.size()<12000&&System.nanoTime()<stop){engine.currentHost=host;try{engine.processJob(host);}finally{engine.currentHost=null;}}
    if(!host.queue.isEmpty()){host.gaps.add(System.nanoTime()>=engine.deadline?"application_bootstrap_deadline":host.visited.size()>=12000?"application_bootstrap_context_budget":"application_bootstrap_time_budget");break;}
   }
+  return snapshot(host,type,bootstrapStart,finish);
+ }
+ // Keep ten percent (at most 100 ms) of the existing one-second total for copying
+ // already executed static writes. Traversal exhaustion must not erase those writes.
+ static long executionDeadline(long start,long finish){return finish-Math.min(100_000_000L,Math.max(0,finish-start)/10);}
+ static State snapshot(CapabilityEngine.Host host,String type,long bootstrapStart,long stop){
+  host.localDeadline=stop;
   Set<String> reachable=new HashSet<>();Set<V> seenValues=Collections.newSetFromMap(new IdentityHashMap<>());Map<String,V> heap=new HashMap<>();Map<String,Map<String,V>> fieldsByReceiver=new HashMap<>();
   for(var entry:host.heap.entrySet()){
    if(System.nanoTime()>=stop){host.gaps.add("application_bootstrap_static_closure_budget");break;}

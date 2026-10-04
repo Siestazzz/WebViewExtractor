@@ -1,0 +1,2873 @@
+{
+  "v16": {
+    "metrics": {
+      "index_seconds": 77.376681608,
+      "processed_activities": 283,
+      "pending_activities": 345,
+      "retained_heap_entries": 6883761,
+      "queued_contexts": 516675,
+      "decoded_methods": 45968
+    },
+    "startup": [
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:analysis_seconds=1.000803457",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:application_bootstrap_static_closure_budget",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:application_bootstrap_time_budget",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:contexts=2:static_heap=0",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:static_reflection_reachability_deadline"
+    ],
+    "browser_coverage": [
+      {
+        "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3126,
+        "pending_contexts": 1605,
+        "analysis_seconds": 14.748677758,
+        "slices": 88,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1605,
+        "application_bootstrap_import_seconds": 2.067e-06,
+        "application_bootstrap_import_entries": 0,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 490,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 92,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 68,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->destroyFragmentView()V",
+              "Landroidx/fragment/app/Fragment;->performDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueRemove(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executePostponedTransaction(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->completeTransaction()V",
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->createOrGetFragmentStateManager(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->moveToBackup(I)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getPackageVersionDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "unknown",
+              "field_object",
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/ALogHookHelper;->checkSettings()V",
+              "Lcom/ixigua/jupiter/ALogHookHelper;->isLowDeviceDowngradeEnable(I)I",
+              "Lcom/ixigua/base/appsetting/DeviceScoreQualitySettings;->a()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3126,
+          0
+        ],
+        "tracked_xml_consumers": 170,
+        "tracked_deferred_fields": 1053,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000142085
+      },
+      {
+        "activity": "com.ixigua.browser.specific.BrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3433,
+        "pending_contexts": 1597,
+        "analysis_seconds": 15.558519077,
+        "slices": 95,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1597,
+        "application_bootstrap_import_seconds": 2.42e-06,
+        "application_bootstrap_import_entries": 0,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 488,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 91,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginLoader;->loadPlugin(Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginLoader;->launchPluginApp(Ljava/lang/String;Landroid/content/pm/ComponentInfo;)Z",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getSourceFile(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 84,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->pause()V",
+              "Landroidx/fragment/app/Fragment;->performPause()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchPause()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 58,
+            "example_argument_kinds": [
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->install(Ljava/io/File;Landroid/content/pm/PackageInfo;Z)Z",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 43,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 37,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueShow(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 36,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 24,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->doPendingDeferredStart()V",
+              "Landroidx/fragment/app/FragmentManager;->startPendingDeferredFragments()V",
+              "Landroidx/fragment/app/FragmentManager;->performPendingDeferredStart(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->deleteCompileCode(Z)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getDalvikCacheDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3433,
+          0
+        ],
+        "tracked_xml_consumers": 177,
+        "tracked_deferred_fields": 1118,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.00015103
+      },
+      {
+        "activity": "com.ixigua.browser.specific.GameCenterActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3190,
+        "pending_contexts": 1607,
+        "analysis_seconds": 14.416159647,
+        "slices": 86,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1607,
+        "application_bootstrap_import_seconds": 1.126e-06,
+        "application_bootstrap_import_entries": 0,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 489,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 90,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 73,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->stop()V",
+              "Landroidx/fragment/app/Fragment;->performStop()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStop()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 59,
+            "example_argument_kinds": [
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->install(Ljava/io/File;Landroid/content/pm/PackageInfo;Z)Z",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 37,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 36,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 34,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 23,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->calculatePopFragments(Landroidx/fragment/app/BackStackRecord;Landroid/util/SparseArray;Z)V",
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->createOrGetFragmentStateManager(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 16,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->deleteCompileCode(Z)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getDalvikCacheDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->addAddedFragments(Landroidx/collection/ArraySet;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3190,
+          0
+        ],
+        "tracked_xml_consumers": 167,
+        "tracked_deferred_fields": 1077,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000142429
+      },
+      {
+        "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3193,
+        "pending_contexts": 1618,
+        "analysis_seconds": 14.853333322,
+        "slices": 88,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1618,
+        "application_bootstrap_import_seconds": 1.1e-06,
+        "application_bootstrap_import_entries": 0,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 488,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 87,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 76,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->pause()V",
+              "Landroidx/fragment/app/Fragment;->performPause()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchPause()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 36,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 34,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 23,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->moveToBackup(I)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getPackageVersionDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3193,
+          0
+        ],
+        "tracked_xml_consumers": 171,
+        "tracked_deferred_fields": 1099,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000157899
+      },
+      {
+        "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3232,
+        "pending_contexts": 1605,
+        "analysis_seconds": 14.97458032,
+        "slices": 87,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1605,
+        "application_bootstrap_import_seconds": 1.073e-06,
+        "application_bootstrap_import_entries": 0,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 488,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 90,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginLoader;->loadPlugin(Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginLoader;->launchPluginApp(Ljava/lang/String;Landroid/content/pm/ComponentInfo;)Z",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getSourceFile(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 76,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->stop()V",
+              "Landroidx/fragment/app/Fragment;->performStop()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStop()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 59,
+            "example_argument_kinds": [
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->install(Ljava/io/File;Landroid/content/pm/PackageInfo;Z)Z",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 37,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 35,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 34,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 16,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->deleteCompileCode(Z)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getDalvikCacheDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3232,
+          0
+        ],
+        "tracked_xml_consumers": 171,
+        "tracked_deferred_fields": 1100,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000147141
+      },
+      {
+        "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2808,
+        "pending_contexts": 1530,
+        "analysis_seconds": 15.030392639,
+        "slices": 77,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1530,
+        "application_bootstrap_import_seconds": 3.114e-06,
+        "application_bootstrap_import_entries": 0,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 491,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 75,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->detach()V",
+              "Landroidx/fragment/app/Fragment;->performDetach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 52,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 29,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 25,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 20,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->create()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->moveToBackup(I)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getBackupFile(Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "unknown",
+              "field_object",
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin(Ljava/lang/String;)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/ixigua/base/appsetting/business/LiveLiteQuipeSettings;->a()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/ALogHookHelper;->checkSettings()V",
+              "Lcom/ixigua/jupiter/ALogHookHelper;->isLowDeviceDowngradeEnable(I)I",
+              "Lcom/ixigua/base/appsetting/DeviceScoreQualitySettings;->a()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2808,
+          0
+        ],
+        "tracked_xml_consumers": 163,
+        "tracked_deferred_fields": 996,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000126889
+      }
+    ]
+  },
+  "v17": {
+    "metrics": {
+      "index_seconds": 76.705102613,
+      "processed_activities": 283,
+      "pending_activities": 345,
+      "retained_heap_entries": 6018449,
+      "queued_contexts": 444707,
+      "decoded_methods": 44903
+    },
+    "startup": [
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:analysis_seconds=0.901760544",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:application_bootstrap_time_budget",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:contexts=2:static_heap=18",
+      "application_bootstrap:com.ss.android.article.video.ArticleApplication:static_reflection_reachability_deadline"
+    ],
+    "browser_coverage": [
+      {
+        "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2979,
+        "pending_contexts": 1568,
+        "analysis_seconds": 16.751429402,
+        "slices": 77,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1568,
+        "application_bootstrap_import_seconds": 2.9033e-05,
+        "application_bootstrap_import_entries": 18,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 490,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 84,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->destroyFragmentView()V",
+              "Landroidx/fragment/app/Fragment;->performDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 57,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 25,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executePostponedTransaction(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->completeTransaction()V",
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->createOrGetFragmentStateManager(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->moveToBackup(I)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getBackupFile(Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "unknown",
+              "field_object",
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/ALogHookHelper;->checkSettings()V",
+              "Lcom/ixigua/jupiter/ALogHookHelper;->isLowDeviceDowngradeEnable(I)I",
+              "Lcom/ixigua/base/appsetting/DeviceScoreQualitySettings;->a()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/ALogHookHelper;->checkSettings()V",
+              "Lcom/ixigua/jupiter/ALogHookHelper;->isLowDeviceDowngradeEnable(I)I",
+              "Lcom/ixigua/base/appsetting/DeviceScoreQualitySettings;->e()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2979,
+          0
+        ],
+        "tracked_xml_consumers": 170,
+        "tracked_deferred_fields": 1023,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000142637
+      },
+      {
+        "activity": "com.ixigua.browser.specific.BrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2942,
+        "pending_contexts": 1534,
+        "analysis_seconds": 16.413209389,
+        "slices": 79,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1534,
+        "application_bootstrap_import_seconds": 1.099e-05,
+        "application_bootstrap_import_entries": 18,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 490,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 88,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->detach()V",
+              "Landroidx/fragment/app/Fragment;->performDetach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->performPendingDeferredStart(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->moveToBackup(I)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getPackageVersionDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "unknown",
+              "field_object",
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin(Ljava/lang/String;)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/ixigua/base/appsetting/business/LiveLiteQuipeSettings;->a()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/ALogHookHelper;->checkSettings()V",
+              "Lcom/ixigua/jupiter/ALogHookHelper;->isLowDeviceDowngradeEnable(I)I",
+              "Lcom/ixigua/base/appsetting/DeviceScoreQualitySettings;->a()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2942,
+          0
+        ],
+        "tracked_xml_consumers": 166,
+        "tracked_deferred_fields": 1001,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000131587
+      },
+      {
+        "activity": "com.ixigua.browser.specific.GameCenterActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2719,
+        "pending_contexts": 1518,
+        "analysis_seconds": 15.693087587,
+        "slices": 73,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1518,
+        "application_bootstrap_import_seconds": 1.1057e-05,
+        "application_bootstrap_import_entries": 18,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 491,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 63,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginLoader;->loadPlugin(Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginLoader;->launchPluginApp(Ljava/lang/String;Landroid/content/pm/ComponentInfo;)Z",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 58,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->detach()V",
+              "Landroidx/fragment/app/Fragment;->performDetach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 53,
+            "example_argument_kinds": [
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getCanUsedVersions(IZ)[I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 20,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->create()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/UIUtilsHelper;->b()Z",
+              "Lcom/ixigua/base/appdata/proxy/migrate/SettingsWrapper;->updateMarginOptEnable()I",
+              "Lcom/ixigua/base/appdata/proxy/migrate/settings/MigrateSettingsU;->c()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->clearBackup()V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getBackupDir(Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "unknown",
+              "field_object",
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/jupiter/UIUtilsHelper;->b()Z",
+              "Lcom/ixigua/base/appdata/proxy/migrate/SettingsWrapper;->updateMarginOptEnable()I",
+              "Lcom/ixigua/base/appdata/proxy/migrate/settings/MigrateSettingsU;->c()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2719,
+          0
+        ],
+        "tracked_xml_consumers": 158,
+        "tracked_deferred_fields": 969,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.0001252
+      },
+      {
+        "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2919,
+        "pending_contexts": 1566,
+        "analysis_seconds": 16.347174719,
+        "slices": 78,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1566,
+        "application_bootstrap_import_seconds": 2.3748e-05,
+        "application_bootstrap_import_entries": 18,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 490,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 79,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 68,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->destroyFragmentView()V",
+              "Landroidx/fragment/app/Fragment;->performDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 53,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueRemove(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 25,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executePostponedTransaction(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->completeTransaction()V",
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->createOrGetFragmentStateManager(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->create()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2919,
+          0
+        ],
+        "tracked_xml_consumers": 161,
+        "tracked_deferred_fields": 1022,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000129546
+      },
+      {
+        "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2969,
+        "pending_contexts": 1580,
+        "analysis_seconds": 16.163311048,
+        "slices": 79,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1580,
+        "application_bootstrap_import_seconds": 2.1997e-05,
+        "application_bootstrap_import_entries": 18,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 490,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 88,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 68,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->destroyFragmentView()V",
+              "Landroidx/fragment/app/Fragment;->performDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroyView()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 56,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->getInstalledMaxVersion()I",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueRemove(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->addPluginPath(Ljava/lang/String;Ljava/lang/String;)Landroid/content/res/Resources;",
+              "Lcom/bytedance/mira/core/MiraResourcesManager;->replaceResourcesAssets(Landroid/content/res/Resources;Landroid/content/res/AssetManager;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->b(Ljava/lang/Object;)V",
+              "Lcom/bytedance/mira/core/res/ResCacheUtil;->a(Ljava/lang/Object;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executePostponedTransaction(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->completeTransaction()V",
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->createOrGetFragmentStateManager(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/plugin/Plugin;->moveToBackup(I)V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getPackageVersionDir(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;->attach()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2969,
+          0
+        ],
+        "tracked_xml_consumers": 161,
+        "tracked_deferred_fields": 1027,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000134145
+      },
+      {
+        "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2302,
+        "pending_contexts": 1333,
+        "analysis_seconds": 15.874642261,
+        "slices": 63,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1333,
+        "application_bootstrap_import_seconds": 1.9578e-05,
+        "application_bootstrap_import_entries": 18,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 493,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 47,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginLoader;->loadPlugin(Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginLoader;->launchPluginApp(Ljava/lang/String;Landroid/content/pm/ComponentInfo;)Z",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 39,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->start()V",
+              "Landroidx/fragment/app/Fragment;->performStart()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStart()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 36,
+            "example_argument_kinds": [
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->loadPlugin$$sedna$redirect$$3355(Lcom/bytedance/mira/plugin/PluginLoader;Ljava/lang/String;Z)Z",
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "priority": 0,
+            "ordinary": 23,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+              "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 16,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executePostponedTransaction(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->completeTransaction()V",
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 16,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/monitor/LaunchUtils;->launchRepeatOptEnabled()Z",
+              "Lcom/ixigua/base/appdata/SettingsProxy;->launchRepeatOptEnabled()Z",
+              "Lcom/ixigua/base/appsetting/QualitySettings;->getLaunchRepeatOptEnabled()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 15,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "unknown",
+              "field_object",
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/monitor/LaunchUtils;->launchRepeatOptEnabled()Z",
+              "Lcom/ixigua/base/appdata/SettingsProxy;->launchRepeatOptEnabled()Z",
+              "Lcom/ixigua/base/appsetting/QualitySettings;->getLaunchRepeatOptEnabled()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 12,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->endAnimatingAwayFragments()V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 12,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/mira/plugin/PluginManager;->getPlugin(Ljava/lang/String;)Lcom/bytedance/mira/plugin/Plugin;",
+              "Lcom/bytedance/mira/plugin/Plugin;->init()V",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->getSourceFile(Ljava/lang/String;I)Ljava/lang/String;",
+              "Lcom/bytedance/mira/helper/PluginDirHelper;->buildPath([Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/appcompat/widget/Toolbar;->hookRemoveView$$sedna$redirect$$3501(Landroid/view/ViewGroup;Landroid/view/View;)V",
+            "priority": 0,
+            "ordinary": 11,
+            "example_argument_kinds": [
+              "view",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/appcompat/widget/Toolbar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+              "Landroidx/appcompat/widget/Toolbar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+              "Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V",
+              "Landroidx/appcompat/widget/Toolbar;->hookRemoveView$$sedna$redirect$$3501(Landroid/view/ViewGroup;Landroid/view/View;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2302,
+          0
+        ],
+        "tracked_xml_consumers": 153,
+        "tracked_deferred_fields": 816,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000111809
+      }
+    ]
+  }
+}

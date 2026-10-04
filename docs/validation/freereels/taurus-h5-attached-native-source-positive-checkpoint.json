@@ -1,0 +1,112 @@
+{
+  "activity": "com.taurusx.tax.ui.TaurusxH5Activity",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": false,
+  "host_evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1360,
+      "text": "android:name=\"com.taurusx.tax.ui.TaurusxH5Activity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1282,
+      "text": "setContentView(R.layout.taurusx_activity_h5);",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1284,
+      "text": "if (!TaurusXAds.isInitialized()) {",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 878,
+      "text": "private void f() {",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 956,
+      "text": "this.f121199x = this.f121195v.m();",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1064,
+      "text": "private void m() {",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1066,
+      "text": "this.f121164c = (FrameLayout) findViewById(R.id.framelayout);",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1087,
+      "text": "c();",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1257,
+      "text": "private void c() {",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1260,
+      "text": "com.taurusx.tax.t.w wVar = new com.taurusx.tax.t.w(this);",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1261,
+      "text": "this.z = wVar;",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/ui/TaurusxH5Activity.java",
+      "line": 1263,
+      "text": "this.f121164c.addView(this.z, layoutParams);",
+      "sha256": "7da5094a268db193fc02414b6ae470bc89f73a9ff7a68be1af5fd49873e2465d"
+    },
+    {
+      "file": "sources/com/taurusx/tax/t/w.java",
+      "line": 267,
+      "text": "public w(Context context) {",
+      "sha256": "8e21913466773f6c07e71a21d138ed9ebb1373df2065694b9a9864650d62b383"
+    },
+    {
+      "file": "sources/com/taurusx/tax/t/z.java",
+      "line": 90,
+      "text": "public z(Context context) {",
+      "sha256": "599331ec5491fc91513eaf6bb62eb0c2b6cb92a8e7d6fe36f19703fb710ca011"
+    }
+  ],
+  "facts_added": 26,
+  "categories": {
+    "bridge": {
+      "status": "partial"
+    },
+    "setting": {
+      "status": "partial"
+    },
+    "callback": {
+      "status": "partial"
+    }
+  },
+  "unresolved_source_surface": [
+    "Secondary native f121197w and MRAID alternatives in m(): constructors, concrete provider callback and mutation surface",
+    "Native parent SDK hooks and subclass actual Client/WebViewListener/touch/longclick callback contracts",
+    "HTML/load JavaScript gating and current-view lifecycle registration/configuration mutations"
+  ],
+  "observed_settings": "Parent constructor false security settings and later subclass true overrides are both observed calls; retained separately. Exact reflected setDisplayZoomControls false receiver/method/argument proved. Cache paths runtime expression, enum exact constants. No any-argument dynamic matcher."
+}

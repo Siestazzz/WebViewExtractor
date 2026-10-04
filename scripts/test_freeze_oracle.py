@@ -16,6 +16,19 @@ class FreezeOracleTest(unittest.TestCase):
    self.assertEqual(before,(a.read_bytes(),b.read_bytes()))
    c=root/'c.jsonl';c.write_bytes(raw);again,info=union_sources([c,a,b])
    self.assertEqual(raw,again);self.assertEqual(meta['unique_set_sha256'],info['unique_set_sha256'])
+ def test_strict_append_rejects_missing_or_non_boolean_verdict(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=pathlib.Path(folder);old=root/'old.jsonl';new=root/'new.jsonl'
+   legacy=dict(activity='A',kind='bridge',name='existing');old.write_text(json.dumps(legacy)+'\n')
+   new.write_text(json.dumps(legacy)+'\n');union_sources([old,new],True)
+   for verdict in [None,'false',0]:
+    row=dict(activity='B',kind='bridge',name='new',positive_acceptance=verdict)
+    new.write_text(json.dumps(row)+'\n')
+    with self.assertRaisesRegex(ValueError,'explicit boolean'):union_sources([old,new],True)
+   new.write_text(json.dumps(dict(row,kind='callback_binding',positive_acceptance=True))+'\n')
+   with self.assertRaisesRegex(ValueError,'Unsupported positive fact kind'):union_sources([old,new],True)
+   rejected=dict(row,positive_acceptance=False);new.write_text(json.dumps(rejected)+'\n')
+   raw,_=union_sources([old,new],True);self.assertEqual([json.loads(x) for x in raw.splitlines()],[legacy,rejected])
  def test_malformed_input_is_not_silently_skipped(self):
   with tempfile.TemporaryDirectory() as folder:
    p=pathlib.Path(folder)/'bad.jsonl';p.write_text('{broken\n')

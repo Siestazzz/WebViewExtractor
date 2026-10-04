@@ -1,0 +1,32 @@
+{
+  "transformation": "kind alias only; all other fields identical by per-row equality check",
+  "source_snapshot": "docs/validation/news/canonical-privacy-closure-source-v1.jsonl",
+  "source_sha256": "a9a00e41445e2f4bf73b7f7bb5930ff53abed200cef3f7097dafcdfb8b3ff088",
+  "normalized_snapshot": "docs/validation/news/canonical-privacy-closure-source-v1-normalized.jsonl",
+  "normalized_sha256": "852622e5fc0bd30d4d21e0818c13b8b3ea7dec7b32652c5ee03ebc5e5daa2b2e",
+  "rows": 16,
+  "changes": [
+    {
+      "line": 15,
+      "field": "kind",
+      "before": "callback_binding",
+      "after": "callback_registration"
+    }
+  ],
+  "download_registration_review": {
+    "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->setDownloadListener(Lcom/tencent/smtt/sdk/DownloadListener;)V",
+    "implementation": "com.tencent.news.startup.privacy.i",
+    "receiver": "same XML X5Wrapper stored under Activity.webView and obtained via getWebView",
+    "callback_signature": "Lcom/tencent/news/startup/privacy/i;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+    "actual_dex_constructor": "Lcom/tencent/news/startup/privacy/i;-><init>(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/news/startup/privacy/PrivacyWebActivity;)V",
+    "fields": "final synthetic actual WebView plus exact PrivacyWebActivity; DEX table independently corroborated",
+    "source": "PrivacyWebActivity.java:87-92"
+  },
+  "schema_review": {
+    "other_kinds": "bridge_method4 message_handler10 callback1; all descriptors have DEX presence corroboration",
+    "x5_extension_v1": "16 callback rows, proxy8 per host, method descriptors all present; no callback_binding alias in this snapshot",
+    "x5_extension_v2": "30 callbacks total, proxy8+wrapper7 per host; versioned addition kept separate. No registration alias."
+  },
+  "positive_acceptance": true,
+  "acceptance_claim": false
+}

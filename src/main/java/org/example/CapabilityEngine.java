@@ -237,6 +237,7 @@ final class CapabilityEngine {
                     if(FragmentTransactions.operation(call.method())){
                         fragmentTransaction(h,job,call);continue;
                     }
+                    if(modeledFragmentAccess(h,job,call))continue;
                     if(CapabilityIndex.pagerInstall(call.method())){
                         installFragmentAdapter(h,job,call);continue;
                     }
@@ -417,6 +418,15 @@ final class CapabilityEngine {
     void activateFragment(Host h,V value,List<String> path){
         if(!value.kind().equals("object")||!fragment(value.type())){h.gaps.add("installed_fragment_receiver_unresolved");return;}
         h.installedFragments.add(value.id());seed(h,value.type(),value,path,true);
+    }
+    // These exact framework accessors already have an identity-preserving return model.
+    // Application overrides and unresolved receivers must retain ordinary body traversal.
+    boolean modeledFragmentAccess(Host h,Job job,Call call){
+        if(!FragmentTransactions.manager(call.method())&&!FragmentTransactions.begin(call.method())&&!FragmentTransactions.fluent(call.method()))return false;
+        List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
+        if(args.isEmpty()||!fragmentProtocolReceiver(args.get(0),owner(call.method()))||!frameworkFragmentAccess(call.method(),args,call.isSuper()))return false;
+        V value=eval(new V(FragmentTransactions.begin(call.method())?(call.isSuper()?"return_fragment_transaction_super:":"return_fragment_transaction:")+call.offset():call.isSuper()?"return_super":"return",CapabilityIndex.cls(call.method().substring(call.method().indexOf(')')+1)),call.method(),null,call.args()),job,h,0,new HashSet<>());
+        return FragmentTransactions.manager(call.method())?value.kind().equals("fragment_manager"):value.kind().equals("fragment_transaction");
     }
     void fragmentTransaction(Host h,Job job,Call call){
         List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
@@ -673,7 +683,7 @@ final class CapabilityEngine {
         return result==null?V.of("unknown",declared,"view_lookup"):result;
     }
     boolean fragmentProtocolReceiver(V value,String contract){
-        return alternatives(value).stream().allMatch(receiver->Set.of("object","new","host","view","fragment_manager").contains(receiver.kind())&&receiver.type()!=null&&idx.subtype(receiver.type(),contract));
+        return alternatives(value).stream().allMatch(receiver->Set.of("object","new","host","view","fragment_manager","fragment_transaction").contains(receiver.kind())&&receiver.type()!=null&&idx.subtype(receiver.type(),contract));
     }
     boolean frameworkFragmentAccess(String method,List<V> args){return frameworkFragmentAccess(method,args,false);}
     boolean frameworkFragmentAccess(String method,List<V> args,boolean explicitSuper){
@@ -855,6 +865,9 @@ final class CapabilityEngine {
             for(String call:idx.calls.getOrDefault(CapabilityIndex.key(entry),Set.of()))referencedShapes.add(call.substring(call.indexOf("->")+2));
         Set<String> usedFields=new HashSet<>();ArrayDeque<String> fieldMethods=new ArrayDeque<>();
         for(Method m:hierarchy){
+            // A modeled inherited SDK accessor is consumed at its actual call site;
+            // seeding its implementation would independently enter the state machine.
+            if(FragmentTransactions.manager(CapabilityIndex.key(m))&&fragmentProtocolReceiver(self,CapabilityIndex.cls(m.getDefiningClass()))&&frameworkFragmentAccess(CapabilityIndex.key(m),List.of(self)))continue;
             if(!m.getName().startsWith("<")){
                 // Component allocation permits framework callbacks, not arbitrary helpers.
                 if(!idx.activity(type)&&idx.component(type)&&!idx.componentEntry(type,m))continue;

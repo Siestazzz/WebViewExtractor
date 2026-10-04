@@ -1,0 +1,1433 @@
+{
+  "schema_version": 1,
+  "audit_mode": "fresh development source review; prior holdout overlap unknown",
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "positive_activities": [
+    "com.tencent.ilivesdk.webcomponent.activity.WebActivity",
+    "com.tencent.ilivesdk.webcomponent.activity.TransparentTitleWebActivity",
+    "com.tencent.ilivesdk.webcomponent.activity.SingleTransparentTitleWebActivity"
+  ],
+  "surface_status": {
+    "bridge": "partial",
+    "setting": "partial",
+    "callback": "partial"
+  },
+  "deep_complete": false,
+  "actual_chain": [
+    "Each subclass explicitly invokes inherited BaseWebActivity.onCreate; Single inherits Transparent onCreate and module override.",
+    "Base actual this is passed into builder d.m159046(url,this); installed UI binding callback stores exact bound BaseWebView into Activity.f21854.",
+    "Builder constructs client e with actual UI, applies binding/load strategy and executes m159051. Base invokes client.m159040(actual parent,actual container), then loadUrl.",
+    "WebView adapter a obtains binding b, which stores strategy returned BaseWebView, creates JS handler c over that same instance, and binds Activity callback.",
+    "Adapter lifecycle calls binding.m159177; if view absent obtains manager factory view, then attaches same retained instance to container.",
+    "BaseWebView constructor installs real non-null proxy Chrome even for setWebChromeClient(null); client selected by createOkWebClient or fallback b, and registers __webview_preload on exact instance.",
+    "BaseActivity registers nine JS modules through module registry; Transparent overrides UI module with subclass. Annotation is custom NewJavascriptInterface, not Android JavascriptInterface, so inherited exposed members need transport-specific enumeration."
+  ],
+  "known_registered_endpoint": "BaseWebView$b.setFrameLoadState(Z)V @JavascriptInterface, registration __webview_preload",
+  "remaining_closure": [
+    "Verify manager/factory return class and strategy/config methods across both preload and fresh creation alternatives.",
+    "Enumerate proxy Chrome f and concrete/fallback Client b inherited callback members, listener delegation and any Download registration.",
+    "Enumerate custom JS registry dispatch/annotation/inherited member rules and nine registered modules, including Transparent replacement.",
+    "Close settings on manager pool allocation plus per-binding updates and reachable cleanup effects.",
+    "Check AuthWeb/LiveAuth subclass extra surfaces separately; not automatically inherited into current three-host closure."
+  ],
+  "evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/ilivesdk/webcomponent/activity/BaseWebActivity.java",
+      "sha256": "b5bf4e4fe2ddaf1b124c2bbc2c5f7b123aa5318ade4ffd481d65545a8d6b1afe",
+      "locations": [
+        {
+          "line": 143,
+          "quote": "    public class c implements com.tencent.okweb.framework.binding.a {"
+        },
+        {
+          "line": 144,
+          "quote": ""
+        },
+        {
+          "line": 145,
+          "quote": "        public class a implements com.tencent.okweb.webview.binding.b {"
+        },
+        {
+          "line": 146,
+          "quote": "            public a() {"
+        },
+        {
+          "line": 147,
+          "quote": "            }"
+        },
+        {
+          "line": 148,
+          "quote": ""
+        },
+        {
+          "line": 149,
+          "quote": "            @Override // com.tencent.okweb.webview.binding.b"
+        },
+        {
+          "line": 150,
+          "quote": "            /* renamed from: ʻ */"
+        },
+        {
+          "line": 151,
+          "quote": "            public void mo22042(BaseWebView baseWebView) {"
+        },
+        {
+          "line": 152,
+          "quote": "                BaseWebActivity.this.f21854 = baseWebView;"
+        },
+        {
+          "line": 153,
+          "quote": "                BaseWebActivity.this.f21854.setFileChooser(BaseWebActivity.this.f21857);"
+        },
+        {
+          "line": 154,
+          "quote": "            }"
+        },
+        {
+          "line": 155,
+          "quote": ""
+        },
+        {
+          "line": 156,
+          "quote": "            @Override // com.tencent.okweb.webview.binding.b"
+        },
+        {
+          "line": 157,
+          "quote": "            /* renamed from: ʼ */"
+        },
+        {
+          "line": 158,
+          "quote": "            public com.tencent.okweb.framework.widget.b mo22043() {"
+        },
+        {
+          "line": 159,
+          "quote": "                return null;"
+        },
+        {
+          "line": 160,
+          "quote": "            }"
+        },
+        {
+          "line": 161,
+          "quote": "        }"
+        },
+        {
+          "line": 162,
+          "quote": ""
+        },
+        {
+          "line": 163,
+          "quote": "        public c() {"
+        },
+        {
+          "line": 164,
+          "quote": "        }"
+        },
+        {
+          "line": 165,
+          "quote": ""
+        },
+        {
+          "line": 166,
+          "quote": "        @Override // com.tencent.okweb.framework.binding.a"
+        },
+        {
+          "line": 167,
+          "quote": "        /* renamed from: ʻ */"
+        },
+        {
+          "line": 168,
+          "quote": "        public com.tencent.okweb.framework.binding.c mo22041(com.tencent.okweb.framework.core.adapter.a aVar) {"
+        },
+        {
+          "line": 169,
+          "quote": "            if (aVar instanceof com.tencent.okweb.webview.adapter.a) {"
+        },
+        {
+          "line": 170,
+          "quote": "                return new a();"
+        },
+        {
+          "line": 171,
+          "quote": "            }"
+        },
+        {
+          "line": 172,
+          "quote": "            return null;"
+        },
+        {
+          "line": 173,
+          "quote": "        }"
+        },
+        {
+          "line": 318,
+          "quote": "    public void onCreate(Bundle bundle) {"
+        },
+        {
+          "line": 319,
+          "quote": "        super.onCreate(bundle);"
+        },
+        {
+          "line": 320,
+          "quote": "        com.tencent.ilivesdk.webcomponent.utils.a.m25645(\"LOAD_TAG\", \"Web click\", new Object[0]);"
+        },
+        {
+          "line": 321,
+          "quote": "        com.tencent.ilivesdk.webcomponent.utils.b.m25649(\"web_performance\");"
+        },
+        {
+          "line": 322,
+          "quote": "        Intent intent = getIntent();"
+        },
+        {
+          "line": 323,
+          "quote": "        getWindow().setSoftInputMode(19);"
+        },
+        {
+          "line": 324,
+          "quote": "        try {"
+        },
+        {
+          "line": 325,
+          "quote": "            setContentView(mo21864());"
+        },
+        {
+          "line": 326,
+          "quote": "            getWindow().setBackgroundDrawable(null);"
+        },
+        {
+          "line": 327,
+          "quote": "            mo21865(intent);"
+        },
+        {
+          "line": 328,
+          "quote": "            this.f21862 = mo25577();"
+        },
+        {
+          "line": 329,
+          "quote": "            m25578(this.f21866);"
+        },
+        {
+          "line": 330,
+          "quote": "            registerJSModuleExtra();"
+        },
+        {
+          "line": 331,
+          "quote": "            this.f21863 = (FrameLayout) findViewById(com.tencent.ilivesdk.webcomponent.e.f21960);"
+        },
+        {
+          "line": 332,
+          "quote": "            this.f21855 = this.f21856.m159035();"
+        },
+        {
+          "line": 333,
+          "quote": "            if (this.f21855 == null) {"
+        },
+        {
+          "line": 334,
+          "quote": "                com.tencent.ilivesdk.webcomponent.utils.a.m25644(this.TAG, \"Web Wrapper init failed\", new Object[0]);"
+        },
+        {
+          "line": 335,
+          "quote": "                finish();"
+        },
+        {
+          "line": 336,
+          "quote": "                return;"
+        },
+        {
+          "line": 337,
+          "quote": "            }"
+        },
+        {
+          "line": 338,
+          "quote": "            this.f21856.m159040((ViewGroup) this.f21863.getParent(), this.f21863);"
+        },
+        {
+          "line": 339,
+          "quote": "            this.f21856.loadUrl(this.f21866);"
+        },
+        {
+          "line": 340,
+          "quote": "            this.f21865 = DeviceJavacriptInterface.getNetworkName();"
+        },
+        {
+          "line": 341,
+          "quote": "            IntentFilter intentFilter = new IntentFilter();"
+        },
+        {
+          "line": 342,
+          "quote": "            intentFilter.addAction(IMessageCenter.MSG_SYS_CONNECTIVITY_ACTION);"
+        },
+        {
+          "line": 343,
+          "quote": "            x.m160939(this, this.f21859, intentFilter);"
+        },
+        {
+          "line": 344,
+          "quote": "            com.tencent.ilivesdk.webcomponent.utils.b.m25650(\"web_performance\", \"onCreate finish\");"
+        },
+        {
+          "line": 421,
+          "quote": "    public void registerJSModuleExtra() {"
+        },
+        {
+          "line": 422,
+          "quote": "        m25580(new UIJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 423,
+          "quote": "        m25580(new AppJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 424,
+          "quote": "        m25580(new DeviceJavacriptInterface(this.f21856));"
+        },
+        {
+          "line": 425,
+          "quote": "        m25580(new MediaJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 426,
+          "quote": "        m25580(new EventJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 427,
+          "quote": "        m25580(new ComodityJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 428,
+          "quote": "        m25580(new ReportJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 429,
+          "quote": "        ExternalJavascriptInterface externalJavascriptInterface = new ExternalJavascriptInterface(this.f21856);"
+        },
+        {
+          "line": 430,
+          "quote": "        LiveProxyInterface m25631 = j.m25627().m25631();"
+        },
+        {
+          "line": 431,
+          "quote": "        if (m25631 != null) {"
+        },
+        {
+          "line": 432,
+          "quote": "            externalJavascriptInterface.setSdkEventInterface(m25631.mo16391());"
+        },
+        {
+          "line": 433,
+          "quote": "        }"
+        },
+        {
+          "line": 434,
+          "quote": "        m25580(externalJavascriptInterface);"
+        },
+        {
+          "line": 435,
+          "quote": "        m25580(new LoginJsModule(this.f21856));"
+        },
+        {
+          "line": 497,
+          "quote": "    /* renamed from: ˆʽ, reason: contains not printable characters */"
+        },
+        {
+          "line": 498,
+          "quote": "    public final void m25578(String str) {"
+        },
+        {
+          "line": 499,
+          "quote": "        this.f21856 = com.tencent.okweb.framework.core.client.d.m159046(str, this).m159049(new com.tencent.okweb.framework.jsmodule.b()).m159050(new d()).m159048(new c()).m159047();"
+        },
+        {
+          "line": 500,
+          "quote": "    }"
+        },
+        {
+          "line": 501,
+          "quote": ""
+        },
+        {
+          "line": 512,
+          "quote": "    /* renamed from: ˆʿ, reason: contains not printable characters */"
+        },
+        {
+          "line": 513,
+          "quote": "    public void m25580(com.tencent.okweb.framework.jsmodule.a aVar) {"
+        },
+        {
+          "line": 514,
+          "quote": "        if (this.f21856.m159031().mo159119(aVar.getName()) != null) {"
+        },
+        {
+          "line": 515,
+          "quote": "            this.f21856.m159031().mo159119(aVar.getName()).clear();"
+        },
+        {
+          "line": 516,
+          "quote": "        }"
+        },
+        {
+          "line": 517,
+          "quote": "        this.f21856.m159031().mo159121(aVar.getName(), new e(aVar));"
+        },
+        {
+          "line": 518,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/ilivesdk/webcomponent/activity/WebActivity.java",
+      "sha256": "7f1e973e205f06655ba5d42775f0c3cce3ae65fe9e935010ef7553d82f709234",
+      "locations": [
+        {
+          "line": 1,
+          "quote": "package com.tencent.ilivesdk.webcomponent.activity;"
+        },
+        {
+          "line": 2,
+          "quote": ""
+        },
+        {
+          "line": 3,
+          "quote": "import android.content.Intent;"
+        },
+        {
+          "line": 4,
+          "quote": "import android.os.Bundle;"
+        },
+        {
+          "line": 5,
+          "quote": "import com.tencent.ilivesdk.webcomponent.f;"
+        },
+        {
+          "line": 6,
+          "quote": ""
+        },
+        {
+          "line": 7,
+          "quote": "/* loaded from: classes8.dex */"
+        },
+        {
+          "line": 8,
+          "quote": "public class WebActivity extends BaseWebActivity {"
+        },
+        {
+          "line": 9,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity, androidx.fragment.app.FragmentActivity, androidx.view.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 10,
+          "quote": "    public void onActivityResult(int i, int i2, Intent intent) {"
+        },
+        {
+          "line": 11,
+          "quote": "        super.onActivityResult(i, i2, intent);"
+        },
+        {
+          "line": 12,
+          "quote": "    }"
+        },
+        {
+          "line": 13,
+          "quote": ""
+        },
+        {
+          "line": 14,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity, androidx.fragment.app.FragmentActivity, androidx.view.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 15,
+          "quote": "    public void onCreate(Bundle bundle) {"
+        },
+        {
+          "line": 16,
+          "quote": "        super.onCreate(bundle);"
+        },
+        {
+          "line": 17,
+          "quote": "    }"
+        },
+        {
+          "line": 18,
+          "quote": ""
+        },
+        {
+          "line": 19,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity, androidx.fragment.app.FragmentActivity, android.app.Activity"
+        },
+        {
+          "line": 20,
+          "quote": "    public void onDestroy() {"
+        },
+        {
+          "line": 21,
+          "quote": "        super.onDestroy();"
+        },
+        {
+          "line": 22,
+          "quote": "    }"
+        },
+        {
+          "line": 23,
+          "quote": ""
+        },
+        {
+          "line": 24,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity"
+        },
+        {
+          "line": 25,
+          "quote": "    public void registerJSModuleExtra() {"
+        },
+        {
+          "line": 26,
+          "quote": "        super.registerJSModuleExtra();"
+        },
+        {
+          "line": 27,
+          "quote": "    }"
+        },
+        {
+          "line": 28,
+          "quote": ""
+        },
+        {
+          "line": 29,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity"
+        },
+        {
+          "line": 30,
+          "quote": "    /* renamed from: ʿⁱ */"
+        },
+        {
+          "line": 31,
+          "quote": "    public int mo21864() {"
+        },
+        {
+          "line": 32,
+          "quote": "        return f.f21978;"
+        },
+        {
+          "line": 33,
+          "quote": "    }"
+        },
+        {
+          "line": 34,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/ilivesdk/webcomponent/activity/SingleTransparentTitleWebActivity.java",
+      "sha256": "a1124077add46ffda8cc3086bd69c12452827830186025a6c111ec77e117141e",
+      "locations": [
+        {
+          "line": 1,
+          "quote": "package com.tencent.ilivesdk.webcomponent.activity;"
+        },
+        {
+          "line": 2,
+          "quote": ""
+        },
+        {
+          "line": 3,
+          "quote": "import android.os.Bundle;"
+        },
+        {
+          "line": 4,
+          "quote": ""
+        },
+        {
+          "line": 5,
+          "quote": "/* loaded from: classes8.dex */"
+        },
+        {
+          "line": 6,
+          "quote": "public class SingleTransparentTitleWebActivity extends TransparentTitleWebActivity {"
+        },
+        {
+          "line": 7,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.TransparentTitleWebActivity, com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity, androidx.fragment.app.FragmentActivity, androidx.view.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 8,
+          "quote": "    public void onCreate(Bundle bundle) {"
+        },
+        {
+          "line": 9,
+          "quote": "        super.onCreate(bundle);"
+        },
+        {
+          "line": 10,
+          "quote": "    }"
+        },
+        {
+          "line": 11,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/ilivesdk/webcomponent/activity/TransparentTitleWebActivity.java",
+      "sha256": "2810781c1295ad1543edabee6fcb997579493f71fe60ae6703cd8cdfe2a30d09",
+      "locations": [
+        {
+          "line": 42,
+          "quote": "    public class TransparentUIJavascriptInterface extends UIJavascriptInterface {"
+        },
+        {
+          "line": 43,
+          "quote": "        public TransparentUIJavascriptInterface(com.tencent.okweb.framework.core.client.a aVar) {"
+        },
+        {
+          "line": 44,
+          "quote": "            super(aVar);"
+        },
+        {
+          "line": 45,
+          "quote": "        }"
+        },
+        {
+          "line": 46,
+          "quote": ""
+        },
+        {
+          "line": 47,
+          "quote": "        @NewJavascriptInterface"
+        },
+        {
+          "line": 48,
+          "quote": "        public void closeCurrentWebViewEaseOut(Map<String, String> map) {"
+        },
+        {
+          "line": 49,
+          "quote": "            TransparentTitleWebActivity.this.finishThis();"
+        },
+        {
+          "line": 50,
+          "quote": "        }"
+        },
+        {
+          "line": 51,
+          "quote": ""
+        },
+        {
+          "line": 52,
+          "quote": "        @NewJavascriptInterface"
+        },
+        {
+          "line": 53,
+          "quote": "        public void easeShowNavBar(Map<String, String> map) {"
+        },
+        {
+          "line": 54,
+          "quote": "            if (\"0\".equals(map.get(\"show\"))) {"
+        },
+        {
+          "line": 55,
+          "quote": "                TransparentTitleWebActivity.this.hideTitle();"
+        },
+        {
+          "line": 56,
+          "quote": "            } else {"
+        },
+        {
+          "line": 57,
+          "quote": "                TransparentTitleWebActivity.this.showTitle();"
+        },
+        {
+          "line": 58,
+          "quote": "            }"
+        },
+        {
+          "line": 59,
+          "quote": "        }"
+        },
+        {
+          "line": 124,
+          "quote": "    public void onCreate(Bundle bundle) {"
+        },
+        {
+          "line": 125,
+          "quote": "        Bundle extras;"
+        },
+        {
+          "line": 126,
+          "quote": "        super.onCreate(bundle);"
+        },
+        {
+          "line": 127,
+          "quote": "        Intent intent = getIntent();"
+        },
+        {
+          "line": 128,
+          "quote": "        if (intent != null && (extras = intent.getExtras()) != null) {"
+        },
+        {
+          "line": 129,
+          "quote": "            this.f21882 = extras.getString(\"cover_url\");"
+        },
+        {
+          "line": 130,
+          "quote": "        }"
+        },
+        {
+          "line": 131,
+          "quote": "        setTheme(h.f21991);"
+        },
+        {
+          "line": 132,
+          "quote": "    }"
+        },
+        {
+          "line": 133,
+          "quote": ""
+        },
+        {
+          "line": 134,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity, androidx.fragment.app.FragmentActivity, android.app.Activity"
+        },
+        {
+          "line": 135,
+          "quote": "    public void onDestroy() {"
+        },
+        {
+          "line": 136,
+          "quote": "        super.onDestroy();"
+        },
+        {
+          "line": 137,
+          "quote": "    }"
+        },
+        {
+          "line": 138,
+          "quote": ""
+        },
+        {
+          "line": 139,
+          "quote": "    @Override // com.tencent.ilivesdk.webcomponent.activity.BaseWebActivity"
+        },
+        {
+          "line": 140,
+          "quote": "    public void registerJSModuleExtra() {"
+        },
+        {
+          "line": 141,
+          "quote": "        super.registerJSModuleExtra();"
+        },
+        {
+          "line": 142,
+          "quote": "        m25580(new TransparentUIJavascriptInterface(this.f21856));"
+        },
+        {
+          "line": 143,
+          "quote": "        AppJavascriptInterface appJavascriptInterface = (AppJavascriptInterface) this.f21856.m159031().mo159120(\"app\", AppJavascriptInterface.class);"
+        },
+        {
+          "line": 144,
+          "quote": "        if (appJavascriptInterface != null) {"
+        },
+        {
+          "line": 145,
+          "quote": "            appJavascriptInterface.setPageFinishListener(new a());"
+        },
+        {
+          "line": 146,
+          "quote": "        }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/okweb/framework/core/client/d.java",
+      "sha256": "6a8e91076fa7023b3fe87e63e35ba2f59120e8ce57e41566523b5420020558df",
+      "locations": [
+        {
+          "line": 28,
+          "quote": "        this.f126713 = str;"
+        },
+        {
+          "line": 29,
+          "quote": "        this.f126714 = bVar;"
+        },
+        {
+          "line": 30,
+          "quote": "    }"
+        },
+        {
+          "line": 31,
+          "quote": ""
+        },
+        {
+          "line": 32,
+          "quote": "    /* renamed from: ʿ, reason: contains not printable characters */"
+        },
+        {
+          "line": 33,
+          "quote": "    public static d m159046(String str, com.tencent.okweb.framework.core.ui.b bVar) {"
+        },
+        {
+          "line": 34,
+          "quote": "        return new d(str, bVar);"
+        },
+        {
+          "line": 35,
+          "quote": "    }"
+        },
+        {
+          "line": 36,
+          "quote": ""
+        },
+        {
+          "line": 37,
+          "quote": "    /* renamed from: ʻ, reason: contains not printable characters */"
+        },
+        {
+          "line": 38,
+          "quote": "    public a m159047() {"
+        },
+        {
+          "line": 39,
+          "quote": "        e eVar = new e(this.f126714, this.f126715);"
+        },
+        {
+          "line": 40,
+          "quote": "        eVar.m159028(this.f126713);"
+        },
+        {
+          "line": 41,
+          "quote": "        eVar.m159059(this.f126718);"
+        },
+        {
+          "line": 42,
+          "quote": "        eVar.m159058(this.f126719);"
+        },
+        {
+          "line": 43,
+          "quote": "        eVar.m159057(this.f126717);"
+        },
+        {
+          "line": 44,
+          "quote": "        eVar.m159056(this.f126716);"
+        },
+        {
+          "line": 45,
+          "quote": "        eVar.m159051();"
+        },
+        {
+          "line": 46,
+          "quote": "        return eVar;"
+        },
+        {
+          "line": 47,
+          "quote": "    }"
+        },
+        {
+          "line": 48,
+          "quote": ""
+        },
+        {
+          "line": 49,
+          "quote": "    /* renamed from: ʼ, reason: contains not printable characters */"
+        },
+        {
+          "line": 50,
+          "quote": "    public d m159048(com.tencent.okweb.framework.binding.a aVar) {"
+        },
+        {
+          "line": 51,
+          "quote": "        this.f126717 = aVar;"
+        },
+        {
+          "line": 52,
+          "quote": "        return this;"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/okweb/webview/adapter/a.java",
+      "sha256": "37e1d1c67b0e06e76e8e28eb11870d8419871f324273b3880d2bc6c0025f0147",
+      "locations": [
+        {
+          "line": 26,
+          "quote": ""
+        },
+        {
+          "line": 27,
+          "quote": "    @Override // com.tencent.okweb.framework.core.adapter.a"
+        },
+        {
+          "line": 28,
+          "quote": "    /* renamed from: ʼ */"
+        },
+        {
+          "line": 29,
+          "quote": "    public com.tencent.okweb.framework.binding.b mo159009(String str) {"
+        },
+        {
+          "line": 30,
+          "quote": "        if (this.f126808 == null) {"
+        },
+        {
+          "line": 31,
+          "quote": "            this.f126808 = new b();"
+        },
+        {
+          "line": 32,
+          "quote": "        }"
+        },
+        {
+          "line": 33,
+          "quote": "        return this.f126808;"
+        },
+        {
+          "line": 34,
+          "quote": "    }"
+        },
+        {
+          "line": 35,
+          "quote": ""
+        },
+        {
+          "line": 36,
+          "quote": "    @Override // com.tencent.okweb.framework.core.adapter.a"
+        },
+        {
+          "line": 37,
+          "quote": "    /* renamed from: ʽ */"
+        },
+        {
+          "line": 38,
+          "quote": "    public com.tencent.okweb.framework.widget.a mo159010() {"
+        },
+        {
+          "line": 39,
+          "quote": "        if (this.f126809 == null && this.f126808 != null) {"
+        },
+        {
+          "line": 40,
+          "quote": "            this.f126809 = new c(this.f126808.m159179());"
+        },
+        {
+          "line": 41,
+          "quote": "        }"
+        },
+        {
+          "line": 42,
+          "quote": "        return this.f126809;"
+        },
+        {
+          "line": 43,
+          "quote": "    }"
+        },
+        {
+          "line": 52,
+          "quote": "    /* renamed from: ˆ */"
+        },
+        {
+          "line": 53,
+          "quote": "    public void mo159013(Activity activity) {"
+        },
+        {
+          "line": 54,
+          "quote": "        super.mo159013(activity);"
+        },
+        {
+          "line": 55,
+          "quote": "        if (this.f126808 == null) {"
+        },
+        {
+          "line": 56,
+          "quote": "            com.tencent.okweb.utils.b.m159162(\"WebViewAdapter\", \"onActivityCreate: wtf, WebView Binding is null, return\");"
+        },
+        {
+          "line": 57,
+          "quote": "        } else {"
+        },
+        {
+          "line": 58,
+          "quote": "            this.f126808.m159177();"
+        },
+        {
+          "line": 59,
+          "quote": "        }"
+        },
+        {
+          "line": 60,
+          "quote": "    }"
+        },
+        {
+          "line": 61,
+          "quote": ""
+        },
+        {
+          "line": 62,
+          "quote": "    @Override // com.tencent.okweb.framework.core.adapter.a"
+        },
+        {
+          "line": 63,
+          "quote": "    /* renamed from: ˈ */"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/okweb/webview/adapter/b.java",
+      "sha256": "c2fbc611f57d2863f16a782a4a54f5f287e6e6013dd3deb2508551ad5757c256",
+      "locations": [
+        {
+          "line": 64,
+          "quote": "    @Override // com.tencent.okweb.framework.binding.b"
+        },
+        {
+          "line": 65,
+          "quote": "    /* renamed from: ʼ */"
+        },
+        {
+          "line": 66,
+          "quote": "    public void mo158950(com.tencent.okweb.framework.loadstrategy.b bVar, boolean z) {"
+        },
+        {
+          "line": 67,
+          "quote": "        if (!(bVar instanceof com.tencent.okweb.webview.strategy.d)) {"
+        },
+        {
+          "line": 68,
+          "quote": "            com.tencent.okweb.utils.b.m159162(\"WebClient|WebViewBinding\", \"bindWebInstance: has attach WebView, return\");"
+        },
+        {
+          "line": 69,
+          "quote": "            return;"
+        },
+        {
+          "line": 70,
+          "quote": "        }"
+        },
+        {
+          "line": 71,
+          "quote": "        if (this.f126813) {"
+        },
+        {
+          "line": 72,
+          "quote": "            com.tencent.okweb.utils.b.m159163(\"WebClient|WebViewBinding\", \"bindWebInstance: has attach WebView, return\");"
+        },
+        {
+          "line": 73,
+          "quote": "            return;"
+        },
+        {
+          "line": 74,
+          "quote": "        }"
+        },
+        {
+          "line": 75,
+          "quote": "        BaseWebView m159235 = ((com.tencent.okweb.webview.strategy.d) bVar).m159235();"
+        },
+        {
+          "line": 76,
+          "quote": "        if (m159235 != null && this.f126811 == m159235) {"
+        },
+        {
+          "line": 77,
+          "quote": "            com.tencent.okweb.utils.b.m159163(\"WebClient|WebViewBinding\", \"bindWebInstance: has bind WebView, return\");"
+        },
+        {
+          "line": 78,
+          "quote": "            return;"
+        },
+        {
+          "line": 79,
+          "quote": "        }"
+        },
+        {
+          "line": 80,
+          "quote": "        if (this.f126811 != null) {"
+        },
+        {
+          "line": 81,
+          "quote": "            m159180();"
+        },
+        {
+          "line": 82,
+          "quote": "        }"
+        },
+        {
+          "line": 83,
+          "quote": "        this.f126813 = false;"
+        },
+        {
+          "line": 84,
+          "quote": "        this.f126811 = m159235;"
+        },
+        {
+          "line": 85,
+          "quote": "        this.f126814 = new com.tencent.okweb.webview.js.c(this.f126811);"
+        },
+        {
+          "line": 86,
+          "quote": "        if (this.f126811 == null || !z) {"
+        },
+        {
+          "line": 87,
+          "quote": "            return;"
+        },
+        {
+          "line": 88,
+          "quote": "        }"
+        },
+        {
+          "line": 89,
+          "quote": "        this.f126811.setBackgroundColor(0);"
+        },
+        {
+          "line": 90,
+          "quote": "    }"
+        },
+        {
+          "line": 91,
+          "quote": ""
+        },
+        {
+          "line": 92,
+          "quote": "    @Override // com.tencent.okweb.framework.binding.b"
+        },
+        {
+          "line": 93,
+          "quote": "    /* renamed from: ʽ */"
+        },
+        {
+          "line": 94,
+          "quote": "    public void mo158951(com.tencent.okweb.framework.binding.c cVar) {"
+        },
+        {
+          "line": 95,
+          "quote": "        if (!(cVar instanceof com.tencent.okweb.webview.binding.b) || this.f126812 == cVar) {"
+        },
+        {
+          "line": 96,
+          "quote": "            return;"
+        },
+        {
+          "line": 97,
+          "quote": "        }"
+        },
+        {
+          "line": 98,
+          "quote": "        this.f126812 = (com.tencent.okweb.webview.binding.b) cVar;"
+        },
+        {
+          "line": 99,
+          "quote": "    }"
+        },
+        {
+          "line": 118,
+          "quote": "    public void m159177() {"
+        },
+        {
+          "line": 119,
+          "quote": "        if (this.f126810 == null) {"
+        },
+        {
+          "line": 120,
+          "quote": "            com.tencent.okweb.utils.b.m159163(\"WebClient|WebViewBinding\", \"addWebView: web container is null\");"
+        },
+        {
+          "line": 121,
+          "quote": "            return;"
+        },
+        {
+          "line": 122,
+          "quote": "        }"
+        },
+        {
+          "line": 123,
+          "quote": "        if (this.f126811 == null) {"
+        },
+        {
+          "line": 124,
+          "quote": "            com.tencent.okweb.utils.b.m159163(\"WebClient|WebViewBinding\", \"addWebView: WebView is null, create it\");"
+        },
+        {
+          "line": 125,
+          "quote": "            this.f126811 = ((com.tencent.okweb.webview.manager.a) com.tencent.okweb.framework.core.manager.c.m159071().m159080(\"WebView\")).m159205().m159221();"
+        },
+        {
+          "line": 126,
+          "quote": "        }"
+        },
+        {
+          "line": 127,
+          "quote": "        com.tencent.okweb.utils.d.m159170(this.f126811);"
+        },
+        {
+          "line": 128,
+          "quote": "        if (this.f126811 != null && (this.f126811.getContext() instanceof MutableContextWrapper)) {"
+        },
+        {
+          "line": 129,
+          "quote": "            ((MutableContextWrapper) this.f126811.getContext()).setBaseContext(this.f126810.getContext());"
+        },
+        {
+          "line": 130,
+          "quote": "        }"
+        },
+        {
+          "line": 131,
+          "quote": "        if (this.f126811 != null) {"
+        },
+        {
+          "line": 132,
+          "quote": "            this.f126811.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));"
+        },
+        {
+          "line": 133,
+          "quote": "            this.f126810.addView(this.f126811);"
+        },
+        {
+          "line": 134,
+          "quote": "            this.f126813 = true;"
+        },
+        {
+          "line": 135,
+          "quote": "        }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txxw-1/sources/com/tencent/okweb/webview/BaseWebView.java",
+      "sha256": "0ebfa564d96437df99e57790be778c6e071d22407f04b3e159e1c64d3eae8c23",
+      "locations": [
+        {
+          "line": 28,
+          "quote": "    public class b {"
+        },
+        {
+          "line": 29,
+          "quote": "        public b() {"
+        },
+        {
+          "line": 30,
+          "quote": "        }"
+        },
+        {
+          "line": 31,
+          "quote": ""
+        },
+        {
+          "line": 32,
+          "quote": "        @JavascriptInterface"
+        },
+        {
+          "line": 33,
+          "quote": "        public void setFrameLoadState(boolean z) {"
+        },
+        {
+          "line": 34,
+          "quote": "            com.tencent.okweb.utils.b.m159163(\"LOAD_TAG\", \"setFrameLoadState: call from js\");"
+        },
+        {
+          "line": 35,
+          "quote": "            BaseWebView.this.isFrameLoadFinish = z;"
+        },
+        {
+          "line": 36,
+          "quote": "        }"
+        },
+        {
+          "line": 37,
+          "quote": "    }"
+        },
+        {
+          "line": 38,
+          "quote": ""
+        },
+        {
+          "line": 39,
+          "quote": "    public BaseWebView(Context context) {"
+        },
+        {
+          "line": 40,
+          "quote": "        super(context);"
+        },
+        {
+          "line": 41,
+          "quote": "        this.mIsDestroying = false;"
+        },
+        {
+          "line": 42,
+          "quote": "        this.mIsForbidGoBack = false;"
+        },
+        {
+          "line": 43,
+          "quote": "        this.isFrameLoadFinish = false;"
+        },
+        {
+          "line": 44,
+          "quote": "        init();"
+        },
+        {
+          "line": 45,
+          "quote": "    }"
+        },
+        {
+          "line": 46,
+          "quote": ""
+        },
+        {
+          "line": 47,
+          "quote": "    private void init() {"
+        },
+        {
+          "line": 48,
+          "quote": "        setWebChromeClient(null);"
+        },
+        {
+          "line": 49,
+          "quote": "        this.mOkWebViewClient = createOkWebClient();"
+        },
+        {
+          "line": 50,
+          "quote": "        if (this.mOkWebViewClient == null) {"
+        },
+        {
+          "line": 51,
+          "quote": "            this.mOkWebViewClient = new com.tencent.okweb.webview.b(this);"
+        },
+        {
+          "line": 52,
+          "quote": "        }"
+        },
+        {
+          "line": 53,
+          "quote": "        setWebViewClient(this.mOkWebViewClient);"
+        },
+        {
+          "line": 54,
+          "quote": "        safeCheck();"
+        },
+        {
+          "line": 55,
+          "quote": "        e.m159188(getContext());"
+        },
+        {
+          "line": 56,
+          "quote": "        addJavascriptInterface(new b(), \"__webview_preload\");"
+        },
+        {
+          "line": 57,
+          "quote": "        com.tencent.okweb.framework.core.manager.c.m159071().m159075().mo159135(this);"
+        },
+        {
+          "line": 58,
+          "quote": "        this.mOkWebViewClient.m159175(null);"
+        },
+        {
+          "line": 59,
+          "quote": "    }"
+        },
+        {
+          "line": 60,
+          "quote": ""
+        },
+        {
+          "line": 61,
+          "quote": "    private void safeCheck() {"
+        },
+        {
+          "line": 62,
+          "quote": "        removeJavascriptInterface(\"searchBoxJavaBridge_\");"
+        },
+        {
+          "line": 63,
+          "quote": "        removeJavascriptInterface(\"accessibility\");"
+        },
+        {
+          "line": 64,
+          "quote": "        removeJavascriptInterface(\"accessibilityTraversal\");"
+        },
+        {
+          "line": 65,
+          "quote": "    }"
+        },
+        {
+          "line": 225,
+          "quote": "    public final void setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 226,
+          "quote": "        if (this.mWebChromeClientProxy == null) {"
+        },
+        {
+          "line": 227,
+          "quote": "            this.mWebChromeClientProxy = new f();"
+        },
+        {
+          "line": 228,
+          "quote": "            super.setWebChromeClient(this.mWebChromeClientProxy);"
+        },
+        {
+          "line": 229,
+          "quote": "        }"
+        },
+        {
+          "line": 230,
+          "quote": "        this.mWebChromeClientProxy.m159191(webChromeClient);"
+        },
+        {
+          "line": 231,
+          "quote": "    }"
+        },
+        {
+          "line": 232,
+          "quote": ""
+        },
+        {
+          "line": 233,
+          "quote": "    @Override // com.tencent.smtt.sdk.WebView"
+        },
+        {
+          "line": 234,
+          "quote": "    public final void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 235,
+          "quote": "        if (webViewClient == null) {"
+        },
+        {
+          "line": 236,
+          "quote": "            super.setWebViewClient(null);"
+        },
+        {
+          "line": 237,
+          "quote": "            return;"
+        },
+        {
+          "line": 238,
+          "quote": "        }"
+        },
+        {
+          "line": 239,
+          "quote": "        if (!(webViewClient instanceof com.tencent.okweb.webview.a)) {"
+        },
+        {
+          "line": 240,
+          "quote": "            webViewClient = new com.tencent.okweb.webview.b(this);"
+        },
+        {
+          "line": 241,
+          "quote": "        }"
+        },
+        {
+          "line": 242,
+          "quote": "        super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 243,
+          "quote": "    }"
+        }
+      ]
+    }
+  ],
+  "acceptance_claim": false
+}

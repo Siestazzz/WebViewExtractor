@@ -1,0 +1,14 @@
+{
+  "apk_sha256": "c4a8d2904ec530a4b97d8dbd04cd641f175918f24cff5d056d216e3808852941",
+  "snapshot": "docs/validation/news/canonical-privacy-x5-extension-callback-source-v1.jsonl",
+  "sha256": "a2374f8d8188debf1462df7b3e9e7b984af54beb06f7da926be8ac00e8c12dd6",
+  "facts": 16,
+  "families": [
+    "WebViewCallbackClient",
+    "IX5WebViewClientExtension"
+  ],
+  "reason": "Download and X5 callback extension interfaces are callback surface; separate families prevent silently counting only primary Client methods.",
+  "evidence": "privacy-host-deep-source-v1.json",
+  "positive_acceptance": true,
+  "acceptance_claim": false
+}

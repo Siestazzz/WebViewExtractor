@@ -1,0 +1,8 @@
+{
+  "reason": "174 OKWeb source facts were documented as unconfirmed but lacked row-level positive_acceptance=false. Initial input is retained for audit, not acceptance.",
+  "initial_manifest": "generic-v17-expanded-facts/manifest.json",
+  "accepted_manifest": "generic-v17-reviewed-facts/manifest.json",
+  "normalization_ledger": "news/okweb-v1-unconfirmed-row-normalization.json",
+  "scoring_action": "Stopped initial replay; re-score both v16/v17 with reviewed rows. No APK analysis rerun and no source facts deleted.",
+  "check": "New appended rows require explicit boolean verdict via freeze_oracle.py --require-append-verdicts; legacy frozen rows preserved."
+}

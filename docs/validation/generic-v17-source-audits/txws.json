@@ -1,0 +1,94 @@
+{
+  "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "reviewer": {
+    "role": "independent source reviewer",
+    "model": "GPT-6 (Codex; exact runtime model identifier unavailable)"
+  },
+  "evidence": [
+    {
+      "file": "docs/validation/txws/canonical-facts.jsonl",
+      "source_rows": 99
+    },
+    {
+      "file": "docs/validation/txws/canonical-additional-report-guided.jsonl",
+      "provenance": "separately proved host chains; fixed previous failures retained"
+    },
+    {
+      "file": "docs/validation/txws/inventory.json",
+      "manifest_entry_count": 246
+    }
+  ],
+  "deep_positive_activities": [
+    "com.tencent.oscar.module.webview.WebviewBaseActivity",
+    "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
+    "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity",
+    "com.tencent.oscar.module.webview.BrowserMainActivity",
+    "com.tencent.wework.api.view.H5Activity",
+    "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+    "com.tencent.oscar.module.webview.tenvideo.TenvideoPayWebViewActivityLandscape",
+    "com.tencent.weishi.module.landvideo.HorizontalVideoActivity"
+  ],
+  "present_strata": {
+    "Activity direct/data-binding Android WebView": [
+      "com.tencent.oscar.module.webview.BrowserMainActivity",
+      "com.tencent.wework.api.view.H5Activity"
+    ],
+    "Activity inheritance": [
+      "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
+      "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity"
+    ],
+    "Fragment/custom X5 WebView cache": [
+      "com.tencent.oscar.module.webview.WebviewBaseActivity",
+      "com.tencent.oscar.module.webview.MainProcessWebviewActivity"
+    ],
+    "nested/managed Fragment": [
+      "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+      "com.tencent.weishi.module.landvideo.HorizontalVideoActivity"
+    ],
+    "anonymous and inherited standard Client members": [
+      "com.tencent.oscar.module.webview.WebviewBaseActivity",
+      "com.tencent.oscar.module.webview.MainProcessWebviewActivity"
+    ]
+  },
+  "source_supported_positive_activities": [
+    "com.sina.weibo.sdk.web.WebActivity",
+    "com.tencent.feedback.activity.FeedbackWebActivity",
+    "com.tencent.feedback.activity.WebViewBrowser",
+    "com.tencent.oscar.common.security.captcha.TCaptchaPopupActivity",
+    "com.tencent.oscar.module.main.MainActivity",
+    "com.tencent.oscar.module.webview.BrowserMainActivity",
+    "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
+    "com.tencent.oscar.module.webview.WebviewBaseActivity",
+    "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+    "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity",
+    "com.tencent.oscar.module.webview.tenvideo.TenvideoPayWebViewActivityLandscape",
+    "com.tencent.upgrade.ui.UpgradeActiveActivity",
+    "com.tencent.weishi.base.qq.QQScanLoginActivity",
+    "com.tencent.weishi.module.landvideo.HorizontalVideoActivity",
+    "com.tencent.wework.api.view.H5Activity",
+    "com.webank.facelight.ui.FaceProtocalActivity"
+  ],
+  "audit_complete": false,
+  "exhaustive_inventory": false,
+  "exhaustive_source_search_proves_fewer_than_30": false,
+  "unreviewed_frameworks": [
+    "Hippy/mini-program/XWeb",
+    "app navigation/share dialogs, dynamically bound Activities"
+  ],
+  "unknown": [
+    "Deep list covers named reviewed core chains; all-output capability precision incomplete.",
+    "Some present strata have fewer than two deep reviewed hosts.",
+    "Holdout reservations are not sealed gold or passed recall.",
+    "Manifest unreviewed entries are unknown, not negative evidence."
+  ],
+  "acceptance": "unproven",
+  "source_coverage_per_host": {
+    "com.tencent.oscar.module.main.MainActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "evidence_file": "docs/validation/txws/main-router-schema-source-probe.json",
+      "scope": "Positive application registry + callback + Fragment host chain; whole Main capability audit incomplete"
+    }
+  }
+}

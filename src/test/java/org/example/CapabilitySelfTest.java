@@ -51,6 +51,7 @@ public final class CapabilitySelfTest {
   StaticStartupReflectionFixture.run();
   StaticReflectionBudgetFixture.run();
   ApplicationBootstrapFixture.run();
+  ApplicationSnapshotBudgetFixture.run();
   AllocationCaptureFixture.run();
   ConstructorCaptureOrderingFixture.run();
   FragmentTransactionIsolationProbe.main(new String[0]);
@@ -60,6 +61,7 @@ public final class CapabilitySelfTest {
   PackagedFragmentProtocolProbe.run();
         RenderProcessClientFixture.run();
   FragmentSuperProtocolFixture.run();
+  FragmentSdkBoundaryFixture.run();
   DeferredFieldAliasReplayProbe.run();
   FragmentManagerCaptureFixture.run();
   StaticBridgeFixture.run();
