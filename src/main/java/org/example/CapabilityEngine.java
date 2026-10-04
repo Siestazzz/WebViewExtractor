@@ -420,7 +420,7 @@ final class CapabilityEngine {
     }
     void fragmentTransaction(Host h,Job job,Call call){
         List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
-        if(args.isEmpty()||!frameworkFragmentAccess(call.method(),args))return;
+        if(args.isEmpty()||!frameworkFragmentAccess(call.method(),args,call.isSuper()))return;
         for(V tx:alternatives(args.get(0))){
             if(!tx.kind().equals("fragment_transaction")){h.gaps.add("fragment_transaction_receiver_unresolved");continue;}
             if(FragmentTransactions.commit(call.method())){
@@ -477,7 +477,7 @@ final class CapabilityEngine {
         Set<V> views=new LinkedHashSet<>();
         for(V arg:args)for(V choice:alternatives(arg)){
             V value=choice.kind().equals("settings")&&!choice.args().isEmpty()?choice.args().get(0):choice;
-            for(V view:alternatives(value))if(view.kind().equals("view"))views.add(view);
+            for(V view:alternatives(value))if(view.kind().equals("view")||view.kind().equals("field_object")&&idx.webview(view.type())&&h.deferredFields.containsKey(view.id()))views.add(view);
         }
         if(views.isEmpty())return;
         String context=CapabilityIndex.key(job.method)+"|"+job.args;
@@ -675,14 +675,15 @@ final class CapabilityEngine {
     boolean fragmentProtocolReceiver(V value,String contract){
         return alternatives(value).stream().allMatch(receiver->Set.of("object","new","host","view","fragment_manager").contains(receiver.kind())&&receiver.type()!=null&&idx.subtype(receiver.type(),contract));
     }
-    boolean frameworkFragmentAccess(String method,List<V> args){
+    boolean frameworkFragmentAccess(String method,List<V> args){return frameworkFragmentAccess(method,args,false);}
+    boolean frameworkFragmentAccess(String method,List<V> args,boolean explicitSuper){
         // Only this exact public Fragment protocol crosses packaged SDK bodies.
         if(!FragmentTransactions.manager(method)&&!FragmentTransactions.begin(method)&&!FragmentTransactions.operation(method)&&!FragmentTransactions.fluent(method))return false;
         for(V receiver:args.isEmpty()?List.<V>of():alternatives(args.get(0))){
-            Method actual=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+method.substring(method.indexOf("->")+2));
+            Method actual=explicitSuper?idx.resolve(method):receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+method.substring(method.indexOf("->")+2));
             if(actual==null||actual.getImplementation()==null)continue;
             String declaration=CapabilityIndex.cls(actual.getDefiningClass());
-            boolean contract=false;
+            boolean contract=declaration.equals("android.app.Activity")&&FragmentTransactions.manager(method);
             for(String family:FragmentTransactions.PREFIXES)for(String type:List.of("Fragment","FragmentActivity","FragmentManager","FragmentTransaction"))if(declaration.equals(family+"."+type))contract=true;
             if(!contract)return false;
         }return true;
@@ -1198,9 +1199,9 @@ final class CapabilityEngine {
                     result=union(result,clazz.kind().equals("class")&&clazz.type()!=null?V.literal("java.lang.String",clazz.type()):V.of("unknown","java.lang.String","dynamic_class_name"));
                 return result==null?UNKNOWN:result;
             }
-            if(FragmentTransactions.begin(v.id())&&args.size()==1&&fragmentProtocolReceiver(args.get(0),owner(v.id()))&&frameworkFragmentAccess(v.id(),args))return V.of("fragment_transaction",v.type(),"fragment_transaction:"+CapabilityIndex.key(job.method)+":"+allocationContext(job)+":"+v.kind()+":"+args.get(0).id());
-            if((FragmentTransactions.operation(v.id())||FragmentTransactions.fluent(v.id()))&&!args.isEmpty()&&frameworkFragmentAccess(v.id(),args))return args.get(0);
-            if(FragmentTransactions.manager(v.id())&&args.size()==1&&(idx.activity(owner(v.id()))||fragment(owner(v.id())))&&fragmentProtocolReceiver(args.get(0),owner(v.id()))&&frameworkFragmentAccess(v.id(),args))return V.of("fragment_manager",v.type(),"fragment_manager:"+args.get(0).id());
+            if(FragmentTransactions.begin(v.id())&&args.size()==1&&fragmentProtocolReceiver(args.get(0),owner(v.id()))&&frameworkFragmentAccess(v.id(),args,v.kind().equals("return_super")||v.kind().startsWith("return_fragment_transaction_super:")))return V.of("fragment_transaction",v.type(),"fragment_transaction:"+CapabilityIndex.key(job.method)+":"+allocationContext(job)+":"+v.kind()+":"+args.get(0).id());
+            if((FragmentTransactions.operation(v.id())||FragmentTransactions.fluent(v.id()))&&!args.isEmpty()&&frameworkFragmentAccess(v.id(),args,v.kind().equals("return_super")))return args.get(0);
+            if(FragmentTransactions.manager(v.id())&&args.size()==1&&(idx.activity(owner(v.id()))||fragment(owner(v.id())))&&fragmentProtocolReceiver(args.get(0),owner(v.id()))&&frameworkFragmentAccess(v.id(),args,v.kind().equals("return_super")))return V.of("fragment_manager",v.type(),"fragment_manager:"+args.get(0).id());
             if(CapabilityIndex.fragmentFactory(v.id()))return instantiateFragment(v,args,job,h,depth,visiting);
             if(name.equals("getArguments")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/os/Bundle;")&&args.size()==1&&frameworkViewAccess(v.id(),args)){
                 V result=null;for(V receiver:alternatives(args.get(0)))result=union(result,h.heap.get(heapKey("$fragment_arguments",receiver)));
@@ -1531,9 +1532,14 @@ final class CapabilityEngine {
         }
         if(kind.equals("callback")&&args.size()>=2){
             Method setter=idx.resolve(call.method());var custom=idx.customCallbacks.get(setter==null?call.method():CapabilityIndex.key(setter));
-            String installedContract=custom==null?CapabilityIndex.cls(call.method().substring(call.method().indexOf('(')+1,call.method().indexOf(')'))):custom.contract();
+            List<String> setterParameters=parameters(call.method().substring(call.method().indexOf('(')+1,call.method().indexOf(')')));
+            // Standard SDK setters may take an Executor before the listener. The last
+            // parameter is the installed contract; custom field setters retain index 1.
+            int clientArgument=custom==null?setterParameters.size():1;
+            if(clientArgument>=args.size())return;
+            String installedContract=custom==null?CapabilityIndex.cls(setterParameters.get(setterParameters.size()-1)):custom.contract();
             if(custom!=null){base.put("callback_field",custom.field());base.put("callback_contract",custom.contract());base.put("resolution","receiver_field_stored_listener");}
-            for(V client:alternatives(args.get(1))){
+            for(V client:alternatives(args.get(clientArgument))){
                 if(custom!=null)applyWrite(h,custom.field(),recv,client);
                 if(client.kind().equals("literal")&&"0".equals(client.literal())){Map<String,Object> reset=new LinkedHashMap<>(base);reset.put("kind","callback_removal");add(h,reset);continue;}
                 Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",custom==null?callbackMembers(client.type(),installedContract):customCallbackMembers(client.type(),custom));add(h,b);

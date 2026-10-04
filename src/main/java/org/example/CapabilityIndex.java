@@ -420,6 +420,7 @@ final class CapabilityIndex {
             (subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V");
     }
     boolean standardClientShape(String type,String shape){
+        if(subtype(type,SdkClientContracts.RENDER_CLIENT)&&SdkClientContracts.RENDER_SHAPES.contains(shape))return true;
         for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk.")){
             for(String family:List.of("WebViewClient","WebChromeClient")){
                 String contract=prefix+family;
@@ -492,7 +493,7 @@ final class CapabilityIndex {
     boolean map(String t){return t!=null&&(Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.util.TreeMap","java.util.concurrent.ConcurrentMap","java.util.concurrent.ConcurrentHashMap").contains(t)||subtype(t,"java.util.Map"));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
-    boolean client(String type){return clientContracts.extensionType(type)||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
+    boolean client(String type){return subtype(type,SdkClientContracts.RENDER_CLIENT)||clientContracts.extensionType(type)||subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
     boolean componentEntry(String type,Method method){
         if((method.getAccessFlags()&(2|8))!=0||(method.getAccessFlags()&(1|4))==0)return false;
         String contract=shape(method);

@@ -1,0 +1,1084 @@
+{
+  "note": "Derived from missing scorer facts, not independently proved all-APK inventory. Unknown/unscorable facts remain in source snapshots. Counts include distinct semantic facts, not just Activities.",
+  "apps": {
+    "news": {
+      "score_artifact": "docs/validation/generic-v15-news-expanded-v15-score.json",
+      "report_sha256": "e9140b0e06c4ee6efef4632e519d5a5fcff6e869279a8075a5f4c07e02ff500a",
+      "oracle_sha256": "47bc8cbce2920c76c206b623cf9a3da723621ce452459d0cc0b379fed665b36a",
+      "metrics": {
+        "bridge": {
+          "expected": 1393,
+          "matched": 1260,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9045226130653267,
+          "explicit_recall": 0.0
+        },
+        "setting": {
+          "expected": 366,
+          "matched": 228,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.6229508196721312,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 240,
+          "matched": 189,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.7875,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.tencent.news.tad.business.ui.activity.AdMosaicXiJingPageActivity",
+          "count": 56,
+          "kinds": {
+            "setting": 15,
+            "callback": 13,
+            "message_handler": 27,
+            "bridge": 1
+          }
+        },
+        {
+          "activity": "com.tencent.ads.landing.AdLandingPageActivity",
+          "count": 54,
+          "kinds": {
+            "setting": 13,
+            "message_handler": 27,
+            "callback": 13,
+            "bridge": 1
+          }
+        },
+        {
+          "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.ui.view.player.FullPlayVideoActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+          "count": 19,
+          "kinds": {
+            "setting": 11,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback": 2,
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.tencent.ams.adcore.gesture.bonus.AdBonusPageActivity",
+          "count": 17,
+          "kinds": {
+            "callback": 3,
+            "setting": 11,
+            "bridge_method": 2,
+            "bridge": 1
+          }
+        },
+        {
+          "activity": "com.tencent.news.share.activity.MobileQQActivity",
+          "count": 10,
+          "kinds": {
+            "bridge": 1,
+            "message_handler": 9
+          }
+        },
+        {
+          "activity": "com.tencent.news.share.activity.QzoneShareActivity",
+          "count": 10,
+          "kinds": {
+            "bridge": 1,
+            "message_handler": 9
+          }
+        },
+        {
+          "activity": "com.tencent.news.activity.QAEditorActivity",
+          "count": 2,
+          "kinds": {
+            "callback": 2
+          }
+        },
+        {
+          "activity": "com.tencent.news.activity.RichEditorActivity",
+          "count": 2,
+          "kinds": {
+            "callback": 2
+          }
+        }
+      ]
+    },
+    "freereels": {
+      "score_artifact": "docs/validation/generic-v15-freereels-expanded-v15-score.json",
+      "report_sha256": "ab2d997f6ebfbfdec3f6170ca361b70e70bfec241fd51b41551f805902a88efc",
+      "oracle_sha256": "2ffe5a08faffffc7ddea4b96ca0117d184976278a861d240e166bc3eeaaec06d",
+      "metrics": {
+        "setting": {
+          "expected": 182,
+          "matched": 104,
+          "explicit_matched": 0,
+          "unscorable": 5,
+          "recall": 0.5714285714285714,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 69,
+          "matched": 52,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.7536231884057971,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 420,
+          "matched": 172,
+          "explicit_matched": 15,
+          "unscorable": 0,
+          "recall": 0.4095238095238095,
+          "explicit_recall": 0.03571428571428571
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+          "count": 55,
+          "kinds": {
+            "setting": 12,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 4,
+            "callback": 37
+          }
+        },
+        {
+          "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+          "count": 55,
+          "kinds": {
+            "setting": 12,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 4,
+            "callback": 37
+          }
+        },
+        {
+          "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+          "count": 55,
+          "kinds": {
+            "setting": 12,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 4,
+            "callback": 37
+          }
+        },
+        {
+          "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+          "count": 55,
+          "kinds": {
+            "setting": 12,
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 4,
+            "callback": 37
+          }
+        },
+        {
+          "activity": "com.dramawave.feature.web.WebPageActivity",
+          "count": 39,
+          "kinds": {
+            "setting": 15,
+            "bridge": 1,
+            "bridge_method": 4,
+            "callback": 19
+          }
+        },
+        {
+          "activity": "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+          "count": 18,
+          "kinds": {
+            "setting": 6,
+            "callback_registration": 1,
+            "callback": 11
+          }
+        },
+        {
+          "activity": "com.tapjoy.TJAdUnitActivity",
+          "count": 18,
+          "kinds": {
+            "callback_registration": 4,
+            "callback": 11,
+            "setting": 3
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+          "count": 15,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 6,
+            "callback": 7
+          }
+        },
+        {
+          "activity": "com.tapjoy.TJWebViewActivity",
+          "count": 15,
+          "kinds": {
+            "callback_registration": 3,
+            "callback": 9,
+            "setting": 3
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+          "count": 14,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1,
+            "setting": 1,
+            "callback_registration": 5,
+            "callback": 6
+          }
+        },
+        {
+          "activity": "com.taurusx.tax.ui.TaxWebViewActivity",
+          "count": 4,
+          "kinds": {
+            "setting": 2,
+            "callback_registration": 1,
+            "callback": 1
+          }
+        }
+      ]
+    },
+    "ctrip": {
+      "score_artifact": "docs/validation/generic-v15-ctrip-expanded-v15-score.json",
+      "report_sha256": "4dcfed805c5a102520ceafb381edbae16013a3307998051e2ba68ba5178cfc67",
+      "oracle_sha256": "65e8bcb1cd11c21ec50858c5d38064240d692ed3cc02d050395409f4e320d7f8",
+      "metrics": {
+        "setting": {
+          "expected": 391,
+          "matched": 369,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9437340153452686,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 3970,
+          "matched": 3682,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.927455919395466,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 444,
+          "matched": 412,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9279279279279279,
+          "explicit_recall": 0.0
+        },
+        "webview_operation": {
+          "expected": 6,
+          "matched": 4,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.6666666666666666,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+          "count": 295,
+          "kinds": {
+            "setting": 16,
+            "bridge": 34,
+            "bridge_method": 222,
+            "callback_registration": 2,
+            "callback": 21
+          }
+        },
+        {
+          "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+          "count": 16,
+          "kinds": {
+            "bridge": 2,
+            "bridge_method": 14
+          }
+        },
+        {
+          "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+          "count": 16,
+          "kinds": {
+            "bridge": 2,
+            "bridge_method": 14
+          }
+        },
+        {
+          "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+          "count": 15,
+          "kinds": {
+            "callback_registration": 4,
+            "setting": 6,
+            "callback": 5
+          }
+        },
+        {
+          "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+          "count": 2,
+          "kinds": {
+            "webview_operation": 2
+          }
+        }
+      ]
+    },
+    "txws": {
+      "score_artifact": "docs/validation/generic-v15-txws-expanded-v15-score.json",
+      "report_sha256": "3a02e14fb97c5881b0c87f5de0a285f662233af0d2c918ab240bfb2ce2aee3f1",
+      "oracle_sha256": "9b902ed0fcb44c636482baef35917778cc24e550388887a2f3e1c5ef96c230f0",
+      "metrics": {
+        "setting": {
+          "expected": 188,
+          "matched": 162,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.8617021276595744,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 190,
+          "matched": 148,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.7789473684210526,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 8,
+          "matched": 8,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+          "count": 35,
+          "kinds": {
+            "setting": 13,
+            "callback_registration": 3,
+            "callback": 19
+          }
+        },
+        {
+          "activity": "com.tencent.oscar.module.main.MainActivity",
+          "count": 33,
+          "kinds": {
+            "setting": 13,
+            "callback_registration": 2,
+            "callback": 18
+          }
+        }
+      ]
+    },
+    "sohuvideo": {
+      "score_artifact": "docs/validation/generic-v15-sohuvideo-expanded-v15-score.json",
+      "report_sha256": "8ecb5bdb36a8353591d0a97981819588006fe5015687ff174e34ebdbbdcf50c7",
+      "oracle_sha256": "bcfe16d0d816395accc31d34ac7845964350d38e6a7126ebdd452d1117bee914",
+      "metrics": {
+        "setting": {
+          "expected": 501,
+          "matched": 491,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9800399201596807,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 703,
+          "matched": 504,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.716927453769559,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 1592,
+          "matched": 1440,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9045226130653267,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+          "count": 112,
+          "kinds": {
+            "bridge": 55,
+            "callback_registration": 3,
+            "callback": 54
+          }
+        },
+        {
+          "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+          "count": 78,
+          "kinds": {
+            "bridge": 51,
+            "callback_registration": 2,
+            "callback": 25
+          }
+        },
+        {
+          "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+          "count": 77,
+          "kinds": {
+            "bridge": 51,
+            "callback_registration": 2,
+            "callback": 24
+          }
+        },
+        {
+          "activity": "com.sohu.qfsdk.course.preview.ui.PreviewActivity",
+          "count": 76,
+          "kinds": {
+            "bridge": 18,
+            "bridge_method": 6,
+            "setting": 10,
+            "callback_registration": 4,
+            "callback": 38
+          }
+        },
+        {
+          "activity": "com.ali.auth.third.ui.LoginWebViewActivity",
+          "count": 12,
+          "kinds": {
+            "message_handler": 12
+          }
+        },
+        {
+          "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+          "count": 4,
+          "kinds": {
+            "message_handler": 4
+          }
+        },
+        {
+          "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 2
+          }
+        }
+      ]
+    },
+    "fanqiexiaoshuo": {
+      "score_artifact": "docs/validation/generic-v15-fanqiexiaoshuo-expanded-v15-score.json",
+      "report_sha256": "a0874a33d0b3d3351e5352a868ae90b0f26b06ef55f5a77f6c1e609ae042eb39",
+      "oracle_sha256": "a71d36e7de04d6bf310e67cb22bc59e6f4c299b0b324a4564dfb2da40bea238c",
+      "metrics": {
+        "setting": {
+          "expected": 21,
+          "matched": 21,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 12,
+          "matched": 12,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 16,
+          "matched": 10,
+          "explicit_matched": 5,
+          "unscorable": 0,
+          "recall": 0.625,
+          "explicit_recall": 0.3125
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+          "count": 6,
+          "kinds": {
+            "callback": 6
+          }
+        }
+      ]
+    },
+    "breaking-news": {
+      "score_artifact": "docs/validation/generic-v15-breaking-news-expanded-v15-score.json",
+      "report_sha256": "895d2a493277081bb4e6719f7060ade15a3fd21d9c51145c5dfb8e06d1068ad3",
+      "oracle_sha256": "89168472fac5882a3d2a923cbd6daf3b1df39d642ad29a5fb53b8a503596e9de",
+      "metrics": {
+        "setting": {
+          "expected": 14,
+          "matched": 14,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 8,
+          "matched": 8,
+          "explicit_matched": 6,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.75
+        },
+        "bridge": {
+          "expected": 10,
+          "matched": 10,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": []
+    },
+    "xigua": {
+      "score_artifact": "docs/validation/generic-v15-xigua-expanded-v15-score.json",
+      "report_sha256": "57264ac89939017d9a5612fb4be19a9150a3815ba0418f87403750d58c1e91f6",
+      "oracle_sha256": "2fbd63cd0440c6fc109a08895fc90213545c83b563d802f17f42704582adb441",
+      "metrics": {
+        "setting": {
+          "expected": 278,
+          "matched": 193,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.6942446043165468,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 420,
+          "matched": 7,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.016666666666666666,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 65,
+          "matched": 30,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.46153846153846156,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+          "count": 96,
+          "kinds": {
+            "setting": 17,
+            "callback": 69,
+            "bridge": 2,
+            "bridge_method": 5,
+            "callback_registration": 3
+          }
+        },
+        {
+          "activity": "com.ixigua.browser.specific.BrowserActivity",
+          "count": 96,
+          "kinds": {
+            "setting": 17,
+            "callback": 69,
+            "bridge": 2,
+            "bridge_method": 5,
+            "callback_registration": 3
+          }
+        },
+        {
+          "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+          "count": 96,
+          "kinds": {
+            "setting": 17,
+            "callback": 69,
+            "bridge": 2,
+            "bridge_method": 5,
+            "callback_registration": 3
+          }
+        },
+        {
+          "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+          "count": 96,
+          "kinds": {
+            "setting": 17,
+            "callback": 69,
+            "bridge": 2,
+            "bridge_method": 5,
+            "callback_registration": 3
+          }
+        },
+        {
+          "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+          "count": 96,
+          "kinds": {
+            "setting": 17,
+            "callback": 69,
+            "bridge": 2,
+            "bridge_method": 5,
+            "callback_registration": 3
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity",
+          "count": 9,
+          "kinds": {
+            "callback": 9
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity",
+          "count": 9,
+          "kinds": {
+            "callback": 9
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.BdTuringVerifyActivity",
+          "count": 7,
+          "kinds": {
+            "callback": 7
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.BdTuringWebLiveActivity",
+          "count": 7,
+          "kinds": {
+            "callback": 7
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.comonui.CommonWebActivity",
+          "count": 7,
+          "kinds": {
+            "callback": 7
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+          "count": 7,
+          "kinds": {
+            "callback": 7
+          }
+        },
+        {
+          "activity": "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+          "count": 7,
+          "kinds": {
+            "callback": 7
+          }
+        }
+      ]
+    },
+    "yangshipin": {
+      "score_artifact": "docs/validation/generic-v15-yangshipin-expanded-v15-score.json",
+      "report_sha256": "9aadb856f526816a612be2ce7a6669dfd22df9c3ef0f65155f9c0770b839f039",
+      "oracle_sha256": "3d1960a05f9b28f9c82f391de12819430c5752ee0694be81862ddbac81dbe1e4",
+      "metrics": {
+        "setting": {
+          "expected": 229,
+          "matched": 189,
+          "explicit_matched": 0,
+          "unscorable": 40,
+          "recall": 0.8253275109170306,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 17,
+          "matched": 17,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 1.0,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 624,
+          "matched": 582,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9326923076923077,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+          "count": 13,
+          "kinds": {
+            "callback": 5,
+            "setting": 5,
+            "callback_registration": 3
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+          "count": 10,
+          "kinds": {
+            "callback": 4,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+          "count": 10,
+          "kinds": {
+            "callback": 4,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+          "count": 10,
+          "kinds": {
+            "callback": 4,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+          "count": 10,
+          "kinds": {
+            "callback": 4,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+          "count": 10,
+          "kinds": {
+            "callback": 4,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+          "count": 10,
+          "kinds": {
+            "callback": 4,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        },
+        {
+          "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+          "count": 9,
+          "kinds": {
+            "callback": 3,
+            "setting": 5,
+            "callback_registration": 1
+          }
+        }
+      ]
+    },
+    "mango": {
+      "score_artifact": "docs/validation/generic-v15-mango-expanded-v15-score.json",
+      "report_sha256": "c2474ca921c27d36c635d4ae3d6a356fe580dc0e3c8846a865fc900c9566b08c",
+      "oracle_sha256": "5e0c780e0cc4b2be451cd7f402b4d06f1cc8af9660f3cb6c9f9c235fd3485bc7",
+      "metrics": {
+        "setting": {
+          "expected": 608,
+          "matched": 565,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.9292763157894737,
+          "explicit_recall": 0.0
+        },
+        "bridge": {
+          "expected": 1259,
+          "matched": 1185,
+          "explicit_matched": 0,
+          "unscorable": 2,
+          "recall": 0.9412231930103256,
+          "explicit_recall": 0.0
+        },
+        "callback": {
+          "expected": 662,
+          "matched": 581,
+          "explicit_matched": 10,
+          "unscorable": 0,
+          "recall": 0.877643504531722,
+          "explicit_recall": 0.015105740181268883
+        },
+        "webview_operation": {
+          "expected": 3,
+          "matched": 2,
+          "explicit_matched": 0,
+          "unscorable": 0,
+          "recall": 0.6666666666666666,
+          "explicit_recall": 0.0
+        }
+      },
+      "missing_by_host": [
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+          "count": 39,
+          "kinds": {
+            "setting": 11,
+            "callback": 23,
+            "bridge": 4,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+          "count": 39,
+          "kinds": {
+            "setting": 11,
+            "callback": 23,
+            "bridge": 4,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+          "count": 38,
+          "kinds": {
+            "setting": 2,
+            "bridge": 15,
+            "message_handler": 15,
+            "callback_registration": 1,
+            "callback": 5
+          }
+        },
+        {
+          "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+          "count": 19,
+          "kinds": {
+            "webview_operation": 1,
+            "setting": 16,
+            "callback_registration": 1,
+            "callback": 1
+          }
+        },
+        {
+          "activity": "com.platform.oms.ui.LoadingWebActivity",
+          "count": 15,
+          "kinds": {
+            "message_handler": 14,
+            "bridge": 1
+          }
+        },
+        {
+          "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+          "count": 10,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 2,
+            "callback": 6
+          }
+        },
+        {
+          "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+          "count": 10,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1,
+            "callback_registration": 2,
+            "callback": 6
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+          "count": 5,
+          "kinds": {
+            "setting": 3,
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.mgsz.h5.WebContainerActivity",
+          "count": 3,
+          "kinds": {
+            "callback": 3
+          }
+        },
+        {
+          "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+          "count": 3,
+          "kinds": {
+            "callback": 3
+          }
+        },
+        {
+          "activity": "com.mgtb.money.web.ThirdWebActivity",
+          "count": 3,
+          "kinds": {
+            "callback": 3
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTMiddlePageActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoLandscapeActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoLandscapeActivity",
+          "count": 2,
+          "kinds": {
+            "bridge": 1,
+            "bridge_method": 1
+          }
+        },
+        {
+          "activity": "com.hunantv.imgo.xweb.XWebActivity",
+          "count": 2,
+          "kinds": {
+            "callback": 2
+          }
+        },
+        {
+          "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+          "count": 1,
+          "kinds": {
+            "bridge": 1
+          }
+        }
+      ]
+    }
+  }
+}

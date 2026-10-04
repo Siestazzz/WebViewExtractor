@@ -1,0 +1,444 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "family": "android_webview_render_process_client",
+  "taxonomy": "standard_android_render_process_client",
+  "registration_signature": "Landroid/webkit/WebView;->setWebViewRenderProcessClient(Landroid/webkit/WebViewRenderProcessClient;)V",
+  "contract_class": "Landroid/webkit/WebViewRenderProcessClient;",
+  "contract_api_level": 29,
+  "public_contract_urls": [
+    "https://developer.android.com/reference/android/webkit/WebViewRenderProcessClient",
+    "https://developer.android.com/reference/android/webkit/WebView#setWebViewRenderProcessClient(android.webkit.WebViewRenderProcessClient)"
+  ],
+  "public_contract_checked_utc": "2026-10-04",
+  "contract_methods": [
+    "onRenderProcessResponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+    "onRenderProcessUnresponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+  ],
+  "implementation_dex_evidence": {
+    "class_descriptor": "Lcom/vungle/ads/internal/ui/VungleWebClient$VungleWebViewRenderProcessClient;",
+    "superclass_descriptor": "Landroid/webkit/WebViewRenderProcessClient;",
+    "interface_descriptors": [],
+    "class_def_offset": 1587060,
+    "class_access_flags": 17,
+    "dex": "classes8.dex",
+    "dex_sha256": "4bf6ff4bb092fd47e4c5846b26a975b26834e162b84a00b8d74a4a94dc6b57f2",
+    "source_file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+    "source_sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af",
+    "methods": [
+      {
+        "method_id": 52213,
+        "method_id_offset": 1254412,
+        "access_flags": 65537,
+        "code_offset": 8669536,
+        "name": "<init>",
+        "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;)V"
+      },
+      {
+        "method_id": 52214,
+        "method_id_offset": 1254420,
+        "access_flags": 1,
+        "code_offset": 8669564,
+        "name": "onRenderProcessResponsive",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+      },
+      {
+        "method_id": 52215,
+        "method_id_offset": 1254428,
+        "access_flags": 1,
+        "code_offset": 8669592,
+        "name": "onRenderProcessUnresponsive",
+        "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+      }
+    ],
+    "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+  },
+  "source_evidence": [
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 147,
+      "text": "public static final class VungleWebViewRenderProcessClient extends WebViewRenderProcessClient {",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 152,
+      "text": "public void onRenderProcessResponsive(@NotNull WebView webView, @Nullable WebViewRenderProcess webViewRenderProcess) {",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 156,
+      "text": "public void onRenderProcessUnresponsive(@NotNull WebView webView, @Nullable WebViewRenderProcess webViewRenderProcess) {",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 868,
+      "text": "public void onPageFinished(@Nullable WebView view, @Nullable String url) {",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 877,
+      "text": "if (Build.VERSION.SDK_INT >= 29) {",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    },
+    {
+      "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "line": 878,
+      "text": "view.setWebViewRenderProcessClient(new VungleWebViewRenderProcessClient(this.errorHandler));",
+      "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+    }
+  ],
+  "binding": "Actual installed VungleWebClient.onPageFinished receives the same linked native WebView; nonnull view and SDK_INT>=29 install newly constructed renderer client. Responsive member is a real implemented contract callback even though body only checks nonnull. Unresponsive forwards to captured optional errorHandler. No new WebView created here.",
+  "dex_route": "onPageFinished -> R8 synthetic androidx.appcompat.widget.c0.e(WebView,WebViewRenderProcessClient) -> native setter. JADX hides shim methods; bytecode confirms both hops.",
+  "dex_route_artifacts": [
+    "vungle-pagefinished-renderer-install-dex-invocations.json",
+    "vungle-renderer-api-shim-source-dex.json",
+    "vungle-renderer-api-shim-dex-invocations.json"
+  ],
+  "minimal_reusable_pattern": "Installed WebViewClient callback obtains its WebView argument; API guard; allocate subclass of platform WebViewRenderProcessClient; pass through static API shim to setter; enumerate exact inherited contract slots implemented by subclass.",
+  "source_facts": [
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1373,
+          "text": "android:name=\"com.vungle.ads.internal.ui.VungleActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleActivity.java",
+          "line": 12,
+          "text": "public final class VungleActivity extends AdActivity {",
+          "sha256": "c1a1c2599c6c01e423c0d2ab90bcc3b408991d2d76e2ea7b089132633f325f6e"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 290,
+          "text": "MRAIDAdWidget mRAIDAdWidget = new MRAIDAdWidget(this, adPayload.eventId());",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 476,
+          "text": "WebView webView = ViewUtility.INSTANCE.getWebView(context, str);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 477,
+          "text": "this.webView = webView;",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 485,
+          "text": "addView(this.webView, layoutParams);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/util/ViewUtility.java",
+          "line": 43,
+          "text": "return WebViewManager.INSTANCE.getOrCreateWebView(context, eventId);",
+          "sha256": "14664f94ee144b006f1d68d04fe9e665d85ac46499f100f827ffd22f3f7b9137"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+          "line": 156,
+          "text": "webView = webViewEntry.getWebView();",
+          "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+          "line": 159,
+          "text": "webView = new WebView(context);",
+          "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 405,
+          "text": "mRAIDPresenter.prepare();",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+          "line": 592,
+          "text": "this.adWidget.linkWebView(this.vungleWebClient, this.advertisement.getWebViewSettings());",
+          "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 406,
+          "text": "setContentView(mRAIDAdWidget, mRAIDAdWidget.getLayoutParams());",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        }
+      ],
+      "group_id": "source-first-vungle-retained-cache-factory-and-renderer-install",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebViewRenderProcessClient",
+      "registration_name": null,
+      "implementation": "com.vungle.ads.internal.ui.VungleWebClient$VungleWebViewRenderProcessClient",
+      "normalized_api": "Landroid/webkit/WebView;->setWebViewRenderProcessClient(Landroid/webkit/WebViewRenderProcessClient;)V",
+      "normalized_signature": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 405,
+          "text": "WebViewUtil.INSTANCE.applyWebSettings(webView, webViewSettings);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+          "line": 878,
+          "text": "view.setWebViewRenderProcessClient(new VungleWebViewRenderProcessClient(this.errorHandler));",
+          "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "condition": "Actuallyinstalled VungleWebClient.onPageFinished samecallbacknativeview nonnull and SDK_INT>=29; fresh RenderProcessClient captures current errorHandler; completeplatformcallbackcontract withexactSDKsubclassshape",
+      "object_identity": "MRAIDAdWidget.webView retains cacheentry.getWebView or newlycreatednativeview; linked settings/client on same receiver, unrelated global freshview excluded"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1373,
+          "text": "android:name=\"com.vungle.ads.internal.ui.VungleActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleActivity.java",
+          "line": 12,
+          "text": "public final class VungleActivity extends AdActivity {",
+          "sha256": "c1a1c2599c6c01e423c0d2ab90bcc3b408991d2d76e2ea7b089132633f325f6e"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 290,
+          "text": "MRAIDAdWidget mRAIDAdWidget = new MRAIDAdWidget(this, adPayload.eventId());",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 476,
+          "text": "WebView webView = ViewUtility.INSTANCE.getWebView(context, str);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 477,
+          "text": "this.webView = webView;",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 485,
+          "text": "addView(this.webView, layoutParams);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/util/ViewUtility.java",
+          "line": 43,
+          "text": "return WebViewManager.INSTANCE.getOrCreateWebView(context, eventId);",
+          "sha256": "14664f94ee144b006f1d68d04fe9e665d85ac46499f100f827ffd22f3f7b9137"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+          "line": 156,
+          "text": "webView = webViewEntry.getWebView();",
+          "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+          "line": 159,
+          "text": "webView = new WebView(context);",
+          "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 405,
+          "text": "mRAIDPresenter.prepare();",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+          "line": 592,
+          "text": "this.adWidget.linkWebView(this.vungleWebClient, this.advertisement.getWebViewSettings());",
+          "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 406,
+          "text": "setContentView(mRAIDAdWidget, mRAIDAdWidget.getLayoutParams());",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        }
+      ],
+      "group_id": "source-first-vungle-retained-cache-factory-and-renderer-install",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onRenderProcessResponsive",
+      "registration_name": null,
+      "implementation": "com.vungle.ads.internal.ui.VungleWebClient$VungleWebViewRenderProcessClient",
+      "normalized_api": null,
+      "normalized_signature": "Lcom/vungle/ads/internal/ui/VungleWebClient$VungleWebViewRenderProcessClient;->onRenderProcessResponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 405,
+          "text": "WebViewUtil.INSTANCE.applyWebSettings(webView, webViewSettings);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+          "line": 878,
+          "text": "view.setWebViewRenderProcessClient(new VungleWebViewRenderProcessClient(this.errorHandler));",
+          "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+          "line": 152,
+          "text": "public void onRenderProcessResponsive(@NotNull WebView webView, @Nullable WebViewRenderProcess webViewRenderProcess) {",
+          "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "condition": "Samecallbacknativeview actualAPI29+ rendererClient registration; exactencodeddeclaredmembers match extendsandroid.webkit.WebViewRenderProcessClient",
+      "object_identity": "MRAIDAdWidget.webView retains cacheentry.getWebView or newlycreatednativeview; linked settings/client on same receiver, unrelated global freshview excluded",
+      "signature_in_apk": true,
+      "dex_identity_evidence": "vungle-native-sdk-members-source-dex.json"
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1373,
+          "text": "android:name=\"com.vungle.ads.internal.ui.VungleActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleActivity.java",
+          "line": 12,
+          "text": "public final class VungleActivity extends AdActivity {",
+          "sha256": "c1a1c2599c6c01e423c0d2ab90bcc3b408991d2d76e2ea7b089132633f325f6e"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 290,
+          "text": "MRAIDAdWidget mRAIDAdWidget = new MRAIDAdWidget(this, adPayload.eventId());",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 476,
+          "text": "WebView webView = ViewUtility.INSTANCE.getWebView(context, str);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 477,
+          "text": "this.webView = webView;",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 485,
+          "text": "addView(this.webView, layoutParams);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/util/ViewUtility.java",
+          "line": 43,
+          "text": "return WebViewManager.INSTANCE.getOrCreateWebView(context, eventId);",
+          "sha256": "14664f94ee144b006f1d68d04fe9e665d85ac46499f100f827ffd22f3f7b9137"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+          "line": 156,
+          "text": "webView = webViewEntry.getWebView();",
+          "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/WebViewManager.java",
+          "line": 159,
+          "text": "webView = new WebView(context);",
+          "sha256": "5ecf310948073e9c707e56e3a9fb7c7f4f51fec81b930fe27090210dc9aaeeae"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 405,
+          "text": "mRAIDPresenter.prepare();",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+          "line": 592,
+          "text": "this.adWidget.linkWebView(this.vungleWebClient, this.advertisement.getWebViewSettings());",
+          "sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/AdActivity.java",
+          "line": 406,
+          "text": "setContentView(mRAIDAdWidget, mRAIDAdWidget.getLayoutParams());",
+          "sha256": "1f137990465310791ba358a4f016cd3d7a33ac96422ece599acbebe09559640d"
+        }
+      ],
+      "group_id": "source-first-vungle-retained-cache-factory-and-renderer-install",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onRenderProcessUnresponsive",
+      "registration_name": null,
+      "implementation": "com.vungle.ads.internal.ui.VungleWebClient$VungleWebViewRenderProcessClient",
+      "normalized_api": null,
+      "normalized_signature": "Lcom/vungle/ads/internal/ui/VungleWebClient$VungleWebViewRenderProcessClient;->onRenderProcessUnresponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+          "line": 405,
+          "text": "WebViewUtil.INSTANCE.applyWebSettings(webView, webViewSettings);",
+          "sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+          "line": 878,
+          "text": "view.setWebViewRenderProcessClient(new VungleWebViewRenderProcessClient(this.errorHandler));",
+          "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+        },
+        {
+          "file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+          "line": 156,
+          "text": "public void onRenderProcessUnresponsive(@NotNull WebView webView, @Nullable WebViewRenderProcess webViewRenderProcess) {",
+          "sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "condition": "Samecallbacknativeview actualAPI29+ rendererClient registration; exactencodeddeclaredmembers match extendsandroid.webkit.WebViewRenderProcessClient",
+      "object_identity": "MRAIDAdWidget.webView retains cacheentry.getWebView or newlycreatednativeview; linked settings/client on same receiver, unrelated global freshview excluded",
+      "signature_in_apk": true,
+      "dex_identity_evidence": "vungle-native-sdk-members-source-dex.json"
+    }
+  ],
+  "scope": "Renderer callback family closed only; entire Vungle host remains partial."
+}

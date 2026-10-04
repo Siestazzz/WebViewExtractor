@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "audit_mode": "development source-guided regression review",
+  "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "dex_sha256": "c16b6ab0d90f609e88676269ce934df0a5f86a94cd13f95e9859318c199f6d2c",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/half/HalfWebController.java",
+      "sha256": "5fd2224ac4c8ca871ac086c2f75d9ae2f3e751148ac02a5d28cb1531409901c4",
+      "locations": [
+        {
+          "line": 112,
+          "quote": ""
+        },
+        {
+          "line": 113,
+          "quote": "    @Override // com.tencent.oscar.module.webview.half.IHalfWebController"
+        },
+        {
+          "line": 114,
+          "quote": "    public boolean showHalfWebViewDialog(String scheme, OnDialogStateChangeListener listener, boolean transparent, boolean dispatchAllEventToWeb) {"
+        },
+        {
+          "line": 115,
+          "quote": "        Logger.i(TAG, \"showHalfWebViewDialog() schema = \" + scheme);"
+        },
+        {
+          "line": 116,
+          "quote": "        Bundle bundle = new Bundle();"
+        },
+        {
+          "line": 117,
+          "quote": "        if (!createHalfBundle(bundle, scheme, listener, transparent, dispatchAllEventToWeb)) {"
+        },
+        {
+          "line": 118,
+          "quote": "            return false;"
+        },
+        {
+          "line": 119,
+          "quote": "        }"
+        },
+        {
+          "line": 120,
+          "quote": "        HalfWebDialogFragment halfWebDialogFragment = new HalfWebDialogFragment();"
+        },
+        {
+          "line": 121,
+          "quote": "        halfWebDialogFragment.setDialogStateChangedListener(this);"
+        },
+        {
+          "line": 122,
+          "quote": "        halfWebDialogFragment.setArguments(bundle);"
+        },
+        {
+          "line": 123,
+          "quote": "        halfWebDialogFragment.show(this.mFragmentManager, HalfWebDialogFragment.TAG);"
+        },
+        {
+          "line": 124,
+          "quote": "        return true;"
+        },
+        {
+          "line": 125,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/half/HalfWebDialogFragment.java",
+      "sha256": "9a3daa2e06b5a4a3e87cbc2b79ec97c791a69cd56db53aba4d21a1a0cbbdda94",
+      "locations": [
+        {
+          "line": 39,
+          "quote": "    private void addWebFragment(View view) {"
+        },
+        {
+          "line": 40,
+          "quote": "        removeWebFragment();"
+        },
+        {
+          "line": 41,
+          "quote": "        this.mHalfWebFragment = new HalfWebFragment();"
+        },
+        {
+          "line": 42,
+          "quote": "        Bundle arguments = getArguments();"
+        },
+        {
+          "line": 43,
+          "quote": "        if (arguments == null) {"
+        },
+        {
+          "line": 44,
+          "quote": "            arguments = new Bundle();"
+        },
+        {
+          "line": 45,
+          "quote": "        }"
+        },
+        {
+          "line": 46,
+          "quote": "        arguments.putBoolean(IWebViewBaseFragment.KEY_IS_NEED_TITLE_BAR, false);"
+        },
+        {
+          "line": 47,
+          "quote": "        boolean z10 = arguments.getBoolean(\"is_transparent\", false);"
+        },
+        {
+          "line": 48,
+          "quote": "        if (z10) {"
+        },
+        {
+          "line": 49,
+          "quote": "            arguments.putInt(\"key_background_color\", 0);"
+        },
+        {
+          "line": 50,
+          "quote": "        }"
+        },
+        {
+          "line": 51,
+          "quote": "        this.mHalfWebFragment.setArguments(arguments);"
+        },
+        {
+          "line": 52,
+          "quote": "        getChildFragmentManager().beginTransaction().replace(R.id.mFlHalfWebLayout, this.mHalfWebFragment, HalfWebFragment.TAG).commitAllowingStateLoss();"
+        },
+        {
+          "line": 53,
+          "quote": "        initUI(view, this.mHalfWebFragment, arguments);"
+        }
+      ]
+    },
+    {
+      "path": "test/runs/txws-v14-fragment-source/half-dialog-show-dex.txt",
+      "sha256": "f56814a719d18246829a82284744a4e84a070a5a49dfff796dc6bb2aa21773f5",
+      "content": "DEX_SHA256 c16b6ab0d90f609e88676269ce934df0a5f86a94cd13f95e9859318c199f6d2c\nMETHOD Lcom/tencent/oscar/module/webview/half/HalfWebController;->showHalfWebViewDialog(Ljava/lang/String;Lcom/tencent/oscar/module/webview/half/OnDialogStateChangeListener;ZZ)Z\n2 INVOKE_DIRECT Ljava/lang/StringBuilder;-><init>()V\n8 INVOKE_VIRTUAL Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n11 INVOKE_VIRTUAL Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n14 INVOKE_VIRTUAL Ljava/lang/StringBuilder;->toString()Ljava/lang/String;\n20 INVOKE_STATIC Lcom/tencent/weishi/library/log/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V\n25 INVOKE_DIRECT Landroid/os/Bundle;-><init>()V\n33 INVOKE_DIRECT_RANGE Lcom/tencent/oscar/module/webview/half/HalfWebController;->createHalfBundle(Landroid/os/Bundle;Ljava/lang/String;Lcom/tencent/oscar/module/webview/half/OnDialogStateChangeListener;ZZ)Z\n43 INVOKE_DIRECT Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment;-><init>()V\n46 INVOKE_VIRTUAL Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment;->setDialogStateChangedListener(Lcom/tencent/oscar/module/webview/half/OnDialogStateChangeListener;)V\n49 INVOKE_VIRTUAL Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V\n56 INVOKE_VIRTUAL Landroidx/fragment/app/DialogFragment;->show(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;)V\n"
+    },
+    {
+      "path": "test/runs/txws-v14-fragment-source/half-dialog-child-dex.txt",
+      "sha256": "68e6e920bb0772ab9d665f7cb1b03005cbae3122d01ec687bb83f85d1ada9e82",
+      "content": "DEX_SHA256 c16b6ab0d90f609e88676269ce934df0a5f86a94cd13f95e9859318c199f6d2c\nMETHOD Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment;->addWebFragment(Landroid/view/View;)V\n0 INVOKE_DIRECT Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment;->removeWebFragment()V\n5 INVOKE_DIRECT Lcom/tencent/oscar/module/webview/half/HalfWebFragment;-><init>()V\n10 INVOKE_VIRTUAL Landroidx/fragment/app/Fragment;->getArguments()Landroid/os/Bundle;\n18 INVOKE_DIRECT Landroid/os/Bundle;-><init>()V\n24 INVOKE_VIRTUAL Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V\n29 INVOKE_VIRTUAL Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z\n37 INVOKE_VIRTUAL Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V\n42 INVOKE_VIRTUAL Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V\n45 INVOKE_VIRTUAL Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;\n49 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;\n59 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentTransaction;->replace(ILandroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;\n63 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I\n68 INVOKE_DIRECT Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment;->initUI(Landroid/view/View;Lcom/tencent/oscar/module/webview/half/HalfWebFragment;Landroid/os/Bundle;)V\n78 INVOKE_DIRECT Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment$2;-><init>(Lcom/tencent/oscar/module/webview/half/HalfWebDialogFragment;)V\n81 INVOKE_VIRTUAL Lcom/tencent/oscar/module/webview/WebViewBaseFragment;->setWebViewFragmentCallback(Lcom/tencent/oscar/module/webview/WebViewFragmentCallback;)V\n"
+    }
+  ],
+  "conclusion": "Both transparent and dialog branches legally install the same HalfWebFragment surface. Missing shared facts alone do not identify the failing branch. Actual Dialog show owner is SDK DialogFragment, child manager owner SDK Fragment, child transaction standard replace3arg/commitAllowingStateLoss. Allocation alone is not installation."
+}

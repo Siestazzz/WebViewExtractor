@@ -58,6 +58,10 @@ public final class CapabilitySelfTest {
   ClassIdentityFactoryFixture.run();
   ReflectionDiscoveryPrefilterFixture.run();
   PackagedFragmentProtocolProbe.run();
+        RenderProcessClientFixture.run();
+  FragmentSuperProtocolFixture.run();
+  DeferredFieldAliasReplayProbe.run();
+  FragmentManagerCaptureFixture.run();
   StaticBridgeFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),

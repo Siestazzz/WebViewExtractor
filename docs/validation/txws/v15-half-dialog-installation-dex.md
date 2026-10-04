@@ -1,0 +1,3 @@
+Half source/DEX installation supplement (development audit)
+
+Both branches install the same HalfWebFragment. Transparent calls the retained manager add/commit. Nontransparent calls the exact SDK `DialogFragment.show(FragmentManager,String)V`; its attached dialog then calls exact SDK `Fragment.getChildFragmentManager()`, `beginTransaction`, three-argument `replace`, and `commitAllowingStateLoss`. Full offsets, patched APK/DEX hashes and source lines are in the companion JSON. Shared missing capabilities cannot distinguish which branch failed. No allocation-only or arbitrary dialog installation inference is justified.

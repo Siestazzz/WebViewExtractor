@@ -65,6 +65,10 @@ final class ConstructorCaptures {
   if(expression.kind().equals("cast"))return argumentSafe(expression.args().get(0),caller,offset,engine,host);
   if(expression.kind().equals("field"))return fieldOrderKnown(expression.id(),caller,offset,engine,host)&&expression.args().stream().allMatch(value->argumentSafe(value,caller,offset,engine,host));
   if(expression.kind().equals("union"))return expression.args().stream().allMatch(value->argumentSafe(value,caller,offset,engine,host));
+  if(expression.kind().startsWith("return")&&FragmentTransactions.manager(expression.id())&&expression.args().size()==1&&expression.args().stream().allMatch(value->argumentSafe(value,caller,offset,engine,host))){
+   List<V> receivers=expression.args().stream().map(value->engine.eval(value,caller,host,0,new HashSet<>())).toList();
+   return engine.fragmentProtocolReceiver(receivers.get(0),CapabilityEngine.owner(expression.id()))&&engine.frameworkFragmentAccess(expression.id(),receivers,expression.kind().equals("return_super"));
+  }
   return false;
  }
  static boolean fieldOrderKnown(String field,CapabilityEngine.Job caller,int offset,CapabilityEngine engine,CapabilityEngine.Host host){

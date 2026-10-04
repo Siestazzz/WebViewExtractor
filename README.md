@@ -1,6 +1,6 @@
 # WebViewExtractor
 
-最新实测为 [generic v15](docs/validation/GENERIC_V15.md)：十 App 均在约 50～594 秒内结束，全部仍为 partial，严格验收 **0/10**。修复 APK 内公开 Fragment SDK 方法体识别后，多数 v14 回退恢复，但微视、芒果、FreeReels、搜狐仍有相对 v13 的遗漏；完整源码核验及三次隔离性能验收尚未完成。以下旧版本说明保留作为历史记录。
+最新实测为 [generic v16](docs/validation/GENERIC_V16.md)：十 App 约 53～593 秒，全部仍为 partial，严格验收 **0/10**。在同一扩充核验集上，微视恢复 35 条事实，FreeReels 新增 3 条渲染进程回调事实，其余 App 召回计数未变。完整能力精度核验、新样本验收及三次隔离性能测试尚未完成；以下旧版本说明保留作为历史记录。
 
 
 从 Android APK 提取 Activity → WebView → Bridge、Settings、Client/回调能力画像。默认实现使用 DEX 索引、按需方法摘要和对象绑定；先给全部 Activity 初扫机会，再恢复现场轮流深入分析。

@@ -6,6 +6,8 @@ import org.jf.dexlib2.iface.reference.MethodReference;
 
 /** Public SDK setter identities and extension members from the APK's SDK contracts. */
 final class SdkClientContracts {
+ static final String RENDER_CLIENT="android.webkit.WebViewRenderProcessClient";
+ static final Set<String> RENDER_SHAPES=Set.of("onRenderProcessResponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V","onRenderProcessUnresponsive(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V");
  static final String X5_EXTENSION="com.tencent.smtt.export.external.extension.interfaces.IX5WebViewClientExtension";
  static final String X5_CALLBACK="com.tencent.smtt.sdk.WebViewCallbackClient";
  static final Set<String> EXTENSIONS=Set.of(X5_EXTENSION,X5_CALLBACK);
@@ -20,6 +22,7 @@ final class SdkClientContracts {
    String prefix="L"+family.replace('.','/');
    if(shape.equals("setWebViewClient("+prefix+"WebViewClient;)V")||shape.equals("setWebChromeClient("+prefix+"WebChromeClient;)V"))return true;
   }
+  if(index.subtype(owner,"android.webkit.WebView")&&(shape.equals("setWebViewRenderProcessClient(Landroid/webkit/WebViewRenderProcessClient;)V")||shape.equals("setWebViewRenderProcessClient(Ljava/util/concurrent/Executor;Landroid/webkit/WebViewRenderProcessClient;)V")))return true;
   if(!index.subtype(owner,"com.tencent.smtt.sdk.WebView"))return false;
   return shape.equals("setWebViewClientExtension(L"+X5_EXTENSION.replace('.','/')+";)V")||shape.equals("setWebViewCallbackClient(L"+X5_CALLBACK.replace('.','/')+";)V");
  }

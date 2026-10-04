@@ -1,0 +1,247 @@
+{
+  "audit_mode": "source-only installation review plus actual patched APK DEX validation",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+  "chain": "actual Activity getSupportFragmentManager -> helper constructor retained f88159b -> lh y9().p1 -> new NBFreeWatchAdFloatFragment -> Yb actual arguments -> n1 same fragment -> P0 replace2arg and commitAllowingStateLoss -> same fragment retained f88165h",
+  "evidence": [
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/helper/NBFloatFragmentHelper.java",
+      "sha256": "7e5755083170327425bf2556ee84ed4095cdbdc5f674587d53fbd274e893fbf0",
+      "locations": [
+        {
+          "line": 517,
+          "quote": "    public NBFloatFragmentHelper(Activity activity, FragmentManager fragmentManager, NBInfoShareViewModel nBInfoShareViewModel, NBPlayerFragmentViewModel nBPlayerFragmentViewModel, com.mgtv.mgfp.beacon.a<us0.b> aVar, j jVar) {"
+        },
+        {
+          "line": 518,
+          "quote": "        this.f88158a = activity;"
+        },
+        {
+          "line": 519,
+          "quote": "        this.f88159b = fragmentManager;"
+        },
+        {
+          "line": 520,
+          "quote": "        this.f88162e = aVar;"
+        },
+        {
+          "line": 521,
+          "quote": "        this.f88160c = nBInfoShareViewModel;"
+        },
+        {
+          "line": 522,
+          "quote": "        this.f88161d = nBPlayerFragmentViewModel;"
+        },
+        {
+          "line": 523,
+          "quote": "        this.f88169l = jVar;"
+        },
+        {
+          "line": 524,
+          "quote": "        if (activity instanceof LifecycleOwner) {"
+        },
+        {
+          "line": 1834,
+          "quote": "    public final void P0(@IdRes int i12, Fragment fragment) {"
+        },
+        {
+          "line": 1835,
+          "quote": "        updateFloatPlaceHeight(0);"
+        },
+        {
+          "line": 1836,
+          "quote": "        FragmentTransaction beginTransaction = this.f88159b.beginTransaction();"
+        },
+        {
+          "line": 1837,
+          "quote": "        beginTransaction.setCustomAnimations(R.anim.fragment_slide_in_bottom, R.anim.fragment_slide_out_up);"
+        },
+        {
+          "line": 1838,
+          "quote": "        beginTransaction.replace(i12, fragment);"
+        },
+        {
+          "line": 1839,
+          "quote": "        beginTransaction.commitAllowingStateLoss();"
+        },
+        {
+          "line": 1840,
+          "quote": "        AgentPet.INSTANCE.a().hideAgent();"
+        },
+        {
+          "line": 1841,
+          "quote": "    }"
+        },
+        {
+          "line": 1842,
+          "quote": ""
+        },
+        {
+          "line": 2049,
+          "quote": "    public void n1(Fragment fragment) {"
+        },
+        {
+          "line": 2050,
+          "quote": "        hideFragment(this.f88165h);"
+        },
+        {
+          "line": 2051,
+          "quote": "        P0(R.id.float_fragment_fl, fragment);"
+        },
+        {
+          "line": 2052,
+          "quote": "        this.f88165h = fragment;"
+        },
+        {
+          "line": 2053,
+          "quote": "        if (U() == null || (this.f88165h instanceof MiniAppFragment)) {"
+        },
+        {
+          "line": 2054,
+          "quote": "            return;"
+        },
+        {
+          "line": 2055,
+          "quote": "        }"
+        },
+        {
+          "line": 2056,
+          "quote": "        T0();"
+        },
+        {
+          "line": 2057,
+          "quote": "    }"
+        },
+        {
+          "line": 2058,
+          "quote": ""
+        },
+        {
+          "line": 2087,
+          "quote": "    public void p1(ol.d dVar, an.f fVar) {"
+        },
+        {
+          "line": 2088,
+          "quote": "        NBFreeWatchAdFloatFragment nBFreeWatchAdFloatFragment = new NBFreeWatchAdFloatFragment();"
+        },
+        {
+          "line": 2089,
+          "quote": "        nBFreeWatchAdFloatFragment.Yb(dVar, fVar);"
+        },
+        {
+          "line": 2090,
+          "quote": "        n1(nBFreeWatchAdFloatFragment);"
+        },
+        {
+          "line": 2091,
+          "quote": "    }"
+        },
+        {
+          "line": 2092,
+          "quote": ""
+        }
+      ]
+    },
+    {
+      "source_file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/test/decompiled/com.hunantv.imgo.activity/sources/com/mgtv/ui/videoplay/MGVideoPlayActivity.java",
+      "sha256": "09c6150bf3893acd0e5e20729d7455757cd48693cff0e0fac7cbeb48956a11d5",
+      "locations": [
+        {
+          "line": 9936,
+          "quote": "    public static final /* synthetic */ void lh(MGVideoPlayActivity mGVideoPlayActivity, ol.d dVar, an.f fVar, org.aspectj.lang.c cVar) {"
+        },
+        {
+          "line": 9937,
+          "quote": "        NBFloatFragmentHelper y92 = mGVideoPlayActivity.y9();"
+        },
+        {
+          "line": 9938,
+          "quote": "        if (y92 != null) {"
+        },
+        {
+          "line": 9939,
+          "quote": "            y92.p1(dVar, fVar);"
+        },
+        {
+          "line": 9940,
+          "quote": "        }"
+        },
+        {
+          "line": 9941,
+          "quote": "    }"
+        },
+        {
+          "line": 9942,
+          "quote": ""
+        },
+        {
+          "line": 13635,
+          "quote": "        NBFloatFragmentHelper nBFloatFragmentHelper = this.f87648v0;"
+        },
+        {
+          "line": 13636,
+          "quote": "        if (nBFloatFragmentHelper != null) {"
+        },
+        {
+          "line": 13637,
+          "quote": "            return nBFloatFragmentHelper;"
+        },
+        {
+          "line": 13638,
+          "quote": "        }"
+        },
+        {
+          "line": 13639,
+          "quote": "        NBFloatFragmentHelper nBFloatFragmentHelper2 = new NBFloatFragmentHelper(this, getSupportFragmentManager(), this.U, this.V, this.P, new NBFloatFragmentHelper.j() { // from class: com.mgtv.ui.videoplay.r"
+        },
+        {
+          "line": 13640,
+          "quote": "            @Override // com.mgtv.ui.videoplay.helper.NBFloatFragmentHelper.j"
+        },
+        {
+          "line": 13641,
+          "quote": "            public final int a() {"
+        },
+        {
+          "line": 13642,
+          "quote": "                int wc2;"
+        },
+        {
+          "line": 13643,
+          "quote": "                wc2 = MGVideoPlayActivity.this.wc();"
+        },
+        {
+          "line": 13644,
+          "quote": "                return wc2;"
+        },
+        {
+          "line": 13645,
+          "quote": "            }"
+        },
+        {
+          "line": 13646,
+          "quote": "        });"
+        },
+        {
+          "line": 13647,
+          "quote": "        this.f87648v0 = nBFloatFragmentHelper2;"
+        },
+        {
+          "line": 13648,
+          "quote": "        nBFloatFragmentHelper2.U0(new q0());"
+        },
+        {
+          "line": 13649,
+          "quote": "        return this.f87648v0;"
+        },
+        {
+          "line": 13650,
+          "quote": "    }"
+        }
+      ]
+    }
+  ],
+  "dex_evidence": "DEX_SHA256 1be518aef889d08bf9f56c0b2f112de331779bce3f97dcf97c3515ee0aee81d4\nMETHOD Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->P0(ILandroidx/fragment/app/Fragment;)V\n1 INVOKE_VIRTUAL Lcom/mgtv/ui/videoplay/helper/NBFloatFragmentHelper;->updateFloatPlaceHeight(I)V\n6 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;\n16 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentTransaction;->setCustomAnimations(II)Landroidx/fragment/app/FragmentTransaction;\n19 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentTransaction;->replace(ILandroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;\n22 INVOKE_VIRTUAL Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I\n27 INVOKE_VIRTUAL Lcom/mgtv/agent/pet/AgentPet$a;->a()Lcom/mgtv/agent/pet/AgentPet;\n31 INVOKE_VIRTUAL Lcom/mgtv/agent/pet/AgentPet;->hideAgent()V\n",
+  "limitations": "Source proves installation exists; no runtime report consulted, no inference about budget or execution completeness. Existing downstream RootFragment lifecycle and ad session evidence is separate."
+}
