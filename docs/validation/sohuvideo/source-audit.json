@@ -16,15 +16,50 @@
     {
       "file": "docs/validation/sohuvideo/inventory.json",
       "manifest_entry_count": 407
+    },
+    {
+      "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+      "reviewed_hosts": 24,
+      "source_hashes": "per evidence file",
+      "scope": "per-host lifecycle delegation + complete shared SDK binding/configuration/client chain"
+    },
+    {
+      "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+      "source_rows": 648,
+      "note": "includes preserved listener misses; source evidence repeats framework per host only after concrete lifecycle proof"
     }
   ],
   "deep_positive_activities": [
-    "com.sohu.sohuvideo.ui.WebViewActivity",
-    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
-    "com.sohu.sohuvideo.ui.WebViewPgcActivity",
-    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
     "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
-    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity"
+    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+    "com.sohu.sohuvideo.ui.AccountSafeActivity",
+    "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+    "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+    "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+    "com.sohu.sohuvideo.ui.LocationChooseActivity",
+    "com.sohu.sohuvideo.ui.MessageListActivity",
+    "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+    "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+    "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+    "com.sohu.sohuvideo.ui.NewFansListActivity",
+    "com.sohu.sohuvideo.ui.OperatePageActivity",
+    "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+    "com.sohu.sohuvideo.ui.PushTransparentActivity",
+    "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+    "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+    "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+    "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+    "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+    "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+    "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+    "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+    "com.sohu.sohuvideo.workcollection.WorksActivity"
   ],
   "present_strata": {
     "Fragment custom WebView inflation": [
@@ -44,16 +79,71 @@
     ],
     "DialogFragment host": [
       "com.facebook.FacebookActivity"
+    ],
+    "saved-state manager attachment -> XML child Fragment -> native-banner custom WebView": [
+      "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+      "com.sohu.sohuvideo.ui.AccountSafeActivity",
+      "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+      "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+      "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+      "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+      "com.sohu.sohuvideo.ui.LocationChooseActivity",
+      "com.sohu.sohuvideo.ui.MessageListActivity",
+      "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+      "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+      "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+      "com.sohu.sohuvideo.ui.NewFansListActivity",
+      "com.sohu.sohuvideo.ui.OperatePageActivity",
+      "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+      "com.sohu.sohuvideo.ui.PushTransparentActivity",
+      "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+      "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+      "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+      "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+      "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+      "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+      "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+      "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+      "com.sohu.sohuvideo.workcollection.WorksActivity"
     ]
   },
   "source_supported_positive_activities": [
+    "com.ali.auth.third.ui.LoginWebViewActivity",
+    "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+    "com.alipay.sdk.app.H5AuthActivity",
+    "com.alipay.sdk.app.H5PayActivity",
     "com.facebook.FacebookActivity",
+    "com.sina.weibo.sdk.web.WebActivity",
     "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
     "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
     "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+    "com.sohu.sohuvideo.ui.AccountSafeActivity",
+    "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
     "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+    "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+    "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+    "com.sohu.sohuvideo.ui.LocationChooseActivity",
+    "com.sohu.sohuvideo.ui.MessageListActivity",
+    "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+    "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+    "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+    "com.sohu.sohuvideo.ui.NewFansListActivity",
+    "com.sohu.sohuvideo.ui.OperatePageActivity",
+    "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+    "com.sohu.sohuvideo.ui.PushTransparentActivity",
+    "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+    "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+    "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+    "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+    "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+    "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
     "com.sohu.sohuvideo.ui.WebViewActivity",
-    "com.sohu.sohuvideo.ui.WebViewPgcActivity"
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+    "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+    "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+    "com.sohu.sohuvideo.workcollection.WorksActivity"
   ],
   "audit_complete": false,
   "exhaustive_inventory": false,
@@ -66,7 +156,21 @@
     "Deep list covers named reviewed core chains; all-output capability precision incomplete.",
     "Some present strata have fewer than two deep reviewed hosts.",
     "Holdout reservations are not sealed gold or passed recall.",
-    "Manifest unreviewed entries are unknown, not negative evidence."
+    "Manifest unreviewed entries are unknown, not negative evidence.",
+    "New SDK hosts have ownership and settings reviewed; remaining callback/map bridge surfaces prevent counting them as complete deep reviews."
   ],
-  "acceptance": "unproven"
+  "acceptance": "unproven",
+  "partial_source_review_activities": {
+    "Ali Auth inherited layout + empty API override": [
+      "com.ali.auth.third.ui.LoginWebViewActivity",
+      "com.ali.auth.third.ui.webview.BaseWebViewActivity"
+    ],
+    "Alipay shared constructor wrapper": [
+      "com.alipay.sdk.app.H5PayActivity",
+      "com.alipay.sdk.app.H5AuthActivity"
+    ],
+    "direct layout attachment": [
+      "com.sina.weibo.sdk.web.WebActivity"
+    ]
+  }
 }

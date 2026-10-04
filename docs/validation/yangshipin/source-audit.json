@@ -27,6 +27,12 @@
       "sha256": "2cb270c70baea764e92fb5807a21438fa709a501881fb844b5c9f04eeaa82833"
     },
     {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractView.java",
+      "line": 17,
+      "text": "public class H5InteractView extends H5BaseView {",
+      "sha256": "beb1e11976fcb70d85e3824aa0e2cf8a93c118f78699308ddb43212bead5a913"
+    },
+    {
       "file": "resources/AndroidManifest.xml",
       "line": 799,
       "text": "android:name=\"com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity\"",
@@ -63,6 +69,12 @@
       "sha256": "cd0a01ca3c0e7330099b40b6e0be8f9b42c65666eba89d41ad22a99482e575a7"
     },
     {
+      "file": "sources/com/tencent/videolite/android/business/webview/H5ArticleView.java",
+      "line": 17,
+      "text": "public class H5ArticleView extends H5BaseView {",
+      "sha256": "002ee58c8737dde8beade7ffa3610e9a871abf197699819a75382a50cf00b7c2"
+    },
+    {
       "file": "resources/AndroidManifest.xml",
       "line": 309,
       "text": "android:name=\"com.tencent.videolite.android.ui.KingOpenActivity\"",
@@ -73,22 +85,182 @@
       "line": 112,
       "text": "this.h5View = (KingCardH5View) findViewById(R.id.h5_view);",
       "sha256": "cfed7e51a571e9864bdd565693eb91ca43083c394e332b3bc4b776e1571591bd"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/view/KingCardH5View.java",
+      "line": 11,
+      "text": "public class KingCardH5View extends H5InteractView {",
+      "sha256": "965ce56a42175e391d21ab47cadfddb0339ceeca0b3c5e501103c1fe2aa5914b"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 710,
+      "text": "android:name=\"com.tencent.videolite.android.business.framework.activity.H5BaseActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/H5BaseActivity.java",
+      "line": 252,
+      "text": "findWebview();",
+      "sha256": "dc6e6407820da471765bc4bbbfbd9bd5d33e1ee099c55f468ad0fec8a0ac3215"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/H5BaseActivity.java",
+      "line": 94,
+      "text": "this.h5View = (H5BaseView) findViewById(R.id.h5_view);",
+      "sha256": "dc6e6407820da471765bc4bbbfbd9bd5d33e1ee099c55f468ad0fec8a0ac3215"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/TitleBarActivity.java",
+      "line": 47,
+      "text": "this.container.addView(LayoutInflater.from(this).inflate(getLayoutId(), (ViewGroup) null, true));",
+      "sha256": "a1ec6a73597d5474bc131fb4cf409e10b1754c880d1aece75203cf6d4a004e87"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/framework/activity/H5BaseActivity.java",
+      "line": 134,
+      "text": "return redirector != null ? ((Integer) redirector.redirect((short) 18, (Object) this)).intValue() : R.layout.layout_base_h5;",
+      "sha256": "dc6e6407820da471765bc4bbbfbd9bd5d33e1ee099c55f468ad0fec8a0ac3215"
+    },
+    {
+      "file": "resources/res/layout/layout_base_h5.xml",
+      "line": 8,
+      "text": "<com.tencent.videolite.android.webview.H5BaseView",
+      "sha256": "05d6764d86efd3fc6d9e5e56dd4a78456934704b7e42d70792274e0f7ad80f05"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 790,
+      "text": "android:name=\"com.tencent.videolite.android.business.webview.interact.H5InteractActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractActivity.java",
+      "line": 248,
+      "text": "return redirector != null ? ((Integer) redirector.redirect((short) 2, (Object) this)).intValue() : R.layout.layout_interact_h5;",
+      "sha256": "4f8f52861cc0804cefb3f796112a4d0f16e112e746ac0578bf1d320c78e979f0"
+    },
+    {
+      "file": "resources/res/layout/layout_interact_h5.xml",
+      "line": 34,
+      "text": "<com.tencent.videolite.android.business.webview.interact.H5InteractView",
+      "sha256": "9a7d3d2a532aefb1e8f61140cd8090c6a32d8da8127c61499c1bb1fc14ac4926"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/interact/H5InteractActivity.java",
+      "line": 32,
+      "text": "public class H5InteractActivity extends H5BaseActivity {",
+      "sha256": "4f8f52861cc0804cefb3f796112a4d0f16e112e746ac0578bf1d320c78e979f0"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 462,
+      "text": "android:name=\"com.tencent.videolite.android.ui.huawei.AgreementDetailActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/huawei/AgreementDetailActivity.java",
+      "line": 47,
+      "text": "return webView.getSettings();",
+      "sha256": "ca85058fb121880e92f2dabc12ebf99bd8ff3050d9fd0df1d109b22185cd63ec"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/huawei/AgreementDetailActivity.java",
+      "line": 138,
+      "text": "this.mWebView = (WebView) findViewById(R.id.mWebView);",
+      "sha256": "ca85058fb121880e92f2dabc12ebf99bd8ff3050d9fd0df1d109b22185cd63ec"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/ui/huawei/AgreementDetailActivity.java",
+      "line": 141,
+      "text": "initWebView();",
+      "sha256": "ca85058fb121880e92f2dabc12ebf99bd8ff3050d9fd0df1d109b22185cd63ec"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 835,
+      "text": "android:name=\"com.shlogin.sdk.view.PrivacyProtocolActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/shlogin/sdk/view/PrivacyProtocolActivity.java",
+      "line": 156,
+      "text": "return webView.getSettings();",
+      "sha256": "21528bc0ea4f08f142532b487dc173f039d290ce2cad24f5cfc9f3863b08c8e2"
+    },
+    {
+      "file": "sources/com/shlogin/sdk/view/PrivacyProtocolActivity.java",
+      "line": 343,
+      "text": "setContentView(k.b(this).c(\"layout_shanyan_privacy\"));",
+      "sha256": "21528bc0ea4f08f142532b487dc173f039d290ce2cad24f5cfc9f3863b08c8e2"
+    },
+    {
+      "file": "sources/com/shlogin/sdk/view/PrivacyProtocolActivity.java",
+      "line": 352,
+      "text": "d();",
+      "sha256": "21528bc0ea4f08f142532b487dc173f039d290ce2cad24f5cfc9f3863b08c8e2"
+    },
+    {
+      "file": "sources/com/shlogin/sdk/view/PrivacyProtocolActivity.java",
+      "line": 211,
+      "text": "this.d = (WebView) findViewById(k.b(this).e(\"shanyan_view_baseweb_webview\"));",
+      "sha256": "21528bc0ea4f08f142532b487dc173f039d290ce2cad24f5cfc9f3863b08c8e2"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 785,
+      "text": "android:name=\"com.tencent.videolite.android.business.webview.hollywood.ReportActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/tencent/videolite/android/business/webview/hollywood/ReportActivity.java",
+      "line": 6,
+      "text": "public class ReportActivity extends H5BaseActivity {",
+      "sha256": "c872fed9c3fca0d01890496d79c318457ca54ce21aa65a487ed30f173105a70d"
+    },
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1184,
+      "text": "android:name=\"com.cmg.comm.plugin.AdActivity\"",
+      "sha256": "4f22ae8498bd65d6253cb2da311bc42908fc480dc99b56357c8cacf97dc4b34e"
+    },
+    {
+      "file": "sources/com/cmg/comm/plugin/AdActivity.java",
+      "line": 294,
+      "text": "WebView webView = new WebView(this);",
+      "sha256": "418e7530e9c0a9eadb9d7ccf7f7dc1f0e2cb94a92e45df1cf89a228b0c79122d"
+    },
+    {
+      "file": "sources/com/cmg/comm/plugin/AdActivity.java",
+      "line": 298,
+      "text": "((LinearLayout) findViewById(R.id.root_view)).addView(this.f2536c);",
+      "sha256": "418e7530e9c0a9eadb9d7ccf7f7dc1f0e2cb94a92e45df1cf89a228b0c79122d"
+    },
+    {
+      "file": "sources/com/cmg/comm/plugin/AdActivity.java",
+      "line": 235,
+      "text": "return webView.getSettings();",
+      "sha256": "418e7530e9c0a9eadb9d7ccf7f7dc1f0e2cb94a92e45df1cf89a228b0c79122d"
     }
   ],
-  "deep_positive_activities": [
-    "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
-    "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
-    "com.tencent.videolite.android.ui.ArticleActivity",
-    "com.tencent.videolite.android.ui.FeedBackActivity",
-    "com.tencent.videolite.android.ui.KingOpenActivity"
-  ],
+  "deep_positive_activities": 11,
   "present_strata": {
     "custom_x5_factory_wrapper": [
       "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
       "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
       "com.tencent.videolite.android.ui.FeedBackActivity",
       "com.tencent.videolite.android.ui.ArticleActivity",
-      "com.tencent.videolite.android.ui.KingOpenActivity"
+      "com.tencent.videolite.android.ui.KingOpenActivity",
+      "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "com.tencent.videolite.android.business.webview.hollywood.ReportActivity"
+    ],
+    "android_layout_webview": [
+      "com.tencent.videolite.android.ui.huawei.AgreementDetailActivity",
+      "com.shlogin.sdk.view.PrivacyProtocolActivity"
+    ],
+    "sdk_direct_webview": [
+      "com.cmg.comm.plugin.AdActivity"
     ]
   },
   "exhaustive_positive_inventory": false,

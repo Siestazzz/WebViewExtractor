@@ -175,6 +175,7 @@ final class CapabilityEngine {
             row.put("phase",s==null?0:s.phase+1);row.put("contexts_processed",s==null?0:s.jobs);row.put("pending_contexts",s==null||s.host==null?0:s.host.queue.size());row.put("analysis_seconds",s==null?0:s.nanos/1e9);row.put("slices",s==null?0:s.slices);
             row.put("pending_priority_contexts",s==null||s.host==null?0:s.host.queue.prioritySize());
             row.put("pending_ordinary_contexts",s==null||s.host==null?0:s.host.queue.ordinarySize());
+            row.put("pending_method_sample",s==null||s.host==null?List.of():s.host.queue.diagnostics(12));
             row.put("discarded_contexts",s==null?0:s.discardedContexts);row.put("phase_contexts",s==null?List.of(0,0):List.of(s.phaseJobs[0],s.phaseJobs[1]));
             row.put("tracked_xml_consumers",s==null?0:s.host==null?s.terminalXmlConsumers:s.host.xmlConsumers.size());
             row.put("tracked_deferred_fields",s==null?0:s.host==null?s.terminalDeferredFields:s.host.deferredFields.size());
@@ -232,7 +233,7 @@ final class CapabilityEngine {
                     List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
                     observeXmlConsumer(h,job,args);
                     if(!registrations.isEmpty())dispatchRegistered(h,job,call,args,registrations);
-                    if(kind!=null){emit(h,job,call,args,kind,summary.branched());followApiOverride(h,job,call,args,summary.branched());continue;}
+                    if(kind!=null){dispatchCapability(h,job,call,args,kind,summary.branched());continue;}
                     if(idx.closureProceed(call.method())&&!args.isEmpty()){
                         boolean linked=false;
                         for(V point:alternatives(linkedJoinPoint(h,args.get(0))))if(point.kind().equals("aspectj_joinpoint")){
@@ -326,6 +327,34 @@ final class CapabilityEngine {
         if(!idx.subtype(parent,owner(reference)))return declared;
         Method actual=idx.resolve(invoking.getSuperclass()+"->"+reference.substring(reference.indexOf("->")+2));
         return actual==null?declared:actual;
+    }
+    void dispatchCapability(Host h,Job job,Call call,List<V> args,String kind,boolean conditional){
+        if(call.isStatic()||args.isEmpty()||kind.equals("message_bridge")||idx.customCallbacks.containsKey(call.method())){
+            emit(h,job,call,args,kind,conditional);followApiOverride(h,job,call,args,conditional);return;
+        }
+        Method declared=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());
+        String shape=call.method().substring(call.method().indexOf("->")+2);
+        boolean nullable=alternatives(args.get(0)).stream().anyMatch(v->v.kind().equals("literal")&&"0".equals(v.literal()));
+        for(V receiver:alternatives(args.get(0))){
+            if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
+            boolean known=Set.of("object","new","view","host").contains(receiver.kind());
+            Method actual=call.isDirect()||call.isSuper()?declared:receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+shape);
+            String owner=actual==null?null:CapabilityIndex.cls(actual.getDefiningClass());
+            boolean override=actual!=null&&actual.getImplementation()!=null&&!owner.startsWith("android.")&&!Cfg.WEBVIEWS.contains(owner)&&
+                !Set.of("com.tencent.smtt.sdk.WebSettings","com.uc.webview.export.WebSettings").contains(owner)&&
+                (idx.webview(owner)||idx.settings(owner));
+            List<V> bound=specializeReceiver(args,receiver);
+            if(override&&(known||call.isDirect()||call.isSuper())){
+                // A resolved override supplies the behavior. Only its real framework calls
+                // can establish the original capability effect, including explicit super.
+                enqueue(h,actual,bound,extend(job.path,"api_override:"+call.method()),job.candidate||conditional||args.get(0).kind().equals("union"));
+            }else{
+                Job observed=new Job(job.method,job.args,job.path,job.candidate||!known||args.get(0).kind().equals("union"));
+                if(nullable){bound=new ArrayList<>(bound);bound.set(0,union(receiver,V.literal("number","0")));}
+                emit(h,observed,call,bound,kind,conditional);
+                if(override)followApiOverride(h,observed,call,bound,conditional);
+            }
+        }
     }
     void followApiOverride(Host h,Job job,Call call,List<V> args,boolean conditional){
         if(call.isStatic()||args.isEmpty())return;
@@ -621,7 +650,8 @@ final class CapabilityEngine {
                     if(!m.getParameterTypes().equals(List.of("Landroid/content/Context;","Landroid/util/AttributeSet;")))continue;
                 }else if(h.constructed.contains(self.id()))continue;
             }
-            if(!idx.relevant.contains(CapabilityIndex.key(m))&&!(idx.activity(type)&&m.getName().equals("<init>")))continue;
+            boolean actualLifecycle=!idx.activity(type)&&idx.componentEntry(type,m)&&relevantOnReceiver(m,self,h);
+            if(!idx.relevant.contains(CapabilityIndex.key(m))&&!actualLifecycle&&!(idx.activity(type)&&m.getName().equals("<init>")))continue;
             if(idx.activity(type)&&!CapabilityIndex.cls(m.getDefiningClass()).equals(type)&&!m.getName().equals("<init>")&&!m.getName().startsWith("on")&&!referencedShapes.contains(CapabilityIndex.shape(m)))continue;
             fieldMethods.add(CapabilityIndex.key(m));
             List<V> args=new ArrayList<>();if((m.getAccessFlags()&8)==0)args.add(self);

@@ -1,0 +1,60 @@
+{
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable"
+  },
+  "sohu_apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "sohu_tencent_smtt_source": "No com/tencent/smtt directory in this source root; cannot certify an absent bundled interface declaration. NBS source references alone do not prove class implementation.",
+  "txws_apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "tencent_listener_signature": "Lcom/tencent/smtt/sdk/DownloadListener;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+  "tencent_setter_signature": "Lcom/tencent/smtt/sdk/WebView;->setDownloadListener(Lcom/tencent/smtt/sdk/DownloadListener;)V",
+  "evidence": [
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/smtt/sdk/DownloadListener.java",
+      "line": 4,
+      "text": "public interface DownloadListener {",
+      "sha256": "370f1a4e11e020a2e130cc97873dee3bbcd00955ed313897fbfc67ccc4178ad3"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 88,
+      "text": "import com.tencent.smtt.sdk.DownloadListener;",
+      "sha256": "48d8e94d46c0a48b952e898cffd3a913c0e5592017334b77d45481a47d7c0a06"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 2057,
+      "text": "webView.setDownloadListener(new DownloadListener() { // from class: com.tencent.oscar.module.webview.c",
+      "sha256": "48d8e94d46c0a48b952e898cffd3a913c0e5592017334b77d45481a47d7c0a06"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "line": 2059,
+      "text": "public final void onDownloadStart(String str, String str2, String str3, String str4, long j10) {",
+      "sha256": "48d8e94d46c0a48b952e898cffd3a913c0e5592017334b77d45481a47d7c0a06"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/smtt/sdk/DownloadListener.java",
+      "line": 5,
+      "text": "void onDownloadStart(String str, String str2, String str3, String str4, long j10);",
+      "sha256": "370f1a4e11e020a2e130cc97873dee3bbcd00955ed313897fbfc67ccc4178ad3"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 1622,
+      "text": "public void setDownloadListener(final DownloadListener downloadListener) {",
+      "sha256": "2d4f9cbe43d49da7c85aca05d5b2b389e6b070aebec199046dbcb070af489e4a"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 1627,
+      "text": "this.f50226e.setDownloadListener(new android.webkit.DownloadListener() { // from class: com.tencent.smtt.sdk.WebView.4",
+      "sha256": "2d4f9cbe43d49da7c85aca05d5b2b389e6b070aebec199046dbcb070af489e4a"
+    },
+    {
+      "file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/smtt/sdk/WebView.java",
+      "line": 1629,
+      "text": "public void onDownloadStart(String str, String str2, String str3, String str4, long j10) {",
+      "sha256": "2d4f9cbe43d49da7c85aca05d5b2b389e6b070aebec199046dbcb070af489e4a"
+    }
+  ]
+}

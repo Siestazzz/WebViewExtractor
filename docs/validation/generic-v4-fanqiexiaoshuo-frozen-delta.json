@@ -1,0 +1,127 @@
+{
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "scorer_sha256": "757bb6ae6effd82a2ea2982e13e94840efe0d306fed8f22dc4f73ffc181db74a",
+  "counts": {
+    "before_matched": 45,
+    "after_matched": 40,
+    "regression": 5
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageFinished",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/WebFragment$b;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.WebFragment$b",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "5e3541fb2ca8d2da89420a8a03dbdf072d215e5108ec65b6a36a8a6d743802a6"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageStarted",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/WebFragment$b;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.WebFragment$b",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "867ad5bb32752809893d567b121490070b060cbfb30ed5a3580abc74308f1bbc"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/WebFragment$b;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.WebFragment$b",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "9d7207d08a625707fd138b9608f57607f002a728c69a950900fc921b30e4ef3e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldOverrideUrlLoading",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/WebFragment$b;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.WebFragment$b",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "13427ee7fc0269d1e391698130a47a778f41ced245238c6b1bcd4224ed47e51b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedError",
+        "normalized_signature": "Lcom/dragon/read/hybrid/webview/WebFragment$b;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "normalized_api": null,
+        "implementation": "com.dragon.read.hybrid.webview.WebFragment$b",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "explicit",
+        "webview_constraint": {
+          "types": [
+            "com.dragon.read.hybrid.webview.ReadingWebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "515ee2bb3e6a294b48b1ca24e2181c544208ec86532e8645aa931ce55620a9a3"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

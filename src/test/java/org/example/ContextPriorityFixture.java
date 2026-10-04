@@ -24,8 +24,12 @@ final class ContextPriorityFixture {
     queue.add(new CapabilityEngine.Job(n%2==0?first:second,List.of(DexFlow.V.of("object","test.Value",id)),List.of(),false));
    }
    check(queue.prioritySize()==40&&queue.ordinarySize()==8&&queue.size()==48,"Lane accounting differs");
+   var sample=queue.diagnostics(1);
+   check(sample.size()==1&&sample.get(0).get("priority").equals(20)&&sample.get(0).get("ordinary").equals(4),"Pending-method sample lane counts differ");
+   check(queue.diagnostics(0).isEmpty(),"Zero diagnostic limit not respected");
    List<String> observed=new ArrayList<>();Set<String> removed=new HashSet<>();int priorityRun=0;
    while(!queue.isEmpty()){
+    if(pass==1)queue.diagnostics(12); // Observation must preserve the pass-zero dequeue order.
     boolean ordinaryWaiting=queue.ordinarySize()>0;
     var job=queue.remove();String id=job.args().get(0).id();observed.add(id);
     check(removed.add(id),"Priority scheduling repeated a task");
@@ -38,6 +42,7 @@ final class ContextPriorityFixture {
    if(expected==null)expected=observed;else check(expected.equals(observed),"Scheduling is not deterministic");
    queue.add(new CapabilityEngine.Job(first,List.of(),List.of(),false),true);queue.clear();
    check(queue.size()==0&&queue.prioritySize()==0&&queue.ordinarySize()==0,"Clear retained lane tasks");
+   check(queue.diagnostics(12).isEmpty(),"Diagnostics retained completed contexts");
   }
   String helper="Lpriority/Helper;",bridge="Lpriority/Bridge;";
   var configure=method(helper,"configure",List.of(W,bridge,"Ljava/lang/String;"),9,3,List.of(

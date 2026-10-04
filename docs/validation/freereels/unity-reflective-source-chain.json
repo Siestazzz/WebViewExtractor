@@ -1,0 +1,80 @@
+{
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "provenance": "source-first",
+  "evidence": [
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivity.java",
+      "line": 45,
+      "text": "createController.onCreate(bundle);",
+      "sha256": "4f5d2061c461793038ad42a24710b7c1472dceeaf346f7e9dfff936234d518c6"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivity.java",
+      "line": 140,
+      "text": "this._controller.onResume();",
+      "sha256": "4f5d2061c461793038ad42a24710b7c1472dceeaf346f7e9dfff936234d518c6"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 192,
+      "text": "return this._adUnitViewHandlerFactory.createViewHandler(str);",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitViewHandlerFactory.java",
+      "line": 21,
+      "text": "return (IAdUnitViewHandler) adUnitViewHandlers.get(str).newInstance();",
+      "sha256": "ecec1e639f5891f7160cc64f634f9198ab1e4f2ca8b2b406a232075908e4e25d"
+    },
+    {
+      "file": "sources/com/unity3d/services/core/configuration/Configuration.java",
+      "line": 64,
+      "text": "this._moduleConfigurationList = new Class[]{CoreModuleConfiguration.class, AdsModuleConfiguration.class, AnalyticsModuleConfiguration.class, BannersModuleConfiguration.class, StoreModuleConfiguration.class};",
+      "sha256": "34e976bc868be8eb693521482e9da5f5b34b8d67169f30bbebb91e10ae1f15d2"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/configuration/AdsModuleConfiguration.java",
+      "line": 37,
+      "text": "hashMap.put(\"webplayer\", WebPlayerHandler.class);",
+      "sha256": "40a7bdc3c25d995cc1301dc1f625fe092a515f7ccb5b970d90886850fffd7284"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/WebPlayerHandler.java",
+      "line": 40,
+      "text": "WebPlayerView webPlayerView = new WebPlayerView(context, str, webPlayerSettingsCache.getWebSettings(str), webPlayerSettingsCache.getWebPlayerSettings(webPlayerViewId));",
+      "sha256": "32f10f2f8608d7f87a64f0ca75471206e46bccde4a22440817dee66f2c8b68e8"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/WebPlayerHandler.java",
+      "line": 61,
+      "text": "return this._webPlayerView;",
+      "sha256": "32f10f2f8608d7f87a64f0ca75471206e46bccde4a22440817dee66f2c8b68e8"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 286,
+      "text": "setViews(this._views);",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 184,
+      "text": "if (!handleViewPlacement(viewHandler.getView())) {",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/adunit/AdUnitActivityController.java",
+      "line": 57,
+      "text": "this._layout.addView(view, layoutParams);",
+      "sha256": "fd671bcc8f32e6960f6f65ab32cdfe8781af5c9d9b758cf5a48893234d19bc52"
+    },
+    {
+      "file": "sources/com/unity3d/services/ads/webplayer/WebPlayerView.java",
+      "line": 50,
+      "text": "public class WebPlayerView extends WebView {",
+      "sha256": "3f2840667d52fef399821e93f27a988d28c9033a51762621890d99613ffa1708"
+    }
+  ],
+  "condition": "requested webplayer present; configuration module map reflected with Class.newInstance"
+}

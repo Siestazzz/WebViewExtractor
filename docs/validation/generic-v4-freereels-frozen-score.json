@@ -1,0 +1,87 @@
+{
+  "oracle_sha256": "c6d1ad85deb6c7f463d7fcc5750e063fb14592c51ec799fab37544a52e54ade5",
+  "report_sha256": "e4143e87e8c87ab5b3be3e46958a6e95ae8345671d59eb6e56f96b2f0a198169",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v3-facts/freereels.jsonl",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 15,
+      "matched": 15,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 7,
+      "matched": 7,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 4,
+      "matched": 4,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [],
+  "emitted_activities": 109,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 5,
+  "webview_constraint_coverage": {
+    "expected": 26,
+    "with_source_type_constraint": 0,
+    "activity_only": 26,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 4,
+    "matched": 4,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 0,
+  "capability_granularity": {
+    "setting": {
+      "expected": 15,
+      "matched": 15,
+      "recall": 1.0
+    },
+    "bridge_registration": {
+      "expected": 2,
+      "matched": 2,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 5,
+      "matched": 5,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 4,
+      "matched": 4,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 109
+    },
+    "emitted": 109,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 109,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

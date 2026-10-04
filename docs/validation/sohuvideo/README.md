@@ -16,3 +16,13 @@ Expanded follow-up: 169 report-guided rows, 4 total confirmed positive Activitie
 Latest follow-up totals 215 rows (308 combined rows), six capability-positive Activities plus Facebook dialog ownership-only (seven hosts reviewed). Advertising group has two separately proved host chains; its 46 shared settings/bridge/WebViewClient facts all match generic-v1. Whole-APK coverage, other SDK group minimums and exact-instance precision remain unproven. Five emitted noncore hosts were spot-checked: three correct conditional ownerships, two unresolved QQ-share dialog paths.
 
 Generic-v2 final re-evaluation used the unchanged source-first and report-guided oracles: no previously matched fact lost and no new canonical match gained. See `generic-v2-comparison.md` and `generic-v1-v2-*-delta.json`. Sohu core/Farm/Pgc remain deadline-interrupted; txws retains all 168 row matches. This does not establish protocol acceptance.
+
+## v3 continuation (partial source audit)
+
+The same frozen development set still has settings 37/88, bridge 6/115 and callback 17/99 matches, with identical missing facts to v2. See generic-v3-comparison.md and generic-v2-v3-expanded-delta.json. The 598.8-second supervisor-terminated run produced valid JSON within the external 600 seconds, but internal analysis remains incomplete; three-run performance acceptance is unproven.
+
+All 305 emitted Activity hosts are enumerated in generic-v3-all-host-ownership.jsonl: 12 source-supported valid and 293 unresolved. Newly reviewed SDK paths include Ali inherited layout, Alipay inherited pay/auth wrapper construction, and direct Weibo attachment. These additional partial audits do not raise the complete deep review count to 30 or prove source exhaustion.
+
+The separate canonical-sdk-probes-report-guided.jsonl freezes 63 additional SDK settings probes after v3 report inspection; all 63 match v3. It is not merged into the earlier fixed development set, so its matching facts cannot conceal the earlier 242 missing facts. The SDK bridge and client inventories remain partial.
+
+empty-virtual-api-override.md and generic-v{2,3}-empty-override-capability-precision.jsonl document six confirmed instrumentation bridge false positives per run on the concrete AuthWebView receiver, whose final addJavascriptInterface override is empty. The two Activities remain valid hosts. AuthWebView's map plus BridgeWebChromeClient's prompt/annotation/reflection dispatcher is a distinct bridge protocol and remains outside the audited injected-bridge gold; it does not validate the false NBS injection claims.

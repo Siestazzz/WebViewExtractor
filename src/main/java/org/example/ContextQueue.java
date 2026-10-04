@@ -37,4 +37,24 @@ final class ContextQueue {
     int size(){return priority.size+ordinary.size;}
     boolean isEmpty(){return size()==0;}
     void clear(){priority.clear();ordinary.clear();priorityStreak=0;}
+    /** Read-only bounded sample; does not rotate work or retain completed contexts. */
+    List<Map<String,Object>> diagnostics(int limit){
+        if(limit<=0)return List.of();
+        Set<String> names=new HashSet<>(priority.methods.keySet());names.addAll(ordinary.methods.keySet());
+        List<String> ranked=new ArrayList<>(names);
+        ranked.sort(Comparator.comparingInt((String name)->laneSize(priority,name)+laneSize(ordinary,name)).reversed().thenComparing(name->name));
+        List<Map<String,Object>> result=new ArrayList<>();
+        for(String name:ranked.subList(0,Math.min(limit,ranked.size()))){
+            var preferred=priority.methods.get(name);var normal=ordinary.methods.get(name);
+            CapabilityEngine.Job example=preferred!=null?preferred.peek():normal.peek();
+            Map<String,Object> row=new LinkedHashMap<>();row.put("method",name);
+            row.put("priority",laneSize(priority,name));row.put("ordinary",laneSize(ordinary,name));
+            row.put("example_argument_kinds",example.args().stream().map(DexFlow.V::kind).toList());
+            row.put("example_entry_parameter_count",example.args().stream().filter(v->v.id().equals("entry_parameter")).count());
+            List<String> path=example.path();row.put("example_path_tail",path.subList(Math.max(0,path.size()-4),path.size()));
+            row.put("example_candidate",example.candidate());result.add(Collections.unmodifiableMap(row));
+        }
+        return List.copyOf(result);
+    }
+    private static int laneSize(Lane lane,String name){var jobs=lane.methods.get(name);return jobs==null?0:jobs.size();}
 }

@@ -129,7 +129,7 @@ final class CapabilityIndex {
                 // Follow only returned WebView/Settings/carrier objects, then discover their
                 // field writers through the same bounded relevance closure.
                 if(target!=null){String returned=cls(target.getReturnType());
-                    if((webview(returned)||settings(returned)||bindingObjects.contains(returned))&&relevant.add(call))queue.add(call);
+                    if((webview(returned)||settings(returned)||client(returned)||bindingObjects.contains(returned))&&relevant.add(call))queue.add(call);
                 }
                 if(relevant.contains(call)||target!=null&&target.getImplementation()==null&&byShape.getOrDefault(shape(target),List.of()).stream().anyMatch(m->relevant.contains(key(m))))receiverOwners.add(CapabilityEngine.owner(call));
             }
@@ -432,6 +432,7 @@ final class CapabilityIndex {
     boolean map(String t){return t!=null&&(Set.of("java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.util.TreeMap","java.util.concurrent.ConcurrentMap","java.util.concurrent.ConcurrentHashMap").contains(t)||subtype(t,"java.util.Map"));}
     boolean collection(String t){return t!=null&&(Set.of("java.util.List","java.util.Collection","java.util.ArrayList","java.util.LinkedList","java.util.Set","java.util.HashSet").contains(t)||subtype(t,"java.util.Collection"));}
     boolean scheduled(String t){return subtype(t,"java.lang.Runnable")||subtype(t,"java.util.concurrent.Callable");}
+    boolean client(String type){return subtype(type,"android.webkit.WebViewClient")||subtype(type,"android.webkit.WebChromeClient")||subtype(type,"com.tencent.smtt.sdk.WebViewClient")||subtype(type,"com.tencent.smtt.sdk.WebChromeClient");}
     boolean componentEntry(String type,Method method){
         if((method.getAccessFlags()&(2|8))!=0||(method.getAccessFlags()&(1|4))==0)return false;
         String contract=shape(method);

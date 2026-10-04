@@ -1,0 +1,572 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "activity": "com.ali.auth.third.ui.LoginWebViewActivity",
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable",
+    "role": "source reviewer"
+  },
+  "selection_provenance": "source analysis after v3 output read; non-holdout development host",
+  "transport": "js_prompt",
+  "host_chain": [
+    {
+      "file": "sources/com/ali/auth/third/ui/LoginWebViewActivity.java",
+      "line": 228,
+      "text": "super.onCreate(bundle);",
+      "sha256": "3c43caba06e1413b64e6a68c5a08f910ba75e7eacf7a5cc517662346e9e07a12"
+    },
+    {
+      "file": "sources/com/ali/auth/third/ui/webview/BaseWebViewActivity.java",
+      "line": 179,
+      "text": "AuthWebView createTaeWebView = createTaeWebView();",
+      "sha256": "f2c9d682f4e5d8b09529d6132dc68e7deb353cef6a978702f88a303b9df4a5ab"
+    },
+    {
+      "file": "sources/com/ali/auth/third/ui/webview/BaseWebViewActivity.java",
+      "line": 202,
+      "text": "return new AuthWebView(this);",
+      "sha256": "f2c9d682f4e5d8b09529d6132dc68e7deb353cef6a978702f88a303b9df4a5ab"
+    },
+    {
+      "file": "sources/com/ali/auth/third/ui/webview/BaseWebViewActivity.java",
+      "line": 192,
+      "text": "this.authWebView.setWebChromeClient(createWebChromeClient());",
+      "sha256": "f2c9d682f4e5d8b09529d6132dc68e7deb353cef6a978702f88a303b9df4a5ab"
+    },
+    {
+      "file": "sources/com/ali/auth/third/ui/LoginWebViewActivity.java",
+      "line": 200,
+      "text": "return new b();",
+      "sha256": "3c43caba06e1413b64e6a68c5a08f910ba75e7eacf7a5cc517662346e9e07a12"
+    }
+  ],
+  "callback_inheritance": {
+    "registered_class": "com.ali.auth.third.ui.LoginWebViewActivity$b",
+    "extends": "com.ali.auth.third.ui.webview.BridgeWebChromeClient",
+    "dispatch_method": "final onJsPrompt(WebView,String,String,String,JsPromptResult)",
+    "evidence": [
+      {
+        "file": "sources/com/ali/auth/third/ui/LoginWebViewActivity.java",
+        "line": 115,
+        "text": "class b extends BridgeWebChromeClient {",
+        "sha256": "3c43caba06e1413b64e6a68c5a08f910ba75e7eacf7a5cc517662346e9e07a12"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 119,
+        "text": "public final boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      }
+    ]
+  },
+  "registry": {
+    "owner": "AuthWebView instance",
+    "field": "f1936a",
+    "write": "Map.put(key,object) in addBridgeObject",
+    "lookup": "Map.get(key) in getBridgeObj",
+    "evidence": [
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/AuthWebView.java",
+        "line": 26,
+        "text": "this.f1936a = new HashMap();",
+        "sha256": "b2698402669ebf01705931cd9ccaa6a5e5bf800d44df9e0aaa572cc6f5d7eab8"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/AuthWebView.java",
+        "line": 86,
+        "text": "public final void addBridgeObject(String str, Object obj) {",
+        "sha256": "b2698402669ebf01705931cd9ccaa6a5e5bf800d44df9e0aaa572cc6f5d7eab8"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/AuthWebView.java",
+        "line": 87,
+        "text": "this.f1936a.put(str, obj);",
+        "sha256": "b2698402669ebf01705931cd9ccaa6a5e5bf800d44df9e0aaa572cc6f5d7eab8"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/AuthWebView.java",
+        "line": 94,
+        "text": "public Object getBridgeObj(String str) {",
+        "sha256": "b2698402669ebf01705931cd9ccaa6a5e5bf800d44df9e0aaa572cc6f5d7eab8"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/AuthWebView.java",
+        "line": 95,
+        "text": "return this.f1936a.get(str);",
+        "sha256": "b2698402669ebf01705931cd9ccaa6a5e5bf800d44df9e0aaa572cc6f5d7eab8"
+      }
+    ]
+  },
+  "registrations": [
+    {
+      "key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/ui/LoginWebViewActivity.java",
+          "line": 235,
+          "text": "authWebView.addBridgeObject(\"accountBridge\", new LoginBridge());",
+          "sha256": "3c43caba06e1413b64e6a68c5a08f910ba75e7eacf7a5cc517662346e9e07a12"
+        }
+      ]
+    },
+    {
+      "key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/ui/LoginWebViewActivity.java",
+          "line": 236,
+          "text": "this.authWebView.addBridgeObject(\"loginBridge\", new LoginBridge());",
+          "sha256": "3c43caba06e1413b64e6a68c5a08f910ba75e7eacf7a5cc517662346e9e07a12"
+        }
+      ]
+    },
+    {
+      "key": "ivBridge",
+      "implementation": "com.ali.auth.third.login.bridge.a",
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/ui/LoginWebViewActivity.java",
+          "line": 237,
+          "text": "this.authWebView.addBridgeObject(\"ivBridge\", new com.ali.auth.third.login.bridge.a());",
+          "sha256": "3c43caba06e1413b64e6a68c5a08f910ba75e7eacf7a5cc517662346e9e07a12"
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "guard": "defaultValue equals hv_hybrid: AND callback receiver WebView instanceof AuthWebView",
+    "alternative": "wv_hybrid: emits failure; it does not select registry endpoints",
+    "key": "Uri.parse(message).getHost()",
+    "method": "Uri.parse(message).getLastPathSegment()",
+    "context_port": "Uri.getPort()",
+    "payload": "raw substring after first ?; empty payload becomes {}",
+    "reflection": "bridgeObj.getClass().getMethod(methodName, contextClass, String.class)",
+    "visibility": "public methods only; getMethod includes inherited public methods",
+    "inheritance": "LoginBridge extends Object; no custom inherited bridge endpoints. @Inherited on BridgeMethod does not create annotations on unrelated overriding method declarations.",
+    "annotation_gate": "selected reflected method must have BridgeMethod; annotation value is not read",
+    "invoke_args": [
+      "new context object containing port and AuthWebView",
+      "payload String"
+    ],
+    "evidence": [
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 89,
+        "text": "Uri parse = Uri.parse(str);",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 90,
+        "text": "String host = parse.getHost();",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 91,
+        "text": "int port = parse.getPort();",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 92,
+        "text": "String lastPathSegment = parse.getLastPathSegment();",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 94,
+        "text": "int indexOf = str.indexOf(\"?\");",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 95,
+        "text": "String substring = indexOf == -1 ? null : str.substring(indexOf + 1);",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 97,
+        "text": "aVar.b = lastPathSegment;",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 98,
+        "text": "aVar.f1945a = host;",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 99,
+        "text": "aVar.c = substring;",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 100,
+        "text": "aVar.d = port;",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 126,
+        "text": "if (!TextUtils.equals(str3, \"hv_hybrid:\") || !(webView instanceof AuthWebView)) {",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 134,
+        "text": "Object bridgeObj = authWebView.getBridgeObj(a2.f1945a);",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 141,
+        "text": "Method method = bridgeObj.getClass().getMethod(a2.b, com.ali.auth.third.ui.context.a.class, String.class);",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 142,
+        "text": "if (method.isAnnotationPresent(BridgeMethod.class)) {",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 145,
+        "text": "objArr[0] = aVar;",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 146,
+        "text": "objArr[1] = TextUtils.isEmpty(a2.c) ? \"{}\" : a2.c;",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      },
+      {
+        "file": "sources/com/ali/auth/third/ui/webview/BridgeWebChromeClient.java",
+        "line": 147,
+        "text": "method.invoke(bridgeObj, objArr);",
+        "sha256": "6a0439b686c2bb7bb5a055b6bb47fc0193b36b51606c780885b536e3765bc250"
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "registry_key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "auth",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->auth(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 19,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 20,
+          "text": "public void auth(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "bindByUsername",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->bindByUsername(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 29,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 30,
+          "text": "public void bindByUsername(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "loginByQrCode",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->loginByQrCode(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 50,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 51,
+          "text": "public void loginByQrCode(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "loginByUsername",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->loginByUsername(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 55,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 56,
+          "text": "public void loginByUsername(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "qrLoginConfirm",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->qrLoginConfirm(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 65,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 66,
+          "text": "public void qrLoginConfirm(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "accountBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "unbindByUsername",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->unbindByUsername(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 70,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 71,
+          "text": "public void unbindByUsername(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "auth",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->auth(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 19,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 20,
+          "text": "public void auth(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "bindByUsername",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->bindByUsername(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 29,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 30,
+          "text": "public void bindByUsername(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "loginByQrCode",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->loginByQrCode(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 50,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 51,
+          "text": "public void loginByQrCode(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "loginByUsername",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->loginByUsername(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 55,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 56,
+          "text": "public void loginByUsername(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "qrLoginConfirm",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->qrLoginConfirm(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 65,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 66,
+          "text": "public void qrLoginConfirm(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    },
+    {
+      "registry_key": "loginBridge",
+      "implementation": "com.ali.auth.third.login.bridge.LoginBridge",
+      "method": "unbindByUsername",
+      "signature": "Lcom/ali/auth/third/login/bridge/LoginBridge;->unbindByUsername(Lcom/ali/auth/third/ui/context/a;Ljava/lang/String;)V",
+      "public": true,
+      "annotation": "com.ali.auth.third.ui.webview.BridgeMethod",
+      "annotation_value": "",
+      "annotation_value_used_by_dispatch": false,
+      "evidence": [
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 70,
+          "text": "@BridgeMethod",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        },
+        {
+          "file": "sources/com/ali/auth/third/login/bridge/LoginBridge.java",
+          "line": 71,
+          "text": "public void unbindByUsername(com.ali.auth.third.ui.context.a aVar, String str) {",
+          "sha256": "eb019e90cbacdee91cc404a1dba1c32cf14839d2c7ba62fc8761141dd1efd0dd"
+        }
+      ]
+    }
+  ],
+  "endpoint_count": 12,
+  "empty_registration": {
+    "key": "ivBridge",
+    "public_matching_annotated_endpoints": 0,
+    "evidence": [
+      {
+        "file": "sources/com/ali/auth/third/login/bridge/a.java",
+        "line": 4,
+        "text": "public class a {",
+        "sha256": "380e7796312d10a4a907047d0ed3ff41ac22f1a0b2d940454aca220def27aebb"
+      }
+    ]
+  },
+  "not_injected_javascript_interface": {
+    "empty_final_override": {
+      "file": "sources/com/ali/auth/third/ui/webview/AuthWebView.java",
+      "line": 91,
+      "text": "public final void addJavascriptInterface(Object obj, String str) {",
+      "sha256": "b2698402669ebf01705931cd9ccaa6a5e5bf800d44df9e0aaa572cc6f5d7eab8"
+    }
+  },
+  "unknown": [
+    "Message/url concrete runtime values are dynamic; endpoint exposure is conditional on invocation protocol, not proof it executes on every launch."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "provenance": "source-first",
+  "evidence": [
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 805,
+      "text": "this.s = NavigationSceneUtility.setupWithActivity(this, 2131165589, null, new NavigationSceneOptions((Class<? extends Scene>) this.t.getClass(), bundle2), new SceneComponentFactory() { // from class: com.ixigua.browser.specific.BrowserActivity.4",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 809,
+      "text": "return (Scene) BrowserActivity.this.t;",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "line": 177,
+      "text": "navigationScene.setRootSceneComponentFactory(sceneComponentFactory);",
+      "sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20"
+    },
+    {
+      "file": "sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "line": 193,
+      "text": "beginTransaction2.add(i, lifeCycleFragment, str);",
+      "sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20"
+    },
+    {
+      "file": "sources/com/bytedance/scene/LifeCycleFragment.java",
+      "line": 90,
+      "text": "sceneContainerLifecycleCallback.onActivityCreated(getActivity(), bundle);",
+      "sha256": "50f1af94d79875e2fa720c0fb828a5e19558021cd4e3c0a52cc09dfd1017e3c1"
+    },
+    {
+      "file": "sources/com/bytedance/scene/SceneLifecycleDispatcher.java",
+      "line": 71,
+      "text": "sceneLifecycleManager.a(activity, viewGroup, t, rootScopeFactory, z, bundle2);",
+      "sha256": "bba2b878e6aef9e1e925381a69fe3702da67d4395741f6fbbb777e7c70fc6d92"
+    },
+    {
+      "file": "sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "line": 126,
+      "text": "b = this.mRootSceneComponentFactory.a(requireActivity().getClassLoader(), e);",
+      "sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8"
+    },
+    {
+      "file": "sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "line": 131,
+      "text": "this.mNavigationSceneManager.o(b, new PushOptions.Builder().a());",
+      "sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "line": 1878,
+      "text": "this.e = p1(viewGroup2);",
+      "sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "line": 1514,
+      "text": "f.a(this.e);",
+      "sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d"
+    }
+  ],
+  "decompiler_caution": "NavigationScene createRootSceneIfNeeded Java contains apparent duplicate fallback push; exact branch dominance not asserted without dex verification."
+}

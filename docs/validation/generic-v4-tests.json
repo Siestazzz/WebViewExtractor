@@ -1,0 +1,18 @@
+{
+  "jar_sha256": "079d3f747b62bab15a205ecdc48b2beb12adfa616ba463c229fe7ddad676defb",
+  "command": "./gradlew capabilitySelfTest compactReportTest shadowJar --offline --console=plain",
+  "exit_code": 0,
+  "build_seconds": 9,
+  "log": "test/runs/generic-v4-build.log",
+  "new_tests": [
+    "ClientGetterLifecycleFixture",
+    "CapabilityDispatchFixture",
+    "TransportProtocolsFixture (unintegrated candidates only)",
+    "ContextPriorityFixture read-only diagnostic equivalence"
+  ],
+  "notes": [
+    "No analysis budget expansion",
+    "Main.write nested-time accounting fix belongs to next version; frozen v4 still has historical double-counted write subtime",
+    "Development parallel timing is not isolated acceptance performance"
+  ]
+}

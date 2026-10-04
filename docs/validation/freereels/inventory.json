@@ -18,14 +18,25 @@
   },
   "reviewed_positive_hosts": [
     "com.applovin.sdk.AppLovinWebViewActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity",
     "com.dramawave.feature.web.WebPageActivity",
     "com.fyber.ads.ofw.OfferWallActivity",
+    "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+    "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+    "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
     "com.tapjoy.TJAdUnitActivity",
     "com.tapjoy.TJWebViewActivity",
+    "com.taurusx.tax.mraid.MraidBrowser",
     "com.taurusx.tax.ui.TaxWebViewActivity",
-    "com.taurusx.tax.utils.webview.TaxBrowserActivity"
+    "com.taurusx.tax.utils.webview.TaxBrowserActivity",
+    "com.unity3d.services.ads.adunit.AdUnitActivity",
+    "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+    "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+    "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
   ],
-  "canonical_fact_count": 46,
+  "canonical_fact_count": 127,
   "acceptance": "unproven",
   "scope_note": "Whole Manifest and lexical entry inventory is not whole-source validation; host chains pending",
   "holdout_status": "pending independent source selection",
@@ -38,10 +49,25 @@
       "com.applovin.sdk.AppLovinWebViewActivity",
       "com.fyber.ads.ofw.OfferWallActivity",
       "com.taurusx.tax.ui.TaxWebViewActivity",
-      "com.taurusx.tax.utils.webview.TaxBrowserActivity"
+      "com.taurusx.tax.utils.webview.TaxBrowserActivity",
+      "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "com.taurusx.tax.mraid.MraidBrowser",
+      "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity"
     ],
     "sdk_unit_retained_webview": [
       "com.tapjoy.TJAdUnitActivity"
+    ],
+    "sdk_custom_view_constructor": [
+      "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
+      "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity"
+    ],
+    "sdk_reflective_module_factory": [
+      "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
     ]
   },
   "source_audit_scope": "source-first deep subset; whole Manifest and lexical entries inventoried, not fully verified",

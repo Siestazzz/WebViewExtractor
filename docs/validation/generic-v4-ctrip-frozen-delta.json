@@ -1,0 +1,58 @@
+{
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "scorer_sha256": "757bb6ae6effd82a2ea2982e13e94840efe0d306fed8f22dc4f73ffc181db74a",
+  "counts": {
+    "before_matched": 4484,
+    "after_matched": 4482,
+    "regression": 2
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+        "webview": null,
+        "kind": "webview_operation",
+        "registration_name": null,
+        "name": "loadUrl",
+        "normalized_signature": null,
+        "normalized_api": "Lctrip/android/view/h5v2/view/H5WebView;->loadUrl(Ljava/lang/String;)V",
+        "implementation": "ctrip.android.view.h5v2.view.H5WebView",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "ctrip.android.view.h5v2.view.H5WebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "f4eeda275e9e1d1865e379426b4ac309f69547b8c3c5da17bfa541a8279f9924"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+        "webview": null,
+        "kind": "webview_operation",
+        "registration_name": null,
+        "name": "loadUrl",
+        "normalized_signature": null,
+        "normalized_api": "Lctrip/android/view/h5v2/view/VideoEnabledWebView;->loadUrl(Ljava/lang/String;Ljava/util/Map;)V",
+        "implementation": "ctrip.android.view.h5v2.view.VideoEnabledWebView",
+        "value": null,
+        "value_kind": null,
+        "binding_status": "confirmed",
+        "webview_constraint": {
+          "types": [
+            "ctrip.android.view.h5v2.view.H5WebView"
+          ]
+        },
+        "positive_acceptance": true
+      },
+      "fact_sha256": "14249314e59021da375dd475a00fc0e7643c74c8d4c2b05404c9a5b9144200de"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

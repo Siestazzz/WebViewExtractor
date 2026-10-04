@@ -1,0 +1,56 @@
+{
+  "report_sha256": "58e056619ec2030a84a579dbd21a0979073fc36cb9e343d0760f81682e64e962",
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "source_review": "empty-virtual-api-override.md",
+  "scope": "Replay of six previously source-proven wrong bridge facts; not complete capability or host precision.",
+  "rows": [
+    {
+      "activity": "com.ali.auth.third.ui.LoginWebViewActivity",
+      "old_site": "Lcom/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V@39",
+      "registration_name": "nbsJsBridge",
+      "webview_type": "com.ali.auth.third.ui.webview.AuthWebView",
+      "remaining_matching_facts": 0,
+      "host_still_emitted": true
+    },
+    {
+      "activity": "com.ali.auth.third.ui.LoginWebViewActivity",
+      "old_site": "Lcom/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V@49",
+      "registration_name": "nbsDOMChanged",
+      "webview_type": "com.ali.auth.third.ui.webview.AuthWebView",
+      "remaining_matching_facts": 0,
+      "host_still_emitted": true
+    },
+    {
+      "activity": "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+      "old_site": "Lcom/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V@39",
+      "registration_name": "nbsJsBridge",
+      "webview_type": "com.ali.auth.third.ui.webview.AuthWebView",
+      "remaining_matching_facts": 0,
+      "host_still_emitted": true
+    },
+    {
+      "activity": "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+      "old_site": "Lcom/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument;->setWebViewClient(Landroid/webkit/WebView;Landroid/webkit/WebViewClient;)V@49",
+      "registration_name": "nbsDOMChanged",
+      "webview_type": "com.ali.auth.third.ui.webview.AuthWebView",
+      "remaining_matching_facts": 0,
+      "host_still_emitted": true
+    },
+    {
+      "activity": "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+      "old_site": "Lcom/networkbench/agent/impl/instrumentation/NBSWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V@59",
+      "registration_name": "nbsJsBridge",
+      "webview_type": "com.ali.auth.third.ui.webview.AuthWebView",
+      "remaining_matching_facts": 0,
+      "host_still_emitted": true
+    },
+    {
+      "activity": "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+      "old_site": "Lcom/networkbench/agent/impl/instrumentation/NBSWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V@69",
+      "registration_name": "nbsDOMChanged",
+      "webview_type": "com.ali.auth.third.ui.webview.AuthWebView",
+      "remaining_matching_facts": 0,
+      "host_still_emitted": true
+    }
+  ]
+}
