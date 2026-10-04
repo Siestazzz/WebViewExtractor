@@ -1,0 +1,1203 @@
+{
+  "oracle_sha256": "3d1960a05f9b28f9c82f391de12819430c5752ee0694be81862ddbac81dbe1e4",
+  "report_sha256": "2cdbce5e1c5d3af2c58c09534d40308ce688346a72052c7dc523d569e5f6a623",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v20-reviewed-facts/yangshipin.jsonl",
+  "apk_sha256": "16ce4954ebbf29effe54c73736863acbd78808895a6be2cfff71ceddc81bad1a",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 229,
+      "matched": 189,
+      "explicit_matched": 0,
+      "unscorable": 40,
+      "recall": 0.8253275109170306,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 17,
+      "matched": 17,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 624,
+      "matched": 566,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.907051282051282,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/tencent/videolite/android/webview/webclient/mtt/MttFileUploadInjectedChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLayoutAlgorithm",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAppCachePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setGeolocationDatabasePath",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "runtime_expression_equivalence_not_supported"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setScrollByCallBack",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "overScrollBy",
+      "signature": "Lu/y/h0/a/t3/h$a;->overScrollBy(IIIIIIIIZ)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/tencent/videolite/android/business/framework/activity/H5BaseActivity;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/tencent/videolite/android/business/framework/activity/H5BaseActivity;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/tencent/videolite/android/business/framework/activity/H5BaseActivity;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/tencent/videolite/android/business/framework/activity/H5BaseActivity;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/tencent/videolite/android/business/framework/activity/H5BaseActivity;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onDownloadStart",
+      "signature": "Lcom/tencent/videolite/android/ui/KingOpenActivity$f;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "setOnTouchListener",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onTouch",
+      "signature": "Lcom/tencent/videolite/android/business/webview/H5ArticleView$a;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback_registration",
+      "name": "evaluateJavascript",
+      "signature": null,
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceiveValue",
+      "signature": "Lcom/tencent/videolite/android/ui/ArticleActivity$d;->onReceiveValue(Ljava/lang/Object;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    }
+  ],
+  "emitted_activities": 24,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 7,
+  "scorer_sha256": "b22eb10f904db752d06b1de1a18b8d12177ba9ab752af2d087231040e79e87db",
+  "webview_constraint_coverage": {
+    "expected": 870,
+    "with_source_type_constraint": 0,
+    "activity_only": 870,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 11,
+    "matched": 11,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 43,
+  "capability_granularity": {
+    "setting": {
+      "expected": 229,
+      "matched": 189,
+      "recall": 0.8253275109170306
+    },
+    "bridge_registration": {
+      "expected": 9,
+      "matched": 9,
+      "recall": 1.0
+    },
+    "bridge_member": {
+      "expected": 8,
+      "matched": 8,
+      "recall": 1.0
+    },
+    "callback_member": {
+      "expected": 553,
+      "matched": 505,
+      "recall": 0.9132007233273056
+    },
+    "callback_registration": {
+      "expected": 71,
+      "matched": 61,
+      "recall": 0.8591549295774648
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractStandardFullScreenActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.FeedBackActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.ArticleActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.ui.KingOpenActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.framework.activity.H5BaseActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.interact.H5InteractActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    },
+    {
+      "activity": "com.tencent.videolite.android.business.webview.hollywood.ReportActivity",
+      "webview": null,
+      "kind": "callback",
+      "name": "openFileChooser",
+      "status": "source-declared-unforwarded",
+      "reason": "source_host_binding_not_confirmed"
+    }
+  ],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 24
+    },
+    "emitted": 24,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 24,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

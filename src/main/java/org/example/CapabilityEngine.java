@@ -1113,9 +1113,12 @@ final class CapabilityEngine {
         if(read)return;
         List<String> types=parameters(id.substring(id.indexOf('(')+1,id.indexOf(')')));if(!call.isStatic()){types=new ArrayList<>(types);types.add(0,desc(owner(id)));}
         for(int i=0;i<call.args().size();i++)for(V actual:alternatives(priorityBinding(call.args().get(i),job,h,0))){
+            // Primitive descriptors intentionally have no reference class. Such
+            // arguments cannot carry the Map, even when their value is unknown.
+            String referenceType=actual.type()!=null?actual.type():i<types.size()?CapabilityIndex.cls(types.get(i)):null;
             if(h.constantMapSnapshots.remove(actual.id()))h.gaps.add("static_map_constant_invalidated:escape:"+id);
-            else if((actual.kind().equals("unknown")||actual.kind().equals("field_object")||actual.kind().startsWith("return"))&&
-                Set.of("java.lang.Object","java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.io.Serializable","java.lang.Cloneable").contains(actual.type()==null?i<types.size()?CapabilityIndex.cls(types.get(i)):"":actual.type())){
+            else if(referenceType!=null&&(actual.kind().equals("unknown")||actual.kind().equals("field_object")||actual.kind().startsWith("return"))&&
+                Set.of("java.lang.Object","java.util.Map","java.util.HashMap","java.util.LinkedHashMap","java.io.Serializable","java.lang.Cloneable").contains(referenceType)){
                 h.constantMapSnapshots.clear();h.gaps.add("static_map_constant_invalidated:unresolved_escape:"+id);
             }
         }

@@ -1,0 +1,3622 @@
+{
+  "oracle_sha256": "45c13709769c39601fc139bdf188ccafac24150543c98934d604ce5ac9237dc2",
+  "report_sha256": "4cb5f2a6989ceb420bb1551e1ccd9076351c0998d9e3bf35d5bf995754f3ddf1",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v3-facts/mango.jsonl",
+  "apk_sha256": "65533b5fb593db4179791fd028865e53342c729b7228f73d820b0b65afe397f5",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 608,
+      "matched": 565,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.9292763157894737,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 1259,
+      "matched": 1185,
+      "explicit_matched": 0,
+      "unscorable": 2,
+      "recall": 0.9412231930103256,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 662,
+      "matched": 530,
+      "explicit_matched": 10,
+      "unscorable": 0,
+      "recall": 0.8006042296072508,
+      "explicit_recall": 0.015105740181268883
+    },
+    "webview_operation": {
+      "expected": 3,
+      "matched": 2,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.6666666666666666,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "webview": "com.mgtb.money.web.webview.ProgressWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtb.money.web.webview.ProgressWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "WebChromeClient.openFileChooser",
+      "signature": "Lcom/mgtb/money/web/webview/WebClientImpl$ProgressWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "webview": "com.mgtb.money.web.webview.ProgressWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtb.money.web.webview.ProgressWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "WebChromeClient.openFileChooser",
+      "signature": "Lcom/mgtb/money/web/webview/WebClientImpl$ProgressWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdWebActivity",
+      "webview": "com.mgtb.money.web.webview.ProgressWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtb.money.web.webview.ProgressWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "delegated WebViewClient.shouldOverrideUrlLoading",
+      "signature": "Lcom/mgtb/money/web/WebFragment$c;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "webview": "com.mgtb.money.web.webview.ProgressWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtb.money.web.webview.ProgressWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "WebChromeClient.openFileChooser",
+      "signature": "Lcom/mgtb/money/web/webview/WebClientImpl$ProgressWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "webview": "com.mgtb.money.web.webview.ProgressWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtb.money.web.webview.ProgressWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "WebChromeClient.openFileChooser",
+      "signature": "Lcom/mgtb/money/web/webview/WebClientImpl$ProgressWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtb.money.web.ThirdFullWebActivity",
+      "webview": "com.mgtb.money.web.webview.ProgressWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtb.money.web.webview.ProgressWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "delegated WebViewClient.shouldOverrideUrlLoading",
+      "signature": "Lcom/mgtb/money/web/WebFragment$c;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getDefaultVideoPoster",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getDefaultVideoPoster",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getDefaultVideoPoster",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity$1;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity$1;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity$9;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "JS_LANDING_PAGE_LOG_OBJ",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/i/z$c;->getUrl()Ljava/lang/String;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "JS_LANDING_PAGE_LOG_OBJ",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/i/z$c;->readHtml(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "JS_LANDING_PAGE_LOG_OBJ",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/i/z$c;->readPercent(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": "Landroid/webkit/WebSettings;->setUserAgentString(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/z;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getDefaultVideoPoster",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsBeforeUnload",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/widget/c/zx;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity$1;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity$1;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/activity/base/TTVideoWebPageActivity$9;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "JS_LANDING_PAGE_LOG_OBJ",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/i/z$c;->getUrl()Ljava/lang/String;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "JS_LANDING_PAGE_LOG_OBJ",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/i/z$c;->readHtml(Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "com.bytedance.sdk.component.widget.SSWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "JS_LANDING_PAGE_LOG_OBJ",
+      "signature": "Lcom/bytedance/sdk/openadsdk/core/i/z$c;->readPercent(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "webview": "com.hunantv.imgo.h5.browser.MoWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.h5.browser.MoWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "<dynamic-jsInterfaceMap>",
+      "signature": "",
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "transport_identity_without_native_registration_not_supported"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/platform/usercenter/jsbridge/JsBridgeWebChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lcom/platform/usercenter/jsbridge/JsBridgeWebChromeClient;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "controlNativeTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->controlNativeTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "getClientContext",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getClientContext(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "getHeaderJson",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getHeaderJson(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)Ljava/lang/String;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "getToken",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->getToken(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "onDomLoadFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onDomLoadFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "onFinish",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->onFinish(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "openBrowser",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->openBrowser(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "refresh",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->refresh(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "setClientTitle",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setClientTitle(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "setWebViewHeight",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->setWebViewHeight(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "showClientDialog",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showClientDialog(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "showToast",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->showToast(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "startActivity",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->startActivity(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "statisticsDCS",
+      "signature": "Lcom/platform/oms/ui/js/JSCommondMethod;->statisticsDCS(Landroid/webkit/WebView;Lorg/json/JSONObject;Lcom/platform/usercenter/jsbridge/JsCallback;Landroid/os/Handler;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "webview": "com.platform.oms.ui.FragmentWebLoadingBase",
+      "webview_constraint": {
+        "types": [
+          "com.platform.oms.ui.widget.TimeoutCheckWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "<dynamic-method-class-names>",
+      "signature": "",
+      "reason": "unscorable_oracle",
+      "scoring_limitation": "transport_identity_without_native_registration_not_supported"
+    },
+    {
+      "activity": "com.hunantv.imgo.xweb.XWebActivity",
+      "webview": "com.hunantv.imgo.xweb.web.XWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.xweb.web.XWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/hunantv/imgo/xweb/browser/RootWebChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.hunantv.imgo.xweb.XWebActivity",
+      "webview": "com.hunantv.imgo.xweb.web.XWebView",
+      "webview_constraint": {
+        "types": [
+          "com.hunantv.imgo.xweb.web.XWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/hunantv/imgo/xweb/browser/RootWebChromeClient;->openFileChooser(Lcom/tencent/smtt/sdk/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "webview": "com.mgsz.h5.ImgoWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgsz.h5.ImgoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "webview": "com.mgsz.h5.ImgoWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgsz.h5.ImgoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.h5.WebContainerActivity",
+      "webview": "com.mgsz.h5.ImgoWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgsz.h5.ImgoWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "openFileChooser",
+      "signature": "Lcom/mgsz/h5/browser/RootWebChromeClient;->openFileChooser(Landroid/webkit/ValueCallback;Ljava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Lcom/mgadplus/brower/b;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lcom/mgadplus/brower/b;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/mgadplus/brower/b;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lcom/mgadplus/brower/b;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/mgadplus/brower/b;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/mgadplus/brower/b;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/mgadplus/brower/b;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgadplus.brower.CustomWebActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/mgadplus/brower/c;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "webview_operation",
+      "name": "loadUrl",
+      "signature": "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDefaultTextEncodingName",
+      "signature": "Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSupportMultipleWindows",
+      "signature": "Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSavePassword",
+      "signature": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": "Landroid/webkit/WebSettings;->setPluginState(Landroid/webkit/WebSettings$PluginState;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": "Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setCacheMode",
+      "signature": "Landroid/webkit/WebSettings;->setCacheMode(I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setLoadsImagesAutomatically",
+      "signature": "Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": "Landroid/webkit/WebSettings;->setMixedContentMode(I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgsz.detail.ui.AntiqueDetailActivity",
+      "webview": "com.google.android.filament.utils.databinding.ShNftWebviewLayoutBinding.webview:Landroid/webkit/WebView;",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "WebViewClient.shouldOverrideUrlLoading",
+      "signature": "Lcom/mgsz/hunantv/nft/threed/NftWebviewLayout$a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgtv.diana.sdk.page.view.PageWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtv.diana.sdk.page.view.PageWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtv.diana.sdk.service.view.ServiceWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgtv.diana.sdk.service.view.ServiceWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgtv.diana.sdk.service.view.ServiceWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/hunantv/imgo/h5/browser/MoWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTMiddlePageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTMiddlePageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTPlayableWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoScrollWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTVideoWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.activity.base.TTWebPageActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoLandscapeActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTFullScreenVideoLandscapeActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoLandscapeActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "IESJSBridge",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.core.component.reward.activity.TTRewardVideoLandscapeActivity",
+      "webview": "android.webkit.WebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "invokeMethod",
+      "signature": "Lcom/bytedance/sdk/component/adexpress/bp/z;->invokeMethod(Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "openWebview",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$x;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "interactReport",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$y;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "pageReady",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$z;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "playEnd",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$a0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "playError",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$b0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "muteChange",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$c0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "disableNativeEvent",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$d0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "showNativeVoiceButton",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$e0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "showNativeCloseButton",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$f0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "triggerNativeAction",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$h0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "postMessage",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$i0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "getH5Config",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$j0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "adEventReport",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$k0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "getAdspaceInfo",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$l0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "occupyScreenArea",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "message_handler",
+      "name": "handler",
+      "signature": "Lam/a$m0;->handler(Ljava/lang/String;Lcom/mgadplus/brower/jsbridge/d;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewLifeCycleCallback",
+      "signature": "Lcom/mgadplus/brower/ImgoAdWebView;->setWebViewLifeCycleCallback(Lcom/mgadplus/brower/g;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lam/a$w;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lam/a$w;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lam/a$w;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lam/a$w;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.mgtv.ui.videoplay.MGVideoPlayActivity",
+      "webview": "com.mgadplus.brower.ImgoAdWebView",
+      "webview_constraint": {
+        "types": [
+          "com.mgadplus.brower.ImgoAdWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lam/a$w;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "AndroidInterface",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getStyleOptions",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$DTFJSBridge;->getStyleOptions()Ljava/lang/String;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.LandFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebViewClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "AndroidInterface",
+      "signature": "",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getStyleOptions",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$DTFJSBridge;->getStyleOptions()Ljava/lang/String;",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebChromeClient;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    },
+    {
+      "activity": "com.dtf.face.ui.PortFaceLoadingActivity",
+      "webview": "com.dtf.face.ui.widget.ToygerWebView",
+      "webview_constraint": {
+        "types": [
+          "com.dtf.face.ui.widget.ToygerWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/dtf/face/ui/widget/ToygerWebView$ToygerWebViewClient;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched",
+      "scoring_limitation": null
+    }
+  ],
+  "emitted_activities": 80,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 7,
+  "scorer_sha256": "b22eb10f904db752d06b1de1a18b8d12177ba9ab752af2d087231040e79e87db",
+  "webview_constraint_coverage": {
+    "expected": 2532,
+    "with_source_type_constraint": 2532,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 43,
+    "matched": 40,
+    "missing": [
+      "com.dtf.face.ui.LandFaceLoadingActivity",
+      "com.dtf.face.ui.PortFaceLoadingActivity",
+      "com.mgsz.detail.ui.AntiqueDetailActivity"
+    ],
+    "recall": 0.9302325581395349
+  },
+  "duplicate_oracle_rows": 70,
+  "capability_granularity": {
+    "setting": {
+      "expected": 608,
+      "matched": 565,
+      "recall": 0.9292763157894737
+    },
+    "bridge_member": {
+      "expected": 1150,
+      "matched": 1104,
+      "recall": 0.96
+    },
+    "callback_member": {
+      "expected": 645,
+      "matched": 519,
+      "recall": 0.8046511627906977
+    },
+    "bridge_registration": {
+      "expected": 109,
+      "matched": 81,
+      "recall": 0.7431192660550459
+    },
+    "webview_operation": {
+      "expected": 3,
+      "matched": 2,
+      "recall": 0.6666666666666666
+    },
+    "callback_registration": {
+      "expected": 17,
+      "matched": 11,
+      "recall": 0.6470588235294118
+    }
+  },
+  "unknown_target_surfaces": [
+    {
+      "activity": "com.opos.cmn.biz.web.activity.apiimpl.AdWebActivity",
+      "name": "<dynamic-jsInterfaceMap>",
+      "status": "registered-target-unknown"
+    },
+    {
+      "activity": "com.platform.oms.ui.LoadingWebActivity",
+      "name": "<dynamic-method-class-names>",
+      "status": "registered-target-unknown"
+    }
+  ],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 80
+    },
+    "emitted": 80,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 80,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

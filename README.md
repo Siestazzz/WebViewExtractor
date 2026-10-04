@@ -1,6 +1,6 @@
 # WebViewExtractor
 
-最新实测为 [generic v19](docs/validation/GENERIC_V19.md)，严格验收 **0/10**。九个 App 在同一修订事实集上命中计数未提升；芒果 TV 因新增逻辑空指针提前失败，番茄小说触及硬时限。本版作为失败迭代保留，修复版 v20 正在重跑。源码与评分修正不等于工具改善，完整源审、精度、新样本和隔离重复性能测试仍未完成。以下旧版本说明保留作为历史记录。
+最新实测为 [generic v20](docs/validation/GENERIC_V20.md)，严格验收 **0/10**。芒果 TV 空指针已修复，命中恢复到异常前水平；其余九 App 在同一事实集上没有提升。十 App 约 52～592 秒，均为 partial，六个超过 300 秒目标。完整链路、源审、精度、新样本及隔离重复性能仍待验证。以下旧版本说明保留作为历史记录。
 
 
 从 Android APK 提取 Activity → WebView → Bridge、Settings、Client/回调能力画像。默认实现使用 DEX 索引、按需方法摘要和对象绑定；先给全部 Activity 初扫机会，再恢复现场轮流深入分析。

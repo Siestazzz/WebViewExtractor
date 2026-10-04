@@ -21,7 +21,14 @@ final class StaticMapCertificateFixture {
  static void run()throws Exception{for(String mode:List.of("interface","sparse","escape","alias","overwrite","backedge")){
   Path dex=Files.createTempFile("static-map-certificate-",".dex");try{DexFileFactory.writeDexFile(dex.toString(),build(mode));long deadline=System.nanoTime()+30_000_000_000L;var idx=new CapabilityIndex();idx.read(dex,deadline);var engine=new CapabilityEngine(idx,new ApkInventory(),deadline);var host=engine.new Host("switchfactory.Host");var method=idx.resolve(IntegerSwitchFactoryFixture.ROUTER+"->select(Ljava/lang/String;)"+PRODUCT);var job=new CapabilityEngine.Job(method,List.of(V.literal("java.lang.String","switchfactory.Slot130")),List.of("certificate"),false);V value=IntegerSwitchFactoryFixture.select(engine,job,host,130);
    boolean positive=mode.equals("interface")||mode.equals("sparse");if(positive?!value.kind().equals("object")||!value.type().equals("switchfactory.Slot130"):!value.kind().equals("unknown")||!host.constantMapSnapshots.isEmpty())throw new AssertionError("Certificate boundary "+mode+" "+value+" "+host.gaps);
-   if(positive){engine.invalidateConstantMapEscape(host,job,new Call("Lunknown/Consumer;->consume(Ljava/lang/Object;)V",0,List.of(expr("return","java.lang.Object","Lalias/Helper;->get()Ljava/lang/Object;",List.of())),true,false,false));if(!host.constantMapSnapshots.isEmpty()||!IntegerSwitchFactoryFixture.select(engine,job,host,130).kind().equals("unknown"))throw new AssertionError("Erased returned alias escaped without invalidation");}
+   if(positive){
+    // An unknown primitive argument cannot alias the certified Map. A primitive
+    // descriptor has no reference class name and must never reach Set.of.contains(null).
+    for(String primitive:List.of("Z","B","C","S","I","J","F","D")){
+     engine.invalidateConstantMapEscape(host,job,new Call("Lunknown/Consumer;->consume("+primitive+")V",0,List.of(UNKNOWN),true,false,false));
+     if(host.constantMapSnapshots.isEmpty())throw new AssertionError("Primitive escape invalidated Map certificate: "+primitive);
+    }
+    engine.invalidateConstantMapEscape(host,job,new Call("Lunknown/Consumer;->consume(Ljava/lang/Object;)V",0,List.of(expr("return","java.lang.Object","Lalias/Helper;->get()Ljava/lang/Object;",List.of())),true,false,false));if(!host.constantMapSnapshots.isEmpty()||!IntegerSwitchFactoryFixture.select(engine,job,host,130).kind().equals("unknown"))throw new AssertionError("Erased returned alias escaped without invalidation");}
   }finally{Files.deleteIfExists(dex);}
  }System.out.println("StaticMapCertificateFixture PASS: standard Map interface, sparse factory, branch/alias/escape/overwrite/backedge and erased alias invalidation.");}
  public static void main(String[]args)throws Exception{run();}

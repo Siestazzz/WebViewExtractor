@@ -1,0 +1,20 @@
+{
+  "problem": "v19 Mango worker crashed at Set.of.contains(null) in constant Map invalidation for unknown primitive argument.",
+  "fix": "Only perform possible Map reference-type membership checks when the resolved reference type is nonnull. Direct object identity invalidation remains unconditional.",
+  "baseline": "New fixture fails against frozen v19 jar at the same stack frame.",
+  "validation": "All eight primitive descriptors preserve existing certificate without throwing; existing erased reference alias test still invalidates. Full capability/compact/jar suite passes in26s.",
+  "logs": [
+    {
+      "path": "test/runs/generic-v19/com.hunantv.imgo.activity/run.log",
+      "sha256": "618177c1f0b69f9f0f9698189cf7085b2675b3d931e58ea2663509209cbe1770"
+    },
+    {
+      "path": "test/runs/generic-v20-primitive-escape-baseline.log",
+      "sha256": "9e31bbe57f70bf2ccdb8f5e7222721479a400f5a9cd4140fe15e790757e3c852"
+    },
+    {
+      "path": "test/runs/generic-v20-primitive-escape-full.log",
+      "sha256": "7af351074b91ce485e9f8ac21aa426ca9a8306645b1d93f8a34a217f88e84246"
+    }
+  ]
+}
