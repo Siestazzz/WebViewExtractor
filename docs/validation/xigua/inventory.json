@@ -23,6 +23,7 @@
     "com.android.ttcjpaysdk.verify.activity.DyStepUpIFrameActivity",
     "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity",
     "com.bytedance.bdturing.BdTuringVerifyActivity",
+    "com.bytedance.bdturing.BdTuringWebLiveActivity",
     "com.bytedance.bdturing.comonui.CommonWebActivity",
     "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
     "com.bytedance.bdturing.livedetect.TuringLiveDetectWebActivity",
@@ -32,6 +33,7 @@
     "com.bytedance.sdk.account.twice_verify.TwiceVerifyWebActivity",
     "com.bytedance.sdk.open.aweme.mobile_auth.webview.WebViewActivity",
     "com.bytedance.sdk.open.douyin.ui.DouYinWebAuthorizeActivity",
+    "com.bytedance.ug.sdk.luckycat.impl.browser.LuckyCatBrowserActivity",
     "com.ixigua.browser.specific.AggregationBrowserActivity",
     "com.ixigua.browser.specific.BrowserActivity",
     "com.ixigua.browser.specific.PureBrowserActivity",
@@ -40,13 +42,14 @@
     "com.learning.learningsdk.activity.LearningArticleActivity",
     "com.learning.learningsdk.activity.LearningAudioActivity",
     "com.learning.learningsdk.activity.LearningVideoActivity",
+    "com.sina.weibo.sdk.web.WebActivity",
     "com.ss.android.downloadlib.addownload.compliance.AppDescriptionInfoActivity",
     "com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity",
     "com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity",
     "com.ss.android.downloadlib.addownload.compliance.AppRegInfoActivity",
     "com.unionpay.UPPayWapActivity"
   ],
-  "canonical_fact_count": 228,
+  "canonical_fact_count": 500,
   "acceptance": "unproven",
   "holdout_status": "10 Activity selection sealed before body/report analysis",
   "present_strata": {
@@ -66,7 +69,8 @@
       "com.learning.learningsdk.activity.LearningVideoActivity",
       "com.bytedance.bdturing.BdTuringVerifyActivity",
       "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity",
-      "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity"
+      "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+      "com.bytedance.bdturing.BdTuringWebLiveActivity"
     ],
     "android_layout_webview": [
       "com.ss.android.downloadlib.addownload.compliance.AppRegInfoActivity",
@@ -82,7 +86,11 @@
     "sdk_direct_webview": [
       "com.bytedance.sdk.open.aweme.mobile_auth.webview.WebViewActivity",
       "com.unionpay.UPPayWapActivity",
-      "com.bytedance.sdk.open.douyin.ui.DouYinWebAuthorizeActivity"
+      "com.bytedance.sdk.open.douyin.ui.DouYinWebAuthorizeActivity",
+      "com.sina.weibo.sdk.web.WebActivity"
+    ],
+    "sdk_fragment_dynamic_custom_view": [
+      "com.bytedance.ug.sdk.luckycat.impl.browser.LuckyCatBrowserActivity"
     ]
   },
   "source_audit_scope": "source-first deep subset; whole Manifest and lexical entries inventoried, not fully verified",

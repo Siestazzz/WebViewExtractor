@@ -1,0 +1,528 @@
+{
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "reviewer": "GPT-6.1 Sol",
+  "hosts": [
+    "com.ixigua.browser.specific.BrowserActivity",
+    "com.ixigua.browser.specific.PureBrowserActivity",
+    "com.ixigua.browser.specific.AggregationBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserActivity",
+    "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+  ],
+  "provenance": "source-first",
+  "files": [
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/BrowserScene.java",
+      "sha256": "966626b0f2ae1b0ddf041e1dc22d7ae998e6819ff23ee63aec5f293c948f973d",
+      "entry_lines": [
+        {
+          "line": 606,
+          "text": "if (webView.getSettings() != null) {"
+        },
+        {
+          "line": 607,
+          "text": "this.e.getSettings().setBlockNetworkLoads(false);"
+        },
+        {
+          "line": 647,
+          "text": "this.n = ((IJSBridgeService) ServiceManager.getService(IJSBridgeService.class)).getTTAndroidObject(this.i);"
+        },
+        {
+          "line": 1412,
+          "text": "webView.getSettings().setBlockNetworkLoads(true);"
+        },
+        {
+          "line": 1562,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(sTMBridgeModule, getLifecycle());"
+        },
+        {
+          "line": 1567,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.b2, getLifecycle());"
+        },
+        {
+          "line": 1568,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.Z, getLifecycle());"
+        },
+        {
+          "line": 1569,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.H0, getLifecycle());"
+        },
+        {
+          "line": 1570,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.L0, getLifecycle());"
+        },
+        {
+          "line": 1571,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.V0, getLifecycle());"
+        },
+        {
+          "line": 1572,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.v1, getLifecycle());"
+        },
+        {
+          "line": 1573,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.x1, getLifecycle());"
+        },
+        {
+          "line": 1574,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.L1, getLifecycle());"
+        },
+        {
+          "line": 1575,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.T1, getLifecycle());"
+        },
+        {
+          "line": 1576,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.y1, getLifecycle());"
+        },
+        {
+          "line": 1577,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.H1, getLifecycle());"
+        },
+        {
+          "line": 1578,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(this.P1, getLifecycle());"
+        },
+        {
+          "line": 1581,
+          "text": "BridgeManager.INSTANCE.registerBridgeWithLifeCycle(it.next(), getLifecycle());"
+        },
+        {
+          "line": 1594,
+          "text": "iXBridgeRegisterService.registerXBridgesByContext(this.i, this.e, iXBridgeRegisterService.getWebRegistry());"
+        },
+        {
+          "line": 1596,
+          "text": "JsBridgeManager.INSTANCE.delegateJavaScriptInterface(this.e, getLifecycle());"
+        },
+        {
+          "line": 1599,
+          "text": "this.e.setWebViewClient(q1());"
+        },
+        {
+          "line": 1602,
+          "text": "this.e.setWebChromeClient(myWebChromeClient);"
+        },
+        {
+          "line": 1609,
+          "text": "webView.getSettings().setUserAgentString(e);"
+        },
+        {
+          "line": 1615,
+          "text": "webView2.removeJavascriptInterface(\"searchBoxJavaBridge_\");"
+        },
+        {
+          "line": 1616,
+          "text": "webView2.removeJavascriptInterface(GeckoManager.CHANNEL_ACCESSIBILITY);"
+        },
+        {
+          "line": 1617,
+          "text": "webView2.removeJavascriptInterface(\"accessibilityTraversal\");"
+        },
+        {
+          "line": 1623,
+          "text": "this.e.getSettings().setJavaScriptEnabled(true);"
+        },
+        {
+          "line": 1624,
+          "text": "this.e.addJavascriptInterface(this.n, \"TTAndroidObject\");"
+        },
+        {
+          "line": 1627,
+          "text": "this.e.getSettings().setCacheMode(2);"
+        },
+        {
+          "line": 1629,
+          "text": "WebSettings settings = this.e.getSettings();"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/webview/SSWebSettings.java",
+      "sha256": "bfe220d795722e0ad3b3f8c071deb20422b7b45f93370a81180a025b42191843",
+      "entry_lines": [
+        {
+          "line": 39,
+          "text": "if (webView == null || this.a.get() == null || (settings = webView.getSettings()) == null) {"
+        },
+        {
+          "line": 67,
+          "text": "JellyBeanMR1V17Compat.setMediaPlaybackRequiresUserGesture(webView.getSettings(), !this.d);"
+        },
+        {
+          "line": 78,
+          "text": "if ((view instanceof WebView) && (hitTestResult = (webView2 = (WebView) view).getHitTestResult()) != null && webView2.getSettings() != null && (hitTestResult.getType() == 5 || hitTestResult.getType() == 8)) {"
+        },
+        {
+          "line": 87,
+          "text": "WebSettings settings2 = webView2.getSettings();"
+        },
+        {
+          "line": 102,
+          "text": "LollipopV21Compat.setMixedContentMode(webView.getSettings(), 0);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/webview/WebViewClientDelegate.java",
+      "sha256": "09756c1122d8db2f833119267b7634460ea9f07d0a7eb24982545c8b2ba346b9",
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/webview/UploadableWebChromeClient.java",
+      "sha256": "dcf1963a5c6076c34b921068057e52fc2f534f77415c2446552eb428bf52ac8d",
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/ArticleBrowserScene.java",
+      "sha256": "17cfc354adbbadebf37939e12a2b17cb7374bf5d053192da015d53889f8d0319",
+      "entry_lines": [
+        {
+          "line": 646,
+          "text": "ITTAndroidObject tTAndroidObject = ((IJSBridgeService) ServiceManager.getService(IJSBridgeService.class)).getTTAndroidObject(getActivity());"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/scene/SearchChildBrowserScene.java",
+      "sha256": "880b13c3b231750058f6daacb59ee9a8841f51de1b3363d31d5c5130f20578c0",
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/webview/SSWebView.java",
+      "sha256": "65028fec769eda2cc14f9324174cf97b3638961fbeeeb2694a7e9141c3fd5c9a",
+      "entry_lines": [
+        {
+          "line": 179,
+          "text": "return getSettings();"
+        },
+        {
+          "line": 359,
+          "text": "public void setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 361,
+          "text": "super.setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 367,
+          "text": "public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 369,
+          "text": "super.setWebViewClient(webViewClient);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/webx/core/webview/WebXWebView.java",
+      "sha256": "d1159492c6fdb07a1e236174b50e3baf654c4876fe2ee219d5d1b767fd4e378d",
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/bytedance/webx/core/webview/WebViewContainer.java",
+      "sha256": "f4b3104774c22ddadaf24d69d4d58eecf714c1a58268e389e21cbfe3d49528ff",
+      "entry_lines": [
+        {
+          "line": 46,
+          "text": "public static final String EVENT_addJavascriptInterface = \"addJavascriptInterface\";"
+        },
+        {
+          "line": 106,
+          "text": "public static final String EVENT_removeJavascriptInterface = \"removeJavascriptInterface\";"
+        },
+        {
+          "line": 116,
+          "text": "public static final String EVENT_setWebChromeClient = \"setWebChromeClient\";"
+        },
+        {
+          "line": 117,
+          "text": "public static final String EVENT_setWebViewClient = \"setWebViewClient\";"
+        },
+        {
+          "line": 159,
+          "text": "public WebSettings getSettings() {"
+        },
+        {
+          "line": 161,
+          "text": "return a instanceof ListenerStub ? ((ListenerStub) a).getSettings() : getExtendable().__super_getSettings();"
+        },
+        {
+          "line": 498,
+          "text": "public void removeJavascriptInterface(@NonNull String str) {"
+        },
+        {
+          "line": 499,
+          "text": "AbsListenerStub a = EventManager.a(getExtendableContext(), this, WebViewContainer.EVENT_removeJavascriptInterface);"
+        },
+        {
+          "line": 501,
+          "text": "((ListenerStub) a).removeJavascriptInterface(str);"
+        },
+        {
+          "line": 503,
+          "text": "getExtendable().__super_removeJavascriptInterface(str);"
+        },
+        {
+          "line": 566,
+          "text": "public void setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 567,
+          "text": "AbsListenerStub a = EventManager.a(getExtendableContext(), this, WebViewContainer.EVENT_setWebChromeClient);"
+        },
+        {
+          "line": 569,
+          "text": "((ListenerStub) a).setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 571,
+          "text": "getExtendable().__super_setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 576,
+          "text": "public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 577,
+          "text": "AbsListenerStub a = EventManager.a(getExtendableContext(), this, WebViewContainer.EVENT_setWebViewClient);"
+        },
+        {
+          "line": 579,
+          "text": "((ListenerStub) a).setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 581,
+          "text": "getExtendable().__super_setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 606,
+          "text": "public void addJavascriptInterface(Object obj, String str) {"
+        },
+        {
+          "line": 607,
+          "text": "AbsListenerStub a = EventManager.a(getExtendableContext(), this, WebViewContainer.EVENT_addJavascriptInterface);"
+        },
+        {
+          "line": 609,
+          "text": "((ListenerStub) a).addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 611,
+          "text": "getExtendable().__super_addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 855,
+          "text": "public WebSettings __super_getSettings() {"
+        },
+        {
+          "line": 856,
+          "text": "return super.getSettings();"
+        },
+        {
+          "line": 954,
+          "text": "public WebSettings getSettings() {"
+        },
+        {
+          "line": 957,
+          "text": "return super.getSettings();"
+        },
+        {
+          "line": 961,
+          "text": "WebSettings settings = ((ListenerStub) b).getSettings();"
+        },
+        {
+          "line": 1308,
+          "text": "public void __super_removeJavascriptInterface(@NonNull String str) {"
+        },
+        {
+          "line": 1309,
+          "text": "super.removeJavascriptInterface(str);"
+        },
+        {
+          "line": 1336,
+          "text": "public void __super_setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 1337,
+          "text": "super.setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 1340,
+          "text": "public void __super_setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 1341,
+          "text": "super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 1469,
+          "text": "public WebSettings getSettings(ExtensionParam... extensionParamArr) {"
+        },
+        {
+          "line": 1472,
+          "text": "WebSettings settings = getSettings();"
+        },
+        {
+          "line": 1740,
+          "text": "public void removeJavascriptInterface(@NonNull String str) {"
+        },
+        {
+          "line": 1741,
+          "text": "AbsListenerStub b = EventManager.b(getExtendableContext(), EVENT_removeJavascriptInterface);"
+        },
+        {
+          "line": 1745,
+          "text": "((ListenerStub) b).removeJavascriptInterface(str);"
+        },
+        {
+          "line": 1749,
+          "text": "super.removeJavascriptInterface(str);"
+        },
+        {
+          "line": 1831,
+          "text": "public void setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 1832,
+          "text": "AbsListenerStub b = EventManager.b(getExtendableContext(), EVENT_setWebChromeClient);"
+        },
+        {
+          "line": 1836,
+          "text": "((ListenerStub) b).setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 1840,
+          "text": "super.setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 1844,
+          "text": "public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 1845,
+          "text": "AbsListenerStub b = EventManager.b(getExtendableContext(), EVENT_setWebViewClient);"
+        },
+        {
+          "line": 1849,
+          "text": "((ListenerStub) b).setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 1853,
+          "text": "super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 1923,
+          "text": "public void __super_addJavascriptInterface(Object obj, String str) {"
+        },
+        {
+          "line": 1924,
+          "text": "super.addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 1980,
+          "text": "public void addJavascriptInterface(Object obj, String str) {"
+        },
+        {
+          "line": 1981,
+          "text": "AbsListenerStub b = EventManager.b(getExtendableContext(), EVENT_addJavascriptInterface);"
+        },
+        {
+          "line": 1985,
+          "text": "((ListenerStub) b).addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 1989,
+          "text": "super.addJavascriptInterface(obj, str);"
+        },
+        {
+          "line": 2198,
+          "text": "public void removeJavascriptInterface(@NonNull String str, ExtensionParam... extensionParamArr) {"
+        },
+        {
+          "line": 2201,
+          "text": "removeJavascriptInterface(str);"
+        },
+        {
+          "line": 2262,
+          "text": "public void setWebChromeClient(WebChromeClient webChromeClient, ExtensionParam... extensionParamArr) {"
+        },
+        {
+          "line": 2265,
+          "text": "setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 2269,
+          "text": "public void setWebViewClient(WebViewClient webViewClient, ExtensionParam... extensionParamArr) {"
+        },
+        {
+          "line": 2272,
+          "text": "setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 2347,
+          "text": "public void addJavascriptInterface(Object obj, String str, ExtensionParam... extensionParamArr) {"
+        },
+        {
+          "line": 2350,
+          "text": "addJavascriptInterface(obj, str);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/webx/core/webview/inner/WebViewContainerInner.java",
+      "sha256": "5bda5fbeddb7307cea41703497a771a3b13f9c1d42ab5e788e7ba187e950e591",
+      "entry_lines": [
+        {
+          "line": 117,
+          "text": "super.setWebChromeClient(webChromeContainerClient);"
+        },
+        {
+          "line": 121,
+          "text": "public void setWebChromeClient(WebChromeClient webChromeClient) {"
+        },
+        {
+          "line": 123,
+          "text": "super.setWebChromeClient(webChromeClient);"
+        },
+        {
+          "line": 125,
+          "text": "this.mWebChromeClient.setWebChromeClientDelegate(webChromeClient);"
+        },
+        {
+          "line": 130,
+          "text": "public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 132,
+          "text": "super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 134,
+          "text": "this.mWebViewClient.setWebViewClientDelegate(webViewClient);"
+        },
+        {
+          "line": 152,
+          "text": "super.setWebViewClient(webViewContainerClient);"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "bridge": {
+      "status": "partial",
+      "confirmed": "TTAndroidObject exact factory concrete type plus2 inherited annotated members; JS2NativeBridge adapter sameView plus3 annotated members",
+      "unresolved": "IXBridgeRegisterService.registerXBridgesByContext web-registry route and framework event extension effects not fully closed"
+    },
+    "setting": {
+      "status": "partial",
+      "confirmed": "SSWebSettings complete setters/compat plus lifecycle block-network/cache branches and runtime UA inventoried",
+      "unresolved": "pooled/ad view constructor and framework extension settings outside shared core not exhaustively reviewed"
+    },
+    "callback": {
+      "status": "partial",
+      "confirmed": "actual custom Client/Chrome own/inherited methods listed and added",
+      "unresolved": "WebX Env installed delegate/EventManager extension chain and3legacy UploadableWebChromeClient hooks not yet fully covered"
+    }
+  },
+  "deep_audit_complete": false
+}

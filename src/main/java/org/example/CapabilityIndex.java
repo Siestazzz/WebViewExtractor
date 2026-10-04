@@ -26,6 +26,23 @@ final class CapabilityIndex {
     final Map<String,List<String>> subtypeCandidates=new HashMap<>();
     final Set<String> bindingObjects=new HashSet<>();
     final Set<String> fragmentFactoryFields=new HashSet<>(), componentProtocols=new HashSet<>();
+    final Set<String> clientDelegations=new HashSet<>();
+    final Map<String,Boolean> clientDelegationReachability=new HashMap<>();
+    final Set<String> clientDelegationBudgetDiagnostics=new HashSet<>();
+    static boolean frameworkComponentImplementation(String type){
+        return type!=null&&(type.startsWith("android.")||type.startsWith("androidx.fragment.")||type.startsWith("androidx.viewpager2.")||type.startsWith("android.support.v4.app."));
+    }
+    boolean clientDelegationReachable(Method method){
+        String id=key(method);Boolean cached=clientDelegationReachability.get(id);if(cached!=null)return cached;
+        boolean result=clientDelegationReachable(id,new HashSet<>(),0);clientDelegationReachability.put(id,result);return result;
+    }
+    boolean clientDelegationReachable(String id,Set<String> seen,int depth){
+        if(clientDelegations.contains(id))return true;
+        if(depth>=8||seen.size()>=128){if(clientDelegationBudgetDiagnostics.add(id))diagnostics.add("client_delegation_search_budget:"+id);return false;}
+        if(!seen.add(id))return false;
+        for(String target:calls.getOrDefault(id,Set.of()))if(clientDelegationReachable(target,seen,depth+1))return true;
+        return false;
+    }
     static boolean fragmentFactory(String id){
         for(String base:List.of("android.app.Fragment","androidx.fragment.app.Fragment","android.support.v4.app.Fragment")){
             String d="L"+base.replace('.','/')+";";
@@ -79,7 +96,7 @@ final class CapabilityIndex {
         // Keep their actual allocation-local constructor captures through bind/inflate returns.
         for(String type:classes.keySet())if(subtype(type,"androidx.viewbinding.ViewBinding"))bindingObjects.add(type);
         for(String type:classes.keySet())if(subtype(type,"androidx.viewpager2.adapter.FragmentStateAdapter"))bindingObjects.add(type);
-        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
+        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))||client(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
         for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&(webview(cls(m.getReturnType()))||function0Type(cls(m.getDefiningClass()))))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
             if(System.nanoTime()>deadline)throw new IllegalStateException("index_deadline");
@@ -96,10 +113,11 @@ final class CapabilityIndex {
                     refs.add(key(target));
                     if(kind(target)!=null)seeds.add(id);
                     if(fragmentFactory(key(target))||pagerInstall(key(target)))componentProtocols.add(id);
+                    if(!i.getOpcode().name.startsWith("invoke-static")&&!i.getOpcode().name.startsWith("invoke-super")&&!i.getOpcode().name.startsWith("invoke-direct")&&standardClientReference(target))clientDelegations.add(id);
                 }
             }}catch(RuntimeException ex){diagnostics.add("method_index_failed:"+id+":"+ex.getClass().getSimpleName());}
             calls.put(id,refs);referencedFields.put(id,fields);
-            if(refs.stream().anyMatch(CapabilityIndex::fragmentFactory)){
+            if(!frameworkComponentImplementation(cls(m.getDefiningClass()))&&refs.stream().anyMatch(CapabilityIndex::fragmentFactory)){
                 fragmentFactoryFields.addAll(fields);bindingObjects.add(cls(m.getDefiningClass()));
             }
             for(String ref:refs)callers.computeIfAbsent(ref,k->new HashSet<>()).add(id);
@@ -134,7 +152,7 @@ final class CapabilityIndex {
                 for(String caller:callers.getOrDefault(key(declaration),Set.of()))callers.computeIfAbsent(key(implementation),k->new HashSet<>()).add(caller);
         }
         var queue=new ArrayDeque<>(seeds); relevant.addAll(seeds);
-        for(String protocol:componentProtocols)if(relevant.add(protocol))queue.add(protocol);
+        for(String protocol:componentProtocols)if(!frameworkComponentImplementation(CapabilityEngine.owner(protocol))&&relevant.add(protocol))queue.add(protocol);
         while(!queue.isEmpty()) {
             String callee=queue.remove();
             Set<String> receiverOwners=new HashSet<>();
@@ -377,6 +395,14 @@ final class CapabilityIndex {
         String shape=shape(method);
         if((method.getAccessFlags()&1)!=0&&(subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&
             shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V"))return true;
+        return standardClientShape(type,shape);
+    }
+    boolean standardClientReference(MethodReference reference){
+        String type=cls(reference.getDefiningClass()),shape=shape(reference);
+        return standardClientShape(type,shape)||
+            (subtype(type,"android.webkit.DownloadListener")||subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V");
+    }
+    boolean standardClientShape(String type,String shape){
         for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk.")){
             for(String family:List.of("WebViewClient","WebChromeClient")){
                 String contract=prefix+family;

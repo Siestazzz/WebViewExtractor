@@ -1,0 +1,567 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable",
+    "role": "independent-source-reviewer"
+  },
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+  "source_positive_hosts": [
+    "com.sohu.sohuvideo.ui.LocationChooseActivity",
+    "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+    "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+    "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+    "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+    "com.sohu.sohuvideo.ui.NewFansListActivity",
+    "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+    "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+    "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+    "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+    "com.sohu.sohuvideo.ui.MessageListActivity",
+    "com.sohu.sohuvideo.ui.AccountSafeActivity",
+    "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+    "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+    "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+    "com.sohu.sohuvideo.ui.PushTransparentActivity",
+    "com.sohu.sohuvideo.ui.OperatePageActivity",
+    "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+    "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+    "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+    "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+    "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+    "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+    "com.sohu.sohuvideo.workcollection.WorksActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity"
+  ],
+  "annotation_surfaces": [
+    {
+      "implementation": "com.networkbench.agent.impl.instrumentation.NBSJavaScriptBridge",
+      "registration_name": "nbsJsBridge",
+      "members": [
+        {
+          "name": "logJsError",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;IILjava/lang/String;JI)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 48,
+            "text": "public static void logJsError(String str, String str2, String str3, String str4, int i, int i2, String str5, String str6, int i3, int i4, String str7, long j, int i5) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "logJsResult",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logJsResult(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 53,
+            "text": "public static void logJsResult(String str) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "logRes",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logRes(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 65,
+            "text": "public static void logRes(String str) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "postMessage",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->postMessage(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 75,
+            "text": "public static void postMessage(String str) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "its",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->its()I",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 105,
+            "text": "public int its() {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "logDebug",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->logDebug(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 113,
+            "text": "public void logDebug(String str) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "onEvent",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 117,
+            "text": "public void onEvent(String str) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "parseArguments",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->parseArguments(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 125,
+            "text": "public void parseArguments(String str) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "sfp",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfp()I",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 134,
+            "text": "public int sfp() {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "sfs",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->sfs()I",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 142,
+            "text": "public int sfs() {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "spt",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->spt()I",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 150,
+            "text": "public int spt() {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        },
+        {
+          "name": "onEvent",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge;->onEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJavaScriptBridge.java",
+            "line": 158,
+            "text": "public void onEvent(String str, String str2, String str3) {",
+            "sha256": "98cdf699419c05a8bf41d73cc717e0cc5450b42639ccbb9576bfa1cc14eb7acf"
+          }
+        }
+      ],
+      "inherited_application_endpoints": 0,
+      "annotation": "android.webkit.JavascriptInterface",
+      "injection_evidence": {
+        "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+        "line": 77,
+        "text": "webView.addJavascriptInterface(new NBSJavaScriptBridge(), ConfigurationName.NBS_JS_BRIDGE_NAME);",
+        "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+      }
+    },
+    {
+      "implementation": "com.networkbench.agent.impl.instrumentation.NBSJSBridgeDom",
+      "registration_name": "nbsDOMChanged",
+      "members": [
+        {
+          "name": "logDebug",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->logDebug(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJSBridgeDom.java",
+            "line": 11,
+            "text": "public static void logDebug(String str) {",
+            "sha256": "2e85d1f4d8d64ea16ec1ea43dc768c9c7878e400200c960af2d11a40c0035068"
+          }
+        },
+        {
+          "name": "postMessage",
+          "signature": "Lcom/networkbench/agent/impl/instrumentation/NBSJSBridgeDom;->postMessage(Ljava/lang/String;)V",
+          "evidence": {
+            "file": "sources/com/networkbench/agent/impl/instrumentation/NBSJSBridgeDom.java",
+            "line": 17,
+            "text": "public static void postMessage(String str) {",
+            "sha256": "2e85d1f4d8d64ea16ec1ea43dc768c9c7878e400200c960af2d11a40c0035068"
+          }
+        }
+      ],
+      "inherited_application_endpoints": 0,
+      "annotation": "android.webkit.JavascriptInterface",
+      "injection_evidence": {
+        "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+        "line": 78,
+        "text": "webView.addJavascriptInterface(new NBSJSBridgeDom(), \"nbsDOMChanged\");",
+        "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+      }
+    }
+  ],
+  "registered_tables": {
+    "initial_client": "SohuWebView$1 -> SohuWebViewClient -> NBSWebViewClient -> android.webkit.WebViewClient",
+    "restored_close_replacement": "SohuCloseWebView$1 -> SohuWebViewClient -> NBSWebViewClient",
+    "chrome": "SohuProgressWebView$1 -> SohuWebChromeClient -> android.webkit.WebChromeClient",
+    "initial_download": "SohuWebView$2 implements android.webkit.DownloadListener",
+    "close_download": "SohuCloseWebView$2 implements android.webkit.DownloadListener",
+    "instrumented_load_chrome": "com.networkbench.agent.impl.webview.e -> android.webkit.WebChromeClient; previous SohuProgressWebView$1 retained in field f9488a and forwarded"
+  },
+  "source_files": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+      "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView.java",
+      "sha256": "d58ea0e654ddcc6fb9a7b9dc01b55bafba4cf15a08948e471ed0462a88eb1ba2"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebChromeClient.java",
+      "sha256": "927ab34867607f3673d8bce44b235b55b4631102a06a4f2492112e4b7842ed14"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebViewClient.java",
+      "sha256": "d6e3c24ca958b9e4266a3b7fb4e52a47d7e12ec1a9b2f7b3dcf20220d60b4e64"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+      "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+    }
+  ],
+  "source_rows": 624,
+  "unknown": [
+    "SohuAdActivity has an application prompt interceptor callback whose full transport endpoints remain to audit; this does not block restored-close family with default Chrome constructor and unset prompt interceptor.",
+    "Other additional Activity-specific target surfaces beyond the shared main binding remain partial."
+  ],
+  "load_wrapper_evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuCloseWebView.java",
+      "line": 159,
+      "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, url);",
+      "sha256": "d58ea0e654ddcc6fb9a7b9dc01b55bafba4cf15a08948e471ed0462a88eb1ba2"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument.java",
+      "line": 84,
+      "text": "try {",
+      "sha256": "8bdc4b68608a31ebcb4562c53e9637fe9c0c4097284a2fcb6efcf2764f9bdbeb"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument.java",
+      "line": 90,
+      "text": "webView.setWebChromeClient(new com.networkbench.agent.impl.webview.e(defaultWebChromeClient));",
+      "sha256": "8bdc4b68608a31ebcb4562c53e9637fe9c0c4097284a2fcb6efcf2764f9bdbeb"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument.java",
+      "line": 165,
+      "text": "public static void loadUrl(View view, String str) {",
+      "sha256": "8bdc4b68608a31ebcb4562c53e9637fe9c0c4097284a2fcb6efcf2764f9bdbeb"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebLoadInstrument.java",
+      "line": 177,
+      "text": "Method findMethod = findMethod(view, \"loadUrl\", String.class);",
+      "sha256": "8bdc4b68608a31ebcb4562c53e9637fe9c0c4097284a2fcb6efcf2764f9bdbeb"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/webview/e.java",
+      "line": 25,
+      "text": "public e(WebChromeClient webChromeClient) {",
+      "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/webview/e.java",
+      "line": 26,
+      "text": "this.f9488a = webChromeClient;",
+      "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+    },
+    {
+      "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebChromeClient.java",
+      "line": 115,
+      "text": "webView.getSettings().setJavaScriptEnabled(true);",
+      "sha256": "da05de640456df58fe00a0cf77aec343ea982cb28e855e7b080e18e0ce9715d1"
+    }
+  ],
+  "instrumented_load_chrome_members": [
+    {
+      "name": "getDefaultVideoPoster",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 30,
+        "text": "public Bitmap getDefaultVideoPoster() {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "getVideoLoadingProgressView",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->getVideoLoadingProgressView()Landroid/view/View;",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 36,
+        "text": "public View getVideoLoadingProgressView() {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "getVisitedHistory",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->getVisitedHistory(Landroid/webkit/ValueCallback;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 42,
+        "text": "public void getVisitedHistory(ValueCallback<String[]> valueCallback) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onCloseWindow",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 52,
+        "text": "public void onCloseWindow(WebView webView) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onConsoleMessage",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onConsoleMessage(Ljava/lang/String;ILjava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 62,
+        "text": "public void onConsoleMessage(String str, int i, String str2) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onCreateWindow",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 72,
+        "text": "public boolean onCreateWindow(WebView webView, boolean z2, boolean z3, Message message) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onExceededDatabaseQuota",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onExceededDatabaseQuota(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 78,
+        "text": "public void onExceededDatabaseQuota(String str, String str2, long j, long j2, long j3, WebStorage.QuotaUpdater quotaUpdater) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onGeolocationPermissionsHidePrompt",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onGeolocationPermissionsHidePrompt()V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 88,
+        "text": "public void onGeolocationPermissionsHidePrompt() {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onGeolocationPermissionsShowPrompt",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 98,
+        "text": "public void onGeolocationPermissionsShowPrompt(String str, GeolocationPermissions.Callback callback) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onHideCustomView",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onHideCustomView()V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 108,
+        "text": "public void onHideCustomView() {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onJsAlert",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 118,
+        "text": "public boolean onJsAlert(WebView webView, String str, String str2, JsResult jsResult) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onJsBeforeUnload",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onJsBeforeUnload(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 124,
+        "text": "public boolean onJsBeforeUnload(WebView webView, String str, String str2, JsResult jsResult) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onJsConfirm",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 130,
+        "text": "public boolean onJsConfirm(WebView webView, String str, String str2, JsResult jsResult) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onJsPrompt",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 136,
+        "text": "public boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onJsTimeout",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onJsTimeout()Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 142,
+        "text": "public boolean onJsTimeout() {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onPermissionRequest",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 149,
+        "text": "public void onPermissionRequest(PermissionRequest permissionRequest) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onPermissionRequestCanceled",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onPermissionRequestCanceled(Landroid/webkit/PermissionRequest;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 160,
+        "text": "public void onPermissionRequestCanceled(PermissionRequest permissionRequest) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onProgressChanged",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 170,
+        "text": "public void onProgressChanged(WebView webView, int i) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onReachedMaxAppCacheSize",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onReachedMaxAppCacheSize(JJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 180,
+        "text": "public void onReachedMaxAppCacheSize(long j, long j2, WebStorage.QuotaUpdater quotaUpdater) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onReceivedIcon",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onReceivedIcon(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 190,
+        "text": "public void onReceivedIcon(WebView webView, Bitmap bitmap) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onReceivedTitle",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 200,
+        "text": "public void onReceivedTitle(WebView webView, String str) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onReceivedTouchIconUrl",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onReceivedTouchIconUrl(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 210,
+        "text": "public void onReceivedTouchIconUrl(WebView webView, String str, boolean z2) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onRequestFocus",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onRequestFocus(Landroid/webkit/WebView;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 220,
+        "text": "public void onRequestFocus(WebView webView) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onShowCustomView",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 230,
+        "text": "public void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onShowFileChooser",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 241,
+        "text": "public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onConsoleMessage",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 247,
+        "text": "public boolean onConsoleMessage(ConsoleMessage consoleMessage) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    },
+    {
+      "name": "onShowCustomView",
+      "signature": "Lcom/networkbench/agent/impl/webview/e;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "evidence": {
+        "file": "sources/com/networkbench/agent/impl/webview/e.java",
+        "line": 256,
+        "text": "public void onShowCustomView(View view, int i, WebChromeClient.CustomViewCallback customViewCallback) {",
+        "sha256": "bbe1c2c020d5863bbbddf07765a5624a4c214d418b0fee1fd7b8b8310002a43d"
+      }
+    }
+  ]
+}

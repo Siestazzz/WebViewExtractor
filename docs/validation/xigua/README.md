@@ -11,3 +11,5 @@ Reviewer: GPT-6.1 Sol。APK SHA-256 `6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e
 尚欠全输出activity_host归属审核、capability_precision、最终评分和holdout truth/evaluation；这些不从当前小样本匹配推定。
 
 源码独立扩展：Turing SDK 两个 XML 自定义 WebView 宿主，共新增 28 条事实（设置及 androidJsBridge 的构造注入与3方法）；当前83事实/7宿主。TuringVerifyWebView 直接继承 Android WebView，不能与 VerifyWebView 混用继承链。仍不足30宿主，未构成完整验收。原 source-first/development 冻结快照不变。
+
+覆盖口径纠正：source-positive仅证明宿主有真实View绑定，不等于完成该宿主全Bridge/Settings/Client表面深审。host-deep-audit-coverage.jsonl逐宿主三类别记partial/unknown；deep_positive_activities暂为空集合，source_positive_activities单列。旧数值deep计数已纠正，不作为验收证据。

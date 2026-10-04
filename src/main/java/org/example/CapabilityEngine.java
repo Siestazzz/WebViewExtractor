@@ -48,6 +48,7 @@ final class CapabilityEngine {
         final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
         final Set<String> gaps=new LinkedHashSet<>();
+        V activeClientContext;
         Host(String a){activity=a;}
     }
     final Map<String,ActivityState> states=new LinkedHashMap<>();
@@ -191,6 +192,8 @@ final class CapabilityEngine {
     void processJob(Host h){
                 Job job=h.queue.remove();String id=CapabilityIndex.key(job.method);
                 String context=id+"|"+job.args;h.pending.remove(context);if(!h.visited.add(context))return;
+                h.activeClientContext=clientContext(job.args);
+                try{
                 Summary summary;
                 try{summary=flow.summary(job.method,v->guardValue(v,job,h,0));}catch(RuntimeException ex){h.gaps.add("decode_failed:"+id+":"+ex.getClass().getSimpleName());return;}
                 if(summary.truncated())h.gaps.add("flow_budget:"+id);
@@ -202,6 +205,9 @@ final class CapabilityEngine {
                 for(Call call:summary.calls()){
                     Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
+                    if(h.activeClientContext!=null&&!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&clientCallbackReference(call.method())){
+                        followClientDelegate(h,job,call);continue;
+                    }
                     if(CapabilityIndex.pagerInstall(call.method())){
                         installFragmentAdapter(h,job,call);continue;
                     }
@@ -212,7 +218,7 @@ final class CapabilityEngine {
                     boolean lifecycle=name.equals("<init>")&&(idx.component(owner)||idx.activity(owner)||idx.scheduled(owner)||idx.callbackEntries.containsKey(owner)||idx.bindingObjects.contains(owner));
                     boolean fieldSetter=target!=null&&objectFieldSetter(target);
                     boolean registryWrite=target!=null&&(idx.keyedRegistryWrites.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.keyedRegistryWrites.contains(CapabilityIndex.key(m))));
-                    boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
+                    boolean relevant=target!=null&&(idx.relevant.contains(CapabilityIndex.key(target))||h.activeClientContext!=null&&idx.clientDelegationReachable(target)||target.getImplementation()==null&&idx.byShape.getOrDefault(CapabilityIndex.shape(target),List.of()).stream().anyMatch(m->idx.relevant.contains(CapabilityIndex.key(m))));
                     boolean receiverRelevant=false;
                     if(kind==null&&!lifecycle&&!relevant&&!registryWrite&&!fieldSetter&&target!=null&&!call.isStatic()&&!call.args().isEmpty()){
                         V hint=dispatchHint(call.args().get(0),job,h,0);
@@ -255,14 +261,14 @@ final class CapabilityEngine {
                     if(target!=null){
                         boolean virtual=!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&!args.isEmpty();
                         if(!virtual){
-                            if(idx.relevant.contains(CapabilityIndex.key(target))||lifecycle||registryWrite||fieldSetter||receiverRelevant||argumentRelevant||carriesJoinPoint)enqueue(h,target,args,job.path,job.candidate||summary.branched());
+                            if(relevant||lifecycle||registryWrite||fieldSetter||receiverRelevant||argumentRelevant||carriesJoinPoint)enqueue(h,target,args,job.path,job.candidate||summary.branched());
                         }else{
                             int dispatched=0;
                             for(V receiver:alternatives(args.get(0))){
                                 if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
                                 Method concrete=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+CapabilityIndex.shape(target));
                                 if(concrete==null||concrete.getImplementation()==null){h.gaps.add("unresolved_receiver_dispatch:"+call.method());continue;}
-                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete))&&!objectFieldSetter(concrete)&&!relevantOnReceiver(concrete,receiver,h)&&!argumentRelevant&&!carriesJoinPoint)continue;
+                                if(!idx.relevant.contains(CapabilityIndex.key(concrete))&&!(h.activeClientContext!=null&&idx.clientDelegationReachable(concrete))&&!idx.keyedRegistryWrites.contains(CapabilityIndex.key(concrete))&&!objectFieldSetter(concrete)&&!relevantOnReceiver(concrete,receiver,h)&&!argumentRelevant&&!carriesJoinPoint)continue;
                                 if(dispatched++>=64){h.gaps.add("dispatch_budget:"+call.method());break;}
                                 enqueue(h,concrete,specializeReceiver(args,receiver),job.path,job.candidate||summary.branched()||args.get(0).kind().equals("union"));
                             }
@@ -271,6 +277,48 @@ final class CapabilityEngine {
 
                     if(name.equals("<init>")&&!args.isEmpty()&&idx.component(owner)&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
                 }
+                }finally{h.activeClientContext=null;}
+    }
+    V clientContext(List<V> args){return !args.isEmpty()&&args.get(args.size()-1).kind().equals("installed_client_context")?args.get(args.size()-1):null;}
+    boolean clientCallbackReference(String id){
+        Method actual=idx.resolve(id);if(actual!=null)return idx.standardClientReference(actual);
+        String type=owner(id),shape=id.substring(id.indexOf("->")+2);
+        return idx.standardClientShape(type,shape)||(idx.subtype(type,"android.webkit.DownloadListener")||idx.subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V");
+    }
+    void followClientDelegate(Host h,Job job,Call call){
+        V binding=h.activeClientContext;List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
+        if(args.isEmpty())return;
+        String shape=call.method().substring(call.method().indexOf("->")+2);
+        for(V receiver:alternatives(args.get(0))){
+            if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
+            Method actual=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+shape);
+            if(!Set.of("object","new","view").contains(receiver.kind())||actual==null||actual.getImplementation()==null||!idx.standardClientCallback(receiver.type(),actual)){
+                h.gaps.add("client_delegate_unresolved:"+call.method());continue;
+            }
+            List<V> bound=specializeReceiver(args,receiver);V webview=binding.args().get(0);
+            // A WebView argument is an actual call argument, not interchangeable with
+            // the wrapper's installed receiver. Keep that identity when supplied.
+            for(int i=0;i<actual.getParameterTypes().size();i++)if(idx.webview(CapabilityIndex.cls(actual.getParameterTypes().get(i).toString()))&&i+1<bound.size())webview=bound.get(i+1);
+            List<String> path=extend(job.path,"client_delegate:"+call.method()+"@"+call.offset());
+            if(!receiver.id().equals(binding.args().get(1).id())){
+                Map<String,Object> fact=new LinkedHashMap<>();fact.put("activity",h.activity);fact.put("kind","callback");fact.put("name",name(binding.type()));
+                fact.put("api",binding.type());fact.put("site",CapabilityIndex.key(job.method)+"@"+call.offset());fact.put("implementation",receiver.type());
+                fact.put("members",delegatedCallbackMembers(receiver.type(),actual));
+                fact.put("webview",Map.of("id",webview.id(),"type",webview.type()==null?"unknown":webview.type()));fact.put("binding_status","candidate");fact.put("conditional",true);
+                fact.put("resolution","installed_client_actual_callback_delegation");fact.put("delegate_object_id",receiver.id());fact.put("installed_client_object_id",binding.args().get(1).id());fact.put("evidence",path);fact.put("arguments",args);add(h,fact);
+            }
+            enqueue(h,actual,bound,path,true);
+        }
+    }
+    List<Map<String,Object>> delegatedCallbackMembers(String type,Method first){
+        List<Map<String,Object>> members=new ArrayList<>();Set<String> seen=new HashSet<>();ArrayDeque<Method> methods=new ArrayDeque<>();methods.add(first);
+        while(!methods.isEmpty()&&seen.size()<32){
+            Method method=methods.remove();String id=CapabilityIndex.key(method);
+            if(!seen.add(id)||method.getImplementation()==null||!idx.standardClientCallback(type,method)||CapabilityIndex.cls(method.getDefiningClass()).startsWith("android.webkit.")||Set.of("com.tencent.smtt.sdk.WebViewClient","com.tencent.smtt.sdk.WebChromeClient").contains(CapabilityIndex.cls(method.getDefiningClass())))continue;
+            members.add(Map.of("signature",id,"display",CapabilityIndex.display(method),"name",method.getName()));
+            for(Call call:flow.summary(method).calls())if(call.isSuper()&&call.method().endsWith("->"+CapabilityIndex.shape(method))){Method parent=resolveSuper(method,call.method());if(parent!=null)methods.add(parent);}
+        }
+        return members;
     }
     void installFragmentAdapter(Host h,Job job,Call call){
         List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
@@ -713,6 +761,7 @@ final class CapabilityEngine {
         h.expanding.remove(type);
     }
     void enqueue(Host h,Method m,List<V> args,List<String> path,boolean candidate){
+        if(h.activeClientContext!=null&&clientContext(args)==null){args=new ArrayList<>(args);args.add(h.activeClientContext);}
         String context=CapabilityIndex.key(m)+"|"+args;if(h.visited.contains(context)||h.pending.contains(context))return;
         if(path.contains("[earlier evidence steps omitted]"))h.gaps.add("evidence_path_truncated");
         if(h.queue.size()>6000){h.gaps.add("queue_budget");return;}
@@ -851,7 +900,7 @@ final class CapabilityEngine {
             V object=V.of("object",v.type(),v.id()+"|"+allocation);
             for(Call ctor:flow.summary(job.method).calls())if(name(ctor.method()).equals("<init>")&&!ctor.args().isEmpty()&&ctor.args().get(0).equals(v)){
                 Method target=idx.resolve(ctor.method());
-                if(target!=null&&(idx.component(v.type())||idx.bindingObjects.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
+                if(target!=null&&(idx.component(v.type())||idx.client(v.type())||idx.bindingObjects.contains(v.type())||idx.relevant.contains(CapabilityIndex.key(target)))){
                     List<V> args=new ArrayList<>();args.add(object);
                     for(int i=1;i<ctor.args().size();i++)args.add(eval(ctor.args().get(i),job,h,depth+1,new HashSet<>(visiting)));
                     materializeConstructor(target,args,job,h,depth+1,visiting);
@@ -1219,9 +1268,10 @@ final class CapabilityEngine {
                 if(custom!=null)applyWrite(h,custom.field(),recv,client);
                 if(client.kind().equals("literal")&&"0".equals(client.literal())){Map<String,Object> reset=new LinkedHashMap<>(base);reset.put("kind","callback_removal");add(h,reset);continue;}
                 Map<String,Object>b=new LinkedHashMap<>(base);b.put("implementation",client.type()==null?"unknown":client.type());b.put("members",custom==null?callbackMembers(client.type()):customCallbackMembers(client.type(),custom));add(h,b);
-                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if((custom==null?idx.standardClientCallback(client.type(),callback):idx.contractMethods(custom.contract()).stream().anyMatch(m->CapabilityIndex.shape(m).equals(CapabilityIndex.shape(callback))))&&idx.relevant.contains(CapabilityIndex.key(callback))){
+                if(client.type()!=null)for(Method callback:idx.hierarchyMethods(client.type()))if((custom==null?idx.standardClientCallback(client.type(),callback):idx.contractMethods(custom.contract()).stream().anyMatch(m->CapabilityIndex.shape(m).equals(CapabilityIndex.shape(callback))))&&(idx.relevant.contains(CapabilityIndex.key(callback))||custom==null&&idx.clientDelegationReachable(callback))){
                     List<V> callbackArgs=new ArrayList<>();callbackArgs.add(client);
                     for(CharSequence p:callback.getParameterTypes())callbackArgs.add(idx.webview(CapabilityIndex.cls(p.toString()))?recv:V.of("unknown",CapabilityIndex.cls(p.toString()),"callback_parameter"));
+                    if(custom==null)callbackArgs.add(expr("installed_client_context",call.method(),site,List.of(recv,client)));
                     enqueue(h,callback,callbackArgs,job.path,true);
                 }
             }return;
@@ -1333,12 +1383,14 @@ final class CapabilityEngine {
         }return new HandlerSurface(result,reflective,resolved);
     }
     void add(Host h,Map<String,Object> fact){
-        String key=fact.get("kind")+"|"+fact.get("site")+"|"+fact.get("webview")+"|"+fact.get("implementation")+"|"+fact.get("registration_name")+"|"+fact.get("values");
+        String key=fact.get("kind")+"|"+fact.get("site")+"|"+fact.get("webview")+"|"+fact.get("implementation")+"|"+fact.get("registration_name")+"|"+fact.get("values")+"|"+fact.get("delegate_object_id");
         Map<String,Object> old=h.facts.get(key);if(old==null||fact.get("binding_status").equals("explicit"))h.facts.put(key,fact);
     }
     List<Map<String,Object>> bridgeMembers(String type){
         if(type==null)return List.of();List<Map<String,Object>> result=new ArrayList<>();
-        for(Method m:idx.hierarchyMethods(type))if((m.getAccessFlags()&1)!=0&&(m.getAccessFlags()&8)==0&&!m.getName().startsWith("<")){
+        // Java bridge reflection can invoke public static methods too. Static exclusion
+        // belongs to virtual Client callbacks, not to annotated Java bridge endpoints.
+        for(Method m:idx.hierarchyMethods(type))if((m.getAccessFlags()&1)!=0&&!m.getName().startsWith("<")){
             boolean annotated=m.getAnnotations().stream().anyMatch(a->a.getType().endsWith("/JavascriptInterface;"));
             if(annotated||apk.targetSdk>0&&apk.targetSdk<17)result.add(Map.of("signature",CapabilityIndex.key(m),"display",CapabilityIndex.display(m),"annotated",annotated));
         }return result;

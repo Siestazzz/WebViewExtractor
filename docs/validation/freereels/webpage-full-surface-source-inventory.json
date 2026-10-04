@@ -1,0 +1,726 @@
+{
+  "activity": "com.dramawave.feature.web.WebPageActivity",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "provenance": "source-first",
+  "files": [
+    {
+      "file": "sources/com/dramawave/shared/web/BaseWebFragment.java",
+      "sha256": "e7bbb4c136f5c54a8f5abf1d3b8e5c3ceb5b66998a337ae11318a41e9d874f38",
+      "source_lines": 1312,
+      "surface_entries": [
+        {
+          "line": 396,
+          "text": "public final void V3() {"
+        },
+        {
+          "line": 548,
+          "text": "webSettings2.setJavaScriptEnabled(true);"
+        },
+        {
+          "line": 555,
+          "text": "webView5.addJavascriptInterface(jsBridge, f80724W0);"
+        },
+        {
+          "line": 559,
+          "text": "webSettings3.setSupportZoom(false);"
+        },
+        {
+          "line": 563,
+          "text": "webSettings4.setBuiltInZoomControls(false);"
+        },
+        {
+          "line": 567,
+          "text": "webSettings5.setDisplayZoomControls(false);"
+        },
+        {
+          "line": 571,
+          "text": "webSettings6.setDomStorageEnabled(true);"
+        },
+        {
+          "line": 575,
+          "text": "webSettings7.setLoadWithOverviewMode(true);"
+        },
+        {
+          "line": 579,
+          "text": "webSettings8.setUseWideViewPort(true);"
+        },
+        {
+          "line": 583,
+          "text": "webSettings9.setCacheMode(-1);"
+        },
+        {
+          "line": 587,
+          "text": "webSettings10.setDatabaseEnabled(true);"
+        },
+        {
+          "line": 591,
+          "text": "webSettings11.setAllowFileAccess(true);"
+        },
+        {
+          "line": 595,
+          "text": "webSettings12.setDefaultTextEncodingName(\"utf-8\");"
+        },
+        {
+          "line": 599,
+          "text": "webSettings13.setMediaPlaybackRequiresUserGesture(false);"
+        },
+        {
+          "line": 602,
+          "text": "webSettings.setTextZoom(100);"
+        },
+        {
+          "line": 616,
+          "text": "webSettings14.setUserAgentString(str2);"
+        },
+        {
+          "line": 625,
+          "text": "webView.setWebViewClient(b10);"
+        },
+        {
+          "line": 629,
+          "text": "webView6.setWebChromeClient(this.smWebChromeClient);"
+        },
+        {
+          "line": 648,
+          "text": "public final void z1(@NotNull JSONObject params, @NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 695,
+          "text": "public final void B2(@NotNull JSONObject params, @NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 725,
+          "text": "public final void F(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 741,
+          "text": "public final BaseJsHandlerManager I3() {"
+        },
+        {
+          "line": 746,
+          "text": "public final String J3() {"
+        },
+        {
+          "line": 752,
+          "text": "public final WebView getMWebView() {"
+        },
+        {
+          "line": 757,
+          "text": "public final void L2(@NotNull JSONObject params, @NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 765,
+          "text": "public final boolean getNeedShowWarnings() {"
+        },
+        {
+          "line": 770,
+          "text": "public final boolean P3() {"
+        },
+        {
+          "line": 787,
+          "text": "public final boolean R3(@NotNull Object... args) {"
+        },
+        {
+          "line": 803,
+          "text": "public final void T2(@NotNull JSONObject params, @NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 825,
+          "text": "public final void U3(@Nullable WebView webView) {"
+        },
+        {
+          "line": 1000,
+          "text": "webSettings.setUserAgentString(null);"
+        },
+        {
+          "line": 1006,
+          "text": "public final void c2(@NotNull JSONObject params, @NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 1081,
+          "text": "public final View onCreateView(@NotNull LayoutInflater inflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {"
+        },
+        {
+          "line": 1143,
+          "text": "webView7.setWebChromeClient(null);"
+        },
+        {
+          "line": 1166,
+          "text": "public final void onPause() {"
+        },
+        {
+          "line": 1186,
+          "text": "public final void s1() {"
+        },
+        {
+          "line": 1200,
+          "text": "public final WebResourceResponse shouldInterceptRequest(@NotNull WebResourceRequest request) {"
+        },
+        {
+          "line": 1211,
+          "text": "public final void z2(@NotNull JSONObject params, @NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 1277,
+          "text": "public final void dismiss() {"
+        },
+        {
+          "line": 1285,
+          "text": "public final void onResume() {"
+        },
+        {
+          "line": 1297,
+          "text": "public final void setKeepScreenOn(boolean z) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/shared/web/JsBridge.java",
+      "sha256": "06d99626ff9168310e2d515434de2789051bbfc4285a06cc6d9efff06de4f877",
+      "source_lines": 268,
+      "surface_entries": [
+        {
+          "line": 84,
+          "text": "public final void a(String error) {"
+        },
+        {
+          "line": 90,
+          "text": "public final void b(final String res) {"
+        },
+        {
+          "line": 97,
+          "text": "public final void run() {"
+        },
+        {
+          "line": 157,
+          "text": "public final void b() {"
+        },
+        {
+          "line": 162,
+          "text": "public final WebView c() {"
+        },
+        {
+          "line": 166,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 167,
+          "text": "public final void close() {"
+        },
+        {
+          "line": 175,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 176,
+          "text": "public final void execute(@Nullable final String str, @Nullable final String str2, @Nullable final String str3) {"
+        },
+        {
+          "line": 187,
+          "text": "public final void run() {"
+        },
+        {
+          "line": 194,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 195,
+          "text": "public final void openBrowser(@NotNull String url) {"
+        },
+        {
+          "line": 251,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 252,
+          "text": "public final void openWebview(@Nullable String str) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/shared/web/B.java",
+      "sha256": "b1ab126b378d33346ae89345d90e7478aee3f2c0180c23289d08cdbba9d99cf4",
+      "source_lines": 349,
+      "surface_entries": [
+        {
+          "line": 74,
+          "text": "public final void a() {"
+        },
+        {
+          "line": 84,
+          "text": "public final void onPageFinished(@NotNull WebView view, @NotNull String url) {"
+        },
+        {
+          "line": 173,
+          "text": "public final void onReceivedError(@NotNull WebView view, @NotNull WebResourceRequest request, @NotNull WebResourceError error) {"
+        },
+        {
+          "line": 187,
+          "text": "public final boolean shouldOverrideUrlLoading(@NotNull WebView view, @NotNull WebResourceRequest request) {"
+        },
+        {
+          "line": 206,
+          "text": "public final void onPageStarted(@NotNull WebView view, @NotNull String url, @Nullable Bitmap bitmap) {"
+        },
+        {
+          "line": 223,
+          "text": "public final void onReceivedSslError(@NotNull WebView view, @NotNull SslErrorHandler handler, @NotNull SslError error) {"
+        },
+        {
+          "line": 232,
+          "text": "public final boolean onRenderProcessGone(@Nullable WebView webView, @Nullable RenderProcessGoneDetail renderProcessGoneDetail) {"
+        },
+        {
+          "line": 261,
+          "text": "public final WebResourceResponse shouldInterceptRequest(@NotNull WebView view, @NotNull WebResourceRequest request) {"
+        },
+        {
+          "line": 318,
+          "text": "public final void onReceivedError(@NotNull WebView view, int i, @NotNull String description, @NotNull String failingUrl) {"
+        },
+        {
+          "line": 334,
+          "text": "public final boolean shouldOverrideUrlLoading(@NotNull WebView view, @NotNull String url) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/shared/web/SMWebChromeClient.java",
+      "sha256": "068c3efec186f59c3f4958b406a3dd2e52b7c9cac06c871324600563ef3d0ca0",
+      "source_lines": 185,
+      "surface_entries": [
+        {
+          "line": 62,
+          "text": "public final Bitmap getDefaultVideoPoster() {"
+        },
+        {
+          "line": 68,
+          "text": "public final void onPermissionRequest(@Nullable PermissionRequest permissionRequest) {"
+        },
+        {
+          "line": 72,
+          "text": "public final void openFileChooser(@NotNull ValueCallback<Uri> filePathCallback) {"
+        },
+        {
+          "line": 81,
+          "text": "public final void a(@Nullable BaseWebFragment baseWebFragment) {"
+        },
+        {
+          "line": 86,
+          "text": "public final boolean onJsAlert(@NotNull WebView view, @NotNull String url, @NotNull String message, @NotNull JsResult result) {"
+        },
+        {
+          "line": 96,
+          "text": "public final boolean onJsConfirm(@NotNull WebView view, @NotNull String url, @NotNull String message, @NotNull JsResult result) {"
+        },
+        {
+          "line": 105,
+          "text": "public final void onProgressChanged(@NotNull WebView view, int i) {"
+        },
+        {
+          "line": 118,
+          "text": "public final void onReceivedTitle(@NotNull WebView view, @Nullable String str) {"
+        },
+        {
+          "line": 145,
+          "text": "public final boolean onShowFileChooser(@Nullable WebView webView, @Nullable ValueCallback<Uri[]> valueCallback, @Nullable WebChromeClient.FileChooserParams fileChooserParams) {"
+        },
+        {
+          "line": 160,
+          "text": "public final void openFileChooser(@NotNull ValueCallback<Uri> filePathCallback, @NotNull String acceptType) {"
+        },
+        {
+          "line": 173,
+          "text": "public final void openFileChooser(@NotNull ValueCallback<Uri> filePathCallback, @NotNull String acceptType, @NotNull String capture) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageFragment.java",
+      "sha256": "da10f77f7a20f35071cdd1bba521c2b574b56d449bc4458cda02bddde9e1dcb1",
+      "source_lines": 1193,
+      "surface_entries": [
+        {
+          "line": 267,
+          "text": "public final WebPageFragment newInstance(@NotNull String url) {"
+        },
+        {
+          "line": 280,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z) {"
+        },
+        {
+          "line": 286,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z, boolean z10) {"
+        },
+        {
+          "line": 292,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z, boolean z10, boolean z11) {"
+        },
+        {
+          "line": 298,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z, boolean z10, boolean z11, boolean z12) {"
+        },
+        {
+          "line": 304,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z, boolean z10, boolean z11, boolean z12, @Nullable Boolean bool) {"
+        },
+        {
+          "line": 310,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z, boolean z10, boolean z11, boolean z12, @Nullable Boolean bool, @Nullable Boolean bool2) {"
+        },
+        {
+          "line": 316,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean z, boolean z10, boolean z11, boolean z12, @Nullable Boolean bool, @Nullable Boolean bool2, boolean z13) {"
+        },
+        {
+          "line": 322,
+          "text": "public final WebPageFragment newInstance(@NotNull String url, boolean isHalfScreenWebPage, boolean isCircularBorder, boolean isCommonWebPage, boolean isCanBack, @Nullable Boolean isBgTrans, @Nullable Boolean hideProgressBar, boolean hasAppBar, boolean closeWhenRedirectDramawave) {"
+        },
+        {
+          "line": 357,
+          "text": "public final kotlin.coroutines.c<Unit> create(Object obj, kotlin.coroutines.c<?> cVar) {"
+        },
+        {
+          "line": 362,
+          "text": "public final Object invoke(Fc.N n9, kotlin.coroutines.c<? super Unit> cVar) {"
+        },
+        {
+          "line": 367,
+          "text": "public final Object invokeSuspend(Object obj) {"
+        },
+        {
+          "line": 404,
+          "text": "public final void G0(boolean z) {"
+        },
+        {
+          "line": 414,
+          "text": "public final void l3(int i, @Nullable String str) {"
+        },
+        {
+          "line": 430,
+          "text": "public final void onLeftClick(TitleBar titleBar) {"
+        },
+        {
+          "line": 440,
+          "text": "public final void onRightClick(TitleBar titleBar) {"
+        },
+        {
+          "line": 445,
+          "text": "public final void onTitleClick(TitleBar titleBar) {"
+        },
+        {
+          "line": 455,
+          "text": "public final void A0(boolean z) {"
+        },
+        {
+          "line": 463,
+          "text": "public final int F3() {"
+        },
+        {
+          "line": 469,
+          "text": "public final BaseJsHandlerManager H3() {"
+        },
+        {
+          "line": 474,
+          "text": "public final void L1(@NotNull String color) {"
+        },
+        {
+          "line": 554,
+          "text": "public final void onClick(View view2) {"
+        },
+        {
+          "line": 570,
+          "text": "public final void N0(@NotNull final JsBridge.a promise) {"
+        },
+        {
+          "line": 586,
+          "text": "public final void a(ArrayList grantedList, ArrayList deniedList, boolean z) {"
+        },
+        {
+          "line": 620,
+          "text": "public final void R0(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 626,
+          "text": "public final boolean V(@NotNull String url) {"
+        },
+        {
+          "line": 633,
+          "text": "public final void V0(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 639,
+          "text": "public final void Y(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 651,
+          "text": "public final void Y1(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 658,
+          "text": "public final void e4(String str) {"
+        },
+        {
+          "line": 700,
+          "text": "public final void f2(@NotNull String title) {"
+        },
+        {
+          "line": 706,
+          "text": "public final void f3(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 712,
+          "text": "public final void g4(boolean z) {"
+        },
+        {
+          "line": 721,
+          "text": "public final View h4() {"
+        },
+        {
+          "line": 726,
+          "text": "public final void i(final boolean z) {"
+        },
+        {
+          "line": 730,
+          "text": "public final Object invoke() {"
+        },
+        {
+          "line": 739,
+          "text": "public final ProgressBar i4() {"
+        },
+        {
+          "line": 744,
+          "text": "public final void j3(@Nullable String[] strArr) {"
+        },
+        {
+          "line": 763,
+          "text": "public final View j4() {"
+        },
+        {
+          "line": 767,
+          "text": "public final TitleBar k4() {"
+        },
+        {
+          "line": 772,
+          "text": "public final void l(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 778,
+          "text": "public final boolean l4() {"
+        },
+        {
+          "line": 833,
+          "text": "public final void m4() {"
+        },
+        {
+          "line": 863,
+          "text": "public final void n0(@NotNull JsBridge.a promise) {"
+        },
+        {
+          "line": 870,
+          "text": "public final void onActivityResult(int i, int i9, @Nullable Intent intent) {"
+        },
+        {
+          "line": 934,
+          "text": "public final void r2(@NotNull String url) {"
+        },
+        {
+          "line": 942,
+          "text": "public final void t3(int i, @Nullable String str) {"
+        },
+        {
+          "line": 947,
+          "text": "public final void y() {"
+        },
+        {
+          "line": 957,
+          "text": "public final void y1(@Nullable JSONObject jSONObject) {"
+        },
+        {
+          "line": 970,
+          "text": "public final Object invoke() {"
+        },
+        {
+          "line": 1018,
+          "text": "public final void D1(@Nullable String str) {"
+        },
+        {
+          "line": 1023,
+          "text": "public final void K0(@Nullable String str) {"
+        },
+        {
+          "line": 1031,
+          "text": "public final void W2(int i) {"
+        },
+        {
+          "line": 1040,
+          "text": "public final void f4(String str) {"
+        },
+        {
+          "line": 1117,
+          "text": "public final void m2() {"
+        },
+        {
+          "line": 1183,
+          "text": "public final void onDestroy() {"
+        },
+        {
+          "line": 1190,
+          "text": "public final void y0(@Nullable String str) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/feature/web/WebPageActivity.java",
+      "sha256": "1c1e647008651a6692fd5cd78a8f1e741785e6bb78a19c0f161c3e020c90298a",
+      "source_lines": 270,
+      "surface_entries": [
+        {
+          "line": 220,
+          "text": "public final void n(String str) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/core/mvi/BaseHiltFragment.java",
+      "sha256": "8a4f2e07b7be7250a3f4b29188782982db39b9d4c8fbf61cf299967a31b79679",
+      "source_lines": 16,
+      "surface_entries": []
+    },
+    {
+      "file": "sources/com/dramawave/core/mvi/Hilt_BaseHiltFragment.java",
+      "sha256": "70a448cf4a043c99a007cc364ffc9367224a4808d7b43082338975893c045ed6",
+      "source_lines": 111,
+      "surface_entries": [
+        {
+          "line": 46,
+          "text": "public final FragmentComponentManager componentManager() {"
+        },
+        {
+          "line": 60,
+          "text": "public final void y3() {"
+        },
+        {
+          "line": 77,
+          "text": "public final Object generatedComponent() {"
+        },
+        {
+          "line": 91,
+          "text": "public final ViewModelProvider.Factory getDefaultViewModelProviderFactory() {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/shared/base/activity/BaseTraceActivity.java",
+      "sha256": "e38d5fef2f69627b227db1abdbdfe7cd23ef4e7daf5c2b2a9cd3a81373202d50",
+      "source_lines": 66,
+      "surface_entries": [
+        {
+          "line": 54,
+          "text": "public final void registerTouchInterceptor(@NotNull d interceptor) {"
+        },
+        {
+          "line": 62,
+          "text": "public final void unregisterTouchInterceptor(@NotNull d interceptor) {"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/dramawave/shared/base/activity/BaseThemeActivity.java",
+      "sha256": "4eafbe394a039e2c49da18ce0ff63c3dee0a29f6698b65e17befe11c737be8ec",
+      "source_lines": 66,
+      "surface_entries": [],
+      "checked": "custom Activity ancestry; no additional WebView registrations/settings/client calls present"
+    },
+    {
+      "file": "sources/com/dramawave/shared/base/activity/BaseA.java",
+      "sha256": "2a6e5342cb26c96d9e78beefacc5811acb30f8249bea9c381f98661efca52a65",
+      "source_lines": 170,
+      "surface_entries": [],
+      "checked": "custom Activity ancestry; no additional WebView registrations/settings/client calls present"
+    }
+  ],
+  "bridge": {
+    "status": "done",
+    "registration": "dwJsHandler",
+    "annotated_members": [
+      "close()V",
+      "execute(String,String,String)V",
+      "openBrowser(String)V",
+      "openWebview(String)V"
+    ],
+    "inheritance": "final JsBridge directly extends Object; no inherited custom annotated members"
+  },
+  "setting": {
+    "status": "done",
+    "observed_calls": 15,
+    "unknown": "runtime UA text remains unknown by design; exact provider implementation and UUID/device/config expression proven",
+    "dynamic_value_evidence": [
+      {
+        "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+        "line": 208,
+        "text": "initUserAuthAndUserAgent();",
+        "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+      },
+      {
+        "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+        "line": 198,
+        "text": "b bVar = new b();",
+        "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+      },
+      {
+        "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+        "line": 200,
+        "text": "g1.f.e(bVar);",
+        "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+      },
+      {
+        "file": "sources/g1/f.java",
+        "line": 75,
+        "text": "f125097d = proxy;",
+        "sha256": "ba8a2b891efa85db16d619e6f42644ef803a507ced3a5dbbda7055865b058e4a"
+      },
+      {
+        "file": "sources/g1/f.java",
+        "line": 68,
+        "text": "return aVar.b();",
+        "sha256": "ba8a2b891efa85db16d619e6f42644ef803a507ced3a5dbbda7055865b058e4a"
+      },
+      {
+        "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+        "line": 71,
+        "text": "String str2 = Build.VERSION.RELEASE;",
+        "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+      },
+      {
+        "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+        "line": 103,
+        "text": "String uuid = UUID.randomUUID().toString();",
+        "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+      },
+      {
+        "file": "sources/com/dramawave/app/startup/component/CommonInitializer.java",
+        "line": 120,
+        "text": "return sb3;",
+        "sha256": "0c05c29bf0cc54e74850717745d3bb8d0af73f94aaefb0bb700394d1f618f834"
+      }
+    ],
+    "score_boundary": "runtime_expression intentionally unscorable by current value matcher; source-audit completion is not value match"
+  },
+  "callback": {
+    "status": "done",
+    "installed_webview_client": "B final extends WebViewClient",
+    "platform_client_callbacks": 9,
+    "installed_chrome_client": "SMWebChromeClient final extends WebChromeClient",
+    "platform_chrome_callbacks": 7,
+    "legacy_declared_methods": [
+      "openFileChooser(ValueCallback)",
+      "openFileChooser(ValueCallback,String)",
+      "openFileChooser(ValueCallback,String,String)"
+    ],
+    "scope": "All declared installed Client/Chrome members inventoried, plus normal Android base inheritance; legacy hidden hooks recorded separately",
+    "legacy_hooks_in_canonical": 3
+  },
+  "deep_audit_complete": true
+}

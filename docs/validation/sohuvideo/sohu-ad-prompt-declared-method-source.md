@@ -1,0 +1,9 @@
+# Prompt dispatcher with incompatible default registry candidates
+
+SohuAdActivity registers an OnJsPromptIntercept implementation on its actual SohuWebChromeClient. The inherited onJsPrompt forwards the message to that implementation, which passes it to HybridManagerImpl. An asynchronous EventParserTaskRunnable reads JSONObject.method and packages a WebFunInfo while retaining a WeakReference to the same WebView.
+
+BuiInvokeManager resolves the default literal class WebEvent, constructs it, scans only its declared methods, reads runtime H5CallNa.invokeName, and builds alias→Java method name entries. It then performs exact getDeclaredMethod(name, WeakReference.class, WebFunInfo.class), makes that method accessible, and invokes it with those two argument objects. Inherited methods are excluded; nonpublic declared methods could be selected because setAccessible(true) is used.
+
+The default class supplies two annotated candidates: checkState→checkState and start→startDownload. Both actual signatures are (android.content.Context, org.json.JSONObject)String, incompatible with the exact reflected parameter classes. Thus neither is a callable endpoint under the default target. Annotation presence and alias registration alone cannot certify bridge exposure. The independent JSON records exact signatures, source positions and file hashes.
+
+Full-source search finds a concrete replacement: SdkFactory.java:1232 selects WebApkDownloadEvent.class.getName() during SDK initialization. That class declares four annotated methods with the required (WeakReference,WebFunInfo)String signature: checkState, installApp, pauseDownload, startDownload. They are source-known callable alternatives. The singleton snapshots its target at construction, so initialization order determines default versus replacement; the setter does not rebuild an existing singleton. Preserve both alternatives. External future replacement remains unknown.

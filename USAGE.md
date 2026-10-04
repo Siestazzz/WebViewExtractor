@@ -2,7 +2,7 @@
 
 ## 构建与环境
 
-已验证使用 JDK 21。配置安装了平台包的 Android SDK，以便读取平台继承关系；SDK 方法体不会参与默认分析。APK 无须预先反编译。
+已验证使用 JDK 21。配置安装了平台包的 Android SDK，以便读取平台继承关系。本地平台 android.jar 仅读取类型关系；APK 自带的 AndroidX 或第三方 SDK 方法体仍可能参与调用追踪。APK 无须预先反编译。
 
 ```sh
 ./gradlew capabilitySelfTest compactReportTest shadowJar

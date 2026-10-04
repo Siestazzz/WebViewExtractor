@@ -1,0 +1,3527 @@
+[
+  {
+    "package": "com.sohu.sohuvideo",
+    "elapsed": 416.367158806,
+    "hosts": [
+      {
+        "activity": "com.sohu.qfsdk.live.ui.activity.LiveActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 2854,
+        "pending_contexts": 3778,
+        "analysis_seconds": 1.409647864,
+        "slices": 35,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 3778,
+        "pending_method_sample": [
+          {
+            "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "priority": 0,
+            "ordinary": 1617,
+            "example_argument_kinds": [
+              "field_object",
+              "host",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.live.ui.activity.LiveActivity",
+              "Lcom/sohu/qfsdk/live/ui/activity/LiveActivity;->setupModel()V",
+              "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 877,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.live.ui.activity.LiveActivity",
+              "Lcom/sohu/qfsdk/live/ui/activity/LiveActivity;->exchange2PlayFragment()V",
+              "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 349,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.live.ui.activity.LiveActivity",
+              "Lcom/sohu/qfsdk/live/ui/activity/LiveActivity;-><init>()V",
+              "Lcom/sohu/qfsdk/live/ui/activity/LiveActivity$mLinkModel$2;-><init>(Lcom/sohu/qfsdk/live/ui/activity/LiveActivity;)V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": false
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.live.ui.activity.LiveActivity",
+              "Lcom/sohu/qfsdk/live/ui/activity/LiveActivity;->onNewIntent(Landroid/content/Intent;)V",
+              "Lcom/sohu/qfsdk/live/chat/model/LiveWsEventModel;->reset()V",
+              "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V",
+            "priority": 0,
+            "ordinary": 68,
+            "example_argument_kinds": [
+              "field_object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qianfansdk/player/PlayerFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+              "Lcom/sohu/qfsdk/live/ui/fragment/LivePlayerFragment;->observeModel()V",
+              "Lcom/sohu/qianfansdk/chat/last/model/WsEventModel;->P(Ljava/lang/String;Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/live/ui/activity/LiveActivity;->exchange2LinkFragment()V",
+              "Lcom/sohu/qianfansdk/player/model/PlayerViewModel;->W(Z)V",
+              "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentLayoutInflaterFactory;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;-><init>()V",
+              "Landroidx/fragment/app/FragmentManagerImpl;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager;-><init>()V",
+              "Landroidx/fragment/app/FragmentLayoutInflaterFactory;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager$1;-><init>(Landroidx/fragment/app/FragmentManager;Z)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;-><init>()V",
+              "Landroidx/fragment/app/FragmentManagerImpl;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager$1;-><init>(Landroidx/fragment/app/FragmentManager;Z)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager$2;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;-><init>()V",
+              "Landroidx/fragment/app/FragmentManagerImpl;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager$2;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager$4;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;-><init>()V",
+              "Landroidx/fragment/app/FragmentManagerImpl;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager$4;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;-><init>()V",
+            "priority": 0,
+            "ordinary": 19,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/live/link/BaseLinkFragment;-><init>()V",
+              "Landroidx/fragment/app/Fragment;-><init>()V",
+              "Landroidx/fragment/app/FragmentManagerImpl;-><init>()V",
+              "Landroidx/fragment/app/FragmentManager;-><init>()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          2854,
+          0
+        ],
+        "tracked_xml_consumers": 42,
+        "tracked_deferred_fields": 3033,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.114535528
+      },
+      {
+        "activity": "com.sohu.qfsdk.live.ui.activity.PublishActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3055,
+        "pending_contexts": 1738,
+        "analysis_seconds": 1.341536673,
+        "slices": 35,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1738,
+        "pending_method_sample": [
+          {
+            "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "priority": 0,
+            "ordinary": 408,
+            "example_argument_kinds": [
+              "field_object",
+              "host",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.live.ui.activity.PublishActivity",
+              "Lcom/sohu/qfsdk/live/ui/activity/PublishActivity;->setupModel()V",
+              "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 324,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.live.ui.activity.PublishActivity",
+              "Lcom/sohu/qfsdk/live/ui/activity/PublishActivity;->pausePlayEvent()V",
+              "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 163,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/live/ui/activity/PublishActivity;->changeCoverFragment()V",
+              "Lcom/sohu/qfsdk/live/ui/fragment/LivePublishCoverFragment;-><init>()V",
+              "Lcom/sohu/qfsdk/live/ui/fragment/LivePublishCoverFragment$mLeftMargin$2;-><init>(Lcom/sohu/qfsdk/live/ui/fragment/LivePublishCoverFragment;)V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": false
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "priority": 0,
+            "ordinary": 122,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentTransition;->startTransitions(Landroidx/fragment/app/FragmentManager;Ljava/util/ArrayList;Ljava/util/ArrayList;IIZLandroidx/fragment/app/FragmentTransition$Callback;)V",
+              "Landroidx/fragment/app/FragmentTransition;->calculatePopFragments(Landroidx/fragment/app/BackStackRecord;Landroid/util/SparseArray;Z)V",
+              "Landroidx/fragment/app/FragmentTransition;->addToFirstInLastOut(Landroidx/fragment/app/BackStackRecord;Landroidx/fragment/app/FragmentTransaction$Op;Landroid/util/SparseArray;ZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+            "priority": 0,
+            "ordinary": 74,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/live/link/BaseLinkFragment;->clear()V",
+              "Lcom/sohu/qfsdk/live/chat/model/LiveWsEventModel;->a()V",
+              "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 54,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->detach(Landroidx/fragment/app/FragmentManagerViewModel;)V",
+              "Landroidx/fragment/app/Fragment;->performDetach()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 42,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchCreate()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "priority": 0,
+            "ordinary": 35,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->create()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+            "priority": 0,
+            "ordinary": 33,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+              "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 28,
+            "example_argument_kinds": [
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executeOps(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/BackStackRecord;->executePopOps(Z)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "object",
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+            "priority": 0,
+            "ordinary": 22,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V",
+              "Landroidx/lifecycle/LiveData;->setValue(Ljava/lang/Object;)V",
+              "Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+              "Landroidx/lifecycle/LiveData;->considerNotify(Landroidx/lifecycle/LiveData$ObserverWrapper;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3055,
+          0
+        ],
+        "tracked_xml_consumers": 13,
+        "tracked_deferred_fields": 2260,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000229102
+      },
+      {
+        "activity": "com.sohu.qfsdk.link.live.ui.activity.LinkActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3061,
+        "pending_contexts": 1595,
+        "analysis_seconds": 1.224635149,
+        "slices": 35,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1595,
+        "pending_method_sample": [
+          {
+            "method": "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V",
+            "priority": 0,
+            "ordinary": 439,
+            "example_argument_kinds": [
+              "field_object",
+              "host",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.link.live.ui.activity.LinkActivity",
+              "Lcom/sohu/qfsdk/link/live/ui/activity/LinkActivity;->setupModel()V",
+              "Landroidx/lifecycle/LiveData;->observe(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Observer;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 235,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.sohu.qfsdk.link.live.ui.activity.LinkActivity",
+              "Lcom/sohu/qfsdk/link/live/ui/activity/LinkActivity;->resetViewModel()V",
+              "Lcom/sohu/qianfan/base/ui/guide2/GuideModel;->reset()V",
+              "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+            "priority": 0,
+            "ordinary": 122,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 98,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/link/live/ui/activity/LinkActivity;->setupModel$lambda-16(Lcom/sohu/qfsdk/link/live/ui/activity/LinkActivity;Lcom/sohu/qianfan/base/data/RoomBean;)V",
+              "Lcom/sohu/qfsdk/link/live/ui/fragment/LinkCoverFragment;-><init>()V",
+              "Lcom/sohu/qfsdk/link/live/ui/fragment/LinkCoverFragment$mSuperCommentViewModel$2;-><init>(Lcom/sohu/qfsdk/link/live/ui/fragment/LinkCoverFragment;)V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": false
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V",
+            "priority": 0,
+            "ordinary": 87,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/link/live/ui/activity/LinkActivity;->resetViewModel()V",
+              "Lcom/sohu/qfsdk/link/live/im/LinkWsEventModel;->clear()V",
+              "Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 49,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->activityCreated()V",
+              "Landroidx/fragment/app/Fragment;->performActivityCreated(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchActivityCreated()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 42,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentController;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+            "priority": 0,
+            "ordinary": 34,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->create()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+              "Landroidx/fragment/app/BackStackRecord;-><init>(Landroidx/fragment/app/FragmentManager;)V",
+              "Landroidx/fragment/app/FragmentTransaction;-><init>(Landroidx/fragment/app/FragmentFactory;Ljava/lang/ClassLoader;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 29,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->cancelTransaction()V",
+              "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/FragmentManager;->moveFragmentToExpectedState(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData$ObserverWrapper;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V",
+            "priority": 0,
+            "ordinary": 24,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qianfansdk/chat/last/model/WsEventModel;->R(Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData$AlwaysActiveObserver;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V",
+              "Landroidx/lifecycle/LiveData$ObserverWrapper;-><init>(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V",
+            "priority": 0,
+            "ordinary": 24,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/sohu/qfsdk/link/live/im/LinkWsEventModel;->clear()V",
+              "Landroidx/lifecycle/MutableLiveData;->setValue(Ljava/lang/Object;)V",
+              "Landroidx/lifecycle/LiveData;->setValue(Ljava/lang/Object;)V",
+              "Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3061,
+          0
+        ],
+        "tracked_xml_consumers": 5,
+        "tracked_deferred_fields": 2339,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.00022704
+      }
+    ]
+  },
+  {
+    "package": "com.dragon.read",
+    "elapsed": 419.078929184,
+    "hosts": [
+      {
+        "activity": "com.dragon.read.ad.immersive.ImmersiveNaActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 1239,
+        "pending_contexts": 5434,
+        "analysis_seconds": 3.096704441,
+        "slices": 15,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 5434,
+        "pending_method_sample": [
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 49,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet$mBitmapMemoryCacheParamsSupplier$2;-><init>()V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnz5/d;->a(Lkotlin/jvm/functions/Function0;)Lnz5/b;",
+            "priority": 0,
+            "ordinary": 46,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;->getInstance()Lcom/facebook/imagepipeline/core/ImagePipelineConfig;",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lnz5/d;->a(Lkotlin/jvm/functions/Function0;)Lnz5/b;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 45,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V",
+              "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V",
+            "priority": 0,
+            "ordinary": 45,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "literal",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;->getInstance()Lcom/facebook/imagepipeline/core/ImagePipelineConfig;",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;",
+            "priority": 0,
+            "ordinary": 25,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/news/common/service/manager/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+              "Lzp0/a;->a(Ljava/lang/Class;)Ljava/lang/Object;",
+              "Lcom/dragon/read/component/biz/impl/mall/BottomNativeMallIncentiveHandler;-><init>()V",
+              "Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "host",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.dragon.read.ad.immersive.ImmersiveNaActivity",
+              "Lcom/dragon/read/ad/immersive/ImmersiveNaActivity;->initView()V",
+              "Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ss/ttvideoengine/TTVideoEngineImpl;->setIntOption(II)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ss/ttvideoengine/TTVideoEngineImpl;-><init>(Landroid/content/Context;ILjava/util/Map;Lcom/ss/ttvideoengine/TTVideoEngine;)V",
+              "Lcom/ss/ttvideoengine/TTVideoEngineImpl;->initEngine(Landroid/content/Context;ILjava/util/Map;)V",
+              "Lcom/ss/ttvideoengine/TTVideoEngineImpl;->com_ss_ttvideoengine_TTVideoEngineImpl_com_dragon_read_aop_TTVideoEngineAop_initEngine(Lcom/ss/ttvideoengine/TTVideoEngineImpl;Landroid/content/Context;ILjava/util/Map;)V",
+              "Lcom/ss/ttvideoengine/TTVideoEngineImpl;->setIntOption(II)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lm61/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 11,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/news/common/service/manager/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+              "Lzp0/a;->a(Ljava/lang/Class;)Ljava/lang/Object;",
+              "Lcom/dragon/read/ad/tomato/reward/impl/RewardRequestResultImpl;-><init>()V",
+              "Lm61/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 7,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ss/android/update/SSUpdateChecker;-><init>()V",
+              "Lcom/ss/android/update/a0;->b0()Lcom/ss/android/update/a0;",
+              "Lcom/ss/android/update/a0;-><init>()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/dragon/read/ad/immersive/ImmersiveNaActivity;->w2(Ljava/lang/String;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 6,
+            "example_argument_kinds": [
+              "host",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "com.dragon.read.ad.immersive.ImmersiveNaActivity",
+              "Lcom/dragon/read/ad/immersive/ImmersiveNaActivity;->onClick(Landroid/view/View;)V",
+              "Lcom/dragon/read/ad/immersive/ImmersiveNaActivity;->w2(Ljava/lang/String;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 5,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentActivity;->onDestroy()V",
+              "Landroidx/fragment/app/e;->h()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/m;->l()V",
+            "priority": 0,
+            "ordinary": 5,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/m;->l()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          1239,
+          0
+        ],
+        "tracked_xml_consumers": 107,
+        "tracked_deferred_fields": 571,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 9.4225e-05
+      },
+      {
+        "activity": "com.dragon.read.component.biz.impl.mine.scan.ScanWebLoginConfirmActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 1009,
+        "pending_contexts": 5341,
+        "analysis_seconds": 3.181932176,
+        "slices": 15,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 5341,
+        "pending_method_sample": [
+          {
+            "method": "Lnz5/d;->a(Lkotlin/jvm/functions/Function0;)Lnz5/b;",
+            "priority": 0,
+            "ordinary": 47,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;->getInstance()Lcom/facebook/imagepipeline/core/ImagePipelineConfig;",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lnz5/d;->a(Lkotlin/jvm/functions/Function0;)Lnz5/b;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 46,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet$mBitmapMemoryCacheParamsSupplier$2;-><init>()V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 46,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V",
+              "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V",
+            "priority": 0,
+            "ordinary": 46,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "literal",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;->getInstance()Lcom/facebook/imagepipeline/core/ImagePipelineConfig;",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfig;-><init>()V",
+              "Lcom/facebook/imagepipeline/core/ImagePipelineConfigLazySet;-><init>()V",
+              "Lnz5/c;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->a(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 10,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/n;->r()V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->c(Landroidx/fragment/app/m;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->a(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/m;->l()V",
+            "priority": 0,
+            "ordinary": 10,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/m;->l()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 9,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentActivity;->onStop()V",
+              "Landroidx/fragment/app/e;->r()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStop()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 6,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/m;->j()V",
+              "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 6,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/e;->r()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStop()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->b(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 5,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/n;->r()V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->b(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->c(Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 5,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/n;->r()V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->c(Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 5,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+              "Landroidx/fragment/app/n;->r()V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          1009,
+          0
+        ],
+        "tracked_xml_consumers": 119,
+        "tracked_deferred_fields": 656,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 7.2725e-05
+      },
+      {
+        "activity": "com.dragon.read.social.author.comment.AuthorSpeakActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 1164,
+        "pending_contexts": 5316,
+        "analysis_seconds": 2.994818131,
+        "slices": 15,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 5316,
+        "pending_method_sample": [
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "priority": 0,
+            "ordinary": 16,
+            "example_argument_kinds": [
+              "union",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/m;->a()V",
+              "Landroidx/fragment/app/Fragment;->performActivityCreated(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchActivityCreated()V",
+              "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->a(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 16,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/n;->r()V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->b(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/m;)V",
+              "Landroidx/fragment/app/SpecialEffectsController;->a(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/m;->l()V",
+            "priority": 0,
+            "ordinary": 13,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/n;->r()V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/m;->c()V",
+              "Landroidx/fragment/app/m;->l()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 9,
+            "example_argument_kinds": [
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/dragon/read/social/mediafinder/CommentUploadPictureHelper$Companion;->handleActivityResultFromSystemAlbum(IILandroid/content/Intent;Lcom/dragon/read/social/mediafinder/e0;)V",
+              "Lcom/dragon/read/social/mediafinder/CommentUploadPictureHelper$Companion;->handleSystemGalleryResult(Landroid/content/Intent;Ljava/lang/String;Lcom/dragon/read/social/mediafinder/e0;)V",
+              "Lcom/dragon/read/social/mediafinder/CommentUploadPictureHelper$Companion;->isValidVideo(Ljava/lang/String;)Z",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 8,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/m;->j()V",
+              "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "priority": 0,
+            "ordinary": 8,
+            "example_argument_kinds": [
+              "field_object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOps(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/a;->g(Z)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/m;-><init>(Landroidx/fragment/app/h;Landroidx/fragment/app/n;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 8,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->endAnimatingAwayFragments()V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;I)V",
+              "Landroidx/fragment/app/m;-><init>(Landroidx/fragment/app/h;Landroidx/fragment/app/n;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper$a;->a(Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 8,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/dragon/read/social/profile/a2;->handleResultForAvatar(Landroid/app/Activity;Landroidx/fragment/app/Fragment;IILandroid/content/Intent;Lcom/dragon/read/component/interfaces/UploadAvatarListener;)Z",
+              "Lcom/dragon/read/social/profile/a2;->l(Landroid/app/Activity;Landroidx/fragment/app/Fragment;Landroid/content/Intent;)V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper$a;->a(Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 8,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ss/android/update/SSUpdateChecker;-><init>()V",
+              "Lcom/ss/android/update/a0;->b0()Lcom/ss/android/update/a0;",
+              "Lcom/ss/android/update/a0;-><init>()V",
+              "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->b(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 7,
+            "example_argument_kinds": [
+              "unknown",
+              "union",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->b(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->c(Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 7,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->c(Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/m;)V",
+            "priority": 0,
+            "ordinary": 7,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/m;->l()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/m;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          1164,
+          0
+        ],
+        "tracked_xml_consumers": 68,
+        "tracked_deferred_fields": 592,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 8.5689e-05
+      }
+    ]
+  },
+  {
+    "package": "com.ss.android.article.video",
+    "elapsed": 420.819716389,
+    "hosts": [
+      {
+        "activity": "com.ixigua.feature.feed.category.activity.CategoryActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 881,
+        "pending_contexts": 1432,
+        "analysis_seconds": 1.400802873,
+        "slices": 11,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1432,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 501,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V",
+            "priority": 0,
+            "ordinary": 100,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/blockframework/interaction/StateAndEventModel;-><init>()V",
+            "priority": 0,
+            "ordinary": 100,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V",
+              "Lcom/bytedance/blockframework/interaction/StateAndEventModel;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+            "priority": 0,
+            "ordinary": 100,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feedframework/XgFeedBaseFragment;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 81,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlockForViewContainer;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlockForViewContainer$mConfig$2;-><init>(Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlockForViewContainer;)V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/event/IFeedLifeHandler$Stub;-><init>()V",
+            "priority": 0,
+            "ordinary": 51,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock$mLifeHandler$1;-><init>(Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;)V",
+              "Lcom/bytedance/xgfeedframework/present/event/IFeedLifeHandler$Stub;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;",
+            "priority": 0,
+            "ordinary": 36,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/block/external/DefaultBlockEntry;-><init>(Lcom/ixigua/block/external/BlockScene;)V",
+              "Lcom/bytedance/blockframework/framework/join/BlockContextImpl;-><init>(Lcom/bytedance/blockframework/framework/join/IBlockScene;)V",
+              "Lcom/bytedance/blockframework/framework/core/BlockCoreManager;-><init>()V",
+              "Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/event/IFeedEventHandler$Stub;-><init>()V",
+            "priority": 0,
+            "ordinary": 30,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock$mFeedEventHandler$1;-><init>(Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock;)V",
+              "Lcom/bytedance/xgfeedframework/present/event/IFeedEventHandler$Stub;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 20,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "unknown",
+              "field_object",
+              "field_object",
+              "object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/framework/ui/SlideActivity;->hookRemoveViews$$sedna$redirect$$5647(Landroid/view/ViewGroup;II)V",
+              "Lcom/ixigua/base/appdata/SettingsProxy;->hookRemoveViewEnabled()Z",
+              "Lcom/ixigua/base/appsetting/QualitySettings;->getHookRemoveViewEnabled()I",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/AbsItem;-><init>()V",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/EComCartSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+              "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/AbsItem;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/base/appsetting/EComCartSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V",
+            "priority": 0,
+            "ordinary": 17,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/base/appsetting/EComCartSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+              "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          881,
+          0
+        ],
+        "tracked_xml_consumers": 28,
+        "tracked_deferred_fields": 302,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 6.5127e-05
+      },
+      {
+        "activity": "com.ixigua.feature.longvideo.playlet.secondarypage.PlayletCenterActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 867,
+        "pending_contexts": 1406,
+        "analysis_seconds": 1.362870978,
+        "slices": 11,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1406,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 502,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/blockframework/interaction/StateAndEventModel;-><init>()V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V",
+              "Lcom/bytedance/blockframework/interaction/StateAndEventModel;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feedframework/XgFeedBaseFragment;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 82,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feature/longvideo/playlet/secondarypage/multifilter/PlayletMultiFilteredFragment;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/viewmodel/FilteredTabPlayletListViewModel;-><init>()V",
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/viewmodel/FilteredTabPlayletListViewModel$loadingStatus$2;-><init>()V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/event/IFeedLifeHandler$Stub;-><init>()V",
+            "priority": 0,
+            "ordinary": 50,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock$mLifeHandler$1;-><init>(Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;)V",
+              "Lcom/bytedance/xgfeedframework/present/event/IFeedLifeHandler$Stub;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;",
+            "priority": 0,
+            "ordinary": 33,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/template/PlatletTabSmallSizeTemplate;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;ZLcom/ixigua/feature/longvideo/playlet/secondarypage/multifilter/PlayletMultiFilteredFragment$mPlayletGridContainer$1;I)V",
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/template/PlatletTabSmallSizeTemplate;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;ZLcom/ixigua/feature/longvideo/playlet/channel/tab/IPlayletGridContainer;Z)V",
+              "Lcom/ixigua/lib/track/impression/ImpressionManager;-><init>()V",
+              "Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/event/IFeedEventHandler$Stub;-><init>()V",
+            "priority": 0,
+            "ordinary": 29,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock$mFeedEventHandler$1;-><init>(Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock;)V",
+              "Lcom/bytedance/xgfeedframework/present/event/IFeedEventHandler$Stub;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/AbsItem;-><init>()V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;Z)V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+              "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/AbsItem;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/base/appsetting/business/ad/AdLibNoSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;Z)V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/business/ad/AdLibNoSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;Z)V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+              "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "field_object",
+              "field_object",
+              "field_object",
+              "object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feature/longvideo/playlet/secondarypage/PlayletCenterFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V@801",
+              "Lcom/ixigua/feature/longvideo/playlet/secondarypage/multifilter/PlayletMultiFilteredFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+              "Lcom/ixigua/base/appsetting/QualitySettings;->getPlayletDoFrame()Z",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          867,
+          0
+        ],
+        "tracked_xml_consumers": 51,
+        "tracked_deferred_fields": 344,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 6.4061e-05
+      },
+      {
+        "activity": "com.ixigua.feature.longvideo.playlet.secondarypage.PlayletMultiFilterActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 875,
+        "pending_contexts": 1406,
+        "analysis_seconds": 1.320969658,
+        "slices": 11,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 1406,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+            "priority": 0,
+            "ordinary": 502,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+              "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/blockframework/interaction/StateAndEventModel;-><init>()V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/blockframework/contract/AbstractBlock;-><init>()V",
+              "Lcom/bytedance/blockframework/interaction/StateAndEventModel;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+            "priority": 0,
+            "ordinary": 95,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feedframework/XgFeedBaseFragment;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/bytedance/xgfeedframework/present/block/AbsFeedBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+            "priority": 0,
+            "ordinary": 82,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feature/longvideo/playlet/secondarypage/multifilter/PlayletMultiFilteredFragment;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/viewmodel/FilteredTabPlayletListViewModel;-><init>()V",
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/viewmodel/FilteredTabPlayletListViewModel$loadingStatus$2;-><init>()V",
+              "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/event/IFeedLifeHandler$Stub;-><init>()V",
+            "priority": 0,
+            "ordinary": 50,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock$mLifeHandler$1;-><init>(Lcom/ixigua/innerstream/specific/block/basic/VideoShopAdaptBlock;)V",
+              "Lcom/bytedance/xgfeedframework/present/event/IFeedLifeHandler$Stub;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;",
+            "priority": 0,
+            "ordinary": 33,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/template/PlatletTabSmallSizeTemplate;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;ZLcom/ixigua/feature/longvideo/playlet/secondarypage/multifilter/PlayletMultiFilteredFragment$mPlayletGridContainer$1;I)V",
+              "Lcom/ixigua/feature/longvideo/playlet/channel/tab/template/PlatletTabSmallSizeTemplate;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;ZLcom/ixigua/feature/longvideo/playlet/channel/tab/IPlayletGridContainer;Z)V",
+              "Lcom/ixigua/lib/track/impression/ImpressionManager;-><init>()V",
+              "Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/xgfeedframework/present/event/IFeedEventHandler$Stub;-><init>()V",
+            "priority": 0,
+            "ordinary": 29,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/bytedance/xgfeedframework/present/FeedPresenterImpl;->onCreate(Landroid/os/Bundle;)V",
+              "Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock;-><init>(Lcom/bytedance/xgfeedframework/present/context/IFeedContext;)V",
+              "Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock$mFeedEventHandler$1;-><init>(Lcom/ixigua/feature/video/prepare/block/NormalFeedListPrepareVideoBlock;)V",
+              "Lcom/bytedance/xgfeedframework/present/event/IFeedEventHandler$Stub;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/AbsItem;-><init>()V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;Z)V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+              "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/AbsItem;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+              "Lcom/ixigua/base/appsetting/business/ad/AdLibNoSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;Z)V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V",
+            "priority": 0,
+            "ordinary": 18,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/base/appsetting/business/ad/AdLibNoSettings;-><init>()V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;Z)V",
+              "Lcom/ixigua/storage/sp/item/NestedItem;-><init>(Ljava/lang/String;)V",
+              "Lcom/ixigua/storage/sp/observe/ObservableItem;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V",
+            "priority": 0,
+            "ordinary": 14,
+            "example_argument_kinds": [
+              "object",
+              "class",
+              "unknown",
+              "literal",
+              "field_object",
+              "field_object",
+              "field_object",
+              "object",
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/ixigua/feature/longvideo/playlet/secondarypage/PlayletCenterFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V@801",
+              "Lcom/ixigua/feature/longvideo/playlet/secondarypage/multifilter/PlayletMultiFilteredFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+              "Lcom/ixigua/base/appsetting/QualitySettings;->getPlayletDoFrame()Z",
+              "Lcom/bytedance/quipe/settings/SettingsDelegate;-><init>(Ljava/lang/Class;Ljava/lang/String;ILjava/lang/Object;Ljava/lang/String;ZLcom/bytedance/quipe/settings/SyncMode;Lcom/bytedance/quipe/core/QuipeReader;Lcom/bytedance/quipe/core/TypeToken;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          875,
+          0
+        ],
+        "tracked_xml_consumers": 51,
+        "tracked_deferred_fields": 350,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 6.363e-05
+      }
+    ]
+  },
+  {
+    "package": "com.freereels.app",
+    "elapsed": 397.176860205,
+    "hosts": [
+      {
+        "activity": "com.dramawave.app.splash.SplashActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3701,
+        "pending_contexts": 2385,
+        "analysis_seconds": 2.56169221,
+        "slices": 46,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 2385,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/appsflyer/internal/AFa1ySDK;->getCurrencyIso4217Code([Ljava/lang/Object;III)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 916,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/dramawave/app/splash/SplashViewModel;->c(Landroid/net/Uri;)V",
+              "Lcom/appsflyer/internal/AFa1ySDK;-><init>()V",
+              "Lcom/appsflyer/internal/AFa1ySDK;->getCurrencyIso4217Code([Ljava/lang/Object;III)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFa1ySDK;->getCurrencyIso4217Code([Ljava/lang/Object;III)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 190,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->e0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->w(I)V",
+            "priority": 0,
+            "ordinary": 170,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->w(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V",
+            "priority": 0,
+            "ordinary": 77,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/core/view/WindowInsetsControllerCompat;-><init>(Landroid/view/View;Landroid/view/Window;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->i()V",
+            "priority": 0,
+            "ordinary": 72,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->g0(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnb/l;->b(Lkotlin/jvm/functions/Function0;)Lnb/q;",
+            "priority": 0,
+            "ordinary": 65,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/dramawave/app/splash/t;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+              "Lcom/fyber/fairbid/ads/OfferWall;->setConsent(Lcom/fyber/fairbid/sdk/privacy/OfferWallPrivacyConsent;)V",
+              "Lcom/fyber/fairbid/internal/f;-><init>()V",
+              "Lnb/l;->b(Lkotlin/jvm/functions/Function0;)Lnb/q;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lnb/q;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V",
+            "priority": 0,
+            "ordinary": 65,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "literal",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/dramawave/app/splash/t;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+              "Lcom/fyber/fairbid/ads/OfferWall;->setConsent(Lcom/fyber/fairbid/sdk/privacy/OfferWallPrivacyConsent;)V",
+              "Lcom/fyber/fairbid/internal/f;-><init>()V",
+              "Lnb/q;-><init>(Lkotlin/jvm/functions/Function0;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 50,
+            "example_argument_kinds": [
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->e0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->p0(Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+            "priority": 0,
+            "ordinary": 43,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/core/view/ViewCompat;->q(Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;",
+              "Landroidx/core/view/WindowInsetsControllerCompat;-><init>(Landroid/view/View;Landroid/view/Window;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+            "priority": 0,
+            "ordinary": 41,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->l()Landroid/os/Bundle;",
+              "Landroidx/fragment/app/FragmentManager;->h0()Landroid/os/Bundle;",
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 37,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->d()V",
+              "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 37,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->a(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentManager;->i(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3701,
+          0
+        ],
+        "tracked_xml_consumers": 92,
+        "tracked_deferred_fields": 2610,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000294303
+      },
+      {
+        "activity": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 4096,
+        "pending_contexts": 2120,
+        "analysis_seconds": 14.902789597,
+        "slices": 45,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 2120,
+        "pending_method_sample": [
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 365,
+            "example_argument_kinds": [
+              "object",
+              "enum",
+              "enum",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState()V",
+              "Landroidx/fragment/app/FragmentManager;->g0(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->w(I)V",
+            "priority": 0,
+            "ordinary": 319,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/Fragment;->performCreate(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->w(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V",
+            "priority": 0,
+            "ordinary": 161,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/core/view/ViewCompat;->q(Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;",
+              "Landroidx/core/view/WindowInsetsControllerCompat;-><init>(Landroid/view/View;Landroid/view/Window;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl20;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->i()V",
+            "priority": 0,
+            "ordinary": 133,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->e0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 101,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState()V",
+              "Landroidx/fragment/app/FragmentManager;->g0(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+            "priority": 0,
+            "ordinary": 91,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/core/view/ViewCompat;->q(Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;",
+              "Landroidx/core/view/WindowInsetsControllerCompat;-><init>(Landroid/view/View;Landroid/view/Window;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+            "priority": 0,
+            "ordinary": 80,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->l()Landroid/os/Bundle;",
+              "Landroidx/fragment/app/FragmentManager;->h0()Landroid/os/Bundle;",
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 69,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->d()V",
+              "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 69,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "object",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->e0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "priority": 0,
+            "ordinary": 50,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->performStart()V",
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->e0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->g0(Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 41,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->b(Landroidx/fragment/app/FragmentHostCallback;Landroidx/fragment/app/FragmentContainer;Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/fragment/app/FragmentManager;->g0(Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/activity/result/ActivityResultRegistry;->e(Ljava/lang/String;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultRegistry$register$3;",
+            "priority": 0,
+            "ordinary": 39,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown",
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->b(Landroidx/fragment/app/FragmentHostCallback;Landroidx/fragment/app/FragmentContainer;Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/activity/result/ActivityResultRegistry;->e(Ljava/lang/String;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultRegistry$register$3;"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          4096,
+          0
+        ],
+        "tracked_xml_consumers": 10,
+        "tracked_deferred_fields": 3330,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000320278
+      },
+      {
+        "activity": "com.dramawave.feature.profile.diagnosis.NetworkDiagnosisActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 3753,
+        "pending_contexts": 2114,
+        "analysis_seconds": 3.408094168,
+        "slices": 46,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 2114,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/appsflyer/internal/AFa1ySDK;->getCurrencyIso4217Code([Ljava/lang/Object;III)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 659,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/dramawave/shared/analytics/a;->a(Lcom/dramawave/shared/analytics/a;Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;ILqb/d;)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFa1ySDK;->logEvent(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;Lcom/appsflyer/attribution/AppsFlyerRequestListener;)V",
+              "Lcom/appsflyer/internal/AFa1ySDK;->getMonetizationNetwork(Lcom/appsflyer/internal/AFh1mSDK;Lcom/appsflyer/internal/AFh1pSDK;)V",
+              "Lcom/appsflyer/internal/AFa1ySDK;->getCurrencyIso4217Code([Ljava/lang/Object;III)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+            "priority": 0,
+            "ordinary": 246,
+            "example_argument_kinds": [
+              "unknown",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/SpecialEffectsController;->d(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->w(I)V",
+            "priority": 0,
+            "ordinary": 210,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState()V",
+              "Landroidx/fragment/app/FragmentManager;->w(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V",
+            "priority": 0,
+            "ordinary": 96,
+            "example_argument_kinds": [
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/core/view/WindowInsetsControllerCompat;-><init>(Landroid/view/View;Landroid/view/Window;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl;-><init>()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;->i()V",
+            "priority": 0,
+            "ordinary": 91,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 67,
+            "example_argument_kinds": [
+              "object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/Fragment;->restoreChildFragmentState()V",
+              "Landroidx/fragment/app/FragmentManager;->g0(Landroid/os/Bundle;)V",
+              "Landroidx/fragment/app/FragmentManager;->t(Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+            "priority": 0,
+            "ordinary": 55,
+            "example_argument_kinds": [
+              "field_object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/Fragment;->performStart()V",
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+            "priority": 0,
+            "ordinary": 54,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/core/view/ViewCompat;->q(Landroid/view/View;)Landroidx/core/view/WindowInsetsControllerCompat;",
+              "Landroidx/core/view/WindowInsetsControllerCompat;-><init>(Landroid/view/View;Landroid/view/Window;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/Window;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+              "Landroidx/core/view/WindowInsetsControllerCompat$Impl30;-><init>(Landroid/view/WindowInsetsController;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+            "priority": 0,
+            "ordinary": 47,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "field_object",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->a(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentManager;->i(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;",
+              "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 42,
+            "example_argument_kinds": [
+              "field_object",
+              "unknown",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentStateManager;->i()V",
+              "Landroidx/fragment/app/FragmentStateManager;->d()V",
+              "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/activity/result/ActivityResultRegistry;->e(Ljava/lang/String;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultRegistry$register$3;",
+            "priority": 0,
+            "ordinary": 33,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown",
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentStateManager;->b()V",
+              "Landroidx/fragment/app/Fragment;->performAttach()V",
+              "Landroidx/fragment/app/FragmentManager;->b(Landroidx/fragment/app/FragmentHostCallback;Landroidx/fragment/app/FragmentContainer;Landroidx/fragment/app/Fragment;)V",
+              "Landroidx/activity/result/ActivityResultRegistry;->e(Ljava/lang/String;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultRegistry$register$3;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "priority": 0,
+            "ordinary": 31,
+            "example_argument_kinds": [
+              "object",
+              "union",
+              "union",
+              "unknown",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/Fragment;->performStart()V",
+              "Landroidx/fragment/app/FragmentManager;->B(Z)Z",
+              "Landroidx/fragment/app/FragmentManager;->e0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+              "Landroidx/fragment/app/FragmentManager;->D(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          3753,
+          0
+        ],
+        "tracked_xml_consumers": 93,
+        "tracked_deferred_fields": 2766,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000299771
+      }
+    ]
+  },
+  {
+    "package": "com.news.app.global",
+    "elapsed": 418.457494267,
+    "hosts": [
+      {
+        "activity": "com.facebook.CustomTabMainActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 11690,
+        "pending_contexts": 5415,
+        "analysis_seconds": 16.296298487,
+        "slices": 156,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 5415,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/appsflyer/internal/AFa1uSDK;->getRevenue([Ljava/lang/Object;III)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 1566,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/appsflyer/internal/AFa1uSDK;-><init>()V",
+              "Lcom/appsflyer/internal/AFa1uSDK;->getRevenue([Ljava/lang/Object;III)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFa1uSDK;->component1([Ljava/lang/Object;)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFa1uSDK;->getRevenue([Ljava/lang/Object;III)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/x4;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 807,
+            "example_argument_kinds": [
+              "field_object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/e2;->d(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;DLjava/util/List;)Lorg/json/JSONObject;",
+              "Lcom/applovin/impl/sdk/l;->G()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/x4;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->putObject(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 348,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->d(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;DLjava/util/List;)Lorg/json/JSONObject;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->putObject(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/q;->d(Landroidx/fragment/app/q$c$b;Landroidx/fragment/app/q$c$a;Landroidx/fragment/app/l;)V",
+            "priority": 0,
+            "ordinary": 267,
+            "example_argument_kinds": [
+              "object",
+              "enum",
+              "enum",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->C(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->V(IZ)V",
+              "Landroidx/fragment/app/l;->i()V",
+              "Landroidx/fragment/app/q;->d(Landroidx/fragment/app/q$c$b;Landroidx/fragment/app/q$c$a;Landroidx/fragment/app/l;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->u(I)V",
+            "priority": 0,
+            "ordinary": 250,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/l;->e()V",
+              "Landroidx/fragment/app/Fragment;->performDestroy()V",
+              "Landroidx/fragment/app/FragmentManager;->l()V",
+              "Landroidx/fragment/app/FragmentManager;->u(I)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/l;->i()V",
+            "priority": 0,
+            "ordinary": 112,
+            "example_argument_kinds": [
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/l;->b()V",
+              "Landroidx/fragment/app/l;->i()V",
+              "Landroidx/fragment/app/l;->b()V",
+              "Landroidx/fragment/app/l;->i()V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/FragmentManager;->A(Z)Z",
+            "priority": 0,
+            "ordinary": 98,
+            "example_argument_kinds": [
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/l;->i()V",
+              "Landroidx/fragment/app/l;->k()V",
+              "Landroidx/fragment/app/Fragment;->performResume()V",
+              "Landroidx/fragment/app/FragmentManager;->A(Z)Z"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/appsflyer/internal/AFe1nSDK$3;-><init>(Lcom/appsflyer/internal/AFe1nSDK;Lcom/appsflyer/internal/AFe1lSDK;)V",
+            "priority": 0,
+            "ordinary": 83,
+            "example_argument_kinds": [
+              "object",
+              "unknown",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/appsflyer/internal/AFa1uSDK;->getRevenue([Ljava/lang/Object;III)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFa1uSDK;->getRevenue([Ljava/lang/Object;III)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFa1uSDK;->component1([Ljava/lang/Object;)Ljava/lang/Object;",
+              "Lcom/appsflyer/internal/AFe1nSDK$3;-><init>(Lcom/appsflyer/internal/AFe1nSDK;Lcom/appsflyer/internal/AFe1lSDK;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/appsflyer/internal/AFe1lSDK;-><init>(Lcom/appsflyer/internal/AFe1mSDK;[Lcom/appsflyer/internal/AFe1mSDK;Ljava/lang/String;)V",
+            "priority": 0,
+            "ordinary": 82,
+            "example_argument_kinds": [
+              "object",
+              "enum",
+              "object",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/appsflyer/internal/AFe1gSDK;-><init>(Lcom/appsflyer/internal/AFe1mSDK;[Lcom/appsflyer/internal/AFe1mSDK;Lcom/appsflyer/internal/AFc1bSDK;Ljava/lang/String;Ljava/util/Map;)V",
+              "Lcom/appsflyer/internal/AFe1eSDK;-><init>(Lcom/appsflyer/internal/AFe1mSDK;[Lcom/appsflyer/internal/AFe1mSDK;Lcom/appsflyer/internal/AFc1bSDK;Ljava/lang/String;)V",
+              "Lcom/appsflyer/internal/AFe1eSDK;-><init>(Lcom/appsflyer/internal/AFe1mSDK;[Lcom/appsflyer/internal/AFe1mSDK;Lcom/appsflyer/internal/AFd1lSDK;Lcom/appsflyer/internal/AFf1cSDK;Lcom/appsflyer/internal/AFd1mSDK;Lcom/appsflyer/internal/AFc1uSDK;Ljava/lang/String;)V",
+              "Lcom/appsflyer/internal/AFe1lSDK;-><init>(Lcom/appsflyer/internal/AFe1mSDK;[Lcom/appsflyer/internal/AFe1mSDK;Ljava/lang/String;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lo96;->b(Lo96$b;Lieh;)V",
+            "priority": 0,
+            "ordinary": 61,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->C(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/FragmentManager;->a(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/l;",
+              "Lo96;->d(Landroidx/fragment/app/Fragment;Ljava/lang/String;)V",
+              "Lo96;->b(Lo96$b;Lieh;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+            "priority": 0,
+            "ordinary": 57,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/l;->g()Ljava/util/List;",
+              "Lcom/applovin/impl/sdk/l;->a(Landroid/app/ApplicationExitInfo;I)Ljava/lang/String;",
+              "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V",
+            "priority": 0,
+            "ordinary": 53,
+            "example_argument_kinds": [
+              "unknown",
+              "unknown",
+              "union",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Landroidx/fragment/app/FragmentManager;->C(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+              "Landroidx/fragment/app/l;->i()V",
+              "Landroidx/fragment/app/l;->d()V",
+              "Landroidx/fragment/app/Fragment;->performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          11690,
+          0
+        ],
+        "tracked_xml_consumers": 294,
+        "tracked_deferred_fields": 5624,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000997558
+      },
+      {
+        "activity": "com.applovin.mediation.MaxDebuggerAdUnitDetailActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 10084,
+        "pending_contexts": 4556,
+        "analysis_seconds": 8.703438951,
+        "slices": 156,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 4556,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/x4;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 2189,
+            "example_argument_kinds": [
+              "field_object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/mediation/d;->a(Ljava/lang/String;Ljava/lang/String;Lcom/applovin/mediation/MaxAdFormat;Lcom/applovin/impl/i;Ljava/util/Map;Ljava/util/Map;Landroid/content/Context;Lcom/applovin/impl/mediation/ads/a$a;)V",
+              "Lcom/applovin/impl/mediation/d$b;-><init>(Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Lcom/applovin/impl/mediation/d$c;Lcom/applovin/mediation/MaxAdFormat;JJLcom/applovin/impl/mediation/d;Lcom/applovin/impl/sdk/k;Landroid/content/Context;Lcom/applovin/impl/mediation/d$a;)V",
+              "Lcom/applovin/impl/mediation/d$b;-><init>(Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Lcom/applovin/impl/mediation/d$c;Lcom/applovin/mediation/MaxAdFormat;JJLcom/applovin/impl/mediation/d;Lcom/applovin/impl/sdk/k;Landroid/content/Context;)V",
+              "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/x4;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->putObject(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 505,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->d(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;DLjava/util/List;)Lorg/json/JSONObject;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->putObject(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+            "priority": 0,
+            "ordinary": 143,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/l;->d(Landroid/content/pm/PackageInfo;)Ljava/util/List;",
+              "Lcom/applovin/impl/sdk/l;->a([Landroid/content/pm/Signature;)Ljava/util/List;",
+              "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->getString(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 137,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/k3;->b()Ljava/lang/String;",
+              "Lcom/applovin/impl/k3;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/applovin/impl/h5;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->getString(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V",
+            "priority": 0,
+            "ordinary": 106,
+            "example_argument_kinds": [
+              "unknown",
+              "object",
+              "enum"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/l;->a(Ljava/lang/String;Landroid/content/pm/PackageManager;Lcom/applovin/impl/sdk/k;)Ljava/lang/String;",
+              "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+              "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/d6$e;-><init>(Lcom/applovin/impl/sdk/k;Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V",
+            "priority": 0,
+            "ordinary": 93,
+            "example_argument_kinds": [
+              "object",
+              "field_object",
+              "object",
+              "enum"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V",
+              "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;J)V",
+              "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;JZ)V",
+              "Lcom/applovin/impl/d6$e;-><init>(Lcom/applovin/impl/sdk/k;Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/k3;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 91,
+            "example_argument_kinds": [
+              "unknown",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/mediation/ads/a;->a(Lcom/applovin/impl/y2;)V",
+              "Lcom/applovin/impl/v2;->a(Lcom/applovin/impl/y2;)Lcom/applovin/impl/v2;",
+              "Lcom/applovin/impl/y2;->R()Ljava/lang/String;",
+              "Lcom/applovin/impl/k3;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/z4;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 67,
+            "example_argument_kinds": [
+              "field_object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;-><init>(Lcom/applovin/impl/sdk/k;)V",
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/m7;->a(Lcom/applovin/impl/sdk/k;)Ljava/lang/String;",
+              "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/z4;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/k;->b(Lcom/applovin/impl/z4;Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 67,
+            "example_argument_kinds": [
+              "field_object",
+              "object",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;-><init>(Lcom/applovin/impl/sdk/k;)V",
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/m7;->a(Lcom/applovin/impl/sdk/k;)Ljava/lang/String;",
+              "Lcom/applovin/impl/sdk/k;->b(Lcom/applovin/impl/z4;Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/h5;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 66,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/mediation/d;->a(Lcom/applovin/mediation/MaxAd;)Z",
+              "Lcom/applovin/impl/y2;->getFormat()Lcom/applovin/mediation/MaxAdFormat;",
+              "Lcom/applovin/impl/k3;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/applovin/impl/h5;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/n7;->a(Ljava/net/HttpURLConnection;Lcom/applovin/impl/sdk/k;)V",
+            "priority": 0,
+            "ordinary": 62,
+            "example_argument_kinds": [
+              "union",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->d(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->b(Ljava/lang/String;Lcom/applovin/impl/d2;Lorg/json/JSONObject;)V",
+              "Lcom/applovin/impl/n7;->a(Ljava/net/HttpURLConnection;Lcom/applovin/impl/sdk/k;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;DLjava/util/List;)Lorg/json/JSONObject;",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "field_object",
+              "object",
+              "unknown",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;Ljava/util/List;J)V",
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->d(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;DLjava/util/List;)Lorg/json/JSONObject;"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          10084,
+          0
+        ],
+        "tracked_xml_consumers": 1,
+        "tracked_deferred_fields": 2298,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000928849
+      },
+      {
+        "activity": "com.applovin.adview.AppLovinFullscreenActivity",
+        "status": "pending_deep_analysis",
+        "phase": 1,
+        "contexts_processed": 11351,
+        "pending_contexts": 4547,
+        "analysis_seconds": 7.889724487,
+        "slices": 157,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 4547,
+        "pending_method_sample": [
+          {
+            "method": "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/x4;)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 1740,
+            "example_argument_kinds": [
+              "object",
+              "object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/adview/AppLovinAdView;->onAttachedToWindow()V",
+              "Lcom/applovin/impl/adview/a;->B()V",
+              "Lcom/applovin/impl/adview/a;->y()V",
+              "Lcom/applovin/impl/sdk/k;->a(Lcom/applovin/impl/x4;)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->putObject(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Object;)V",
+            "priority": 0,
+            "ordinary": 383,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "object",
+              "installed_client_context"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->d(Lcom/applovin/impl/d2;Ljava/util/List;)V",
+              "Lcom/applovin/impl/e2;->a(Lcom/applovin/impl/d2;DLjava/util/List;)Lorg/json/JSONObject;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->putObject(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Object;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->getString(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 208,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/ad/AppLovinAdImpl;->canExpire()Z",
+              "Lcom/applovin/impl/sdk/ad/c;->getSize()Lcom/applovin/sdk/AppLovinAdSize;",
+              "Lcom/applovin/impl/u;->f()Lcom/applovin/sdk/AppLovinAdSize;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->getString(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/AppLovinAdBase;->getStringFromFullResponse(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 169,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/g;->a(Lcom/applovin/impl/adview/b;Lcom/applovin/impl/sdk/k;)V",
+              "Lcom/applovin/impl/f2;->a(Lcom/applovin/impl/sdk/ad/AppLovinAdImpl;)Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/AppLovinAdBase;->getDspId()Ljava/lang/String;",
+              "Lcom/applovin/impl/sdk/AppLovinAdBase;->getStringFromFullResponse(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/Boolean;",
+            "priority": 0,
+            "ordinary": 150,
+            "example_argument_kinds": [
+              "union",
+              "literal",
+              "field_object"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/ad/b;->A()Ljava/util/List;",
+              "Lcom/applovin/impl/sdk/ad/b;->J()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/AppLovinAdBase;->getBooleanFromAdObject(Ljava/lang/String;Ljava/lang/Boolean;)Z",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/Boolean;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/h5;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            "priority": 0,
+            "ordinary": 115,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal",
+              "installed_client_context"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/adview/c;->a(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+              "Lcom/applovin/impl/sdk/ad/b;->o0()Ljava/util/List;",
+              "Lcom/applovin/impl/sdk/AppLovinAdBase;->getStringFromAdObject(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+              "Lcom/applovin/impl/h5;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/r1;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+            "priority": 0,
+            "ordinary": 105,
+            "example_argument_kinds": [
+              "object",
+              "literal",
+              "literal",
+              "unknown",
+              "installed_client_context"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/network/b;-><init>(Lcom/applovin/impl/sdk/k;)V",
+              "Lcom/applovin/impl/sdk/network/c;->a(I)Ljava/util/List;",
+              "Lcom/applovin/impl/sdk/m;->f(Ljava/io/File;)Ljava/lang/String;",
+              "Lcom/applovin/impl/r1;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+            "priority": 0,
+            "ordinary": 96,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "literal",
+              "unknown"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;-><init>(Lcom/applovin/impl/sdk/k;)V",
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/l;->a(Ljava/lang/String;Landroid/content/pm/PackageManager;Lcom/applovin/impl/sdk/k;)Ljava/lang/String;",
+              "Lcom/applovin/impl/r1;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/a5;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Class;Landroid/content/SharedPreferences;Z)Ljava/lang/Object;",
+            "priority": 0,
+            "ordinary": 90,
+            "example_argument_kinds": [
+              "field_object",
+              "literal",
+              "field_object",
+              "unknown",
+              "literal",
+              "installed_client_context"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/k;->r0()Lcom/applovin/impl/z6;",
+              "Lcom/applovin/impl/z6;-><init>(Lcom/applovin/impl/sdk/k;)V",
+              "Lcom/applovin/impl/a5;->a(Lcom/applovin/impl/z4;Ljava/lang/Object;Landroid/content/SharedPreferences;Z)Ljava/lang/Object;",
+              "Lcom/applovin/impl/a5;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Class;Landroid/content/SharedPreferences;Z)Ljava/lang/Object;"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V",
+            "priority": 0,
+            "ordinary": 89,
+            "example_argument_kinds": [
+              "object",
+              "object",
+              "enum"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/sdk/l;->C()Ljava/util/Map;",
+              "Lcom/applovin/impl/sdk/l;->g()Ljava/util/List;",
+              "Lcom/applovin/impl/sdk/l;->b(Ljava/lang/String;ILjava/lang/String;)V",
+              "Lcom/applovin/impl/d6;->a(Lcom/applovin/impl/i5;Lcom/applovin/impl/d6$b;)V"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/utils/JsonUtils;->getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I",
+            "priority": 0,
+            "ordinary": 63,
+            "example_argument_kinds": [
+              "union",
+              "literal",
+              "union"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/sdk/AppLovinSdkSettings;-><init>(Landroid/content/Context;)V",
+              "Lcom/applovin/impl/u0;->a(Landroid/content/Context;)Lcom/applovin/impl/privacy/consentFlow/TermsAndPrivacyPolicyFlowSettingsImpl;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/Boolean;",
+              "Lcom/applovin/impl/sdk/utils/JsonUtils;->getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I"
+            ],
+            "example_candidate": true
+          },
+          {
+            "method": "Lcom/applovin/impl/sdk/AppLovinAdBase;->getBooleanFromAdObject(Ljava/lang/String;Ljava/lang/Boolean;)Z",
+            "priority": 0,
+            "ordinary": 60,
+            "example_argument_kinds": [
+              "unknown",
+              "literal",
+              "field_object",
+              "installed_client_context"
+            ],
+            "example_entry_parameter_count": 0,
+            "example_path_tail": [
+              "Lcom/applovin/impl/adview/a;->c(Landroid/webkit/WebView;)V",
+              "Lcom/applovin/impl/adview/a;->a(Landroid/webkit/WebView;Ljava/lang/String;)V",
+              "Lcom/applovin/impl/sdk/ad/b;->Q0()Z",
+              "Lcom/applovin/impl/sdk/AppLovinAdBase;->getBooleanFromAdObject(Ljava/lang/String;Ljava/lang/Boolean;)Z"
+            ],
+            "example_candidate": true
+          }
+        ],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          11351,
+          0
+        ],
+        "tracked_xml_consumers": 0,
+        "tracked_deferred_fields": 1925,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.196599942
+      }
+    ]
+  }
+]

@@ -33,6 +33,9 @@ public final class CapabilitySelfTest {
   ClientGetterLifecycleFixture.run();
   CapabilityDispatchFixture.run();
   FragmentFactoryFixture.run();
+  ClientDelegationFixture.run();
+  FrameworkFactoryBoundaryFixture.run();
+  StaticBridgeFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction11n(Opcode.CONST_4,1,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",0,1),

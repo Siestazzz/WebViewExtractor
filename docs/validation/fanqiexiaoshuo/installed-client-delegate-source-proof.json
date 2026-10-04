@@ -1,0 +1,147 @@
+{
+  "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "reviewer": "GPT-6.1 Sol",
+  "evidence": [
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ExternalWebActivity.java",
+      "line": 242,
+      "text": "this.f180820d = new WebFragment();",
+      "sha256": "4914d07fea940571c1ebdf648408e911e0757f1f706e2d4b1fe78f8f9e6f0289"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ExternalWebActivity.java",
+      "line": 244,
+      "text": "beginTransaction.add(R.id.dar, this.f180820d);",
+      "sha256": "4914d07fea940571c1ebdf648408e911e0757f1f706e2d4b1fe78f8f9e6f0289"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 269,
+      "text": "b bVar = new b();",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 270,
+      "text": "this.f180894h.setWebViewClient(bVar);",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 854,
+      "text": "m mVar = new m(this.f180863z);",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 855,
+      "text": "mVar.f364446a = webViewClient;",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 856,
+      "text": "super.setWebViewClient(mVar);",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 707,
+      "text": "protected static class m extends o {",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 206,
+      "text": "protected static class o extends r64.j {",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 24,
+      "text": "public WebViewClient f364446a;",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 54,
+      "text": "webViewClient.onPageFinished(webView, str);",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 138,
+      "text": "public void onPageFinished(WebView webView, String str) {",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 160,
+      "text": "webViewClient.onPageStarted(webView, str, bitmap);",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 163,
+      "text": "public void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 220,
+      "text": "webViewClient.onReceivedError(webView, i17, str, str2);",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 77,
+      "text": "public void onReceivedError(WebView webView, int i17, String str, String str2) {",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 120,
+      "text": "return webViewClient.shouldOverrideUrlLoading(webView, str);",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 81,
+      "text": "public boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 111,
+      "text": "return webViewClient.shouldInterceptRequest(webView, str);",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 104,
+      "text": "public WebResourceResponse shouldInterceptRequest(WebView webView, String str) {",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    },
+    {
+      "file": "sources/r64/j.java",
+      "line": 210,
+      "text": "webViewClient.onReceivedError(webView, webResourceRequest, webResourceError);",
+      "sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "line": 242,
+      "text": "public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {",
+      "sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68"
+    },
+    {
+      "file": "sources/com/dragon/read/hybrid/webview/WebFragment.java",
+      "line": 169,
+      "text": "public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {",
+      "sha256": "bfcc6f742777e4394b983b6ee998733fb683075f1d3266c29a339eea2ce63c82"
+    }
+  ],
+  "conclusion": "Installed ReadingWebView$m retains WebFragment$b in inherited r64.j field, and five callbacks actually forward to the same delegate. Some wrapper overrides run extra logic before super; String overloads inherit direct dispatch.",
+  "modern_error_shape": "Modern WebResourceRequest/WebResourceError overload actually forwards independently, not inferred from deprecated overload"
+}

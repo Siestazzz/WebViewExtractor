@@ -1,0 +1,516 @@
+{
+  "scope": "source_oracle_review",
+  "verdict": "source-rejected",
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "oracle_file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+  "oracle_sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7",
+  "frozen_v6_gold_changed": false,
+  "source_rejected_rows": [
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 104,
+          "text": "setContentView(R.layout.video_detail_activity);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 105,
+          "text": "this.detailPageView = (CustomDetailPageView) findViewById(R.id.detail_view);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 109,
+          "text": "this.detailPageView.setAd(this.mAd, this.status);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 158,
+          "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 161,
+          "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 714,
+          "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, replaceCorrdinateCode);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "registration_name": null,
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.SohuProgressWebView$1",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+          "line": 34,
+          "text": "this.mWebView.setWebChromeClient(this.mChromeClient);",
+          "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "report-guided complete shared SDK surface follow-up: source-hashed inheritance, constructor configuration and registered callback-driven bridge injection",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 104,
+          "text": "setContentView(R.layout.video_detail_activity);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 105,
+          "text": "this.detailPageView = (CustomDetailPageView) findViewById(R.id.detail_view);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 109,
+          "text": "this.detailPageView.setAd(this.mAd, this.status);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 158,
+          "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 161,
+          "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 714,
+          "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, replaceCorrdinateCode);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "registration_name": null,
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.SohuProgressWebView$1",
+      "normalized_signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView$1;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+          "line": 86,
+          "text": "public void onProgressChanged(WebView view, int newProgress) {",
+          "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "report-guided complete shared SDK surface follow-up: source-hashed inheritance, constructor configuration and registered callback-driven bridge injection",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 104,
+          "text": "setContentView(R.layout.video_detail_activity);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 105,
+          "text": "this.detailPageView = (CustomDetailPageView) findViewById(R.id.detail_view);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 109,
+          "text": "this.detailPageView.setAd(this.mAd, this.status);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 158,
+          "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 161,
+          "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 714,
+          "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, replaceCorrdinateCode);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onGeolocationPermissionsShowPrompt",
+      "registration_name": null,
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebChromeClient",
+      "normalized_signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebChromeClient;->onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebChromeClient.java",
+          "line": 20,
+          "text": "public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {",
+          "sha256": "927ab34867607f3673d8bce44b235b55b4631102a06a4f2492112e4b7842ed14"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "report-guided complete shared SDK surface follow-up: source-hashed inheritance, constructor configuration and registered callback-driven bridge injection",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 104,
+          "text": "setContentView(R.layout.video_detail_activity);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 105,
+          "text": "this.detailPageView = (CustomDetailPageView) findViewById(R.id.detail_view);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 109,
+          "text": "this.detailPageView.setAd(this.mAd, this.status);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 158,
+          "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 161,
+          "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 714,
+          "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, replaceCorrdinateCode);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onJsPrompt",
+      "registration_name": null,
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.SohuWebChromeClient",
+      "normalized_signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/SohuWebChromeClient;->onJsPrompt(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebChromeClient.java",
+          "line": 26,
+          "text": "public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {",
+          "sha256": "927ab34867607f3673d8bce44b235b55b4631102a06a4f2492112e4b7842ed14"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "report-guided complete shared SDK surface follow-up: source-hashed inheritance, constructor configuration and registered callback-driven bridge injection",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 104,
+          "text": "setContentView(R.layout.video_detail_activity);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 105,
+          "text": "this.detailPageView = (CustomDetailPageView) findViewById(R.id.detail_view);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 109,
+          "text": "this.detailPageView.setAd(this.mAd, this.status);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 158,
+          "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 161,
+          "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 714,
+          "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, replaceCorrdinateCode);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "bridge",
+      "name": "addJavascriptInterface",
+      "registration_name": "interception",
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface",
+      "normalized_signature": null,
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/intercept/WriteHandlingWebViewClient.java",
+          "line": 32,
+          "text": "",
+          "sha256": "62c1d4b3f9029065a8323909b222e5ec7dcc96e737e2985c7a2c2e5dc48a03d3"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "report-guided complete shared SDK surface follow-up: source-hashed inheritance, constructor configuration and registered callback-driven bridge injection",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 104,
+          "text": "setContentView(R.layout.video_detail_activity);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 105,
+          "text": "this.detailPageView = (CustomDetailPageView) findViewById(R.id.detail_view);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+          "line": 109,
+          "text": "this.detailPageView.setAd(this.mAd, this.status);",
+          "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 158,
+          "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 161,
+          "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+          "line": 714,
+          "text": "NBSWebLoadInstrument.loadUrl((View) sohuWebView, replaceCorrdinateCode);",
+          "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab",
+          "re_reviewed": true
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "bridge",
+      "name": "customAjax",
+      "registration_name": "interception",
+      "implementation": "com.sohu.app.ads.sdk.common.widget.webview.intercept.AjaxInterceptJavascriptInterface",
+      "normalized_signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/intercept/AjaxInterceptJavascriptInterface;->customAjax(Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/intercept/AjaxInterceptJavascriptInterface.java",
+          "line": 37,
+          "text": "public void customAjax(final String ID, final String body) {",
+          "sha256": "c0e302670227b05e88f4c026f47c738cae02b8cda7d7cb1bc39d469a34dddc98"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.app.ads.sdk.common.widget.webview.SohuWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "report-guided complete shared SDK surface follow-up: source-hashed inheritance, constructor configuration and registered callback-driven bridge injection",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    }
+  ],
+  "reason": "Shared SDK expansion over-applied the Progress wrapper and true-intercept constructor path to the separately proved direct XML WebView host. Four Chrome facts lack that host-chain proof; two Ajax facts are incompatible with the audited XML object constructor init(false). New probe rows remain frozen and disputed; they must not be scored as genuine misses or gains.",
+  "evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuVideoDetailPageActivity.java",
+      "line": 104,
+      "text": "setContentView(R.layout.video_detail_activity);",
+      "sha256": "775c95de32a0ead17013988f7e8f0f8f24ece7c3e622d12383068700dfd741ed"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+      "line": 158,
+      "text": "View inflate = FrameLayout.inflate(context, R.layout.custom_detail_layout, this);",
+      "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/CustomDetailPageView.java",
+      "line": 161,
+      "text": "this.mWebView = (SohuWebView) inflate.findViewById(R.id.web);",
+      "sha256": "b38e54496ccea7ee88b9ee0a97298246d7d919658c391c4d3a7d76f446f1eaab"
+    },
+    {
+      "file": "resources/res/layout/custom_detail_layout.xml",
+      "line": 40,
+      "text": "<com.sohu.app.ads.sdk.common.widget.webview.SohuWebView",
+      "sha256": "0a1a5959fa627925dda187c4dc231c74a5b1fdf270140240faae843d19dbb1d5"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 515,
+      "text": "public SohuWebView(Context context, AttributeSet attr) {",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 522,
+      "text": "init(false);",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 131,
+      "text": "if (Build.VERSION.SDK_INT < 21 || !webviewIntercept) {",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    }
+  ],
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable",
+    "role": "source reviewer"
+  },
+  "next": "Compare v6 terminal report actual XML receiver ID against false Ajax registrations; host remains valid."
+}

@@ -1,0 +1,189 @@
+{
+  "initial_probe_preserved": "canonical-core-sdk-closure-initial-probe.jsonl",
+  "initial_score_preserved": "generic-v3-core-sdk-closure-initial-probe-scoring.json",
+  "source_rejected_rows": [
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+          "line": 166,
+          "text": "this.fragment = (WebViewFragment) Fragment.instantiate(this, WebViewFragment.class.getName());"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+          "line": 2895,
+          "text": "this.mWebView = (VideoEnabledWebView) view.findViewById(R.id.webView);"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+          "line": 3925,
+          "text": "super.onPageStarted(webView, str, bitmap);",
+          "sha256": "23f055ce35c16b76a592873ec048c0127dda9058ce3687b1ded8a51c46767e56"
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "registration_name": null,
+      "implementation": "com.networkbench.agent.impl.instrumentation.NBSWebViewClient",
+      "normalized_signature": "Lcom/networkbench/agent/impl/instrumentation/NBSWebViewClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+          "line": 108,
+          "text": "public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {",
+          "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "source full core closure follow-up: actual BaseWebViewClient super callback injects instrumented annotated bridges",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/FarmExerciseActivity.java",
+          "line": 227,
+          "text": "ExerciseWebViewFragment exerciseWebViewFragment = (ExerciseWebViewFragment) Fragment.instantiate(this, ExerciseWebViewFragment.class.getName());"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/FarmExerciseActivity.java",
+          "line": 236,
+          "text": "beginTransaction.replace(R.id.fl_container_top, this.webViewFragment);"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/ExerciseWebViewFragment.java",
+          "line": 26,
+          "text": "public class ExerciseWebViewFragment extends WebViewFragment {"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+          "line": 166,
+          "text": "this.fragment = (WebViewFragment) Fragment.instantiate(this, WebViewFragment.class.getName());"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+          "line": 2895,
+          "text": "this.mWebView = (VideoEnabledWebView) view.findViewById(R.id.webView);"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+          "line": 3925,
+          "text": "super.onPageStarted(webView, str, bitmap);",
+          "sha256": "23f055ce35c16b76a592873ec048c0127dda9058ce3687b1ded8a51c46767e56"
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "registration_name": null,
+      "implementation": "com.networkbench.agent.impl.instrumentation.NBSWebViewClient",
+      "normalized_signature": "Lcom/networkbench/agent/impl/instrumentation/NBSWebViewClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+          "line": 108,
+          "text": "public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {",
+          "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "source full core closure follow-up: actual BaseWebViewClient super callback injects instrumented annotated bridges",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+      "host_evidence": [
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/WebViewPgcActivity.java",
+          "line": 46,
+          "text": "WebViewPgcFragment webViewPgcFragment = (WebViewPgcFragment) Fragment.instantiate(this, WebViewPgcFragment.class.getName());"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/WebViewPgcActivity.java",
+          "line": 54,
+          "text": "beginTransaction.replace(R.id.webview_container, this.fragment);"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewPgcFragment.java",
+          "line": 13,
+          "text": "public class WebViewPgcFragment extends WebViewFragment {"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/WebViewActivity.java",
+          "line": 166,
+          "text": "this.fragment = (WebViewFragment) Fragment.instantiate(this, WebViewFragment.class.getName());"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+          "line": 2895,
+          "text": "this.mWebView = (VideoEnabledWebView) view.findViewById(R.id.webView);"
+        },
+        {
+          "file": "sources/com/sohu/sohuvideo/ui/fragment/WebViewFragment.java",
+          "line": 3925,
+          "text": "super.onPageStarted(webView, str, bitmap);",
+          "sha256": "23f055ce35c16b76a592873ec048c0127dda9058ce3687b1ded8a51c46767e56"
+        }
+      ],
+      "group_id": "restored-player-native-banner",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "registration_name": null,
+      "implementation": "com.networkbench.agent.impl.instrumentation.NBSWebViewClient",
+      "normalized_signature": "Lcom/networkbench/agent/impl/instrumentation/NBSWebViewClient;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "normalized_api": null,
+      "evidence": [
+        {
+          "file": "sources/com/networkbench/agent/impl/instrumentation/NBSWebViewClient.java",
+          "line": 108,
+          "text": "public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {",
+          "sha256": "d925dfa947de1705d7432aaf75595b13705cad626f43d0026773ab96bc235247"
+        }
+      ],
+      "webview_constraint": {
+        "types": [
+          "com.sohu.sohuvideo.ui.view.VideoEnabledWebView"
+        ]
+      },
+      "reviewer": {
+        "model": "GPT-6 Codex; exact runtime identifier unavailable",
+        "role": "independent-source-reviewer"
+      },
+      "selection_provenance": "source full core closure follow-up: actual BaseWebViewClient super callback injects instrumented annotated bridges",
+      "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+      "conditional": true
+    }
+  ],
+  "reason": "Core concrete BaseWebViewClient overrides onReceivedHttpError at WebViewFragment.java:3953. Its visible callback owner is the concrete override already recorded by source-first, not the NBS superclass method. Explicit super execution inside it does not create a second exposed callback declaration.",
+  "removed_invalid_new_probe_rows": 3,
+  "original_source_first_and_prior_failures_changed": false
+}

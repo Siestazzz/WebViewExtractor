@@ -1,0 +1,293 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "reviewer": {
+    "model": "GPT-6 Codex; exact runtime identifier unavailable",
+    "role": "source reviewer"
+  },
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/sohuvideo-1",
+  "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+  "selection_provenance": "source full SDK closure follow-up after v3; no holdout source used",
+  "transport": "js_prompt -> registered custom intercept -> asynchronous JSONObject parser -> annotation-derived name registry -> exact declared-method reflection",
+  "lookup": {
+    "message_key": "JSONObject.method",
+    "handler_default": "WebEvent.class.getName()",
+    "class_resolution": "Class.forName -> newInstance",
+    "registry_scan": "getDeclaredMethods (excludes inherited methods)",
+    "annotation": "runtime H5CallNa",
+    "annotation_name_property": "invokeName",
+    "registry_value": "Method.getName()",
+    "duplicate_key": "first reflected method with same alias wins; declaredMethods iteration order unspecified",
+    "exact_parameter_types": [
+      "java.lang.ref.WeakReference",
+      "com.sohu.app.ads.sdk.common.widget.webview.hybrid.model.WebFunInfo"
+    ],
+    "exact_required_descriptor": "(Ljava/lang/ref/WeakReference;Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/model/WebFunInfo;)",
+    "invoke_arguments": [
+      "new WeakReference(actual WebView)",
+      "WebFunInfo assembled from incoming JSONObject"
+    ],
+    "visibility": "getDeclaredMethod plus setAccessible(true), so nonpublic declared methods can be selected if exact signature and scanned annotation alias match",
+    "return_handling": "Stringified reflected return value",
+    "default_callable_endpoints": 0
+  },
+  "registry_candidates": [
+    {
+      "alias": "checkState",
+      "java_name": "checkState",
+      "signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/event/WebEvent;->checkState(Landroid/content/Context;Lorg/json/JSONObject;)Ljava/lang/String;",
+      "dispatch_matches_exact_parameters": false,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/WebEvent.java",
+          "line": 13,
+          "text": "@H5CallNa(invokeName = \"checkState\")",
+          "sha256": "a6ed1c0412f85dcd20fc61deee524277098a5bf8cf65f2458cba59656361c578"
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/WebEvent.java",
+          "line": 14,
+          "text": "public String checkState(Context context, JSONObject args) {",
+          "sha256": "a6ed1c0412f85dcd20fc61deee524277098a5bf8cf65f2458cba59656361c578"
+        }
+      ]
+    },
+    {
+      "alias": "start",
+      "java_name": "startDownload",
+      "signature": "Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/event/WebEvent;->startDownload(Landroid/content/Context;Lorg/json/JSONObject;)Ljava/lang/String;",
+      "dispatch_matches_exact_parameters": false,
+      "evidence": [
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/WebEvent.java",
+          "line": 19,
+          "text": "@H5CallNa(invokeName = \"start\")",
+          "sha256": "a6ed1c0412f85dcd20fc61deee524277098a5bf8cf65f2458cba59656361c578"
+        },
+        {
+          "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/WebEvent.java",
+          "line": 20,
+          "text": "public String startDownload(Context context, JSONObject args) {",
+          "sha256": "a6ed1c0412f85dcd20fc61deee524277098a5bf8cf65f2458cba59656361c578"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 21,
+      "text": "private static String sEventHandleClassName = WebEvent.class.getName();",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 28,
+      "text": "Class<?> cls = Class.forName(str);",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 32,
+      "text": "Method[] declaredMethods = this.mHandlerClass.getDeclaredMethods();",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 35,
+      "text": "H5CallNa h5CallNa = (H5CallNa) declaredMethods[i].getAnnotation(H5CallNa.class);",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 37,
+      "text": "String invokeName = h5CallNa.invokeName();",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 39,
+      "text": "this.mMethodMap.put(invokeName, declaredMethods[i].getName());",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 63,
+      "text": "public static void setEventHandleClassName(String className) {",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 64,
+      "text": "sEventHandleClassName = className;",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 71,
+      "text": "Method declaredMethod = this.mHandlerClass.getDeclaredMethod(this.mMethodMap.get(invokeName), WeakReference.class, WebFunInfo.class);",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 72,
+      "text": "declaredMethod.setAccessible(true);",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/event/BuiInvokeManager.java",
+      "line": 73,
+      "text": "return declaredMethod.invoke(this.mHandlerInstance, new WeakReference(web), args) + \"\";",
+      "sha256": "1a51b3e1e0da856481af7cc6e44abc9c8a9909b0b4b33e5fc94e69f3bade3595"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/task/EventParserTaskRunnable.java",
+      "line": 48,
+      "text": "String optString3 = jSONObject.optString(\"method\", \"\");",
+      "sha256": "4f7a0d1067c2bd0fe30f7f3906c70d0efc74a9fcf404359d1378dfa22defc837"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/task/EventParserTaskRunnable.java",
+      "line": 65,
+      "text": "String callNativeFun = BuiInvokeManager.getInstance().callNativeFun(webView, optString3, webFunInfo);",
+      "sha256": "4f7a0d1067c2bd0fe30f7f3906c70d0efc74a9fcf404359d1378dfa22defc837"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/task/EventParserTaskRunnable.java",
+      "line": 68,
+      "text": "webView.post(new InjectRunnable(webView, WebUtils.getInvokeJs(optString, optString2, callNativeFun)));",
+      "sha256": "4f7a0d1067c2bd0fe30f7f3906c70d0efc74a9fcf404359d1378dfa22defc837"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuAdActivity.java",
+      "line": 47,
+      "text": "chromeClient.setJsPromptIntercept(new SohuWebChromeClient.OnJsPromptIntercept() { // from class: com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity.2",
+      "sha256": "014fed8023810b2a6c8a00d9b832ee18f57b3519dc86b71032de161c30974ed5"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuAdActivity.java",
+      "line": 51,
+      "text": "return SohuAdActivity.this.mHybridManager.handle(view, message);",
+      "sha256": "014fed8023810b2a6c8a00d9b832ee18f57b3519dc86b71032de161c30974ed5"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/hybrid/impl/HybridManagerImpl.java",
+      "line": 19,
+      "text": "c0.d(new EventParserTaskRunnable(webView, new JSONObject(msg)));",
+      "sha256": "4f40a5517cbf81533f1a9e983e33b8a17b7e79dc617e7d795be967304be9373e"
+    }
+  ],
+  "dynamic_handler_replacement": {
+    "setter": "setEventHandleClassName(String)",
+    "APK_java_source_search": "Declaration plus concrete SdkFactory.java:1232 call selecting WebApkDownloadEvent.class.getName()",
+    "scope": "Actual source-known replacement discovered; target depends on singleton initialization order. External/reflected replacements remain unknown."
+  },
+  "unknown": [
+    "Default WebEvent mismatches exact reflected parameters; the source-registered WebApkDownloadEvent supplies four matching endpoints. Preserve both singleton initialization-order alternatives.",
+    "Future external class-name replacements are not resolved."
+  ],
+  "registered_replacement": {
+    "handler": "com.sohu.app.ads.sdk.common.adjump.webdownload.WebApkDownloadEvent",
+    "source_call": {
+      "file": "sources/com/sohu/app/ads/sdk/SdkFactory.java",
+      "line": 1232,
+      "text": "BuiInvokeManager.setEventHandleClassName(WebApkDownloadEvent.class.getName());",
+      "sha256": "6e1d6eb4d0cb05f91bfca772ec9cd46e96f68c8dc303eb4868ce295c04b86a8d"
+    },
+    "initialization_method": {
+      "file": "sources/com/sohu/app/ads/sdk/SdkFactory.java",
+      "line": 1165,
+      "text": "private void b(final Context context) {",
+      "sha256": "6e1d6eb4d0cb05f91bfca772ec9cd46e96f68c8dc303eb4868ce295c04b86a8d"
+    },
+    "prepare_entry": {
+      "file": "sources/com/sohu/app/ads/sdk/SdkFactory.java",
+      "line": 958,
+      "text": "b(context);",
+      "sha256": "6e1d6eb4d0cb05f91bfca772ec9cd46e96f68c8dc303eb4868ce295c04b86a8d"
+    },
+    "endpoints": [
+      {
+        "alias": "checkState",
+        "java_name": "checkState",
+        "signature": "Lcom/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent;->checkState(Ljava/lang/ref/WeakReference;Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/model/WebFunInfo;)Ljava/lang/String;",
+        "dispatch_matches_exact_parameters": true,
+        "evidence": [
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 185,
+            "text": "@H5CallNa(invokeName = \"checkState\")",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          },
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 186,
+            "text": "public String checkState(final WeakReference<WebView> webViewRef, final WebFunInfo args) {",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          }
+        ]
+      },
+      {
+        "alias": "installApp",
+        "java_name": "installApp",
+        "signature": "Lcom/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent;->installApp(Ljava/lang/ref/WeakReference;Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/model/WebFunInfo;)Ljava/lang/String;",
+        "dispatch_matches_exact_parameters": true,
+        "evidence": [
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 222,
+            "text": "@H5CallNa(invokeName = \"installApp\")",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          },
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 223,
+            "text": "public String installApp(final WeakReference<WebView> webViewRef, final WebFunInfo args) {",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          }
+        ]
+      },
+      {
+        "alias": "pauseDownload",
+        "java_name": "pauseDownload",
+        "signature": "Lcom/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent;->pauseDownload(Ljava/lang/ref/WeakReference;Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/model/WebFunInfo;)Ljava/lang/String;",
+        "dispatch_matches_exact_parameters": true,
+        "evidence": [
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 242,
+            "text": "@H5CallNa(invokeName = \"pauseDownload\")",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          },
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 243,
+            "text": "public String pauseDownload(final WeakReference<WebView> webViewRef, final WebFunInfo args) {",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          }
+        ]
+      },
+      {
+        "alias": "startDownload",
+        "java_name": "startDownload",
+        "signature": "Lcom/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent;->startDownload(Ljava/lang/ref/WeakReference;Lcom/sohu/app/ads/sdk/common/widget/webview/hybrid/model/WebFunInfo;)Ljava/lang/String;",
+        "dispatch_matches_exact_parameters": true,
+        "evidence": [
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 262,
+            "text": "@H5CallNa(invokeName = \"startDownload\")",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          },
+          {
+            "file": "sources/com/sohu/app/ads/sdk/common/adjump/webdownload/WebApkDownloadEvent.java",
+            "line": 263,
+            "text": "public String startDownload(final WeakReference<WebView> webViewRef, final WebFunInfo args) {",
+            "sha256": "1d0d693af28b91b8ec248112bd7c9f362ffdb7d1f3b7f463a3ec23a4e38f24e8"
+          }
+        ]
+      }
+    ],
+    "callable_endpoints": 4,
+    "timing": "SDK initialization writes the static class name before singleton construction; if singleton already exists, setter does not rebuild its target. Preserve initialization-order alternatives."
+  }
+}

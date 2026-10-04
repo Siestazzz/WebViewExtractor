@@ -1,0 +1,263 @@
+{
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "reviewer": "GPT-6.1 Sol",
+  "provenance": "source-first",
+  "hosts": [
+    "com.bytedance.bdturing.comonui.CommonWebActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivityV2",
+    "com.bytedance.bdturing.BdTuringVerifyActivity",
+    "com.bytedance.bdturing.BdTuringWebLiveActivity",
+    "com.bytedance.bdturing.comonui.VerifyConfirmDialogActivity",
+    "com.bytedance.bdturing.twiceverify.TwiceVerifyWebActivity",
+    "com.bytedance.bdturing.BdTuringQaSmsVerifyActivity"
+  ],
+  "files": [
+    {
+      "file": "sources/com/bytedance/bdturing/TuringVerifyWebView.java",
+      "sha256": "48dad07225b4538df9cc3489a2a2395a0db4b762a813b1d3478e2d167e987f71",
+      "source_lines": 417,
+      "entry_lines": [
+        {
+          "line": 351,
+          "text": "settings.setLoadWithOverviewMode(true);"
+        },
+        {
+          "line": 352,
+          "text": "settings.setDomStorageEnabled(true);"
+        },
+        {
+          "line": 353,
+          "text": "settings.setUseWideViewPort(true);"
+        },
+        {
+          "line": 354,
+          "text": "settings.setSupportZoom(false);"
+        },
+        {
+          "line": 355,
+          "text": "settings.setAllowFileAccessFromFileURLs(false);"
+        },
+        {
+          "line": 356,
+          "text": "settings.setAllowFileAccess(false);"
+        },
+        {
+          "line": 357,
+          "text": "settings.setLoadsImagesAutomatically(true);"
+        },
+        {
+          "line": 358,
+          "text": "settings.setDefaultTextEncodingName(\"utf-8\");"
+        },
+        {
+          "line": 359,
+          "text": "settings.setCacheMode(2);"
+        },
+        {
+          "line": 360,
+          "text": "settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);"
+        },
+        {
+          "line": 361,
+          "text": "settings.setTextZoom(100);"
+        },
+        {
+          "line": 370,
+          "text": "setWebChromeClient(this.o);"
+        },
+        {
+          "line": 372,
+          "text": "setWebViewClient(this.p);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/VerifyWebView.java",
+      "sha256": "260f4b67d055b52f9fe5a4c3474fa823c153c2a2e7674072e5429ffd8aaa76eb",
+      "source_lines": 377,
+      "entry_lines": [
+        {
+          "line": 85,
+          "text": "settings.setLoadWithOverviewMode(true);"
+        },
+        {
+          "line": 86,
+          "text": "settings.setDomStorageEnabled(true);"
+        },
+        {
+          "line": 87,
+          "text": "settings.setUseWideViewPort(true);"
+        },
+        {
+          "line": 88,
+          "text": "settings.setSupportZoom(false);"
+        },
+        {
+          "line": 89,
+          "text": "settings.setAllowFileAccessFromFileURLs(false);"
+        },
+        {
+          "line": 90,
+          "text": "settings.setAllowFileAccess(false);"
+        },
+        {
+          "line": 91,
+          "text": "settings.setLoadsImagesAutomatically(true);"
+        },
+        {
+          "line": 92,
+          "text": "settings.setDefaultTextEncodingName(\"utf-8\");"
+        },
+        {
+          "line": 93,
+          "text": "settings.setCacheMode(2);"
+        },
+        {
+          "line": 94,
+          "text": "settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);"
+        },
+        {
+          "line": 95,
+          "text": "settings.setTextZoom(100);"
+        },
+        {
+          "line": 98,
+          "text": "settings.setMixedContentMode(0);"
+        },
+        {
+          "line": 108,
+          "text": "setWebChromeClient(this.l);"
+        },
+        {
+          "line": 110,
+          "text": "setWebViewClient(this.m);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/methods/JsBridgeModule.java",
+      "sha256": "c4a1f6e09bdc0ee8bd966e7e6daa038d82d4702f8e80e7a6bc402d919c627efb",
+      "source_lines": 161,
+      "entry_lines": [
+        {
+          "line": 72,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 87,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 92,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 121,
+          "text": "@JavascriptInterface"
+        },
+        {
+          "line": 157,
+          "text": "webView.getSettings().setJavaScriptEnabled(true);"
+        },
+        {
+          "line": 158,
+          "text": "this.a.addJavascriptInterface(new AndroidJsInterface(iVerifyInnerHandler), \"androidJsBridge\");"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/livedetect/TuringBaseLiveDetectActivity.java",
+      "sha256": "0e7ecd7b9820d141dd83f27751db6395429ed9e9d7ad8826f5344e194c9e3e0b",
+      "source_lines": 142,
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/CommonWebActivity.java",
+      "sha256": "018b292c6f07e76ef087e9c4d4f700e947345611104459743c9df3ec28dec381",
+      "source_lines": 169,
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivityV2.java",
+      "sha256": "0764e7309cc19b09c463ef4280165d0d06a0fb86fc0b8e15ca404b3645f70a10",
+      "source_lines": 232,
+      "entry_lines": [
+        {
+          "line": 219,
+          "text": "this.a.getSettings().setJavaScriptEnabled(true);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringVerifyActivity.java",
+      "sha256": "b796d7e512a60a2127dceb7cac16ca1530b400d417f9456ad423bc9590417eee",
+      "source_lines": 567,
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringWebLiveActivity.java",
+      "sha256": "8ad640f8faefddbbd903d80a065f5c9a126ca62b1a632e2094af9a1511ef4d22",
+      "source_lines": 175,
+      "entry_lines": [
+        {
+          "line": 38,
+          "text": "this.j.getSettings().setMediaPlaybackRequiresUserGesture(false);"
+        },
+        {
+          "line": 39,
+          "text": "this.j.setWebChromeClient(new WebChromeClient() { // from class: com.bytedance.bdturing.BdTuringWebLiveActivity.1"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/comonui/VerifyConfirmDialogActivity.java",
+      "sha256": "58f6dccb49d1597aad2eb84714eb75e20ae125773894a135ceaf60d5a8040663",
+      "source_lines": 526,
+      "entry_lines": []
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/twiceverify/TwiceVerifyWebActivity.java",
+      "sha256": "b276fc2004f1d2c98c804fb0652e800d42b2c7020217129d54623b1f32fb67c9",
+      "source_lines": 220,
+      "entry_lines": [
+        {
+          "line": 207,
+          "text": "this.a.getSettings().setJavaScriptEnabled(true);"
+        }
+      ]
+    },
+    {
+      "file": "sources/com/bytedance/bdturing/BdTuringQaSmsVerifyActivity.java",
+      "sha256": "1a0b8dc7ba198715ea09599b22e0b4c52aeb0eee08d710979ac5438517ab9d9f",
+      "source_lines": 540,
+      "entry_lines": []
+    }
+  ],
+  "bridge": {
+    "status": "done",
+    "registrations": [
+      "androidJsBridge via JsBridgeModule.AndroidJsInterface"
+    ],
+    "annotated_members": [
+      "callMethodParams(String)V",
+      "offMethodParams(String)V",
+      "onMethodParams(String)V"
+    ],
+    "excluded": "JsBridgeModule.JS2NativeInterface._invokeMethod is annotated but never injected by the module; not fabricated as a live endpoint"
+  },
+  "settings": {
+    "status": "done",
+    "TuringVerifyWebView": "11 initialization setters + moduleJS true; Twice extra direct JS true; WebLive adds mediaGesturefalse",
+    "VerifyWebView": "same11 setters plus BOE mixed0; moduleJS true; Twice extra direct JS true"
+  },
+  "callback": {
+    "status": "done",
+    "TuringVerifyWebView_client_overrides": 6,
+    "VerifyWebView_client_overrides": 8,
+    "shared_chrome_overrides": 1,
+    "WebLive_replacement_chrome_overrides": 1,
+    "inheritance": "actual views extend Android WebView directly; client anonymous classes extend platform Client/Chrome, no custom super members"
+  },
+  "deep_audit_complete": true,
+  "known_boundary": "Selected init branches and logging/BOE/subclass replacement conditions explicit. Source assertions cover APK Java bodies; no dynamic server content or runtime success guaranteed."
+}

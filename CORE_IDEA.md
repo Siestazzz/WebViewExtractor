@@ -1,6 +1,6 @@
 # WebView 能力提取的当前核心思路
 
-当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文的基本对象传播和两轮调度仍适用；当前 generic v2 另增加具体能力任务有界优先调度、常量 switch 细化和严格标准回调签名，见 [当前迭代结果](docs/validation/GENERIC_V2.md)。旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
+当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文的基本对象传播和两轮调度仍适用；generic v2 增加具体能力任务有界优先调度、常量 switch 细化和严格标准回调签名；已提交的 generic v4 又收紧非 Activity 组件入口、移除未知实例的构造器猜测，并补充实际生命周期虚调用、Client getter 和 API override 行为。v5 增加通用 Fragment 工厂和 DownloadListener，但产生严重性能回退，见 [已测迭代](docs/validation/GENERIC_V5.md)。工作树 v6 增加已安装 Client 实际调用路径上的 delegate 传播，并限制框架内部工厂的全局相关性；真实质量仍待十 App 核验，见 [委派机制](docs/validation/GENERIC_V6_CLIENT_DELEGATION.md)。旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
 
 需要逐步理解传播算法和精度边界，可继续阅读 [分析原理教程](docs/ANALYSIS_TUTORIAL.md)。
 

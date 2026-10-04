@@ -23,7 +23,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
 
 ## 当前状态
 
-当前为通用规则第二轮版本，已移除私有适配并测试十个 App（四个新增样本使用补丁版）。十份报告约 46～594 秒产出，但均为 partial。修复了三条已核验的错误 Bridge 归属，芒果累计核验集新增命中 14 条 Bridge 事实；搜狐核心链仍大量漏检，整体误报率与完整性未验收。详见 [本轮结果](docs/validation/GENERIC_V2.md)。
+最近完成十 App 实测的版本为 generic v6；四个新增样本使用补丁版。v6 修复 v5 的部分性能回退：四个 App 在 34～205 秒内产出，另外六个仍接近 600 秒。实际 Client 委派补回部分回调，静态 Bridge 方法也已纳入；扩充核验后仍有明显遗漏，严格验收为 0/10。详见 [v6 结果](docs/validation/GENERIC_V6.md)、[v5 失败实验](docs/validation/GENERIC_V5.md) 和 [严格验收口径](docs/validation/acceptance/README.md)。
 
 APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。文档里的 `test/runs/...` 是本地实验产物；克隆后需自行构建并提供 APK。
 
@@ -34,7 +34,8 @@ APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。�
 - [分析原理教程](docs/ANALYSIS_TUTORIAL.md)：对象传播、能力绑定、上下文敏感性、通用规则与私有适配。
 - [能力与报告语义](docs/CAPABILITY_ANALYSIS.md)：绑定、覆盖、候选和评估边界。
 - [验证资料索引](docs/validation/README.md)：当前结果、历史记录和已知问题。
-- [通用规则第二轮结果](docs/validation/GENERIC_V2.md)：十 App 实测、累计事实重放、残留问题和精简报告。
+- [通用规则第四轮结果](docs/validation/GENERIC_V4.md)：十 App 实测、同集事实重放、确认误报修复及回退。
+- [通用规则第三轮结果](docs/validation/GENERIC_V3.md)：组件入口收紧及其真实 App 回退。
 - [历史两轮调度记录](docs/validation/SCHEDULER_V3.md)：scheduler v3 的六 App 结果和限制。
 
 旧版类关系图入口保留为 `--legacy`，不用于当前能力质量验收。
