@@ -1,0 +1,4581 @@
+{
+  "oracle_sha256": "65e8bcb1cd11c21ec50858c5d38064240d692ed3cc02d050395409f4e320d7f8",
+  "report_sha256": "f9abd6bdbc5609d926d53f52f569ae1ab0e3406c39d0bb7f04b33dc1a70ecb71",
+  "unassigned_oracle_facts": 108,
+  "oracle_file": "docs/validation/generic-v18-reviewed-facts/ctrip.jsonl",
+  "apk_sha256": "cb4c2a6715a012e53ecb1fc67aac16518f3602215ceed1202ebac185420b1e66",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 391,
+      "matched": 369,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.9437340153452686,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 3970,
+      "matched": 3682,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.927455919395466,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 444,
+      "matched": 412,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.9279279279279279,
+      "explicit_recall": 0.0
+    },
+    "webview_operation": {
+      "expected": 6,
+      "matched": 4,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.6666666666666666,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "HotelFlagShipLoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "HotelFlagShipLoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setPluginState",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSupportMultipleWindows",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "HotelFlagShipLoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptCanOpenWindowsAutomatically",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCloseWindow",
+      "signature": "Lctrip/android/hotel/order/view/flagship/HotelFlagShipLoginActivity$a$a;->onCloseWindow(Landroid/webkit/WebView;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity::popup_webview_created_in_onCreateWindow",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lctrip/android/hotel/order/view/flagship/HotelFlagShipLoginActivity$a$b;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "HotelFlagShipLoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onCreateWindow",
+      "signature": "Lctrip/android/hotel/order/view/flagship/HotelFlagShipLoginActivity$a;->onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "HotelFlagShipLoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lctrip/android/hotel/order/view/flagship/HotelFlagShipLoginActivity$a;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity",
+      "webview": "HotelFlagShipLoginActivity::mWebView",
+      "webview_constraint": {
+        "types": [
+          "android.webkit.WebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lctrip/android/hotel/order/view/flagship/HotelFlagShipLoginActivity$b;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.view.h5v2.view.H5WebView"
+        ]
+      },
+      "kind": "webview_operation",
+      "name": "loadUrl",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.business.evaluation.EvaluateDialogActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.view.h5v2.view.H5WebView"
+        ]
+      },
+      "kind": "webview_operation",
+      "name": "loadUrl",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge",
+      "name": "SecureJsInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "clearAllEdit",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->clearAllEdit()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "curPosFromJS",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->curPosFromJS(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "customCallback",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->customCallback()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getMD5FromNative",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->getMD5FromNative()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "isPasswordEdit",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->isPasswordEdit(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sdk_js_if",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onAddShare",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onAddShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancel",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancel(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancelAddShare",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancelAddShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancelInvite",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancelInvite()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancelLogin",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancelLogin()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onComplete",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onComplete(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onInvite",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onInvite(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onLoad",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onLoad(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.login.view.thirdlogin.QQSSOEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMsg",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->showMsg(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge",
+      "name": "SecureJsInterface",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "clearAllEdit",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->clearAllEdit()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "curPosFromJS",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->curPosFromJS(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "customCallback",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->customCallback()Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getMD5FromNative",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->getMD5FromNative()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.c"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "isPasswordEdit",
+      "signature": "Lcom/tencent/open/web/security/SecureJsInterface;->isPasswordEdit(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge",
+      "name": "sdk_js_if",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onAddShare",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onAddShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancel",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancel(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancelAddShare",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancelAddShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancelInvite",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancelInvite()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onCancelLogin",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onCancelLogin()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onComplete",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onComplete(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onInvite",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onInvite(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "onLoad",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->onLoad(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.view.login.v.third.QQEntryActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.tencent.open.c.b"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMsg",
+      "signature": "Lcom/tencent/open/TDialog$JsListener;->showMsg(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowFileAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowUniversalAccessFromFileURLs",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMixedContentMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setMediaPlaybackRequiresUserGesture",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUserAgentString",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowContentAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDatabasePath",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setTextSize",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "setting",
+      "name": "setRenderPriority",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Util_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "addPhotos",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->addPhotos(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "addShortcut",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->addShortcut(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "addWeixinFriend",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->addWeixinFriend(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "appScreenshotUpload",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->appScreenshotUpload(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "appShowVRBrower",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->appShowVRBrower(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "backToHome",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->backToHome(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "callPhone",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->callPhone(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "callSystemShare",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->callSystemShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "catchPDFError",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->catchPDFError(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkUpdate",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->checkUpdate(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "choosePhoto",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->choosePhoto(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "crossPackageJumpUrl",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->crossPackageJumpUrl(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "downloadData",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->downloadData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getAgingAccessibleFromDisk",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->getAgingAccessibleFromDisk(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getSystemFont",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->getSystemFont(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "insertFrontPhotos",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->insertFrontPhotos(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logMarketPagePerformance",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->logMarketPagePerformance(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openAdvPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->openAdvPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openUrl",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->openUrl(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "readCopiedStringFromClipboard",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->readCopiedStringFromClipboard(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "recommendAppToFriends",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->recommendAppToFriends(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "refreshNativePage",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->refreshNativePage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "saveAgingAccessibleToDisk",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->saveAgingAccessibleToDisk(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "savePhoto",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->savePhoto(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "scanQRCode",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->scanQRCode(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setValue",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->setValue(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sgDAV",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->sgDAV(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showNewestIntroduction",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->showNewestIntroduction(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showPhotoBroswer",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->showPhotoBroswer(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showPhotoBroswerWithScrollCallback",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->showPhotoBroswerWithScrollCallback(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "startLiveNess",
+      "signature": "Lctrip/android/view/h5/plugin/H5UtilPlugin;->startLiveNess(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "backToLast",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->backToLast(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkAppInstallStatus",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->checkAppInstallStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkAppsInstallStatus",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->checkAppsInstallStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkHijack",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->checkHijack(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkNetworkStatus",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->checkNetworkStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "copyToClipboard",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->copyToClipboard(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getHybridPackageInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->getHybridPackageInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getInstalledAppList",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->getInstalledAppList(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getScreenBrightness",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->getScreenBrightness(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "h5Log",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->h5Log(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "h5PageFinishLoading",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->h5PageFinishLoading(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logEvent",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->logEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logInstalledAppList",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->logInstalledAppList(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "notifyBridgeJSReady",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->notifyBridgeJSReady(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setScreenBrightness",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->setScreenBrightness(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showHybridVersion",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->showHybridVersion(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showToast",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseUtilPlugin;->showToast(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Business_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkAppPackageInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->checkAppPackageInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkPackageFeature",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->checkPackageFeature(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "chooseContactFromAddressbook",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->chooseContactFromAddressbook(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "chooseInvoiceTitle",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->chooseInvoiceTitle(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "doBusinessJob",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->doBusinessJob(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getABTestingInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->getABTestingInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getChannelInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->getChannelInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCurrentCityMapping",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->getCurrentCityMapping(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getDeviceInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->getDeviceInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getMobileConfig",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->getMobileConfig(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "isHMOS",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->isHMOS(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logGoogleRemarking",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->logGoogleRemarking(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openAlipay",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->openAlipay(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "preloadCRNInstanceForBusiness",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->preloadCRNInstanceForBusiness(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "preloadRunCRNApplication",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->preloadRunCRNApplication(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "readVerificationCodeFromSMS",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->readVerificationCodeFromSMS(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "selectDate",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->selectDate(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendUBTEvent",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->sendUBTEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendUBTLog",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->sendUBTLog(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendUBTMetrics",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->sendUBTMetrics(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendUBTTrace",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->sendUBTTrace(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setCityMapping",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->setCityMapping(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showAccountBindAlertIfNeed",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->showAccountBindAlertIfNeed(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showPickerView",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->showPickerView(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showVoiceSearch",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->showVoiceSearch(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "startHMOSAbility",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->startHMOSAbility(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "trackUBTJSLog",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->trackUBTJSLog(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "trackUBTJSLogV2",
+      "signature": "Lctrip/android/view/h5/plugin/H5BusinessPlugin;->trackUBTJSLogV2(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Locate_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkLocationAccuracy",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->checkLocationAccuracy(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkLocationPermission",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->checkLocationPermission(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkLocationPermissionTimeRestrict",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->checkLocationPermissionTimeRestrict(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "mapNavigation",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->mapNavigation(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMap",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->showMap(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMapNavigation",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->showMapNavigation(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showSwitchCityDialogIfNeeded",
+      "signature": "Lctrip/android/view/h5/plugin/H5LocatePlugin;->showSwitchCityDialogIfNeeded(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCachedCtripCity",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseLocatePlugin;->getCachedCtripCity(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCachedLocationData",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseLocatePlugin;->getCachedLocationData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "locate",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseLocatePlugin;->locate(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setSimulatedLocation",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseLocatePlugin;->setSimulatedLocation(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "stopLocate",
+      "signature": "Lctrip/android/view/h5/plugin/H5BaseLocatePlugin;->stopLocate(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyBusiness_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openScheme",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyBusinessPlugin;->openScheme(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "scanQRCode",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyBusinessPlugin;->scanQRCode(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyTool_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkInstalledApp",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyToolPlugin;->checkInstalledApp(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "chooseContact",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyToolPlugin;->chooseContact(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyApp_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getAppInUsePkg",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyAppPlugin;->getAppInUsePkg(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getAppInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyAppPlugin;->getAppInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getDeviceInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyAppPlugin;->getDeviceInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getNetworkType",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyAppPlugin;->getNetworkType(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyGeoLocation_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCurrentPosition",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyGeoLocationPlugin;->getCurrentPosition(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "NavBar_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCtripMessageBoxMsgStatus",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->getCtripMessageBoxMsgStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getStatusBarHeight",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->getStatusBarHeight(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "refresh",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->refresh(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "removeStatusBarListeners",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->removeStatusBarListeners(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setLightStatusBar",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->setLightStatusBar(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setNavBarHidden",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->setNavBarHidden(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setStatusBarColor",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->setStatusBarColor(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setToolBarHidden",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->setToolBarHidden(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setTransparentForWindow",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->setTransparentForWindow(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showSideToolbox",
+      "signature": "Lctrip/android/view/h5/plugin/H5NavBarPlugin;->showSideToolbox(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Log_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logCode",
+      "signature": "Lctrip/android/view/h5/plugin/H5LogPlugin;->logCode(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logDevTrace",
+      "signature": "Lctrip/android/view/h5/plugin/H5LogPlugin;->logDevTrace(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logError",
+      "signature": "Lctrip/android/view/h5/plugin/H5LogPlugin;->logError(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logMetric",
+      "signature": "Lctrip/android/view/h5/plugin/H5LogPlugin;->logMetric(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5LogPlugin;->logPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logTrace",
+      "signature": "Lctrip/android/view/h5/plugin/H5LogPlugin;->logTrace(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "User_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "fetchWXInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->fetchWXInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "finishedLogin",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->finishedLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "finishedRegister",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->finishedRegister(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "initMemberH5Info",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->initMemberH5Info(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "memberAutoLogin",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->memberAutoLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "memberLogin",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->memberLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "memberRegister",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->memberRegister(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "nonMemberLogin",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->nonMemberLogin(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "userLogout",
+      "signature": "Lctrip/android/view/h5/plugin/H5UserPlugin;->userLogout(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Pipe_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "abortHTTPRequest",
+      "signature": "Lctrip/android/view/h5/plugin/H5PipePlugin;->abortHTTPRequest(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendH5PipeRequest",
+      "signature": "Lctrip/android/view/h5/plugin/H5PipePlugin;->sendH5PipeRequest(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendHTTPPipeRequest",
+      "signature": "Lctrip/android/view/h5/plugin/H5PipePlugin;->sendHTTPPipeRequest(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "File_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkFileExist",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->checkFileExist(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "deleteFile",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->deleteFile(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCurrentSandboxName",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->getCurrentSandboxName(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getFileSize",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->getFileSize(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getSanboxRootPath",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->getSanboxRootPath(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "makeDir",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->makeDir(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "readTextFromFile",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->readTextFromFile(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "writeTextToFile",
+      "signature": "Lctrip/android/view/h5/plugin/H5FilePlugin;->writeTextToFile(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Downloader_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "downloadData",
+      "signature": "Lctrip/android/view/h5/plugin/H5DownloaderPlugin;->downloadData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getDownloadedFileList",
+      "signature": "Lctrip/android/view/h5/plugin/H5DownloaderPlugin;->getDownloadedFileList(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Page_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "back",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->back(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "backToPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->backToPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "enableDragAnimation",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->enableDragAnimation(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "finishCustomRenderCheck",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->finishCustomRenderCheck(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getRegisteredPageList",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->getRegisteredPageList(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "hideLoadingPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->hideLoadingPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "popToPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->popToPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "registerPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->registerPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "reloadCurrentPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->reloadCurrentPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setPageName",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->setPageName(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showLoadingPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->showLoadingPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "startPageRenderCheck",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->startPageRenderCheck(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "stopPageRenderCheck",
+      "signature": "Lctrip/android/view/h5/plugin/H5PagePlugin;->stopPageRenderCheck(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Share_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "callCustomShare",
+      "signature": "Lctrip/android/view/h5/plugin/H5SharePlugin;->callCustomShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "callOneShare",
+      "signature": "Lctrip/android/view/h5/plugin/H5SharePlugin;->callOneShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "callSystemShare",
+      "signature": "Lctrip/android/view/h5/plugin/H5SharePlugin;->callSystemShare(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Image_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "selectAndUploadImages",
+      "signature": "Lctrip/android/view/h5/plugin/H5ImagePlugin;->selectAndUploadImages(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "combinePreviewImageUrl",
+      "signature": "Lctrip/business/plugin/h5/H5BaseImagePlugin;->combinePreviewImageUrl(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "imageToBase64",
+      "signature": "Lctrip/business/plugin/h5/H5BaseImagePlugin;->imageToBase64(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "uploadImages",
+      "signature": "Lctrip/business/plugin/h5/H5BaseImagePlugin;->uploadImages(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "uploadVideos",
+      "signature": "Lctrip/business/plugin/h5/H5BaseImagePlugin;->uploadVideos(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Photo_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "performTakePhoto",
+      "signature": "Lctrip/business/plugin/h5/H5AlbumPlugin;->performTakePhoto(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "selectImage",
+      "signature": "Lctrip/business/plugin/h5/H5AlbumPlugin;->selectImage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "selectImageAndVideo",
+      "signature": "Lctrip/business/plugin/h5/H5AlbumPlugin;->selectImageAndVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "selectVideo",
+      "signature": "Lctrip/business/plugin/h5/H5AlbumPlugin;->selectVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "VideoSplitUpload_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "addVideoUploadTask",
+      "signature": "Lctrip/business/videoupload/plugin/H5VideoUploadPlugin;->addVideoUploadTask(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "cancelCurrentVideoCompress",
+      "signature": "Lctrip/business/videoupload/plugin/H5VideoUploadPlugin;->cancelCurrentVideoCompress(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "cancelCurrentVideoUpload",
+      "signature": "Lctrip/business/videoupload/plugin/H5VideoUploadPlugin;->cancelCurrentVideoUpload(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "compressVideo",
+      "signature": "Lctrip/business/videoupload/plugin/H5VideoUploadPlugin;->compressVideo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Storage_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "delete",
+      "signature": "Lctrip/android/view/h5/plugin/H5StoragePlugin;->delete(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "get",
+      "signature": "Lctrip/android/view/h5/plugin/H5StoragePlugin;->get(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "save",
+      "signature": "Lctrip/android/view/h5/plugin/H5StoragePlugin;->save(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Event_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "addEventListener",
+      "signature": "Lctrip/android/view/h5/plugin/H5EventPlugin;->addEventListener(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "removeEventListener",
+      "signature": "Lctrip/android/view/h5/plugin/H5EventPlugin;->removeEventListener(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendEvent",
+      "signature": "Lctrip/android/view/h5/plugin/H5EventPlugin;->sendEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "UBT_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getCurrentPageInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5UBTPlugin;->getCurrentPageInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyShare_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "share",
+      "signature": "Lctrip/android/view/h5/plugin/H5HySharePlugin;->share(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "shareToPlatform",
+      "signature": "Lctrip/android/view/h5/plugin/H5HySharePlugin;->shareToPlatform(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyLog_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logMetric",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyLogPlugin;->logMetric(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "logTrace",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyLogPlugin;->logTrace(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyWebView_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "enableBackGuesture",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyWebViewPlugin;->enableBackGuesture(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "pop",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyWebViewPlugin;->pop(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "push",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyWebViewPlugin;->push(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "setName",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyWebViewPlugin;->setName(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showLoading",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyWebViewPlugin;->showLoading(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HyNavigator_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "refresh",
+      "signature": "Lctrip/android/view/h5/plugin/H5HyNavigatorPlugin;->refresh(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "HybridAD_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "adDownLoad",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->adDownLoad(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "adEncryptData",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->adEncryptData(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "adJumpScheme",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->adJumpScheme(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "adMonitor",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->adMonitor(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "adTaskNativeDownload",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->adTaskNativeDownload(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "appNotificationsEnabled",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->appNotificationsEnabled(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkSupportComment",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->checkSupportComment(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "copyClipboard",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->copyClipboard(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getAdDeviceInfo",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->getAdDeviceInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getPreLoadResPath",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->getPreLoadResPath(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openMktWebView",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->openMktWebView(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openNativeAd",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->openNativeAd(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openNotificationSettingPage",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->openNotificationSettingPage(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showAdRedPacket",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->showAdRedPacket(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showCommentComponent",
+      "signature": "Lctrip/android/view/h5/plugin/H5AdSdkPlugin;->showCommentComponent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Map_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "mapNavigation",
+      "signature": "Lctrip/android/view/h5/plugin/H5MapPlugin;->mapNavigation(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMap",
+      "signature": "Lctrip/android/view/h5/plugin/H5MapPlugin;->showMap(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMapNavigation",
+      "signature": "Lctrip/android/view/h5/plugin/H5MapPlugin;->showMapNavigation(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showMapWithPOIList",
+      "signature": "Lctrip/android/view/h5/plugin/H5MapPlugin;->showMapWithPOIList(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Encrypt_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "base64Encode",
+      "signature": "Lctrip/android/view/h5/plugin/H5EncryptPlugin;->base64Encode(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "ctripEncrypt",
+      "signature": "Lctrip/android/view/h5/plugin/H5EncryptPlugin;->ctripEncrypt(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "md5Hash",
+      "signature": "Lctrip/android/view/h5/plugin/H5EncryptPlugin;->md5Hash(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Permission_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "checkPermissions",
+      "signature": "Lctrip/android/view/h5/plugin/H5PermissionPlugin;->checkPermissions(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Calendar_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "abroadHolidaysRequest",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->abroadHolidaysRequest(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "addCalendarEvent",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->addCalendarEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "isCalendarEventExist",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->isCalendarEventExist(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "refreshCalendarWithParas",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->refreshCalendarWithParas(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "removeCalendarEvent",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->removeCalendarEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showCalendar",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->showCalendar(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showSelectTips",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->showSelectTips(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "updateCalendarEvent",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->updateCalendarEvent(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "updateConfirmTopInfo",
+      "signature": "Lctrip/business/plugin/h5/calendar/H5CalendarPlugin;->updateConfirmTopInfo(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Screen_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "adjustScreenBrightnessForQRCode",
+      "signature": "Lctrip/android/view/h5/plugin/H5ScreenPlugin;->adjustScreenBrightnessForQRCode(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "resetScreenBrightness",
+      "signature": "Lctrip/android/view/h5/plugin/H5ScreenPlugin;->resetScreenBrightness(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "VideoPlayer_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "audioSessionActive",
+      "signature": "Lctrip/business/plugin/h5/H5VideoPlugin;->audioSessionActive(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "fetchVideoMute",
+      "signature": "Lctrip/business/plugin/h5/H5VideoPlugin;->fetchVideoMute(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "saveGlobaMuteStatus",
+      "signature": "Lctrip/business/plugin/h5/H5VideoPlugin;->saveGlobaMuteStatus(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "showVideoPlayer",
+      "signature": "Lctrip/business/plugin/h5/H5VideoPlugin;->showVideoPlayer(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Application_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "openURL",
+      "signature": "Lctrip/android/view/h5/plugin/H5CtripApplicationPlugin;->openURL(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "Network_a",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sendRequestByProxy",
+      "signature": "Lctrip/android/view/h5/plugin/H5NetworkPlugin;->sendRequestByProxy(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "sotpSendHttpRequest",
+      "signature": "Lctrip/android/view/h5/plugin/H5NetworkPlugin;->sotpSendHttpRequest(Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onLoadResource",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageCommitVisible",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onPageCommitVisible(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedHttpError",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lctrip/android/view/h5/view/H5WebView$c;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onConsoleMessage",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onConsoleMessage(Landroid/webkit/ConsoleMessage;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsAlert",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onJsConfirm",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onJsConfirm(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPermissionRequest",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedTitle",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowFileChooser",
+      "signature": "Lctrip/android/view/h5/view/H5Fragment$b;->onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "getVideoLoadingProgressView",
+      "signature": "Lctrip/android/view/h5/view/f;->getVideoLoadingProgressView()Landroid/view/View;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onHideCustomView",
+      "signature": "Lctrip/android/view/h5/view/f;->onHideCustomView()V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lctrip/android/view/h5/view/f;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "ctrip.android.tour.search.view.CTTourSearchActivity2",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "ctrip.android.tour.search.view.widget.SearchWebView"
+        ]
+      },
+      "kind": "callback",
+      "name": "onShowCustomView",
+      "signature": "Lctrip/android/view/h5/view/f;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 49,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 6,
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "webview_constraint_coverage": {
+    "expected": 4811,
+    "with_source_type_constraint": 4811,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 33,
+    "matched": 32,
+    "missing": [
+      "ctrip.android.hotel.order.view.flagship.HotelFlagShipLoginActivity"
+    ],
+    "recall": 0.9696969696969697
+  },
+  "duplicate_oracle_rows": 29,
+  "capability_granularity": {
+    "setting": {
+      "expected": 391,
+      "matched": 369,
+      "recall": 0.9437340153452686
+    },
+    "bridge_registration": {
+      "expected": 530,
+      "matched": 492,
+      "recall": 0.9283018867924528
+    },
+    "bridge_member": {
+      "expected": 3440,
+      "matched": 3190,
+      "recall": 0.9273255813953488
+    },
+    "callback_member": {
+      "expected": 412,
+      "matched": 386,
+      "recall": 0.9368932038834952
+    },
+    "callback_registration": {
+      "expected": 32,
+      "matched": 26,
+      "recall": 0.8125
+    },
+    "webview_operation": {
+      "expected": 6,
+      "matched": 4,
+      "recall": 0.6666666666666666
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 49
+    },
+    "emitted": 49,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 49,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

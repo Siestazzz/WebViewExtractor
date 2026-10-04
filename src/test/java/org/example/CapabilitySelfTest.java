@@ -47,6 +47,7 @@ public final class CapabilitySelfTest {
   ManifestModuleFixture.run();
   ManifestBoundaryAuditProbe.runRegression();
   ReflectiveFactoryFixture.run();
+  PublicConstructorLookupFixture.run();
   ClassCarrierRelevanceFixture.run();
   StaticStartupReflectionFixture.run();
   StaticReflectionBudgetFixture.run();

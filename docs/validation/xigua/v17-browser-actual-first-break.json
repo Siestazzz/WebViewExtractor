@@ -1,0 +1,1399 @@
+{
+  "diagnostic_only": true,
+  "frozen_version": "v17",
+  "budget": {
+    "external_seconds": 120,
+    "cooperative_total_seconds": 115,
+    "maximum_host_seconds": 35,
+    "cpus": "32-39",
+    "heap_gib": 16
+  },
+  "index_seconds": 72.745593314,
+  "total_seconds": 108.846168136,
+  "coverage": [
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "status": "initial_analysis",
+      "phase": 1,
+      "contexts_processed": 6796,
+      "pending_contexts": 3083,
+      "analysis_seconds": 34.519369835,
+      "slices": 249,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 3083,
+      "application_bootstrap_import_seconds": 0.000904128,
+      "application_bootstrap_import_entries": 18,
+      "pending_method_sample": [
+        {
+          "method": "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;",
+          "priority": 0,
+          "ordinary": 456,
+          "example_argument_kinds": [
+            "object",
+            "object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/ixigua/base/appsetting/AppSettings;-><init>(Landroid/content/Context;Z)V",
+            "Lcom/ixigua/storage/sp/BaseSettings;-><init>(Landroid/content/Context;Ljava/lang/String;Z)V",
+            "Lcom/ixigua/base/appsetting/AppSettings;->addItems()V",
+            "Lcom/ixigua/storage/sp/BaseSettings;->addItem(Lcom/ixigua/storage/sp/item/IItem;)Lcom/ixigua/storage/sp/item/IItem;"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+          "priority": 0,
+          "ordinary": 313,
+          "example_argument_kinds": [
+            "union",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->start()V",
+            "Landroidx/fragment/app/Fragment;->performStart()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStart()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V",
+          "priority": 0,
+          "ordinary": 130,
+          "example_argument_kinds": [
+            "unknown",
+            "enum",
+            "enum",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->attach()V",
+            "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+            "Landroidx/fragment/app/SpecialEffectsController;->enqueue(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/FragmentStateManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+          "priority": 0,
+          "ordinary": 126,
+          "example_argument_kinds": [
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->completeExecute(Landroidx/fragment/app/BackStackRecord;ZZZ)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "Landroidx/fragment/app/FragmentStore;->moveToExpectedState()V",
+            "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V",
+          "priority": 0,
+          "ordinary": 103,
+          "example_argument_kinds": [
+            "object",
+            "object",
+            "object",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentStateManager;->create()V",
+            "Landroidx/fragment/app/Fragment;->restoreChildFragmentState(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->restoreSaveState(Landroid/os/Parcelable;)V",
+            "Landroidx/fragment/app/FragmentStateManager;-><init>(Landroidx/fragment/app/FragmentLifecycleCallbacksDispatcher;Landroidx/fragment/app/FragmentStore;Landroidx/fragment/app/Fragment;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+          "priority": 0,
+          "ordinary": 75,
+          "example_argument_kinds": [
+            "object",
+            "union",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Lcom/ixigua/base/appdata/BaseAppData;->getSharedPreference(Landroid/content/Context;I)Landroid/content/SharedPreferences;",
+            "Lcom/ixigua/hook/KevaAopHelper;->b(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/SharedPreferences;",
+            "Lcom/pluto/Pluto;->f(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/SharedPreferences;",
+            "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V",
+          "priority": 0,
+          "ordinary": 68,
+          "example_argument_kinds": [
+            "field_object",
+            "field_object"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+            "Landroidx/fragment/app/FragmentManager;->startPendingDeferredFragments()V",
+            "Landroidx/fragment/app/FragmentManager;->performPendingDeferredStart(Landroidx/fragment/app/FragmentStateManager;)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(Landroidx/fragment/app/Fragment;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V",
+          "priority": 0,
+          "ordinary": 67,
+          "example_argument_kinds": [
+            "object",
+            "literal",
+            "literal"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/Fragment;->performActivityCreated(Landroid/os/Bundle;)V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchActivityCreated()V",
+            "Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V",
+            "Landroidx/fragment/app/FragmentManager;->moveToState(IZ)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V",
+          "priority": 0,
+          "ordinary": 47,
+          "example_argument_kinds": [
+            "unknown",
+            "union",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "Landroidx/fragment/app/SpecialEffectsController;->enqueueAdd(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/FragmentStateManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V",
+          "priority": 0,
+          "ordinary": 47,
+          "example_argument_kinds": [
+            "unknown",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "Landroidx/fragment/app/SpecialEffectsController;->enqueueHide(Landroidx/fragment/app/FragmentStateManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueRemove(Landroidx/fragment/app/FragmentStateManager;)V",
+          "priority": 0,
+          "ordinary": 47,
+          "example_argument_kinds": [
+            "unknown",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "Landroidx/fragment/app/SpecialEffectsController;->enqueueRemove(Landroidx/fragment/app/FragmentStateManager;)V"
+          ],
+          "example_candidate": true
+        },
+        {
+          "method": "Landroidx/fragment/app/SpecialEffectsController;->enqueueShow(Landroidx/fragment/app/FragmentStateManager;)V",
+          "priority": 0,
+          "ordinary": 47,
+          "example_argument_kinds": [
+            "unknown",
+            "unknown"
+          ],
+          "example_entry_parameter_count": 0,
+          "example_path_tail": [
+            "Landroidx/fragment/app/FragmentManager;->removeRedundantOperationsAndExecute(Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+            "Landroidx/fragment/app/FragmentManager;->executeOpsTogether(Ljava/util/ArrayList;Ljava/util/ArrayList;II)V",
+            "Landroidx/fragment/app/FragmentStateManager;->moveToExpectedState()V",
+            "Landroidx/fragment/app/SpecialEffectsController;->enqueueShow(Landroidx/fragment/app/FragmentStateManager;)V"
+          ],
+          "example_candidate": true
+        }
+      ],
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        6796,
+        0
+      ],
+      "tracked_xml_consumers": 230,
+      "tracked_deferred_fields": 1983,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.664340199
+    }
+  ],
+  "bootstrap": [
+    "application_bootstrap:com.ss.android.article.video.ArticleApplication:analysis_seconds=0.901719321",
+    "application_bootstrap:com.ss.android.article.video.ArticleApplication:contexts=2:static_heap=18",
+    "application_bootstrap:com.ss.android.article.video.ArticleApplication:application_bootstrap_time_budget",
+    "application_bootstrap:com.ss.android.article.video.ArticleApplication:static_reflection_reachability_deadline"
+  ],
+  "stages": {
+    "setup": "executed actual Activity, actual BrowserActivity$4 factory",
+    "installation": "LifeCycleFragment allocated/add/commitNowAllowingStateLoss reached actual lifecycle/dispatcher",
+    "activity_root": "Activity.t getter result union remains unknown",
+    "navigation_root": "const Class -> Class.getConstructor(empty Class[]) -> Constructor.newInstance(empty Object[]) unresolved; SDK setter called with unknown receiver",
+    "factory_create": "not visited and absent from final stage_pending",
+    "browser_scene_webview": "not visited in this diagnostic"
+  },
+  "files": {
+    "test/runs/xigua-v17-staged-trace/result.json": "b35b6676b93539efe99426fa8da0272495259ae9edf5ea9da5a2e5d0b56946c6",
+    "test/runs/xigua-v17-staged-trace/trace.log": "a2f65508f991db37708d8f8ff292671cc52fe3c6cef3ae08ed0c2e91ff5ab1cd",
+    "test/runs/xigua-v17-staged-trace/selected-summaries.json": "2fbec5c62eb51b5d96aaffb7222e02cd5687bee29356f391977647429c6fb1eb",
+    "test/runs/xigua-v17-staged-trace/constructor-baseline.log": "1d3365269f1b168de055999aefd3e02564e59dac6f415f99a0fefb554ac7200c",
+    "test/runs/generic-v17.jar": "e0d7ed7bd131d08c2a39bb56f49f080562035900d4eda67e2a6515c8f778cc75",
+    "test/diagnostics/XiguaBrowserStagedTrace.java": "67c711dc0c30014b13847ab500e4d3a8103d401c9140e6a96df0291904ec2bad",
+    "test/diagnostics/SelectedDexSummaryProbe.java": "87fa1c9c068a228372fb34ef96bd44d686f2f1960a82a5982a4c40911aea69d5"
+  },
+  "constructor_summary": [
+    {
+      "method": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;",
+      "instruction_count": 60,
+      "summary": {
+        "calls": [
+          {
+            "method": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+            "offset": 7,
+            "args": [
+              {
+                "kind": "param",
+                "type": "java.lang.Class",
+                "id": "0",
+                "args": []
+              },
+              {
+                "kind": "array_new",
+                "type": "[Ljava/lang/Class;",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                "args": [
+                  {
+                    "kind": "literal",
+                    "type": "number",
+                    "id": "0",
+                    "literal": "0",
+                    "args": []
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;",
+            "offset": 13,
+            "args": [
+              {
+                "kind": "return",
+                "type": "java.lang.reflect.Constructor",
+                "id": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+                "args": [
+                  {
+                    "kind": "param",
+                    "type": "java.lang.Class",
+                    "id": "0",
+                    "args": []
+                  },
+                  {
+                    "kind": "array_new",
+                    "type": "[Ljava/lang/Class;",
+                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                    "args": [
+                      {
+                        "kind": "literal",
+                        "type": "number",
+                        "id": "0",
+                        "literal": "0",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "array_new",
+                "type": "[Ljava/lang/Object;",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@11",
+                "args": [
+                  {
+                    "kind": "literal",
+                    "type": "number",
+                    "id": "0",
+                    "literal": "0",
+                    "args": []
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+            "offset": 21,
+            "args": [
+              {
+                "kind": "cast",
+                "type": "com.bytedance.scene.Scene",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "return",
+                        "type": "java.lang.reflect.Constructor",
+                        "id": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+                        "args": [
+                          {
+                            "kind": "param",
+                            "type": "java.lang.Class",
+                            "id": "0",
+                            "args": []
+                          },
+                          {
+                            "kind": "array_new",
+                            "type": "[Ljava/lang/Class;",
+                            "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                            "args": [
+                              {
+                                "kind": "literal",
+                                "type": "number",
+                                "id": "0",
+                                "literal": "0",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "array_new",
+                        "type": "[Ljava/lang/Object;",
+                        "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@11",
+                        "args": [
+                          {
+                            "kind": "literal",
+                            "type": "number",
+                            "id": "0",
+                            "literal": "0",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;",
+            "offset": 25,
+            "args": [
+              {
+                "kind": "return",
+                "type": "java.lang.Class",
+                "id": "Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+                "args": [
+                  {
+                    "kind": "cast",
+                    "type": "com.bytedance.scene.Scene",
+                    "id": "cast",
+                    "args": [
+                      {
+                        "kind": "return",
+                        "type": "java.lang.Object",
+                        "id": "Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;",
+                        "args": [
+                          {
+                            "kind": "return",
+                            "type": "java.lang.reflect.Constructor",
+                            "id": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+                            "args": [
+                              {
+                                "kind": "param",
+                                "type": "java.lang.Class",
+                                "id": "0",
+                                "args": []
+                              },
+                              {
+                                "kind": "array_new",
+                                "type": "[Ljava/lang/Class;",
+                                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                                "args": [
+                                  {
+                                    "kind": "literal",
+                                    "type": "number",
+                                    "id": "0",
+                                    "literal": "0",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "array_new",
+                            "type": "[Ljava/lang/Object;",
+                            "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@11",
+                            "args": [
+                              {
+                                "kind": "literal",
+                                "type": "number",
+                                "id": "0",
+                                "literal": "0",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V",
+            "offset": 29,
+            "args": [
+              {
+                "kind": "param",
+                "type": "android.os.Bundle",
+                "id": "1",
+                "args": []
+              },
+              {
+                "kind": "return",
+                "type": "java.lang.ClassLoader",
+                "id": "Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Class",
+                    "id": "Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+                    "args": [
+                      {
+                        "kind": "cast",
+                        "type": "com.bytedance.scene.Scene",
+                        "id": "cast",
+                        "args": [
+                          {
+                            "kind": "return",
+                            "type": "java.lang.Object",
+                            "id": "Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;",
+                            "args": [
+                              {
+                                "kind": "return",
+                                "type": "java.lang.reflect.Constructor",
+                                "id": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+                                "args": [
+                                  {
+                                    "kind": "param",
+                                    "type": "java.lang.Class",
+                                    "id": "0",
+                                    "args": []
+                                  },
+                                  {
+                                    "kind": "array_new",
+                                    "type": "[Ljava/lang/Class;",
+                                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                                    "args": [
+                                      {
+                                        "kind": "literal",
+                                        "type": "number",
+                                        "id": "0",
+                                        "literal": "0",
+                                        "args": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "kind": "array_new",
+                                "type": "[Ljava/lang/Object;",
+                                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@11",
+                                "args": [
+                                  {
+                                    "kind": "literal",
+                                    "type": "number",
+                                    "id": "0",
+                                    "literal": "0",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/bytedance/scene/Scene;->setArguments(Landroid/os/Bundle;)V",
+            "offset": 32,
+            "args": [
+              {
+                "kind": "cast",
+                "type": "com.bytedance.scene.Scene",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "return",
+                        "type": "java.lang.reflect.Constructor",
+                        "id": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+                        "args": [
+                          {
+                            "kind": "param",
+                            "type": "java.lang.Class",
+                            "id": "0",
+                            "args": []
+                          },
+                          {
+                            "kind": "array_new",
+                            "type": "[Ljava/lang/Class;",
+                            "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                            "args": [
+                              {
+                                "kind": "literal",
+                                "type": "number",
+                                "id": "0",
+                                "literal": "0",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "array_new",
+                        "type": "[Ljava/lang/Object;",
+                        "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@11",
+                        "args": [
+                          {
+                            "kind": "literal",
+                            "type": "number",
+                            "id": "0",
+                            "literal": "0",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "param",
+                "type": "android.os.Bundle",
+                "id": "1",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V",
+            "offset": 41,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@39",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": "Unable to instantiate scene ",
+                "literal": "Unable to instantiate scene ",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;",
+            "offset": 44,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@39",
+                "args": []
+              },
+              {
+                "kind": "param",
+                "type": "java.lang.Class",
+                "id": "0",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+            "offset": 49,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@39",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": ": calling Scene constructor caused an exception",
+                "literal": ": calling Scene constructor caused an exception",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+            "offset": 52,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@39",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/bytedance/scene/utlity/SceneInstanceUtility$InstantiationException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V",
+            "offset": 56,
+            "args": [
+              {
+                "kind": "new",
+                "type": "com.bytedance.scene.utlity.SceneInstanceUtility$InstantiationException",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@37",
+                "args": []
+              },
+              {
+                "kind": "return",
+                "type": "java.lang.String",
+                "id": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+                "args": [
+                  {
+                    "kind": "new",
+                    "type": "java.lang.StringBuilder",
+                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@39",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "kind": "unknown",
+                "type": "java.lang.Throwable",
+                "id": "exception",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V",
+            "offset": 65,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@63",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": "Unable to instantiate scene ",
+                "literal": "Unable to instantiate scene ",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;",
+            "offset": 68,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@63",
+                "args": []
+              },
+              {
+                "kind": "param",
+                "type": "java.lang.Class",
+                "id": "0",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+            "offset": 73,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@63",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": ": could not find Scene constructor",
+                "literal": ": could not find Scene constructor",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+            "offset": 76,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@63",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/bytedance/scene/utlity/SceneInstanceUtility$InstantiationException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V",
+            "offset": 80,
+            "args": [
+              {
+                "kind": "new",
+                "type": "com.bytedance.scene.utlity.SceneInstanceUtility$InstantiationException",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@61",
+                "args": []
+              },
+              {
+                "kind": "return",
+                "type": "java.lang.String",
+                "id": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+                "args": [
+                  {
+                    "kind": "new",
+                    "type": "java.lang.StringBuilder",
+                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@63",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "kind": "unknown",
+                "type": "java.lang.Throwable",
+                "id": "exception",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V",
+            "offset": 89,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@87",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": "Unable to instantiate scene ",
+                "literal": "Unable to instantiate scene ",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;",
+            "offset": 92,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@87",
+                "args": []
+              },
+              {
+                "kind": "param",
+                "type": "java.lang.Class",
+                "id": "0",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+            "offset": 95,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@87",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": ": make sure class name exists, is public, and has an empty constructor that is public",
+                "literal": ": make sure class name exists, is public, and has an empty constructor that is public",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+            "offset": 98,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@87",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/bytedance/scene/utlity/SceneInstanceUtility$InstantiationException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V",
+            "offset": 102,
+            "args": [
+              {
+                "kind": "new",
+                "type": "com.bytedance.scene.utlity.SceneInstanceUtility$InstantiationException",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@85",
+                "args": []
+              },
+              {
+                "kind": "return",
+                "type": "java.lang.String",
+                "id": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+                "args": [
+                  {
+                    "kind": "new",
+                    "type": "java.lang.StringBuilder",
+                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@87",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "kind": "unknown",
+                "type": "java.lang.Throwable",
+                "id": "exception",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V",
+            "offset": 111,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@109",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": "Unable to instantiate scene ",
+                "literal": "Unable to instantiate scene ",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;",
+            "offset": 114,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@109",
+                "args": []
+              },
+              {
+                "kind": "param",
+                "type": "java.lang.Class",
+                "id": "0",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+            "offset": 117,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@109",
+                "args": []
+              },
+              {
+                "kind": "literal",
+                "type": "java.lang.String",
+                "id": ": make sure class name exists, is public, and has an empty constructor that is public",
+                "literal": ": make sure class name exists, is public, and has an empty constructor that is public",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+            "offset": 120,
+            "args": [
+              {
+                "kind": "new",
+                "type": "java.lang.StringBuilder",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@109",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/bytedance/scene/utlity/SceneInstanceUtility$InstantiationException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V",
+            "offset": 124,
+            "args": [
+              {
+                "kind": "new",
+                "type": "com.bytedance.scene.utlity.SceneInstanceUtility$InstantiationException",
+                "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@107",
+                "args": []
+              },
+              {
+                "kind": "return",
+                "type": "java.lang.String",
+                "id": "Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+                "args": [
+                  {
+                    "kind": "new",
+                    "type": "java.lang.StringBuilder",
+                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@109",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "kind": "unknown",
+                "type": "java.lang.Throwable",
+                "id": "exception",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          }
+        ],
+        "writes": [],
+        "returns": [
+          {
+            "kind": "cast",
+            "type": "com.bytedance.scene.Scene",
+            "id": "cast",
+            "args": [
+              {
+                "kind": "return",
+                "type": "java.lang.Object",
+                "id": "Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.reflect.Constructor",
+                    "id": "Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;",
+                    "args": [
+                      {
+                        "kind": "param",
+                        "type": "java.lang.Class",
+                        "id": "0",
+                        "args": []
+                      },
+                      {
+                        "kind": "array_new",
+                        "type": "[Ljava/lang/Class;",
+                        "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@5",
+                        "args": [
+                          {
+                            "kind": "literal",
+                            "type": "number",
+                            "id": "0",
+                            "literal": "0",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "array_new",
+                    "type": "[Ljava/lang/Object;",
+                    "id": "Lcom/bytedance/scene/utlity/SceneInstanceUtility;->a(Ljava/lang/Class;Landroid/os/Bundle;)Lcom/bytedance/scene/Scene;@11",
+                    "args": [
+                      {
+                        "kind": "literal",
+                        "type": "number",
+                        "id": "0",
+                        "literal": "0",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "branched": true,
+        "truncated": false
+      },
+      "access": 9
+    }
+  ],
+  "service_selector_summary": [
+    {
+      "method": "Lcom/ixigua/browser/specific/BrowserActivity;->r2()Lcom/ixigua/browser/protocol/IBrowserFragment;",
+      "instruction_count": 25,
+      "summary": {
+        "calls": [
+          {
+            "method": "Lcom/ixigua/base/appsetting/AppSettings;->inst()Lcom/ixigua/base/appsetting/AppSettings;",
+            "offset": 0,
+            "args": [],
+            "isStatic": true,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/ixigua/base/appsetting/business/SearchConfigSettings;->A()Lcom/ixigua/storage/sp/item/IntItem;",
+            "offset": 6,
+            "args": [
+              {
+                "kind": "field",
+                "type": "com.ixigua.base.appsetting.business.SearchConfigSettings",
+                "id": "Lcom/ixigua/base/appsetting/AppSettings;->mSearchConfigSettings:Lcom/ixigua/base/appsetting/business/SearchConfigSettings;",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "com.ixigua.base.appsetting.AppSettings",
+                    "id": "Lcom/ixigua/base/appsetting/AppSettings;->inst()Lcom/ixigua/base/appsetting/AppSettings;",
+                    "args": []
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/ixigua/storage/sp/item/IntItem;->enable()Z",
+            "offset": 10,
+            "args": [
+              {
+                "kind": "return",
+                "type": "com.ixigua.storage.sp.item.IntItem",
+                "id": "Lcom/ixigua/base/appsetting/business/SearchConfigSettings;->A()Lcom/ixigua/storage/sp/item/IntItem;",
+                "args": [
+                  {
+                    "kind": "field",
+                    "type": "com.ixigua.base.appsetting.business.SearchConfigSettings",
+                    "id": "Lcom/ixigua/base/appsetting/AppSettings;->mSearchConfigSettings:Lcom/ixigua/base/appsetting/business/SearchConfigSettings;",
+                    "args": [
+                      {
+                        "kind": "return",
+                        "type": "com.ixigua.base.appsetting.AppSettings",
+                        "id": "Lcom/ixigua/base/appsetting/AppSettings;->inst()Lcom/ixigua/base/appsetting/AppSettings;",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/ixigua/browser/specific/BrowserActivity;->w2()Z",
+            "offset": 16,
+            "args": [
+              {
+                "kind": "param",
+                "type": "com.ixigua.browser.specific.BrowserActivity",
+                "id": "0",
+                "args": []
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": true
+          },
+          {
+            "method": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+            "offset": 24,
+            "args": [
+              {
+                "kind": "class",
+                "type": "com.ixigua.browser.protocol.IBrowserService",
+                "id": "Lcom/ixigua/browser/protocol/IBrowserService;",
+                "args": []
+              }
+            ],
+            "isStatic": true,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/ixigua/browser/protocol/IBrowserService;->getSearchChildBrowserScene()Lcom/ixigua/browser/protocol/ISearchChildBrowserScene;",
+            "offset": 30,
+            "args": [
+              {
+                "kind": "cast",
+                "type": "com.ixigua.browser.protocol.IBrowserService",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "class",
+                        "type": "com.ixigua.browser.protocol.IBrowserService",
+                        "id": "Lcom/ixigua/browser/protocol/IBrowserService;",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+            "offset": 37,
+            "args": [
+              {
+                "kind": "class",
+                "type": "com.ixigua.browser.protocol.IBrowserService",
+                "id": "Lcom/ixigua/browser/protocol/IBrowserService;",
+                "args": []
+              }
+            ],
+            "isStatic": true,
+            "isSuper": false,
+            "isDirect": false
+          },
+          {
+            "method": "Lcom/ixigua/browser/protocol/IBrowserService;->getArticleBrowserScene()Lcom/ixigua/browser/protocol/IBrowserFragment;",
+            "offset": 43,
+            "args": [
+              {
+                "kind": "cast",
+                "type": "com.ixigua.browser.protocol.IBrowserService",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "class",
+                        "type": "com.ixigua.browser.protocol.IBrowserService",
+                        "id": "Lcom/ixigua/browser/protocol/IBrowserService;",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isStatic": false,
+            "isSuper": false,
+            "isDirect": false
+          }
+        ],
+        "writes": [],
+        "returns": [
+          {
+            "kind": "return",
+            "type": "com.ixigua.browser.protocol.IBrowserFragment",
+            "id": "Lcom/ixigua/browser/protocol/IBrowserService;->getArticleBrowserScene()Lcom/ixigua/browser/protocol/IBrowserFragment;",
+            "args": [
+              {
+                "kind": "cast",
+                "type": "com.ixigua.browser.protocol.IBrowserService",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "class",
+                        "type": "com.ixigua.browser.protocol.IBrowserService",
+                        "id": "Lcom/ixigua/browser/protocol/IBrowserService;",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "return",
+            "type": "com.ixigua.browser.protocol.ISearchChildBrowserScene",
+            "id": "Lcom/ixigua/browser/protocol/IBrowserService;->getSearchChildBrowserScene()Lcom/ixigua/browser/protocol/ISearchChildBrowserScene;",
+            "args": [
+              {
+                "kind": "cast",
+                "type": "com.ixigua.browser.protocol.IBrowserService",
+                "id": "cast",
+                "args": [
+                  {
+                    "kind": "return",
+                    "type": "java.lang.Object",
+                    "id": "Lcom/jupiter/builddependencies/dependency/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+                    "args": [
+                      {
+                        "kind": "class",
+                        "type": "com.ixigua.browser.protocol.IBrowserService",
+                        "id": "Lcom/ixigua/browser/protocol/IBrowserService;",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "branched": true,
+        "truncated": false
+      },
+      "access": 1
+    }
+  ]
+}

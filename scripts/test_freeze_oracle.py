@@ -29,6 +29,17 @@ class FreezeOracleTest(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'Unsupported positive fact kind'):union_sources([old,new],True)
    rejected=dict(row,positive_acceptance=False);new.write_text(json.dumps(rejected)+'\n')
    raw,_=union_sources([old,new],True);self.assertEqual([json.loads(x) for x in raw.splitlines()],[legacy,rejected])
+ def test_strict_positive_shapes_do_not_silently_become_misses(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=pathlib.Path(folder);old=root/'old.jsonl';new=root/'new.jsonl';old.write_text('')
+   row=dict(activity='A',kind='callback_registration',positive_acceptance=True,normalized_api='Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V')
+   new.write_text(json.dumps(row)+'\n')
+   with self.assertRaisesRegex(ValueError,'member contract'):union_sources([old,new],True)
+   row.update(kind='callback',webview_constraint={'types':['android.webkit.WebView'],'field':'A.view'})
+   new.write_text(json.dumps(row)+'\n')
+   with self.assertRaisesRegex(ValueError,'Unsupported source WebView constraint'):union_sources([old,new],True)
+   row.update(webview_constraint={'types':['android.webkit.WebView']},source_webview_field='A.view')
+   new.write_text(json.dumps(row)+'\n');raw,_=union_sources([old,new],True);self.assertEqual(json.loads(raw),row)
  def test_malformed_input_is_not_silently_skipped(self):
   with tempfile.TemporaryDirectory() as folder:
    p=pathlib.Path(folder)/'bad.jsonl';p.write_text('{broken\n')

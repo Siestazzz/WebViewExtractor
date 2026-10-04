@@ -1,0 +1,1355 @@
+{
+  "schema_version": 1,
+  "apk_sha256": "2f815b97847ec9121ed301f1ed048e042f16c1926083ff8e19cd5c13f1f36dac",
+  "source_root": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/breaking-news-1",
+  "source_build_evidence_sha256": "5f79da8c68bec40ec1baae001e171cd10ad3deea0eff6380401d793716de1886",
+  "source_status": "jadx_exit_1",
+  "scope": "patched base only",
+  "reviewer": "GPT-6.1 Sol",
+  "manifest_inventory": [
+    {
+      "activity": "com.facebook.FacebookActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 318,
+        "text": "android:name=\"com.facebook.FacebookActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/facebook/FacebookActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.facebook.CustomTabActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 321,
+        "text": "android:name=\"com.facebook.CustomTabActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/facebook/CustomTabActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.news.social.LoginActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 340,
+        "text": "android:name=\"com.opera.android.news.social.LoginActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/news/social/LoginActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.news.social.FirebaseSmsActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 346,
+        "text": "android:name=\"com.opera.android.news.social.FirebaseSmsActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/news/social/FirebaseSmsActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.gcm.PushPopupActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 352,
+        "text": "android:name=\"com.opera.android.gcm.PushPopupActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/gcm/PushPopupActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.NewsMainActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 358,
+        "text": "android:name=\"com.opera.android.NewsMainActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/NewsMainActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.startup.NewsStartActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 364,
+        "text": "android:name=\"com.opera.android.startup.NewsStartActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/startup/NewsStartActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.settings.ManageSpaceActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 404,
+        "text": "android:name=\"com.opera.android.settings.ManageSpaceActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/settings/ManageSpaceActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.gms.ads.AdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 408,
+        "text": "android:name=\"com.google.android.gms.ads.AdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/gms/ads/AdActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.browser.WebviewActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 414,
+        "text": "android:name=\"com.opera.android.browser.WebviewActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/browser/WebviewActivity.java",
+      "source_exists": true,
+      "webview_status": "source_positive_partial",
+      "bridge_closure": "partial",
+      "settings_closure": "partial",
+      "callbacks_closure": "partial",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.lockscreen.LockScreenActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 608,
+        "text": "android:name=\"com.opera.android.lockscreen.LockScreenActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/lockscreen/LockScreenActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.android.lockscreen.DismissKeyguardActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 616,
+        "text": "android:name=\"com.opera.android.lockscreen.DismissKeyguardActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/android/lockscreen/DismissKeyguardActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.ad.interstitial.AdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 660,
+        "text": "android:name=\"com.opera.ad.interstitial.AdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/ad/interstitial/AdActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.shakewin.ShakeWinMainActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 665,
+        "text": "android:name=\"com.opera.shakewin.ShakeWinMainActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/shakewin/ShakeWinMainActivity.java",
+      "source_exists": true,
+      "webview_status": "source_positive_partial",
+      "bridge_closure": "partial",
+      "settings_closure": "partial",
+      "callbacks_closure": "partial",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.opera.ads.internal.fullscreenad.AdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 671,
+        "text": "android:name=\"com.opera.ads.internal.fullscreenad.AdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/opera/ads/internal/fullscreenad/AdActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.facebook.CustomTabMainActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 682,
+        "text": "<activity android:name=\"com.facebook.CustomTabMainActivity\"/>",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/facebook/CustomTabMainActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.firebase.auth.internal.GenericIdpActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 685,
+        "text": "android:name=\"com.google.firebase.auth.internal.GenericIdpActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/firebase/auth/internal/GenericIdpActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.firebase.auth.internal.RecaptchaActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 701,
+        "text": "android:name=\"com.google.firebase.auth.internal.RecaptchaActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/firebase/auth/internal/RecaptchaActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "androidx.credentials.playservices.HiddenActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 787,
+        "text": "android:name=\"androidx.credentials.playservices.HiddenActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/androidx/credentials/playservices/HiddenActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 794,
+        "text": "android:name=\"com.google.android.gms.auth.api.signin.internal.SignInHubActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/gms/auth/api/signin/internal/SignInHubActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.adview.AppLovinFullscreenActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 809,
+        "text": "android:name=\"com.applovin.adview.AppLovinFullscreenActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/adview/AppLovinFullscreenActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.adview.AppLovinFullscreenImmersiveActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 817,
+        "text": "android:name=\"com.applovin.adview.AppLovinFullscreenImmersiveActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/adview/AppLovinFullscreenImmersiveActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 823,
+        "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "source_exists": true,
+      "webview_status": "source_positive",
+      "bridge_closure": "done",
+      "settings_closure": "done",
+      "callbacks_closure": "done",
+      "deep_positive": true,
+      "positive_acceptance": true
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 827,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerDetailActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 831,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerDetailActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerDetailActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerMultiAdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 835,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerMultiAdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerMultiAdActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerAdUnitsListActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 839,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerAdUnitsListActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerAdUnitsListActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerAdUnitWaterfallsListActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 843,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerAdUnitWaterfallsListActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerAdUnitWaterfallsListActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerAdUnitDetailActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 847,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerAdUnitDetailActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerAdUnitDetailActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerCmpNetworksListActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 851,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerCmpNetworksListActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerCmpNetworksListActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerTcfConsentStatusesListActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 855,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerTcfConsentStatusesListActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerTcfConsentStatusesListActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerTcfInfoListActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 859,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerTcfInfoListActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerTcfInfoListActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerTcfStringActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 863,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerTcfStringActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerTcfStringActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 867,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerTestLiveNetworkActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerTestModeNetworkActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 871,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerTestModeNetworkActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerTestModeNetworkActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerUnifiedFlowActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 875,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerUnifiedFlowActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerUnifiedFlowActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.mediation.MaxDebuggerWaterfallSegmentsActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 879,
+        "text": "android:name=\"com.applovin.mediation.MaxDebuggerWaterfallSegmentsActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/mediation/MaxDebuggerWaterfallSegmentsActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.creative.MaxCreativeDebuggerActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 883,
+        "text": "android:name=\"com.applovin.creative.MaxCreativeDebuggerActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/creative/MaxCreativeDebuggerActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.applovin.creative.MaxCreativeDebuggerDisplayedAdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 887,
+        "text": "android:name=\"com.applovin.creative.MaxCreativeDebuggerDisplayedAdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/applovin/creative/MaxCreativeDebuggerDisplayedAdActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.tv.ads.controls.FallbackImageActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 895,
+        "text": "android:name=\"com.google.android.tv.ads.controls.FallbackImageActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/tv/ads/controls/FallbackImageActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.gms.ads.OutOfContextTestingActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 923,
+        "text": "android:name=\"com.google.android.gms.ads.OutOfContextTestingActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/gms/ads/OutOfContextTestingActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.gms.ads.NotificationHandlerActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 928,
+        "text": "android:name=\"com.google.android.gms.ads.NotificationHandlerActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/gms/ads/NotificationHandlerActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.gms.common.api.GoogleApiActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 960,
+        "text": "android:name=\"com.google.android.gms.common.api.GoogleApiActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/gms/common/api/GoogleApiActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "androidx.compose.ui.tooling.PreviewActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1075,
+        "text": "android:name=\"androidx.compose.ui.tooling.PreviewActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/androidx/compose/ui/tooling/PreviewActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.facebook.ads.AudienceNetworkActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1103,
+        "text": "android:name=\"com.facebook.ads.AudienceNetworkActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/facebook/ads/AudienceNetworkActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.amazon.aps.ads.activity.ApsInterstitialActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1185,
+        "text": "android:name=\"com.amazon.aps.ads.activity.ApsInterstitialActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/amazon/aps/ads/activity/ApsInterstitialActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.amazon.device.ads.DTBInterstitialActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1189,
+        "text": "android:name=\"com.amazon.device.ads.DTBInterstitialActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/amazon/device/ads/DTBInterstitialActivity.java",
+      "source_exists": true,
+      "webview_status": "source_positive_partial",
+      "bridge_closure": "partial",
+      "settings_closure": "partial",
+      "callbacks_closure": "partial",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.google.android.play.core.common.PlayCoreDialogWrapperActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1238,
+        "text": "android:name=\"com.google.android.play.core.common.PlayCoreDialogWrapperActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/google/android/play/core/common/PlayCoreDialogWrapperActivity.java",
+      "source_exists": true,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.vungle.ads.internal.ui.VungleActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1243,
+        "text": "android:name=\"com.vungle.ads.internal.ui.VungleActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/vungle/ads/internal/ui/VungleActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.mbridge.msdk.config.activity.MBRewardVideoActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1249,
+        "text": "android:name=\"com.mbridge.msdk.config.activity.MBRewardVideoActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/mbridge/msdk/config/activity/MBRewardVideoActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.mbridge.msdk.activity.MBCommonActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1255,
+        "text": "android:name=\"com.mbridge.msdk.activity.MBCommonActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/mbridge/msdk/activity/MBCommonActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.mbridge.msdk.out.LoadingActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1258,
+        "text": "<activity android:name=\"com.mbridge.msdk.out.LoadingActivity\"/>",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/mbridge/msdk/out/LoadingActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.mbridge.msdk.reward.player.MBRewardVideoActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1261,
+        "text": "android:name=\"com.mbridge.msdk.reward.player.MBRewardVideoActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/mbridge/msdk/reward/player/MBRewardVideoActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1267,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1276,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1286,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTPlayableLandingPageActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1295,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTDelegateActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1304,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTDelegateActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTDelegateActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1312,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTWebsiteActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTAppOpenAdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1322,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTAppOpenAdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTAppOpenAdActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTAppOpenAdTransActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1331,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTAppOpenAdTransActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTAppOpenAdTransActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1340,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTRewardVideoActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1349,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTRewardExpressVideoActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1358,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTFullScreenVideoActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1367,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTFullScreenExpressVideoActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTAdActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1376,
+        "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTAdActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/bytedance/sdk/openadsdk/activity/TTAdActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1385,
+        "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/unity3d/services/ads/adunit/AdUnitActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1392,
+        "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitTransparentActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/unity3d/services/ads/adunit/AdUnitTransparentActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1399,
+        "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/unity3d/services/ads/adunit/AdUnitTransparentSoftwareActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1406,
+        "text": "android:name=\"com.unity3d.services.ads.adunit.AdUnitSoftwareActivity\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/unity3d/services/ads/adunit/AdUnitSoftwareActivity.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    },
+    {
+      "activity": "com.unity3d.ads.adplayer.FullScreenWebViewDisplay",
+      "manifest_kind": "activity",
+      "manifest_evidence": {
+        "file": "resources/AndroidManifest.xml",
+        "line": 1413,
+        "text": "android:name=\"com.unity3d.ads.adplayer.FullScreenWebViewDisplay\"",
+        "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+      },
+      "source_path": "sources/com/unity3d/ads/adplayer/FullScreenWebViewDisplay.java",
+      "source_exists": false,
+      "webview_status": "unknown",
+      "bridge_closure": "unknown",
+      "settings_closure": "unknown",
+      "callbacks_closure": "unknown",
+      "deep_positive": false,
+      "positive_acceptance": false
+    }
+  ],
+  "manifest_host_count": 71,
+  "new_fact_count": 164,
+  "deep_positive_count": 1,
+  "target_deep_positive_count": 30,
+  "exhaustion_proven": false,
+  "acceptance": "unproven",
+  "retained_failures": [
+    "JADX exit 1",
+    "All Manifest host reachability not exhaustively reviewed",
+    "dmh inherited callbacks observed but not platform-complete",
+    "Settings final values and all conditional bindings incomplete"
+  ],
+  "structure_groups": [
+    {
+      "name": "hkd_yt7_wrapper",
+      "source_positive_hosts": [
+        "com.opera.android.browser.WebviewActivity",
+        "com.opera.shakewin.ShakeWinMainActivity"
+      ],
+      "deep_positive_count": 0,
+      "minimum_two_deep_positive_satisfied": false
+    }
+  ],
+  "facts_file": "source-closure-facts.jsonl",
+  "manifest_activity_count": 71,
+  "deep_positive_activities": [
+    "com.applovin.sdk.AppLovinWebViewActivity"
+  ],
+  "source_positive_activities": [
+    "com.opera.android.browser.WebviewActivity",
+    "com.opera.shakewin.ShakeWinMainActivity",
+    "com.applovin.sdk.AppLovinWebViewActivity",
+    "com.amazon.device.ads.DTBInterstitialActivity"
+  ],
+  "exhaustive_positive_inventory": false,
+  "deep_audit_status": "incomplete_source_positive_is_not_deep",
+  "coverage_correction": "Prior source-positive hosts retain incomplete status; no exhaustion proof or 30 deep positive claim",
+  "source_positive_binding_strata": {
+    "custom_subclass_wrapper": [
+      "com.opera.android.browser.WebviewActivity",
+      "com.opera.shakewin.ShakeWinMainActivity"
+    ]
+  },
+  "present_strata": {
+    "custom_subclass_wrapper": {
+      "deep_positive_count": 0,
+      "minimum_two_satisfied": false
+    },
+    "sdk_direct_factory": {
+      "deep_positive_count": 1,
+      "minimum_two_satisfied": false
+    },
+    "sdk_cached_webview_handoff": {
+      "deep_positive_count": 0,
+      "minimum_two_satisfied": false
+    }
+  },
+  "source_surface_completion_evidence": [
+    {
+      "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+      "file": "AppLovinWebViewActivity-full-surface-source-proof.json",
+      "apk_sha256": "2f815b97847ec9121ed301f1ed048e042f16c1926083ff8e19cd5c13f1f36dac",
+      "reviewer": "GPT-6.1 Sol"
+    }
+  ],
+  "fact_hash": "253b1f5aa44964e800e4b4b1a171474e480ada8a65157f6250267b91ab3bf75c"
+}

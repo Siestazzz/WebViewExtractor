@@ -1,0 +1,9 @@
+{
+  "reason": "Initial Breaking source snapshot used callback_registration for callback members, JADX defpackage aliases instead of DEX owners, and unsupported field matcher constraints. Independent source/DEX review corrected schema and identities; original source rows and row-by-row hashes remain retained. This is not analyzer improvement.",
+  "initial_manifest": "generic-v18-expanded-facts/manifest.json",
+  "accepted_manifest": "generic-v18-reviewed-facts/manifest.json",
+  "normalization_ledger": "breaking-news/source-closure-v18-normalization-ledger.jsonl",
+  "review": "breaking-news/source-closure-v18-normalization-review.md",
+  "scoring_action": "Re-score v17 and v18 on identical reviewed oracle; no APK rerun for source schema correction.",
+  "checks": "freeze_oracle strict new-row verdict/kind/constraint/callback registration validation; 4 unit tests pass."
+}

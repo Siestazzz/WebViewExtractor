@@ -33,6 +33,20 @@ final class ReflectiveFactoryFixture {
    host.arrayLengths.put(args.id(),1L);
    check(resolve(ReflectiveFactories.CONSTRUCTOR_NEW,"return@8",List.of(ctor,args),engine,job,host).equals(UNKNOWN),"Wrong constructor arity ignored");
    check(resolve(ReflectiveFactories.CONSTRUCTORS,"return@9",List.of(V.of("class","factory.Overloaded",many)),engine,job,host).equals(UNKNOWN),"Unspecified multi-constructor order guessed");
+   V types=V.of("object","[Ljava/lang/Class;","empty-types");host.arrayLengths.put(types.id(),0L);
+   V exact=resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@10",List.of(V.of("class","factory.Overloaded",many),types),engine,job,host);
+   check(exact.kind().equals("reflect_constructor")&&exact.id().equals(many+"-><init>()V"),"Exact empty lookup confused overload ordering");
+   host.arrayLengths.put(args.id(),0L);
+   check(resolve(ReflectiveFactories.CONSTRUCTOR_NEW,"return@11",List.of(exact,args),engine,job,host).type().equals("factory.Overloaded"),"Exact looked-up constructor lost concrete result");
+   V other=resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@12",List.of(clazz,types),engine,job,host);
+   check(!other.equals(exact),"Different class constructor identities merged");
+   check(resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@13",List.of(V.of("class","factory.Private",hidden),types),engine,job,host).equals(UNKNOWN),"Private constructor selected by public lookup");
+   check(resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@14",List.of(UNKNOWN,types),engine,job,host).equals(UNKNOWN),"Unknown class broadened public lookup");
+   check(resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@15",List.of(clazz,args),engine,job,host).equals(UNKNOWN),"Object[] accepted as parameter-type array");
+   host.arrayLengths.put(types.id(),1L);
+   check(resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@16",List.of(clazz,types),engine,job,host).equals(UNKNOWN),"Nonempty constructor signature guessed");
+   host.arrayLengths.remove(types.id());
+   check(resolve(ReflectiveFactories.PUBLIC_CONSTRUCTOR,"return@17",List.of(clazz,types),engine,job,host).equals(UNKNOWN),"Unknown parameter arity guessed empty");
   } finally {Files.deleteIfExists(dex);}
   System.out.println("ReflectiveFactoryFixture PASS: exact literal/name classes, actual public noarg construction, singleton constructor array, access/arity/order negatives, distinct allocations.");
  }

@@ -17,6 +17,7 @@ public final class ReflectionDiscoveryPrefilterFixture {
    if(!reflection.writer(idx.resolve(CapabilityIndex.key(good))))throw new AssertionError("Actual certified-field writer lost");
    for(var m:noise){String key=CapabilityIndex.key(m);if(reflection.writer(idx.resolve(key)))throw new AssertionError("Unrelated Map became writer");if(flow.cache.containsKey(key))throw new AssertionError("Unrelated Map decoded: "+key);}
    if(!flow.cache.containsKey(CapabilityIndex.key(good)))throw new AssertionError("Positive writer not decoded");
+   if(reflection.discoveryMethodVisits!=2)throw new AssertionError("Discovery enumerated unrelated methods: "+reflection.discoveryMethodVisits);
    System.out.println("ReflectionDiscoveryPrefilterFixture PASS: certified writer retained;65 unrelated Map methods not decoded.");
   }finally{Files.deleteIfExists(dex);}
  }

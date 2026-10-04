@@ -1,0 +1,116 @@
+{
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "audit_mode": "source-only plus actual APK DEX; no analyzer report read",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "sources": [
+    {
+      "file": "test/decompiled/xigua-1/sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "sha256": "1f7ee7b0204173f48ce1ba45b2a75c1d6a4992f5dab16f4243359a0923f2de29"
+    },
+    {
+      "file": "test/decompiled/xigua-1/sources/com/jupiter/builddependencies/dependency/ServiceManager.java",
+      "sha256": "f6cca7a091b9ddd83bafbc2e551b84a256e137026e8f58e75a71bdfdeefd970f"
+    },
+    {
+      "file": "test/decompiled/xigua-1/sources/com/ixigua/browser/specific/impl/BrowserServiceFactory.java",
+      "sha256": "6682ae546fa8b7fdea2c37efca292b14c6b9af9abc378435b03378992fb9d398"
+    },
+    {
+      "file": "test/decompiled/xigua-1/sources/com/ixigua/browser/specific/impl/BrowserServiceImpl.java",
+      "sha256": "86c41dac228e8a6fa90c40561429b7d3e795c727343efe8d5a00bf69f8645073"
+    },
+    {
+      "file": "test/decompiled/xigua-1/sources/com/bytedance/scene/utlity/SceneInstanceUtility.java",
+      "sha256": "4e57517792dc03b882cb746e42d0809cfe4d4bf6c9bde4393ff8ef633e723cfc"
+    },
+    {
+      "file": "test/decompiled/xigua-1/sources/com/bytedance/scene/navigation/NavigationScene.java",
+      "sha256": "393e29dedbd70f9da384b484173ce5473e558c7fb59e10fcdec9cda70945f7a8"
+    },
+    {
+      "file": "test/decompiled/xigua-1/sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "sha256": "4e0093eef6498cb11da47135f9865357953f94ade1bcca27387154b3b40e2c20"
+    }
+  ],
+  "dex_sha256": {
+    "classes14.dex": "10ed5db3ffeab9f6d1b28bf03270db8a62793876949e03fe144bbf24f6760aec",
+    "classes13.dex": "e366e99bdfe9c5aa516bbec722078b8aa71f7d1e28ca83738f88cd037fedd6ca",
+    "classes4.dex": "5050dcd34e8ade335a02bf1adaefd37390276234029cc37b3e9a8a66bc85a8f4",
+    "classes2.dex": "16470791b1e5124fc6dd0bd8b47544ce5f7b0a4dad5d751b6eec3e7f93e4ba7a"
+  },
+  "service_chain": [
+    {
+      "file": "sources/com/ixigua/browser/specific/BrowserActivity.java",
+      "line": 969,
+      "operation": "r2 selects interface service getSearchChildBrowserScene/getArticleBrowserScene; init line788 stores returned actual object in t"
+    },
+    {
+      "file": "sources/com/jupiter/builddependencies/dependency/ServiceManager.java",
+      "line": 363,
+      "operation": "getService -> packaged timing wrapper -> original; cache class-key ImplWrapper; createFactory(cls.getName) -> factory.newService(application); type check then cache and return same object"
+    },
+    {
+      "file": "sources/com/jupiter/builddependencies/dependency/ServiceManager.java",
+      "line": 176,
+      "operation": "apiIdMap maps exact interface binary name to130"
+    },
+    {
+      "dex": "classes14.dex",
+      "method": "ServiceManager.createFactory(String)",
+      "operation": "packed-switch @16, payload @1358, case130 offset556 => target572 NEW_INSTANCE BrowserServiceFactory, @574 constructor, @577 return",
+      "java_decompiler_gap": "Java empty switch is not executable factory absence"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/impl/BrowserServiceFactory.java",
+      "line": 12,
+      "operation": "newService(Application) -> new BrowserServiceImpl(actual Application); DEX full signature returns Object due erasure"
+    },
+    {
+      "file": "sources/com/ixigua/browser/specific/impl/BrowserServiceImpl.java",
+      "lines": "111-112,149-150",
+      "operation": "implementation allocates ArticleBrowserScene or SearchChildBrowserScene"
+    }
+  ],
+  "reflection_chain": [
+    {
+      "file": "sources/com/bytedance/scene/NavigationSceneUtility.java",
+      "line": 173,
+      "operation": "SceneInstanceUtility.a(const NavigationScene.class,options.j())"
+    },
+    {
+      "file": "sources/com/bytedance/scene/utlity/SceneInstanceUtility.java",
+      "lines": "47-55",
+      "operation": "Class.getConstructor(empty Class[]) -> Constructor.newInstance(empty Object[]) -> Scene; if Bundle nonnull setClassLoader(actual Scene loader) and setArguments(same Bundle); return same Scene",
+      "access": "public noarg; no setAccessible and no declared-constructor enumeration"
+    },
+    {
+      "dex": "classes4.dex",
+      "operation": "NavigationScene actual class flags17(public final), <init>()V flags65537(public constructor)"
+    }
+  ],
+  "raw_dex_evidence": [
+    {
+      "file": "test/runs/xigua-service-source/browser-service-factory-dex.txt",
+      "sha256": "08c63ebc4c1f91c06369bf7e90a639c4180f702474a81d270938be981699f9da"
+    },
+    {
+      "file": "test/runs/xigua-service-source/create-factory-dex.txt",
+      "sha256": "5695294706fc7885c50a0ca06bbb2270f27cf6eb0f1122836435dfcd97975ddd"
+    },
+    {
+      "file": "test/runs/xigua-service-source/navigation-scene-constructor-dex.txt",
+      "sha256": "4a4b26ef0a14e14199223a6770d5fec7772c727762ff1a67a69be1500ea27ce0"
+    },
+    {
+      "file": "test/runs/xigua-service-source/scene-public-constructor-dex.txt",
+      "sha256": "d3a304ed3496fc8d78f2bd575ef368bd09e7734d81211080bb97e57a33948fd3"
+    }
+  ],
+  "unknown": [
+    "plugin replacement may supersede packaged cached provider when isDefaultService and plugin loaded; not inferred absent",
+    "ServiceManager.application startup assignment not reaudited here; newService explicitly requires nonnull Application",
+    "this source proof does not claim analyzer semantic recovery or queue completion"
+  ],
+  "positive_source_chain": true,
+  "whole_host_deep_complete": false
+}

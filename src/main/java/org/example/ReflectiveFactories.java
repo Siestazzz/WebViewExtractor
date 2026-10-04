@@ -9,8 +9,9 @@ final class ReflectiveFactories {
     static final String FOR_NAME="Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;";
     static final String CLASS_NEW="Ljava/lang/Class;->newInstance()Ljava/lang/Object;";
     static final String CONSTRUCTORS="Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;";
+    static final String PUBLIC_CONSTRUCTOR="Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;";
     static final String CONSTRUCTOR_NEW="Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;";
-    static final Set<String> APIS=Set.of(FOR_NAME,CLASS_NEW,CONSTRUCTORS,CONSTRUCTOR_NEW);
+    static final Set<String> APIS=Set.of(FOR_NAME,CLASS_NEW,CONSTRUCTORS,PUBLIC_CONSTRUCTOR,CONSTRUCTOR_NEW);
     static V resolve(V expression,List<V> args,CapabilityEngine engine,CapabilityEngine.Job job,CapabilityEngine.Host host,int depth,Set<String> visiting){
         if(!APIS.contains(expression.id()))return null;
         if(args.isEmpty())return UNKNOWN;
@@ -23,6 +24,15 @@ final class ReflectiveFactories {
             }else if(expression.id().equals(CLASS_NEW)&&args.size()==1&&receiver.kind().equals("class")){
                 Method ctor=engine.idx.byClass.getOrDefault(receiver.type(),List.of()).stream().filter(m->m.getName().equals("<init>")&&m.getParameterTypes().isEmpty()).findFirst().orElse(null);
                 value=create(expression,receiver.type(),ctor,engine,job,host,depth,visiting);
+            }else if(expression.id().equals(PUBLIC_CONSTRUCTOR)&&args.size()==2&&receiver.kind().equals("class")){
+                V parameters=args.get(1);
+                if("[Ljava/lang/Class;".equals(parameters.type())&&Long.valueOf(0).equals(host.arrayLengths.get(parameters.id()))){
+                    // Constructors are not inherited; a named empty signature is exact even
+                    // when the class also declares other overloads.
+                    Method ctor=engine.idx.byClass.getOrDefault(receiver.type(),List.of()).stream().filter(m->m.getName().equals("<init>")&&m.getParameterTypes().isEmpty()&&(m.getAccessFlags()&1)!=0).findFirst().orElse(null);
+                    if(ctor!=null)value=V.of("reflect_constructor",receiver.type(),CapabilityIndex.key(ctor));
+                    else host.gaps.add("reflective_public_noarg_lookup_unresolved:"+receiver.type());
+                }else host.gaps.add("reflective_constructor_parameter_types_unresolved:"+receiver.type());
             }else if(expression.id().equals(CONSTRUCTORS)&&args.size()==1&&receiver.kind().equals("class")){
                 List<Method> constructors=engine.idx.byClass.getOrDefault(receiver.type(),List.of()).stream().filter(m->m.getName().equals("<init>")).toList();
                 // Reflection array order is unspecified. Only a singleton is exact.

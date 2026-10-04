@@ -1,0 +1,572 @@
+{
+  "oracle_sha256": "5154ddbb52ee26d91b2c434d7e2b8eed462d5a565776f21677a46600c02b9974",
+  "report_sha256": "b5343b4a533943c0367167672c04df8bac8433afd8e47309672353f10beaa681",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/generic-v3-facts/xigua.jsonl",
+  "apk_sha256": "6f95637b1730e39d493f67d398ab8b81d2ebe9ec41e66eccbee6d0a816fc532e",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 35,
+      "matched": 0,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 20,
+      "matched": 0,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.0,
+      "explicit_recall": 0.0
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.BrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.PureBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setTextZoom",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.ixigua.browser.specific.pad.PadBrowserDialogActivity",
+      "webview": null,
+      "webview_constraint": null,
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/ixigua/browser/specific/scene/BrowserScene$MyWebViewClient;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 41,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 6,
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "webview_constraint_coverage": {
+    "expected": 55,
+    "with_source_type_constraint": 0,
+    "activity_only": 55,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 5,
+    "matched": 0,
+    "missing": [
+      "com.ixigua.browser.specific.AggregationBrowserActivity",
+      "com.ixigua.browser.specific.BrowserActivity",
+      "com.ixigua.browser.specific.PureBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserActivity",
+      "com.ixigua.browser.specific.pad.PadBrowserDialogActivity"
+    ],
+    "recall": 0.0
+  },
+  "duplicate_oracle_rows": 0,
+  "capability_granularity": {
+    "setting": {
+      "expected": 35,
+      "matched": 0,
+      "recall": 0.0
+    },
+    "callback_member": {
+      "expected": 20,
+      "matched": 0,
+      "recall": 0.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 41
+    },
+    "emitted": 41,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 41,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

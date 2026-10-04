@@ -1,0 +1,13 @@
+{
+  "baseline_jar": "test/runs/generic-v17.jar",
+  "command": "java -cp test/runs/generic-v17.jar:build/classes/java/test org.example.ReflectionDiscoveryPrefilterFixture",
+  "baseline_exit": 1,
+  "baseline_stdout": "",
+  "baseline_stderr": "Exception in thread \"main\" java.lang.AssertionError: Discovery enumerated unrelated methods: 68\n\tat org.example.ReflectionDiscoveryPrefilterFixture.run(ReflectionDiscoveryPrefilterFixture.java:20)\n\tat org.example.ReflectionDiscoveryPrefilterFixture.main(ReflectionDiscoveryPrefilterFixture.java:24)\n",
+  "new_suite_log": "test/runs/generic-v18-reflection-candidates-tests.log",
+  "new_suite_result": "PASS",
+  "claim": "Necessary Method.invoke reverse-index candidates avoid the whole-method first pass; no real-App speed or recall claim yet.",
+  "baseline_jar_sha256": "e0d7ed7bd131d08c2a39bb56f49f080562035900d4eda67e2a6515c8f778cc75",
+  "fixture_sha256": "54c3e704501b3e91cf287d14e12c1110a793d41e7018caaa982db44fbf8c222f",
+  "implementation_sha256": "5649879596e951d7fb49f3f647709ac20ffbaf7bca94c943c7746ccb1506a913"
+}

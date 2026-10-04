@@ -56,8 +56,13 @@ final class ReflectionProtocols {
  boolean carrier(String type){for(Method method:index.byClass.getOrDefault(type,List.of()))if(!plans(method).isEmpty())return true;return false;}
  void discoverFields(){
   if(fieldsDiscovered)return;fieldsDiscovered=true;
-  for(Method method:index.methods.values()){
-   discoveryMethodVisits++;if(expired()){fieldsDiscovered=false;return;}
+  // Every accepted dispatch certificate contains this exact Method.invoke call.
+  // Its existing reverse-call index is a complete necessary candidate set; avoid
+  // re-enumerating every unrelated APK method in each worker's discovery pass.
+  for(String id:index.callers.getOrDefault(INVOKE,Set.of())){
+   if(expired()){fieldsDiscovered=false;return;}
+   Method method=index.methods.get(id);if(method==null||!candidate(method))continue;
+   discoveryMethodVisits++;
    for(Plan plan:plans(method)){collectMapFields(plan.lookupClass(),0);collectMapFields(plan.invokeReceiver(),0);}
   }
   for(Method method:index.methods.values()){

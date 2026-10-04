@@ -1,0 +1,160 @@
+{
+  "apk_sha256": "2f815b97847ec9121ed301f1ed048e042f16c1926083ff8e19cd5c13f1f36dac",
+  "activity": "com.applovin.sdk.AppLovinWebViewActivity",
+  "reviewer": "GPT-6.1 Sol",
+  "scope": "Explicit app/SDK WebView surface for patched base; framework inherited default methods are not app override declarations",
+  "deep_audit_complete": true,
+  "construction_chain": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 823,
+      "text": "android:name=\"com.applovin.sdk.AppLovinWebViewActivity\"",
+      "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 89,
+      "text": "WebView b = n7.b(this, \"WebView Activity\");",
+      "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 638,
+      "text": "return a(context, str, false);",
+      "sha256": "ea0d34fa66942235eb5cfb26387517dea2981c4889bef5186719bed89a1c549c"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 1124,
+      "text": "WebView webView = new WebView(context);",
+      "sha256": "ea0d34fa66942235eb5cfb26387517dea2981c4889bef5186719bed89a1c549c"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 1125,
+      "text": "if (!z) {",
+      "sha256": "ea0d34fa66942235eb5cfb26387517dea2981c4889bef5186719bed89a1c549c"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 90,
+      "text": "this.c = b;",
+      "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+    }
+  ],
+  "source_failures": {
+    "global_jadx_exit": 1,
+    "scoped_relevant_method_failures": [],
+    "notes": "Inspected complete Activity and t4 source; n7.b and n7.a(Context,String,boolean) have executable bodies without failed decompilation markers. Other n7 methods have unrelated warnings and are excluded by factory branch."
+  },
+  "categories": {
+    "bridge": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 0,
+      "proof": "No add/removeJavascriptInterface in complete Activity, t4 or selected factory methods. Platform WebView created directly; no custom subclass constructors. c is private and has no getter; only loadUrl public method passes URL string, no WebView escape."
+    },
+    "setting": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 2,
+      "values": {
+        "setSupportMultipleWindows": false,
+        "setJavaScriptEnabled": true
+      },
+      "proof": "Selected factory methods perform no settings writes; Activity.a(k) obtains c.getSettings and performs exactly these two setters, on every initial and renderer replacement creation."
+    },
+    "callback": {
+      "status": "done",
+      "unresolved": [],
+      "observed_fact_count": 2,
+      "installation_history": [
+        {
+          "stage": "new WebView constructor",
+          "client": "platform default",
+          "chrome": "platform default"
+        },
+        {
+          "stage": "n7.a false branch",
+          "client": "returns without installing n7$b"
+        },
+        {
+          "stage": "Activity.a(k)",
+          "client": "com.applovin.sdk.AppLovinWebViewActivity$a",
+          "chrome": "no install"
+        },
+        {
+          "stage": "renderer gone",
+          "client": "old instance destroyed; reinitialization runs same factory and installation chain"
+        }
+      ],
+      "effective_app_overrides": [
+        "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+        "Lcom/applovin/sdk/AppLovinWebViewActivity$a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+      ],
+      "inherited_resolution": "t4 defines only onRenderProcessGone, overridden by Activity$a; Activity$a super call resolves t4. No app override for WebResourceRequest URL overload. No app WebChromeClient installed."
+    }
+  },
+  "cleanup": {
+    "evidence": [
+      {
+        "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+        "line": 128,
+        "text": "AppLovinWebViewActivity.this.c.destroy();",
+        "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+      },
+      {
+        "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+        "line": 129,
+        "text": "AppLovinWebViewActivity.this.c = null;",
+        "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+      },
+      {
+        "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+        "line": 119,
+        "text": "AppLovinWebViewActivity.this.a(kVar);",
+        "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+      }
+    ],
+    "ordinary_lifecycle": "Activity has no onDestroy/onPause/onResume override; no explicit ordinary cleanup calls. This absence is audited behavior, not assumed teardown."
+  },
+  "evidence": [
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 37,
+      "text": "private WebView c;",
+      "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+    },
+    {
+      "file": "sources/com/applovin/sdk/AppLovinWebViewActivity.java",
+      "line": 45,
+      "text": "public void loadUrl(String str, EventListener eventListener) {",
+      "sha256": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 637,
+      "text": "public static WebView b(Context context, String str) {",
+      "sha256": "ea0d34fa66942235eb5cfb26387517dea2981c4889bef5186719bed89a1c549c"
+    },
+    {
+      "file": "sources/com/applovin/impl/n7.java",
+      "line": 1122,
+      "text": "public static WebView a(Context context, String str, boolean z) {",
+      "sha256": "ea0d34fa66942235eb5cfb26387517dea2981c4889bef5186719bed89a1c549c"
+    },
+    {
+      "file": "sources/com/applovin/impl/t4.java",
+      "line": 12,
+      "text": "public abstract class t4 extends WebViewClient {",
+      "sha256": "54260d7ead8d5410e0240a9aa80a8538d71db23e8add1ea782c88b4154e2a90e"
+    }
+  ],
+  "source_file_hashes": {
+    "sources/com/applovin/sdk/AppLovinWebViewActivity.java": "eb2dfec10891058ef4d6a7fb78b28eed7f7eb1b6fc5b49d80a4736f9e9055b67",
+    "sources/com/applovin/impl/n7.java": "ea0d34fa66942235eb5cfb26387517dea2981c4889bef5186719bed89a1c549c",
+    "sources/com/applovin/impl/t4.java": "54260d7ead8d5410e0240a9aa80a8538d71db23e8add1ea782c88b4154e2a90e"
+  },
+  "present_stratum": "sdk_direct_factory",
+  "minimum_two_stratum_deep_met": false
+}

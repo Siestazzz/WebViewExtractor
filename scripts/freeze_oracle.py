@@ -5,6 +5,16 @@ import argparse,hashlib,json,pathlib
 def canonical(row):
  return json.dumps(row,ensure_ascii=False,sort_keys=True,separators=(',',':'))
 
+def validate_positive_shape(row, source, line):
+ constraint=row.get('webview_constraint')
+ if constraint is not None and (not isinstance(constraint,dict) or set(constraint)!={'types'} or not isinstance(constraint['types'],list) or not constraint['types'] or not all(isinstance(t,str) and t for t in constraint['types'])):
+  raise ValueError(f'Unsupported source WebView constraint; preserve extra binding evidence outside matcher constraint: {source}:{line}')
+ if row.get('kind')=='callback_registration':
+  api=row.get('normalized_api') or row.get('normalized_signature') or ''
+  owner=api.split(';->',1)[0]
+  if owner in {'Landroid/webkit/WebViewClient','Landroid/webkit/WebChromeClient','Landroid/webkit/WebViewRenderProcessClient','Lcom/tencent/smtt/sdk/WebViewClient','Lcom/tencent/smtt/sdk/WebChromeClient'}:
+   raise ValueError(f'Callback member contract used as registration API: {source}:{line}: {api}')
+
 def union_sources(sources, require_append_verdicts=False):
  unique={};evidence=[];input_rows=0
  for source_index,source in enumerate(sources):
@@ -18,6 +28,7 @@ def union_sources(sources, require_append_verdicts=False):
     raise ValueError(f'New source fact requires explicit boolean positive_acceptance: {source}:{line}')
    if require_append_verdicts and source_index>0 and key not in unique and row.get('positive_acceptance') is True and row.get('kind') not in {'activity_binding','bridge','bridge_method','message_handler','setting','callback','callback_registration','webview_operation'}:
     raise ValueError(f'Unsupported positive fact kind: {source}:{line}: {row.get("kind")}')
+   if require_append_verdicts and source_index>0 and key not in unique and row.get("positive_acceptance") is True:validate_positive_shape(row,source,line)
    unique.setdefault(key,row)
  # Preserve first occurrence order, including failed, unknown and rejected facts.
  output=('\n'.join(unique)+'\n').encode('utf-8') if unique else b''

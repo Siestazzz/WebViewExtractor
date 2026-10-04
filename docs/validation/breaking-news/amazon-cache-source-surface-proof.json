@@ -1,0 +1,134 @@
+{
+  "apk_sha256": "2f815b97847ec9121ed301f1ed048e042f16c1926083ff8e19cd5c13f1f36dac",
+  "activity": "com.amazon.device.ads.DTBInterstitialActivity",
+  "reviewer": "GPT-6.1 Sol",
+  "deep_audit_complete": false,
+  "construction_chain": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1189,
+      "text": "android:name=\"com.amazon.device.ads.DTBInterstitialActivity\"",
+      "sha256": "2c93e5c49579fff647bc7fda2b22d3d29f910b34e2a315cc3b05d0cc3912693a"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBInterstitialActivity.java",
+      "line": 98,
+      "text": "this.interstitial = DTBAdInterstitial.getFromCache(intExtra);",
+      "sha256": "d6997d7b9a93a5ae0c12d92f93a53ed3a182f8d544395c4277c479cf477580a0"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBInterstitialActivity.java",
+      "line": 106,
+      "text": "this.adView = new WeakReference<>(this.interstitial.getAdView());",
+      "sha256": "d6997d7b9a93a5ae0c12d92f93a53ed3a182f8d544395c4277c479cf477580a0"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBAdInterstitial.java",
+      "line": 26,
+      "text": "this.adView = new DTBAdView(context, dTBAdInterstitialListener);",
+      "sha256": "1cd4a7b5235987ffbfaf26e182f2ac748ea2b80fe01510ca638d9fed43a28b4c"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBAdInterstitial.java",
+      "line": 59,
+      "text": "dtbAdInterstitialCache.put(Integer.valueOf(dTBAdInterstitial.hashCode()), dTBAdInterstitial);",
+      "sha256": "1cd4a7b5235987ffbfaf26e182f2ac748ea2b80fe01510ca638d9fed43a28b4c"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBAdInterstitial.java",
+      "line": 72,
+      "text": "return this.adView;",
+      "sha256": "1cd4a7b5235987ffbfaf26e182f2ac748ea2b80fe01510ca638d9fed43a28b4c"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBAdView.java",
+      "line": 14,
+      "text": "public class DTBAdView extends ApsAdViewImpl implements ApsAdViewConstants {",
+      "sha256": "f4bfc104f97814c7140ae7cf5cf86a6bcf1b4e87a538ed56a46e391d410f4e8d"
+    },
+    {
+      "file": "sources/com/amazon/aps/ads/util/adview/ApsAdViewImpl.java",
+      "line": 42,
+      "text": "public class ApsAdViewImpl extends ApsAdViewBase implements ApsWebBridgeListener, ApsAdWebViewClientListener {",
+      "sha256": "e6b7442998f0c0c1fead861382b0bad79a008b12012dff4874d07536888c5f3a"
+    },
+    {
+      "file": "sources/com/amazon/aps/ads/util/adview/ApsAdViewBase.java",
+      "line": 31,
+      "text": "public abstract class ApsAdViewBase extends WebView implements ApsAdViewConstants {",
+      "sha256": "f60432c8e27e9d61fdf838f92603d5ef340fab0d142bd28726d59f60b43fc2b5"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBAdView.java",
+      "line": 59,
+      "text": "initAdInterstitialListener(dTBAdInterstitialListener);",
+      "sha256": "f4bfc104f97814c7140ae7cf5cf86a6bcf1b4e87a538ed56a46e391d410f4e8d"
+    },
+    {
+      "file": "sources/com/amazon/device/ads/DTBAdView.java",
+      "line": 29,
+      "text": "initWebView();",
+      "sha256": "f4bfc104f97814c7140ae7cf5cf86a6bcf1b4e87a538ed56a46e391d410f4e8d"
+    }
+  ],
+  "source_positive": true,
+  "categories": {
+    "bridge": {
+      "status": "partial",
+      "observed_fact_count": 1,
+      "unresolved": [
+        "DTBAdView getAdView public escape and OMX shared instance pathways not yet exhaustively closed"
+      ]
+    },
+    "setting": {
+      "status": "partial",
+      "observed_fact_count": 8,
+      "unresolved": [
+        "Postconstruction public SDK instance escapes may accept changes; external receiver calls not fully enumerated"
+      ]
+    },
+    "callback": {
+      "status": "partial",
+      "observed_fact_count": 5,
+      "unresolved": [
+        "public setWebClient accepts client supplied by caller; lexical .setWebClient search found no outside calls but DEX dispatch not proved"
+      ]
+    }
+  },
+  "cleanup": {
+    "host": "onDestroy removes view and evaluates MRAID_CLOSE; cleanup removes cache/clears WeakReference, does not invoke WebView.destroy or ApsAdViewImpl.cleanup",
+    "sdk_bridge_cleanup_evidence": {
+      "file": "sources/com/amazon/aps/ads/util/adview/ApsAdViewImpl.java",
+      "line": 106,
+      "text": "removeJavascriptInterface(\"amzn_bridge\");",
+      "sha256": "e6b7442998f0c0c1fead861382b0bad79a008b12012dff4874d07536888c5f3a"
+    },
+    "host_cleanup_evidence": [
+      {
+        "file": "sources/com/amazon/device/ads/DTBInterstitialActivity.java",
+        "line": 45,
+        "text": "DTBAdInterstitial.removeFromCache(this.dtbAdInterstitialID);",
+        "sha256": "d6997d7b9a93a5ae0c12d92f93a53ed3a182f8d544395c4277c479cf477580a0"
+      },
+      {
+        "file": "sources/com/amazon/device/ads/DTBInterstitialActivity.java",
+        "line": 150,
+        "text": "relativeLayout.removeView(getAdView());",
+        "sha256": "d6997d7b9a93a5ae0c12d92f93a53ed3a182f8d544395c4277c479cf477580a0"
+      }
+    ]
+  },
+  "stratum": "sdk_cached_webview_handoff",
+  "positive_acceptance": false,
+  "evidence_hashes": {
+    "sources/com/amazon/device/ads/DTBInterstitialActivity.java": "d6997d7b9a93a5ae0c12d92f93a53ed3a182f8d544395c4277c479cf477580a0",
+    "sources/com/amazon/device/ads/DTBAdInterstitial.java": "1cd4a7b5235987ffbfaf26e182f2ac748ea2b80fe01510ca638d9fed43a28b4c",
+    "sources/com/amazon/device/ads/DTBAdView.java": "f4bfc104f97814c7140ae7cf5cf86a6bcf1b4e87a538ed56a46e391d410f4e8d",
+    "sources/com/amazon/aps/ads/util/adview/ApsAdViewImpl.java": "e6b7442998f0c0c1fead861382b0bad79a008b12012dff4874d07536888c5f3a",
+    "sources/com/amazon/aps/ads/util/adview/ApsAdViewBase.java": "f60432c8e27e9d61fdf838f92603d5ef340fab0d142bd28726d59f60b43fc2b5",
+    "sources/com/amazon/aps/ads/util/adview/ApsAdViewUtils.java": "d1a7492effa63f92d62ed64c80308ae3f8c472ab178efc66f6ae8667469d465f",
+    "sources/com/amazon/aps/ads/util/adview/ApsAdWebViewSupportClient.java": "dfcb1430ee7fd1ca4f9a4eada539ef7936efcda6152269efe6c636c8c0228301",
+    "sources/com/amazon/aps/ads/util/adview/ApsAdWebViewSupportClientBase.java": "37b3a94e12fdcd43f5c5182e69a9dc55e24e7fc54f3c18e556467ef14cbb30dc",
+    "sources/com/amazon/aps/ads/util/adview/ApsAdViewWebBridge.java": "61c4b33e9e54c3690292d2c687732d108253509884bea44c08b62ee304d3ad54"
+  }
+}
