@@ -62,7 +62,7 @@ final class ReflectionProtocols {
   }
   for(Method method:index.methods.values()){
    if(expired()){fieldsDiscovered=false;return;}
-   if(method.getImplementation()==null)continue;boolean put=false;
+   if(method.getImplementation()==null||Collections.disjoint(index.referencedFields.getOrDefault(CapabilityIndex.key(method),Set.of()),fields))continue;boolean put=false;
    for(String call:index.calls.getOrDefault(CapabilityIndex.key(method),Set.of())){if(expired()){fieldsDiscovered=false;return;}if(call.endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")&&index.map(CapabilityEngine.owner(call))){put=true;break;}}
    if(!put)continue;
    discoveryMethodVisits++;var forms=TransportProtocols.registrations(index,method,flow.summary(method),fields);if(!forms.isEmpty())registrations.put(CapabilityIndex.key(method),forms);

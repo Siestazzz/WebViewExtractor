@@ -1,0 +1,11 @@
+{
+  "scope": "Necessary-condition discovery prefilter regression, not real-App quality evidence.",
+  "baseline_jar_sha256": "edd16e6c48b976f452034af7f9ce93ba9aec920bff6e7bcedf0fe06c9146e815",
+  "reflection_source_sha256": "c85350fd56c9c601fcd5b41cf18b819109d9ef345fa4b45606694fb69beb47be",
+  "fixture_sha256": "b2abc605d7c2e67c03182daafb25e84448a1959d5e5034b0a28316267726abbc",
+  "before_exit_code": 1,
+  "before_output": "Exception in thread \"main\" java.lang.AssertionError: Unrelated Map decoded: Lprefilter/Unrelated;->put0(Ljava/util/HashMap;Ljava/lang/Object;Ljava/lang/Object;)V\n\tat org.example.ReflectionDiscoveryPrefilterFixture.run(ReflectionDiscoveryPrefilterFixture.java:18)\n\tat org.example.ReflectionDiscoveryPrefilterFixture.main(ReflectionDiscoveryPrefilterFixture.java:23)\n",
+  "after_exit_code": 0,
+  "after_output": "ReflectionDiscoveryPrefilterFixture PASS: certified writer retained;65 unrelated Map methods not decoded.\n",
+  "logic": "The existing registration certificate requires put receiver to be a direct field in the discovered transport field set. A method with no indexed reference to any such field cannot produce this certificate. Filter before decoding its body. Existing actual certified-field writer remains accepted."
+}

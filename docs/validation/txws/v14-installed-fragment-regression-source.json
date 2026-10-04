@@ -1,0 +1,2118 @@
+{
+  "schema_version": 1,
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "source_build_sha256": "c15ce5a6a668d2fb31d471c78914ef3d9b0f36d5ba6d54a6ed1281b56a31fcfa",
+  "delta": {
+    "path": "docs/validation/generic-v14-txws-vs-v13-frozen-delta.json",
+    "sha256": "526b17f808d98546483beaad8607bfa82751f10a2c9ed3e4149825caae5cc68a",
+    "regressions": 198,
+    "hosts": {
+      "com.tencent.oscar.module.webview.WebviewBaseActivity": 33,
+      "com.tencent.oscar.module.webview.MainProcessWebviewActivity": 33,
+      "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity": 33,
+      "com.tencent.oscar.module.webview.half.HalfWebViewActivity": 33,
+      "com.tencent.oscar.module.webview.tenvideo.TenvideoPayWebViewActivityLandscape": 33,
+      "com.tencent.weishi.module.landvideo.HorizontalVideoActivity": 33
+    }
+  },
+  "source_evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/WebviewBaseActivity.java",
+      "sha256": "51979a58f0b0ef3e3f2e7e9326249f132463151ff7c7ac1813b6694f01506d1c",
+      "locations": [
+        {
+          "line": 209,
+          "quote": "    protected final void createFragment(@Nullable Bundle bundle) {"
+        },
+        {
+          "line": 210,
+          "quote": "        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(\"WebViewBaseFragment\");"
+        },
+        {
+          "line": 211,
+          "quote": "        WebViewBaseFragment webViewBaseFragment = null;"
+        },
+        {
+          "line": 212,
+          "quote": "        WebViewBaseFragment webViewBaseFragment2 = findFragmentByTag instanceof WebViewBaseFragment ? (WebViewBaseFragment) findFragmentByTag : null;"
+        },
+        {
+          "line": 213,
+          "quote": "        if (webViewBaseFragment2 != null) {"
+        },
+        {
+          "line": 214,
+          "quote": "            this.mWebViewFragment = webViewBaseFragment2;"
+        },
+        {
+          "line": 215,
+          "quote": "            webViewBaseFragment = webViewBaseFragment2;"
+        },
+        {
+          "line": 216,
+          "quote": "        }"
+        },
+        {
+          "line": 217,
+          "quote": "        if (webViewBaseFragment == null) {"
+        },
+        {
+          "line": 218,
+          "quote": "            webViewBaseFragment = new WebViewBaseFragment();"
+        },
+        {
+          "line": 219,
+          "quote": "            this.mWebViewFragment = webViewBaseFragment;"
+        },
+        {
+          "line": 220,
+          "quote": "        }"
+        },
+        {
+          "line": 221,
+          "quote": "        webViewBaseFragment.setArguments(bundle);"
+        },
+        {
+          "line": 222,
+          "quote": "    }"
+        },
+        {
+          "line": 276,
+          "quote": "    protected void onCreate(@Nullable Bundle bundle) {"
+        },
+        {
+          "line": 277,
+          "quote": "        super.onCreate(bundle);"
+        },
+        {
+          "line": 278,
+          "quote": "        setContentView(R.layout.activity_webview_base);"
+        },
+        {
+          "line": 279,
+          "quote": "        translucentStatusBar();"
+        },
+        {
+          "line": 280,
+          "quote": "        Bundle extras = getIntent().getExtras();"
+        },
+        {
+          "line": 281,
+          "quote": "        if (extras != null) {"
+        },
+        {
+          "line": 282,
+          "quote": "            this.mIsCommercial = extras.getBoolean(IntentKeys.KEY_IS_COMMERCIAL, false);"
+        },
+        {
+          "line": 283,
+          "quote": "            this.mAdStr = extras.getString(IntentKeys.KEY_AD_STR, \"\");"
+        },
+        {
+          "line": 284,
+          "quote": "        }"
+        },
+        {
+          "line": 285,
+          "quote": "        this.mIsFromMainProcess = getIntent().getBooleanExtra(IntentKeys.KEY_FROM_MAIN_PROCESS_FLAG, false);"
+        },
+        {
+          "line": 286,
+          "quote": "        Logger.i(TAG, \"web is call from main process:\" + this.mIsFromMainProcess);"
+        },
+        {
+          "line": 287,
+          "quote": "        EventBusManager.getNormalEventBus().post(new VideoPagePlayEvent(1, hashCode()));"
+        },
+        {
+          "line": 288,
+          "quote": "        String parsePageIdWithBundle = parsePageIdWithBundle(extras);"
+        },
+        {
+          "line": 289,
+          "quote": "        String str = parsePageIdWithBundle != null ? parsePageIdWithBundle : \"\";"
+        },
+        {
+          "line": 290,
+          "quote": "        this.mPageId = str;"
+        },
+        {
+          "line": 291,
+          "quote": "        if (str.length() > 0) {"
+        },
+        {
+          "line": 292,
+          "quote": "            ((DaTongReportService) Router.service(DaTongReportService.class)).registerPageId(this, this.mPageId);"
+        },
+        {
+          "line": 293,
+          "quote": "        }"
+        },
+        {
+          "line": 294,
+          "quote": "        this.mPageUrl = parsePageUrlWithBundle(extras);"
+        },
+        {
+          "line": 295,
+          "quote": "        createFragment(extras);"
+        },
+        {
+          "line": 296,
+          "quote": "        showFragment();"
+        },
+        {
+          "line": 297,
+          "quote": "        setSwipeBackEnable(true);"
+        },
+        {
+          "line": 380,
+          "quote": "    protected final void showFragment() {"
+        },
+        {
+          "line": 381,
+          "quote": "        WebViewBaseFragment webViewBaseFragment = this.mWebViewFragment;"
+        },
+        {
+          "line": 382,
+          "quote": "        if (webViewBaseFragment == null) {"
+        },
+        {
+          "line": 383,
+          "quote": "            Logger.w(TAG, \"mWebViewFragment fragment null\");"
+        },
+        {
+          "line": 384,
+          "quote": "            return;"
+        },
+        {
+          "line": 385,
+          "quote": "        }"
+        },
+        {
+          "line": 386,
+          "quote": "        FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();"
+        },
+        {
+          "line": 387,
+          "quote": "        f0.o(beginTransaction, \"beginTransaction(...)\");"
+        },
+        {
+          "line": 388,
+          "quote": "        beginTransaction.replace(R.id.web_view_root, webViewBaseFragment, \"WebViewBaseFragment\");"
+        },
+        {
+          "line": 389,
+          "quote": "        beginTransaction.commit();"
+        },
+        {
+          "line": 390,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/MainProcessWebviewActivity.java",
+      "sha256": "d8482b87c97fb0e055933dd0fe0e435073fdde2d1dde0b7cf3701dbaa8a2dceb",
+      "locations": [
+        {
+          "line": 1,
+          "quote": "package com.tencent.oscar.module.webview;"
+        },
+        {
+          "line": 2,
+          "quote": ""
+        },
+        {
+          "line": 3,
+          "quote": "import android.content.Intent;"
+        },
+        {
+          "line": 4,
+          "quote": "import com.tencent.qmethod.pandoraex.monitor.MethodMonitor;"
+        },
+        {
+          "line": 5,
+          "quote": ""
+        },
+        {
+          "line": 6,
+          "quote": "/* loaded from: classes10.dex */"
+        },
+        {
+          "line": 7,
+          "quote": "public class MainProcessWebviewActivity extends WebviewBaseActivity {"
+        },
+        {
+          "line": 8,
+          "quote": "    @Override // com.tencent.oscar.module.webview.WebviewBaseActivity, com.tencent.oscar.base.app.BaseActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 9,
+          "quote": "    protected void onActivityResult(int i10, int i11, Intent intent) {"
+        },
+        {
+          "line": 10,
+          "quote": "        MethodMonitor.beforeActivityOnResult(this, i10, i11, intent);"
+        },
+        {
+          "line": 11,
+          "quote": "        super.onActivityResult(i10, i11, intent);"
+        },
+        {
+          "line": 12,
+          "quote": "    }"
+        },
+        {
+          "line": 13,
+          "quote": ""
+        },
+        {
+          "line": 14,
+          "quote": "    @Override // com.tencent.oscar.module.webview.WebviewBaseActivity, com.tencent.oscar.base.app.BaseActivity, androidx.activity.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 15,
+          "quote": "    protected void onNewIntent(Intent intent) {"
+        },
+        {
+          "line": 16,
+          "quote": "        MethodMonitor.beforeActivityOnNewIntent(this, intent);"
+        },
+        {
+          "line": 17,
+          "quote": "        super.onNewIntent(intent);"
+        },
+        {
+          "line": 18,
+          "quote": "    }"
+        },
+        {
+          "line": 19,
+          "quote": "}"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/notify/NotifyDialogWebViewActivity.java",
+      "sha256": "a348e6935ab64420a19ea61bf97418c09baa3284892cce43581b4741159c9ebe",
+      "locations": [
+        {
+          "line": 10,
+          "quote": "import com.tencent.weseevideo.common.view.TipsConfirmDialog;"
+        },
+        {
+          "line": 11,
+          "quote": ""
+        },
+        {
+          "line": 12,
+          "quote": "/* loaded from: classes10.dex */"
+        },
+        {
+          "line": 13,
+          "quote": "public class NotifyDialogWebViewActivity extends WebviewBaseActivity {"
+        },
+        {
+          "line": 14,
+          "quote": "    public static final String BUNDLE_KEY_NOTIFY = \"notify\";"
+        },
+        {
+          "line": 15,
+          "quote": "    private static final int PROGRESS_THREADHOLD = 80;"
+        },
+        {
+          "line": 48,
+          "quote": "    protected void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 49,
+          "quote": "        Bundle extras;"
+        },
+        {
+          "line": 50,
+          "quote": "        super.onCreate(savedInstanceState);"
+        },
+        {
+          "line": 51,
+          "quote": "        Intent intent = getIntent();"
+        },
+        {
+          "line": 52,
+          "quote": "        if (intent == null || (extras = intent.getExtras()) == null) {"
+        },
+        {
+          "line": 53,
+          "quote": "            return;"
+        },
+        {
+          "line": 54,
+          "quote": "        }"
+        },
+        {
+          "line": 55,
+          "quote": "        this.mNotify = extras.getString(\"notify\");"
+        },
+        {
+          "line": 56,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/half/HalfWebViewActivity.java",
+      "sha256": "7ae80f06cd4d10f7baa71d72289b4d299b2807fd2da68ce13ffcf51bc3af1ea4",
+      "locations": [
+        {
+          "line": 92,
+          "quote": "    protected void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 93,
+          "quote": "        super.onCreate(savedInstanceState);"
+        },
+        {
+          "line": 94,
+          "quote": "        overridePendingTransition(0, 0);"
+        },
+        {
+          "line": 95,
+          "quote": "        getWindow().getDecorView().setBackgroundResource(android.R.color.transparent);"
+        },
+        {
+          "line": 96,
+          "quote": "        HalfWebController halfWebController = new HalfWebController(getSupportFragmentManager());"
+        },
+        {
+          "line": 97,
+          "quote": "        boolean booleanExtra = getIntent().getBooleanExtra(\"transparent\", false);"
+        },
+        {
+          "line": 98,
+          "quote": "        boolean booleanExtra2 = getIntent().getBooleanExtra(KEY_DISPATCH_ALL_EVENT_TO_WEB, false);"
+        },
+        {
+          "line": 99,
+          "quote": "        if (!booleanExtra) {"
+        },
+        {
+          "line": 100,
+          "quote": "            if (halfWebController.showHalfWebViewDialog(getIntent().getStringExtra(\"uri\"), this, booleanExtra, booleanExtra2)) {"
+        },
+        {
+          "line": 101,
+          "quote": "                return;"
+        },
+        {
+          "line": 102,
+          "quote": "            }"
+        },
+        {
+          "line": 103,
+          "quote": "            finish();"
+        },
+        {
+          "line": 104,
+          "quote": "            return;"
+        },
+        {
+          "line": 105,
+          "quote": "        }"
+        },
+        {
+          "line": 106,
+          "quote": "        setContentView(R.layout.activity_half_web_view);"
+        },
+        {
+          "line": 107,
+          "quote": "        TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 1.0f, 1, 0.0f);"
+        },
+        {
+          "line": 108,
+          "quote": "        translateAnimation.setDuration(200L);"
+        },
+        {
+          "line": 109,
+          "quote": "        findViewById(R.id.fl_container).startAnimation(translateAnimation);"
+        },
+        {
+          "line": 110,
+          "quote": "        handleHeight();"
+        },
+        {
+          "line": 111,
+          "quote": "        if (halfWebController.showHalfTransparentWebView(getIntent().getStringExtra(\"uri\"), this, booleanExtra2, R.id.fl_container, getWebViewFragmentCallback())) {"
+        },
+        {
+          "line": 112,
+          "quote": "            return;"
+        },
+        {
+          "line": 113,
+          "quote": "        }"
+        },
+        {
+          "line": 114,
+          "quote": "        finish();"
+        },
+        {
+          "line": 115,
+          "quote": "    }"
+        },
+        {
+          "line": 116,
+          "quote": ""
+        },
+        {
+          "line": 117,
+          "quote": "    @Override // com.tencent.oscar.module.webview.half.OnDialogStateChangeListener"
+        },
+        {
+          "line": 118,
+          "quote": "    public void onDismiss(DialogInterface dialog) {"
+        },
+        {
+          "line": 119,
+          "quote": "        finish();"
+        },
+        {
+          "line": 120,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/half/HalfWebController.java",
+      "sha256": "5fd2224ac4c8ca871ac086c2f75d9ae2f3e751148ac02a5d28cb1531409901c4",
+      "locations": [
+        {
+          "line": 100,
+          "quote": "    public boolean showHalfTransparentWebView(String scheme, OnDialogStateChangeListener listener, boolean dispatchAllEventToWeb, @IdRes int containerId, WebViewFragmentCallback callback) {"
+        },
+        {
+          "line": 101,
+          "quote": "        Logger.i(TAG, \"showHalfTransparentWebView schema = \" + scheme);"
+        },
+        {
+          "line": 102,
+          "quote": "        Bundle bundle = new Bundle();"
+        },
+        {
+          "line": 103,
+          "quote": "        if (!createHalfBundle(bundle, scheme, listener, true, dispatchAllEventToWeb)) {"
+        },
+        {
+          "line": 104,
+          "quote": "            return false;"
+        },
+        {
+          "line": 105,
+          "quote": "        }"
+        },
+        {
+          "line": 106,
+          "quote": "        HalfWebFragment halfWebFragment = new HalfWebFragment();"
+        },
+        {
+          "line": 107,
+          "quote": "        halfWebFragment.setWebViewFragmentCallback(callback);"
+        },
+        {
+          "line": 108,
+          "quote": "        halfWebFragment.setArguments(bundle);"
+        },
+        {
+          "line": 109,
+          "quote": "        this.mFragmentManager.beginTransaction().add(containerId, halfWebFragment, HalfWebFragment.TAG).commit();"
+        },
+        {
+          "line": 110,
+          "quote": "        return true;"
+        },
+        {
+          "line": 111,
+          "quote": "    }"
+        },
+        {
+          "line": 112,
+          "quote": ""
+        },
+        {
+          "line": 113,
+          "quote": "    @Override // com.tencent.oscar.module.webview.half.IHalfWebController"
+        },
+        {
+          "line": 114,
+          "quote": "    public boolean showHalfWebViewDialog(String scheme, OnDialogStateChangeListener listener, boolean transparent, boolean dispatchAllEventToWeb) {"
+        },
+        {
+          "line": 115,
+          "quote": "        Logger.i(TAG, \"showHalfWebViewDialog() schema = \" + scheme);"
+        },
+        {
+          "line": 116,
+          "quote": "        Bundle bundle = new Bundle();"
+        },
+        {
+          "line": 117,
+          "quote": "        if (!createHalfBundle(bundle, scheme, listener, transparent, dispatchAllEventToWeb)) {"
+        },
+        {
+          "line": 118,
+          "quote": "            return false;"
+        },
+        {
+          "line": 119,
+          "quote": "        }"
+        },
+        {
+          "line": 120,
+          "quote": "        HalfWebDialogFragment halfWebDialogFragment = new HalfWebDialogFragment();"
+        },
+        {
+          "line": 121,
+          "quote": "        halfWebDialogFragment.setDialogStateChangedListener(this);"
+        },
+        {
+          "line": 122,
+          "quote": "        halfWebDialogFragment.setArguments(bundle);"
+        },
+        {
+          "line": 123,
+          "quote": "        halfWebDialogFragment.show(this.mFragmentManager, HalfWebDialogFragment.TAG);"
+        },
+        {
+          "line": 124,
+          "quote": "        return true;"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/half/HalfWebDialogFragment.java",
+      "sha256": "9a3daa2e06b5a4a3e87cbc2b79ec97c791a69cd56db53aba4d21a1a0cbbdda94",
+      "locations": [
+        {
+          "line": 39,
+          "quote": "    private void addWebFragment(View view) {"
+        },
+        {
+          "line": 40,
+          "quote": "        removeWebFragment();"
+        },
+        {
+          "line": 41,
+          "quote": "        this.mHalfWebFragment = new HalfWebFragment();"
+        },
+        {
+          "line": 42,
+          "quote": "        Bundle arguments = getArguments();"
+        },
+        {
+          "line": 43,
+          "quote": "        if (arguments == null) {"
+        },
+        {
+          "line": 44,
+          "quote": "            arguments = new Bundle();"
+        },
+        {
+          "line": 45,
+          "quote": "        }"
+        },
+        {
+          "line": 46,
+          "quote": "        arguments.putBoolean(IWebViewBaseFragment.KEY_IS_NEED_TITLE_BAR, false);"
+        },
+        {
+          "line": 47,
+          "quote": "        boolean z10 = arguments.getBoolean(\"is_transparent\", false);"
+        },
+        {
+          "line": 48,
+          "quote": "        if (z10) {"
+        },
+        {
+          "line": 49,
+          "quote": "            arguments.putInt(\"key_background_color\", 0);"
+        },
+        {
+          "line": 50,
+          "quote": "        }"
+        },
+        {
+          "line": 51,
+          "quote": "        this.mHalfWebFragment.setArguments(arguments);"
+        },
+        {
+          "line": 52,
+          "quote": "        getChildFragmentManager().beginTransaction().replace(R.id.mFlHalfWebLayout, this.mHalfWebFragment, HalfWebFragment.TAG).commitAllowingStateLoss();"
+        },
+        {
+          "line": 53,
+          "quote": "        initUI(view, this.mHalfWebFragment, arguments);"
+        },
+        {
+          "line": 238,
+          "quote": "        if (onDialogStateChangeListener != null) {"
+        },
+        {
+          "line": 239,
+          "quote": "            onDialogStateChangeListener.onShow(dialog);"
+        },
+        {
+          "line": 240,
+          "quote": "        }"
+        },
+        {
+          "line": 241,
+          "quote": "    }"
+        },
+        {
+          "line": 242,
+          "quote": ""
+        },
+        {
+          "line": 243,
+          "quote": "    @Override // androidx.fragment.app.Fragment"
+        },
+        {
+          "line": 244,
+          "quote": "    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {"
+        },
+        {
+          "line": 245,
+          "quote": "        super.onViewCreated(view, savedInstanceState);"
+        },
+        {
+          "line": 246,
+          "quote": "        addWebFragment(view);"
+        },
+        {
+          "line": 247,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/half/HalfWebFragment.java",
+      "sha256": "654b177ef221f214be9dafd68b3a62ab412c0fa92b1c7d4a53648ba6c9e49547",
+      "locations": [
+        {
+          "line": 1,
+          "quote": "package com.tencent.oscar.module.webview.half;"
+        },
+        {
+          "line": 2,
+          "quote": ""
+        },
+        {
+          "line": 3,
+          "quote": "import android.view.View;"
+        },
+        {
+          "line": 4,
+          "quote": "import com.tencent.oscar.module.webview.WebViewBaseFragment;"
+        },
+        {
+          "line": 5,
+          "quote": "import com.tencent.oscar.widget.ScrollObservableWebView;"
+        },
+        {
+          "line": 6,
+          "quote": ""
+        },
+        {
+          "line": 7,
+          "quote": "/* loaded from: classes10.dex */"
+        },
+        {
+          "line": 8,
+          "quote": "public class HalfWebFragment extends WebViewBaseFragment {"
+        },
+        {
+          "line": 9,
+          "quote": "    public static final String TAG = \"HalfWebFragment\";"
+        },
+        {
+          "line": 10,
+          "quote": "    private OnWebStateChangeListener mWebStateChangeListener;"
+        },
+        {
+          "line": 11,
+          "quote": ""
+        },
+        {
+          "line": 12,
+          "quote": "    interface OnWebStateChangeListener {"
+        },
+        {
+          "line": 13,
+          "quote": "        void onScrollChange(int l10, int t10, int oldL, int oldT);"
+        },
+        {
+          "line": 14,
+          "quote": ""
+        },
+        {
+          "line": 15,
+          "quote": "        void onTitleChange(String title);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/tenvideo/TenvideoPayWebViewActivityLandscape.java",
+      "sha256": "87a47e57d117bcbc57f9fe887cbb0f5d7f08ba35e1baf8ee517f670b06e05e53",
+      "locations": [
+        {
+          "line": 10,
+          "quote": "/* loaded from: classes10.dex */"
+        },
+        {
+          "line": 11,
+          "quote": "public class TenvideoPayWebViewActivityLandscape extends TenvideoPayWebViewActivityBase {"
+        },
+        {
+          "line": 12,
+          "quote": "    private static final String TAG = \"TenvideoPayWebViewActivityLandscape\";"
+        },
+        {
+          "line": 13,
+          "quote": ""
+        },
+        {
+          "line": 14,
+          "quote": "    private void setActivityOrientation() {"
+        },
+        {
+          "line": 15,
+          "quote": "        int orientation = ((LandVideoService) Router.service(LandVideoService.class)).getOrientation();"
+        },
+        {
+          "line": 16,
+          "quote": "        Logger.i(TAG, \"orientation =\" + orientation);"
+        },
+        {
+          "line": 17,
+          "quote": "        if (orientation == 8) {"
+        },
+        {
+          "line": 18,
+          "quote": "            setRequestedOrientation(8);"
+        },
+        {
+          "line": 19,
+          "quote": "        } else {"
+        },
+        {
+          "line": 20,
+          "quote": "            setRequestedOrientation(0);"
+        },
+        {
+          "line": 21,
+          "quote": "        }"
+        },
+        {
+          "line": 22,
+          "quote": "    }"
+        },
+        {
+          "line": 23,
+          "quote": ""
+        },
+        {
+          "line": 24,
+          "quote": "    @Override // com.tencent.oscar.base.app.BaseActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 25,
+          "quote": "    protected void onActivityResult(int i10, int i11, Intent intent) {"
+        },
+        {
+          "line": 26,
+          "quote": "        MethodMonitor.beforeActivityOnResult(this, i10, i11, intent);"
+        },
+        {
+          "line": 27,
+          "quote": "        super.onActivityResult(i10, i11, intent);"
+        },
+        {
+          "line": 28,
+          "quote": "    }"
+        },
+        {
+          "line": 29,
+          "quote": ""
+        },
+        {
+          "line": 30,
+          "quote": "    @Override // com.tencent.oscar.module.webview.tenvideo.TenvideoPayWebViewActivityBase, com.tencent.oscar.base.app.BaseActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity"
+        },
+        {
+          "line": 31,
+          "quote": "    protected void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 32,
+          "quote": "        setActivityOrientation();"
+        },
+        {
+          "line": 33,
+          "quote": "        super.onCreate(savedInstanceState);"
+        },
+        {
+          "line": 34,
+          "quote": "    }"
+        },
+        {
+          "line": 35,
+          "quote": ""
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/tenvideo/TenvideoPayWebViewActivityBase.java",
+      "sha256": "9891be03487f568d779fe37ecaf3f4caa05c9595ec083fede85dee1b178bed1c",
+      "locations": [
+        {
+          "line": 36,
+          "quote": "    protected void onCreate(Bundle savedInstanceState) {"
+        },
+        {
+          "line": 37,
+          "quote": "        super.onCreate(savedInstanceState);"
+        },
+        {
+          "line": 38,
+          "quote": "        TenVideoPayViewModel.onPayActivityOnCreate(this, getSupportFragmentManager());"
+        },
+        {
+          "line": 39,
+          "quote": "        EventBusManager.getNormalEventBus().register(this);"
+        },
+        {
+          "line": 40,
+          "quote": "        actCount++;"
+        },
+        {
+          "line": 41,
+          "quote": "    }"
+        },
+        {
+          "line": 42,
+          "quote": ""
+        },
+        {
+          "line": 43,
+          "quote": "    @Override // com.tencent.oscar.base.app.BaseActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity"
+        },
+        {
+          "line": 44,
+          "quote": "    protected void onDestroy() {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/tenvideo/TenVideoPayViewModel.java",
+      "sha256": "5f20df0e389dbf6f3576da7316c803389830b8e0969c65376b0ab0a0ce0e9872",
+      "locations": [
+        {
+          "line": 118,
+          "quote": "    public static void onPayActivityOnCreate(final Activity activity, FragmentManager fragmentManager) {"
+        },
+        {
+          "line": 119,
+          "quote": "        String stringExtra = activity.getIntent().getStringExtra(\"uri\");"
+        },
+        {
+          "line": 120,
+          "quote": "        boolean booleanExtra = activity.getIntent().getBooleanExtra(PARAM_SHOW_BACK, true);"
+        },
+        {
+          "line": 121,
+          "quote": "        HorizontalVideoScreenUtils.setWindowFullScreen(activity.getWindow());"
+        },
+        {
+          "line": 122,
+          "quote": "        activity.getWindow().getDecorView().setBackgroundResource(R.color.transparent);"
+        },
+        {
+          "line": 123,
+          "quote": "        Bundle bundle = new Bundle();"
+        },
+        {
+          "line": 124,
+          "quote": "        if (!createPayBundle(bundle, stringExtra)) {"
+        },
+        {
+          "line": 125,
+          "quote": "            Logger.i(TAG, \"build bundle failed\");"
+        },
+        {
+          "line": 126,
+          "quote": "            activity.finish();"
+        },
+        {
+          "line": 127,
+          "quote": "            return;"
+        },
+        {
+          "line": 128,
+          "quote": "        }"
+        },
+        {
+          "line": 129,
+          "quote": "        activity.setContentView(com.tencent.weishi.base.webview.R.layout.activity_tenvideo_pay_web_view);"
+        },
+        {
+          "line": 130,
+          "quote": "        TencentVideoPayWebFragment tencentVideoPayWebFragment = new TencentVideoPayWebFragment();"
+        },
+        {
+          "line": 131,
+          "quote": "        tencentVideoPayWebFragment.setArguments(bundle);"
+        },
+        {
+          "line": 132,
+          "quote": "        fragmentManager.beginTransaction().add(com.tencent.weishi.base.webview.R.id.fl_container, tencentVideoPayWebFragment, TencentVideoPayWebFragment.TAG).commit();"
+        },
+        {
+          "line": 133,
+          "quote": "        activity.findViewById(com.tencent.weishi.base.webview.R.id.back_web).setOnClickListener(new ClickFilter(new View.OnClickListener() { // from class: com.tencent.oscar.module.webview.tenvideo.TenVideoPayViewModel.1"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/tenvideo/PayGuideManager.java",
+      "sha256": "bc4fd3d6b3b08a5db3bed68bd53669ac828cdca356c931a7fc7613580c3f0cac",
+      "locations": [
+        {
+          "line": 345,
+          "quote": "    private void showWebFragment(FragmentManager fragmentManager, WebViewBaseFragment fragment, String fragmentTag, int layoutId, String url, boolean forceRefreshPayButton) {"
+        },
+        {
+          "line": 346,
+          "quote": "        Logger.i(TAG, \"showWebFragment, fragment=\" + fragment);"
+        },
+        {
+          "line": 347,
+          "quote": "        fragmentManager.executePendingTransactions();"
+        },
+        {
+          "line": 348,
+          "quote": "        if (!isFragmentAdded(fragmentManager, fragmentTag, fragment)) {"
+        },
+        {
+          "line": 349,
+          "quote": "            Logger.i(TAG, \"showWebFragment , add\");"
+        },
+        {
+          "line": 350,
+          "quote": "            fragment.setArguments(loadJumpData(url));"
+        },
+        {
+          "line": 351,
+          "quote": "            fragmentManager.beginTransaction().add(layoutId, fragment, fragmentTag).show(fragment).commitAllowingStateLoss();"
+        },
+        {
+          "line": 352,
+          "quote": "        } else if (!fragment.isHidden()) {"
+        },
+        {
+          "line": 353,
+          "quote": "            refreshWebView(fragment, url, forceRefreshPayButton);"
+        },
+        {
+          "line": 354,
+          "quote": "            Logger.i(TAG, \"showWebFragment refresh\");"
+        },
+        {
+          "line": 355,
+          "quote": "        } else {"
+        },
+        {
+          "line": 356,
+          "quote": "            Logger.i(TAG, \"showWebFragment show\");"
+        },
+        {
+          "line": 357,
+          "quote": "            fragmentManager.beginTransaction().show(fragment).commitAllowingStateLoss();"
+        },
+        {
+          "line": 358,
+          "quote": "            refreshWebView(fragment, url, forceRefreshPayButton);"
+        },
+        {
+          "line": 359,
+          "quote": "        }"
+        },
+        {
+          "line": 536,
+          "quote": "        initVideoPreAuthRepository();"
+        },
+        {
+          "line": 537,
+          "quote": "        this.listener = listener;"
+        },
+        {
+          "line": 538,
+          "quote": "        this.fragmentManager = fragmentManager;"
+        },
+        {
+          "line": 539,
+          "quote": "        this.payButtonLayoutId = payButtonLayoutId;"
+        },
+        {
+          "line": 540,
+          "quote": "        this.payButton = new TencentVideoPayWebFragment();"
+        },
+        {
+          "line": 541,
+          "quote": "        HorizontalInspireVideoManager horizontalInspireVideoManager = new HorizontalInspireVideoManager();"
+        },
+        {
+          "line": 542,
+          "quote": "        this.inspireVideoManager = horizontalInspireVideoManager;"
+        },
+        {
+          "line": 543,
+          "quote": "        this.videoPreAuthRepository.setInspireService(horizontalInspireVideoManager);"
+        },
+        {
+          "line": 667,
+          "quote": "            }"
+        },
+        {
+          "line": 668,
+          "quote": "        });"
+        },
+        {
+          "line": 669,
+          "quote": "    }"
+        },
+        {
+          "line": 670,
+          "quote": ""
+        },
+        {
+          "line": 671,
+          "quote": "    public void setStartPreview(int startPreview) {"
+        },
+        {
+          "line": 672,
+          "quote": "        this.startPreview = startPreview;"
+        },
+        {
+          "line": 673,
+          "quote": "    }"
+        },
+        {
+          "line": 674,
+          "quote": ""
+        },
+        {
+          "line": 675,
+          "quote": "    public void showPayButton(FragmentManager fragmentManager, String payButtonH5Url, boolean forceRefreshPayButton) {"
+        },
+        {
+          "line": 676,
+          "quote": "        Logger.i(TAG, \"showPayButton start\");"
+        },
+        {
+          "line": 677,
+          "quote": "        showWebFragment(fragmentManager, getPayButtonFragment(), fragmentTagPayButton, this.payButtonLayoutId, payButtonH5Url, forceRefreshPayButton);"
+        },
+        {
+          "line": 678,
+          "quote": "        if (this.fullVisiableState || getPayButtonFragment() == null || fragmentManager == null) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/tenvideo/TencentVideoPayWebFragment.java",
+      "sha256": "a3f8861e5e1bc8a123e6f591ffcadb9c088cb9385d1dcd382919a9ef7c8b53bf",
+      "locations": [
+        {
+          "line": 24,
+          "quote": "import java.util.UUID;"
+        },
+        {
+          "line": 25,
+          "quote": ""
+        },
+        {
+          "line": 26,
+          "quote": "/* loaded from: classes10.dex */"
+        },
+        {
+          "line": 27,
+          "quote": "public class TencentVideoPayWebFragment extends WebViewBaseFragment implements WebUiUtils.ITencentVideoPayHelper, ApplicationCallbacks {"
+        },
+        {
+          "line": 28,
+          "quote": "    private static final int BACK_BUTTON_BOTTOM_MARGIN = 400;"
+        },
+        {
+          "line": 29,
+          "quote": "    private static final int BACK_BUTTON_RIGHT_MARGIN = 50;"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/weishi/module/landvideo/HorizontalVideoActivity.java",
+      "sha256": "b76ebcffd3b698a44ccb655c110be7694c4cd29cf125f503e5a04983d593f9d8",
+      "locations": [
+        {
+          "line": 697,
+          "quote": "                WatchLongVideo.Companion companion = WatchLongVideo.Companion;"
+        },
+        {
+          "line": 698,
+          "quote": "                long beginWatch = companion.beginWatch(\"key_point_6\");"
+        },
+        {
+          "line": 699,
+          "quote": "                EventBusManager.getNormalEventBus().post(new ItemPlayEvent(null, null, null, 7, false, videoPlaySpeedBean.getSpeed(), videoPlaySpeedBean.getBtnText(), false, null, false, 919, null));"
+        },
+        {
+          "line": 700,
+          "quote": "                companion.endWatch(\"key_point_6\", beginWatch);"
+        },
+        {
+          "line": 701,
+          "quote": "            }"
+        },
+        {
+          "line": 702,
+          "quote": "        });"
+        },
+        {
+          "line": 703,
+          "quote": "    }"
+        },
+        {
+          "line": 704,
+          "quote": ""
+        },
+        {
+          "line": 705,
+          "quote": "    private final void initVipPayGuideModule() {"
+        },
+        {
+          "line": 706,
+          "quote": "        PayGuideManager payGuideManager = new PayGuideManager();"
+        },
+        {
+          "line": 707,
+          "quote": "        this.payGuideManager = payGuideManager;"
+        },
+        {
+          "line": 708,
+          "quote": "        payGuideManager.init(getSupportFragmentManager(), R.id.vip_pay_button_container, new PayGuideListener() { // from class: com.tencent.weishi.module.landvideo.HorizontalVideoActivity$initVipPayGuideModule$1"
+        },
+        {
+          "line": 709,
+          "quote": "            @Override // com.tencent.oscar.module.webview.tenvideo.PayGuideListener"
+        },
+        {
+          "line": 710,
+          "quote": "            public final void onPayButtonSizeChange(int i10, int i11) {"
+        },
+        {
+          "line": 711,
+          "quote": "                HorizontalVideoActivity.this.getViewModel().dispatch(new LandscapeVideoAction.OnPayButtonSizeChanged(i10, i11));"
+        },
+        {
+          "line": 712,
+          "quote": "            }"
+        },
+        {
+          "line": 713,
+          "quote": "        });"
+        },
+        {
+          "line": 1326,
+          "quote": "    protected void onCreate(@Nullable Bundle bundle) {"
+        },
+        {
+          "line": 1327,
+          "quote": "        super.onCreate(bundle);"
+        },
+        {
+          "line": 1328,
+          "quote": "        ((WsPlayerManagerService) ((IService) RouterKt.getScope().service(s0.d(WsPlayerManagerService.class)))).setMdse(false);"
+        },
+        {
+          "line": 1329,
+          "quote": "        Window window = getWindow();"
+        },
+        {
+          "line": 1330,
+          "quote": "        f0.o(window, \"getWindow(...)\");"
+        },
+        {
+          "line": 1331,
+          "quote": "        HorizontalVideoScreenUtils.setWindowFullScreen(window);"
+        },
+        {
+          "line": 1332,
+          "quote": "        HorActivityOrientationUtils.setHorActivityOrientation(getIntent(), this);"
+        },
+        {
+          "line": 1333,
+          "quote": "        setContentView(R.layout.horizontal_video_activity_main);"
+        },
+        {
+          "line": 1334,
+          "quote": "        initVipPayGuideModule();"
+        },
+        {
+          "line": 1335,
+          "quote": "        initVideoView();"
+        },
+        {
+          "line": 1336,
+          "quote": "        parseData(getIntent());"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/com/tencent/oscar/module/webview/WebViewBaseFragment.java",
+      "sha256": "48d8e94d46c0a48b952e898cffd3a913c0e5592017334b77d45481a47d7c0a06",
+      "locations": [
+        {
+          "line": 149,
+          "quote": "public class WebViewBaseFragment extends BaseFragment implements View.OnTouchListener, WebViewPluginContainer, LoginEventListener, WebUiUtils.WebShareInterface, WebUiUtils.WebUiMethodInterface, WebUiUtils.CommmonUIInterface, WebUiUtils.WebBussinessInterface, WebUiUtils.WebDebugInterface, TabSelectedListener, WebUiUtils.WebShopInterface, WebUiUtils.WebVerifyInterface, LimitCachePools.OnRecycleListener, IWebViewBaseFragment {"
+        },
+        {
+          "line": 150,
+          "quote": "    private static final String BLANK_URL = \"about:blank\";"
+        },
+        {
+          "line": 1520,
+          "quote": "    protected void initUI(View rootView) {"
+        },
+        {
+          "line": 1521,
+          "quote": "        this.mContentView = (NestedScrollRelativeLayout) rootView.findViewById(com.tencent.weishi.base.webview.R.id.fl_webview_base);"
+        },
+        {
+          "line": 1522,
+          "quote": "        this.mLoadingViewStub = (ViewStub) rootView.findViewById(com.tencent.weishi.base.webview.R.id.vs_webview_loading);"
+        },
+        {
+          "line": 1523,
+          "quote": "        if (this.mIsNeedTitleBar) {"
+        },
+        {
+          "line": 1524,
+          "quote": "            this.mWebViewHeaderView = (WebViewHeadView) ((ViewStub) rootView.findViewById(com.tencent.weishi.base.webview.R.id.vs_webview_titlebar)).inflate();"
+        },
+        {
+          "line": 1525,
+          "quote": "        }"
+        },
+        {
+          "line": 1526,
+          "quote": "        this.mContentView.setNestedScrollingEnabled(this.mIsNestedScrollingEnabled);"
+        },
+        {
+          "line": 1527,
+          "quote": "        this.mErrorTipsViewStub = (ViewStub) this.mRootView.findViewById(com.tencent.weishi.base.webview.R.id.vs_webview_error_tips);"
+        },
+        {
+          "line": 1528,
+          "quote": "        initActionBar();"
+        },
+        {
+          "line": 1529,
+          "quote": "        addDebugView(this.mContentView);"
+        },
+        {
+          "line": 1530,
+          "quote": "        initWebView(getUserVisibleHint());"
+        },
+        {
+          "line": 1531,
+          "quote": "        if (WebPageSkinHelper.isSupportSkin(this.mStrUrl)) {"
+        },
+        {
+          "line": 1532,
+          "quote": "            rootView.setBackgroundResource(com.tencent.weishi.library.theme.R.color.bg_page);"
+        },
+        {
+          "line": 1533,
+          "quote": "        }"
+        },
+        {
+          "line": 1534,
+          "quote": "    }"
+        },
+        {
+          "line": 1535,
+          "quote": ""
+        },
+        {
+          "line": 1536,
+          "quote": "    protected void initWebSetting(@NonNull ScrollObservableWebView webView) {"
+        },
+        {
+          "line": 1537,
+          "quote": "        WebSettings settings = webView.getSettings();"
+        },
+        {
+          "line": 1538,
+          "quote": "        settings.setJavaScriptEnabled(true);"
+        },
+        {
+          "line": 1539,
+          "quote": "        settings.setJavaScriptCanOpenWindowsAutomatically(true);"
+        },
+        {
+          "line": 1540,
+          "quote": "        settings.setNeedInitialFocus(true);"
+        },
+        {
+          "line": 1541,
+          "quote": "        settings.setBuiltInZoomControls(false);"
+        },
+        {
+          "line": 1542,
+          "quote": "        settings.setSupportZoom(false);"
+        },
+        {
+          "line": 1543,
+          "quote": "        settings.setMediaPlaybackRequiresUserGesture(!this.mIsAutoPlayVideo);"
+        },
+        {
+          "line": 1561,
+          "quote": "    public void initWebView(boolean needRecycle) {"
+        },
+        {
+          "line": 1562,
+          "quote": "        if (this.mWebView != null) {"
+        },
+        {
+          "line": 1563,
+          "quote": "            Logger.w(TAG, \"initWebView error webview is not null\");"
+        },
+        {
+          "line": 1564,
+          "quote": "            return;"
+        },
+        {
+          "line": 1565,
+          "quote": "        }"
+        },
+        {
+          "line": 1566,
+          "quote": "        long currentTimeMillis = System.currentTimeMillis();"
+        },
+        {
+          "line": 1567,
+          "quote": "        this.mWebView = onCreateWebView(needRecycle);"
+        },
+        {
+          "line": 1568,
+          "quote": "        Logger.i(TAG, \"mWebView create time:\" + (System.currentTimeMillis() - currentTimeMillis));"
+        },
+        {
+          "line": 1569,
+          "quote": "        ScrollObservableWebView scrollObservableWebView = this.mWebView;"
+        },
+        {
+          "line": 1570,
+          "quote": "        if (scrollObservableWebView == null) {"
+        },
+        {
+          "line": 1571,
+          "quote": "            return;"
+        },
+        {
+          "line": 1572,
+          "quote": "        }"
+        },
+        {
+          "line": 1573,
+          "quote": "        scrollObservableWebView.setBackgroundColor(0);"
+        },
+        {
+          "line": 1574,
+          "quote": "        onWebViewCreated(this.mWebView);"
+        },
+        {
+          "line": 1575,
+          "quote": "        this.pageLoadingState = 0;"
+        },
+        {
+          "line": 1576,
+          "quote": "        adjustWebViewBottomPadding(this.mWebView, this.mBottomPadding);"
+        },
+        {
+          "line": 1577,
+          "quote": "        addTopMargin();"
+        },
+        {
+          "line": 1578,
+          "quote": "        IX5WebViewExtension x5WebViewExtension = this.mWebView.getX5WebViewExtension();"
+        },
+        {
+          "line": 1579,
+          "quote": "        if (x5WebViewExtension == null || this.isNeedVerticalDragBar) {"
+        },
+        {
+          "line": 1580,
+          "quote": "            return;"
+        },
+        {
+          "line": 1581,
+          "quote": "        }"
+        },
+        {
+          "line": 1582,
+          "quote": "        x5WebViewExtension.setVerticalTrackDrawable(null);"
+        },
+        {
+          "line": 1583,
+          "quote": "        this.mWebView.setVerticalScrollBarEnabled(false);"
+        },
+        {
+          "line": 1584,
+          "quote": "    }"
+        },
+        {
+          "line": 1585,
+          "quote": ""
+        },
+        {
+          "line": 1586,
+          "quote": "    protected void initWebViewClient(WebViewPluginEngine pluginEngine) {"
+        },
+        {
+          "line": 1587,
+          "quote": "        InnerCustomWebViewClient innerCustomWebViewClient = new InnerCustomWebViewClient(pluginEngine);"
+        },
+        {
+          "line": 1588,
+          "quote": "        this.mWebViewClient = innerCustomWebViewClient;"
+        },
+        {
+          "line": 1589,
+          "quote": "        this.mWebView.setWebViewClient(innerCustomWebViewClient);"
+        },
+        {
+          "line": 1590,
+          "quote": "    }"
+        },
+        {
+          "line": 1591,
+          "quote": ""
+        },
+        {
+          "line": 1799,
+          "quote": "    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {"
+        },
+        {
+          "line": 1800,
+          "quote": "        Logger.i(TAG, \"webViewBaseFragment onCreateView\" + this);"
+        },
+        {
+          "line": 1801,
+          "quote": "        this.mContainer = container;"
+        },
+        {
+          "line": 1802,
+          "quote": "        if (this.mRootView == null) {"
+        },
+        {
+          "line": 1803,
+          "quote": "            View inflate = inflater.inflate(com.tencent.weishi.base.webview.R.layout.fragment_webview_base, container, false);"
+        },
+        {
+          "line": 1804,
+          "quote": "            this.mRootView = inflate;"
+        },
+        {
+          "line": 1805,
+          "quote": "            initUI(inflate);"
+        },
+        {
+          "line": 1806,
+          "quote": "            refreshLoad();"
+        },
+        {
+          "line": 1807,
+          "quote": "        } else {"
+        },
+        {
+          "line": 1808,
+          "quote": "            initWebView(getUserVisibleHint());"
+        },
+        {
+          "line": 1809,
+          "quote": "            refreshIfNeed();"
+        },
+        {
+          "line": 1810,
+          "quote": "        }"
+        },
+        {
+          "line": 1811,
+          "quote": "        tryInitLandingPageRewardController();"
+        },
+        {
+          "line": 1812,
+          "quote": "        postViewCreate(this.mRootView);"
+        },
+        {
+          "line": 1813,
+          "quote": "        this.mWebViewFragmentCallback.onFragmentCreateView(this, inflater, container, savedInstanceState);"
+        },
+        {
+          "line": 1814,
+          "quote": "        return this.mRootView;"
+        },
+        {
+          "line": 1815,
+          "quote": "    }"
+        },
+        {
+          "line": 1816,
+          "quote": ""
+        },
+        {
+          "line": 1817,
+          "quote": "    protected ScrollObservableWebView onCreateWebView(boolean needRecycle) {"
+        },
+        {
+          "line": 1818,
+          "quote": "        LimitCachePools<?> limitCachePools = this.mWebViewLimitCachePools;"
+        },
+        {
+          "line": 1819,
+          "quote": "        ScrollObservableWebView scrollObservableWebView = limitCachePools != null ? (ScrollObservableWebView) limitCachePools.get(this, needRecycle) : WebViewCachePools.g().get();"
+        },
+        {
+          "line": 1820,
+          "quote": "        if (getActivity() != null && scrollObservableWebView != null && scrollObservableWebView.getMutableContextWrapper() != null) {"
+        },
+        {
+          "line": 1821,
+          "quote": "            Logger.i(TAG, \"set webview context:\" + getActivity());"
+        },
+        {
+          "line": 1822,
+          "quote": "            scrollObservableWebView.getMutableContextWrapper().setBaseContext(getActivity());"
+        },
+        {
+          "line": 1823,
+          "quote": "        }"
+        },
+        {
+          "line": 1824,
+          "quote": "        return scrollObservableWebView;"
+        },
+        {
+          "line": 1825,
+          "quote": "    }"
+        },
+        {
+          "line": 1826,
+          "quote": ""
+        },
+        {
+          "line": 1827,
+          "quote": "    @Override // com.tencent.oscar.base.fragment.BaseAbstractFragment, androidx.fragment.app.Fragment"
+        },
+        {
+          "line": 2040,
+          "quote": "    protected void onWebViewCreated(@NonNull ScrollObservableWebView webView) {"
+        },
+        {
+          "line": 2041,
+          "quote": "        this.mContentView.addView(webView, 0);"
+        },
+        {
+          "line": 2042,
+          "quote": "        webView.addScrollListener(new ScrollObservableWebView.ScrollListener() { // from class: com.tencent.oscar.module.webview.q"
+        },
+        {
+          "line": 2043,
+          "quote": "            @Override // com.tencent.oscar.widget.ScrollObservableWebView.ScrollListener"
+        },
+        {
+          "line": 2044,
+          "quote": "            public final void onScroll(int i10, int i11, int i12, int i13) {"
+        },
+        {
+          "line": 2066,
+          "quote": "            layoutParams.width = -1;"
+        },
+        {
+          "line": 2067,
+          "quote": "            webView.setLayoutParams(layoutParams);"
+        },
+        {
+          "line": 2068,
+          "quote": "        }"
+        },
+        {
+          "line": 2069,
+          "quote": "        initJSBridge();"
+        },
+        {
+          "line": 2070,
+          "quote": "        initWebViewClient(this.mPluginEngine);"
+        },
+        {
+          "line": 2071,
+          "quote": "        initChromeClient(this.mPluginEngine);"
+        },
+        {
+          "line": 2072,
+          "quote": "        initWebSetting(webView);"
+        },
+        {
+          "line": 2073,
+          "quote": "        setEnableAutoScale(webView);"
+        },
+        {
+          "line": 2074,
+          "quote": "        adjustWebViewPosition(webView, this.mWebViewHeaderView);"
+        },
+        {
+          "line": 2075,
+          "quote": "        initWebViewUIByParams();"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/androidx/fragment/app/FragmentActivity.java",
+      "sha256": "ebb6888cb2fa43b24da11913de12618c14aac2f98c7f4cf253c528955412eb63",
+      "locations": [
+        {
+          "line": 309,
+          "quote": ""
+        },
+        {
+          "line": 310,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 311,
+          "quote": "    public FragmentManager getSupportFragmentManager() {"
+        },
+        {
+          "line": 312,
+          "quote": "        return this.mFragments.getSupportFragmentManager();"
+        },
+        {
+          "line": 313,
+          "quote": "    }"
+        },
+        {
+          "line": 314,
+          "quote": ""
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/androidx/fragment/app/FragmentManager.java",
+      "sha256": "f55ca8247d18093e2c56639ab3528851ce12e1f935e8a7a3d1faebea91954f73",
+      "locations": [
+        {
+          "line": 1107,
+          "quote": ""
+        },
+        {
+          "line": 1108,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 1109,
+          "quote": "    public FragmentTransaction beginTransaction() {"
+        },
+        {
+          "line": 1110,
+          "quote": "        return new BackStackRecord(this);"
+        },
+        {
+          "line": 1111,
+          "quote": "    }"
+        },
+        {
+          "line": 1112,
+          "quote": ""
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/androidx/fragment/app/FragmentTransaction.java",
+      "sha256": "d4f8df6272c3711c44001835adbb207425e08fbecbaddd4378fe234465f6bd88",
+      "locations": [
+        {
+          "line": 190,
+          "quote": ""
+        },
+        {
+          "line": 191,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 192,
+          "quote": "    public FragmentTransaction attach(@NonNull Fragment fragment) {"
+        },
+        {
+          "line": 193,
+          "quote": "        addOp(new Op(7, fragment));"
+        },
+        {
+          "line": 194,
+          "quote": "        return this;"
+        },
+        {
+          "line": 195,
+          "quote": "    }"
+        },
+        {
+          "line": 196,
+          "quote": ""
+        },
+        {
+          "line": 197,
+          "quote": "    public abstract int commit();"
+        },
+        {
+          "line": 198,
+          "quote": ""
+        },
+        {
+          "line": 199,
+          "quote": "    public abstract int commitAllowingStateLoss();"
+        },
+        {
+          "line": 200,
+          "quote": ""
+        },
+        {
+          "line": 201,
+          "quote": "    public abstract void commitNow();"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/androidx/fragment/app/BackStackRecord.java",
+      "sha256": "7cbf5509695b482d08c499ece8876f033b0bb624e76573843317f053e7823746",
+      "locations": [
+        {
+          "line": 11,
+          "quote": "import java.util.Objects;"
+        },
+        {
+          "line": 12,
+          "quote": ""
+        },
+        {
+          "line": 13,
+          "quote": "/* loaded from: classes6.dex */"
+        },
+        {
+          "line": 14,
+          "quote": "final class BackStackRecord extends FragmentTransaction implements FragmentManager.BackStackEntry, FragmentManager.OpGenerator {"
+        },
+        {
+          "line": 15,
+          "quote": "    private static final String TAG = \"FragmentManager\";"
+        },
+        {
+          "line": 16,
+          "quote": "    boolean mBeingSaved;"
+        },
+        {
+          "line": 73,
+          "quote": ""
+        },
+        {
+          "line": 74,
+          "quote": "    @Override // androidx.fragment.app.FragmentTransaction"
+        },
+        {
+          "line": 75,
+          "quote": "    public int commit() {"
+        },
+        {
+          "line": 76,
+          "quote": "        return commitInternal(false);"
+        },
+        {
+          "line": 77,
+          "quote": "    }"
+        },
+        {
+          "line": 78,
+          "quote": ""
+        },
+        {
+          "line": 79,
+          "quote": "    @Override // androidx.fragment.app.FragmentTransaction"
+        },
+        {
+          "line": 80,
+          "quote": "    public int commitAllowingStateLoss() {"
+        },
+        {
+          "line": 81,
+          "quote": "        return commitInternal(true);"
+        },
+        {
+          "line": 82,
+          "quote": "    }"
+        },
+        {
+          "line": 83,
+          "quote": ""
+        },
+        {
+          "line": 84,
+          "quote": "    int commitInternal(boolean z10) {"
+        },
+        {
+          "line": 85,
+          "quote": "        if (this.mCommitted) {"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/txws-1/sources/androidx/fragment/app/FragmentTransaction.java",
+      "sha256": "d4f8df6272c3711c44001835adbb207425e08fbecbaddd4378fe234465f6bd88",
+      "locations": [
+        {
+          "line": 344,
+          "quote": "    public FragmentTransaction show(@NonNull Fragment fragment) {"
+        },
+        {
+          "line": 345,
+          "quote": "        addOp(new Op(5, fragment));"
+        },
+        {
+          "line": 346,
+          "quote": "        return this;"
+        },
+        {
+          "line": 347,
+          "quote": "    }"
+        },
+        {
+          "line": 348,
+          "quote": ""
+        },
+        {
+          "line": 349,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 350,
+          "quote": "    public FragmentTransaction add(@NonNull Fragment fragment, @Nullable String str) {"
+        },
+        {
+          "line": 351,
+          "quote": "        doAddOp(0, fragment, str, 1);"
+        },
+        {
+          "line": 352,
+          "quote": "        return this;"
+        },
+        {
+          "line": 353,
+          "quote": "    }"
+        },
+        {
+          "line": 354,
+          "quote": ""
+        },
+        {
+          "line": 355,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 356,
+          "quote": "    public FragmentTransaction replace(@IdRes int i10, @NonNull Fragment fragment) {"
+        },
+        {
+          "line": 357,
+          "quote": "        return replace(i10, fragment, (String) null);"
+        },
+        {
+          "line": 358,
+          "quote": "    }"
+        },
+        {
+          "line": 359,
+          "quote": ""
+        },
+        {
+          "line": 360,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 402,
+          "quote": "    public FragmentTransaction replace(@IdRes int i10, @NonNull Fragment fragment, @Nullable String str) {"
+        },
+        {
+          "line": 403,
+          "quote": "        if (i10 != 0) {"
+        },
+        {
+          "line": 404,
+          "quote": "            doAddOp(i10, fragment, str, 2);"
+        },
+        {
+          "line": 405,
+          "quote": "            return this;"
+        },
+        {
+          "line": 406,
+          "quote": "        }"
+        },
+        {
+          "line": 407,
+          "quote": "        throw new IllegalArgumentException(\"Must use non-zero containerViewId\");"
+        },
+        {
+          "line": 408,
+          "quote": "    }"
+        },
+        {
+          "line": 409,
+          "quote": ""
+        },
+        {
+          "line": 410,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 411,
+          "quote": "    public final FragmentTransaction add(@IdRes int i10, @NonNull Class<? extends Fragment> cls, @Nullable Bundle bundle, @Nullable String str) {"
+        },
+        {
+          "line": 412,
+          "quote": "        return add(i10, createFragment(cls, bundle), str);"
+        },
+        {
+          "line": 413,
+          "quote": "    }"
+        },
+        {
+          "line": 414,
+          "quote": ""
+        },
+        {
+          "line": 415,
+          "quote": "    @NonNull"
+        },
+        {
+          "line": 416,
+          "quote": "    public FragmentTransaction add(@IdRes int i10, @NonNull Fragment fragment, @Nullable String str) {"
+        },
+        {
+          "line": 417,
+          "quote": "        doAddOp(i10, fragment, str, 1);"
+        },
+        {
+          "line": 418,
+          "quote": "        return this;"
+        },
+        {
+          "line": 419,
+          "quote": "    }"
+        },
+        {
+          "line": 420,
+          "quote": ""
+        },
+        {
+          "line": 421,
+          "quote": "    FragmentTransaction(@NonNull FragmentFactory fragmentFactory, @Nullable ClassLoader classLoader) {"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "test/runs/txws-v14-fragment-source/base-showFragment-dex.txt",
+      "sha256": "020a7ba0d68ef85bc4f112cf7174140755deb3b875cc992d12ceb6a151e34242"
+    },
+    {
+      "path": "test/runs/txws-v14-fragment-source/half-transparent-dex.txt",
+      "sha256": "5a9b1bbd1a9cb516164284c37a49d681fc4ca84a6190897ef19a23b6aef781b6"
+    },
+    {
+      "path": "test/runs/txws-v14-fragment-source/pay-guide-dex.txt",
+      "sha256": "b93f07bb4f8be39e92d9ba0fbd7ef0a51813e097e880d8af3e57049b325a63e7"
+    },
+    {
+      "path": "test/runs/txws-v14-fragment-source/pay-model-dex.txt",
+      "sha256": "b078dcbf3eeb006711a2f191b35833791c6c40e2b9542421d5f37a3fc010d5ce"
+    },
+    {
+      "path": "src/test/java/org/example/PackagedFragmentProtocolProbe.java",
+      "sha256": "0ac48a3fd3e6350417e0540a5b757127d9c206362890d9941b0971067787f8eb"
+    },
+    {
+      "path": "test/diagnostics/DexInvokeProbe.java",
+      "sha256": "4be3f06ff80a0e7e6561da96bb67ba63658553bbf8ec4a4b6b78c66e95c0b6de"
+    },
+    {
+      "path": "test/runs/txws-v14-fragment-source/probe-v14-results.txt",
+      "sha256": "dc3f37bdd4361bcb1c30047110ec2c40cb74333829caaa13a6ecd9345d8e71df"
+    },
+    {
+      "path": "test/runs/generic-v14.jar",
+      "sha256": "edd16e6c48b976f452034af7f9ce93ba9aec920bff6e7bcedf0fe06c9146e815"
+    }
+  ],
+  "host_chains": {
+    "WebviewBaseActivity": "onCreate -> createFragment find-or-new store actual mWebViewFragment -> showFragment same object replace(I,Fragment,String) -> commit",
+    "MainProcessWebviewActivity": "extends WebviewBaseActivity; inherited onCreate and same explicit transaction",
+    "NotifyDialogWebViewActivity": "own onCreate explicitly super -> base chain",
+    "HalfWebViewActivity": "transparent -> actual HalfWebController mFragmentManager -> new HalfWebFragment extends WebViewBaseFragment -> add3arg commit; nontransparent -> actual HalfWebDialogFragment.show manager -> its child manager replace3arg commitAllowingStateLoss",
+    "TenvideoPayWebViewActivityLandscape": "own onCreate super -> TenvideoPayWebViewActivityBase.onCreate -> static onPayActivityOnCreate(actual Activity, actual support manager) -> new TencentVideoPayWebFragment extends WebViewBaseFragment -> add3arg commit",
+    "HorizontalVideoActivity": "onCreate initVipPayGuideModule -> PayGuideManager.init(actual support manager) -> owned payButton TencentVideoPayWebFragment -> showWebFragment(actual manager, actual retained fragment) -> add3arg show commitAllowingStateLoss"
+  },
+  "shared_surface": "installed WebViewBaseFragment.onCreateView -> initUI -> initWebView -> onCreateWebView pool ScrollObservableWebView -> retain mWebView -> onWebViewCreated -> settings and actual client registrations; capabilities reuse independent frozen facts",
+  "actual_invoke_contracts": "All captured direct transactions use standard AndroidX owner signatures; no SDK subtype declaration at App invoke sites. Framework body definitions are packaged in actual APK.",
+  "generic_repro": {
+    "absent_sdk_bodies": [
+      1,
+      1,
+      1
+    ],
+    "packaged_sdk_bodies": [
+      0,
+      0,
+      0
+    ],
+    "application_override_null": [
+      0,
+      0,
+      0
+    ],
+    "uncommitted": [
+      0,
+      0,
+      0
+    ],
+    "allocated_only": [
+      0,
+      0,
+      0
+    ],
+    "application_super": [
+      0,
+      0,
+      0
+    ]
+  },
+  "source_supported_generic_root": "frameworkViewAccess rejects packaged AndroidX standard methods with implementation bodies because only android.* or exact AndroidX Fragment allowed. Generic fixture reproduces SDK-body presence alone breaking installation. Precise SDK contracts must bypass this guard while real App overrides and uninstalled allocations remain rejected.",
+  "acceptance_claim": false,
+  "application_super_status": "Separate source-positive generic forwarding gap on frozenv14; excluded from strict base5 assertions, not evidence for restoring every override."
+}

@@ -420,7 +420,7 @@ final class CapabilityEngine {
     }
     void fragmentTransaction(Host h,Job job,Call call){
         List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
-        if(args.isEmpty()||!frameworkViewAccess(call.method(),args))return;
+        if(args.isEmpty()||!frameworkFragmentAccess(call.method(),args))return;
         for(V tx:alternatives(args.get(0))){
             if(!tx.kind().equals("fragment_transaction")){h.gaps.add("fragment_transaction_receiver_unresolved");continue;}
             if(FragmentTransactions.commit(call.method())){
@@ -671,6 +671,21 @@ final class CapabilityEngine {
             if(matches.size()>1)h.gaps.add("xml_lookup_alternatives:"+value);
         }
         return result==null?V.of("unknown",declared,"view_lookup"):result;
+    }
+    boolean fragmentProtocolReceiver(V value,String contract){
+        return alternatives(value).stream().allMatch(receiver->Set.of("object","new","host","view","fragment_manager").contains(receiver.kind())&&receiver.type()!=null&&idx.subtype(receiver.type(),contract));
+    }
+    boolean frameworkFragmentAccess(String method,List<V> args){
+        // Only this exact public Fragment protocol crosses packaged SDK bodies.
+        if(!FragmentTransactions.manager(method)&&!FragmentTransactions.begin(method)&&!FragmentTransactions.operation(method)&&!FragmentTransactions.fluent(method))return false;
+        for(V receiver:args.isEmpty()?List.<V>of():alternatives(args.get(0))){
+            Method actual=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+method.substring(method.indexOf("->")+2));
+            if(actual==null||actual.getImplementation()==null)continue;
+            String declaration=CapabilityIndex.cls(actual.getDefiningClass());
+            boolean contract=false;
+            for(String family:FragmentTransactions.PREFIXES)for(String type:List.of("Fragment","FragmentActivity","FragmentManager","FragmentTransaction"))if(declaration.equals(family+"."+type))contract=true;
+            if(!contract)return false;
+        }return true;
     }
     boolean frameworkViewAccess(String method,List<V> args){
         for(V receiver:args.isEmpty()?List.<V>of():alternatives(args.get(0))){
@@ -1183,9 +1198,9 @@ final class CapabilityEngine {
                     result=union(result,clazz.kind().equals("class")&&clazz.type()!=null?V.literal("java.lang.String",clazz.type()):V.of("unknown","java.lang.String","dynamic_class_name"));
                 return result==null?UNKNOWN:result;
             }
-            if(FragmentTransactions.begin(v.id())&&args.size()==1&&frameworkViewAccess(v.id(),args))return V.of("fragment_transaction",v.type(),"fragment_transaction:"+CapabilityIndex.key(job.method)+":"+allocationContext(job)+":"+v.kind()+":"+args.get(0).id());
-            if(FragmentTransactions.operation(v.id())&&!args.isEmpty())return args.get(0);
-            if(FragmentTransactions.manager(v.id())&&args.size()==1&&(idx.activity(owner(v.id()))||fragment(owner(v.id())))&&frameworkViewAccess(v.id(),args))return V.of("fragment_manager",v.type(),"fragment_manager:"+args.get(0).id());
+            if(FragmentTransactions.begin(v.id())&&args.size()==1&&fragmentProtocolReceiver(args.get(0),owner(v.id()))&&frameworkFragmentAccess(v.id(),args))return V.of("fragment_transaction",v.type(),"fragment_transaction:"+CapabilityIndex.key(job.method)+":"+allocationContext(job)+":"+v.kind()+":"+args.get(0).id());
+            if((FragmentTransactions.operation(v.id())||FragmentTransactions.fluent(v.id()))&&!args.isEmpty()&&frameworkFragmentAccess(v.id(),args))return args.get(0);
+            if(FragmentTransactions.manager(v.id())&&args.size()==1&&(idx.activity(owner(v.id()))||fragment(owner(v.id())))&&fragmentProtocolReceiver(args.get(0),owner(v.id()))&&frameworkFragmentAccess(v.id(),args))return V.of("fragment_manager",v.type(),"fragment_manager:"+args.get(0).id());
             if(CapabilityIndex.fragmentFactory(v.id()))return instantiateFragment(v,args,job,h,depth,visiting);
             if(name.equals("getArguments")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/os/Bundle;")&&args.size()==1&&frameworkViewAccess(v.id(),args)){
                 V result=null;for(V receiver:alternatives(args.get(0)))result=union(result,h.heap.get(heapKey("$fragment_arguments",receiver)));

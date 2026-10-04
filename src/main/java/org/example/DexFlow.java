@@ -24,7 +24,7 @@ final class DexFlow {
     final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>(), reportedRefinementBudget=new HashSet<>();
     final long deadline;
     final Map<String,List<V>> baseGuardProbes=new HashMap<>();
-    final Set<String> numericGuardOnly=new HashSet<>();
+    final Set<String> numericGuardOnly=new HashSet<>(),largeClassFactories=new HashSet<>();
     int decoded,refined;
     DexFlow(CapabilityIndex i,long deadline){idx=i;this.deadline=deadline;}
     static V union(V a,V b){
@@ -60,13 +60,18 @@ final class DexFlow {
                 if(opcode.name.startsWith("if-"))numericGuard=true;
             }
             if((contextualGuard||numericGuard||ManifestProtocols.consumer(idx,m))&&count<=500)refinable.add(key);
+            else if(count>500&&classFactory(m)){
+                if(count<=4096){refinable.add(key);largeClassFactories.add(key);}
+                else idx.diagnostics.add("summary_class_factory_budget:"+key);
+            }
             if(numericGuard&&!contextualGuard&&!ManifestProtocols.consumer(idx,m))numericGuardOnly.add(key);
         }
         if(!refinable.contains(key))return base;
+        if(largeClassFactories.contains(key)&&baseGuardProbes.getOrDefault(key,List.of()).stream().noneMatch(v->!knownClass(v)&&knownClass(resolver.apply(v))))return base;
         // Ordinary integer/boolean guards need specialization only when this actual
         // context resolves a previously nonconstant operand. Unknown calls reuse base.
         if(numericGuardOnly.contains(key)&&baseGuardProbes.getOrDefault(key,List.of()).stream()
-                .noneMatch(v->number(v)==null&&number(resolver.apply(v))!=null))return base;
+                .noneMatch(v->number(v)==null&&(number(resolver.apply(v))!=null||knownClass(resolver.apply(v))&&!knownClass(v))))return base;
         List<Refinement> variants=refinements.computeIfAbsent(key,k->new ArrayList<>());
         for(Refinement variant:variants){boolean matches=true;for(int i=0;i<variant.probes.size();i++)if(!Objects.equals(resolver.apply(variant.probes.get(i)),variant.values.get(i))){matches=false;break;}if(matches)return variant.summary;}
         // Retain the conservative summary when specialization would exceed its budget.
@@ -189,7 +194,24 @@ final class DexFlow {
         }
         return new Summary(List.copyOf(calls.values()),List.copyOf(writes),returns==null?List.of():alternatives(returns),branched,truncated);
     }
+    static boolean knownClass(V value){return value.kind().equals("class")&&value.type()!=null;}
+    /** Bounded forward Class selector factory; other large methods retain the base model. */
+    static boolean classFactory(Method method){
+        if(method.getParameterTypes().stream().noneMatch(p->p.toString().equals("Ljava/lang/Class;")))return false;
+        boolean constant=false,branch=false;int count=0;
+        for(Instruction instruction:method.getImplementation().getInstructions()){
+            if(++count>4096)return constant&&branch; // no refinement beyond this explicit size boundary
+            String opcode=instruction.getOpcode().name;
+            if(opcode.equals("const-class"))constant=true;
+            if(opcode.startsWith("if-")){
+                if(!Set.of("if-eq","if-ne").contains(opcode)||!(instruction instanceof OffsetInstruction jump)||jump.getCodeOffset()<=0)return false;
+                branch=true;
+            }
+            if(opcode.startsWith("goto")||opcode.contains("switch"))return false;
+        }return constant&&branch;
+    }
     static Boolean condition(String op,V left,V right){
+        if(Set.of("if-eq","if-ne").contains(op)&&knownClass(left)&&knownClass(right))return op.equals("if-eq")==left.type().equals(right.type());
         Long a=number(left),b=number(right);
         if(a==null||b==null)return null;
         if(op.startsWith("if-eq"))return a.longValue()==b.longValue();if(op.startsWith("if-ne"))return a.longValue()!=b.longValue();

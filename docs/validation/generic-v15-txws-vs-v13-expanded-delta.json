@@ -1,0 +1,817 @@
+{
+  "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+  "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+  "counts": {
+    "before_matched": 353,
+    "after_matched": 318,
+    "regression": 35
+  },
+  "changes": [
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptEnabled(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "45ba36c45fd6e6189e15656bf6c840f9b524c4bfb36ad0459e2a39c7ffe476e0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setJavaScriptCanOpenWindowsAutomatically",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "1b163279e5b4ba1ba2f6652e53d6322e8e3c8a82ad1ca7dee5eb5e8d207892dd"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setNeedInitialFocus",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setNeedInitialFocus(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "32094ec4bdff0b7f039186cb39a52889ddd3a639ffb191352e093ed45efa3333"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setBuiltInZoomControls",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setBuiltInZoomControls(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a3062fc23bb919a78def67c43986ed4885cba6a79a6fcc97637f094cee84586f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setSupportZoom",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setSupportZoom(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": false,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "c0a05ca6ca5380b3026a256a79fee09295c7517c3c6c5a93ae7402ea46ec7604"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMediaPlaybackRequiresUserGesture",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": "!this.mIsAutoPlayVideo",
+        "value_kind": "dynamic",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0e97767ef8ab19fb9d6b07ebdf21481a6b4b007c8e1c54aa66647b300be7292e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setUseWideViewPort",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setUseWideViewPort(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b74b76058de9bad119fa903433de2427aa31758384f182e86a9bce458e71415f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setTextSize",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setTextSize(Lcom/tencent/smtt/sdk/WebSettings$TextSize;)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": "WebSettings.TextSize.NORMAL",
+        "value_kind": "enum",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f929fc8fc70d860b9395f8b4be35e2a8863b099cf8b401da6fdf348fabc36575"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setCacheMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setCacheMode(I)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": -1,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "4355999d7aa6a16077917bf16ad36171c9fe0ce4468e6391631b047f080ceb15"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setLoadWithOverviewMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setLoadWithOverviewMode(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "a4fb25afe5403e918347e440f2feabc533faf7897dca13c6f122672f58b79ad4"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setPluginState",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setPluginState(Lcom/tencent/smtt/sdk/WebSettings$PluginState;)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": "WebSettings.PluginState.ON",
+        "value_kind": "enum",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e792bef7ef7ce75719cf4602b18277257d077ba3752a2db4f56e64d63e97de8d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setDomStorageEnabled",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setDomStorageEnabled(Z)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": true,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "7d44568918025c9fb6a7d611e8e9a02dc55e857801bf9d59db28d112aa6ca6ca"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "setting",
+        "registration_name": null,
+        "name": "setMixedContentMode",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebSettings;->setMixedContentMode(I)V",
+        "implementation": "com.tencent.smtt.sdk.WebSettings",
+        "value": 0,
+        "value_kind": "literal",
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b4a2b6d90d4a867019d940d42f38d5d3601da710448a7595f8bc293fa3a1e12b"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback_registration",
+        "registration_name": "setWebViewClient",
+        "name": "setWebViewClient",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->setWebViewClient(Lcom/tencent/smtt/sdk/WebViewClient;)V",
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e8e42ad77ade63e9cf7a70225bbd5e93902aca3b97234180845263ab4d456cef"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageCommitVisible",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->onPageCommitVisible(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "cb03fcc4ad9ad8b9b96e233c96111675988779e375651579b881bbb70a424b14"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageFinished",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->onPageFinished(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "07a21d95334db5b15748e96de4fb32070ed6a0d6bf78d1d6d58a4cf6f6db2cf7"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPageStarted",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->onPageStarted(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "78bacc1205f4ce8bf2a7db7a69d38f933ef7ef953f7ad3fbe94dbe29e753f149"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedError",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->onReceivedError(Lcom/tencent/smtt/sdk/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e083e3a8039aec43393fef95a61c45117eac3a8f2e0725d9dc71cda4add31b0d"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedHttpError",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->onReceivedHttpError(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d29f27c62e195d633139d499b1c7adf79d0f36100d2362239f636efa5cb483a2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/export/external/interfaces/WebResourceRequest;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "2f70dc9f0ad1a71a239cc0558ef0a428030c0b567b0b65f354bb809735d438a0"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldOverrideUrlLoading",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$InnerCustomWebViewClient;->shouldOverrideUrlLoading(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$InnerCustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "60f892b1b6b50fc37f509b71941dff954608e0c89d3415cbbc4bc42d25aafb49"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback_registration",
+        "registration_name": "setWebChromeClient",
+        "name": "setWebChromeClient",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->setWebChromeClient(Lcom/tencent/smtt/sdk/WebChromeClient;)V",
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "bc3e948533e8607e75b3f632026410b422f03a8b453660c8496123c37f829f2a"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "getDefaultVideoPoster",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->getDefaultVideoPoster()Landroid/graphics/Bitmap;",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "f98eebfb7700906a3b3a0477971817c5b30679a9687ac73df38d0506de3056aa"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onConsoleMessage",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onConsoleMessage(Lcom/tencent/smtt/export/external/interfaces/ConsoleMessage;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "d140be0044b650b6ccaa98c0806305b5e3329406674d469983960ea67d2a00a2"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onHideCustomView",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onHideCustomView()V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "28461b02fb7a49a20483dcae771cc7f233f71ac8ce97829c79e1894c0aa3580c"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onJsAlert",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onJsAlert(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/smtt/export/external/interfaces/JsResult;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "e7a56d4b101d340fcff650843c184f06bf97beb85ffd42a9fb9da7925435b926"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onPermissionRequest",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onPermissionRequest(Lcom/tencent/smtt/export/external/interfaces/PermissionRequest;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "b9e3aaeb1c9cc5e65d52ceb90dc64ad1b61c0ff6c6d498c2feb6ef62f05a7dbf"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onProgressChanged",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onProgressChanged(Lcom/tencent/smtt/sdk/WebView;I)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "583cdc1e9b2e92205d8ed0cf16b28743c522dc21ae3bdc648e1dd4eaca86e507"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onReceivedTitle",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onReceivedTitle(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "9f854d8aaa80e214db9c20936ceb542ff274f2e28632c64a0eada6b94771f6bf"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onShowCustomView",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onShowCustomView(Landroid/view/View;Lcom/tencent/smtt/export/external/interfaces/IX5WebChromeClient$CustomViewCallback;)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "0ead5d9fd22759746d9f816ef99847fe1b2617fde41478ce87a9fe055d8368bb"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onShowFileChooser",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/WebViewBaseFragment$1;->onShowFileChooser(Lcom/tencent/smtt/sdk/WebView;Lcom/tencent/smtt/sdk/ValueCallback;Lcom/tencent/smtt/sdk/WebChromeClient$FileChooserParams;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.WebViewBaseFragment$1",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6a7be0630887c0a2288ed865aefcf47dd5494ee49041fcfa3c6273207923714f"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "onJsPrompt",
+        "normalized_signature": "Lcom/tencent/mobileqq/webviewplugin/CustomWebChromeClient;->onJsPrompt(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/smtt/export/external/interfaces/JsPromptResult;)Z",
+        "normalized_api": null,
+        "implementation": "com.tencent.mobileqq.webviewplugin.CustomWebChromeClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "003b8a448418e87dbefc04487a7cce7def074247e204c34b840e0c8eece8972e"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": null,
+        "name": "shouldInterceptRequest",
+        "normalized_signature": "Lcom/tencent/mobileqq/webviewplugin/CustomWebViewClient;->shouldInterceptRequest(Lcom/tencent/smtt/sdk/WebView;Ljava/lang/String;)Lcom/tencent/smtt/export/external/interfaces/WebResourceResponse;",
+        "normalized_api": null,
+        "implementation": "com.tencent.mobileqq.webviewplugin.CustomWebViewClient",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "fa61c50a73ac15699846489baab26ebb22328a1a84b41a24203dd2725482f0e1"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback_registration",
+        "registration_name": "setWebViewClient",
+        "name": "setDownloadListener",
+        "normalized_signature": null,
+        "normalized_api": "Lcom/tencent/smtt/sdk/WebView;->setDownloadListener(Lcom/tencent/smtt/sdk/DownloadListener;)V",
+        "implementation": "com.tencent.oscar.module.webview.c",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "5628d6a208cc04dadd00479df1b079b5097c6398fb5a3136237896bcb4e18fd9"
+    },
+    {
+      "change": "regression",
+      "fact": {
+        "activity": "com.tencent.oscar.module.webview.half.HalfWebViewActivity",
+        "webview": null,
+        "kind": "callback",
+        "registration_name": "setWebViewClient",
+        "name": "onDownloadStart",
+        "normalized_signature": "Lcom/tencent/oscar/module/webview/c;->onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V",
+        "normalized_api": null,
+        "implementation": "com.tencent.oscar.module.webview.c",
+        "value": null,
+        "value_kind": null,
+        "binding_status": null,
+        "webview_constraint": {
+          "types": [
+            "com.tencent.oscar.widget.ScrollObservableWebView"
+          ]
+        },
+        "positive_acceptance": null
+      },
+      "fact_sha256": "6c5ea891fc3fd00eed3a912ac909f7ea5e961ca20236eef9f7cb302aaaf84d59"
+    }
+  ],
+  "note": "Full semantic oracle identity retained, including setting values and implementation types; candidate-inclusive matcher unchanged."
+}

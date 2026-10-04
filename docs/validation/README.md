@@ -1,5 +1,8 @@
 # 验证资料索引与当前状态
 
+最新实测为 [generic v15](GENERIC_V15.md)：十 App 均在约 50～594 秒内结束，全部仍为 partial，严格验收 **0/10**。修复 APK 内公开 Fragment SDK 方法体识别后，多数 v14 回退恢复，但微视、芒果、FreeReels、搜狐仍有相对 v13 的遗漏；完整源码核验及三次隔离性能验收尚未完成。以下旧版本说明保留作为历史记录。
+
+
 最近完成十 App 测量的版本为 **generic v14**，严格验收仍为 **0/10**。真实 AndroidX SDK 方法体边界误判造成多个 App 召回回退；局部修复诊断不替换整批失败成绩，需 v15 全量复测。并行开发测量不代替三次隔离性能验收。
 
 - [v14 实现、测试、结果与回退](GENERIC_V14.md)、[实测](generic-v14-summary.json)、[严格验收](acceptance/generic-v14-status.json)。
