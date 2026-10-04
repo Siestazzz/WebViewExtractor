@@ -1,10 +1,14 @@
 # 验证资料索引与当前状态
 
-当前默认实现为 **generic v2**：移除 App 私有适配，收紧标准回调签名，增加有界优先调度及常量 switch 细化。十个 App 已运行，四个新增样本均为用户指定补丁版。能力质量总验收仍未通过。
+最近完成十 App 测量的版本为 **generic v11**，严格验收仍为 **0/10**。v11 新闻新增 4 条回调命中，但芒果性能及携程部分命中回退；v12 修复批次正在验证。四个新增样本使用用户指定补丁版；并行开发测量不能代替最终三次隔离测量。
+
+- [v11 实现、测试、结果与复现](GENERIC_V11.md)、[实测](generic-v11-summary.json)、[严格验收](acceptance/generic-v11-status.json)。
+- [v10 实现、测试、结果与复现](GENERIC_V10.md)、[实测](generic-v10-summary.json)、[严格验收](acceptance/generic-v10-status.json)。
+- v11 实现说明：[跨 Client 委托](GENERIC_V11_CROSS_CLIENT_DELEGATION.md)、[反射工厂](GENERIC_V11_REFLECTIVE_FACTORIES.md)、[Manifest 模块](GENERIC_V11_MANIFEST_IMPLEMENTATION.md)。以下早期版本数据均为历史记录。
 
 - [generic v1](GENERIC_V1.md)：私有适配删除、排序/数量报告、十 App 初轮。
 - [generic v2](GENERIC_V2.md)：通用分支修复、最终十 App 结果、事实重放与限制。
-- [当前样本](generic-ten-samples.json)、[实测](generic-v2-summary.json)、[报告结构验证](generic-v2-structure.json)、[交付文件哈希](generic-v2-delivery.json)。
+- [当前样本](generic-ten-samples.json)、[v2 历史实测](generic-v2-summary.json)、[报告结构验证](generic-v2-structure.json)、[交付文件哈希](generic-v2-delivery.json)。
 - 新样本证据：[微视](txws/README.md)、[搜狐](sohuvideo/README.md)、[番茄](fanqiexiaoshuo/README.md)、[Breaking News](breaking-news/README.md)。审计模型为 GPT-6.1 Sol。
 
 以下保留 scheduler v3 历史导航，不应把旧版误报/召回率当成当前版本结论。

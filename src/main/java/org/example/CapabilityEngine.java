@@ -50,7 +50,7 @@ final class CapabilityEngine {
         final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
         final Map<String,Map<String,Object>> facts=new TreeMap<>();
         final Set<String> gaps=new LinkedHashSet<>();
-        V activeClientContext;
+        V activeClientContext,activeManifestEntry;
         final Set<String> transportMaps=new HashSet<>();
         Host(String a){activity=a;}
     }
@@ -195,8 +195,9 @@ final class CapabilityEngine {
     void processJob(Host h){
                 Job job=h.queue.remove();String id=CapabilityIndex.key(job.method);
                 String context=id+"|"+job.args;h.pending.remove(context);if(!h.visited.add(context))return;
-                h.activeClientContext=clientContext(job.args);
+                h.activeClientContext=clientContext(job.args);h.activeManifestEntry=ManifestProtocols.entry(job.args);
                 try{
+                if(splitManifestEntries(h,job))return;
                 Summary summary;
                 try{summary=flow.summary(job.method,v->guardValue(v,job,h,0));}catch(RuntimeException ex){h.gaps.add("decode_failed:"+id+":"+ex.getClass().getSimpleName());return;}
                 if(summary.truncated())h.gaps.add("flow_budget:"+id);
@@ -208,10 +209,13 @@ final class CapabilityEngine {
                 for(Call call:summary.calls()){
                     Method target=call.isSuper()?resolveSuper(job.method,call.method()):idx.resolve(call.method());String owner=owner(call.method()),name=name(call.method());
                     String kind=kind(call.method());
+                    if(h.activeManifestEntry!=null&&(call.method().equals(ManifestProtocols.FOR_NAME)||call.method().equals(ManifestProtocols.NEW_INSTANCE))){
+                        eval(new V("return_manifest_native:"+call.offset(),call.method().equals(ManifestProtocols.FOR_NAME)?"java.lang.Class":"java.lang.Object",call.method(),null,call.args()),job,h,0,new HashSet<>());continue;
+                    }
                     if(h.activeClientContext!=null&&call.method().equals(ReflectionProtocols.INVOKE)){
                         reflectInstalledTransport(h,job,call);continue;
                     }
-                    if(h.activeClientContext!=null&&!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&clientCallbackReference(call.method())){
+                    if(h.activeClientContext!=null&&!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&(clientCallbackReference(call.method())||sameCallbackForward(job.method,call.method()))){
                         followClientDelegate(h,job,call);continue;
                     }
                     if(CapabilityIndex.pagerInstall(call.method())){
@@ -283,7 +287,7 @@ final class CapabilityEngine {
 
                     if(name.equals("<init>")&&!args.isEmpty()&&idx.component(owner)&&!idx.activity(owner)){h.constructed.add(args.get(0).id());seed(h,owner,args.get(0),extend(job.path,id+"@"+call.offset()),true);}
                 }
-                }finally{h.activeClientContext=null;}
+                }finally{h.activeClientContext=null;h.activeManifestEntry=null;}
     }
     V clientContext(List<V> args){return !args.isEmpty()&&args.get(args.size()-1).kind().equals("installed_client_context")?args.get(args.size()-1):null;}
     List<V> reflectionArray(V expression,Job job,Host h){
@@ -352,6 +356,9 @@ final class CapabilityEngine {
         String type=owner(id),shape=id.substring(id.indexOf("->")+2);
         return idx.standardClientShape(type,shape)||(idx.subtype(type,"android.webkit.DownloadListener")||idx.subtype(type,"com.tencent.smtt.sdk.DownloadListener"))&&shape.equals("onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V");
     }
+    boolean sameCallbackForward(Method source,String target){
+        return idx.standardClientReference(source)&&CapabilityIndex.shape(source).equals(target.substring(target.indexOf("->")+2));
+    }
     void followClientDelegate(Host h,Job job,Call call){
         V binding=h.activeClientContext;List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
         if(args.isEmpty())return;
@@ -359,7 +366,8 @@ final class CapabilityEngine {
         for(V receiver:alternatives(args.get(0))){
             if(receiver.kind().equals("literal")&&"0".equals(receiver.literal()))continue;
             Method actual=receiver.type()==null?null:idx.resolve(desc(receiver.type())+"->"+shape);
-            if(!Set.of("object","new","view").contains(receiver.kind())||actual==null||actual.getImplementation()==null||!idx.standardClientCallback(receiver.type(),actual)){
+            boolean crossContract=sameCallbackForward(job.method,call.method());
+            if(!Set.of("object","new","view").contains(receiver.kind())||actual==null||actual.getImplementation()==null||!idx.standardClientCallback(receiver.type(),actual)&&!crossContract){
                 h.gaps.add("client_delegate_unresolved:"+call.method());continue;
             }
             List<V> bound=specializeReceiver(args,receiver);V webview=binding.args().get(0);
@@ -370,18 +378,18 @@ final class CapabilityEngine {
             if(!receiver.id().equals(binding.args().get(1).id())){
                 Map<String,Object> fact=new LinkedHashMap<>();fact.put("activity",h.activity);fact.put("kind","callback");fact.put("name",name(binding.type()));
                 fact.put("api",binding.type());fact.put("site",CapabilityIndex.key(job.method)+"@"+call.offset());fact.put("implementation",receiver.type());
-                fact.put("members",delegatedCallbackMembers(receiver.type(),actual));
+                fact.put("members",delegatedCallbackMembers(receiver.type(),actual,crossContract));
                 fact.put("webview",Map.of("id",webview.id(),"type",webview.type()==null?"unknown":webview.type()));fact.put("binding_status","candidate");fact.put("conditional",true);
                 fact.put("resolution","installed_client_actual_callback_delegation");fact.put("delegate_object_id",receiver.id());fact.put("installed_client_object_id",binding.args().get(1).id());fact.put("evidence",path);fact.put("arguments",args);add(h,fact);
             }
             enqueue(h,actual,bound,path,true);
         }
     }
-    List<Map<String,Object>> delegatedCallbackMembers(String type,Method first){
+    List<Map<String,Object>> delegatedCallbackMembers(String type,Method first,boolean crossContract){
         List<Map<String,Object>> members=new ArrayList<>();Set<String> seen=new HashSet<>();ArrayDeque<Method> methods=new ArrayDeque<>();methods.add(first);
         while(!methods.isEmpty()&&seen.size()<32){
             Method method=methods.remove();String id=CapabilityIndex.key(method);
-            if(!seen.add(id)||method.getImplementation()==null||!idx.standardClientCallback(type,method)||CapabilityIndex.cls(method.getDefiningClass()).startsWith("android.webkit.")||Set.of("com.tencent.smtt.sdk.WebViewClient","com.tencent.smtt.sdk.WebChromeClient").contains(CapabilityIndex.cls(method.getDefiningClass())))continue;
+            if(!seen.add(id)||method.getImplementation()==null||!idx.standardClientCallback(type,method)&&!(crossContract&&CapabilityIndex.shape(method).equals(CapabilityIndex.shape(first)))||CapabilityIndex.cls(method.getDefiningClass()).startsWith("android.webkit.")||Set.of("com.tencent.smtt.sdk.WebViewClient","com.tencent.smtt.sdk.WebChromeClient").contains(CapabilityIndex.cls(method.getDefiningClass())))continue;
             members.add(Map.of("signature",id,"display",CapabilityIndex.display(method),"name",method.getName()));
             for(Call call:flow.summary(method).calls())if(call.isSuper()&&call.method().endsWith("->"+CapabilityIndex.shape(method))){Method parent=resolveSuper(method,call.method());if(parent!=null)methods.add(parent);}
         }
@@ -800,7 +808,8 @@ final class CapabilityEngine {
             fieldMethods.add(CapabilityIndex.key(m));
             List<V> args=new ArrayList<>();if((m.getAccessFlags()&8)==0)args.add(self);
             for(CharSequence p:m.getParameterTypes()){
-                if(fragment(type)&&m.getName().equals("onViewCreated")&&args.size()==1&&p.toString().equals("Landroid/view/View;"))args.add(expr("fragment_view","android.view.View","fragment_view:"+self.id(),List.of(self)));
+                if(fragment(type)&&m.getName().equals("onAttach")&&Set.of("Landroid/content/Context;","Landroid/app/Activity;").contains(p.toString()))args.add(V.of("host",h.activity,"activity:"+h.activity));
+                else if(fragment(type)&&m.getName().equals("onViewCreated")&&args.size()==1&&p.toString().equals("Landroid/view/View;"))args.add(expr("fragment_view","android.view.View","fragment_view:"+self.id(),List.of(self)));
                 else args.add(V.of("unknown",CapabilityIndex.cls(p.toString()),"entry_parameter"));
             }
             enqueue(h,m,args,path,candidate);
@@ -828,6 +837,7 @@ final class CapabilityEngine {
         h.expanding.remove(type);
     }
     void enqueue(Host h,Method m,List<V> args,List<String> path,boolean candidate){
+        if(h.activeManifestEntry!=null&&ManifestProtocols.entry(args)==null){args=new ArrayList<>(args);args.add(clientContext(args)==null?args.size():args.size()-1,h.activeManifestEntry);}
         if(h.activeClientContext!=null&&clientContext(args)==null){args=new ArrayList<>(args);args.add(h.activeClientContext);}
         String context=CapabilityIndex.key(m)+"|"+args;if(h.visited.contains(context)||h.pending.contains(context))return;
         if(path.contains("[earlier evidence steps omitted]"))h.gaps.add("evidence_path_truncated");
@@ -985,6 +995,36 @@ final class CapabilityEngine {
         }
         Set<String> added=new HashSet<>(seen);added.removeAll(before);outcomes.put(key,new RefreshOutcome(result,Set.copyOf(added)));return result;
     }
+    boolean splitManifestEntries(Host h,Job job){
+        if(!ManifestProtocols.consumer(idx,job.method)||(h.activeManifestEntry!=null&&Objects.equals(h.activeManifestEntry.type(),CapabilityIndex.key(job.method))))return false;
+        Summary base=flow.summary(job.method);if(base.truncated()){h.gaps.add("manifest_consumer_summary_incomplete");return false;}
+        for(Call call:base.calls())if(call.method().equals(ManifestProtocols.KEYS)&&call.args().size()==1){
+            V bundle=ManifestProtocols.resolve(call.args().get(0),this,job,h,0);
+            if(!bundle.kind().equals("manifest_bundle")){h.gaps.add("manifest_metadata_scope_unresolved");continue;}
+            List<String> keys=new ArrayList<>(apk.applicationMetadata.keySet());
+            // Resolvable entries first are useful within the unchanged refinement cap.
+            keys.sort(Comparator.comparingInt((String key)->idx.classes.containsKey(key)?0:1).thenComparing(key->key));
+            int count=0;for(String key:keys){
+                if(System.nanoTime()>=deadline){h.gaps.add("manifest_metadata_deadline");break;}
+                if(count++>=256){h.gaps.add("manifest_entry_context_budget");break;}
+                V value=ManifestProtocols.typed(apk.applicationMetadata.get(key));
+                if(value.kind().equals("unknown"))h.gaps.add("manifest_metadata_value_unresolved:"+key);
+                V selection=new V("manifest_entry_context",CapabilityIndex.key(job.method),bundle.id()+":"+key,null,List.of(bundle,V.literal("java.lang.String",key),value));
+                List<V> bound=new ArrayList<>(job.args);bound.removeIf(argument->argument.kind().equals("manifest_entry_context"));bound.add(clientContext(bound)==null?bound.size():bound.size()-1,selection);
+                enqueue(h,job.method,bound,extend(job.path,"manifest_entry:"+key),true);
+            }
+            return !keys.isEmpty();
+        }return false;
+    }
+    V materializeManifest(V expression,Job job,Host h,int depth,Set<String> visiting){
+        ClassDef declaration=idx.classes.get(expression.type());
+        if(declaration==null){h.gaps.add("manifest_class_unresolved:"+expression.type());return UNKNOWN;}
+        if((declaration.getAccessFlags()&1)==0||(declaration.getAccessFlags()&(0x200|0x400))!=0){h.gaps.add("manifest_class_not_constructible:"+expression.type());return UNKNOWN;}
+        Method ctor=idx.byClass.getOrDefault(expression.type(),List.of()).stream().filter(method->method.getName().equals("<init>")&&method.getParameterTypes().isEmpty()&&(method.getAccessFlags()&1)!=0).findFirst().orElse(null);
+        if(ctor==null){h.gaps.add("manifest_public_noarg_constructor_missing:"+expression.type());return UNKNOWN;}
+        V object=V.of("object",expression.type(),expression.id()+"|"+allocationContext(job));
+        materializeConstructor(ctor,List.of(object),job,h,depth+1,visiting);return object;
+    }
     V guardValue(V value,Job job,Host h,int depth){
         if(depth>6)return UNKNOWN;
         if(value.kind().equals("param")){int index=Integer.parseInt(value.id());return index<job.args.size()?job.args.get(index):UNKNOWN;}
@@ -995,7 +1035,7 @@ final class CapabilityEngine {
             if(!idx.finalFields.contains(value.id()))return V.of("unknown",value.type(),"mutable_field_guard");
             V receiver=guardValue(value.args().get(0),job,h,depth+1);return h.heap.getOrDefault(heapKey(value.id(),receiver),UNKNOWN);
         }
-        if(value.kind().startsWith("return"))return UNKNOWN;
+        if(value.kind().startsWith("return")){V semantic=ManifestProtocols.resolve(value,this,job,h,0);return semantic.equals(UNKNOWN)?UNKNOWN:semantic;}
         return value;
     }
     V eval(V v,Job job,Host h,int depth,Set<String> visiting){
@@ -1048,7 +1088,9 @@ final class CapabilityEngine {
             return choices.size()==1?choices.get(0):new V("union",v.type(),original.id(),null,List.copyOf(choices));
         }
         if(v.kind().equals("settings"))return expr("settings",v.type(),v.id(),List.of(eval(v.args().get(0),job,h,depth+1,visiting)));
+        if(v.kind().equals("manifest_new"))return materializeManifest(v,job,h,depth,visiting);
         if(v.kind().equals("field")){
+            if(v.id().equals(ManifestProtocols.METADATA)){V nativeValue=ManifestProtocols.resolve(v,this,job,h,0);if(!nativeValue.equals(UNKNOWN))return nativeValue;}
             V receiver=eval(v.args().get(0),job,h,depth+1,new HashSet<>(visiting));
             if(receiver.kind().equals("union")){V joined=null;for(V alternative:alternatives(receiver))joined=union(joined,eval(expr("field",v.type(),v.id(),List.of(alternative)),job,h,depth+1,new HashSet<>(visiting)));return joined==null?UNKNOWN:joined;}
             String hk=heapKey(v.id(),receiver);
@@ -1076,7 +1118,9 @@ final class CapabilityEngine {
             return result!=null?observeTransportMap(v,refreshBinding(result,h,0,new HashSet<>()),h):deferredField(h,v.id(),receiver,v.type());
         }
         if(v.kind().startsWith("return")){
+            if(ManifestProtocols.pure(idx,v.id())){V semantic=ManifestProtocols.resolve(v,this,job,h,0);if(!semantic.equals(UNKNOWN)){if(semantic.kind().equals("unknown")&&semantic.id().startsWith("manifest_class_unresolved:"))h.gaps.add(semantic.id());return semantic.kind().equals("manifest_new")?materializeManifest(semantic,job,h,depth,visiting):semantic;}}
             List<V> args=v.args().stream().map(x->eval(x,job,h,depth+1,new HashSet<>(visiting))).toList();String name=name(v.id());
+            V reflectiveFactory=ReflectiveFactories.resolve(v,args,this,job,h,depth,visiting);if(reflectiveFactory!=null)return reflectiveFactory;
             if(v.id().equals("Ljava/lang/Class;->getName()Ljava/lang/String;")&&args.size()==1){
                 V result=null;for(V clazz:alternatives(args.get(0)))
                     result=union(result,clazz.kind().equals("class")&&clazz.type()!=null?V.literal("java.lang.String",clazz.type()):V.of("unknown","java.lang.String","dynamic_class_name"));

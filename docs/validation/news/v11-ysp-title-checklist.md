@@ -1,0 +1,9 @@
+# Fixed YSP and title-delegation checks for v11
+
+The source-confirmed subset was snapshotted from frozen `generic-v11-expanded-facts/news.jsonl` before reading the v11 report. `v11-ysp-title-checklist-facts.jsonl` contains all 175 original rows unchanged: nine YSP hosts × 19 facts, plus four custom-title delegate facts. The checklist JSON records the frozen/subset hashes, source-document hashes, conditions and stable per-fact IDs. No unmatched fact was removed or converted to an unknown expectation.
+
+Each YSP bundle retains eleven settings, two Client callbacks, one bridge registration, one annotated Java invoke and four routed message handlers. Receiver creation alone is insufficient: compare settings, registered Client members and actual bridge transport/endpoint surface on the same retained anonymous WebView. Conditional YSP selection and actual nonnull Activity-owned player ViewGroup remain binding conditions. The two class-key registry layers, selected public no-argument service constructor, factory/interface result and retained product field must agree with the real source.
+
+The four title facts require the actual registered Chrome `k`, its constructor-captured same Client, the Tencent-domain factory branch and ordinary virtual dispatch into the custom Client title method. This method is source-positive callback delegation; it must not be added to the standard WebViewClient SDK API list merely to match the expected signature.
+
+After the parent confirmed terminal v11, the unchanged subset was evaluated. V10 matched **0/99 settings, 0/54 bridge, 0/22 callbacks**. V11 matched **0/99 settings, 0/54 bridge, 4/22 callbacks**: all four title delegates recovered, all 171 YSP rows still missing. These scores are in `v10-ysp-title-checklist-score.json` and `v11-ysp-title-checklist-score.json`; the source expectations are identical. Synthetic reflected-service recovery does not establish real APK recovery.

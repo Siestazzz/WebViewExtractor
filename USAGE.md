@@ -25,6 +25,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
 
 | 参数 | 含义 |
 |---|---|
+| `--analysis-workers` | 分析线程数 1～8，默认不超过可用处理器数和 8；各 Activity 的状态独立 |
 | `--apkpath` | 必填，一次一个 APK |
 | `--out` | 输出目录；省略时使用 `output/` 下按 APK 文件名生成的目录 |
 | `--target-seconds` | 目标时间，默认 300；用于初扫预算分配，不保证届时分析完整 |
@@ -90,7 +91,7 @@ python3 scripts/run_parallel.py \
 
 每个包名单独输出两个报告、运行日志和资源记录；批次目录保存 `summary.json` 和 `environment.json`。脚本固定目标 300 秒、内部监督时限 595 秒、外部 600 秒，不支持通过该脚本另外指定时限。资源不足时可在 shell 循环中串行调用单 APK 命令。
 
-仓库已有六个样本的来源清单 `docs/validation/compact-six-samples.json`，但不附带 APK。克隆仓库后需自行准备文件并调整清单路径。并行测量不等同于隔离的串行性能验收。
+仓库已有十个样本的来源清单 `docs/validation/generic-ten-samples.json`，但不附带 APK。克隆仓库后需自行准备文件并调整清单路径。并行测量不等同于隔离的串行性能验收。
 
 ## 旧版入口
 

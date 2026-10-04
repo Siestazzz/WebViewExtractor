@@ -6,7 +6,9 @@
 
 > 版本更新：下文保留 `a91b113` 的实现教学基线。后续 generic rules 迭代已删除第 8 节中的 QNRouter 私有适配，并收紧第 7 节标准 Client 回调到公开 SDK 家族、完整签名及非 private/static 方法。该适配和名称筛选的描述仅用于理解历史版本，第二轮还增加了已知常量 switch 的有限摘要细化，以及具体接收对象能力任务的有界优先调度。当前差异见 [通用规则调整](validation/GENERIC_RULES_V1.md) 和 [第二轮记录](validation/GENERIC_V2.md)。
 
-> generic v3/v4 后续修订：非 Activity 组件按正式 SDK 生命周期完整签名进入，普通 helper 须通过实际调用到达；未知实例字段不再扫描任意构造函数；实际 Client getter 和继承生命周期的接收对象参与相关性判断；已解析的 API override 由实际方法体决定副作用。见 [v3 实现](validation/GENERIC_V3_IMPLEMENTATION.md)、[v4 实现](validation/GENERIC_V4_IMPLEMENTATION.md)。下文旧实现细节遇到冲突时以这些修订为准，v6 工作树已经补充实际安装 Client 的 delegate 调用传播，详见 [委派和对象隔离](validation/GENERIC_V6_CLIENT_DELEGATION.md)。v5 工厂扩展与成本回退见 [v5 结果](validation/GENERIC_V5.md)。这些新增机制仍需真实 App 独立核验，不能据合成测试宣称全覆盖。
+> generic v3/v4 后续修订：非 Activity 组件按正式 SDK 生命周期完整签名进入，普通 helper 须通过实际调用到达；未知实例字段不再扫描任意构造函数；实际 Client getter 和继承生命周期的接收对象参与相关性判断；已解析的 API override 由实际方法体决定副作用。见 [v3 实现](validation/GENERIC_V3_IMPLEMENTATION.md)、[v4 实现](validation/GENERIC_V4_IMPLEMENTATION.md)。下文旧实现细节遇到冲突时以这些修订为准，v6 已补充实际安装 Client 的 delegate 调用传播，详见 [委派和对象隔离](validation/GENERIC_V6_CLIENT_DELEGATION.md)。v5 工厂扩展与成本回退见 [v5 结果](validation/GENERIC_V5.md)。这些新增机制仍需真实 App 独立核验，不能据合成测试宣称全覆盖。
+
+> generic v9/v10：分析器按宿主使用最多 8 个工作线程，Host 状态不共享，方法摘要共享；初扫与深扫有全局阶段边界，停稳后导出报告。已发布摘要的缓存命中不等待细化锁，报告收尾依据实际导出耗时预留预算。见 [v10 实测和限制](validation/GENERIC_V10.md)。v11 的 [跨 Client 委托](validation/GENERIC_V11_CROSS_CLIENT_DELEGATION.md)、[反射工厂](validation/GENERIC_V11_REFLECTIVE_FACTORIES.md) 和 [Manifest 模块](validation/GENERIC_V11_MANIFEST_IMPLEMENTATION.md) 已完成[十 App 测量](validation/GENERIC_V11.md)：新闻回调增加，但芒果性能和携程部分命中回退；这些是有条件的协议模型，不是全反射解析。
 
 ## 阅读路线
 

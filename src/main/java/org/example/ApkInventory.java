@@ -11,6 +11,8 @@ final class ApkInventory {
     int targetSdk;
     final Set<String> activities=new TreeSet<>();
     final Map<String,String> aliases=new TreeMap<>();
+    record MetadataValue(int type,Object value) {}
+    final Map<String,MetadataValue> applicationMetadata=new TreeMap<>();
     final Map<String,Set<String>> layoutTypes=new TreeMap<>();
     static final class LayoutNode {
         String type,source; Integer id,include;
@@ -57,15 +59,17 @@ final class ApkInventory {
         LayoutNode item=new LayoutNode(tag.equals("WebView")?"android.webkit.WebView":tag);item.source=layout;
         if(layout!=null){if(parent==null)layoutRoots.computeIfAbsent(layout,k->new ArrayList<>()).add(item);else parent.children.add(item);}
         return new NodeVisitor(){
-            String name,target;
+            String name,target; MetadataValue metadataValue;
             @Override public void attr(String ns,String key,int resource,int type,Object value) {
                 String text=value instanceof ValueWrapper w ? (w.raw!=null?w.raw:String.valueOf(w.ref)):String.valueOf(value);
                 if(layout==null) {
                     if(tag.equals("manifest")&&key.equals("package")) packageName=text;
                     if(tag.equals("manifest")&&key.equals("versionName")) version=text;
                     if(tag.equals("uses-sdk")&&key.equals("targetSdkVersion")&&value instanceof Number n)targetSdk=n.intValue();
-                    if(key.equals("name"))name=text;
+                    if(key.equals("name")&&(!tag.equals("meta-data")||"http://schemas.android.com/apk/res/android".equals(ns)))name=text;
                     if(key.equals("targetActivity"))target=text;
+                    if(tag.equals("meta-data")&&"http://schemas.android.com/apk/res/android".equals(ns)&&key.equals("value"))metadataValue=new MetadataValue(type,value instanceof ValueWrapper wrapper?wrapper.raw:value);
+                    if(tag.equals("meta-data")&&"http://schemas.android.com/apk/res/android".equals(ns)&&key.equals("resource"))metadataValue=new MetadataValue(1,value);
                 } else {
                     if(key.equals("class")||key.equals("name")){layoutTypes.computeIfAbsent(layout,k->new TreeSet<>()).add(text);if(tag.equals("view"))item.type=text;}
                     Integer reference=value instanceof Number n?n.intValue():value instanceof ValueWrapper w?w.ref:null;
@@ -76,6 +80,7 @@ final class ApkInventory {
             @Override public NodeVisitor child(String ns,String name){return node(name,layout,item);}
             @Override public void end(){
                 if(layout!=null){if(tag.contains(".")||tag.equals("WebView"))layoutTypes.computeIfAbsent(layout,k->new TreeSet<>()).add(tag);return;}
+                if(name!=null&&tag.equals("meta-data")&&parent!=null&&parent.type.equals("application")&&metadataValue!=null)applicationMetadata.put(name,metadataValue);
                 if(name!=null&&tag.equals("activity"))activities.add(full(name));
                 if(name!=null&&target!=null&&tag.equals("activity-alias"))aliases.put(full(name),full(target));
             }

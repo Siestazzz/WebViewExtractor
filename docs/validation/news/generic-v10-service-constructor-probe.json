@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "mode": "report-guided generic synthesis; frozen gold unchanged",
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "fixture": "src/test/java/org/example/ServiceConstructorArrayProbe.java",
+  "runner": "test/run-service-constructor-probe.sh",
+  "result_file": "test/runs/news-constructor-probe-v10/results.json",
+  "result_sha256": "97edbbe8637c7a76365b4dd9920b52491bfc6fd1d58a839ff4e728578dde82ae",
+  "jar_sha256": "0752179a3f51dd48ae254493b883e54aae0d002b0c9b57e43b026e4fdbe48ab9",
+  "fixture_sha256": "9379c834b03890581ebc68f35ae3514101f7e062f474f16f89327ddf1ef2aece",
+  "cases": [
+    {
+      "case": "nomap-nocache-direct",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "matched",
+      "diagnostics": "[]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-nocache-directmissingkey",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "matched",
+      "diagnostics": "[]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-nocache-class",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-nocache-classconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-nocache-array",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=8, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=14, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-nocache-arrayconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=10, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=16, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-cache-direct",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "matched",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-cache-directmissingkey",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "matched",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-cache-class",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-cache-classconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-cache-array",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=8, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=14, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "nomap-cache-arrayconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=10, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=16, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-nocache-direct",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "matched",
+      "diagnostics": "[]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-nocache-directmissingkey",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "wrong",
+      "diagnostics": "[]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-nocache-class",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-nocache-classconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-nocache-array",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=8, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=14, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-nocache-arrayconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=10, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=16, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-cache-direct",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "matched",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-cache-directmissingkey",
+      "facts_by_kind": {
+        "bridge": 1,
+        "callback": 1,
+        "setting": 1
+      },
+      "verdict": "wrong",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;]",
+      "creator_summary": "Summary[calls=[Call[method=Lprobe/Implementation;-><init>()V, offset=2, args=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=true]], writes=[], returns=[V[kind=new, type=probe.Implementation, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@0, literal=null, args=[]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-cache-class",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-cache-classconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/Class;->newInstance()Ljava/lang/Object;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-cache-array",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=0, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=8, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=14, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=param, type=java.lang.Class, id=1, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@12, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    },
+    {
+      "case": "map-cache-arrayconstant",
+      "facts_by_kind": {
+        "bridge": 0,
+        "callback": 0,
+        "setting": 0
+      },
+      "verdict": "missing",
+      "diagnostics": "[probe.Activity:unresolved_receiver_dispatch:Lprobe/Service;->create()Lprobe/Product;,unresolved_receiver_dispatch:Lprobe/Product;->attach(Landroid/content/Context;Landroid/view/ViewGroup;)V]",
+      "creator_summary": "Summary[calls=[Call[method=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, offset=2, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->setAccessible(Z)V, offset=10, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=literal, type=number, id=1, literal=1, args=[]]], isStatic=false, isSuper=false, isDirect=false], Call[method=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, offset=16, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]], isStatic=false, isSuper=false, isDirect=false]], writes=[], returns=[V[kind=return, type=java.lang.Object, id=Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;, literal=null, args=[V[kind=array_element, type=null, id=array_element, literal=null, args=[V[kind=return, type=java.lang.reflect.Constructor, id=Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;, literal=null, args=[V[kind=class, type=probe.Implementation, id=Lprobe/Implementation;, literal=null, args=[]]]], V[kind=literal, type=number, id=0, literal=0, args=[]]]], V[kind=array_new, type=[Ljava/lang/Object;, id=Lprobe/Creator;->create(Ljava/lang/Class;)Ljava/lang/Object;@14, literal=null, args=[V[kind=literal, type=number, id=0, literal=0, args=[]]]]]]], branched=false, truncated=false]"
+    }
+  ],
+  "first_isolated_failure": "No registry/cache: Creator.create constructs a literal Implementation Class then Class.newInstance. DexFlow summary preserves the literal Class but returns generic java.lang.Object expression. The concrete service is absent for subsequent Service.create interface dispatch; all three capabilities disappear. Passing Class through Meta/parameter and Constructor[] array versions also fail, but are not earlier than this boundary.",
+  "negative_warning": "With missing default Map key and a source null-Meta guard, direct-construction creator still yields all three capabilities. Direct positive control cannot certify exact Map lookup. A future repair must retain this negative and not widen unknown reflective values into arbitrary compatible service implementations.",
+  "minimum_repair_boundary": [
+    "Generic reflected object creation must resolve an actual selected Class/Constructor to a concrete allocated object used by ordinary return/field/interface dispatch, not only bridge transport target enumeration.",
+    "Handle Constructor-array selection and empty argument array after Class.newInstance baseline; only bind demonstrably selected packaged constructor, with invocation/access guards and class origin preserved.",
+    "Preserve Meta singleton object cache and same object identity across factory/attachment; no classwide service expansion.",
+    "Add strict wrong-key/null target negative, unknown-Class negative and incompatible/non-empty constructor argument negatives before expanding coverage."
+  ],
+  "production_modified": false
+}

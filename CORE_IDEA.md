@@ -1,6 +1,6 @@
 # WebView 能力提取的当前核心思路
 
-当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文的基本对象传播和两轮调度仍适用；generic v2 增加具体能力任务有界优先调度、常量 switch 细化和严格标准回调签名；已提交的 generic v4 又收紧非 Activity 组件入口、移除未知实例的构造器猜测，并补充实际生命周期虚调用、Client getter 和 API override 行为。v5 增加通用 Fragment 工厂和 DownloadListener，但产生严重性能回退，见 [已测迭代](docs/validation/GENERIC_V5.md)。工作树 v6 增加已安装 Client 实际调用路径上的 delegate 传播，并限制框架内部工厂的全局相关性；真实质量仍待十 App 核验，见 [委派机制](docs/validation/GENERIC_V6_CLIENT_DELEGATION.md)。旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
+当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。最近完成十 App 实测的是 [generic v11](docs/validation/GENERIC_V11.md)：包含通用对象传播、已安装 Client 的委托调用、按宿主并行调度、摘要缓存和报告收尾预算。v11 新增跨 Client 完整签名委托、有限反射工厂与 Manifest 模块协议，新闻增加 4 条回调命中，但芒果性能和携程部分命中回退，不能宣称质量验收通过。旧版类关系图通过 `--legacy` 保留，见 [旧版设计](docs/LEGACY_CORE_IDEA.md)。
 
 需要逐步理解传播算法和精度边界，可继续阅读 [分析原理教程](docs/ANALYSIS_TUTORIAL.md)。
 
@@ -63,6 +63,8 @@ second.setWebViewClient(new PageClient());
 3. 第二轮按轮转顺序恢复未完成宿主，每批最多 100 个上下文或约 50 毫秒。
 4. 默认目标 300 秒、硬时限 600 秒；定期落盘，独立进程监督截止时间。
 
+generic v9 起支持 `--analysis-workers`（1～8）：不同 Activity 固定分配到独立分析引擎，宿主状态隔离，共享方法摘要缓存；全部初扫完成后才进入深扫，报告在任务停稳时生成。这是分析器的并行，不模拟 APK 的线程执行顺序。v10 的已发布基础摘要读缓存不再等待共享细化锁；根据实际检查点构造和导出耗时预留收尾预算，仍依赖外部 watchdog。
+
 暂停发生在方法任务之间，因此 50 毫秒是软预算，单个复杂任务可能超出。现场仅保留在当前进程内，不支持退出后从报告恢复。
 
 这两轮调度与引擎内部两个细化阶段不同。第一阶段独有的事实在后续未重新推导时保留为待复核候选；替换旧占位需满足对象来源、参数及成员不缩减等约束。内部上下文限额仍可能放弃任务，报告会记录数量。
@@ -73,6 +75,6 @@ second.setWebViewClient(new PageClient());
 - `capabilities.compact.json`：格式化的三层列表，仅展示签名、Settings 参数和各层统计，保留覆盖元数据。
 - `activity_coverage`：区分未开始、初扫/待深入、截止中断、遍历结束、内部预算耗尽。遍历结束不等于能力完整。
 
-历史 scheduler v3 六 App 调度测试见下方链接。当前 generic v2 已测试十 App，仍有多个 App 在截止前未完成深入分析；去掉私有适配后部分历史命中下降，通用修复又补回部分事实。整体误报率未核验，不能声称质量总验收通过。
+历史 scheduler v3 六 App 调度测试见下方链接。generic v11 十 App 实测约 40～591 秒，全部报告仍为 partial，严格验收 0/10；最终三次隔离运行、完整能力精度审计及新样本核验尚未完成。各版本必须在相同事实集上比较，不能把扩充核验样本带来的比例变化归因于算法。
 
 实现细节、测试、实际结果和残留问题见 [两轮调度记录](docs/validation/SCHEDULER_V3.md)、[能力分析说明](docs/CAPABILITY_ANALYSIS.md) 和 [迭代总账](docs/validation/ITERATIONS.md)。使用命令见 [USAGE.md](USAGE.md)。

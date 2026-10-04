@@ -1,0 +1,112 @@
+{
+  "created_utc": "2026-10-04T18:13:58.080685+00:00",
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "mapping_entries": [
+    "com.inneractive\u2192FyberDiscovery",
+    "com.google.ads\u2192b",
+    "com.applovin\u2192c",
+    "io.bidmachine\u2192e",
+    "com.inmobi\u2192g",
+    "com.bytedance.sdk\u2192o",
+    "com.unity3d.services.core\u2192q",
+    "com.unity3d.ads\u2192q",
+    "com.vungle\u2192s"
+  ],
+  "writer_scope": "Private static map; all source adNetworkDiscoveries.put writes are nine init lines, no source putAll/add/reflective mutation entry observed in holder. Getter i returns map.get(input sdk) directly, no arbitrary Class.forName provider.",
+  "offerwall": {
+    "callback_sdk_literal": "com.heyzap",
+    "lookup_result": "null for exactsource key, absent from nineinit keys; getter must returnnull whether initialized or not. SDK main-alias transforms onlyunity-core/supersonic-sdk and leavescom.heyzap unchanged. Thus unresolved provider hook for OfferWall is now proven unreachable, notany-provider wildcard.",
+    "evidence": [
+      {
+        "file": "sources/com/fyber/fairbid/C5423j.java",
+        "line": 40,
+        "text": "return CreativeInfoManager.onWebViewResponseWithHeaders(\"com.heyzap\", view, webResourceRequest, super.shouldInterceptRequest(view, webResourceRequest));",
+        "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+      },
+      {
+        "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+        "line": 431,
+        "text": "AdNetworkDiscovery adNetworkDiscovery = adNetworkDiscoveries.get(str);",
+        "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+      },
+      {
+        "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+        "line": 243,
+        "text": "adNetworkDiscoveries.put(g.p, new FyberDiscovery());",
+        "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+      },
+      {
+        "file": "sources/com/safedk/android/utils/SdksMapping.java",
+        "line": 258,
+        "text": "return sdkpackage;",
+        "sha256": "2f777ca681c20211495bb4ff488078d18af98af3d5abe7295c38d8ad50ff94f8"
+      }
+    ]
+  },
+  "inneractive": {
+    "sdk_key": "com.inneractive",
+    "resolved_implementation": "com.safedk.android.analytics.brandsafety.creatives.discoveries.FyberDiscovery",
+    "superclass": "com.safedk.android.analytics.brandsafety.creatives.discoveries.d",
+    "response_hook": "FyberDiscovery does not override b(WebView,String); base d.b(WebView,String)V emptybody. It does not install Settings/Bridge/Client.",
+    "evidence": [
+      {
+        "file": "sources/com/safedk/android/utils/g.java",
+        "line": 57,
+        "text": "public static final String p = \"com.inneractive\";",
+        "sha256": "b350daab4d5af833dfac4449eb1359c4fe42412bb28aa128bb6359060c3f9f0a"
+      },
+      {
+        "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+        "line": 243,
+        "text": "adNetworkDiscoveries.put(g.p, new FyberDiscovery());",
+        "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+      },
+      {
+        "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/FyberDiscovery.java",
+        "line": 46,
+        "text": "public class FyberDiscovery extends d {",
+        "sha256": "6299051d5215333916b02a9872ecfd766caebbc3f09d0a157a3c9ce572ff352d"
+      },
+      {
+        "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+        "line": 1653,
+        "text": "public void b(WebView webView, String str) {",
+        "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+      }
+    ],
+    "remaining": "ResourceLoaded retained-view metadata/attachment helpers still need source surface closure, kept distinct from now-proven emptyresponse hook."
+  },
+  "files": [
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/CreativeInfoManager.java",
+      "sha256": "28ea185cfdbeb544ef1dad830fad06ddc5f2d5140111d32b1bfcbb4c36d03023"
+    },
+    {
+      "file": "sources/com/safedk/android/utils/g.java",
+      "sha256": "b350daab4d5af833dfac4449eb1359c4fe42412bb28aa128bb6359060c3f9f0a"
+    },
+    {
+      "file": "sources/com/safedk/android/utils/SdksMapping.java",
+      "sha256": "2f777ca681c20211495bb4ff488078d18af98af3d5abe7295c38d8ad50ff94f8"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/FyberDiscovery.java",
+      "sha256": "6299051d5215333916b02a9872ecfd766caebbc3f09d0a157a3c9ce572ff352d"
+    },
+    {
+      "file": "sources/com/safedk/android/analytics/brandsafety/creatives/discoveries/d.java",
+      "sha256": "b07ab32a3440f11747ff9664a2b47fed5ffeb9c52b42dfed2456a70f84f20f35"
+    },
+    {
+      "file": "sources/com/fyber/fairbid/C5423j.java",
+      "sha256": "579c7fdb160b217fe6f8291b27283cc97e6cf99d44614b8badb0ae6024dea172"
+    },
+    {
+      "file": "sources/com/fyber/fairbid/xw.java",
+      "sha256": "0c3ff1ba239bd26457d594b9fe5b22f8e0fa9654ca116c26f08027074027f185"
+    }
+  ]
+}

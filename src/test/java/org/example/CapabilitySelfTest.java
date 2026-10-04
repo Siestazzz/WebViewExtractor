@@ -43,6 +43,10 @@ public final class CapabilitySelfTest {
   FieldHeapFixture.run();
   InstalledReflectionFixture.run();
   SdkExtensionFixture.run();
+  CrossClientDelegationFixture.run();
+  ManifestModuleFixture.run();
+  ReflectiveFactoryFixture.run();
+  ServiceConstructorArrayProbe.runRegression();
   StaticBridgeFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),

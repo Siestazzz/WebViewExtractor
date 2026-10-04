@@ -1,6 +1,6 @@
 # Activity capability analysis
 
-Current implementation: generic v2 on the resumable scheduler. See [latest iteration](validation/GENERIC_V2.md) for ten-App measurements and limits. Start with [USAGE](../USAGE.md) for commands,
+Latest measured implementation: generic v11 on the resumable scheduler. See [measured iteration](validation/GENERIC_V11.md) for ten-App results and limits. v11 gains four News callbacks but regresses Mango performance and some Ctrip matches; strict acceptance remains 0/10. Start with [USAGE](../USAGE.md) for commands,
 [core design](../CORE_IDEA.md) for the current/legacy distinction, and the
 [validation index](validation/README.md) for measured results. This document describes
 capability semantics, not an acceptance claim.
@@ -14,6 +14,8 @@ All Manifest Activity roots receive an initial slice (up to 8 method contexts or
 retains queue, arguments, heap/collections, bindings, facts and refinement phase. Single method
 work may overrun a slice. These scheduling passes are separate from the internal two-phase
 refinement. Recovery is in-memory only; reports cannot restore a killed worker.
+
+Since v9, up to eight workers use separate engines and host state, with shared method summaries. All initial slices finish before deep epochs; snapshots are exported at quiescent boundaries. This parallelizes the analyzer, not the APK thread semantics. v10 permits lock-free reads of published base summaries and reserves final export time using measured checkpoint cost. Neither change proves complete analysis at the deadline.
 
 `activity_coverage` records not_started, initial_analysis, pending_deep_analysis,
 deadline_interrupted, traversal_finished and budget_exhausted, including roots with no emitted

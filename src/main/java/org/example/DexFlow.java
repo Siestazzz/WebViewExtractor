@@ -50,7 +50,7 @@ final class DexFlow {
         }
     }
     synchronized Summary summary(Method m,java.util.function.UnaryOperator<V> resolver){
-        Summary base=summary(m);if(!base.branched())return base;
+        Summary base=summary(m);if(!base.branched()&&!ManifestProtocols.consumer(idx,m))return base;
         String key=CapabilityIndex.key(m);
         if(checkedRefinement.add(key)){
             int count=0;boolean contextualGuard=false,numericGuard=false;
@@ -59,8 +59,8 @@ final class DexFlow {
                 if(Set.of(org.jf.dexlib2.Opcode.INSTANCE_OF,org.jf.dexlib2.Opcode.PACKED_SWITCH,org.jf.dexlib2.Opcode.SPARSE_SWITCH).contains(opcode))contextualGuard=true;
                 if(opcode.name.startsWith("if-"))numericGuard=true;
             }
-            if((contextualGuard||numericGuard)&&count<=500)refinable.add(key);
-            if(numericGuard&&!contextualGuard)numericGuardOnly.add(key);
+            if((contextualGuard||numericGuard||ManifestProtocols.consumer(idx,m))&&count<=500)refinable.add(key);
+            if(numericGuard&&!contextualGuard&&!ManifestProtocols.consumer(idx,m))numericGuardOnly.add(key);
         }
         if(!refinable.contains(key))return base;
         // Ordinary integer/boolean guards need specialization only when this actual
@@ -84,7 +84,7 @@ final class DexFlow {
         List<Instruction> ins=new ArrayList<>();List<Integer> offsets=new ArrayList<>();Map<Integer,Integer> positions=new HashMap<>();int off=0;
         for(Instruction i:impl.getInstructions()){positions.put(off,ins.size());offsets.add(off);ins.add(i);off+=i.getCodeUnits();}
         if(ins.isEmpty())return new Summary(List.of(),List.of(),List.of(),false,false);
-        String key=CapabilityIndex.key(m);Map<Integer,V> init=new HashMap<>();int words=(m.getAccessFlags()&8)==0?1:0;
+        String key=CapabilityIndex.key(m);boolean metadataConsumer=ManifestProtocols.consumer(idx,m);Map<Integer,V> init=new HashMap<>();int words=(m.getAccessFlags()&8)==0?1:0;
         for(CharSequence p:m.getParameterTypes())words+=p.toString().equals("J")||p.toString().equals("D")?2:1;
         int reg=impl.getRegisterCount()-words,index=0;
         if((m.getAccessFlags()&8)==0)init.put(reg++,V.of("param",CapabilityIndex.cls(m.getDefiningClass()),"0"));
@@ -154,7 +154,13 @@ final class DexFlow {
                     writes.add(new Write("$map_mutation:"+targetKey,args.get(0),UNKNOWN));
                 calls.put(at,new Call(targetKey,at,List.copyOf(args),stat,op.startsWith("invoke-super"),op.startsWith("invoke-direct")));
                 if(target.getName().equals("getSettings")&&idx.webview(CapabilityIndex.cls(target.getDefiningClass()))&&!args.isEmpty())s.put(-1,expr("settings",CapabilityIndex.cls(target.getReturnType()),"settings",List.of(args.get(0))));
-                else if(!target.getReturnType().equals("V"))s.put(-1,expr(CapabilityIndex.fragmentFactory(targetKey)?"return_fragment_factory:"+at:target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-super")?"return_super":op.startsWith("invoke-direct")?"return_direct":"return",CapabilityIndex.cls(target.getReturnType()),targetKey,args));
+                else if(!target.getReturnType().equals("V")){
+                    String resultKind=CapabilityIndex.fragmentFactory(targetKey)?"return_fragment_factory:"+at:target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-super")?"return_super":op.startsWith("invoke-direct")?"return_direct":"return";
+                    if(metadataConsumer&&ManifestProtocols.pure(idx,targetKey)){
+                        V raw=new V("return_manifest_native:"+at,CapabilityIndex.cls(target.getReturnType()),targetKey,null,List.copyOf(args));
+                        V resolved=resolver.apply(raw);s.put(-1,resolved.equals(UNKNOWN)?raw:resolved);
+                    }else s.put(-1,expr(resultKind,CapabilityIndex.cls(target.getReturnType()),targetKey,args));
+                }
             }
             if(output!=null)s.put(a,output);
             else if(in.getOpcode().setsRegister())s.put(a,UNKNOWN);

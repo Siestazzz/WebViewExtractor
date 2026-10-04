@@ -96,12 +96,12 @@ final class CapabilityIndex {
         // Keep their actual allocation-local constructor captures through bind/inflate returns.
         for(String type:classes.keySet())if(subtype(type,"androidx.viewbinding.ViewBinding"))bindingObjects.add(type);
         for(String type:classes.keySet())if(subtype(type,"androidx.viewpager2.adapter.FragmentStateAdapter"))bindingObjects.add(type);
-        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))||client(cls(f.getType()))))bindingObjects.add(cls(c.getType()));
+        for(ClassDef c:classes.values())for(Field f:c.getFields())if((f.getAccessFlags()&8)==0&&(webview(cls(f.getType()))||settings(cls(f.getType()))||client(cls(f.getType()))||f.getType().equals("Ljava/lang/Class;")))bindingObjects.add(cls(c.getType()));
         for(Method m:methods.values())if(m.getName().equals("invoke")&&m.getParameterTypes().isEmpty()&&(webview(cls(m.getReturnType()))||function0Type(cls(m.getDefiningClass()))))bindingObjects.add(cls(m.getDefiningClass()));
         for(Method m:methods.values()){
             if(System.nanoTime()>deadline)throw new IllegalStateException("index_deadline");
             if(m.getImplementation()==null)continue;
-            String id=key(m); Set<String> refs=new HashSet<>(), fields=new HashSet<>();
+            String id=key(m); Set<String> refs=new HashSet<>(), fields=new HashSet<>();boolean sourceClientCallback=standardClientReference(m);
             try {for(Instruction i:m.getImplementation().getInstructions()){
                 instructions++;
                 if(i instanceof ReferenceInstruction rr){
@@ -113,7 +113,7 @@ final class CapabilityIndex {
                     refs.add(key(target));
                     if(kind(target)!=null)seeds.add(id);
                     if(fragmentFactory(key(target))||pagerInstall(key(target)))componentProtocols.add(id);
-                    if(!i.getOpcode().name.startsWith("invoke-static")&&!i.getOpcode().name.startsWith("invoke-super")&&!i.getOpcode().name.startsWith("invoke-direct")&&standardClientReference(target))clientDelegations.add(id);
+                    if(!i.getOpcode().name.startsWith("invoke-static")&&!i.getOpcode().name.startsWith("invoke-super")&&!i.getOpcode().name.startsWith("invoke-direct")&&(standardClientReference(target)||sourceClientCallback&&shape(m).equals(shape(target))))clientDelegations.add(id);
                 }
             }}catch(RuntimeException ex){diagnostics.add("method_index_failed:"+id+":"+ex.getClass().getSimpleName());}
             calls.put(id,refs);referencedFields.put(id,fields);
@@ -278,12 +278,19 @@ final class CapabilityIndex {
             if(System.nanoTime()>deadline)throw new IllegalStateException("registry_index_deadline");
             if(method.getImplementation()==null||(method.getAccessFlags()&8)!=0||method.getParameterTypes().isEmpty()||!method.getParameterTypes().get(0).equals("Ljava/lang/Class;"))continue;
             if(!calls.getOrDefault(key(method),Set.of()).stream().anyMatch(c->c.endsWith("->get(Ljava/lang/Object;)Ljava/lang/Object;")||c.endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")))continue;
-            for(DexFlow.Call call:flow.summary(method).calls()){
+            var summary=flow.summary(method);
+            for(DexFlow.Call call:summary.calls()){
                 if(!map(CapabilityEngine.owner(call.method()))||call.args().size()<2)continue;
                 var receiver=call.args().get(0);var argument=call.args().get(1);
-                if(!receiver.kind().equals("field")||!receiver.args().get(0).kind().equals("param")||!receiver.args().get(0).id().equals("0")||!argument.kind().equals("param")||!argument.id().equals("1"))continue;
+                if(!receiver.kind().equals("field")||!receiver.args().get(0).kind().equals("param")||!receiver.args().get(0).id().equals("0")||!classRegistryKey(argument))continue;
                 if(call.method().endsWith("->get(Ljava/lang/Object;)Ljava/lang/Object;"))readers.computeIfAbsent(receiver.id(),k->new HashSet<>()).add(key(method));
-                if(call.method().endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")&&call.args().size()==3&&call.args().get(2).kind().equals("param")&&call.args().get(2).id().equals("2"))writers.computeIfAbsent(receiver.id(),k->new HashSet<>()).add(key(method));
+                if(call.method().endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")&&call.args().size()==3){
+                    var stored=call.args().get(2);
+                    boolean parameter=stored.kind().equals("param")&&stored.id().equals("2");
+                    boolean nested=stored.kind().equals("new")&&map(stored.type())&&summary.calls().stream().anyMatch(inner->
+                            map(CapabilityEngine.owner(inner.method()))&&inner.method().endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")&&inner.args().size()==3&&inner.args().get(0).equals(stored)&&inner.args().get(1).literal()!=null&&inner.args().get(2).kind().equals("param")&&inner.args().get(2).id().equals("2"));
+                    if(parameter||nested)writers.computeIfAbsent(receiver.id(),k->new HashSet<>()).add(key(method));
+                }
             }
         }
         Set<String> carriers=new HashSet<>();
@@ -291,6 +298,10 @@ final class CapabilityIndex {
             keyedRegistryWrites.addAll(writers.get(field));carriers.add(CapabilityEngine.owner(field));
         }
         for(String type:classes.keySet())for(String carrier:carriers)if(subtype(type,carrier)){bindingObjects.add(type);break;}
+    }
+    static boolean classRegistryKey(DexFlow.V value){
+        if(value.kind().equals("param"))return value.id().equals("1");
+        return value.kind().startsWith("return")&&value.id().equals("Ljava/lang/Class;->getName()Ljava/lang/String;")&&value.args().size()==1&&value.args().get(0).kind().equals("param")&&value.args().get(0).id().equals("1");
     }
     void discoverMessageRegistries(long deadline){
         // Registries must share a Map with a JS or installed-client transport call chain.

@@ -1,0 +1,2869 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "source_first": true,
+  "report_read": false,
+  "hosts": [
+    "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+    "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity"
+  ],
+  "deep_audit_complete": false,
+  "added_fact_count": 40,
+  "declared_native_members": "Clienta7/Clientf7/Chromee1 allDEXverified exactsignature; noChromeinstallerReport; nativeActivity ancestor adds onlyrootinsets/backnavigation, notWebViewClient registrations. Native sameview4/6initialsettings +repeatedzoom2+synchronousdisplayfalse verified.",
+  "sdk_bridge": "Actual conditional sameview loadwrapper\u2192SafeDK UI Runnable\u2192nativeaddInterface; exactly7 annotatedvoidmethods, allDEXdeclaredverified. Legacyremove/destroy lifecycle does not delete initial registration history.",
+  "closed_response_provider": "sdkcom.inneractive\u2192privatefixedmap FyberDiscovery extendsd\u2192inheritedemptyb(WebView,String), proof safedk-fixed-discovery-provider-source-proof.json. CreativeInfoManager.a(URL,null,WebView,sdk) branch cannot invoke data-discovery because str2literalnull guard, preserved exactargument.",
+  "remaining": [
+    "CreativeInfoManager.onResourceLoaded\u2192privatec\u2192discovery metadata\u2192retainedview resourceattachment/CreativeInfoManager.a(CreativeInfo) later delegates need capability-surface review; not pretend dynamicAPIvalue unknown."
+  ],
+  "added_facts": [
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-repeated-setting-observation",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "value": true,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 167,
+          "text": "webView.getSettings().setSupportZoom(true);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Second actual configuration call in disableWebviewZoomControls, initial calls retained."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-repeated-setting-observation",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+      "value": true,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 168,
+          "text": "webView.getSettings().setBuiltInZoomControls(true);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Second actual configuration call in disableWebviewZoomControls, initial calls retained."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-runnable-setting",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "value": false,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 169,
+          "text": "new o0(webView).run();",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/util/o0.java",
+          "line": 17,
+          "text": "this.f88088a.getSettings().setDisplayZoomControls(false);",
+          "sha256": "0c39e1183eb7884ee8a82da4c28e4d28f136f24e5f047584d5c4f332fcef17b1"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "false",
+      "condition": "Explicit synchronous o0.run on sameWebView argument, no scheduler uncertainty."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onLoadResource",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 29,
+          "text": "public void onLoadResource(WebView view, String url) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 41,
+          "text": "public void onPageStarted(WebView view, String url, Bitmap favicon) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 35,
+          "text": "public void onPageFinished(WebView view, String url) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 47,
+          "text": "public final void onReceivedError(WebView webView, int i, String str, String str2) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 88,
+          "text": "public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest webResourceRequest) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 93,
+          "text": "public final boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.a",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/a;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 111,
+          "text": "webView.setWebViewClient(new a(this));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+          "line": 105,
+          "text": "public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {",
+          "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge",
+      "name": "SafeDKWebAppInterface",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "value": "SafeDKWebAppInterface",
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "postMessage",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->postMessage(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 96,
+          "text": "public void postMessage(String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "logMessage",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->logMessage(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 173,
+          "text": "public void logMessage(String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "interceptXmlHttpRequest",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->interceptXmlHttpRequest(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 178,
+          "text": "public void interceptXmlHttpRequest(String message) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "requestNoSampling",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->requestNoSampling(Ljava/lang/String;Ljava/lang/String;II)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 193,
+          "text": "public void requestNoSampling(String sdkPackageName, String address, int height, int width) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "setContent",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setContent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 217,
+          "text": "public void setContent(String packageName, String webviewAddress, String texts) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "setComments",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setComments(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 241,
+          "text": "public void setComments(String packageName, String webViewAddress, String comments) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.FyberReportAdActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1441,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.FyberReportAdActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 73,
+          "text": "setContentView(a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 110,
+          "text": "webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 137,
+          "text": "frameLayout.addView(webView, -1, -1);",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "onResourcesCollected",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->onResourcesCollected(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+          "line": 130,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, f1.a(\"https://cdn2.inner-active.mobi/client/fyber-i-icon/index.html\", hashMap));",
+          "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 347,
+          "text": "public void onResourcesCollected(String packageName, String webviewAddress, String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-repeated-setting-observation",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setSupportZoom",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setSupportZoom(Z)V",
+      "value": true,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 254,
+          "text": "webView.getSettings().setSupportZoom(true);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Second actual configuration call in disableWebviewZoomControls, initial calls retained."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-repeated-setting-observation",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setBuiltInZoomControls",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V",
+      "value": true,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 255,
+          "text": "webView.getSettings().setBuiltInZoomControls(true);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Second actual configuration call in disableWebviewZoomControls, initial calls retained."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-runnable-setting",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setDisplayZoomControls",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V",
+      "value": false,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 256,
+          "text": "new o0(webView).run();",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/util/o0.java",
+          "line": 17,
+          "text": "this.f88088a.getSettings().setDisplayZoomControls(false);",
+          "sha256": "0c39e1183eb7884ee8a82da4c28e4d28f136f24e5f047584d5c4f332fcef17b1"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "false",
+      "condition": "Explicit synchronous o0.run on sameWebView argument, no scheduler uncertainty."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebViewClient",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onLoadResource",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 31,
+          "text": "public void onLoadResource(WebView view, String url) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageStarted",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 37,
+          "text": "public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onPageFinished",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 104,
+          "text": "public final void onPageFinished(WebView webView, String str) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onReceivedError",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 44,
+          "text": "public final void onReceivedError(WebView webView, int i, String str, String str2) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 51,
+          "text": "public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest webResourceRequest) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "shouldOverrideUrlLoading",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 56,
+          "text": "public final boolean shouldOverrideUrlLoading(WebView webView, String str) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onRenderProcessGone",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.f",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/f;->onRenderProcessGone(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 307,
+          "text": "webView.setWebViewClient(new f(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 68,
+          "text": "public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback_registration",
+      "name": "setWebChromeClient",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.e",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V",
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 167,
+          "text": "this.f84455e.setWebChromeClient(new e(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-installed-client-surface",
+      "evaluation_tier": "core_required",
+      "kind": "callback",
+      "name": "onProgressChanged",
+      "registration_name": null,
+      "implementation": "com.fyber.inneractive.sdk.activities.e",
+      "normalized_signature": "Lcom/fyber/inneractive/sdk/activities/e;->onProgressChanged(Landroid/webkit/WebView;I)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 167,
+          "text": "this.f84455e.setWebChromeClient(new e(this));",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/e.java",
+          "line": 17,
+          "text": "public final void onProgressChanged(WebView webView, int i) {",
+          "sha256": "e9af482f885cd6dfc45707c93a0b2a2b9d162d3bd504f1286662a6af12260413"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "taxonomy": "standard_android_client",
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json",
+      "condition": "Actual same nativeWebView constructor branch installs concreteClient; API>=26forRenderer callback events.",
+      "signature_in_apk": true
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge",
+      "name": "SafeDKWebAppInterface",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V",
+      "value": "SafeDKWebAppInterface",
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview."
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "postMessage",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->postMessage(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 96,
+          "text": "public void postMessage(String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "logMessage",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->logMessage(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 173,
+          "text": "public void logMessage(String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "interceptXmlHttpRequest",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->interceptXmlHttpRequest(Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 178,
+          "text": "public void interceptXmlHttpRequest(String message) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "requestNoSampling",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->requestNoSampling(Ljava/lang/String;Ljava/lang/String;II)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 193,
+          "text": "public void requestNoSampling(String sdkPackageName, String address, int height, int width) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "setContent",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setContent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 217,
+          "text": "public void setContent(String packageName, String webviewAddress, String texts) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "setComments",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->setComments(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 241,
+          "text": "public void setComments(String packageName, String webViewAddress, String comments) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    },
+    {
+      "activity": "com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1420,
+          "text": "android:name=\"com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 152,
+          "text": "setContentView(a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 305,
+          "text": "WebView webView = new WebView(IAConfigManager.f84625O.f84658v.a());",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        },
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+          "line": 312,
+          "text": "relativeLayout.addView(this.f84455e);",
+          "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+        }
+      ],
+      "group_id": "source-first-inneractive-conditional-sdk-bridge",
+      "evaluation_tier": "core_required",
+      "kind": "bridge_method",
+      "name": "onResourcesCollected",
+      "registration_name": "SafeDKWebAppInterface",
+      "implementation": "com.safedk.android.internal.SafeDKWebAppInterface",
+      "normalized_signature": "Lcom/safedk/android/internal/SafeDKWebAppInterface;->onResourcesCollected(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "normalized_api": null,
+      "value": null,
+      "evidence": [
+        {
+          "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+          "line": 89,
+          "text": "DTExchangeNetworkBridge.webviewLoadUrl(webView, \"chrome://crash\");",
+          "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+          "line": 106,
+          "text": "SafeDKWebAppInterface.a(g.p, targetInstance, url);",
+          "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 294,
+          "text": "SafeDKWebAppInterface.b(mainSdkPackage, webView, str2, a10);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 308,
+          "text": "webView.addJavascriptInterface(new SafeDKWebAppInterface(webView.getContext()), f104388a);",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 33,
+          "text": "public static final String f104388a = \"SafeDKWebAppInterface\";",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        },
+        {
+          "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+          "line": 347,
+          "text": "public void onResourcesCollected(String packageName, String webviewAddress, String msg) {",
+          "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit_same_view_sdk_load_wrapper",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "value_kind": "literal",
+      "source_expression": "true",
+      "condition": "Report: initial URLload DTExchange wrapper. Internal: renderer crash testingURL branch j1.a(str), system property ia.testEnvironmentConfiguration.response nonempty + URLprefix fyberInternalTesting and containscrash. Both: SafeDKinstance p(), Z(), SDKsupporteddiscovery, URLnonnull/nonjavascript and initmodeguards; UI Runnable invokesb on captured sameview.",
+      "annotated": true,
+      "signature_in_apk": true,
+      "dex_identity_evidence": "inneractive-safedk-members-source-dex.json"
+    }
+  ],
+  "files": [
+    {
+      "file": "sources/com/safedk/android/internal/SafeDKWebAppInterface.java",
+      "sha256": "f4bf9e20d0768b83189919b178b078747acc4c3b600d45a5367d5b413c45dadf"
+    },
+    {
+      "file": "sources/com/safedk/android/internal/partials/DTExchangeNetworkBridge.java",
+      "sha256": "5341b1baae3306743797db43504c247c8808175d5d36c930b1c924c0b9ac2be9"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/util/o0.java",
+      "sha256": "0c39e1183eb7884ee8a82da4c28e4d28f136f24e5f047584d5c4f332fcef17b1"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/FyberReportAdActivity.java",
+      "sha256": "bdd4e4ef9aa80972559d56e6a4c69e9599fd3451ed2bb2397eda888e546134bc"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveInternalBrowserActivity.java",
+      "sha256": "e2b64be8318a285a74669d4efba17b6210e428b6140c6f6e27ca005642545f51"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/InneractiveBaseActivity.java",
+      "sha256": "98a29202194382727f551753a2b18d10381c08a70da0470b6ca47e999364a5c1"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/a.java",
+      "sha256": "0aebdb7e67382254f375472ae0f9c7d7b9a7a109d983d93e1d4154d7d6ce2fa8"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/e.java",
+      "sha256": "e9af482f885cd6dfc45707c93a0b2a2b9d162d3bd504f1286662a6af12260413"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/f.java",
+      "sha256": "aa61cf2bb1c1c8870a0c1d6f969ccda05cc7c82fb9fe94622e5eba842a3ac15b"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/g.java",
+      "sha256": "a6df32e9502d7fac8c89d9affbf558cd9f376908dc324f111557b5b83f8945eb"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/h.java",
+      "sha256": "8cf98f57a2cf6495ba8a470778cc3f367cc26d93a2703064d07f86d48ac2774e"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/i.java",
+      "sha256": "cc1c2b74cd993fb2694881188935f4509e098bb16c313ae0472ebbd7f9e2aa1f"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/j.java",
+      "sha256": "f8d9c13a307f4b0406099bafa447176f1d4f5c45b88e340e1f31777d35cda719"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/k.java",
+      "sha256": "741e37ba80ec5010f4ec8cfeb1d780ef74d8df44922aa217d9e608e3f4681f2d"
+    },
+    {
+      "file": "sources/com/fyber/inneractive/sdk/activities/l.java",
+      "sha256": "20af5ed12a5b59fc8e3f0cf8d993ee5753ffb905bb002a6e0f095b01426389a7"
+    }
+  ]
+}

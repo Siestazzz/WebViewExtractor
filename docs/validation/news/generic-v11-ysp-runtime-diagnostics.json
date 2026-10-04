@@ -1,0 +1,276 @@
+{
+  "report_sha256": "c06d169353e178e1d00dd187692d99064055d6156d42dd84ab4b483f1f5cb941",
+  "note": "Report-only diagnostics using prior source-reviewed host list; no decompiled source read or oracle changes.",
+  "hosts": [
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+      "coverage": {
+        "activity": "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 1959,
+        "pending_contexts": 0,
+        "analysis_seconds": 9.290532771,
+        "slices": 48,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          983,
+          976
+        ],
+        "tracked_xml_consumers": 124,
+        "tracked_deferred_fields": 504,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.00015537
+      },
+      "output_present": true,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity:analysis_limits:{receiver_relevance_budget=32, resolve_depth=1}",
+        "com.tencent.news.kkvideo.detail.KkAlbumDarkModeActivity:receiver_relevance_budget:Lcom/tencent/news/base/LifeCycleBaseActivity;->onDestroy()V,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->ˆי()V,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->getDetailScheme()Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->interceptByDetailScheme(Ljava/lang/String;)Z,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->decorateDetailScheme(Ljava/lang/String;)Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->quitActivity()V,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->ˈˆ()Z,receiver_relevance_budget:Lcom/tencent/news/base/LifeCycleBaseActivity;->onPause()V,receiver_relevance_budget:Landroidx/fragment/app/FragmentActivity;->onResume()V,receiver_relevance_budget:Lcom/tencent/news/base/LifeCycleBaseActivity;->onStop()V,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->isImmersiveEnabled()Z,receiver_relevance_budget:Lcom/tencent/news/base/ImmersiveBaseActivity;->setEnableImmersiveMode(Z)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,deferred_field_order_unproven,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->quitActivity()V,xml_lookup_unresolved_candidate,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,receiver_relevance_budget:Lcom/tencent/news/list/framework/BaseListFragment;->ʾᵢ(Landroidx/recyclerview/widget/RecyclerView;)V,unresolved_receiver_dispatch:Lrx/Subscription;->unsubscribe()V"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+      "coverage": {
+        "activity": "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 1957,
+        "pending_contexts": 0,
+        "analysis_seconds": 8.704048733,
+        "slices": 44,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          982,
+          975
+        ],
+        "tracked_xml_consumers": 124,
+        "tracked_deferred_fields": 504,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000155553
+      },
+      "output_present": true,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity:analysis_limits:{receiver_relevance_budget=32, resolve_depth=1}",
+        "com.tencent.news.kkvideo.detail.KkVideoDetailDarkModeActivity:receiver_relevance_budget:Lcom/tencent/news/base/LifeCycleBaseActivity;->onDestroy()V,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->ˆי()V,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->getDetailScheme()Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->interceptByDetailScheme(Ljava/lang/String;)Z,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->decorateDetailScheme(Ljava/lang/String;)Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->quitActivity()V,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->ˈˆ()Z,receiver_relevance_budget:Lcom/tencent/news/base/LifeCycleBaseActivity;->onPause()V,receiver_relevance_budget:Landroidx/fragment/app/FragmentActivity;->onResume()V,receiver_relevance_budget:Lcom/tencent/news/base/LifeCycleBaseActivity;->onStop()V,receiver_relevance_budget:Lcom/tencent/news/kkvideo/detail/KkVideoDetailDarkModeActivity;->isImmersiveEnabled()Z,receiver_relevance_budget:Lcom/tencent/news/base/ImmersiveBaseActivity;->setEnableImmersiveMode(Z)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,deferred_field_order_unproven,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->quitActivity()V,xml_lookup_unresolved_candidate,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,receiver_relevance_budget:Lcom/tencent/news/list/framework/BaseListFragment;->ʾᵢ(Landroidx/recyclerview/widget/RecyclerView;)V,unresolved_receiver_dispatch:Lrx/Subscription;->unsubscribe()V"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity",
+      "coverage": {
+        "activity": "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 1746,
+        "pending_contexts": 0,
+        "analysis_seconds": 3.874142432,
+        "slices": 53,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          828,
+          918
+        ],
+        "tracked_xml_consumers": 11,
+        "tracked_deferred_fields": 453,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.000137482
+      },
+      "output_present": false,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity:analysis_limits:{argument_relevance_budget=4, flow_budget=1, receiver_relevance_budget=61, resolve_depth=1}",
+        "com.tencent.news.kkvideo.shortvideo.VerticalVideoVideoActivity:flow_budget:Lcom/tencent/news/kkvideo/shortvideo/VerticalVideoVideoActivity;->getIntentData(Landroid/content/Intent;)V,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->getDetailScheme()Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/kkvideo/shortvideo/VerticalVideoVideoActivity;->interceptByDetailScheme(Ljava/lang/String;)Z,receiver_relevance_budget:Lcom/tencent/news/ui/AbsDetailActivity;->decorateDetailScheme(Ljava/lang/String;)Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->quitActivity()V,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->ˈˆ()Z,xml_lookup_unresolved_candidate,receiver_relevance_budget:Lcom/tencent/news/ui/view/CpVipViewV2;->getChannel()Ljava/lang/String;,receiver_relevance_budget:Landroidx/constraintlayout/widget/ConstraintLayout;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;,receiver_relevance_budget:Landroidx/constraintlayout/widget/ConstraintLayout;->onViewAdded(Landroid/view/View;)V,receiver_relevance_budget:Landroidx/constraintlayout/widget/ConstraintLayout;->setWidgetBaseline(Landroidx/constraintlayout/core/widgets/ConstraintWidget;Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;Landroid/util/SparseArray;ILandroidx/constraintlayout/core/widgets/ConstraintAnchor$Type;)V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->enableLayers(Z)V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->dispatchOnScrollStateChanged(I)V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->getClientHeight()I,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->pageScrolled(I)Z,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->populate(I)V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->setScrollingCacheEnabled(Z)V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->completeScroll(Z)V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->populate()V,receiver_relevance_budget:Lcom/tencent/news/widget/verticalviewpager/VerticalViewPagerImpl;->setScrollState(I)V"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+      "coverage": {
+        "activity": "com.tencent.news.rose.activity.RoseLiveVideoActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 958,
+        "pending_contexts": 0,
+        "analysis_seconds": 2.404970847,
+        "slices": 36,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          479,
+          479
+        ],
+        "tracked_xml_consumers": 12,
+        "tracked_deferred_fields": 412,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 7.975e-05
+      },
+      "output_present": false,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.rose.activity.RoseLiveVideoActivity:analysis_limits:{argument_relevance_budget=7, receiver_relevance_budget=5, resolve_depth=1}",
+        "com.tencent.news.rose.activity.RoseLiveVideoActivity:xml_lookup_unresolved_candidate,resolve_depth,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->enableClone(Z)V,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->setSplashBehind()V,receiver_relevance_budget:Landroidx/fragment/app/FragmentActivity;->markFragmentsCreated()V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,argument_relevance_budget:Lcom/tencent/news/video/VideoAudioManager;->ᐧ(Lcom/tencent/news/video/VideoAudioManager$a;)V,unresolved_receiver_dispatch:Lcom/tencent/news/video/c1$c;->obtain()Lcom/tencent/news/video/q;,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/n$c;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/n;Lcom/tencent/qqlive/tvkplayer/logic/n$a;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$t;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$v;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/m;-><init>(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)V,constructor_capture_depth:Lcom/tencent/news/video/behavior/a;-><init>()V,receiver_relevance_budget:Landroidx/activity/ComponentActivity;->onCreate(Landroid/os/Bundle;)V,unresolved_receiver_dispatch:Lcom/tencent/news/settings/textsize/a;->ʽ()V,xml_allocation_site_abstraction,argument_relevance_budget:Lcom/tencent/news/video/n2;->getSeekPosition()I,argument_relevance_budget:Lcom/tencent/news/video/n2;->getDuration()J"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+      "coverage": {
+        "activity": "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 2006,
+        "pending_contexts": 0,
+        "analysis_seconds": 4.033197553,
+        "slices": 64,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          1001,
+          1005
+        ],
+        "tracked_xml_consumers": 63,
+        "tracked_deferred_fields": 618,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 0.00015398
+      },
+      "output_present": true,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity:analysis_limits:{argument_relevance_budget=6, receiver_relevance_budget=58, resolve_depth=1}",
+        "com.tencent.news.topic.weibo.detail.graphic.WeiboGraphicDetailActivity:xml_lookup_unresolved_candidate,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->onPageScrolled(IFI)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->infoForCurrentScrollPosition()Landroidx/viewpager/widget/ViewPager$ItemInfo;,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->infoForPosition(I)Landroidx/viewpager/widget/ViewPager$ItemInfo;,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->sortChildDrawingOrder()V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->addNewItem(II)Landroidx/viewpager/widget/ViewPager$ItemInfo;,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->calculatePageOffsets(Landroidx/viewpager/widget/ViewPager$ItemInfo;ILandroidx/viewpager/widget/ViewPager$ItemInfo;)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->infoForChild(Landroid/view/View;)Landroidx/viewpager/widget/ViewPager$ItemInfo;,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->infoForAnyChild(Landroid/view/View;)Landroidx/viewpager/widget/ViewPager$ItemInfo;,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->getClientWidth()I,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->setScrollingCacheEnabled(Z)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->completeScroll(Z)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->populate()V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->setScrollState(I)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->distanceInfluenceForSnapDuration(F)F,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->setCurrentItem(IZ)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->pageScrolled(I)Z,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->populate(I)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->enableLayers(Z)V,receiver_relevance_budget:Landroidx/viewpager/widget/ViewPager;->dispatchOnScrollStateChanged(I)V"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.ui.view.player.FullPlayVideoActivity",
+      "coverage": {
+        "activity": "com.tencent.news.ui.view.player.FullPlayVideoActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 993,
+        "pending_contexts": 0,
+        "analysis_seconds": 2.31898758,
+        "slices": 39,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          497,
+          496
+        ],
+        "tracked_xml_consumers": 11,
+        "tracked_deferred_fields": 374,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 8.289e-05
+      },
+      "output_present": false,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.ui.view.player.FullPlayVideoActivity:analysis_limits:{argument_relevance_budget=1, receiver_relevance_budget=5, resolve_depth=1}",
+        "com.tencent.news.ui.view.player.FullPlayVideoActivity:xml_lookup_unresolved_candidate,resolve_depth,constructor_capture_depth:Lcom/tencent/news/video/n2$c;-><init>(Lcom/tencent/news/video/n2;)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,argument_relevance_budget:Lcom/tencent/news/video/VideoAudioManager;->ᐧ(Lcom/tencent/news/video/VideoAudioManager$a;)V,unresolved_receiver_dispatch:Lcom/tencent/news/video/c1$c;->obtain()Lcom/tencent/news/video/q;,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/n$c;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/n;Lcom/tencent/qqlive/tvkplayer/logic/n$a;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$t;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$v;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/m;-><init>(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)V,constructor_capture_depth:Lcom/tencent/news/video/behavior/a;-><init>()V,receiver_relevance_budget:Landroidx/activity/ComponentActivity;->onCreate(Landroid/os/Bundle;)V,unresolved_receiver_dispatch:Lcom/tencent/news/settings/textsize/a;->ʽ()V,xml_allocation_site_abstraction,unresolved_receiver_dispatch:Lcom/tencent/news/qnplayer/ui/c;->onKeyDown(ILandroid/view/KeyEvent;)Z,deferred_field_order_unproven,unresolved_receiver_dispatch:Lcom/tencent/qqlive/tvkplayer/bridge/ITVKProxyFactory;->createMediaPlayer(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)Lcom/tencent/qqlive/tvkplayer/api/ITVKMediaPlayer;,unresolved_receiver_dispatch:Lcom/tencent/news/video/c1$c;->ʽ(Lcom/tencent/news/video/q;Z)V"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity",
+      "coverage": {
+        "activity": "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 1207,
+        "pending_contexts": 0,
+        "analysis_seconds": 2.737828823,
+        "slices": 43,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          454,
+          753
+        ],
+        "tracked_xml_consumers": 29,
+        "tracked_deferred_fields": 251,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 8.8508e-05
+      },
+      "output_present": false,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity:analysis_limits:{argument_relevance_budget=3, receiver_relevance_budget=57, resolve_depth=1}",
+        "com.tencent.news.video.detail.longvideo.LongVideoDetailActivity:xml_lookup_unresolved_candidate,resolve_depth,constructor_capture_depth:Lcom/tencent/news/video/n2;-><init>(Landroid/content/Context;Lcom/tencent/news/video/c1$c;)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/listitem/n0;->ʽ(Ljava/lang/Class;Ljava/lang/Object;)V,unresolved_receiver_dispatch:Lcom/tencent/news/video/detail/longvideo/a;->ʼʼ(Landroid/os/Bundle;)Z,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->isLandingPage()Z,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->decorateDetailScheme(Ljava/lang/String;)Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/ui/slidingout/SlidingBaseActivity;->quitActivity(Z)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,deferred_field_order_unproven,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lcom/tencent/news/video/c1$c;->obtain()Lcom/tencent/news/video/q;,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/n$c;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/n;Lcom/tencent/qqlive/tvkplayer/logic/n$a;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$t;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$v;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/m;-><init>(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)V,constructor_capture_depth:Lcom/tencent/news/video/behavior/a;-><init>()V,array_update_order_unresolved:Lcom/tencent/news/video/c1;->ʾ(Z)Lcom/tencent/news/video/c1$c;@14|0,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->quitActivity()V"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity",
+      "coverage": {
+        "activity": "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 936,
+        "pending_contexts": 0,
+        "analysis_seconds": 2.042185008,
+        "slices": 34,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          435,
+          501
+        ],
+        "tracked_xml_consumers": 21,
+        "tracked_deferred_fields": 222,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 7.2499e-05
+      },
+      "output_present": false,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity:analysis_limits:{argument_relevance_budget=3, receiver_relevance_budget=8, resolve_depth=1}",
+        "com.tencent.news.video.detail.longvideo.TvLongVideoDetailActivity:xml_lookup_unresolved_candidate,resolve_depth,unresolved_map_lookup_key:resolve_depth,constructor_capture_depth:Lcom/tencent/news/video/n2;-><init>(Landroid/content/Context;Lcom/tencent/news/video/c1$c;)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/listitem/n0;->ʽ(Ljava/lang/Class;Ljava/lang/Object;)V,unresolved_receiver_dispatch:Lcom/tencent/news/video/detail/longvideo/a;->ʼʼ(Landroid/os/Bundle;)Z,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->isLandingPage()Z,receiver_relevance_budget:Lcom/tencent/news/ui/NavActivity;->decorateDetailScheme(Ljava/lang/String;)Ljava/lang/String;,receiver_relevance_budget:Lcom/tencent/news/video/detail/longvideo/TvLongVideoDetailActivity;->quitActivity(Z)V,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,deferred_field_order_unproven,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,unresolved_receiver_dispatch:Lcom/tencent/news/video/c1$c;->obtain()Lcom/tencent/news/video/q;,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/n$c;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/n;Lcom/tencent/qqlive/tvkplayer/logic/n$a;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$t;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$v;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/m;-><init>(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)V,constructor_capture_depth:Lcom/tencent/news/video/behavior/a;-><init>()V,array_update_order_unresolved:Lcom/tencent/news/video/c1;->ʾ(Z)Lcom/tencent/news/video/c1$c;@14|0"
+      ]
+    },
+    {
+      "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+      "coverage": {
+        "activity": "com.tencent.news.video.js.VideoPreviewActivity",
+        "status": "traversal_finished",
+        "phase": 2,
+        "contexts_processed": 921,
+        "pending_contexts": 0,
+        "analysis_seconds": 2.744370843,
+        "slices": 44,
+        "pending_priority_contexts": 0,
+        "pending_ordinary_contexts": 0,
+        "pending_method_sample": [],
+        "discarded_contexts": 0,
+        "phase_contexts": [
+          459,
+          462
+        ],
+        "tracked_xml_consumers": 12,
+        "tracked_deferred_fields": 435,
+        "provisional_facts": 0,
+        "checkpoint_seconds": 9.0647e-05
+      },
+      "output_present": false,
+      "ysp_fact_count": 0,
+      "diagnostics": [
+        "com.tencent.news.video.js.VideoPreviewActivity:analysis_limits:{argument_relevance_budget=13, receiver_relevance_budget=5, resolve_depth=1}",
+        "com.tencent.news.video.js.VideoPreviewActivity:resolve_depth,unresolved_receiver_dispatch:Lcom/tencent/news/ui/g3;->onActivityResult(IILandroid/content/Intent;)V,reflective_factory_receiver_unresolved:Ljava/lang/Class;->getDeclaredConstructors()[Ljava/lang/reflect/Constructor;,reflective_factory_receiver_unresolved:Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;,argument_relevance_budget:Lcom/tencent/news/video/VideoAudioManager;->ᐧ(Lcom/tencent/news/video/VideoAudioManager$a;)V,unresolved_receiver_dispatch:Lcom/tencent/news/video/c1$c;->obtain()Lcom/tencent/news/video/q;,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/n$c;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/n;Lcom/tencent/qqlive/tvkplayer/logic/n$a;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$t;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/e$v;-><init>(Lcom/tencent/qqlive/tvkplayer/logic/e;)V,constructor_capture_depth:Lcom/tencent/qqlive/tvkplayer/logic/m;-><init>(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)V,constructor_capture_depth:Lcom/tencent/news/video/behavior/a;-><init>()V,unresolved_receiver_dispatch:Lcom/tencent/news/audio/api/c;->stop()V,receiver_relevance_budget:Landroidx/activity/ComponentActivity;->onCreate(Landroid/os/Bundle;)V,unresolved_receiver_dispatch:Lcom/tencent/news/settings/textsize/a;->ʽ()V,xml_lookup_unresolved_candidate,xml_allocation_site_abstraction,unresolved_receiver_dispatch:Lcom/tencent/news/video/ui/e;->setViewConfig(Lcom/tencent/news/video/view/viewconfig/a;)V,deferred_field_order_unproven,unresolved_receiver_dispatch:Lcom/tencent/qqlive/tvkplayer/bridge/ITVKProxyFactory;->createMediaPlayer(Landroid/content/Context;Lcom/tencent/qqlive/tvkplayer/api/render/ITVKDrawableContainer;Landroid/os/Looper;)Lcom/tencent/qqlive/tvkplayer/api/ITVKMediaPlayer;,unresolved_receiver_dispatch:Lcom/tencent/news/video/ui/e;->ʽʾ(Lcom/tencent/news/video/n2;)V"
+      ]
+    }
+  ]
+}
