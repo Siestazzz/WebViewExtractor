@@ -64,20 +64,24 @@ public class Main {
         roots.sort(Comparator.comparingInt((String a)->idx.hierarchyMethods(a).stream().anyMatch(m->idx.seeds.contains(CapabilityIndex.key(m)))?0:1).thenComparing(a->a));
         try(ParallelActivityScheduler scheduler=new ParallelActivityScheduler(idx,inventory,roots,start,deadline,start+target*1_000_000_000L,analysisWorkers)){
         CapabilityEngine engine=scheduler.aggregate;
+        ReportBudget exportBudget=new ReportBudget(deadline);
         long[] checkpoint={System.nanoTime()};
         engine.checkpoint=()->{
             long now=System.nanoTime();if(now-checkpoint[0]<10_000_000_000L)return;
             updateCoverage(engine,roots,metrics);
             metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);metrics.put("elapsed_seconds",(now-start)/1e9);
             metrics.put("prior_report_write_seconds",reportWriteNanos/1e9);metrics.put("prior_report_writes",reportWrites);
+            metrics.put("report_reserve_seconds",exportBudget.reserveNanos()/1e9);
+            metrics.put("maximum_checkpoint_export_seconds",exportBudget.maximumExportNanos/1e9);
             try{write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));}catch(IOException ex){throw new UncheckedIOException(ex);}
+            exportBudget.observe(System.nanoTime()-now);
             checkpoint[0]=System.nanoTime();
         };
         metrics.put("target_seconds",target);metrics.put("worker_budget_seconds",hard);
         metrics.put("analysis_strategy","dex_index_parameterized_summaries");
         metrics.put("analysis_workers",analysisWorkers);metrics.put("shared_summary_cache",true);
         metrics.put("checkpoint_consistency","worker_quiescent_barrier");
-        write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
+        long initialExport=System.nanoTime();write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));exportBudget.observe(System.nanoTime()-initialExport);
         metrics.put("scheduling","initial_pass_then_resumable_round_robin");
         metrics.put("initial_slice_max_contexts",8);metrics.put("initial_slice_max_millis",50);
         metrics.put("deep_slice_max_contexts",100);metrics.put("deep_slice_max_millis",50);
@@ -85,9 +89,14 @@ public class Main {
         scheduler.initialPass(engine.checkpoint);
         metrics.put("initial_pass_seconds",(System.nanoTime()-start)/1e9);
         metrics.put("scheduling_stage","deep_analysis");updateCoverage(engine,roots,metrics);
-        write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));
-        while(scheduler.pending()&&System.nanoTime()<deadline)scheduler.deepEpoch(10_000_000_000L,engine.checkpoint);
-        metrics.put("scheduling_stage",scheduler.finished()?(engine.states.values().stream().anyMatch(s0->s0.limited||s0.provisionalFacts>0)?"finished_with_limits":"finished"):"deadline");
+        long firstPassExport=System.nanoTime();write(out.resolve("capabilities.json"),engine.report(hash,"partial",metrics));exportBudget.observe(System.nanoTime()-firstPassExport);
+        while(scheduler.pending()){
+            long available=exportBudget.analysisNanos(System.nanoTime());if(available<=0)break;
+            scheduler.deepEpoch(Math.min(10_000_000_000L,available),engine.checkpoint);
+        }
+        metrics.put("scheduling_stage",scheduler.finished()?(engine.states.values().stream().anyMatch(s0->s0.limited||s0.provisionalFacts>0)?"finished_with_limits":"finished"):System.nanoTime()>=deadline?"deadline":"report_reserve");
+        metrics.put("report_reserve_seconds",exportBudget.reserveNanos()/1e9);
+        metrics.put("maximum_checkpoint_export_seconds",exportBudget.maximumExportNanos/1e9);
         metrics.put("quiescent_barriers",scheduler.barriers);
         updateCoverage(engine,roots,metrics);
         metrics.put("elapsed_seconds",(System.nanoTime()-start)/1e9);metrics.put("decoded_methods",engine.flow.decoded);metrics.put("refined_summaries",engine.flow.refined);

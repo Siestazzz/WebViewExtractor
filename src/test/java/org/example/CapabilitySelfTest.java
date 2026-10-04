@@ -28,6 +28,8 @@ public final class CapabilitySelfTest {
   PhaseRetentionFixture.run();
   SchedulerIsolationFixture.run();
   ParallelActivityFixture.run();
+  SummaryCacheConcurrencyFixture.run();
+  ReportBudgetFixture.run();
   ContextPriorityFixture.run();
   SwitchOwnershipFixture.run();
   ComponentEntryFixture.run();

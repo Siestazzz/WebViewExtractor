@@ -18,7 +18,7 @@ final class DexFlow {
     record Summary(List<Call> calls,List<Write> writes,List<V> returns,boolean branched,boolean truncated) {}
     static final V UNKNOWN=V.of("unknown",null,"unknown");
     final CapabilityIndex idx;
-    final Map<String,Summary> cache=new HashMap<>();
+    final Map<String,Summary> cache=new java.util.concurrent.ConcurrentHashMap<>();
     record Refinement(List<V> probes,List<V> values,Summary summary) {}
     final Map<String,List<Refinement>> refinements=new HashMap<>();
     final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>(), reportedRefinementBudget=new HashSet<>();
@@ -41,10 +41,13 @@ final class DexFlow {
         return new V(kind,type,id,null,List.copyOf(args));
     }
     static int depth(V v){return v.args.isEmpty()?0:1+v.args.stream().mapToInt(DexFlow::depth).max().orElse(0);}
-    synchronized Summary summary(Method m){
+    Summary summary(Method m){
         String key=CapabilityIndex.key(m);Summary old=cache.get(key);if(old!=null)return old;
-        Set<V> probes=new LinkedHashSet<>();
-        Summary result=decode(m,v->{probes.add(v);return v;});baseGuardProbes.put(key,List.copyOf(probes));cache.put(key,result);decoded++;return result;
+        synchronized(this){
+            old=cache.get(key);if(old!=null)return old;
+            Set<V> probes=new LinkedHashSet<>();
+            Summary result=decode(m,v->{probes.add(v);return v;});baseGuardProbes.put(key,List.copyOf(probes));decoded++;cache.put(key,result);return result;
+        }
     }
     synchronized Summary summary(Method m,java.util.function.UnaryOperator<V> resolver){
         Summary base=summary(m);if(!base.branched())return base;

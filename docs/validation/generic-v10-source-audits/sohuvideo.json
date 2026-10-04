@@ -1,0 +1,2423 @@
+{
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "reviewer": {
+    "role": "independent source reviewer",
+    "model": "GPT-6 (Codex; exact runtime model identifier unavailable)"
+  },
+  "evidence": [
+    {
+      "file": "docs/validation/sohuvideo/canonical-facts.jsonl",
+      "source_rows": 93
+    },
+    {
+      "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+      "provenance": "separately proved host chains; fixed previous failures retained"
+    },
+    {
+      "file": "docs/validation/sohuvideo/inventory.json",
+      "manifest_entry_count": 407
+    },
+    {
+      "file": "docs/validation/sohuvideo/restored-player-family-source.json",
+      "reviewed_hosts": 24,
+      "source_hashes": "per evidence file",
+      "scope": "per-host lifecycle delegation + complete shared SDK binding/configuration/client chain"
+    },
+    {
+      "file": "docs/validation/sohuvideo/canonical-restored-player-report-guided.jsonl",
+      "source_rows": 648,
+      "note": "includes preserved listener misses; source evidence repeats framework per host only after concrete lifecycle proof"
+    },
+    {
+      "file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json",
+      "closed_hosts": 24
+    }
+  ],
+  "deep_positive_activities": [
+    "com.facebook.FacebookActivity",
+    "com.sina.weibo.sdk.web.WebActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.qfsdk.course.preview.ui.PreviewActivity",
+    "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+    "com.sohu.sohuvideo.ui.AccountSafeActivity",
+    "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+    "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+    "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+    "com.sohu.sohuvideo.ui.LocationChooseActivity",
+    "com.sohu.sohuvideo.ui.MessageListActivity",
+    "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+    "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+    "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+    "com.sohu.sohuvideo.ui.NewFansListActivity",
+    "com.sohu.sohuvideo.ui.OperatePageActivity",
+    "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+    "com.sohu.sohuvideo.ui.PushTransparentActivity",
+    "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+    "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+    "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+    "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+    "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+    "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+    "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+    "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+    "com.sohu.sohuvideo.workcollection.WorksActivity"
+  ],
+  "present_strata": {
+    "Fragment custom WebView inflation": [
+      "com.sohu.sohuvideo.ui.WebViewActivity",
+      "com.sohu.sohuvideo.ui.FarmExerciseActivity"
+    ],
+    "virtual Bridge/Client factory override": [
+      "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "com.sohu.sohuvideo.ui.WebViewPgcActivity"
+    ],
+    "advertising layout/container wrapper": [
+      "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+      "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity"
+    ],
+    "direct platform WebView": [
+      "com.sina.weibo.sdk.web.WebActivity",
+      "com.sohu.passport.core.WebViewActivity"
+    ],
+    "DialogFragment host": [
+      "com.facebook.FacebookActivity",
+      "com.sohu.qfsdk.course.preview.ui.PreviewActivity"
+    ],
+    "saved-state manager attachment -> XML child Fragment -> native-banner custom WebView": [
+      "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+      "com.sohu.sohuvideo.ui.AccountSafeActivity",
+      "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+      "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+      "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+      "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+      "com.sohu.sohuvideo.ui.LocationChooseActivity",
+      "com.sohu.sohuvideo.ui.MessageListActivity",
+      "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+      "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+      "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+      "com.sohu.sohuvideo.ui.NewFansListActivity",
+      "com.sohu.sohuvideo.ui.OperatePageActivity",
+      "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+      "com.sohu.sohuvideo.ui.PushTransparentActivity",
+      "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+      "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+      "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+      "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+      "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+      "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+      "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+      "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+      "com.sohu.sohuvideo.workcollection.WorksActivity"
+    ],
+    "Ali AuthWebView private prompt-map dispatcher": [
+      "com.ali.auth.third.ui.LoginWebViewActivity",
+      "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+      "com.ali.auth.third.ui.QrLoginActivity"
+    ],
+    "Alipay Activity inherited SDK layout wrapper": [
+      "com.alipay.sdk.app.H5PayActivity",
+      "com.alipay.sdk.app.H5AuthActivity",
+      "com.alipay.sdk.app.H5OpenAuthActivity"
+    ]
+  },
+  "source_supported_positive_activities": [
+    "com.ali.auth.third.ui.LoginWebViewActivity",
+    "com.ali.auth.third.ui.QrLoginActivity",
+    "com.ali.auth.third.ui.webview.BaseWebViewActivity",
+    "com.alipay.sdk.app.H5AuthActivity",
+    "com.alipay.sdk.app.H5OpenAuthActivity",
+    "com.alipay.sdk.app.H5PayActivity",
+    "com.facebook.FacebookActivity",
+    "com.sina.weibo.sdk.web.WebActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.qfsdk.course.preview.ui.PreviewActivity",
+    "com.sohu.sohuvideo.FirstNavigationActivityGroup",
+    "com.sohu.sohuvideo.audio.AudioDetailActivity",
+    "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity",
+    "com.sohu.sohuvideo.channel.activity.CalendarTipActivity",
+    "com.sohu.sohuvideo.channel.activity.ChannelAutoVideoListActivity",
+    "com.sohu.sohuvideo.channel.activity.ChannelFilterActivity",
+    "com.sohu.sohuvideo.channel.activity.ChannelMainListActivity",
+    "com.sohu.sohuvideo.channel.activity.ChannelMultipleActivity",
+    "com.sohu.sohuvideo.channel.activity.ChannelRankListActivity",
+    "com.sohu.sohuvideo.channel.activity.ChannelSpecialActivity",
+    "com.sohu.sohuvideo.channel.activity.GroupSubRecommendUsersActivity",
+    "com.sohu.sohuvideo.chat.ChatPhotoPreviewActivity",
+    "com.sohu.sohuvideo.chat.ChatPhotoSelectActivity",
+    "com.sohu.sohuvideo.chat.ChatReadActivity",
+    "com.sohu.sohuvideo.chat.ConversationActivity",
+    "com.sohu.sohuvideo.chat.PdfPreviewActivity",
+    "com.sohu.sohuvideo.chat.PgcVideosActivity",
+    "com.sohu.sohuvideo.chat.SessionListActivity",
+    "com.sohu.sohuvideo.chat.ShareFileToChatActivity",
+    "com.sohu.sohuvideo.control.update.UpdateActivity",
+    "com.sohu.sohuvideo.digital.DigitalHumanPreviewActivity",
+    "com.sohu.sohuvideo.digital.steps.DigitalHumanStepsActivity",
+    "com.sohu.sohuvideo.login.LoginBindConfirmActivity",
+    "com.sohu.sohuvideo.login.LoginBindMobileActivity",
+    "com.sohu.sohuvideo.login.LoginChangeBindMobileActivity",
+    "com.sohu.sohuvideo.login.LoginCompleDialogActivity",
+    "com.sohu.sohuvideo.login.LoginMobileReplaceActivity",
+    "com.sohu.sohuvideo.login.LoginMobileSingleBindActivity",
+    "com.sohu.sohuvideo.mvp.ui.activity.CommentAttachShowActivity",
+    "com.sohu.sohuvideo.mvp.ui.activity.DLNATestActivity",
+    "com.sohu.sohuvideo.mvp.ui.activity.LandscapePlayActivity",
+    "com.sohu.sohuvideo.mvp.ui.activity.VideoDetailActivity",
+    "com.sohu.sohuvideo.mvp.ui.activity.VideoDetailActivity2",
+    "com.sohu.sohuvideo.paysdk.ui.ActivateCodeActivity",
+    "com.sohu.sohuvideo.paysdk.ui.AutoRenewalAndOrderListActivity",
+    "com.sohu.sohuvideo.paysdk.ui.PaySelectUiActivity",
+    "com.sohu.sohuvideo.paysdk.ui.PurePayActivity",
+    "com.sohu.sohuvideo.paysdk.ui.SohuMovieAutoPayManagerActivity",
+    "com.sohu.sohuvideo.paysdk.ui.SohuMovieCouponActivity",
+    "com.sohu.sohuvideo.paysdk.ui.SohuMovieOrderDetailActivity",
+    "com.sohu.sohuvideo.playlist.MyPlaylistActivity",
+    "com.sohu.sohuvideo.playlist.PlayListCreateActivity",
+    "com.sohu.sohuvideo.playlist.PlayListStreamActivity",
+    "com.sohu.sohuvideo.playlist.PlaylistAddMyVideoActivity",
+    "com.sohu.sohuvideo.playlist.PlaylistDetailActivity",
+    "com.sohu.sohuvideo.playlist.PlaylistListActivity",
+    "com.sohu.sohuvideo.share.poster.PosterShareTestActivity",
+    "com.sohu.sohuvideo.ui.AIAvatarVideoSelectActivity",
+    "com.sohu.sohuvideo.ui.AISearchTestConfigActivity",
+    "com.sohu.sohuvideo.ui.AccountActivity",
+    "com.sohu.sohuvideo.ui.AccountSafeActivity",
+    "com.sohu.sohuvideo.ui.ActionTestActivity",
+    "com.sohu.sohuvideo.ui.AnnouncementActivity",
+    "com.sohu.sohuvideo.ui.AtListActivity",
+    "com.sohu.sohuvideo.ui.AtListContactsActivity",
+    "com.sohu.sohuvideo.ui.AtListFansActivity",
+    "com.sohu.sohuvideo.ui.AttentionEachActivity",
+    "com.sohu.sohuvideo.ui.AttentionSearchActivity",
+    "com.sohu.sohuvideo.ui.AudioRecordTestActivity",
+    "com.sohu.sohuvideo.ui.AudioUploadEditActivity",
+    "com.sohu.sohuvideo.ui.AuthenticateActivity",
+    "com.sohu.sohuvideo.ui.AuthenticateNewActivity",
+    "com.sohu.sohuvideo.ui.BuyTestActivity",
+    "com.sohu.sohuvideo.ui.BuyVipActivity",
+    "com.sohu.sohuvideo.ui.ChannelGifDialogActivity",
+    "com.sohu.sohuvideo.ui.CollectionFolderDetailActivity",
+    "com.sohu.sohuvideo.ui.CommentPicPreviewActivity",
+    "com.sohu.sohuvideo.ui.CommentPicSelectActivity",
+    "com.sohu.sohuvideo.ui.CommentReportActivity",
+    "com.sohu.sohuvideo.ui.ContactsActivity",
+    "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity",
+    "com.sohu.sohuvideo.ui.CopyrightActivity",
+    "com.sohu.sohuvideo.ui.CustomGalleryActivity",
+    "com.sohu.sohuvideo.ui.CustomPrivacySettingActivity",
+    "com.sohu.sohuvideo.ui.DigitalHumanActivity",
+    "com.sohu.sohuvideo.ui.DiscoverBloggerActivity",
+    "com.sohu.sohuvideo.ui.DiscoverBloggerSearchActivity",
+    "com.sohu.sohuvideo.ui.DomainSwitchesActivity",
+    "com.sohu.sohuvideo.ui.DownloadAudiosActivity",
+    "com.sohu.sohuvideo.ui.DownloadVideosActivity",
+    "com.sohu.sohuvideo.ui.EmailRegisterActivity",
+    "com.sohu.sohuvideo.ui.FansAndAttentionActivity",
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.FavoriteActivity",
+    "com.sohu.sohuvideo.ui.FeedFavorActivity",
+    "com.sohu.sohuvideo.ui.FeedGroupPageActivity",
+    "com.sohu.sohuvideo.ui.FeedMessageActivity",
+    "com.sohu.sohuvideo.ui.FeedRepostListActivity",
+    "com.sohu.sohuvideo.ui.FeedSecondActivity",
+    "com.sohu.sohuvideo.ui.FindInterestUsersActivity",
+    "com.sohu.sohuvideo.ui.ForgetPasswordActivity",
+    "com.sohu.sohuvideo.ui.ForgetPasswordSelectActivity",
+    "com.sohu.sohuvideo.ui.ForwardEditActivity",
+    "com.sohu.sohuvideo.ui.GroupAdministratorPermissionActivity",
+    "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity",
+    "com.sohu.sohuvideo.ui.GroupCompleListActivity",
+    "com.sohu.sohuvideo.ui.GroupFanListSearchActivity",
+    "com.sohu.sohuvideo.ui.GroupSearchActivity",
+    "com.sohu.sohuvideo.ui.GuideActivity",
+    "com.sohu.sohuvideo.ui.GuideLoginActivity",
+    "com.sohu.sohuvideo.ui.HeadWearSecondActivity",
+    "com.sohu.sohuvideo.ui.HomepageSearchActivity",
+    "com.sohu.sohuvideo.ui.IMTestActivity",
+    "com.sohu.sohuvideo.ui.IdDisplayTestActivity",
+    "com.sohu.sohuvideo.ui.InterestTagAddActivity",
+    "com.sohu.sohuvideo.ui.InterestTagManageActivity",
+    "com.sohu.sohuvideo.ui.KoomConfigActivity",
+    "com.sohu.sohuvideo.ui.LiteBindPhoneActivity",
+    "com.sohu.sohuvideo.ui.LiteLoginActivity",
+    "com.sohu.sohuvideo.ui.LiteLoginPicCodeActivity",
+    "com.sohu.sohuvideo.ui.LiteVerifyActivity",
+    "com.sohu.sohuvideo.ui.LiveAdvanceActivity",
+    "com.sohu.sohuvideo.ui.LiveAssignUserListActivity",
+    "com.sohu.sohuvideo.ui.LocalFavoriteTestActivity",
+    "com.sohu.sohuvideo.ui.LocationChooseActivity",
+    "com.sohu.sohuvideo.ui.LogCollectorActivity",
+    "com.sohu.sohuvideo.ui.LoginActivity",
+    "com.sohu.sohuvideo.ui.LoginAuthorizeActivity",
+    "com.sohu.sohuvideo.ui.MediaMarkActivity",
+    "com.sohu.sohuvideo.ui.MessageListActivity",
+    "com.sohu.sohuvideo.ui.MobileDownloadDialogActivity",
+    "com.sohu.sohuvideo.ui.MsgBoxSubActivity",
+    "com.sohu.sohuvideo.ui.MyAppointmentActivity",
+    "com.sohu.sohuvideo.ui.MyCollectionActivity",
+    "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity",
+    "com.sohu.sohuvideo.ui.MySohuCoinActivity",
+    "com.sohu.sohuvideo.ui.NearbyPeopleActivity",
+    "com.sohu.sohuvideo.ui.NewFansListActivity",
+    "com.sohu.sohuvideo.ui.NewUserGiftActivity",
+    "com.sohu.sohuvideo.ui.NewsDetailActivity",
+    "com.sohu.sohuvideo.ui.NewsPhotoShowActivity",
+    "com.sohu.sohuvideo.ui.NotificationMessageActivity",
+    "com.sohu.sohuvideo.ui.OaidPrivilegeSecondActivity",
+    "com.sohu.sohuvideo.ui.OfflineDownloadingActivity",
+    "com.sohu.sohuvideo.ui.OperatePageActivity",
+    "com.sohu.sohuvideo.ui.PersonalGenderEditActivity",
+    "com.sohu.sohuvideo.ui.PersonalInfoActivity",
+    "com.sohu.sohuvideo.ui.PersonalLabelBuildActivity",
+    "com.sohu.sohuvideo.ui.PersonalNicknameEditActivity",
+    "com.sohu.sohuvideo.ui.PersonalPermissionActivity",
+    "com.sohu.sohuvideo.ui.PersonalSignEditActivity",
+    "com.sohu.sohuvideo.ui.PersonalWalletActivity",
+    "com.sohu.sohuvideo.ui.PgcInfoActivity",
+    "com.sohu.sohuvideo.ui.PhoneBaseInfoActivity",
+    "com.sohu.sohuvideo.ui.PhoneLoginActivity",
+    "com.sohu.sohuvideo.ui.PhoneZoneActivity",
+    "com.sohu.sohuvideo.ui.PhotoPreviewActivity",
+    "com.sohu.sohuvideo.ui.PhotoRecyclerViewPreviewActivity",
+    "com.sohu.sohuvideo.ui.PhotoResizeActivity",
+    "com.sohu.sohuvideo.ui.PhotoSearchDetailActivity",
+    "com.sohu.sohuvideo.ui.PhotoSelectActivity",
+    "com.sohu.sohuvideo.ui.PlayHistoryActivity",
+    "com.sohu.sohuvideo.ui.PopularPeopleActivity",
+    "com.sohu.sohuvideo.ui.PostActivity",
+    "com.sohu.sohuvideo.ui.PraiseOrRepostUserListActivity",
+    "com.sohu.sohuvideo.ui.PrivacyChooseActivity",
+    "com.sohu.sohuvideo.ui.PushTestActivity",
+    "com.sohu.sohuvideo.ui.PushTransparentActivity",
+    "com.sohu.sohuvideo.ui.QianfanCallActivity",
+    "com.sohu.sohuvideo.ui.QrCodeActivity",
+    "com.sohu.sohuvideo.ui.RealNameVerifyActivity",
+    "com.sohu.sohuvideo.ui.SafetyCenterActivity",
+    "com.sohu.sohuvideo.ui.SearchAIChatActivity",
+    "com.sohu.sohuvideo.ui.SearchAIFeedbackActivity",
+    "com.sohu.sohuvideo.ui.SearchActivity",
+    "com.sohu.sohuvideo.ui.SearchResultAudioPlayListActivity",
+    "com.sohu.sohuvideo.ui.SearchResultPosterActivity",
+    "com.sohu.sohuvideo.ui.SearchResultVideoAndPlayListActivity",
+    "com.sohu.sohuvideo.ui.SearchTagStreamActivity",
+    "com.sohu.sohuvideo.ui.SearchVideoListActivity",
+    "com.sohu.sohuvideo.ui.SetPasswordActivity",
+    "com.sohu.sohuvideo.ui.SettingPushAttentionActivity",
+    "com.sohu.sohuvideo.ui.SettingsActivity",
+    "com.sohu.sohuvideo.ui.SettingsChatBlacklistActivity",
+    "com.sohu.sohuvideo.ui.SettingsEitHitListActivity",
+    "com.sohu.sohuvideo.ui.SettingsGeneralActivity",
+    "com.sohu.sohuvideo.ui.SettingsPgcActivity",
+    "com.sohu.sohuvideo.ui.SettingsPrivacyActivity",
+    "com.sohu.sohuvideo.ui.SohuDLActivity",
+    "com.sohu.sohuvideo.ui.SohuEntryActivity",
+    "com.sohu.sohuvideo.ui.SohuTextShareActivity",
+    "com.sohu.sohuvideo.ui.SpecialConfigurationActivity",
+    "com.sohu.sohuvideo.ui.SpecialSwitchesActivity",
+    "com.sohu.sohuvideo.ui.SweepActivity",
+    "com.sohu.sohuvideo.ui.SweepPhotoActivity",
+    "com.sohu.sohuvideo.ui.SweepResultActivity",
+    "com.sohu.sohuvideo.ui.SwitchAccountActivity",
+    "com.sohu.sohuvideo.ui.SwitchesActivity",
+    "com.sohu.sohuvideo.ui.SwitchesEntranceActivity",
+    "com.sohu.sohuvideo.ui.SwitchesPageActivity",
+    "com.sohu.sohuvideo.ui.SystemPrivilegesSecondActivity",
+    "com.sohu.sohuvideo.ui.TeenagerExitActivity",
+    "com.sohu.sohuvideo.ui.TeenagerExplainActivity",
+    "com.sohu.sohuvideo.ui.TeenagerLimitActivity",
+    "com.sohu.sohuvideo.ui.TeenagerModeSetActivity",
+    "com.sohu.sohuvideo.ui.TeenagerSearchActivity",
+    "com.sohu.sohuvideo.ui.TeenagerSelectAgeActivity",
+    "com.sohu.sohuvideo.ui.TeenagerTimeSettingActivity",
+    "com.sohu.sohuvideo.ui.TeenagerVerifyCodeActivity",
+    "com.sohu.sohuvideo.ui.TestConfigActivity",
+    "com.sohu.sohuvideo.ui.TestConfigUploadActivity",
+    "com.sohu.sohuvideo.ui.TestLivePlay2Activity",
+    "com.sohu.sohuvideo.ui.TestLivePlayActivity",
+    "com.sohu.sohuvideo.ui.TextGenerateActivity",
+    "com.sohu.sohuvideo.ui.TopicBindAlbumActivity",
+    "com.sohu.sohuvideo.ui.TopicJoinActivity",
+    "com.sohu.sohuvideo.ui.TopicListActivity",
+    "com.sohu.sohuvideo.ui.TopicPhotoPostActivity",
+    "com.sohu.sohuvideo.ui.TopicPhotoPreviewActivity",
+    "com.sohu.sohuvideo.ui.TopicPlazaActivity",
+    "com.sohu.sohuvideo.ui.UploadEditActivity",
+    "com.sohu.sohuvideo.ui.UserCityEditActivity",
+    "com.sohu.sohuvideo.ui.UserCountryEditActivity",
+    "com.sohu.sohuvideo.ui.UserHomePageActivity",
+    "com.sohu.sohuvideo.ui.UserInterestTagManagerActivity",
+    "com.sohu.sohuvideo.ui.UserPhotoAILabelActivity",
+    "com.sohu.sohuvideo.ui.UserPhotoAIShowActivity",
+    "com.sohu.sohuvideo.ui.UserPhotoActivity",
+    "com.sohu.sohuvideo.ui.UserProvinceEditActivity",
+    "com.sohu.sohuvideo.ui.ValidateSafeCheckPhoneActivity",
+    "com.sohu.sohuvideo.ui.VerticalPlayActivity",
+    "com.sohu.sohuvideo.ui.VideoChapterDotActivity",
+    "com.sohu.sohuvideo.ui.VideoEditMultiSelectActivity",
+    "com.sohu.sohuvideo.ui.VideoFeedbackActivity",
+    "com.sohu.sohuvideo.ui.VideoReportActivity",
+    "com.sohu.sohuvideo.ui.VideoSummaryEditActivity",
+    "com.sohu.sohuvideo.ui.VipBenefitsChannelActivity",
+    "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity",
+    "com.sohu.sohuvideo.ui.VipTicketsChannelActivity",
+    "com.sohu.sohuvideo.ui.VrsCollectionActivity",
+    "com.sohu.sohuvideo.ui.VrsImmersiveActivity",
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+    "com.sohu.sohuvideo.ui.camera.CameraActivity",
+    "com.sohu.sohuvideo.ui.fragment.feedgroup.manager.CreateGroupColumnsActivity",
+    "com.sohu.sohuvideo.ui.fragment.feedgroup.manager.GroupColumnsActivity",
+    "com.sohu.sohuvideo.ui.fragment.feedgroup.manager.GroupColumnsDeleteActivity",
+    "com.sohu.sohuvideo.ui.group.GroupChannnelActivity",
+    "com.sohu.sohuvideo.ui.group.GroupFansListActivity",
+    "com.sohu.sohuvideo.ui.group.GroupHotUserListActivity",
+    "com.sohu.sohuvideo.ui.group.GroupListActivity",
+    "com.sohu.sohuvideo.ui.group.GroupListOtherActivity",
+    "com.sohu.sohuvideo.ui.group.GroupPlazaActivity",
+    "com.sohu.sohuvideo.ui.homepage.MainActivity",
+    "com.sohu.sohuvideo.ui.homepage.TeenagerMainActivity",
+    "com.sohu.sohuvideo.ui.movie.MovieMainActivity",
+    "com.sohu.sohuvideo.ui.record.RecordActivity",
+    "com.sohu.sohuvideo.ui.record.RecordSelectActivity",
+    "com.sohu.sohuvideo.ui.record.RecordSimpleActivity",
+    "com.sohu.sohuvideo.ui.report.CommentReportActivity2",
+    "com.sohu.sohuvideo.ui.shortvideo.CoverChangeActivity",
+    "com.sohu.sohuvideo.ui.template.videostream.SearchVideoStreamActivity",
+    "com.sohu.sohuvideo.ui.template.videostream.VideoStreamActivity",
+    "com.sohu.sohuvideo.ui.videoEdit.AiAvatarClipEditActivity",
+    "com.sohu.sohuvideo.ui.videoEdit.PhotoSingleClipEditActivity",
+    "com.sohu.sohuvideo.ui.videoEdit.QuickMouldVideoActivity",
+    "com.sohu.sohuvideo.ui.videoEdit.VideoEditDraftActivity",
+    "com.sohu.sohuvideo.ui.videoEdit.VideoSingleClipEditActivity",
+    "com.sohu.sohuvideo.ui.videoEdit.videopost.LivePlaybackClipActivity",
+    "com.sohu.sohuvideo.voice.VoiceDetailActivity",
+    "com.sohu.sohuvideo.wbshare.WBShareEntryActivity",
+    "com.sohu.sohuvideo.workcollection.CollectionManageActivity",
+    "com.sohu.sohuvideo.workcollection.WorksActivity",
+    "com.sohu.sohuvideo.workcollection.WorksCollectionEditActivity",
+    "com.sohu.sohuvideo.workcollection.WorksDeleteActivity",
+    "com.sohu.sohuvideo.workcollection.WorksDetailActivity",
+    "com.sohu.sohuvideo.workcollection.WorksTabsOrderActivity"
+  ],
+  "audit_complete": false,
+  "exhaustive_inventory": false,
+  "exhaustive_source_search_proves_fewer_than_30": false,
+  "unreviewed_frameworks": [
+    "Ali Auth/Alipay/Qianfan/news wrappers and remaining SDKs",
+    "app navigation/share dialogs, dynamically bound Activities"
+  ],
+  "unknown": [
+    "Deep list covers named reviewed core chains; all-output capability precision incomplete.",
+    "Some present strata have fewer than two deep reviewed hosts.",
+    "Holdout reservations are not sealed gold or passed recall.",
+    "Manifest unreviewed entries are unknown, not negative evidence.",
+    "New SDK hosts have ownership and settings reviewed; remaining callback/map bridge surfaces prevent counting them as complete deep reviews.",
+    "Shared restored-player SDK surface now closed with inherited NBS, Chrome wrapper and both download registrations; whole-APK and all-output capability precision remain incomplete."
+  ],
+  "acceptance": "unproven",
+  "partial_source_review_activities": {
+    "Ali Auth inherited layout + empty API override": [
+      "com.ali.auth.third.ui.LoginWebViewActivity",
+      "com.ali.auth.third.ui.webview.BaseWebViewActivity"
+    ],
+    "Alipay shared constructor wrapper": [
+      "com.alipay.sdk.app.H5PayActivity",
+      "com.alipay.sdk.app.H5AuthActivity"
+    ],
+    "direct layout attachment": [
+      "com.sina.weibo.sdk.web.WebActivity"
+    ]
+  },
+  "source_coverage_per_host": {
+    "com.sohu.sohuvideo.audio.download.AudioBatchDownloadActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.AccountSafeActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.CooperationCreateUserSelectActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.FeedRepostListActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.GroupBlacklistManagerActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.IdDisplayTestActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.LocationChooseActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.MessageListActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.MyAppointmentActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.MyReceivedLikeListActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.MySohuCoinActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.NewFansListActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.OperatePageActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.PersonalWalletActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.PushTransparentActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.RealNameVerifyActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.SearchVideoListActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.SohuTextShareActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.SwitchesEntranceActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.SwitchesPageActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.VipRenewOptimizeActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.group.GroupChannnelActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.ui.group.GroupPlazaActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.sohuvideo.workcollection.WorksActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Complete actual shared native-banner WebView SDK surface; concrete Activity lifecycle chain independently proved",
+      "evidence_file": "docs/validation/sohuvideo/restored-player-sdk-deep-closure.json"
+    },
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Named primary source-owned WebView and complete actual registered implementation/inherited surfaces",
+      "evidence_files": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+          "sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-prompt-endpoints-report-guided.jsonl",
+          "sha256": "ab54d26f5718346ffaebe0873b85d6a9079e3b8aa959f11a3b84d8a1f3340f3d"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source-rejected-v6.json",
+          "sha256": "5d1692369ea1224d2d1ea8a88033d89a155b560b1588f60361299f541bb10c2c"
+        }
+      ],
+      "source_rejected_rows_excluded_from_deep_proof": false,
+      "frozen_gold_not_modified": true
+    },
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Named primary source-owned WebView and complete actual registered implementation/inherited surfaces",
+      "evidence_files": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+          "sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-download-extension-report-guided.jsonl",
+          "sha256": "0dff0d40a09559346bf5bbc98f6cbb33f63c66240e291ebc4128836175c79f90"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-sdk-surface-report-guided.jsonl",
+          "sha256": "892cd120500591dc72c82521f89103835c99655570f4876b1266ab0027f0a8d7"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-shared-nbs-chrome-report-guided.jsonl",
+          "sha256": "fce126cdd697cee1fe9ad166da1a7d051626092186ab40b69c95b07561d0f57c"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-prompt-endpoints-report-guided.jsonl",
+          "sha256": "ab54d26f5718346ffaebe0873b85d6a9079e3b8aa959f11a3b84d8a1f3340f3d"
+        },
+        {
+          "file": "docs/validation/sohuvideo/shared-sdk-surface-source-rejected-v6.json",
+          "sha256": "5d1692369ea1224d2d1ea8a88033d89a155b560b1588f60361299f541bb10c2c"
+        }
+      ],
+      "source_rejected_rows_excluded_from_deep_proof": true,
+      "frozen_gold_not_modified": true
+    },
+    "com.sohu.passport.core.WebViewActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Named primary source-owned WebView and complete actual registered implementation/inherited surfaces",
+      "evidence_files": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-facts.jsonl",
+          "sha256": "3755b3b137af45f8c4d6b4a4fcec683c4ac0ee364a75ac1d8cde13184577ba32"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+          "sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-core-sdk-closure-report-guided.jsonl",
+          "sha256": "2f10e6b1ce3803239e2e74a323ff288df699ae200e18bd46f6c8719911dfad19"
+        }
+      ],
+      "source_rejected_rows_excluded_from_deep_proof": false,
+      "frozen_gold_not_modified": true
+    },
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Named primary source-owned WebView and complete actual registered implementation/inherited surfaces",
+      "evidence_files": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-facts.jsonl",
+          "sha256": "3755b3b137af45f8c4d6b4a4fcec683c4ac0ee364a75ac1d8cde13184577ba32"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+          "sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-core-sdk-closure-report-guided.jsonl",
+          "sha256": "2f10e6b1ce3803239e2e74a323ff288df699ae200e18bd46f6c8719911dfad19"
+        }
+      ],
+      "source_rejected_rows_excluded_from_deep_proof": false,
+      "frozen_gold_not_modified": true
+    },
+    "com.sohu.sohuvideo.ui.WebViewActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Named primary source-owned WebView and complete actual registered implementation/inherited surfaces",
+      "evidence_files": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-facts.jsonl",
+          "sha256": "3755b3b137af45f8c4d6b4a4fcec683c4ac0ee364a75ac1d8cde13184577ba32"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+          "sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-core-sdk-closure-report-guided.jsonl",
+          "sha256": "2f10e6b1ce3803239e2e74a323ff288df699ae200e18bd46f6c8719911dfad19"
+        }
+      ],
+      "source_rejected_rows_excluded_from_deep_proof": false,
+      "frozen_gold_not_modified": true
+    },
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Named primary source-owned WebView and complete actual registered implementation/inherited surfaces",
+      "evidence_files": [
+        {
+          "file": "docs/validation/sohuvideo/canonical-facts.jsonl",
+          "sha256": "3755b3b137af45f8c4d6b4a4fcec683c4ac0ee364a75ac1d8cde13184577ba32"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-additional-report-guided.jsonl",
+          "sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107"
+        },
+        {
+          "file": "docs/validation/sohuvideo/canonical-core-sdk-closure-report-guided.jsonl",
+          "sha256": "2f10e6b1ce3803239e2e74a323ff288df699ae200e18bd46f6c8719911dfad19"
+        }
+      ],
+      "source_rejected_rows_excluded_from_deep_proof": false,
+      "frozen_gold_not_modified": true
+    },
+    "com.sina.weibo.sdk.web.WebActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Own programmatically attached platform WebView: all three actual SDK client alternatives, inherited NBS client/bridge and loadUrl Chrome wrapper, own Chrome two members, full settings constructor + mixed-content",
+      "evidence_files": [
+        "docs/validation/sohuvideo/canonical-weibo-sdk-closure-report-guided.jsonl",
+        "docs/validation/sohuvideo/canonical-sdk-probes-report-guided.jsonl"
+      ],
+      "development_not_holdout": true
+    },
+    "com.ali.auth.third.ui.LoginWebViewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.ali.auth.third.ui.QrLoginActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.ali.auth.third.ui.QrLoginConfirmActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.ali.auth.third.ui.webview.BaseWebViewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.alibaba.baichuan.android.trade.ui.AlibcWebViewActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.jdpaysdk.author.browser.BrowserActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.NewsDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ProtocalActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.unionpay.UPPayWapActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.alibaba.wireless.security.open.middletier.fc.ui.ContainerActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.alibaba.wireless.security.open.middletier.fc.ui.ExtContainerActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.alipay.sdk.app.H5AuthActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.alipay.sdk.app.H5OpenAuthActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.alipay.sdk.app.H5PayActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.baidu.oauth.sdkbqt.view.WebViewActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.facebook.FacebookActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Actual WebDialog own WebView primary surface, ordinary/fallback builder alternatives",
+      "evidence_file": "docs/validation/sohuvideo/facebook-sdk-deep-closure.json"
+    },
+    "com.kepler.jd.sdk.WebViewActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.app.ads.sdk.crazyfocus.CrazyFocusVideoActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.app.ads.sdk.settings.AdvertActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.qfsdk.course.preview.ui.PreviewActivity": {
+      "bridge": "done",
+      "setting": "done",
+      "callback": "done",
+      "scope": "Actual default About-button DialogFragment WebView and complete APK-visible injected endpoint/settings/registered-client SDK surfaces",
+      "evidence_file": "docs/validation/sohuvideo/qf-preview-sdk-deep-closure.json",
+      "dynamic_value_identity_certified": false
+    },
+    "com.sohu.qianfan.base.ui.view.webapp.QFWebViewActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.FirstNavigationActivityGroup": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.audio.AudioDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.CalendarTipActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.ChannelAutoVideoListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.ChannelFilterActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.ChannelMainListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.ChannelMultipleActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.ChannelRankListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.ChannelSpecialActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.channel.activity.GroupSubRecommendUsersActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.ChatPhotoPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.ChatPhotoSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.ChatReadActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.ConversationActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.PdfPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.PgcVideosActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.SessionListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.chat.ShareFileToChatActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.control.update.UpdateActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.digital.DigitalHumanPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.digital.steps.DigitalHumanStepsActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.login.LoginBindConfirmActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.login.LoginBindMobileActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.login.LoginChangeBindMobileActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.login.LoginCompleDialogActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.login.LoginMobileReplaceActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.login.LoginMobileSingleBindActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.mvp.ui.activity.CommentAttachShowActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.mvp.ui.activity.DLNATestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.mvp.ui.activity.LandscapePlayActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.mvp.ui.activity.VideoDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.mvp.ui.activity.VideoDetailActivity2": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.ActivateCodeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.AutoRenewalAndOrderListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.PaySelectUiActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.PurePayActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.SohuMovieAutoPayManagerActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.SohuMovieCouponActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.paysdk.ui.SohuMovieOrderDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.playlist.MyPlaylistActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.playlist.PlayListCreateActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.playlist.PlayListStreamActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.playlist.PlaylistAddMyVideoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.playlist.PlaylistDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.playlist.PlaylistListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.share.poster.PosterShareActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.share.poster.PosterShareTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AIAvatarVideoSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AISearchTestConfigActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AccountActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ActionTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AnnouncementActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AtListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AtListContactsActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AtListFansActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AttentionEachActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AttentionSearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AudioRecordTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AudioUploadEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AuthenticateActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.AuthenticateNewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.BuyTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.BuyVipActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.BytedanceSchemeFilterActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ChannelGifDialogActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CollectionFolderDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CommentPicPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CommentPicSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CommentReportActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ContactsActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CopyrightActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CustomGalleryActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.CustomPrivacySettingActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.DigitalHumanActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.DiscoverBloggerActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.DiscoverBloggerSearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.DomainSwitchesActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.DownloadAudiosActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.DownloadVideosActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.EmailRegisterActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FakeChatActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FansAndAttentionActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FavoriteActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FeedFavorActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FeedGroupPageActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FeedMessageActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FeedSecondActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.FindInterestUsersActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ForgetPasswordActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ForgetPasswordSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ForwardEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.GroupAdministratorPermissionActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.GroupCompleListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.GroupFanListSearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.GroupSearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.GuideActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.GuideLoginActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.HeadWearSecondActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.HomepageSearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.IMTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.InterestTagAddActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.InterestTagManageActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.KoomConfigActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LiteBindPhoneActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LiteLoginActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LiteLoginPicCodeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LiteVerifyActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LiveAdvanceActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LiveAssignUserListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LocalFavoriteTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LogCollectorActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LoginActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.LoginAuthorizeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.MediaMarkActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.MobileDownloadDialogActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.MsgBoxSubActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.MyCollectionActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.NearbyPeopleActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.NewUserGiftActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.NewsPhotoShowActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.NotificationMessageActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.OaidPrivilegeSecondActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.OfflineActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.OfflineDownloadingActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PermissionCommonActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PersonalGenderEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PersonalInfoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PersonalLabelBuildActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PersonalNicknameEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PersonalPermissionActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PersonalSignEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PgcInfoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhoneBaseInfoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhoneLoginActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhoneZoneActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhotoPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhotoRecyclerViewPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhotoResizeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhotoSearchDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PhotoSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PlayHistoryActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PopularPeopleActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PostActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PraiseOrRepostUserListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PrivacyChooseActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ProtocolDealActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ProtocolDealForHeadLinePublishActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.PushTestActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.QianfanCallActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.QrCodeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SafetyCenterActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchAIChatActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchAIFeedbackActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchResultAudioPlayListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchResultPosterActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchResultVideoAndPlayListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SearchTagStreamActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SetPasswordActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingPushAttentionActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingsActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingsChatBlacklistActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingsEitHitListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingsGeneralActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingsPgcActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SettingsPrivacyActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SohuDLActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SohuEntryActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SpecialConfigurationActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SpecialSwitchesActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SweepActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SweepPhotoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SweepResultActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SwitchAccountActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SwitchesActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.SystemPrivilegesSecondActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerExitActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerExplainActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerLimitActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerModeSetActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerSearchActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerSelectAgeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerTimeSettingActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TeenagerVerifyCodeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TestConfigActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TestConfigUploadActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TestLivePlay2Activity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TestLivePlayActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TextGenerateActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TopicBindAlbumActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TopicJoinActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TopicListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TopicPhotoPostActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TopicPhotoPreviewActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TopicPlazaActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.TwitterAuthEntryActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UploadEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserCityEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserCountryEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserHomePageActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserInterestTagManagerActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserPhotoAILabelActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserPhotoAIShowActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserPhotoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.UserProvinceEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.ValidateSafeCheckPhoneActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VerticalPlayActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VideoChapterDotActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VideoEditMultiSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VideoFeedbackActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VideoReportActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VideoSummaryEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VipBenefitsChannelActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VipTicketsChannelActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VrsCollectionActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.VrsImmersiveActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.camera.CameraActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.clipper.SecondaryEditActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.coverstory.CoverStoryActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.fragment.feedgroup.manager.CreateGroupColumnsActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.fragment.feedgroup.manager.GroupColumnsActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.fragment.feedgroup.manager.GroupColumnsDeleteActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.group.GroupFansListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.group.GroupHotUserListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.group.GroupListActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.group.GroupListOtherActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.homepage.MainActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.homepage.TeenagerMainActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.movie.MovieMainActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.record.RecordActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.record.RecordSelectActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.record.RecordSimpleActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.report.CommentReportActivity2": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.shortvideo.CoverChangeActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.template.videostream.SearchVideoStreamActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.template.videostream.VideoStreamActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.topic.AddTopicActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.AiAvatarClipEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.MultiMediaPreviewActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.NewVideoEditActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.PhotoSingleClipEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.QuickMouldVideoActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.VideoEditDraftActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.VideoSingleClipEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.ui.videoEdit.videopost.LivePlaybackClipActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.voice.VoiceDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.wbshare.WBShareEntryActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.workcollection.CollectionManageActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.workcollection.WorksCollectionEditActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.workcollection.WorksDeleteActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.workcollection.WorksDetailActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.workcollection.WorksTabsOrderActivity": {
+      "bridge": "partial",
+      "setting": "partial",
+      "callback": "partial",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    },
+    "com.sohu.sohuvideo.wxapi.WXEntryActivity": {
+      "bridge": "unknown",
+      "setting": "unknown",
+      "callback": "unknown",
+      "scope": "ownership evidence only; complete capability surface not certified"
+    }
+  }
+}
