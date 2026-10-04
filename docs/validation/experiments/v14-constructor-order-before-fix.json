@@ -1,0 +1,39 @@
+{
+  "scope": "Development allocation-capture temporal regression, not App acceptance. Allocation-time heap manually represents preceding helper effects; expected original captured object or diagnosed unknown, never later concrete object.",
+  "fixture": "src/test/java/org/example/ConstructorCaptureOrderingFixture.java",
+  "fixture_sha256": "81bca3eafb6fee84de9adfb3f75a039eb435a4d9e98d56561ca00838785fbe07",
+  "capture_implementation_sha256": "edb53d9cec0e0b6b1832654a0e3599847a143ac413255ee0d5054a60d7a21e48",
+  "base_jar_sha256": "893801996f1b4822fdeb79c006544527e071a2b381d743c913025cb03ec2f22a",
+  "runs": [
+    {
+      "mode": "plain",
+      "exit_code": 0,
+      "output": "plain saved=V[kind=object, type=ordering.Old, id=old, literal=null, args=[]] gaps=[]\n"
+    },
+    {
+      "mode": "body",
+      "exit_code": 0,
+      "output": "body saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_body_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "super",
+      "exit_code": 0,
+      "output": "super saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_body_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "indirect",
+      "exit_code": 0,
+      "output": "indirect saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_argument_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "inherited",
+      "exit_code": 1,
+      "output": "inherited saved=V[kind=object, type=ordering.Next, id=next, literal=null, args=[]] gaps=[]\nException in thread \"main\" java.lang.AssertionError: inherited retained later/unproved object: V[kind=object, type=ordering.Next, id=next, literal=null, args=[]]\n\tat org.example.ConstructorCaptureOrderingFixture.check(ConstructorCaptureOrderingFixture.java:53)\n\tat org.example.ConstructorCaptureOrderingFixture.main(ConstructorCaptureOrderingFixture.java:59)\n"
+    },
+    {
+      "mode": "override",
+      "exit_code": 1,
+      "output": "override saved=V[kind=object, type=ordering.Next, id=next, literal=null, args=[]] gaps=[]\nException in thread \"main\" java.lang.AssertionError: override retained later/unproved object: V[kind=object, type=ordering.Next, id=next, literal=null, args=[]]\n\tat org.example.ConstructorCaptureOrderingFixture.check(ConstructorCaptureOrderingFixture.java:53)\n\tat org.example.ConstructorCaptureOrderingFixture.main(ConstructorCaptureOrderingFixture.java:59)\n"
+    }
+  ]
+}

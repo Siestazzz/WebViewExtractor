@@ -51,6 +51,10 @@ public final class CapabilitySelfTest {
   StaticStartupReflectionFixture.run();
   StaticReflectionBudgetFixture.run();
   ApplicationBootstrapFixture.run();
+  AllocationCaptureFixture.run();
+  ConstructorCaptureOrderingFixture.run();
+  FragmentTransactionIsolationProbe.main(new String[0]);
+  FragmentActivationFixture.run();
   StaticBridgeFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
@@ -489,7 +493,7 @@ public final class CapabilitySelfTest {
    check(engine.activities.size()==1,"Evidence length incorrectly blocked deep capability chain");
    @SuppressWarnings("unchecked")var facts=(Collection<Map<String,Object>>)engine.activities.get(0).get("facts");
    check(facts.stream().anyMatch(f->"deep-direct".equals(f.get("registration_name"))),"Deep direct capability lost");
-   check(facts.stream().anyMatch(f->"deep-fragment".equals(f.get("registration_name"))),"Deep actual Fragment lifecycle lost");
+   check(facts.stream().noneMatch(f->"deep-fragment".equals(f.get("registration_name"))),"Deep uninstalled Fragment allocation executed a lifecycle");
    check(facts.stream().allMatch(f->((List<?>)f.get("evidence")).size()<=64),"Evidence presentation grew without bound");
    check(engine.activities.get(0).get("limitations").toString().contains("evidence_path_truncated"),"Omitted evidence was not diagnosed");
   }finally{Files.deleteIfExists(path);}

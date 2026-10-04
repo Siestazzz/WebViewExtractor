@@ -1,0 +1,854 @@
+{
+  "reason": "New settings checkpoint repeated seven existing exact source call/API/value observations with additional phase evidence. Preserve all old rows; omit only new duplicates from additive canonical. Condition clarification retained separately; not source counterexample nor extractor improvement.",
+  "old_row_count": 551,
+  "new_duplicate_rows": [
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setJavaScriptEnabled",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V",
+      "value": true,
+      "value_kind": "literal",
+      "source_expression": "settings.setJavaScriptEnabled(true)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 62,
+          "text": "settings.setJavaScriptEnabled(true);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setLoadWithOverviewMode",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V",
+      "value": true,
+      "value_kind": "literal",
+      "source_expression": "settings.setLoadWithOverviewMode(true)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 76,
+          "text": "settings.setLoadWithOverviewMode(true);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setUseWideViewPort",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V",
+      "value": true,
+      "value_kind": "literal",
+      "source_expression": "settings.setUseWideViewPort(true)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 77,
+          "text": "settings.setUseWideViewPort(true);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setDomStorageEnabled",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V",
+      "value": true,
+      "value_kind": "literal",
+      "source_expression": "settings.setDomStorageEnabled(true)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 78,
+          "text": "settings.setDomStorageEnabled(true);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setAllowFileAccess",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V",
+      "value": false,
+      "value_kind": "literal",
+      "source_expression": "settings.setAllowFileAccess(false)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 79,
+          "text": "settings.setAllowFileAccess(false);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setBlockNetworkImage",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setBlockNetworkImage(Z)V",
+      "value": false,
+      "value_kind": "literal",
+      "source_expression": "settings.setBlockNetworkImage(false)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 80,
+          "text": "settings.setBlockNetworkImage(false);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    },
+    {
+      "activity": "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+      "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+      "host_evidence": [
+        {
+          "file": "resources/AndroidManifest.xml",
+          "line": 1168,
+          "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity\"",
+          "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 226,
+          "text": "this.tu = uOO((AttributeSet) null, 0);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 935,
+          "text": "return new WebView(uOO(this.tfO));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 495,
+          "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 235,
+          "text": "Qq();",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 207,
+          "text": "setContentView(krg());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 626,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 627,
+          "text": "jhn.setId(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 628,
+          "text": "daVar2.addView(jhn, new FrameLayout.LayoutParams(-1, -1));",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 240,
+          "text": "SWs();",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 438,
+          "text": "com.bytedance.sdk.component.JP.jHN jhn = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+          "line": 249,
+          "text": "com.bytedance.sdk.openadsdk.core.widget.uOO.da.uOO(this).uOO(false).JOE(false).uOO(this.jHN.getWebView());",
+          "sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/api/init/PAGSdk.java",
+          "line": 176,
+          "text": "com.bytedance.sdk.component.JP.jHN.setWebViewProvider(new jHN.da() { // from class: com.bytedance.sdk.openadsdk.api.init.PAGSdk.3",
+          "sha256": "00677e46955e39b7bbdb57aa421db33451de0747e4f7fe1ecea3095561415ef6"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 932,
+          "text": "return daVar.createWebView(getContext(), attributeSet, i);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ],
+      "group_id": "source-first-jhn-full-setting-surface",
+      "evaluation_tier": "core_required",
+      "kind": "setting",
+      "name": "setSavePassword",
+      "registration_name": null,
+      "implementation": "android.webkit.WebSettings",
+      "normalized_signature": null,
+      "normalized_api": "Landroid/webkit/WebSettings;->setSavePassword(Z)V",
+      "value": false,
+      "value_kind": "literal",
+      "source_expression": "settings.setSavePassword(false)",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/da.java",
+          "line": 81,
+          "text": "settings.setSavePassword(false);",
+          "sha256": "275d2a339877ee91f836fab09d7da5709fe28490e3665d8bf569a4db5de8de74"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+          "line": 423,
+          "text": "da.uOO(this.UeU).uOO(true).JOE(p02.getSettings().getBuiltInZoomControls()).uOO(p02);",
+          "sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4"
+        }
+      ],
+      "reviewer": "GPT-6.1 Sol",
+      "binding_status": "explicit",
+      "positive_acceptance": true,
+      "provenance": "source-first",
+      "lifecycle_condition": "Actual SWs.onPageStarted forwards businessClient; first callback with business JP=true and nO=false; retained Context weakreference nonnull; helper reads current builtInZoomControls as JOE predicate",
+      "object_identity": "same jHN retained native child; provider subclass branch explicit when applicable"
+    }
+  ],
+  "additional_rows": 33
+}

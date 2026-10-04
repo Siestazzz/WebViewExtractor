@@ -27,10 +27,12 @@ final class FragmentLayoutFixture {
    invoke(Opcode.INVOKE_VIRTUAL,"Landroid/view/ViewGroup;","getChildAt",List.of("I"),"Landroid/view/View;",0,1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction21c(Opcode.CHECK_CAST,0,new ImmutableTypeReference(W)),make(1,B),str(2,"by_child"),
    invoke(Opcode.INVOKE_VIRTUAL,W,"addJavascriptInterface",List.of("Ljava/lang/Object;","Ljava/lang/String;"),"V",0,1,2),end()),false);
-  var entry=method(A,"onCreate",List.of(),1,2,List.of(make(0,f),invoke(Opcode.INVOKE_DIRECT,f,"<init>",List.of(),"V",0),make(0,f),invoke(Opcode.INVOKE_DIRECT,f,"<init>",List.of(),"V",0),end()),false);
+  var entries=new ArrayList<org.jf.dexlib2.iface.instruction.Instruction>();
+  for(int i=0;i<2;i++)entries.addAll(List.of(make(0,f),invoke(Opcode.INVOKE_DIRECT,f,"<init>",List.of(),"V",0),invoke(Opcode.INVOKE_VIRTUAL,"Landroidx/fragment/app/FragmentActivity;","getSupportFragmentManager",List.of(),"Landroidx/fragment/app/FragmentManager;",3),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),invoke(Opcode.INVOKE_VIRTUAL,"Landroidx/fragment/app/FragmentManager;","beginTransaction",List.of(),"Landroidx/fragment/app/FragmentTransaction;",1),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,1),str(2,"child"+i),invoke(Opcode.INVOKE_VIRTUAL,"Landroidx/fragment/app/FragmentTransaction;","add",List.of("Landroidx/fragment/app/Fragment;","Ljava/lang/String;"),"Landroidx/fragment/app/FragmentTransaction;",1,0,2),invoke(Opcode.INVOKE_VIRTUAL,"Landroidx/fragment/app/FragmentTransaction;","commit",List.of(),"I",1)));
+  entries.add(end());var entry=method(A,"onCreate",List.of(),1,4,entries,false);
   Path file=Files.createTempFile("fragment-root-",".dex");
   try{
-   DexFileFactory.writeDexFile(file.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroid/app/Activity;",entry),clazz(f,base,method(f,"<init>",List.of(),1,1,List.of(end()),false),create,viewed,attached),clazz(B,"Ljava/lang/Object;",method(B,"hello",List.of(),1,1,List.of(end()),true)))));
+   DexFileFactory.writeDexFile(file.toString(),new ImmutableDexFile(Opcodes.getDefault(),List.of(clazz(A,"Landroidx/fragment/app/FragmentActivity;",entry),clazz(f,base,method(f,"<init>",List.of(),1,1,List.of(end()),false),create,viewed,attached),clazz(B,"Ljava/lang/Object;",method(B,"hello",List.of(),1,1,List.of(end()),true)))));
    long deadline=System.nanoTime()+20_000_000_000L;var idx=new CapabilityIndex();idx.read(file,deadline);
    var apk=new ApkInventory();apk.targetSdk=30;
    var root=new ApkInventory.LayoutNode("android.widget.FrameLayout");var child=new ApkInventory.LayoutNode("android.webkit.WebView");child.id=id;root.children.add(child);

@@ -1,0 +1,37 @@
+{
+  "scope": "Same six temporal regression modes after conservative inherited/virtual mutation fix; no real-App recall claim.",
+  "fixture_sha256": "81bca3eafb6fee84de9adfb3f75a039eb435a4d9e98d56561ca00838785fbe07",
+  "capture_implementation_sha256": "1eb56c204c55c4d28912df62acec171979ea52cf01f35adcbe6f08a5ddf04cbe",
+  "runs": [
+    {
+      "mode": "plain",
+      "exit_code": 0,
+      "output": "plain saved=V[kind=object, type=ordering.Old, id=old, literal=null, args=[]] gaps=[]\n"
+    },
+    {
+      "mode": "body",
+      "exit_code": 0,
+      "output": "body saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_body_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "super",
+      "exit_code": 0,
+      "output": "super saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_body_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "indirect",
+      "exit_code": 0,
+      "output": "indirect saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_argument_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "inherited",
+      "exit_code": 0,
+      "output": "inherited saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_argument_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    },
+    {
+      "mode": "override",
+      "exit_code": 0,
+      "output": "override saved=V[kind=unknown, type=null, id=constructor_capture_frozen_unknown, literal=null, args=[]] gaps=[constructor_capture_virtual_mutation_unresolved, constructor_capture_argument_order_unresolved:Lordering/Capture;-><init>(Ljava/lang/Object;)V, constructor_capture_argument_unresolved]\n"
+    }
+  ]
+}

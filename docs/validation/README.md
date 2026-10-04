@@ -1,7 +1,8 @@
 # 验证资料索引与当前状态
 
-最近完成十 App 测量的版本为 **generic v13**，严格验收仍为 **0/10**。新增实际 Application 初始化与有限静态反射，但同一事实集三类能力命中与 v12 相同。四个新增样本使用用户指定补丁版；并行开发测量不能代替最终三次隔离测量。
+最近完成十 App 测量的版本为 **generic v14**，严格验收仍为 **0/10**。真实 AndroidX SDK 方法体边界误判造成多个 App 召回回退；局部修复诊断不替换整批失败成绩，需 v15 全量复测。并行开发测量不代替三次隔离性能验收。
 
+- [v14 实现、测试、结果与回退](GENERIC_V14.md)、[实测](generic-v14-summary.json)、[严格验收](acceptance/generic-v14-status.json)。
 - [v13 实现、测试、结果与复现](GENERIC_V13.md)、[实测](generic-v13-summary.json)、[严格验收](acceptance/generic-v13-status.json)。
 - [v12 实现、测试、结果与复现](GENERIC_V12.md)、[实测](generic-v12-summary.json)、[严格验收](acceptance/generic-v12-status.json)。
 - [v11 实现、测试、结果与复现](GENERIC_V11.md)、[实测](generic-v11-summary.json)、[严格验收](acceptance/generic-v11-status.json)。

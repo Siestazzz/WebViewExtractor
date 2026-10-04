@@ -10,6 +10,8 @@
 
 > generic v9/v10：分析器按宿主使用最多 8 个工作线程，Host 状态不共享，方法摘要共享；初扫与深扫有全局阶段边界，停稳后导出报告。已发布摘要的缓存命中不等待细化锁，报告收尾依据实际导出耗时预留预算。见 [v10 实测和限制](validation/GENERIC_V10.md)。v11 的 [跨 Client 委托](validation/GENERIC_V11_CROSS_CLIENT_DELEGATION.md)、[反射工厂](validation/GENERIC_V11_REFLECTIVE_FACTORIES.md) 和 [Manifest 模块](validation/GENERIC_V11_MANIFEST_IMPLEMENTATION.md) 已完成[十 App 测量](validation/GENERIC_V11.md)：新闻回调增加，但芒果性能和携程部分命中回退；这些是有条件的协议模型，不是全反射解析。
 
+> generic v14：增加实际构造捕获、Fragment 安装和字段委托；合成测试通过，但真实 APK 内 AndroidX SDK 方法体被误当 App 重写，多个 App 召回回退。见 [v14 结果](validation/GENERIC_V14.md)。
+
 > generic v13：在实际 Manifest Application 初始化后复制静态对象图，并支持公开无参静态反射；十 App 同核验集命中未提升，局部预算存在超限。见 [v13 结果](validation/GENERIC_V13.md)。
 
 > generic v12：将 Class 字段持有者的实际构造捕获与全局相关性分开，避免无关工厂链进入追踪；Manifest 原生 API 折叠检查实际接收对象的 override，并区分 null 与字符串 "0"。芒果性能恢复，但三类事实命中与 v11 相同；见 [v12 结果](validation/GENERIC_V12.md)。

@@ -1,0 +1,91 @@
+{
+  "activity": "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": false,
+  "host_evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1186,
+      "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 50,
+      "text": "public class TTVideoLandingPageLink2Activity extends TTVideoLandingPageActivity implements com.bytedance.sdk.openadsdk.nO.krg {",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 82,
+      "text": "super.onCreate(bundle);",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageActivity.java",
+      "line": 246,
+      "text": "setContentView(da());",
+      "sha256": "e66887bfcc7dd0b160ec8dc796d8c7d2e4ab93a1305e68023f9cd721ba4cb555"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 398,
+      "text": "public View da() {",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 493,
+      "text": "View jhn = new com.bytedance.sdk.component.JP.jHN(this);",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 494,
+      "text": "jhn.setId(com.bytedance.sdk.openadsdk.utils.dcc.Tp);",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 497,
+      "text": "daVar3.addView(jhn, layoutParams8);",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageLink2Activity.java",
+      "line": 271,
+      "text": "super.UeU();",
+      "sha256": "368f321578cbb2a78b448e519d75ee5cf556f4aeae3514dbc033b88c707b199f"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTVideoLandingPageActivity.java",
+      "line": 536,
+      "text": "this.uOO = (com.bytedance.sdk.component.JP.jHN) findViewById(dcc.Tp);",
+      "sha256": "e66887bfcc7dd0b160ec8dc796d8c7d2e4ab93a1305e68023f9cd721ba4cb555"
+    }
+  ],
+  "facts_added": 31,
+  "creation": "TTVideoLandingPageActivity is abstract and NOT independently Manifesthost. ConcreteLink2 overrides da(); parentonCreate virtualda dispatches newjHN/rootattach, virtualUeU delegates super to findnativecontainer by Tp into inherited field. Parent startup binds settings and JSB/HR/SafeDK bridges tosame child. Count one concrete host, not abstract ancestor.",
+  "categories": {
+    "bridge": {
+      "status": "partial",
+      "reason": "Three initial namespaces actualbound; later handlers/cleanup and replacement surface still need final callback/recovery closure"
+    },
+    "setting": {
+      "status": "partial",
+      "reason": "18 initial explicitobservations bound; later callbacks may configure sameview"
+    },
+    "callback": {
+      "status": "partial",
+      "reason": "Parent creates Client$4/Chrome$5 then child replaces withClient$7/Chrome$8; all actualwrapper forwarding/inheritance/touchphase signatures need completion"
+    }
+  },
+  "unresolved_source_surface": [
+    "Link2 replacementclients/fullcallback implementations",
+    "laterhelper/native SDKproxy install and guarded firstpagezoom configuration",
+    "retainedviewdestroy/possible alternateviewprovider branches"
+  ]
+}

@@ -29,7 +29,7 @@ final class CapabilityEngine {
     int activeEvaluations, evaluationSteps, evaluationStepLimit=12000;
     static final Set<String> CALLBACKS=Set.of("onPageStarted","onPageFinished","onPageCommitVisible","onLoadResource","shouldOverrideUrlLoading","shouldInterceptRequest","onTooManyRedirects","onReceivedError","onReceivedHttpError","onFormResubmission","doUpdateVisitedHistory","onReceivedSslError","onReceivedClientCertRequest","onReceivedHttpAuthRequest","shouldOverrideKeyEvent","onUnhandledKeyEvent","onScaleChanged","onReceivedLoginRequest","onRenderProcessGone","onSafeBrowsingHit","onProgressChanged","onReceivedTitle","onReceivedIcon","onReceivedTouchIconUrl","onShowCustomView","onHideCustomView","onCreateWindow","onRequestFocus","onCloseWindow","onJsAlert","onJsConfirm","onJsPrompt","onJsBeforeUnload","onExceededDatabaseQuota","onReachedMaxAppCacheSize","onGeolocationPermissionsShowPrompt","onGeolocationPermissionsHidePrompt","onPermissionRequest","onPermissionRequestCanceled","onJsTimeout","onConsoleMessage","getDefaultVideoPoster","getVideoLoadingProgressView","getVisitedHistory","onShowFileChooser","openFileChooser");
     CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline){this(idx,apk,deadline,new DexFlow(idx,deadline));}
-    CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline,DexFlow sharedFlow){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=sharedFlow;async=new AsyncRegistrations(idx);reflection=new ReflectionProtocols(idx,flow);}
+    CapabilityEngine(CapabilityIndex idx,ApkInventory apk,long deadline,DexFlow sharedFlow){this.idx=idx;this.apk=apk;this.deadline=deadline;flow=sharedFlow;async=new AsyncRegistrations(idx);reflection=new ReflectionProtocols(idx,flow,()->currentHost==null?deadline:Math.min(deadline,currentHost.localDeadline));}
     record Job(Method method,List<V> args,List<String> path,boolean candidate){}
     record DeferredField(String field,V receiver){}
     record XmlConsumer(Job job,Set<V> observed){}
@@ -49,6 +49,8 @@ final class CapabilityEngine {
         final Map<String,Map<String,V>> maps=new HashMap<>(), arrays=new HashMap<>();
         final Map<String,V> bridgeViews=new HashMap<>(), linkedClosures=new HashMap<>();
         final Map<String,Long> arrayLengths=new HashMap<>();
+        final Map<String,Set<V>> fragmentTransactions=new HashMap<>();
+        final Set<String> installedFragments=new HashSet<>(),fragmentReplays=new HashSet<>();
         final Map<String,List<Map<String,Object>>> nativeBindings=new HashMap<>();
         final ContextQueue queue=new ContextQueue();
         final Set<String> pending=new HashSet<>(),visited=new HashSet<>(),components=new HashSet<>(),expanding=new HashSet<>(),constructed=new HashSet<>(),materialized=new HashSet<>();
@@ -57,7 +59,7 @@ final class CapabilityEngine {
         V activeClientContext,activeManifestEntry;
         long localDeadline=Long.MAX_VALUE;
         boolean applicationStartup;
-        final Set<String> transportMaps=new HashSet<>();
+        final Set<String> transportMaps=new HashSet<>(),allocationCaptures=new HashSet<>();
         Host(String a){activity=a;}
     }
     final Map<String,ActivityState> states=new LinkedHashMap<>();
@@ -231,6 +233,9 @@ final class CapabilityEngine {
                     }
                     if(h.activeClientContext!=null&&!call.isStatic()&&!call.isSuper()&&!call.isDirect()&&(clientCallbackReference(call.method())||sameCallbackForward(job.method,call.method()))){
                         followClientDelegate(h,job,call);continue;
+                    }
+                    if(FragmentTransactions.operation(call.method())){
+                        fragmentTransaction(h,job,call);continue;
                     }
                     if(CapabilityIndex.pagerInstall(call.method())){
                         installFragmentAdapter(h,job,call);continue;
@@ -409,6 +414,23 @@ final class CapabilityEngine {
         }
         return members;
     }
+    void activateFragment(Host h,V value,List<String> path){
+        if(!value.kind().equals("object")||!fragment(value.type())){h.gaps.add("installed_fragment_receiver_unresolved");return;}
+        h.installedFragments.add(value.id());seed(h,value.type(),value,path,true);
+    }
+    void fragmentTransaction(Host h,Job job,Call call){
+        List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
+        if(args.isEmpty()||!frameworkViewAccess(call.method(),args))return;
+        for(V tx:alternatives(args.get(0))){
+            if(!tx.kind().equals("fragment_transaction")){h.gaps.add("fragment_transaction_receiver_unresolved");continue;}
+            if(FragmentTransactions.commit(call.method())){
+                for(V value:h.fragmentTransactions.getOrDefault(tx.id(),Set.of()))activateFragment(h,value,extend(job.path,"installed_fragment_transaction:"+call.method()+"@"+call.offset()));
+            }else for(int i=1;i<args.size();i++)for(V value:alternatives(args.get(i)))if(fragment(value.type())&&value.kind().equals("object")){
+                Set<V> pending=h.fragmentTransactions.computeIfAbsent(tx.id(),k->new LinkedHashSet<>());
+                if(FragmentTransactions.remove(call.method()))pending.remove(value);else if(pending.size()<256)pending.add(value);else h.gaps.add("fragment_transaction_instance_budget");
+            }
+        }
+    }
     void installFragmentAdapter(Host h,Job job,Call call){
         List<V> args=call.args().stream().map(v->eval(v,job,h,0,new HashSet<>())).toList();
         if(args.size()!=2){h.gaps.add("fragment_adapter_arguments");return;}
@@ -429,7 +451,7 @@ final class CapabilityEngine {
             Job installed=new Job(job.method,job.args,path,true);
             V result=eval(expr("return", "androidx.fragment.app.Fragment",signature,bound),installed,h,0,new HashSet<>());
             for(V created:alternatives(result))if(created.kind().equals("object")&&fragment(created.type()))
-                seed(h,created.type(),created,extend(path,"adapter_fragment_result:"+signature),true);
+                activateFragment(h,created,extend(path,"adapter_fragment_result:"+signature));
         }
     }
     void dispatchRegistered(Host h,Job job,Call call,List<V> args,List<AsyncRegistrations.Entry> registrations){
@@ -710,8 +732,23 @@ final class CapabilityEngine {
     }
     boolean relevantOnReceiver(Method method,V receiver,Host h){
         if(!Set.of("object","new","host","view").contains(receiver.kind())||receiver.type()==null||!idx.subtype(receiver.type(),CapabilityIndex.cls(method.getDefiningClass())))return false;
-        String key=CapabilityIndex.key(method)+"|"+receiver.type();Boolean cached=receiverRelevance.get(key);if(cached!=null)return cached;
-        boolean result=relevantOnReceiver(method,receiver.type(),h,new HashSet<>(),0);receiverRelevance.put(key,result);return result;
+        String key=CapabilityIndex.key(method)+"|"+receiver.type();Boolean cached=receiverRelevance.get(key);if(cached!=null&&cached)return true;
+        boolean result=relevantOnReceiver(method,receiver.type(),h,new HashSet<>(),0);receiverRelevance.put(key,result);return result||instanceRelevant(method,receiver,h,new HashSet<>(),0);
+    }
+    boolean instanceRelevant(Method method,V receiver,Host h,Set<String> visited,int depth){
+        if(System.nanoTime()>=Math.min(deadline,h.localDeadline))return false;
+        String id=CapabilityIndex.key(method);if(idx.relevant.contains(id))return true;
+        if(depth>=8||visited.size()>=32){h.gaps.add("instance_receiver_relevance_budget:"+id);return false;}
+        if(method.getImplementation()==null||!visited.add(id+"|"+receiver.id()))return false;
+        Job context=new Job(method,List.of(receiver),List.of(),true);
+        for(Call call:flow.summary(method).calls()){
+            if(call.isStatic()||call.args().isEmpty()||name(call.method()).startsWith("<"))continue;
+            for(V actual:alternatives(dispatchHint(call.args().get(0),context,h,0))){
+                if(actual.type()==null||!Set.of("object","host","view","new").contains(actual.kind()))continue;
+                Method target=call.isSuper()?resolveSuper(method,call.method()):call.isDirect()?idx.resolve(call.method()):idx.resolve(desc(actual.type())+"->"+call.method().substring(call.method().indexOf("->")+2));
+                if(target!=null&&instanceRelevant(target,actual,h,visited,depth+1))return true;
+            }
+        }return false;
     }
     boolean relevantOnReceiver(Method method,String type,Host h,Set<String> visited,int depth){
         String id=CapabilityIndex.key(method);if(idx.relevant.contains(id))return true;
@@ -792,6 +829,7 @@ final class CapabilityEngine {
     }
     void seed(Host h,String type,V self,List<String> path,boolean candidate){
         if(Cfg.WEBVIEWS.contains(type))return;
+        if(fragment(type)&&!h.installedFragments.contains(self.id())){h.gaps.add("fragment_lifecycle_not_installed:"+type);return;}
         if(h.components.size()>=12000){h.gaps.add("component_instance_budget:"+type);return;}
         if(h.expanding.contains(type)||!h.components.add(type+"|"+self.id()))return;
         h.expanding.add(type);
@@ -1049,6 +1087,10 @@ final class CapabilityEngine {
             if(!idx.finalFields.contains(value.id()))return V.of("unknown",value.type(),"mutable_field_guard");
             V receiver=guardValue(value.args().get(0),job,h,depth+1);return h.heap.getOrDefault(heapKey(value.id(),receiver),UNKNOWN);
         }
+        if(value.kind().startsWith("return")&&value.id().equals("Ljava/lang/String;->equals(Ljava/lang/Object;)Z")&&value.args().size()==2){
+            V left=guardValue(value.args().get(0),job,h,depth+1),right=guardValue(value.args().get(1),job,h,depth+1);
+            if(left.kind().equals("literal")&&"java.lang.String".equals(left.type())&&left.literal()!=null&&right.kind().equals("literal")&&"java.lang.String".equals(right.type())&&right.literal()!=null)return V.literal("number",left.literal().equals(right.literal())?"1":"0");
+        }
         if(value.kind().startsWith("return")){V semantic=ManifestProtocols.resolve(value,this,job,h,0);return semantic.equals(UNKNOWN)?UNKNOWN:semantic;}
         return value;
     }
@@ -1080,7 +1122,7 @@ final class CapabilityEngine {
                     List<V> args=new ArrayList<>();args.add(object);
                     for(int i=1;i<ctor.args().size();i++)args.add(eval(ctor.args().get(i),job,h,depth+1,new HashSet<>(visiting)));
                     materializeConstructor(target,args,job,h,depth+1,visiting);
-                }
+                }else if(target!=null)ConstructorCaptures.capture(object,ctor,this,job,h,depth,visiting);
             }
             return object;
         }
@@ -1141,6 +1183,9 @@ final class CapabilityEngine {
                     result=union(result,clazz.kind().equals("class")&&clazz.type()!=null?V.literal("java.lang.String",clazz.type()):V.of("unknown","java.lang.String","dynamic_class_name"));
                 return result==null?UNKNOWN:result;
             }
+            if(FragmentTransactions.begin(v.id())&&args.size()==1&&frameworkViewAccess(v.id(),args))return V.of("fragment_transaction",v.type(),"fragment_transaction:"+CapabilityIndex.key(job.method)+":"+allocationContext(job)+":"+v.kind()+":"+args.get(0).id());
+            if(FragmentTransactions.operation(v.id())&&!args.isEmpty())return args.get(0);
+            if(FragmentTransactions.manager(v.id())&&args.size()==1&&(idx.activity(owner(v.id()))||fragment(owner(v.id())))&&frameworkViewAccess(v.id(),args))return V.of("fragment_manager",v.type(),"fragment_manager:"+args.get(0).id());
             if(CapabilityIndex.fragmentFactory(v.id()))return instantiateFragment(v,args,job,h,depth,visiting);
             if(name.equals("getArguments")&&fragment(owner(v.id()))&&v.id().endsWith("()Landroid/os/Bundle;")&&args.size()==1&&frameworkViewAccess(v.id(),args)){
                 V result=null;for(V receiver:alternatives(args.get(0)))result=union(result,h.heap.get(heapKey("$fragment_arguments",receiver)));
@@ -1215,7 +1260,7 @@ final class CapabilityEngine {
             if(args.size()>2)applyWrite(h,"$fragment_arguments",created,args.get(2));
             // As with existing allocation entry modeling, construction is conditional,
             // not proof of attach. Adapter install supplies a separate evidence path.
-            seed(h,type,created,extend(job.path,"fragment_factory:"+expression.id()),true);
+            // Lifecycle is activated by an actual installation protocol, not construction.
             result=union(result,created);
         }
         return result==null?V.of("unknown",expression.type(),"unresolved_fragment_factory"):result;
@@ -1297,7 +1342,20 @@ final class CapabilityEngine {
                 for(V val:alternatives(value))if(field.equals("$contentsAll"))values.addAll(h.contents.getOrDefault(val.id(),Set.of()));else values.add(val);
                 if(values.size()>256){h.gaps.add("collection_element_budget:"+recv.id());values.clear();values.add(UNKNOWN);}
             }
-        }else for(V alternative:alternatives(receiver)){String key=heapKey(field,alternative);h.heap.put(key,union(h.heap.get(key),value));}
+        }else for(V alternative:alternatives(receiver)){
+            String key=heapKey(field,alternative);V old=h.heap.get(key),next=union(old,value);h.heap.put(key,next);
+            if(!Objects.equals(old,next)&&h.installedFragments.contains(alternative.id())){
+                String revision=key+"|"+next;
+                if(h.fragmentReplays.size()>=12000){h.gaps.add("fragment_field_replay_budget");continue;}
+                if(!h.fragmentReplays.add(revision))continue;
+                for(Method callback:idx.hierarchyMethods(alternative.type()))if(idx.componentEntry(alternative.type(),callback)){
+                    String prefix=CapabilityIndex.key(callback)+"|["+alternative;
+                    h.visited.removeIf(context->context.startsWith(prefix));
+                }
+                h.components.remove(alternative.type()+"|"+alternative.id());
+                seed(h,alternative.type(),alternative,List.of(h.activity,"installed_fragment_field_update:"+field),true);
+            }
+        }
     }
     V linkedJoinPoint(Host h,V receiver){
         V result=null;

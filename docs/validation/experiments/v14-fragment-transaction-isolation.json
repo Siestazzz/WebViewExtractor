@@ -1,0 +1,51 @@
+{
+  "scope": "Synthetic same-method two-transaction isolation. Not a claim about all interprocedural transaction lifetimes or APK precision.",
+  "fixture_sha256": "21115910253252fc1e31357eccbf525c36e557f62170f4e8e633884781948638",
+  "before_compiled_class_sha256": {
+    "CapabilityEngine$RefreshOutcome.class": "33ad788d066034f28d47437ce46bea7b757762302465670c283f16d01027d0ab",
+    "FragmentTransactions.class": "1046383ab78d740539eaaf8a5c56b45fcc21801a7c9984b5b38cee5daa2eb89c",
+    "CapabilityEngine.class": "af13effb8bcb6c03254903cc9a22be35ad517f5615c6af7311c06a430fe3372b",
+    "ReflectionProtocols$Expired.class": "c28b9170b684d26d51451a932cdde67e65dbc63cd8d045a8bdc55590d92a5804",
+    "CapabilityEngine$RefreshKey.class": "ff79c7dbdb9ef3b4a69a81d76146f93bd15eb7afe9a3ad7ad779e22d68fc6a54",
+    "CapabilityEngine$HandlerSurface.class": "052169a8245314514d2f81d382a629442871b3ed3aecf601aa4934bbad9946ec",
+    "FragmentTransactionIsolationProbe.class": "bd2e632ac461d3cf7086a27175c117eb00240e46824d124b26bace4d6650e293",
+    "CapabilityEngine$Job.class": "850fad33e87bb21aa74e0ab082552a57b9b22d57c3923ce1d97a6c2eb39176e3",
+    "CapabilityEngine$DeferredField.class": "07865fa961ddaee71ebe66c24dde59bd17669c7932b2145cdcc67ef2e64438c9",
+    "CapabilityEngine$ActivityState.class": "dd95e7de952554852c982329f3fc844cbbb2c71050c24289e9a6c4155384fd24",
+    "ConstructorCaptures.class": "8db217a39a721c815d94431a92207f72d6be54be178bec5e337f14bdd2bb0842",
+    "CapabilityEngine$RefreshTraversal.class": "a787c6a2445e776560025e42d98b930af1cf932fd86519e8b9f141fc6ae04ce4",
+    "ReflectionProtocols$Graph.class": "a8870d60114435628518073fd9d765de222b74c7bf1d72d560fc968133263b07",
+    "CapabilityEngine$RefreshExpired.class": "c8bf4bff2ea39ebf22a4ae8b74b8352149c1c11ddd59004cd0ffc437b388c6ee",
+    "CapabilityEngine$XmlConsumer.class": "069f89fb6c89e574c3d91560caa57f469bafdc86cafdfb295e33197a0d90492b",
+    "CapabilityEngine$RefreshDependency.class": "41c87126095f0763fd3d8c8441c9418ccc774db625f8301b773cb4f1697b51a5",
+    "ReflectionProtocols.class": "ce0c8b0257f462204fb8af1ded4e0be4dc8b9b60272dffcd81fba57c35a5af28",
+    "CapabilityEngine$Host.class": "88fcd3815197f2612896b1242a5af680948935a71b97e32a1debd7d6c4c3c3ab",
+    "ReflectionProtocols$Plan.class": "86804a028cb484d4d8e99b195e23466c7cf10e1658deb39a66c10a69e78da323"
+  },
+  "before": [
+    {
+      "mode": "single",
+      "exit_code": 0,
+      "output": "single bridgeNames=[first] expected=[first]\n"
+    },
+    {
+      "mode": "uncommitted",
+      "exit_code": 0,
+      "output": "uncommitted bridgeNames=[] expected=[]\n"
+    },
+    {
+      "mode": "two",
+      "exit_code": 1,
+      "output": "two bridgeNames=[first, second] expected=[second]\nException in thread \"main\" java.lang.AssertionError: Transaction cross-binding: [first, second] expected=[second]\n\tat org.example.FragmentTransactionIsolationProbe.check(FragmentTransactionIsolationProbe.java:26)\n\tat org.example.FragmentTransactionIsolationProbe.main(FragmentTransactionIsolationProbe.java:29)\n"
+    }
+  ],
+  "after_source_sha256": {
+    "CapabilityEngine.java": "686177968efb808d594d96323013c5b5fe32ee81465dbf18a25dbee9f24151fa",
+    "ConstructorCaptures.java": "1eb56c204c55c4d28912df62acec171979ea52cf01f35adcbe6f08a5ddf04cbe",
+    "ReflectionProtocols.java": "efaed10e3622dcd3e3ec71728593a9774c238ff49c1746cbd8cc1cade1411333",
+    "FragmentTransactions.java": "eccbed9d878ae20c23b3106bdfcde90a25b57e7e096786ba5b79d714b5d0b268",
+    "DexFlow.java": "ff64154f67e8d6671ac6d6e5c635e4cc49861552bde7a86dadf199c14e1201fe"
+  },
+  "after_output": "single bridgeNames=[first] expected=[first]\nuncommitted bridgeNames=[] expected=[]\ntwo bridgeNames=[second] expected=[second]\n",
+  "after_exit_code": 0
+}

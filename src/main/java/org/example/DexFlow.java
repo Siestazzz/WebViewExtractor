@@ -155,7 +155,7 @@ final class DexFlow {
                 calls.put(at,new Call(targetKey,at,List.copyOf(args),stat,op.startsWith("invoke-super"),op.startsWith("invoke-direct")));
                 if(target.getName().equals("getSettings")&&idx.webview(CapabilityIndex.cls(target.getDefiningClass()))&&!args.isEmpty())s.put(-1,expr("settings",CapabilityIndex.cls(target.getReturnType()),"settings",List.of(args.get(0))));
                 else if(!target.getReturnType().equals("V")){
-                    String resultKind=CapabilityIndex.fragmentFactory(targetKey)?"return_fragment_factory:"+at:target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-super")?"return_super":op.startsWith("invoke-direct")?"return_direct":"return";
+                    String resultKind=FragmentTransactions.begin(targetKey)?"return_fragment_transaction:"+at:CapabilityIndex.fragmentFactory(targetKey)?"return_fragment_factory:"+at:target.getName().equals("inflate")&&!op.startsWith("invoke-direct")&&!op.startsWith("invoke-super")?"return_inflate:"+at:op.startsWith("invoke-super")?"return_super":op.startsWith("invoke-direct")?"return_direct":"return";
                     if(metadataConsumer&&ManifestProtocols.pure(idx,targetKey)){
                         V raw=new V((op.startsWith("invoke-super")?"return_manifest_native_super:":"return_manifest_native:")+at,CapabilityIndex.cls(target.getReturnType()),targetKey,null,List.copyOf(args));
                         V resolved=resolver.apply(raw);s.put(-1,resolved.equals(UNKNOWN)?raw:resolved);

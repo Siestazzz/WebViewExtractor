@@ -11,17 +11,18 @@ final class ReflectionProtocols {
  static final Set<String> LOOKUPS=Set.of("Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;","Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;");
  static final Set<String> ANNOTATIONS=Set.of("Ljava/lang/reflect/Method;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;","Ljava/lang/reflect/Method;->isAnnotationPresent(Ljava/lang/Class;)Z");
  record Plan(int offset,V method,V lookupClass,V name,V parameterArray,V invokeReceiver,V invokeArray,V annotationClass,boolean declared,List<V> accessibleFlags){}
- final CapabilityIndex index;final DexFlow flow;
+ final CapabilityIndex index;final DexFlow flow;final java.util.function.LongSupplier deadline;
  final Map<String,List<Plan>> cache=new HashMap<>();final Map<String,Boolean> reachability=new HashMap<>();
  final Set<String> reported=new HashSet<>();
  void gap(String reason){if(reported.size()>=128){if(reported.add("transport_protocol_diagnostic_budget"))index.diagnostics.add("transport_protocol_diagnostic_budget");return;}if(reported.add(reason))index.diagnostics.add(reason);}
- boolean expired(){if(System.nanoTime()<flow.deadline)return false;gap("transport_protocol_deadline");return true;}
+ boolean expired(){if(System.nanoTime()<Math.min(flow.deadline,deadline.getAsLong()))return false;gap("transport_protocol_deadline");return true;}
  static final class Expired extends RuntimeException {}
  void check(){if(expired())throw new Expired();}
  long discoveryMethodVisits;
  boolean fieldsDiscovered;final Set<String> fields=new HashSet<>();final Map<String,List<TransportProtocols.Registration>> registrations=new HashMap<>();
- ReflectionProtocols(CapabilityIndex index,DexFlow flow){this.index=index;this.flow=flow;}
- boolean candidate(Method method){return method!=null&&index.calls.getOrDefault(CapabilityIndex.key(method),Set.of()).contains(INVOKE);}
+ ReflectionProtocols(CapabilityIndex index,DexFlow flow){this(index,flow,()->flow.deadline);}
+ ReflectionProtocols(CapabilityIndex index,DexFlow flow,java.util.function.LongSupplier deadline){this.index=index;this.flow=flow;this.deadline=deadline;}
+ boolean candidate(Method method){if(method==null)return false;Set<String> calls=index.calls.getOrDefault(CapabilityIndex.key(method),Set.of());return calls.contains(INVOKE)&&calls.stream().anyMatch(LOOKUPS::contains)&&calls.stream().anyMatch(ANNOTATIONS::contains);}
  List<Plan> plans(Method method){
   if(method==null||!candidate(method))return List.of();String id=CapabilityIndex.key(method);var old=cache.get(id);if(old!=null)return old;
   if(expired())return List.of();
@@ -59,13 +60,26 @@ final class ReflectionProtocols {
    discoveryMethodVisits++;if(expired()){fieldsDiscovered=false;return;}
    for(Plan plan:plans(method)){collectMapFields(plan.lookupClass(),0);collectMapFields(plan.invokeReceiver(),0);}
   }
-  for(Method method:index.methods.values())if(method.getImplementation()!=null&&index.calls.getOrDefault(CapabilityIndex.key(method),Set.of()).stream().anyMatch(c->index.map(CapabilityEngine.owner(c))&&c.endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"))){
+  for(Method method:index.methods.values()){
    if(expired()){fieldsDiscovered=false;return;}
+   if(method.getImplementation()==null)continue;boolean put=false;
+   for(String call:index.calls.getOrDefault(CapabilityIndex.key(method),Set.of())){if(expired()){fieldsDiscovered=false;return;}if(call.endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;")&&index.map(CapabilityEngine.owner(call))){put=true;break;}}
+   if(!put)continue;
    discoveryMethodVisits++;var forms=TransportProtocols.registrations(index,method,flow.summary(method),fields);if(!forms.isEmpty())registrations.put(CapabilityIndex.key(method),forms);
   }
  }
  void collectMapFields(V value,int depth){if(expired())return;if(depth>12){gap("transport_field_expression_budget");return;}if(value.kind().equals("field")&&index.map(value.type()))fields.add(value.id());for(V child:value.args())collectMapFields(child,depth+1);}
- boolean writer(Method method){discoverFields();return method!=null&&registrations.containsKey(CapabilityIndex.key(method));}
+ boolean writer(Method method){
+  if(method==null)return false;
+  boolean put=false;
+  for(String call:index.calls.getOrDefault(CapabilityIndex.key(method),Set.of())){
+   if(!call.endsWith("->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"))continue;
+   if(expired())return false;
+   if(index.map(CapabilityEngine.owner(call))){put=true;break;}
+  }
+  if(!put)return false;
+  discoverFields();return registrations.containsKey(CapabilityIndex.key(method));
+ }
  boolean mapField(String field){discoverFields();return fields.contains(field);}
 
  /** Structural CFG proof: positive annotation branch is necessary to reach invoke. */

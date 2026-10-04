@@ -1,0 +1,82 @@
+{
+  "scope": "Development SDK-boundary override on frozen v14; one selected host only, excluded from all-App scores and performance gates.",
+  "base_jar_sha256": "edd16e6c48b976f452034af7f9ce93ba9aec920bff6e7bcedf0fe06c9146e815",
+  "override_source_sha256": "08f9de56e7f0240bd1ed3280192f3059b4bf896dc6a3049c6a8cfb17c952e43a",
+  "report_sha256": "944ce038a9a9dd0dca567eb4be96a978d55f2da896878750a0a3ad2bfe697c0f",
+  "score": {
+    "oracle_sha256": "31df50d4b56ecbec6076d4fea8ef0a8a56b138959a8e20d83eefc48cb8cbce19",
+    "report_sha256": "944ce038a9a9dd0dca567eb4be96a978d55f2da896878750a0a3ad2bfe697c0f",
+    "unassigned_oracle_facts": 0,
+    "oracle_file": "test/runs/txws-sdk-boundary/oracle.jsonl",
+    "apk_sha256": "199a194170a2fcb7e3d9261b77deaaa1d803289fc627c9f75bc68af8652a70d5",
+    "report_status": "diagnostic_single_host",
+    "metrics": {
+      "setting": {
+        "expected": 13,
+        "matched": 13,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      },
+      "callback": {
+        "expected": 22,
+        "matched": 22,
+        "explicit_matched": 0,
+        "unscorable": 0,
+        "recall": 1.0,
+        "explicit_recall": 0.0
+      }
+    },
+    "missing": [],
+    "emitted_activities": 1,
+    "acceptance": "unproven",
+    "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+    "scoring_version": 6,
+    "scorer_sha256": "b566280570bf9c4411684a1541a5ee0df2db9926a86a45b42076d45dfb89f305",
+    "webview_constraint_coverage": {
+      "expected": 35,
+      "with_source_type_constraint": 35,
+      "activity_only": 0,
+      "exact_instance_identity_verified": false
+    },
+    "positive_host_recall": {
+      "expected": 1,
+      "matched": 1,
+      "missing": [],
+      "recall": 1.0
+    },
+    "duplicate_oracle_rows": 0,
+    "capability_granularity": {
+      "setting": {
+        "expected": 13,
+        "matched": 13,
+        "recall": 1.0
+      },
+      "callback_registration": {
+        "expected": 3,
+        "matched": 3,
+        "recall": 1.0
+      },
+      "callback_member": {
+        "expected": 19,
+        "matched": 19,
+        "recall": 1.0
+      }
+    },
+    "unknown_target_surfaces": [],
+    "unconfirmed_source_facts": [],
+    "binding_identity_verified": false,
+    "activity_ownership": {
+      "counts": {
+        "unreviewed": 1
+      },
+      "emitted": 1,
+      "wrong": 0,
+      "uncertain_or_unreviewed": 1,
+      "conservative_error_upper_bound": 1.0
+    },
+    "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+  },
+  "log": "SLF4J(W): No SLF4J providers were found.\nSLF4J(W): Defaulting to no-operation (NOP) logger implementation\nSLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.\nIndexed seconds=74.355316771 relevant=12052\nDiagnostic complete {diagnostic_only=true, selected_host=com.tencent.oscar.module.webview.WebviewBaseActivity, index_and_inventory_seconds=74.355316771, seconds=91.144485461}\n"
+}

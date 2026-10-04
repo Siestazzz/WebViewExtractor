@@ -1,0 +1,2250 @@
+{
+  "schema_version": 1,
+  "reviewer_model": "GPT-6 Codex; exact runtime identifier unavailable",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "report_sha256": "1814b95ac6a3b78e1f6cc6fa80ea01bdf6809a9a771fe5742ade1a661a27818b",
+  "audit_mode": "report-guided source confirmation; independent prior proof source SHA validated",
+  "prior_source_proof": {
+    "path": "docs/validation/fanqiexiaoshuo/webviewactivity-wrapper-install-vs-cleanup-source-proof.json",
+    "sha256": "26b93d3b754c5af223e187189f91726dc304e1e2f8affa92188b7c180f384553"
+  },
+  "source_evidence": [
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/dragon/read/hybrid/webview/ReadingWebView.java",
+      "source_sha256": "638e90593f1b4db3b9dfb6bdd66902f5d759cbd800d357605c5f75125762aa68",
+      "locations": [
+        {
+          "line": 206,
+          "quote": "    protected static class o extends r64.j {"
+        },
+        {
+          "line": 207,
+          "quote": "        static {"
+        },
+        {
+          "line": 208,
+          "quote": "            Covode.recordClassIndex(608275);"
+        },
+        {
+          "line": 209,
+          "quote": "        }"
+        },
+        {
+          "line": 210,
+          "quote": ""
+        },
+        {
+          "line": 211,
+          "quote": "        protected o() {"
+        },
+        {
+          "line": 212,
+          "quote": "        }"
+        },
+        {
+          "line": 213,
+          "quote": ""
+        },
+        {
+          "line": 214,
+          "quote": "        @Override // r64.j, android.webkit.WebViewClient"
+        },
+        {
+          "line": 215,
+          "quote": "        public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {"
+        },
+        {
+          "line": 216,
+          "quote": "            r64.i.f364438a.f(webView, renderProcessGoneDetail);"
+        },
+        {
+          "line": 217,
+          "quote": "            return super.onRenderProcessGone(webView, renderProcessGoneDetail);"
+        },
+        {
+          "line": 218,
+          "quote": "        }"
+        },
+        {
+          "line": 219,
+          "quote": ""
+        },
+        {
+          "line": 220,
+          "quote": "        @Override // r64.j, android.webkit.WebViewClient"
+        },
+        {
+          "line": 221,
+          "quote": "        public void onPageFinished(WebView webView, String str) {"
+        },
+        {
+          "line": 222,
+          "quote": "            super.onPageFinished(webView, str);"
+        },
+        {
+          "line": 223,
+          "quote": "            WebViewMonitorHelper.getInstance().onPageFinished(webView, str);"
+        },
+        {
+          "line": 224,
+          "quote": "            WebViewPreloadV2.f180957a.u(webView, str);"
+        },
+        {
+          "line": 225,
+          "quote": "            r64.i.f364438a.c(webView);"
+        },
+        {
+          "line": 226,
+          "quote": "        }"
+        },
+        {
+          "line": 227,
+          "quote": ""
+        },
+        {
+          "line": 228,
+          "quote": "        @Override // r64.j, android.webkit.WebViewClient"
+        },
+        {
+          "line": 229,
+          "quote": "        public void onPageStarted(WebView webView, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 230,
+          "quote": "            super.onPageStarted(webView, str, bitmap);"
+        },
+        {
+          "line": 231,
+          "quote": "            WebViewMonitorHelper.getInstance().onPageStarted(webView, str, bitmap);"
+        },
+        {
+          "line": 232,
+          "quote": "            r64.i.f364438a.d(webView);"
+        },
+        {
+          "line": 233,
+          "quote": "        }"
+        },
+        {
+          "line": 707,
+          "quote": "    protected static class m extends o {"
+        },
+        {
+          "line": 708,
+          "quote": ""
+        },
+        {
+          "line": 709,
+          "quote": "        /* renamed from: b, reason: collision with root package name */"
+        },
+        {
+          "line": 710,
+          "quote": "        private final t64.i f180871b;"
+        },
+        {
+          "line": 711,
+          "quote": ""
+        },
+        {
+          "line": 712,
+          "quote": "        static {"
+        },
+        {
+          "line": 713,
+          "quote": "            Covode.recordClassIndex(608273);"
+        },
+        {
+          "line": 714,
+          "quote": "        }"
+        },
+        {
+          "line": 715,
+          "quote": ""
+        },
+        {
+          "line": 716,
+          "quote": "        @Override // r64.j, android.webkit.WebViewClient"
+        },
+        {
+          "line": 717,
+          "quote": "        public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 718,
+          "quote": "            return b(this, webView, webResourceRequest);"
+        },
+        {
+          "line": 719,
+          "quote": "        }"
+        },
+        {
+          "line": 720,
+          "quote": ""
+        },
+        {
+          "line": 721,
+          "quote": "        public m(t64.i iVar) {"
+        },
+        {
+          "line": 722,
+          "quote": "            this.f180871b = iVar;"
+        },
+        {
+          "line": 723,
+          "quote": "        }"
+        },
+        {
+          "line": 724,
+          "quote": ""
+        },
+        {
+          "line": 725,
+          "quote": "        @Override // com.dragon.read.hybrid.webview.ReadingWebView.o, r64.j, android.webkit.WebViewClient"
+        },
+        {
+          "line": 726,
+          "quote": "        public void onPageFinished(WebView webView, String str) {"
+        },
+        {
+          "line": 727,
+          "quote": "            if (str != null) {"
+        },
+        {
+          "line": 728,
+          "quote": "                this.f180871b.a(str);"
+        },
+        {
+          "line": 729,
+          "quote": "            }"
+        },
+        {
+          "line": 730,
+          "quote": "            super.onPageFinished(webView, str);"
+        },
+        {
+          "line": 731,
+          "quote": "        }"
+        },
+        {
+          "line": 732,
+          "quote": ""
+        },
+        {
+          "line": 733,
+          "quote": "        public boolean a(WebView webView, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 747,
+          "quote": "        public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 748,
+          "quote": "            tr0.f b17;"
+        },
+        {
+          "line": 749,
+          "quote": "            if (webResourceRequest != null && this.f180871b.e(webResourceRequest.getUrl())) {"
+        },
+        {
+          "line": 750,
+          "quote": "                tr0.e a17 = t64.r.a(webResourceRequest);"
+        },
+        {
+          "line": 751,
+          "quote": "                tr0.f b18 = this.f180871b.b(a17);"
+        },
+        {
+          "line": 752,
+          "quote": "                if (b18 != null) {"
+        },
+        {
+          "line": 753,
+          "quote": "                    return t64.r.c(b18);"
+        },
+        {
+          "line": 754,
+          "quote": "                }"
+        },
+        {
+          "line": 755,
+          "quote": "                WebResourceResponse shouldInterceptRequest = super.shouldInterceptRequest(webView, webResourceRequest);"
+        },
+        {
+          "line": 756,
+          "quote": "                t64.i iVar = this.f180871b;"
+        },
+        {
+          "line": 757,
+          "quote": "                if (shouldInterceptRequest == null) {"
+        },
+        {
+          "line": 758,
+          "quote": "                    b17 = null;"
+        },
+        {
+          "line": 759,
+          "quote": "                } else {"
+        },
+        {
+          "line": 760,
+          "quote": "                    b17 = t64.r.b(shouldInterceptRequest, LoadFrom.Auto);"
+        },
+        {
+          "line": 761,
+          "quote": "                }"
+        },
+        {
+          "line": 762,
+          "quote": "                tr0.f i17 = iVar.i(a17, b17);"
+        },
+        {
+          "line": 763,
+          "quote": "                if (i17 != null) {"
+        },
+        {
+          "line": 764,
+          "quote": "                    return t64.r.c(i17);"
+        },
+        {
+          "line": 765,
+          "quote": "                }"
+        },
+        {
+          "line": 766,
+          "quote": "                return shouldInterceptRequest;"
+        },
+        {
+          "line": 767,
+          "quote": "            }"
+        },
+        {
+          "line": 768,
+          "quote": "            return super.shouldInterceptRequest(webView, webResourceRequest);"
+        },
+        {
+          "line": 846,
+          "quote": "    }"
+        },
+        {
+          "line": 847,
+          "quote": ""
+        },
+        {
+          "line": 848,
+          "quote": "    @Override // com.bytedance.webx.core.webview.WebViewContainer, com.bytedance.webx.core.webview.inner.WebViewContainerInner, android.webkit.WebView"
+        },
+        {
+          "line": 849,
+          "quote": "    public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 850,
+          "quote": "        if (webViewClient == null) {"
+        },
+        {
+          "line": 851,
+          "quote": "            super.setWebViewClient(null);"
+        },
+        {
+          "line": 852,
+          "quote": "            return;"
+        },
+        {
+          "line": 853,
+          "quote": "        }"
+        },
+        {
+          "line": 854,
+          "quote": "        m mVar = new m(this.f180863z);"
+        },
+        {
+          "line": 855,
+          "quote": "        mVar.f364446a = webViewClient;"
+        },
+        {
+          "line": 856,
+          "quote": "        super.setWebViewClient(mVar);"
+        },
+        {
+          "line": 857,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/dragon/read/hybrid/webview/SwipeRefreshWebView.java",
+      "source_sha256": "8637e82e1a15af3c8896a02bcebd1187c5b3eefaffe00d896049b04f4f4c4860",
+      "locations": [
+        {
+          "line": 189,
+          "quote": "    public static final class c extends r64.g {"
+        },
+        {
+          "line": 190,
+          "quote": ""
+        },
+        {
+          "line": 191,
+          "quote": "        /* renamed from: c, reason: collision with root package name */"
+        },
+        {
+          "line": 213,
+          "quote": "        public void onPageFinished(WebView view, String url) {"
+        },
+        {
+          "line": 214,
+          "quote": "            Intrinsics.checkNotNullParameter(view, \"view\");"
+        },
+        {
+          "line": 215,
+          "quote": "            Intrinsics.checkNotNullParameter(url, \"url\");"
+        },
+        {
+          "line": 216,
+          "quote": "            super.onPageFinished(view, url);"
+        },
+        {
+          "line": 217,
+          "quote": "            LogWrapper.info(\"default\", \"SwipeRefreshWebView\", \"load Finish type = %s \", new Object[]{Integer.valueOf(SwipeRefreshWebView.this.getLoadingType())});"
+        },
+        {
+          "line": 238,
+          "quote": "        public void onPageStarted(WebView webView, String str, Bitmap bitmap) {"
+        },
+        {
+          "line": 239,
+          "quote": "            super.onPageStarted(webView, str, bitmap);"
+        },
+        {
+          "line": 240,
+          "quote": "            if (!this.f180875c) {"
+        },
+        {
+          "line": 241,
+          "quote": "                this.f180876d = false;"
+        },
+        {
+          "line": 242,
+          "quote": "                this.f180875c = true;"
+        },
+        {
+          "line": 243,
+          "quote": "            }"
+        },
+        {
+          "line": 244,
+          "quote": "            LogWrapper.info(\"default\", \"SwipeRefreshWebView\", \"load Start type = %s \", new Object[]{Integer.valueOf(SwipeRefreshWebView.this.getLoadingType())});"
+        },
+        {
+          "line": 245,
+          "quote": "        }"
+        },
+        {
+          "line": 246,
+          "quote": ""
+        },
+        {
+          "line": 247,
+          "quote": "        @Override // android.webkit.WebViewClient"
+        },
+        {
+          "line": 248,
+          "quote": "        public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {"
+        },
+        {
+          "line": 249,
+          "quote": "            Intrinsics.checkNotNullParameter(view, \"view\");"
+        },
+        {
+          "line": 250,
+          "quote": "            Intrinsics.checkNotNullParameter(request, \"request\");"
+        },
+        {
+          "line": 251,
+          "quote": "            Intrinsics.checkNotNullParameter(error, \"error\");"
+        },
+        {
+          "line": 252,
+          "quote": "            if (!u64.k.k().j(view, request, error) && request.isForMainFrame()) {"
+        },
+        {
+          "line": 253,
+          "quote": "                d();"
+        },
+        {
+          "line": 254,
+          "quote": "            }"
+        },
+        {
+          "line": 255,
+          "quote": "        }"
+        },
+        {
+          "line": 256,
+          "quote": ""
+        },
+        {
+          "line": 257,
+          "quote": "        @Override // android.webkit.WebViewClient"
+        },
+        {
+          "line": 258,
+          "quote": "        public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {"
+        },
+        {
+          "line": 259,
+          "quote": "            Intrinsics.checkNotNullParameter(view, \"view\");"
+        },
+        {
+          "line": 260,
+          "quote": "            Intrinsics.checkNotNullParameter(handler, \"handler\");"
+        },
+        {
+          "line": 261,
+          "quote": "            Intrinsics.checkNotNullParameter(error, \"error\");"
+        },
+        {
+          "line": 262,
+          "quote": "            if (DebugManager.isDebugBuild() && DebugManager.isEnableReleaseCharles()) {"
+        },
+        {
+          "line": 263,
+          "quote": "                handler.proceed();"
+        },
+        {
+          "line": 264,
+          "quote": "                LogWrapper.error(\"default\", \"SwipeRefreshWebView\", \"onReceivedSslError(\u5df2\u5ffd\u7565): %s, error = %s\", new Object[]{view.getUrl(), error});"
+        },
+        {
+          "line": 265,
+          "quote": "            } else {"
+        },
+        {
+          "line": 266,
+          "quote": "                super.onReceivedSslError(view, handler, error);"
+        },
+        {
+          "line": 279,
+          "quote": ""
+        },
+        {
+          "line": 280,
+          "quote": "    private final void Q() {"
+        },
+        {
+          "line": 281,
+          "quote": "        this.M.setWebViewClient(new c());"
+        },
+        {
+          "line": 282,
+          "quote": "        WebView webView = this.M;"
+        },
+        {
+          "line": 283,
+          "quote": "        if (webView instanceof ReadingWebView) {"
+        },
+        {
+          "line": 537,
+          "quote": "    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */"
+        },
+        {
+          "line": 538,
+          "quote": "    public SwipeRefreshWebView(Context context, AttributeSet attributeSet, String str, int i17, String skeletonScene, boolean z17) {"
+        },
+        {
+          "line": 539,
+          "quote": "        super(context, attributeSet);"
+        },
+        {
+          "line": 540,
+          "quote": "        Intrinsics.checkNotNullParameter(context, \"context\");"
+        },
+        {
+          "line": 541,
+          "quote": "        Intrinsics.checkNotNullParameter(skeletonScene, \"skeletonScene\");"
+        },
+        {
+          "line": 542,
+          "quote": "        this.I = i17;"
+        },
+        {
+          "line": 543,
+          "quote": "        this.f180873J = skeletonScene;"
+        },
+        {
+          "line": 544,
+          "quote": "        this.K = z17;"
+        },
+        {
+          "line": 545,
+          "quote": "        ReadingWebViewPlaceHolder readingWebViewPlaceHolder = new ReadingWebViewPlaceHolder(context, str);"
+        },
+        {
+          "line": 546,
+          "quote": "        this.L = readingWebViewPlaceHolder;"
+        },
+        {
+          "line": 547,
+          "quote": "        WebView webView = readingWebViewPlaceHolder.getWebView();"
+        },
+        {
+          "line": 548,
+          "quote": "        Intrinsics.checkNotNullExpressionValue(webView, \"getWebView(...)\");"
+        },
+        {
+          "line": 549,
+          "quote": "        this.M = webView;"
+        },
+        {
+          "line": 550,
+          "quote": "        this.O = yt5.e.c(webView, true, i17, skeletonScene, new CommonLayout.OnErrorClickListener() { // from class: com.dragon.read.hybrid.webview.m"
+        },
+        {
+          "line": 551,
+          "quote": "            @Override // com.dragon.read.widget.CommonLayout.OnErrorClickListener"
+        },
+        {
+          "line": 552,
+          "quote": "            public final void onClick() {"
+        },
+        {
+          "line": 553,
+          "quote": "                SwipeRefreshWebView.L(SwipeRefreshWebView.this);"
+        },
+        {
+          "line": 554,
+          "quote": "            }"
+        },
+        {
+          "line": 555,
+          "quote": "        });"
+        },
+        {
+          "line": 556,
+          "quote": "        this.R = true;"
+        },
+        {
+          "line": 557,
+          "quote": "        this.V = new b();"
+        },
+        {
+          "line": 558,
+          "quote": "        Q();"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/dragon/read/hybrid/webview/base/a.java",
+      "source_sha256": "ff1d7bc4b188b7a45d5538b7365b5606353843cd9e29413c9db2a81702c1fd9a",
+      "locations": [
+        {
+          "line": 10,
+          "quote": "public abstract class a extends LinearLayout {"
+        },
+        {
+          "line": 11,
+          "quote": ""
+        },
+        {
+          "line": 12,
+          "quote": "    /* renamed from: a, reason: collision with root package name */"
+        },
+        {
+          "line": 13,
+          "quote": "    protected WebView f180994a;"
+        },
+        {
+          "line": 14,
+          "quote": ""
+        },
+        {
+          "line": 15,
+          "quote": "    static {"
+        },
+        {
+          "line": 16,
+          "quote": "        Covode.recordClassIndex(608324);"
+        },
+        {
+          "line": 17,
+          "quote": "    }"
+        },
+        {
+          "line": 18,
+          "quote": ""
+        },
+        {
+          "line": 19,
+          "quote": "    public WebView getWebView() {"
+        },
+        {
+          "line": 20,
+          "quote": "        return this.f180994a;"
+        },
+        {
+          "line": 21,
+          "quote": "    }"
+        },
+        {
+          "line": 22,
+          "quote": ""
+        },
+        {
+          "line": 23,
+          "quote": "    public a(Context context) {"
+        },
+        {
+          "line": 24,
+          "quote": "        super(context);"
+        },
+        {
+          "line": 25,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/dragon/read/hybrid/webview/base/ReadingWebViewPlaceHolder.java",
+      "source_sha256": "0423adbbd90f2b10a44da4c30114c906862ff05d67b79e0759072d72a3973348",
+      "locations": [
+        {
+          "line": 23,
+          "quote": "public class ReadingWebViewPlaceHolder extends a {"
+        },
+        {
+          "line": 24,
+          "quote": ""
+        },
+        {
+          "line": 25,
+          "quote": "    /* renamed from: b, reason: collision with root package name */"
+        },
+        {
+          "line": 26,
+          "quote": "    public boolean f180993b;"
+        },
+        {
+          "line": 27,
+          "quote": ""
+        },
+        {
+          "line": 28,
+          "quote": "    @Override // com.dragon.read.hybrid.webview.base.a"
+        },
+        {
+          "line": 29,
+          "quote": "    public WebView getWebView() {"
+        },
+        {
+          "line": 30,
+          "quote": "        if (this.f180994a == null) {"
+        },
+        {
+          "line": 31,
+          "quote": "            b(null);"
+        },
+        {
+          "line": 32,
+          "quote": "        }"
+        },
+        {
+          "line": 33,
+          "quote": "        return super.getWebView();"
+        },
+        {
+          "line": 34,
+          "quote": "    }"
+        },
+        {
+          "line": 35,
+          "quote": ""
+        },
+        {
+          "line": 65,
+          "quote": ""
+        },
+        {
+          "line": 66,
+          "quote": "    private WebView e(String str) {"
+        },
+        {
+          "line": 67,
+          "quote": "        Context context = getContext();"
+        },
+        {
+          "line": 68,
+          "quote": "        WebView j17 = com.dragon.read.hybrid.webview.k.f181008a.j(context, str);"
+        },
+        {
+          "line": 69,
+          "quote": "        if (j17 == null) {"
+        },
+        {
+          "line": 70,
+          "quote": "            j17 = NsCommonDepend.IMPL.createReadingWebView(context);"
+        },
+        {
+          "line": 71,
+          "quote": "        }"
+        },
+        {
+          "line": 72,
+          "quote": "        j17.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));"
+        },
+        {
+          "line": 73,
+          "quote": "        j17.setOverScrollMode(2);"
+        },
+        {
+          "line": 74,
+          "quote": "        NsCommonDepend.IMPL.setReadingWebViewInitSize(j17, ScreenUtils.getScreenWidth(context), ScreenUtils.getScreenHeight(context));"
+        },
+        {
+          "line": 75,
+          "quote": "        return j17;"
+        },
+        {
+          "line": 76,
+          "quote": "    }"
+        },
+        {
+          "line": 77,
+          "quote": ""
+        },
+        {
+          "line": 78,
+          "quote": "    protected void b(String str) {"
+        },
+        {
+          "line": 79,
+          "quote": "        if (WebViewPreload.i().m()) {"
+        },
+        {
+          "line": 80,
+          "quote": "            this.f180994a = f(str);"
+        },
+        {
+          "line": 81,
+          "quote": "        } else {"
+        },
+        {
+          "line": 82,
+          "quote": "            this.f180994a = e(str);"
+        },
+        {
+          "line": 83,
+          "quote": "        }"
+        },
+        {
+          "line": 84,
+          "quote": "        addView(this.f180994a);"
+        },
+        {
+          "line": 85,
+          "quote": "        this.f180994a.setFocusable(isFocusable());"
+        },
+        {
+          "line": 86,
+          "quote": "        this.f180994a.setFocusableInTouchMode(isFocusableInTouchMode());"
+        },
+        {
+          "line": 114,
+          "quote": "    public ReadingWebViewPlaceHolder(Context context, String str) {"
+        },
+        {
+          "line": 115,
+          "quote": "        super(context);"
+        },
+        {
+          "line": 116,
+          "quote": "        this.f180993b = false;"
+        },
+        {
+          "line": 117,
+          "quote": "        c(context, null, str);"
+        },
+        {
+          "line": 118,
+          "quote": "    }"
+        },
+        {
+          "line": 119,
+          "quote": ""
+        },
+        {
+          "line": 120,
+          "quote": "    private void d(String str, String str2) {"
+        },
+        {
+          "line": 121,
+          "quote": "        WebViewPreloadV2 webViewPreloadV2 = WebViewPreloadV2.f180957a;"
+        },
+        {
+          "line": 122,
+          "quote": "        WebView i17 = webViewPreloadV2.i(str);"
+        },
+        {
+          "line": 123,
+          "quote": "        if (i17 == null) {"
+        },
+        {
+          "line": 124,
+          "quote": "            if (str2 == null) {"
+        },
+        {
+          "line": 125,
+          "quote": "                str2 = \"\";"
+        },
+        {
+          "line": 126,
+          "quote": "            }"
+        },
+        {
+          "line": 127,
+          "quote": "            b(str2);"
+        },
+        {
+          "line": 128,
+          "quote": "            webViewPreloadV2.f(getContext(), this.f180994a);"
+        },
+        {
+          "line": 129,
+          "quote": "            LogWrapper.info(\"default\", \"ReadingWebViewPlaceHolder\", \"no preload WebView, create WebView by self\", new Object[0]);"
+        },
+        {
+          "line": 130,
+          "quote": "            return;"
+        },
+        {
+          "line": 131,
+          "quote": "        }"
+        },
+        {
+          "line": 132,
+          "quote": "        a(i17);"
+        },
+        {
+          "line": 133,
+          "quote": "        com.dragon.read.hybrid.webview.k.f(getContext(), i17);"
+        },
+        {
+          "line": 134,
+          "quote": "        b.e(i17);"
+        },
+        {
+          "line": 135,
+          "quote": "        LogWrapper.info(\"default\", \"ReadingWebViewPlaceHolder\", \"use preload WebView for place holder\", new Object[0]);"
+        },
+        {
+          "line": 136,
+          "quote": "    }"
+        },
+        {
+          "line": 137,
+          "quote": ""
+        },
+        {
+          "line": 138,
+          "quote": "    private void c(Context context, AttributeSet attributeSet, String str) {"
+        },
+        {
+          "line": 139,
+          "quote": "        String str2;"
+        },
+        {
+          "line": 140,
+          "quote": "        Activity activity = ContextUtils.getActivity(context);"
+        },
+        {
+          "line": 141,
+          "quote": "        if (activity != null && activity.getIntent() != null) {"
+        },
+        {
+          "line": 142,
+          "quote": "            str2 = activity.getIntent().getStringExtra(\"preloadWebUUID\");"
+        },
+        {
+          "line": 143,
+          "quote": "        } else {"
+        },
+        {
+          "line": 144,
+          "quote": "            str2 = null;"
+        },
+        {
+          "line": 145,
+          "quote": "        }"
+        },
+        {
+          "line": 146,
+          "quote": "        d(str2, str);"
+        },
+        {
+          "line": 147,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/r64/j.java",
+      "source_sha256": "c7465e64d225d68c03d36341633730c40b7588caea499db89be81b3d36f5ef6b",
+      "locations": [
+        {
+          "line": 21,
+          "quote": "public class j extends WebViewClient {"
+        },
+        {
+          "line": 22,
+          "quote": ""
+        },
+        {
+          "line": 23,
+          "quote": "    /* renamed from: a, reason: collision with root package name */"
+        },
+        {
+          "line": 24,
+          "quote": "    public WebViewClient f364446a;"
+        },
+        {
+          "line": 25,
+          "quote": ""
+        },
+        {
+          "line": 51,
+          "quote": "    public void onPageFinished(WebView webView, String str) {"
+        },
+        {
+          "line": 52,
+          "quote": "        WebViewClient webViewClient = this.f364446a;"
+        },
+        {
+          "line": 53,
+          "quote": "        if (webViewClient != null) {"
+        },
+        {
+          "line": 54,
+          "quote": "            webViewClient.onPageFinished(webView, str);"
+        },
+        {
+          "line": 55,
+          "quote": "        } else {"
+        },
+        {
+          "line": 56,
+          "quote": "            super.onPageFinished(webView, str);"
+        },
+        {
+          "line": 57,
+          "quote": "        }"
+        },
+        {
+          "line": 81,
+          "quote": "    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {"
+        },
+        {
+          "line": 82,
+          "quote": "        WebViewClient webViewClient = this.f364446a;"
+        },
+        {
+          "line": 83,
+          "quote": "        if (webViewClient != null) {"
+        },
+        {
+          "line": 84,
+          "quote": "            return webViewClient.shouldInterceptRequest(webView, webResourceRequest);"
+        },
+        {
+          "line": 85,
+          "quote": "        }"
+        },
+        {
+          "line": 86,
+          "quote": "        return super.shouldInterceptRequest(webView, webResourceRequest);"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/bytedance/webx/core/webview/WebViewContainer.java",
+      "source_sha256": "f78b22c46f41e05cec153f2f94ce6e05ffea11dd4e4dbecfcb76d484c9e9e5b0",
+      "locations": [
+        {
+          "line": 1998,
+          "quote": "    @Override // com.bytedance.webx.core.webview.inner.WebViewContainerInner, android.webkit.WebView"
+        },
+        {
+          "line": 1999,
+          "quote": "    public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 2000,
+          "quote": "        if (!b.b()) {"
+        },
+        {
+          "line": 2001,
+          "quote": "            super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 2002,
+          "quote": "            return;"
+        },
+        {
+          "line": 2003,
+          "quote": "        }"
+        },
+        {
+          "line": 2004,
+          "quote": "        AbsListenerStub b17 = EventManager.b(getExtendableContext(), \"setWebViewClient\");"
+        },
+        {
+          "line": 2005,
+          "quote": "        if (b17 instanceof a) {"
+        },
+        {
+          "line": 2006,
+          "quote": "            ThreadLocal<b.c> threadLocal = jn1.b.f320801b;"
+        },
+        {
+          "line": 2007,
+          "quote": "            threadLocal.get().b();"
+        },
+        {
+          "line": 2008,
+          "quote": "            ((a) b17).w0(webViewClient);"
+        },
+        {
+          "line": 2009,
+          "quote": "            threadLocal.get().a();"
+        },
+        {
+          "line": 2010,
+          "quote": "            return;"
+        },
+        {
+          "line": 2011,
+          "quote": "        }"
+        },
+        {
+          "line": 2012,
+          "quote": "        super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 2013,
+          "quote": "    }"
+        },
+        {
+          "line": 1294,
+          "quote": "    /* JADX INFO: Access modifiers changed from: private */"
+        },
+        {
+          "line": 1295,
+          "quote": "    public void __super_setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 1296,
+          "quote": "        super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 1297,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/bytedance/webx/core/webview/inner/WebViewContainerInner.java",
+      "source_sha256": "48b440ba5e8c97e8c6cc03a0058f66226c0f5c4b0729e169e1e04e50c2569ecb",
+      "locations": [
+        {
+          "line": 40,
+          "quote": "    @TargetClass(scope = Scope.DIRECT, value = \"android.webkit.WebView\")"
+        },
+        {
+          "line": 41,
+          "quote": "    @Insert(mayCreateSuper = true, value = \"setWebViewClient\")"
+        },
+        {
+          "line": 42,
+          "quote": "    public static void com_bytedance_webx_core_webview_inner_WebViewContainerInner_com_dragon_read_aop_SecurityHoleAop_setWebViewClient(WebViewContainerInner webViewContainerInner, WebViewClient webViewClient) {"
+        },
+        {
+          "line": 43,
+          "quote": "        WebSettings settings = webViewContainerInner.getSettings();"
+        },
+        {
+          "line": 44,
+          "quote": "        if (settings != null) {"
+        },
+        {
+          "line": 45,
+          "quote": "            settings.setSavePassword(false);"
+        },
+        {
+          "line": 46,
+          "quote": "        }"
+        },
+        {
+          "line": 47,
+          "quote": "        webViewContainerInner.WebViewContainerInner__setWebViewClient$___twin___(webViewClient);"
+        },
+        {
+          "line": 48,
+          "quote": "    }"
+        },
+        {
+          "line": 49,
+          "quote": ""
+        },
+        {
+          "line": 50,
+          "quote": "    @Override // android.webkit.WebView"
+        },
+        {
+          "line": 51,
+          "quote": "    public void setWebViewClient(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 52,
+          "quote": "        com_bytedance_webx_core_webview_inner_WebViewContainerInner_com_dragon_read_aop_SecurityHoleAop_setWebViewClient(this, webViewClient);"
+        },
+        {
+          "line": 53,
+          "quote": "    }"
+        },
+        {
+          "line": 151,
+          "quote": "    public void WebViewContainerInner__setWebViewClient$___twin___(WebViewClient webViewClient) {"
+        },
+        {
+          "line": 152,
+          "quote": "        if (!b.b()) {"
+        },
+        {
+          "line": 153,
+          "quote": "            super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 154,
+          "quote": "        } else if (this.mEnv == null) {"
+        },
+        {
+          "line": 155,
+          "quote": "            super.setWebViewClient(webViewClient);"
+        },
+        {
+          "line": 156,
+          "quote": "        } else {"
+        },
+        {
+          "line": 157,
+          "quote": "            this.mWebViewClient.mWebViewClientDelegate = webViewClient;"
+        },
+        {
+          "line": 158,
+          "quote": "        }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/dragon/read/NsCommonDepend.java",
+      "source_sha256": "93a2979865ab4aeedc07972807a98eeba35e6584cfa21739e725dbee0a125dc8",
+      "locations": [
+        {
+          "line": 138,
+          "quote": "    public static final NsCommonDepend IMPL;"
+        },
+        {
+          "line": 831,
+          "quote": ""
+        },
+        {
+          "line": 832,
+          "quote": "    static {"
+        },
+        {
+          "line": 833,
+          "quote": "        Covode.recordClassIndex(576389);"
+        },
+        {
+          "line": 834,
+          "quote": "        IMPL = (NsCommonDepend) ServiceManager.getService(NsCommonDepend.class);"
+        },
+        {
+          "line": 835,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/bytedance/news/common/service/manager/ServiceManager.java",
+      "source_sha256": "f195cac2416e0188a3fbb922bb4020166a9474e593031dedda16e2de95ace265",
+      "locations": [
+        {
+          "line": 20,
+          "quote": ""
+        },
+        {
+          "line": 21,
+          "quote": "    private static <T> T tryGetByReflect(Class<T> cls) {"
+        },
+        {
+          "line": 22,
+          "quote": "        try {"
+        },
+        {
+          "line": 23,
+          "quote": "            Object newInstance = a.q(String.format(\"%s__ServiceProxy\", cls.getName())).newInstance();"
+        },
+        {
+          "line": 24,
+          "quote": "            if (newInstance instanceof IServiceProxy) {"
+        },
+        {
+          "line": 25,
+          "quote": "                return (T) ((IServiceProxy) newInstance).newInstance();"
+        },
+        {
+          "line": 26,
+          "quote": "            }"
+        },
+        {
+          "line": 27,
+          "quote": "            return null;"
+        },
+        {
+          "line": 28,
+          "quote": "        } catch (Throwable unused) {"
+        },
+        {
+          "line": 29,
+          "quote": "            return null;"
+        },
+        {
+          "line": 30,
+          "quote": "        }"
+        },
+        {
+          "line": 31,
+          "quote": "    }"
+        },
+        {
+          "line": 32,
+          "quote": ""
+        },
+        {
+          "line": 33,
+          "quote": "    public static <T> T getService(Class<T> cls) {"
+        },
+        {
+          "line": 34,
+          "quote": "        ConcurrentHashMap<Class, Object> concurrentHashMap = SERVICES;"
+        },
+        {
+          "line": 35,
+          "quote": "        T t17 = (T) concurrentHashMap.get(cls);"
+        },
+        {
+          "line": 36,
+          "quote": "        if (t17 == null) {"
+        },
+        {
+          "line": 37,
+          "quote": "            synchronized (cls) {"
+        },
+        {
+          "line": 38,
+          "quote": "                T t18 = (T) concurrentHashMap.get(cls);"
+        },
+        {
+          "line": 39,
+          "quote": "                if (t18 != null) {"
+        },
+        {
+          "line": 40,
+          "quote": "                    return t18;"
+        },
+        {
+          "line": 41,
+          "quote": "                }"
+        },
+        {
+          "line": 42,
+          "quote": "                ConcurrentHashMap<Class, ServiceCreator<?>> concurrentHashMap2 = SERVICE_CREATORS;"
+        },
+        {
+          "line": 43,
+          "quote": "                ServiceCreator<?> serviceCreator = concurrentHashMap2.get(cls);"
+        },
+        {
+          "line": 44,
+          "quote": "                if (serviceCreator != null) {"
+        },
+        {
+          "line": 45,
+          "quote": "                    T t19 = (T) serviceCreator.create();"
+        },
+        {
+          "line": 46,
+          "quote": "                    concurrentHashMap2.remove(cls);"
+        },
+        {
+          "line": 47,
+          "quote": "                    if (t19 != null) {"
+        },
+        {
+          "line": 48,
+          "quote": "                        putService(cls, t19);"
+        },
+        {
+          "line": 49,
+          "quote": "                        return t19;"
+        },
+        {
+          "line": 50,
+          "quote": "                    }"
+        },
+        {
+          "line": 51,
+          "quote": "                }"
+        },
+        {
+          "line": 52,
+          "quote": "                try {"
+        },
+        {
+          "line": 53,
+          "quote": "                    T t27 = (T) zp0.a.a(cls);"
+        },
+        {
+          "line": 54,
+          "quote": "                    if (t27 != null) {"
+        },
+        {
+          "line": 55,
+          "quote": "                        putService(cls, t27);"
+        },
+        {
+          "line": 56,
+          "quote": "                        return t27;"
+        },
+        {
+          "line": 57,
+          "quote": "                    }"
+        },
+        {
+          "line": 58,
+          "quote": "                } catch (Exception e17) {"
+        },
+        {
+          "line": 59,
+          "quote": "                    e17.printStackTrace();"
+        },
+        {
+          "line": 60,
+          "quote": "                }"
+        },
+        {
+          "line": 61,
+          "quote": "                t17 = (T) tryGetByReflect(cls);"
+        },
+        {
+          "line": 62,
+          "quote": "                if (t17 != null) {"
+        },
+        {
+          "line": 63,
+          "quote": "                    putService(cls, t17);"
+        },
+        {
+          "line": 64,
+          "quote": "                    return t17;"
+        },
+        {
+          "line": 65,
+          "quote": "                }"
+        },
+        {
+          "line": 66,
+          "quote": "            }"
+        },
+        {
+          "line": 67,
+          "quote": "        }"
+        },
+        {
+          "line": 68,
+          "quote": "        return t17;"
+        },
+        {
+          "line": 69,
+          "quote": "    }"
+        },
+        {
+          "line": 70,
+          "quote": ""
+        },
+        {
+          "line": 71,
+          "quote": "    public static <T> void registerService(Class<T> cls, ServiceCreator<T> serviceCreator) {"
+        },
+        {
+          "line": 72,
+          "quote": "        SERVICE_CREATORS.put(cls, serviceCreator);"
+        },
+        {
+          "line": 73,
+          "quote": "    }"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/zp0/a.java",
+      "source_sha256": "02c7717bbb5a7713b9bd940c5c2b9709337fb27f96fbb13e5ffe46dfb778b403",
+      "locations": [
+        {
+          "line": 799,
+          "quote": "    public static <T> T a(Class<T> cls) {"
+        },
+        {
+          "line": 800,
+          "quote": "        if (cls == ISeriesDownloadService.class) {"
+        },
+        {
+          "line": 801,
+          "quote": "            return (T) new SeriesDownloadServiceImpl();"
+        },
+        {
+          "line": 802,
+          "quote": "        }"
+        },
+        {
+          "line": 803,
+          "quote": "        if (cls == ISeriesOfflinePlayService.class) {"
+        },
+        {
+          "line": 804,
+          "quote": "            return (T) new SeriesOfflinePlayServiceImpl();"
+        },
+        {
+          "line": 805,
+          "quote": "        }"
+        },
+        {
+          "line": 806,
+          "quote": "        if (cls == ShortSeriesApi.class) {"
+        },
+        {
+          "line": 807,
+          "quote": "            return (T) new ShortSeriesImpl();"
+        },
+        {
+          "line": 808,
+          "quote": "        }"
+        },
+        {
+          "line": 809,
+          "quote": "        if (cls == IBaseModelDependApi.class) {"
+        },
+        {
+          "line": 810,
+          "quote": "            return (T) new BaseModelDependImpl();"
+        },
+        {
+          "line": 811,
+          "quote": "        }"
+        },
+        {
+          "line": 812,
+          "quote": "        if (cls == IAdLpComponentsService.class) {"
+        },
+        {
+          "line": 813,
+          "quote": "            return (T) new AdLpComponentsServiceImpl();"
+        },
+        {
+          "line": 814,
+          "quote": "        }"
+        },
+        {
+          "line": 815,
+          "quote": "        if (cls == UpdateCheckerService.class) {"
+        },
+        {
+          "line": 816,
+          "quote": "            return (T) new SSUpdateChecker();"
+        },
+        {
+          "line": 817,
+          "quote": "        }"
+        },
+        {
+          "line": 818,
+          "quote": "        if (cls == UpdateService.class) {"
+        },
+        {
+          "line": 819,
+          "quote": "            return (T) new UpdateServiceImpl();"
+        },
+        {
+          "line": 820,
+          "quote": "        }"
+        },
+        {
+          "line": 821,
+          "quote": "        if (cls == ApplogService.class) {"
+        },
+        {
+          "line": 822,
+          "quote": "            return (T) new ApplogServiceImpl();"
+        },
+        {
+          "line": 823,
+          "quote": "        }"
+        },
+        {
+          "line": 824,
+          "quote": "        if (cls == ICodeHighlight.class) {"
+        },
+        {
+          "line": 825,
+          "quote": "            return (T) new CodeHighlightImpl();"
+        },
+        {
+          "line": 826,
+          "quote": "        }"
+        },
+        {
+          "line": 827,
+          "quote": "        if (cls == ITokenizer.class) {"
+        },
+        {
+          "line": 828,
+          "quote": "            return (T) new ReaderTokenizerImpl();"
+        },
+        {
+          "line": 829,
+          "quote": "        }"
+        },
+        {
+          "line": 830,
+          "quote": "        if (cls == ImpressionService.class) {"
+        },
+        {
+          "line": 831,
+          "quote": "            return (T) new ImpressionServiceImpl();"
+        },
+        {
+          "line": 832,
+          "quote": "        }"
+        },
+        {
+          "line": 833,
+          "quote": "        if (cls == IFqBaseService.class) {"
+        },
+        {
+          "line": 834,
+          "quote": "            return (T) new NsFqBaseHybridImpl();"
+        },
+        {
+          "line": 835,
+          "quote": "        }"
+        },
+        {
+          "line": 836,
+          "quote": "        if (cls == SettingsConfigProvider.class) {"
+        },
+        {
+          "line": 837,
+          "quote": "            return (T) new SettingsConfigProviderImpl();"
+        },
+        {
+          "line": 838,
+          "quote": "        }"
+        },
+        {
+          "line": 839,
+          "quote": "        if (cls == NsPaidStoryApi.class) {"
+        },
+        {
+          "line": 840,
+          "quote": "            return (T) new NsPaidStoryApiImpl();"
+        },
+        {
+          "line": 841,
+          "quote": "        }"
+        },
+        {
+          "line": 842,
+          "quote": "        if (cls == NsCommonDepend.class) {"
+        },
+        {
+          "line": 843,
+          "quote": "            return (T) new NsCommonDependImpl();"
+        },
+        {
+          "line": 844,
+          "quote": "        }"
+        },
+        {
+          "line": 845,
+          "quote": "        if (cls == NsUiDepend.class) {"
+        },
+        {
+          "line": 846,
+          "quote": "            return (T) new NsUiDependImpl();"
+        }
+      ]
+    },
+    {
+      "source_file": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/sources/com/dragon/read/NsCommonDepend__ServiceProxy.java",
+      "source_sha256": "19e87f746ed00477b5267c88f157be1b8fcc66dddfb05f5dd209c58caaf3be3e",
+      "locations": [
+        {
+          "line": 13,
+          "quote": ""
+        },
+        {
+          "line": 14,
+          "quote": "    /* JADX WARN: Can't rename method to resolve collision */"
+        },
+        {
+          "line": 15,
+          "quote": "    @Override // com.bytedance.news.common.service.manager.IServiceProxy"
+        },
+        {
+          "line": 16,
+          "quote": "    public NsCommonDepend newInstance() {"
+        },
+        {
+          "line": 17,
+          "quote": "        return new NsCommonDependImpl();"
+        },
+        {
+          "line": 18,
+          "quote": "    }"
+        },
+        {
+          "line": 19,
+          "quote": ""
+        },
+        {
+          "line": 20,
+          "quote": "    @Override // com.bytedance.news.common.service.manager.IServiceProxy"
+        },
+        {
+          "line": 21,
+          "quote": "    public void collectService(Map<String, String> map) {"
+        },
+        {
+          "line": 22,
+          "quote": "        map.put(\"com.dragon.read.NsCommonDepend\", \"com.dragon.read.component.NsCommonDependImpl\");"
+        },
+        {
+          "line": 23,
+          "quote": "    }"
+        },
+        {
+          "line": 24,
+          "quote": "}"
+        }
+      ]
+    }
+  ],
+  "six_missing": [
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageStarted",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedSslError",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onReceivedError",
+      "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "onPageFinished",
+      "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "callback",
+      "name": "shouldInterceptRequest",
+      "signature": "Lcom/dragon/read/hybrid/webview/ReadingWebView$m;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+      "reason": "not_matched"
+    }
+  ],
+  "actual_chain": "Activity.D2 -> lazy.c -> new Swipe -> new Placeholder -> getWebView -> inherited null-field fallback b -> e -> NsCommonDepend.IMPL.createReadingWebView -> Impl new ReadingWebView -> inherited base.a.f180994a write -> super.getWebView -> Swipe final M -> Q -> new c(nonnull) -> Reading.setClient -> new m -> inherited r64.j.delegate=actual c -> super API chain",
+  "webview_inheritance": [
+    "ReadingWebView",
+    "com.bytedance.webx.core.webview.c",
+    "WebViewContainer",
+    "WebViewContainerInner",
+    "android.webkit.WebView"
+  ],
+  "client_inheritance": {
+    "delegate": [
+      "SwipeRefreshWebView$c",
+      "r64.g",
+      "android.webkit.WebViewClient"
+    ],
+    "wrapper": [
+      "ReadingWebView$m",
+      "ReadingWebView$o",
+      "r64.j",
+      "android.webkit.WebViewClient"
+    ]
+  },
+  "registration_signature": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+  "v13_c_registration": {
+    "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+    "kind": "callback",
+    "name": "setWebViewClient",
+    "site": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;->Q()V@7",
+    "api": "Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V",
+    "webview": {
+      "id": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Ljava/lang/String;ILjava/lang/String;Z)V@19|Lcom/dragon/read/hybrid/webview/SwipeRefreshWebViewLazyLayout;->c(Ljava/lang/String;ILjava/lang/String;Z)Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;@14|activity:com.dragon.read.hybrid.webview.WebViewActivity/view:2131832912::Lcom/dragon/read/hybrid/webview/base/a;->a:Landroid/webkit/WebView;",
+      "type": "android.webkit.WebView"
+    },
+    "binding_status": "candidate",
+    "conditional": true,
+    "evidence": [
+      "com.dragon.read.hybrid.webview.WebViewActivity",
+      "Lcom/dragon/read/hybrid/webview/WebViewActivity;->D2()V",
+      "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Ljava/lang/String;ILjava/lang/String;Z)V",
+      "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;->Q()V"
+    ],
+    "arguments": [
+      {
+        "kind": "field_object",
+        "type": "android.webkit.WebView",
+        "id": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Ljava/lang/String;ILjava/lang/String;Z)V@19|Lcom/dragon/read/hybrid/webview/SwipeRefreshWebViewLazyLayout;->c(Ljava/lang/String;ILjava/lang/String;Z)Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;@14|activity:com.dragon.read.hybrid.webview.WebViewActivity/view:2131832912::Lcom/dragon/read/hybrid/webview/base/a;->a:Landroid/webkit/WebView;",
+        "args": []
+      },
+      {
+        "kind": "object",
+        "type": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c",
+        "id": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;->Q()V@0|Lcom/dragon/read/hybrid/webview/SwipeRefreshWebViewLazyLayout;->c(Ljava/lang/String;ILjava/lang/String;Z)Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView;@14|activity:com.dragon.read.hybrid.webview.WebViewActivity/view:2131832912",
+        "args": []
+      }
+    ],
+    "implementation": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c",
+    "members": [
+      {
+        "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V",
+        "display": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c.onPageFinished(Landroid/webkit/WebView;,Ljava/lang/String;):V",
+        "name": "onPageFinished"
+      },
+      {
+        "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "display": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+        "name": "onPageStarted"
+      },
+      {
+        "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedError(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V",
+        "display": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c.onReceivedError(Landroid/webkit/WebView;,I,Ljava/lang/String;,Ljava/lang/String;):V",
+        "name": "onReceivedError"
+      },
+      {
+        "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V",
+        "display": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c.onReceivedError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceError;):V",
+        "name": "onReceivedError"
+      },
+      {
+        "signature": "Lcom/dragon/read/hybrid/webview/SwipeRefreshWebView$c;->onReceivedSslError(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V",
+        "display": "com.dragon.read.hybrid.webview.SwipeRefreshWebView$c.onReceivedSslError(Landroid/webkit/WebView;,Landroid/webkit/SslErrorHandler;,Landroid/net/http/SslError;):V",
+        "name": "onReceivedSslError"
+      },
+      {
+        "signature": "Lr64/g;->onReceivedHttpError(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V",
+        "display": "r64.g.onReceivedHttpError(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;,Landroid/webkit/WebResourceResponse;):V",
+        "name": "onReceivedHttpError"
+      },
+      {
+        "signature": "Lr64/g;->shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
+        "display": "r64.g.shouldInterceptRequest(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Landroid/webkit/WebResourceResponse;",
+        "name": "shouldInterceptRequest"
+      },
+      {
+        "signature": "Lr64/g;->shouldInterceptRequest(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;",
+        "display": "r64.g.shouldInterceptRequest(Landroid/webkit/WebView;,Ljava/lang/String;):Landroid/webkit/WebResourceResponse;",
+        "name": "shouldInterceptRequest"
+      },
+      {
+        "signature": "Lr64/g;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z",
+        "display": "r64.g.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Landroid/webkit/WebResourceRequest;):Z",
+        "name": "shouldOverrideUrlLoading"
+      },
+      {
+        "signature": "Lr64/g;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z",
+        "display": "r64.g.shouldOverrideUrlLoading(Landroid/webkit/WebView;,Ljava/lang/String;):Z",
+        "name": "shouldOverrideUrlLoading"
+      },
+      {
+        "signature": "Lr64/g;->onPageStarted(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V",
+        "display": "r64.g.onPageStarted(Landroid/webkit/WebView;,Ljava/lang/String;,Landroid/graphics/Bitmap;):V",
+        "name": "onPageStarted"
+      }
+    ]
+  },
+  "v13_activity_coverage": {
+    "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+    "status": "pending_deep_analysis",
+    "phase": 1,
+    "contexts_processed": 2620,
+    "pending_contexts": 5571,
+    "analysis_seconds": 9.886486017,
+    "slices": 55,
+    "pending_priority_contexts": 0,
+    "pending_ordinary_contexts": 5571,
+    "application_bootstrap_import_seconds": 5.013e-06,
+    "application_bootstrap_import_entries": 0,
+    "pending_method_sample": [
+      {
+        "method": "Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;",
+        "priority": 0,
+        "ordinary": 51,
+        "example_argument_kinds": [
+          "object"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/dragon/read/hybrid/webview/e;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+          "Lcom/dragon/read/hybrid/webview/ReadingWebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+          "Lu64/e;-><init>(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lkotlin/jvm/internal/Lambda;-><init>(I)V",
+        "priority": 0,
+        "ordinary": 27,
+        "example_argument_kinds": [
+          "object",
+          "literal"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/bytedance/sdk/xbridge/cn/platform/web/WebBDXBridge;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/webkit/WebView;Ljava/lang/String;Lcom/bytedance/ies/argus/api/ArgusWebDelegate;)V",
+          "Lcom/bytedance/sdk/xbridge/cn/protocol/BDXBridge;-><init>(Landroid/content/Context;Ljava/lang/String;)V",
+          "Lcom/bytedance/sdk/xbridge/cn/protocol/BDXBridge$internalMethodFinder$2;-><init>()V",
+          "Lkotlin/jvm/internal/Lambda;-><init>(I)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V",
+        "priority": 0,
+        "ordinary": 17,
+        "example_argument_kinds": [
+          "object",
+          "union",
+          "literal"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/dragon/read/social/mediafinder/y;->k(IILandroid/content/Intent;Landroid/app/Activity;)V",
+          "Lcom/dragon/read/util/UriUtils;->saveUriToTempFile(Landroid/content/Context;Landroid/net/Uri;)Ljava/io/File;",
+          "Lcom/dragon/read/util/UriUtils;->saveUriToTempFile(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)Ljava/io/File;",
+          "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/bytedance/android/monitorV2/util/i;->q(Lorg/json/JSONObject;Ljava/lang/String;J)V",
+        "priority": 0,
+        "ordinary": 15,
+        "example_argument_kinds": [
+          "object",
+          "literal",
+          "union"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/bytedance/android/monitorV2/webview/WebViewMonitorHelperImpl;->onLoadUrl(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "Lcom/bytedance/android/monitorV2/webview/WebViewDataManager;->onLoadUrl(Ljava/lang/String;)V",
+          "Lcom/bytedance/android/monitorV2/webview/WebViewDataManager;->handleBlankDetect()V",
+          "Lcom/bytedance/android/monitorV2/util/i;->q(Lorg/json/JSONObject;Ljava/lang/String;J)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+        "priority": 0,
+        "ordinary": 15,
+        "example_argument_kinds": [
+          "object",
+          "field_object"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/dragon/read/hybrid/webview/e;->U(IILandroid/content/Intent;)V",
+          "Lr64/f;->d(IILandroid/content/Intent;)V",
+          "Lr64/d;->f(IILandroid/content/Intent;)V",
+          "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/bytedance/android/monitorV2/util/i;->p(Lorg/json/JSONObject;Ljava/lang/String;I)V",
+        "priority": 0,
+        "ordinary": 13,
+        "example_argument_kinds": [
+          "object",
+          "literal",
+          "union"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/bytedance/android/monitorV2/webview/WebViewMonitorHelperImpl;->onLoadUrl(Landroid/webkit/WebView;Ljava/lang/String;)V",
+          "Lcom/bytedance/android/monitorV2/webview/WebViewDataManager;->onLoadUrl(Ljava/lang/String;)V",
+          "Lcom/bytedance/android/monitorV2/webview/WebViewDataManager;->handleBlankDetect()V",
+          "Lcom/bytedance/android/monitorV2/util/i;->p(Lorg/json/JSONObject;Ljava/lang/String;I)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V",
+        "priority": 0,
+        "ordinary": 13,
+        "example_argument_kinds": [
+          "object",
+          "class",
+          "object"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/dragon/read/hybrid/bridge/base/BridgeJsonUtils;->toJsonObject(Ljava/lang/Object;)Lorg/json/JSONObject;",
+          "Lcom/dragon/read/hybrid/bridge/base/BridgeJsonUtils;->getInstance()Lcom/google/gson/Gson;",
+          "Lcom/google/gson/Gson;-><init>(Lcom/google/gson/internal/Excluder;Lcom/google/gson/FieldNamingStrategy;Ljava/util/Map;ZZZZZZZLcom/google/gson/LongSerializationPolicy;Ljava/lang/String;IILjava/util/List;Ljava/util/List;Ljava/util/List;)V",
+          "Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper$a;->a(Ljava/lang/String;)Ljava/lang/String;",
+        "priority": 0,
+        "ordinary": 11,
+        "example_argument_kinds": [
+          "object",
+          "unknown"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/dragon/read/social/mediafinder/y;->k(IILandroid/content/Intent;Landroid/app/Activity;)V",
+          "Lcom/dragon/read/social/mediafinder/y;->p(Landroid/app/Activity;Landroid/content/Intent;)V",
+          "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper;-><init>(Ljava/lang/String;)V",
+          "Lcom/bytedance/security/android/aopcheck/PolarisFileWrapper$a;->a(Ljava/lang/String;)Ljava/lang/String;"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lm61/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V",
+        "priority": 0,
+        "ordinary": 11,
+        "example_argument_kinds": [
+          "object",
+          "literal",
+          "literal"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/bytedance/news/common/service/manager/ServiceManager;->getService(Ljava/lang/Class;)Ljava/lang/Object;",
+          "Lzp0/a;->a(Ljava/lang/Class;)Ljava/lang/Object;",
+          "Lcom/dragon/read/ad/tomato/reward/impl/RewardRequestResultImpl;-><init>()V",
+          "Lm61/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Landroidx/fragment/app/SpecialEffectsController;->a(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/m;)V",
+        "priority": 0,
+        "ordinary": 10,
+        "example_argument_kinds": [
+          "unknown",
+          "enum",
+          "enum",
+          "unknown"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Landroidx/fragment/app/n;->r()V",
+          "Landroidx/fragment/app/m;->l()V",
+          "Landroidx/fragment/app/SpecialEffectsController;->c(Landroidx/fragment/app/m;)V",
+          "Landroidx/fragment/app/SpecialEffectsController;->a(Landroidx/fragment/app/SpecialEffectsController$Operation$State;Landroidx/fragment/app/SpecialEffectsController$Operation$LifecycleImpact;Landroidx/fragment/app/m;)V"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lcom/dragon/read/base/ssconfig/SsConfigMgr;->getABValue(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+        "priority": 0,
+        "ordinary": 10,
+        "example_argument_kinds": [
+          "literal",
+          "object",
+          "installed_client_context"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lr64/f;->onPermissionRequest(Landroid/webkit/PermissionRequest;)V",
+          "Lcom/dragon/base/ssconfig/template/HybridSecureConfig;->c()Lcom/dragon/base/ssconfig/template/HybridSecureConfig;",
+          "Lcom/dragon/base/ssconfig/template/HybridSecureConfig$a;->a()Lcom/dragon/base/ssconfig/template/HybridSecureConfig;",
+          "Lcom/dragon/read/base/ssconfig/SsConfigMgr;->getABValue(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;"
+        ],
+        "example_candidate": true
+      },
+      {
+        "method": "Lk3/a;->q(Ljava/lang/String;)Ljava/lang/Class;",
+        "priority": 0,
+        "ordinary": 10,
+        "example_argument_kinds": [
+          "unknown",
+          "installed_client_context"
+        ],
+        "example_entry_parameter_count": 0,
+        "example_path_tail": [
+          "Lcom/dragon/read/base/ssconfig/SsConfigMgr;->getABValue(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+          "Lcom/dragon/read/base/ssconfig/SsConfigMgr;->getABValue(Ljava/lang/String;Ljava/lang/Object;ZZ)Ljava/lang/Object;",
+          "Lcom/dragon/read/base/ssconfig/template/ConfigModelCollector;->tryLoadConfigModelClass(Ljava/lang/String;)V",
+          "Lk3/a;->q(Ljava/lang/String;)Ljava/lang/Class;"
+        ],
+        "example_candidate": true
+      }
+    ],
+    "discarded_contexts": 0,
+    "phase_contexts": [
+      2620,
+      0
+    ],
+    "tracked_xml_consumers": 85,
+    "tracked_deferred_fields": 978,
+    "provisional_facts": 0,
+    "checkpoint_seconds": 0.000113129
+  },
+  "confirmed_diagnosis": "Four delegate signatures already recognized but bound to field_object android.webkit.WebView; two wrapper members have no actual wrapped install. Exact field loss and pending budget contribution not yet isolated.",
+  "cleanup_negative": "mode3 null reset takes super(null), returns before wrapper new; preserve prior source rejection of v7 cleanup wrapper matches",
+  "fixture": {
+    "path": "src/test/java/org/example/InheritedWebViewWrapperProbe.java",
+    "sha256": "2885999f615fcee926e87138c36c3d28a80833368a7f138d9e6721a8043d43f7",
+    "result_path": "test/runs/fanqie-holder-probe-v13/results.txt",
+    "result_sha256": "318cadcfabfd59dae2cecfa5d4ad2b2c5d71eca1fe79cca2e9dc102f7846ebe3",
+    "summary": "direct and inherited holder both restore wrapper/delegate; cleanup0; simple inheritance is not isolated bug. Holder previous_phase_not_rederived1 remains."
+  },
+  "acceptance_claim": false,
+  "source_build": {
+    "path": "/HDD/d3008/WebViewBench/WebViewBench-predecompiled/fanqiexiaoshuo-1/build.json",
+    "sha256": "de52e085c9d2b8255e1dd7741cd553b77dab7cbdc7d259a67d130bf8f9671c92",
+    "apk_hash_match": true,
+    "jadx_exit_code": 1
+  },
+  "diagnostic_attempts": [
+    {
+      "path": "test/runs/fanqie-holder-trace-v13/results.txt",
+      "result": "invalid for callback diagnosis: contexts0 because shared original deadline exhausted before host analysis; no negative inference"
+    },
+    {
+      "path": "test/runs/fanqie-holder-trace-v13/results-fresh-budget.txt",
+      "sha256": "9294f6bfeaaa205542b1d8b484e90aa073c5ed90ef031d31278ec79702f3dad0",
+      "result": "index119.550s complete; fresh60s engine budget consumed before Activity jobs (bootstrap initialization); jobs0, pending40. Invalid for actual holder heap conclusions.",
+      "helper": "test/diagnostics/FanqieHolderTrace.java",
+      "helper_sha256": "d81ada2ec9bd8b263d064097ac4d0354778724696677d7c10cd5ca05a190e8ee"
+    }
+  ],
+  "class_key_factory_candidate": {
+    "actual_entry": "NsCommonDepend.IMPL <clinit> -> ServiceManager.getService(Class) -> cached lookup / creator / zp0.a.a(Class) -> exact Class == literal branch -> new NsCommonDependImpl; fallback formatted-name ServiceProxy reflection",
+    "target_source_lines": "zp0.a.java842-843",
+    "generic_fixture": "src/test/java/org/example/ClassKeyFactoryProbe.java",
+    "fixture_sha256": "f7e1d4cd61ee060a7aa3ec47280aff2773df43b041f365f6b3f633bb42f5f6fc",
+    "results_path": "test/runs/fanqie-class-key-probe-v13/results.txt",
+    "results_sha256": "b1e666bb158cada02e5e88bf810182bced1a97aeb7121f79674192d76759ff77",
+    "frozen_jar_sha256": "893801996f1b4822fdeb79c006544527e071a2b381d743c913025cb03ec2f22a",
+    "result": "Known Product0 class still yields Product0+Product1+null for2 branches and unknown for80; class-reference equality not refined; abstract union cap12 explains loss of concrete returns in generic large chain.",
+    "status": "generic semantic gap proved; exact causal contribution in actual unfinished App remains candidate pending actual receiver trace",
+    "fix_boundary": "Known same-loader Class constants may support precise identity eq/ne; dynamic or unresolved loader identity remains unknown. Large contextual-summary instruction gate is separate and must be measured.",
+    "actual_dex": {
+      "entry": "classes26.dex",
+      "sha256": "9f97e46716a96fd443fa9f18b9bfd98f2c4a5490eab065880aec36a882a2f729",
+      "method": "Lzp0/a;->a(Ljava/lang/Class;)Ljava/lang/Object;",
+      "flags": 9,
+      "instructions": 1992,
+      "const_class": 398,
+      "binary_eq_ne": 398,
+      "metadata_result_path": "test/runs/fanqie-class-key-probe-v13/actual-dex-method-size.txt",
+      "metadata_result_sha256": "f8f69d17e8d39123d413678f933dcb649336c103a5763c740b1d433004d5ed4f",
+      "probe_source_sha256": "7e5e7f1b341f0c0741f94a2d1c38f7f07016ea1ff9633350b79e2cba594064a3"
+    },
+    "matrix_sizes": [
+      2,
+      80,
+      398
+    ],
+    "same_shape_instruction_count": 1992
+  }
+}

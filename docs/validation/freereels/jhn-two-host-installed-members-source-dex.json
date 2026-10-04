@@ -1,0 +1,2387 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "parse_method": "DEX class_defs/class_data encoded method declarations, method_ids/proto_ids/type_ids/string_ids; all interface declarations, no name-based callback inference.",
+  "classes": [
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/SWs;",
+      "superclass_descriptor": "Landroid/webkit/WebViewClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1388484,
+      "class_access_flags": 1,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/bytedance/sdk/component/JP/SWs.java",
+      "source_sha256": "a3b69c0af8efd319fff2895b6b5e17d26177b0e9f583530b1ee817ec6882cf9a",
+      "methods": [
+        {
+          "method_id": 13057,
+          "method_id_offset": 888900,
+          "access_flags": 65537,
+          "code_offset": 6470724,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO$uOO;Landroid/webkit/WebViewClient;Ljava/util/List;)V"
+        },
+        {
+          "method_id": 13075,
+          "method_id_offset": 889044,
+          "access_flags": 2,
+          "code_offset": 6470760,
+          "name": "uOO",
+          "descriptor": "(Landroid/webkit/WebView;)I"
+        },
+        {
+          "method_id": 13058,
+          "method_id_offset": 888908,
+          "access_flags": 1,
+          "code_offset": 6470816,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13059,
+          "method_id_offset": 888916,
+          "access_flags": 1,
+          "code_offset": 6470852,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13060,
+          "method_id_offset": 888924,
+          "access_flags": 1,
+          "code_offset": 6470880,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 13061,
+          "method_id_offset": 888932,
+          "access_flags": 1,
+          "code_offset": 6470928,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13062,
+          "method_id_offset": 888940,
+          "access_flags": 1,
+          "code_offset": 6470976,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 13063,
+          "method_id_offset": 888948,
+          "access_flags": 1,
+          "code_offset": 6471024,
+          "name": "onReceivedHttpError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+        },
+        {
+          "method_id": 13064,
+          "method_id_offset": 888956,
+          "access_flags": 1,
+          "code_offset": 6471052,
+          "name": "onReceivedSslError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+        },
+        {
+          "method_id": 13065,
+          "method_id_offset": 888964,
+          "access_flags": 1,
+          "code_offset": 6471080,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 13066,
+          "method_id_offset": 888972,
+          "access_flags": 1,
+          "code_offset": 6471132,
+          "name": "safedk_SWs_onPageStarted_2db1e6ba937fd54288515eaa616c7668",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 13067,
+          "method_id_offset": 888980,
+          "access_flags": 1,
+          "code_offset": 6471184,
+          "name": "safedk_SWs_onReceivedError_92790592dc58dff36a1181d19496fb83",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13068,
+          "method_id_offset": 888988,
+          "access_flags": 1,
+          "code_offset": 6471212,
+          "name": "safedk_SWs_onReceivedError_9d59fed4591387070c1f20b921dcdbb3",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 13069,
+          "method_id_offset": 888996,
+          "access_flags": 1,
+          "code_offset": 6471240,
+          "name": "safedk_SWs_shouldInterceptRequest_1bea0775035c28df1c66af593a0a8699",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 13070,
+          "method_id_offset": 889004,
+          "access_flags": 1,
+          "code_offset": 6471272,
+          "name": "safedk_SWs_shouldInterceptRequest_236a757e035f6c2870f562f1f9a47f2f",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 13071,
+          "method_id_offset": 889012,
+          "access_flags": 1,
+          "code_offset": 6471348,
+          "name": "safedk_SWs_shouldOverrideUrlLoading_e1a2a0036c60e6086bbfe7af319c6dae",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 13072,
+          "method_id_offset": 889020,
+          "access_flags": 1,
+          "code_offset": 6471392,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 13073,
+          "method_id_offset": 889028,
+          "access_flags": 1,
+          "code_offset": 6471448,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 13074,
+          "method_id_offset": 889036,
+          "access_flags": 1,
+          "code_offset": 6471500,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$1;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/openadsdk/core/widget/uOO/UeU;",
+      "interface_descriptors": [],
+      "class_def_offset": 1391588,
+      "class_access_flags": 0,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "source_sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c",
+      "methods": [
+        {
+          "method_id": 14191,
+          "method_id_offset": 897972,
+          "access_flags": 65537,
+          "code_offset": 6517560,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity;Landroid/content/Context;Lcom/bytedance/sdk/openadsdk/core/tfO;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/common/krg;Lcom/bytedance/sdk/openadsdk/krg/HR;Z)V"
+        },
+        {
+          "method_id": 14192,
+          "method_id_offset": 897980,
+          "access_flags": 1,
+          "code_offset": 6517604,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14193,
+          "method_id_offset": 897988,
+          "access_flags": 1,
+          "code_offset": 6517640,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14194,
+          "method_id_offset": 897996,
+          "access_flags": 1,
+          "code_offset": 6517764,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 14195,
+          "method_id_offset": 898004,
+          "access_flags": 1,
+          "code_offset": 6517800,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14196,
+          "method_id_offset": 898012,
+          "access_flags": 1,
+          "code_offset": 6517836,
+          "name": "safedk_TTLandingPageActivity$1_shouldInterceptRequest_a23ee0e4f1758c9414b15086c3f5754f",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 14197,
+          "method_id_offset": 898020,
+          "access_flags": 1,
+          "code_offset": 6518076,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 14198,
+          "method_id_offset": 898028,
+          "access_flags": 1,
+          "code_offset": 6518128,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$5;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/openadsdk/core/widget/uOO/krg;",
+      "interface_descriptors": [],
+      "class_def_offset": 1391716,
+      "class_access_flags": 0,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "source_sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c",
+      "methods": [
+        {
+          "method_id": 14208,
+          "method_id_offset": 898108,
+          "access_flags": 65537,
+          "code_offset": 6518520,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity;Lcom/bytedance/sdk/openadsdk/core/tfO;Lcom/bytedance/sdk/openadsdk/krg/HR;Lcom/bytedance/sdk/openadsdk/common/krg;)V"
+        },
+        {
+          "method_id": 14209,
+          "method_id_offset": 898116,
+          "access_flags": 1,
+          "code_offset": 6518548,
+          "name": "onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        },
+        {
+          "method_id": 14210,
+          "method_id_offset": 898124,
+          "access_flags": 1,
+          "code_offset": 6518712,
+          "name": "onReceivedTitle",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$6;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/webkit/DownloadListener;"
+      ],
+      "class_def_offset": 1391748,
+      "class_access_flags": 0,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "source_sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c",
+      "methods": [
+        {
+          "method_id": 14211,
+          "method_id_offset": 898132,
+          "access_flags": 65537,
+          "code_offset": 6518800,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity;)V"
+        },
+        {
+          "method_id": 14212,
+          "method_id_offset": 898140,
+          "access_flags": 1,
+          "code_offset": 6518828,
+          "name": "onDownloadStart",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$JOE;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnScrollChangeListener;"
+      ],
+      "class_def_offset": 1391876,
+      "class_access_flags": 0,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "source_sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c",
+      "methods": [
+        {
+          "method_id": 14220,
+          "method_id_offset": 898204,
+          "access_flags": 65537,
+          "code_offset": 6519084,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/krg/HR;)V"
+        },
+        {
+          "method_id": 14221,
+          "method_id_offset": 898212,
+          "access_flags": 1,
+          "code_offset": 6519124,
+          "name": "onScrollChange",
+          "descriptor": "(Landroid/view/View;IIII)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTLandingPageActivity$da;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnTouchListener;"
+      ],
+      "class_def_offset": 1391908,
+      "class_access_flags": 0,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTLandingPageActivity.java",
+      "source_sha256": "3700e889f4a6f158b5c81fa9d9718d9cf3fa53c55f0586d74d6259ee09938c7c",
+      "methods": [
+        {
+          "method_id": 14222,
+          "method_id_offset": 898220,
+          "access_flags": 65537,
+          "code_offset": 6519168,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/krg/HR;Lcom/bytedance/sdk/openadsdk/common/krg;)V"
+        },
+        {
+          "method_id": 14223,
+          "method_id_offset": 898228,
+          "access_flags": 1,
+          "code_offset": 6519220,
+          "name": "onTouch",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 14224,
+          "method_id_offset": 898236,
+          "access_flags": 1,
+          "code_offset": 6519272,
+          "name": "safedk_TTLandingPageActivity$da_onTouch_69e19785af9193db802d4ffe7c044d99",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/krg/HR$uOO;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1470412,
+      "class_access_flags": 0,
+      "dex": "classes11.dex",
+      "dex_sha256": "ec0cd43e1e2dae3efb3a9704d3e2c2e8df9afe94f02678eb20f5029e90857603",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/krg/HR.java",
+      "source_sha256": "0b668938c24cb6ede79e5f7817b1f451641e1575871ed0b857a2fad312a42cb8",
+      "methods": [
+        {
+          "method_id": 16576,
+          "method_id_offset": 967292,
+          "access_flags": 65538,
+          "code_offset": 7384748,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/krg/HR;)V"
+        },
+        {
+          "method_id": 16577,
+          "method_id_offset": 967300,
+          "access_flags": 69633,
+          "code_offset": 7384776,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/krg/HR;Lcom/bytedance/sdk/openadsdk/krg/HR$1;)V"
+        },
+        {
+          "method_id": 16578,
+          "method_id_offset": 967308,
+          "access_flags": 1,
+          "code_offset": 7384800,
+          "name": "getUrl",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 16579,
+          "method_id_offset": 967316,
+          "access_flags": 1,
+          "code_offset": 7384824,
+          "name": "readPercent",
+          "descriptor": "(Ljava/lang/String;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/da;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnTouchListener;"
+      ],
+      "class_def_offset": 1473192,
+      "class_access_flags": 1025,
+      "dex": "classes12.dex",
+      "dex_sha256": "63061c6aae5ad8b5e246b3a4e38a2184468a6efabe36444cec936b2de871eaa0",
+      "source_file": "sources/com/bytedance/sdk/component/JP/da.java",
+      "source_sha256": "98050d5aa8c493e6e847193612d3b690b5fdb25bfdab5ded3497a3960599c9c2",
+      "methods": [
+        {
+          "method_id": 13536,
+          "method_id_offset": 953824,
+          "access_flags": 65537,
+          "code_offset": 7147920,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 13537,
+          "method_id_offset": 953832,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "uOO",
+          "descriptor": "(Landroid/view/View$OnTouchListener;)V"
+        },
+        {
+          "method_id": 13538,
+          "method_id_offset": 953840,
+          "access_flags": 1,
+          "code_offset": 7147952,
+          "name": "uOO",
+          "descriptor": "(FFFFLandroid/content/Context;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/UeU;",
+      "superclass_descriptor": "Landroid/webkit/WebView;",
+      "interface_descriptors": [],
+      "class_def_offset": 1458348,
+      "class_access_flags": 1,
+      "dex": "classes2.dex",
+      "dex_sha256": "f1687447a452c400fcfb6a1ece247c474698eadf1709f2e92b92982e418ec3f6",
+      "source_file": "sources/com/bytedance/sdk/component/JP/UeU.java",
+      "source_sha256": "cae5b6c371195ebe619e93527ac2e167dac3636eb5494b2b4001eb9681a66197",
+      "methods": [
+        {
+          "method_id": 14831,
+          "method_id_offset": 947028,
+          "access_flags": 65537,
+          "code_offset": 7231776,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Landroid/util/AttributeSet;)V"
+        },
+        {
+          "method_id": 14832,
+          "method_id_offset": 947036,
+          "access_flags": 65537,
+          "code_offset": 7231832,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Landroid/util/AttributeSet;I)V"
+        },
+        {
+          "method_id": 14833,
+          "method_id_offset": 947044,
+          "access_flags": 2,
+          "code_offset": 7231888,
+          "name": "JOE",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14855,
+          "method_id_offset": 947220,
+          "access_flags": 2,
+          "code_offset": 7232000,
+          "name": "safedk_webview_UeU_onAddedJavascriptInterface_d5cc8fe3a6f29e536613b996bf4ad6eb",
+          "descriptor": "(Ljava/lang/Object;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14856,
+          "method_id_offset": 947228,
+          "access_flags": 2,
+          "code_offset": 7232176,
+          "name": "safedk_webview_UeU_webviewLoadDataWithBaseURL_558df8468e7a3606a3ca6ea19e01a100",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14857,
+          "method_id_offset": 947236,
+          "access_flags": 2,
+          "code_offset": 7232396,
+          "name": "safedk_webview_UeU_webviewLoadUrl_9734b466488e157cba9b069557de2b55",
+          "descriptor": "(Ljava/lang/String;Ljava/util/Map;)V"
+        },
+        {
+          "method_id": 14858,
+          "method_id_offset": 947244,
+          "access_flags": 2,
+          "code_offset": 7232720,
+          "name": "safedk_webview_UeU_webviewLoadUrl_e3177bcd2c23ea94d3766e04b80fd51e",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14864,
+          "method_id_offset": 947292,
+          "access_flags": 2,
+          "code_offset": 7233044,
+          "name": "uOO",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14834,
+          "method_id_offset": 947052,
+          "access_flags": 1,
+          "code_offset": 7233124,
+          "name": "addJavascriptInterface",
+          "descriptor": "(Ljava/lang/Object;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14835,
+          "method_id_offset": 947060,
+          "access_flags": 1,
+          "code_offset": 7233180,
+          "name": "clearCache",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 14836,
+          "method_id_offset": 947068,
+          "access_flags": 1,
+          "code_offset": 7233220,
+          "name": "destroy",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14837,
+          "method_id_offset": 947076,
+          "access_flags": 1,
+          "code_offset": 7233272,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 14838,
+          "method_id_offset": 947084,
+          "access_flags": 1,
+          "code_offset": 7233308,
+          "name": "evaluateJavascript",
+          "descriptor": "(Ljava/lang/String;Landroid/webkit/ValueCallback;)V"
+        },
+        {
+          "method_id": 14839,
+          "method_id_offset": 947092,
+          "access_flags": 1,
+          "code_offset": 7233364,
+          "name": "goBack",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14840,
+          "method_id_offset": 947100,
+          "access_flags": 1,
+          "code_offset": 7233404,
+          "name": "goBackOrForward",
+          "descriptor": "(I)V"
+        },
+        {
+          "method_id": 14841,
+          "method_id_offset": 947108,
+          "access_flags": 1,
+          "code_offset": 7233444,
+          "name": "goForward",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14842,
+          "method_id_offset": 947116,
+          "access_flags": 1,
+          "code_offset": 7233484,
+          "name": "loadDataWithBaseURL",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14843,
+          "method_id_offset": 947124,
+          "access_flags": 1,
+          "code_offset": 7233524,
+          "name": "loadUrl",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14844,
+          "method_id_offset": 947132,
+          "access_flags": 1,
+          "code_offset": 7233588,
+          "name": "loadUrl",
+          "descriptor": "(Ljava/lang/String;Ljava/util/Map;)V"
+        },
+        {
+          "method_id": 14845,
+          "method_id_offset": 947140,
+          "access_flags": 1,
+          "code_offset": 7233652,
+          "name": "onAttachedToWindow",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14846,
+          "method_id_offset": 947148,
+          "access_flags": 1,
+          "code_offset": 7233684,
+          "name": "onDetachedFromWindow",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14847,
+          "method_id_offset": 947156,
+          "access_flags": 1,
+          "code_offset": 7233728,
+          "name": "onDraw",
+          "descriptor": "(Landroid/graphics/Canvas;)V"
+        },
+        {
+          "method_id": 14848,
+          "method_id_offset": 947164,
+          "access_flags": 1,
+          "code_offset": 7233768,
+          "name": "onMeasure",
+          "descriptor": "(II)V"
+        },
+        {
+          "method_id": 14849,
+          "method_id_offset": 947172,
+          "access_flags": 1,
+          "code_offset": 7233820,
+          "name": "onPause",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14850,
+          "method_id_offset": 947180,
+          "access_flags": 1,
+          "code_offset": 7233876,
+          "name": "onResume",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14851,
+          "method_id_offset": 947188,
+          "access_flags": 1,
+          "code_offset": 7233932,
+          "name": "pauseTimers",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14852,
+          "method_id_offset": 947196,
+          "access_flags": 1,
+          "code_offset": 7233972,
+          "name": "reload",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14853,
+          "method_id_offset": 947204,
+          "access_flags": 1,
+          "code_offset": 7234012,
+          "name": "removeJavascriptInterface",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 14854,
+          "method_id_offset": 947212,
+          "access_flags": 1,
+          "code_offset": 7234064,
+          "name": "resumeTimers",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 14859,
+          "method_id_offset": 947252,
+          "access_flags": 1,
+          "code_offset": 7234104,
+          "name": "setDestroyOnDetached",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 14860,
+          "method_id_offset": 947260,
+          "access_flags": 1,
+          "code_offset": 7234128,
+          "name": "setOnTouchListener",
+          "descriptor": "(Landroid/view/View$OnTouchListener;)V"
+        },
+        {
+          "method_id": 14861,
+          "method_id_offset": 947268,
+          "access_flags": 1,
+          "code_offset": 7234180,
+          "name": "setRecycler",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 14862,
+          "method_id_offset": 947276,
+          "access_flags": 1,
+          "code_offset": 7234204,
+          "name": "setTouchListenerProxy",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/da;)V"
+        },
+        {
+          "method_id": 14863,
+          "method_id_offset": 947284,
+          "access_flags": 1,
+          "code_offset": 7234228,
+          "name": "stopLoading",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/adexpress/UeU/krg;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1458892,
+      "class_access_flags": 1,
+      "dex": "classes2.dex",
+      "dex_sha256": "f1687447a452c400fcfb6a1ece247c474698eadf1709f2e92b92982e418ec3f6",
+      "source_file": "sources/com/bytedance/sdk/component/adexpress/UeU/krg.java",
+      "source_sha256": "628fd9c4950169be2d80c3f7eac2faa7209a5eee9ba9a170e15e7b9ff9979be2",
+      "methods": [
+        {
+          "method_id": 15066,
+          "method_id_offset": 948908,
+          "access_flags": 65537,
+          "code_offset": 7239988,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/component/uOO/Wza;)V"
+        },
+        {
+          "method_id": 15067,
+          "method_id_offset": 948916,
+          "access_flags": 1,
+          "code_offset": 7240028,
+          "name": "invokeMethod",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 15068,
+          "method_id_offset": 948924,
+          "access_flags": 1,
+          "code_offset": 7240088,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/uOO/Wza;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/core/widget/uOO/UeU;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/component/JP/jHN$uOO;",
+      "interface_descriptors": [],
+      "class_def_offset": 1464300,
+      "class_access_flags": 1,
+      "dex": "classes2.dex",
+      "dex_sha256": "f1687447a452c400fcfb6a1ece247c474698eadf1709f2e92b92982e418ec3f6",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/UeU.java",
+      "source_sha256": "a83dec119d907711fc88a24683575001476b871f66ddaf803d6611ab2fc3e1a4",
+      "methods": [
+        {
+          "method_id": 16606,
+          "method_id_offset": 961228,
+          "access_flags": 65544,
+          "code_offset": 7314280,
+          "name": "<clinit>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 16607,
+          "method_id_offset": 961236,
+          "access_flags": 65537,
+          "code_offset": 7314372,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Lcom/bytedance/sdk/openadsdk/core/tfO;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/common/krg;Lcom/bytedance/sdk/openadsdk/krg/HR;Z)V"
+        },
+        {
+          "method_id": 16608,
+          "method_id_offset": 961244,
+          "access_flags": 65537,
+          "code_offset": 7314412,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Lcom/bytedance/sdk/openadsdk/core/tfO;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/common/krg;Lcom/bytedance/sdk/openadsdk/krg/HR;ZZLcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$uOO;)V"
+        },
+        {
+          "method_id": 16609,
+          "method_id_offset": 961252,
+          "access_flags": 65537,
+          "code_offset": 7314444,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Lcom/bytedance/sdk/openadsdk/core/tfO;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/krg/HR;Z)V"
+        },
+        {
+          "method_id": 16612,
+          "method_id_offset": 961276,
+          "access_flags": 2,
+          "code_offset": 7314520,
+          "name": "UeU",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16615,
+          "method_id_offset": 961300,
+          "access_flags": 9,
+          "code_offset": 7314580,
+          "name": "krg",
+          "descriptor": "(Ljava/lang/String;)Ljava/lang/String;"
+        },
+        {
+          "method_id": 16624,
+          "method_id_offset": 961372,
+          "access_flags": 9,
+          "code_offset": 7314700,
+          "name": "safedk_Context_startActivity_97cb3195734cf5c9cc3418feeafa6dd6",
+          "descriptor": "(Landroid/content/Context;Landroid/content/Intent;)V"
+        },
+        {
+          "method_id": 16638,
+          "method_id_offset": 961484,
+          "access_flags": 4105,
+          "code_offset": 7314752,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/widget/uOO/UeU;Ljava/lang/String;ZILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16640,
+          "method_id_offset": 961500,
+          "access_flags": 2,
+          "code_offset": 7314776,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16641,
+          "method_id_offset": 961508,
+          "access_flags": 2,
+          "code_offset": 7314868,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;ZILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16644,
+          "method_id_offset": 961532,
+          "access_flags": 2,
+          "code_offset": 7314952,
+          "name": "uOO",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16610,
+          "method_id_offset": 961260,
+          "access_flags": 1,
+          "code_offset": 7315096,
+          "name": "JOE",
+          "descriptor": "()Lcom/bytedance/sdk/openadsdk/krg/HR;"
+        },
+        {
+          "method_id": 16611,
+          "method_id_offset": 961268,
+          "access_flags": 1,
+          "code_offset": 7315120,
+          "name": "JOE",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16613,
+          "method_id_offset": 961284,
+          "access_flags": 1,
+          "code_offset": 7315400,
+          "name": "da",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 16614,
+          "method_id_offset": 961292,
+          "access_flags": 1,
+          "code_offset": 7315532,
+          "name": "da",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16616,
+          "method_id_offset": 961308,
+          "access_flags": 1,
+          "code_offset": 7315728,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16617,
+          "method_id_offset": 961316,
+          "access_flags": 1,
+          "code_offset": 7315776,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16618,
+          "method_id_offset": 961324,
+          "access_flags": 1,
+          "code_offset": 7315836,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 16619,
+          "method_id_offset": 961332,
+          "access_flags": 1,
+          "code_offset": 7315884,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16620,
+          "method_id_offset": 961340,
+          "access_flags": 1,
+          "code_offset": 7315932,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 16621,
+          "method_id_offset": 961348,
+          "access_flags": 1,
+          "code_offset": 7315980,
+          "name": "onReceivedHttpError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+        },
+        {
+          "method_id": 16622,
+          "method_id_offset": 961356,
+          "access_flags": 1,
+          "code_offset": 7316132,
+          "name": "onReceivedSslError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/SslErrorHandler;Landroid/net/http/SslError;)V"
+        },
+        {
+          "method_id": 16623,
+          "method_id_offset": 961364,
+          "access_flags": 1,
+          "code_offset": 7316268,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 16625,
+          "method_id_offset": 961380,
+          "access_flags": 1,
+          "code_offset": 7316324,
+          "name": "safedk_UeU_onLoadResource_ff62e7ef76931c850e154c8d4bf50566",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16626,
+          "method_id_offset": 961388,
+          "access_flags": 1,
+          "code_offset": 7316348,
+          "name": "safedk_UeU_onPageStarted_d6e4eaaed4c87f08f3b8333b47052636",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 16627,
+          "method_id_offset": 961396,
+          "access_flags": 1,
+          "code_offset": 7316688,
+          "name": "safedk_UeU_onReceivedError_7fdec255497511aa5b3a4f772dd53189",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16628,
+          "method_id_offset": 961404,
+          "access_flags": 1,
+          "code_offset": 7316712,
+          "name": "safedk_UeU_onReceivedError_ba7e155092b9a1e4881edf2e9df18a64",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 16629,
+          "method_id_offset": 961412,
+          "access_flags": 1,
+          "code_offset": 7316864,
+          "name": "safedk_UeU_shouldInterceptRequest_526e4625d076ff5279df44a2fa468889",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 16630,
+          "method_id_offset": 961420,
+          "access_flags": 1,
+          "code_offset": 7316924,
+          "name": "safedk_UeU_shouldInterceptRequest_8b8a3995c809545b6aed50f9f432a29b",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 16631,
+          "method_id_offset": 961428,
+          "access_flags": 1,
+          "code_offset": 7316952,
+          "name": "safedk_UeU_shouldOverrideUrlLoading_f00d4e2da37765dcd49883348b0b14ce",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16632,
+          "method_id_offset": 961436,
+          "access_flags": 1,
+          "code_offset": 7317424,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 16633,
+          "method_id_offset": 961444,
+          "access_flags": 1,
+          "code_offset": 7317480,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 16634,
+          "method_id_offset": 961452,
+          "access_flags": 1,
+          "code_offset": 7317532,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16635,
+          "method_id_offset": 961460,
+          "access_flags": 1,
+          "code_offset": 7317584,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/HR/krg/JOE;)V"
+        },
+        {
+          "method_id": 16636,
+          "method_id_offset": 961468,
+          "access_flags": 1,
+          "code_offset": 7317608,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/hsE;)V"
+        },
+        {
+          "method_id": 16637,
+          "method_id_offset": 961476,
+          "access_flags": 1,
+          "code_offset": 7317632,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;)V"
+        },
+        {
+          "method_id": 16639,
+          "method_id_offset": 961492,
+          "access_flags": 1,
+          "code_offset": 7317656,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 16642,
+          "method_id_offset": 961516,
+          "access_flags": 1,
+          "code_offset": 7317680,
+          "name": "uOO",
+          "descriptor": "(Ljava/util/Map;)V"
+        },
+        {
+          "method_id": 16643,
+          "method_id_offset": 961524,
+          "access_flags": 1,
+          "code_offset": 7317704,
+          "name": "uOO",
+          "descriptor": "(Lorg/json/JSONObject;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/jHN$uOO;",
+      "superclass_descriptor": "Landroid/webkit/WebViewClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1501708,
+      "class_access_flags": 1,
+      "dex": "classes3.dex",
+      "dex_sha256": "bb3451fc855d981f66353b1607576a28a2815391fae48faf8690892581ccfbb3",
+      "source_file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "source_sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea",
+      "methods": [
+        {
+          "method_id": 13760,
+          "method_id_offset": 957580,
+          "access_flags": 65537,
+          "code_offset": 7521788,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 13761,
+          "method_id_offset": 957588,
+          "access_flags": 1,
+          "code_offset": 7521812,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13762,
+          "method_id_offset": 957596,
+          "access_flags": 1,
+          "code_offset": 7521848,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13763,
+          "method_id_offset": 957604,
+          "access_flags": 1,
+          "code_offset": 7521884,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 13764,
+          "method_id_offset": 957612,
+          "access_flags": 1,
+          "code_offset": 7521920,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 13765,
+          "method_id_offset": 957620,
+          "access_flags": 1,
+          "code_offset": 7521956,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 13766,
+          "method_id_offset": 957628,
+          "access_flags": 1,
+          "code_offset": 7522020,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 13767,
+          "method_id_offset": 957636,
+          "access_flags": 1,
+          "code_offset": 7522060,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$uOO;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1529344,
+      "class_access_flags": 1537,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46",
+      "methods": [
+        {
+          "method_id": 17872,
+          "method_id_offset": 1064672,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "uOO",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$3;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$uOO;"
+      ],
+      "class_def_offset": 1529376,
+      "class_access_flags": 0,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46",
+      "methods": [
+        {
+          "method_id": 17856,
+          "method_id_offset": 1064544,
+          "access_flags": 65537,
+          "code_offset": 6858400,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity;)V"
+        },
+        {
+          "method_id": 17857,
+          "method_id_offset": 1064552,
+          "access_flags": 1,
+          "code_offset": 6858428,
+          "name": "uOO",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$4;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/openadsdk/core/widget/uOO/UeU;",
+      "interface_descriptors": [],
+      "class_def_offset": 1529408,
+      "class_access_flags": 0,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46",
+      "methods": [
+        {
+          "method_id": 17858,
+          "method_id_offset": 1064560,
+          "access_flags": 65537,
+          "code_offset": 6858492,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity;Landroid/content/Context;Lcom/bytedance/sdk/openadsdk/core/tfO;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/common/krg;Lcom/bytedance/sdk/openadsdk/krg/HR;ZZLcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$uOO;)V"
+        },
+        {
+          "method_id": 17859,
+          "method_id_offset": 1064568,
+          "access_flags": 1,
+          "code_offset": 6858552,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 17860,
+          "method_id_offset": 1064576,
+          "access_flags": 1,
+          "code_offset": 6858588,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 17861,
+          "method_id_offset": 1064584,
+          "access_flags": 1,
+          "code_offset": 6858612,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 17862,
+          "method_id_offset": 1064592,
+          "access_flags": 1,
+          "code_offset": 6858648,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 17863,
+          "method_id_offset": 1064600,
+          "access_flags": 1,
+          "code_offset": 6858684,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 17864,
+          "method_id_offset": 1064608,
+          "access_flags": 1,
+          "code_offset": 6858724,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$5;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/openadsdk/core/widget/uOO/krg;",
+      "interface_descriptors": [],
+      "class_def_offset": 1529440,
+      "class_access_flags": 0,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46",
+      "methods": [
+        {
+          "method_id": 17865,
+          "method_id_offset": 1064616,
+          "access_flags": 65537,
+          "code_offset": 6858760,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity;Lcom/bytedance/sdk/openadsdk/core/tfO;Lcom/bytedance/sdk/openadsdk/krg/HR;Lcom/bytedance/sdk/openadsdk/common/krg;)V"
+        },
+        {
+          "method_id": 17866,
+          "method_id_offset": 1064624,
+          "access_flags": 1,
+          "code_offset": 6858788,
+          "name": "onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$6;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnTouchListener;"
+      ],
+      "class_def_offset": 1529472,
+      "class_access_flags": 0,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46",
+      "methods": [
+        {
+          "method_id": 17867,
+          "method_id_offset": 1064632,
+          "access_flags": 65537,
+          "code_offset": 6858812,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity;)V"
+        },
+        {
+          "method_id": 17868,
+          "method_id_offset": 1064640,
+          "access_flags": 1,
+          "code_offset": 6858840,
+          "name": "onTouch",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 17869,
+          "method_id_offset": 1064648,
+          "access_flags": 1,
+          "code_offset": 6858892,
+          "name": "safedk_TTCeilingLandingPageActivity$6_onTouch_cf571c44cfb2e3ba3a2bb1ec5b82702b",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity$7;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnScrollChangeListener;"
+      ],
+      "class_def_offset": 1529504,
+      "class_access_flags": 0,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity.java",
+      "source_sha256": "e93f7209e5c03e9fa6afba5f2da7c919a3022c31e4966677735ce68e67d7af46",
+      "methods": [
+        {
+          "method_id": 17870,
+          "method_id_offset": 1064656,
+          "access_flags": 65537,
+          "code_offset": 6858948,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/activity/TTCeilingLandingPageActivity;)V"
+        },
+        {
+          "method_id": 17871,
+          "method_id_offset": 1064664,
+          "access_flags": 1,
+          "code_offset": 6858976,
+          "name": "onScrollChange",
+          "descriptor": "(Landroid/view/View;IIII)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/krg/da;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1393208,
+      "class_access_flags": 1,
+      "dex": "classes6.dex",
+      "dex_sha256": "4011152c6c274ef19cca863150ccbca342c17b41d58eedb5ac468dfefd381a74",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/krg/da.java",
+      "source_sha256": "41e3366ce9b360f43a5914deb5589ffb14704c39e3f413e34b3549ee3e895d6a",
+      "methods": [
+        {
+          "method_id": 18289,
+          "method_id_offset": 935648,
+          "access_flags": 65537,
+          "code_offset": 6529224,
+          "name": "<init>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 18290,
+          "method_id_offset": 935656,
+          "access_flags": 9,
+          "code_offset": 6529248,
+          "name": "JOE",
+          "descriptor": "(JLcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18291,
+          "method_id_offset": 935664,
+          "access_flags": 9,
+          "code_offset": 6529300,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lcom/bytedance/sdk/openadsdk/vAX/uOO/uOO;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18292,
+          "method_id_offset": 935672,
+          "access_flags": 9,
+          "code_offset": 6529352,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18293,
+          "method_id_offset": 935680,
+          "access_flags": 9,
+          "code_offset": 6529404,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 18294,
+          "method_id_offset": 935688,
+          "access_flags": 9,
+          "code_offset": 6529456,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ILorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18295,
+          "method_id_offset": 935696,
+          "access_flags": 9,
+          "code_offset": 6529524,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;J)V"
+        },
+        {
+          "method_id": 18296,
+          "method_id_offset": 935704,
+          "access_flags": 9,
+          "code_offset": 6529608,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18297,
+          "method_id_offset": 935712,
+          "access_flags": 9,
+          "code_offset": 6529656,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;J)V"
+        },
+        {
+          "method_id": 18298,
+          "method_id_offset": 935720,
+          "access_flags": 9,
+          "code_offset": 6529716,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18299,
+          "method_id_offset": 935728,
+          "access_flags": 9,
+          "code_offset": 6529768,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18300,
+          "method_id_offset": 935736,
+          "access_flags": 10,
+          "code_offset": 6529796,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lorg/json/JSONObject;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18301,
+          "method_id_offset": 935744,
+          "access_flags": 9,
+          "code_offset": 6529908,
+          "name": "UeU",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lcom/bytedance/sdk/openadsdk/vAX/uOO/uOO;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18302,
+          "method_id_offset": 935752,
+          "access_flags": 9,
+          "code_offset": 6529960,
+          "name": "UeU",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18303,
+          "method_id_offset": 935760,
+          "access_flags": 9,
+          "code_offset": 6530012,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lcom/bytedance/sdk/openadsdk/vAX/uOO/uOO;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18304,
+          "method_id_offset": 935768,
+          "access_flags": 9,
+          "code_offset": 6530064,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18305,
+          "method_id_offset": 935776,
+          "access_flags": 9,
+          "code_offset": 6530148,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 18306,
+          "method_id_offset": 935784,
+          "access_flags": 9,
+          "code_offset": 6530200,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;J)V"
+        },
+        {
+          "method_id": 18307,
+          "method_id_offset": 935792,
+          "access_flags": 9,
+          "code_offset": 6530252,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18308,
+          "method_id_offset": 935800,
+          "access_flags": 9,
+          "code_offset": 6530312,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18309,
+          "method_id_offset": 935808,
+          "access_flags": 9,
+          "code_offset": 6530348,
+          "name": "jHN",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18310,
+          "method_id_offset": 935816,
+          "access_flags": 9,
+          "code_offset": 6530400,
+          "name": "krg",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lcom/bytedance/sdk/openadsdk/vAX/uOO/uOO;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18311,
+          "method_id_offset": 935824,
+          "access_flags": 9,
+          "code_offset": 6530452,
+          "name": "krg",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 18312,
+          "method_id_offset": 935832,
+          "access_flags": 9,
+          "code_offset": 6530504,
+          "name": "krg",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18313,
+          "method_id_offset": 935840,
+          "access_flags": 9,
+          "code_offset": 6530556,
+          "name": "uOO",
+          "descriptor": "(I)Lorg/json/JSONObject;"
+        },
+        {
+          "method_id": 18314,
+          "method_id_offset": 935848,
+          "access_flags": 9,
+          "code_offset": 6530608,
+          "name": "uOO",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 18315,
+          "method_id_offset": 935856,
+          "access_flags": 9,
+          "code_offset": 6530660,
+          "name": "uOO",
+          "descriptor": "(JLcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18316,
+          "method_id_offset": 935864,
+          "access_flags": 9,
+          "code_offset": 6530744,
+          "name": "uOO",
+          "descriptor": "(JLcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18317,
+          "method_id_offset": 935872,
+          "access_flags": 9,
+          "code_offset": 6530780,
+          "name": "uOO",
+          "descriptor": "(JLcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/vAX/da/uOO;)V"
+        },
+        {
+          "method_id": 18318,
+          "method_id_offset": 935880,
+          "access_flags": 9,
+          "code_offset": 6530880,
+          "name": "uOO",
+          "descriptor": "(JLcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;Lcom/bytedance/sdk/openadsdk/krg/SWs;Lcom/bytedance/sdk/openadsdk/krg/JOE/uOO;)V"
+        },
+        {
+          "method_id": 18319,
+          "method_id_offset": 935888,
+          "access_flags": 9,
+          "code_offset": 6530924,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/fTI/fTI;)V"
+        },
+        {
+          "method_id": 18320,
+          "method_id_offset": 935896,
+          "access_flags": 9,
+          "code_offset": 6531016,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;)V"
+        },
+        {
+          "method_id": 18321,
+          "method_id_offset": 935904,
+          "access_flags": 9,
+          "code_offset": 6531096,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lcom/bytedance/sdk/openadsdk/vAX/uOO/uOO;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18322,
+          "method_id_offset": 935912,
+          "access_flags": 9,
+          "code_offset": 6531148,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18323,
+          "method_id_offset": 935920,
+          "access_flags": 9,
+          "code_offset": 6531200,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 18324,
+          "method_id_offset": 935928,
+          "access_flags": 9,
+          "code_offset": 6531252,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ILjava/lang/String;F)V"
+        },
+        {
+          "method_id": 18325,
+          "method_id_offset": 935936,
+          "access_flags": 9,
+          "code_offset": 6531304,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ILjava/lang/String;I)V"
+        },
+        {
+          "method_id": 18326,
+          "method_id_offset": 935944,
+          "access_flags": 9,
+          "code_offset": 6531356,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ILjava/lang/String;JZIJ)V"
+        },
+        {
+          "method_id": 18327,
+          "method_id_offset": 935952,
+          "access_flags": 9,
+          "code_offset": 6531452,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V"
+        },
+        {
+          "method_id": 18328,
+          "method_id_offset": 935960,
+          "access_flags": 9,
+          "code_offset": 6531520,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ILorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18329,
+          "method_id_offset": 935968,
+          "access_flags": 9,
+          "code_offset": 6531588,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;J)V"
+        },
+        {
+          "method_id": 18330,
+          "method_id_offset": 935976,
+          "access_flags": 9,
+          "code_offset": 6531640,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;JII)V"
+        },
+        {
+          "method_id": 18331,
+          "method_id_offset": 935984,
+          "access_flags": 9,
+          "code_offset": 6531704,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;JILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 18332,
+          "method_id_offset": 935992,
+          "access_flags": 9,
+          "code_offset": 6531772,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;JLorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18333,
+          "method_id_offset": 936000,
+          "access_flags": 9,
+          "code_offset": 6531824,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;JZ)V"
+        },
+        {
+          "method_id": 18334,
+          "method_id_offset": 936008,
+          "access_flags": 9,
+          "code_offset": 6531876,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/utils/bh;)V"
+        },
+        {
+          "method_id": 18335,
+          "method_id_offset": 936016,
+          "access_flags": 9,
+          "code_offset": 6531952,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;JILorg/json/JSONObject;Lcom/bytedance/sdk/openadsdk/krg/SWs;)V"
+        },
+        {
+          "method_id": 18336,
+          "method_id_offset": 936024,
+          "access_flags": 9,
+          "code_offset": 6532040,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;JLorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18337,
+          "method_id_offset": 936032,
+          "access_flags": 9,
+          "code_offset": 6532100,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/vAX/da/uOO;)V"
+        },
+        {
+          "method_id": 18338,
+          "method_id_offset": 936040,
+          "access_flags": 9,
+          "code_offset": 6532152,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLorg/json/JSONObject;Z)V"
+        },
+        {
+          "method_id": 18339,
+          "method_id_offset": 936048,
+          "access_flags": 9,
+          "code_offset": 6532264,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V"
+        },
+        {
+          "method_id": 18340,
+          "method_id_offset": 936056,
+          "access_flags": 9,
+          "code_offset": 6532312,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18341,
+          "method_id_offset": 936064,
+          "access_flags": 9,
+          "code_offset": 6532384,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;J)V"
+        },
+        {
+          "method_id": 18342,
+          "method_id_offset": 936072,
+          "access_flags": 10,
+          "code_offset": 6532432,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18343,
+          "method_id_offset": 936080,
+          "access_flags": 9,
+          "code_offset": 6532556,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18344,
+          "method_id_offset": 936088,
+          "access_flags": 9,
+          "code_offset": 6532608,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lorg/json/JSONObject;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18345,
+          "method_id_offset": 936096,
+          "access_flags": 9,
+          "code_offset": 6532636,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;ZZZZILjava/util/Map;)V"
+        },
+        {
+          "method_id": 18346,
+          "method_id_offset": 936104,
+          "access_flags": 4105,
+          "code_offset": 6532716,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;Lorg/json/JSONObject;Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18347,
+          "method_id_offset": 936112,
+          "access_flags": 9,
+          "code_offset": 6532740,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/model/oR;ZLjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 18348,
+          "method_id_offset": 936120,
+          "access_flags": 9,
+          "code_offset": 6532836,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/vAX/uOO/JOE;)V"
+        },
+        {
+          "method_id": 18349,
+          "method_id_offset": 936128,
+          "access_flags": 9,
+          "code_offset": 6532976,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;J)V"
+        },
+        {
+          "method_id": 18350,
+          "method_id_offset": 936136,
+          "access_flags": 9,
+          "code_offset": 6533000,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/core/model/oR;Lcom/bytedance/sdk/openadsdk/core/model/hsE;Ljava/lang/String;ZLjava/util/Map;I)V"
+        },
+        {
+          "method_id": 18351,
+          "method_id_offset": 936144,
+          "access_flags": 9,
+          "code_offset": 6533068,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/krg/SWs;)V"
+        },
+        {
+          "method_id": 18352,
+          "method_id_offset": 936152,
+          "access_flags": 9,
+          "code_offset": 6533140,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;Lcom/bytedance/sdk/openadsdk/core/model/oR;Ljava/lang/String;Ljava/util/Map;)V"
+        },
+        {
+          "method_id": 18353,
+          "method_id_offset": 936160,
+          "access_flags": 10,
+          "code_offset": 6533188,
+          "name": "uOO",
+          "descriptor": "(Lorg/json/JSONObject;)V"
+        },
+        {
+          "method_id": 18354,
+          "method_id_offset": 936168,
+          "access_flags": 9,
+          "code_offset": 6533280,
+          "name": "uOO",
+          "descriptor": "(Lorg/json/JSONObject;II)V"
+        },
+        {
+          "method_id": 18355,
+          "method_id_offset": 936176,
+          "access_flags": 10,
+          "code_offset": 6533380,
+          "name": "uOO",
+          "descriptor": "(ILjava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/krg;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/component/JP/da;",
+      "interface_descriptors": [],
+      "class_def_offset": 1375012,
+      "class_access_flags": 1,
+      "dex": "classes7.dex",
+      "dex_sha256": "2a4369912d475a7aa42e696047f9d18e1116b9624da1344bca0652069cbcae59",
+      "source_file": "sources/com/bytedance/sdk/component/JP/krg.java",
+      "source_sha256": "87a92f3b76d7b2a704b28a339fc9eeeabb8e7310e86d2ab11b5f2a737f3ccb32",
+      "methods": [
+        {
+          "method_id": 15380,
+          "method_id_offset": 899252,
+          "access_flags": 65537,
+          "code_offset": 6374912,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Landroid/view/View$OnTouchListener;IJLcom/bytedance/sdk/component/JP/jHN;)V"
+        },
+        {
+          "method_id": 15382,
+          "method_id_offset": 899268,
+          "access_flags": 2,
+          "code_offset": 6374964,
+          "name": "uOO",
+          "descriptor": "(IFF)V"
+        },
+        {
+          "method_id": 15385,
+          "method_id_offset": 899292,
+          "access_flags": 2,
+          "code_offset": 6375212,
+          "name": "uOO",
+          "descriptor": "(J)Z"
+        },
+        {
+          "method_id": 15381,
+          "method_id_offset": 899260,
+          "access_flags": 1,
+          "code_offset": 6375320,
+          "name": "onTouch",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 15383,
+          "method_id_offset": 899276,
+          "access_flags": 1,
+          "code_offset": 6375500,
+          "name": "uOO",
+          "descriptor": "(Landroid/view/View$OnTouchListener;)V"
+        },
+        {
+          "method_id": 15384,
+          "method_id_offset": 899284,
+          "access_flags": 1,
+          "code_offset": 6375524,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/uOO$uOO;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1375044,
+      "class_access_flags": 1537,
+      "dex": "classes7.dex",
+      "dex_sha256": "2a4369912d475a7aa42e696047f9d18e1116b9624da1344bca0652069cbcae59",
+      "source_file": "sources/com/bytedance/sdk/component/JP/uOO.java",
+      "source_sha256": "0f9dcb457967d97f7b815f66ddaff8f58243508d98f85b5b21d6f9850d3d12c1",
+      "methods": [
+        {
+          "method_id": 15389,
+          "method_id_offset": 899324,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "uOO",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 15390,
+          "method_id_offset": 899332,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "uOO",
+          "descriptor": "(I)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/uOO$1;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Lcom/bytedance/sdk/component/JP/uOO$uOO;"
+      ],
+      "class_def_offset": 1375076,
+      "class_access_flags": 0,
+      "dex": "classes7.dex",
+      "dex_sha256": "2a4369912d475a7aa42e696047f9d18e1116b9624da1344bca0652069cbcae59",
+      "source_file": "sources/com/bytedance/sdk/component/JP/uOO.java",
+      "source_sha256": "0f9dcb457967d97f7b815f66ddaff8f58243508d98f85b5b21d6f9850d3d12c1",
+      "methods": [
+        {
+          "method_id": 15386,
+          "method_id_offset": 899300,
+          "access_flags": 65537,
+          "code_offset": 6375548,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)V"
+        },
+        {
+          "method_id": 15387,
+          "method_id_offset": 899308,
+          "access_flags": 1,
+          "code_offset": 6375576,
+          "name": "uOO",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 15388,
+          "method_id_offset": 899316,
+          "access_flags": 1,
+          "code_offset": 6375768,
+          "name": "uOO",
+          "descriptor": "(I)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/component/JP/uOO;",
+      "superclass_descriptor": "Lcom/bytedance/sdk/component/JP/da;",
+      "interface_descriptors": [
+        "Lcom/bytedance/sdk/component/utils/YBv$uOO;"
+      ],
+      "class_def_offset": 1375108,
+      "class_access_flags": 1,
+      "dex": "classes7.dex",
+      "dex_sha256": "2a4369912d475a7aa42e696047f9d18e1116b9624da1344bca0652069cbcae59",
+      "source_file": "sources/com/bytedance/sdk/component/JP/uOO.java",
+      "source_sha256": "0f9dcb457967d97f7b815f66ddaff8f58243508d98f85b5b21d6f9850d3d12c1",
+      "methods": [
+        {
+          "method_id": 15395,
+          "method_id_offset": 899372,
+          "access_flags": 65537,
+          "code_offset": 6375808,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;IILjava/util/List;I)V"
+        },
+        {
+          "method_id": 15396,
+          "method_id_offset": 899380,
+          "access_flags": 4105,
+          "code_offset": 6375968,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)F"
+        },
+        {
+          "method_id": 15397,
+          "method_id_offset": 899388,
+          "access_flags": 4105,
+          "code_offset": 6375992,
+          "name": "JOE",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;F)F"
+        },
+        {
+          "method_id": 15398,
+          "method_id_offset": 899396,
+          "access_flags": 2,
+          "code_offset": 6376016,
+          "name": "JOE",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 15399,
+          "method_id_offset": 899404,
+          "access_flags": 4105,
+          "code_offset": 6376056,
+          "name": "SWs",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)V"
+        },
+        {
+          "method_id": 15400,
+          "method_id_offset": 899412,
+          "access_flags": 4105,
+          "code_offset": 6376080,
+          "name": "UeU",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)F"
+        },
+        {
+          "method_id": 15401,
+          "method_id_offset": 899420,
+          "access_flags": 4105,
+          "code_offset": 6376104,
+          "name": "da",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)J"
+        },
+        {
+          "method_id": 15402,
+          "method_id_offset": 899428,
+          "access_flags": 4105,
+          "code_offset": 6376128,
+          "name": "jHN",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)J"
+        },
+        {
+          "method_id": 15403,
+          "method_id_offset": 899436,
+          "access_flags": 4105,
+          "code_offset": 6376152,
+          "name": "krg",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)F"
+        },
+        {
+          "method_id": 15405,
+          "method_id_offset": 899452,
+          "access_flags": 4105,
+          "code_offset": 6376176,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;)F"
+        },
+        {
+          "method_id": 15406,
+          "method_id_offset": 899460,
+          "access_flags": 4105,
+          "code_offset": 6376200,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;F)F"
+        },
+        {
+          "method_id": 15407,
+          "method_id_offset": 899468,
+          "access_flags": 2,
+          "code_offset": 6376224,
+          "name": "uOO",
+          "descriptor": "(FFJ)I"
+        },
+        {
+          "method_id": 15408,
+          "method_id_offset": 899476,
+          "access_flags": 4105,
+          "code_offset": 6376432,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;I)I"
+        },
+        {
+          "method_id": 15409,
+          "method_id_offset": 899484,
+          "access_flags": 4105,
+          "code_offset": 6376456,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;J)J"
+        },
+        {
+          "method_id": 15413,
+          "method_id_offset": 899516,
+          "access_flags": 2,
+          "code_offset": 6376480,
+          "name": "uOO",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;IZ)V"
+        },
+        {
+          "method_id": 15415,
+          "method_id_offset": 899532,
+          "access_flags": 4105,
+          "code_offset": 6376712,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/component/JP/uOO;Z)Z"
+        },
+        {
+          "method_id": 15404,
+          "method_id_offset": 899444,
+          "access_flags": 1,
+          "code_offset": 6376736,
+          "name": "onTouch",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 15410,
+          "method_id_offset": 899492,
+          "access_flags": 1,
+          "code_offset": 6376972,
+          "name": "uOO",
+          "descriptor": "()Lcom/bytedance/sdk/component/JP/uOO$uOO;"
+        },
+        {
+          "method_id": 15411,
+          "method_id_offset": 899500,
+          "access_flags": 1,
+          "code_offset": 6376996,
+          "name": "uOO",
+          "descriptor": "(Landroid/os/Message;)V"
+        },
+        {
+          "method_id": 15412,
+          "method_id_offset": 899508,
+          "access_flags": 1,
+          "code_offset": 6377136,
+          "name": "uOO",
+          "descriptor": "(Landroid/view/View$OnTouchListener;)V"
+        },
+        {
+          "method_id": 15414,
+          "method_id_offset": 899524,
+          "access_flags": 1,
+          "code_offset": 6377160,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/bytedance/sdk/openadsdk/core/widget/uOO/krg;",
+      "superclass_descriptor": "Landroid/webkit/WebChromeClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1446580,
+      "class_access_flags": 1,
+      "dex": "classes8.dex",
+      "dex_sha256": "4bf6ff4bb092fd47e4c5846b26a975b26834e162b84a00b8d74a4a94dc6b57f2",
+      "source_file": "sources/com/bytedance/sdk/openadsdk/core/widget/uOO/krg.java",
+      "source_sha256": "584270529bcb63ec20549157b2963c8646a7ebed75a83955d371dd80fe79d4eb",
+      "methods": [
+        {
+          "method_id": 16463,
+          "method_id_offset": 968412,
+          "access_flags": 65537,
+          "code_offset": 6837640,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/tfO;)V"
+        },
+        {
+          "method_id": 16464,
+          "method_id_offset": 968420,
+          "access_flags": 65537,
+          "code_offset": 6837668,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/tfO;Lcom/bytedance/sdk/openadsdk/krg/HR;)V"
+        },
+        {
+          "method_id": 16465,
+          "method_id_offset": 968428,
+          "access_flags": 65537,
+          "code_offset": 6837700,
+          "name": "<init>",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/tfO;Lcom/bytedance/sdk/openadsdk/krg/HR;Lcom/bytedance/sdk/openadsdk/common/krg;)V"
+        },
+        {
+          "method_id": 16470,
+          "method_id_offset": 968468,
+          "access_flags": 4105,
+          "code_offset": 6837728,
+          "name": "uOO",
+          "descriptor": "(Lcom/bytedance/sdk/openadsdk/core/widget/uOO/krg;)Lcom/bytedance/sdk/openadsdk/core/tfO;"
+        },
+        {
+          "method_id": 16471,
+          "method_id_offset": 968476,
+          "access_flags": 2,
+          "code_offset": 6837752,
+          "name": "uOO",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 16466,
+          "method_id_offset": 968436,
+          "access_flags": 1,
+          "code_offset": 6837860,
+          "name": "onConsoleMessage",
+          "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V"
+        },
+        {
+          "method_id": 16467,
+          "method_id_offset": 968444,
+          "access_flags": 1,
+          "code_offset": 6837904,
+          "name": "onConsoleMessage",
+          "descriptor": "(Landroid/webkit/ConsoleMessage;)Z"
+        },
+        {
+          "method_id": 16468,
+          "method_id_offset": 968452,
+          "access_flags": 1,
+          "code_offset": 6837980,
+          "name": "onProgressChanged",
+          "descriptor": "(Landroid/webkit/WebView;I)V"
+        },
+        {
+          "method_id": 16469,
+          "method_id_offset": 968460,
+          "access_flags": 1,
+          "code_offset": 6838032,
+          "name": "onShowCustomView",
+          "descriptor": "(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    }
+  ]
+}

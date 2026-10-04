@@ -1,0 +1,1738 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "provenance": "source-first",
+  "based_on_report": false,
+  "parse_method": "DEX class_defs/class_data encoded method declarations, method_ids/proto_ids/type_ids/string_ids; all interface declarations, no name-based callback inference.",
+  "classes": [
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/ui/view/a;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Landroid/view/View$OnTouchListener;"
+      ],
+      "class_def_offset": 1540804,
+      "class_access_flags": 4113,
+      "dex": "classes10.dex",
+      "dex_sha256": "78eb03848be9f0a4a7f1636bb69a53a9c85ba470cd363d9c3e00bd92054a0a95",
+      "source_file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "source_sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323",
+      "methods": [
+        {
+          "method_id": 53047,
+          "method_id_offset": 1208820,
+          "access_flags": 69633,
+          "code_offset": 8586064,
+          "name": "<init>",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;)V"
+        },
+        {
+          "method_id": 53048,
+          "method_id_offset": 1208828,
+          "access_flags": 17,
+          "code_offset": 8586092,
+          "name": "onTouch",
+          "descriptor": "(Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1671500,
+      "class_access_flags": 1537,
+      "dex": "classes3.dex",
+      "dex_sha256": "bb3451fc855d981f66353b1607576a28a2815391fae48faf8690892581ccfbb3",
+      "source_file": "sources/com/vungle/ads/internal/ui/view/WebViewAPI.java",
+      "source_sha256": "f08938af71ddbc1c8b4840f4109face80523049dcaf3faf166f87cb6da868cb1",
+      "methods": [
+        {
+          "method_id": 54388,
+          "method_id_offset": 1282604,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "processCommand",
+          "descriptor": "(Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [],
+      "class_def_offset": 1671532,
+      "class_access_flags": 1537,
+      "dex": "classes3.dex",
+      "dex_sha256": "bb3451fc855d981f66353b1607576a28a2815391fae48faf8690892581ccfbb3",
+      "source_file": "sources/com/vungle/ads/internal/ui/view/WebViewAPI.java",
+      "source_sha256": "f08938af71ddbc1c8b4840f4109face80523049dcaf3faf166f87cb6da868cb1",
+      "methods": [
+        {
+          "method_id": 54389,
+          "method_id_offset": 1282612,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onReceivedError",
+          "descriptor": "(Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 54390,
+          "method_id_offset": 1282620,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onRenderProcessUnresponsive",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+        },
+        {
+          "method_id": 54391,
+          "method_id_offset": 1282628,
+          "access_flags": 1025,
+          "code_offset": 0,
+          "name": "onWebRenderingProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/Boolean;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;",
+      "superclass_descriptor": "Landroid/widget/RelativeLayout;",
+      "interface_descriptors": [],
+      "class_def_offset": 1647936,
+      "class_access_flags": 17,
+      "dex": "classes5.dex",
+      "dex_sha256": "5a2b49f9461d36d4f7478cf392dfc5868b824054420ba92d539fab9919c26af3",
+      "source_file": "sources/com/vungle/ads/internal/ui/view/MRAIDAdWidget.java",
+      "source_sha256": "d75c9d3e2805e8f5b4d49665d32de5989133739cd04f1cff7b92fff1a6f76323",
+      "methods": [
+        {
+          "method_id": 51585,
+          "method_id_offset": 1334376,
+          "access_flags": 65544,
+          "code_offset": 8551812,
+          "name": "<clinit>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51586,
+          "method_id_offset": 1334384,
+          "access_flags": 65537,
+          "code_offset": 8551848,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;)V"
+        },
+        {
+          "method_id": 51587,
+          "method_id_offset": 1334392,
+          "access_flags": 65537,
+          "code_offset": 8551888,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 51588,
+          "method_id_offset": 1334400,
+          "access_flags": 69633,
+          "code_offset": 8552016,
+          "name": "<init>",
+          "descriptor": "(Landroid/content/Context;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+        },
+        {
+          "method_id": 51589,
+          "method_id_offset": 1334408,
+          "access_flags": 4105,
+          "code_offset": 8552052,
+          "name": "a",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 51590,
+          "method_id_offset": 1334416,
+          "access_flags": 4121,
+          "code_offset": 8552080,
+          "name": "access$getWebView$p",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;)Landroid/webkit/WebView;"
+        },
+        {
+          "method_id": 51591,
+          "method_id_offset": 1334424,
+          "access_flags": 4121,
+          "code_offset": 8552104,
+          "name": "access$setWebView$p",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 51592,
+          "method_id_offset": 1334432,
+          "access_flags": 18,
+          "code_offset": 8552128,
+          "name": "bindListeners",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51593,
+          "method_id_offset": 1334440,
+          "access_flags": 26,
+          "code_offset": 8552172,
+          "name": "bindListeners$lambda-0",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;Landroid/view/View;Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 51596,
+          "method_id_offset": 1334464,
+          "access_flags": 4105,
+          "code_offset": 8552224,
+          "name": "destroyWebView$default",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;JZILjava/lang/Object;)V"
+        },
+        {
+          "method_id": 51599,
+          "method_id_offset": 1334488,
+          "access_flags": 4105,
+          "code_offset": 8552260,
+          "name": "getCloseDelegate$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51602,
+          "method_id_offset": 1334512,
+          "access_flags": 4105,
+          "code_offset": 8552280,
+          "name": "getOnViewTouchListener$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51604,
+          "method_id_offset": 1334528,
+          "access_flags": 4105,
+          "code_offset": 8552300,
+          "name": "getOrientationDelegate$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51610,
+          "method_id_offset": 1334576,
+          "access_flags": 18,
+          "code_offset": 8552320,
+          "name": "prepare",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51594,
+          "method_id_offset": 1334448,
+          "access_flags": 17,
+          "code_offset": 8552376,
+          "name": "close",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51595,
+          "method_id_offset": 1334456,
+          "access_flags": 17,
+          "code_offset": 8552408,
+          "name": "destroyWebView",
+          "descriptor": "(JZ)V"
+        },
+        {
+          "method_id": 51597,
+          "method_id_offset": 1334472,
+          "access_flags": 1,
+          "code_offset": 8552588,
+          "name": "dispatchTouchEvent",
+          "descriptor": "(Landroid/view/MotionEvent;)Z"
+        },
+        {
+          "method_id": 51598,
+          "method_id_offset": 1334480,
+          "access_flags": 17,
+          "code_offset": 8552624,
+          "name": "getCloseDelegate$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$CloseDelegate;"
+        },
+        {
+          "method_id": 51600,
+          "method_id_offset": 1334496,
+          "access_flags": 17,
+          "code_offset": 8552648,
+          "name": "getEventId",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 51601,
+          "method_id_offset": 1334504,
+          "access_flags": 17,
+          "code_offset": 8552672,
+          "name": "getOnViewTouchListener$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$OnViewTouchListener;"
+        },
+        {
+          "method_id": 51603,
+          "method_id_offset": 1334520,
+          "access_flags": 17,
+          "code_offset": 8552696,
+          "name": "getOrientationDelegate$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$OrientationDelegate;"
+        },
+        {
+          "method_id": 51605,
+          "method_id_offset": 1334536,
+          "access_flags": 17,
+          "code_offset": 8552720,
+          "name": "getUrl",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 51606,
+          "method_id_offset": 1334544,
+          "access_flags": 17,
+          "code_offset": 8552760,
+          "name": "linkWebView",
+          "descriptor": "(Landroid/webkit/WebViewClient;Lcom/vungle/ads/internal/model/AdPayload$WebViewSettings;)V"
+        },
+        {
+          "method_id": 51607,
+          "method_id_offset": 1334552,
+          "access_flags": 1,
+          "code_offset": 8552816,
+          "name": "onAttachedToWindow",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51608,
+          "method_id_offset": 1334560,
+          "access_flags": 4,
+          "code_offset": 8552892,
+          "name": "onMeasure",
+          "descriptor": "(II)V"
+        },
+        {
+          "method_id": 51609,
+          "method_id_offset": 1334568,
+          "access_flags": 17,
+          "code_offset": 8552936,
+          "name": "pauseWeb",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51611,
+          "method_id_offset": 1334584,
+          "access_flags": 17,
+          "code_offset": 8552968,
+          "name": "resumeWeb",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 51612,
+          "method_id_offset": 1334592,
+          "access_flags": 17,
+          "code_offset": 8553020,
+          "name": "setCloseDelegate",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$CloseDelegate;)V"
+        },
+        {
+          "method_id": 51613,
+          "method_id_offset": 1334600,
+          "access_flags": 17,
+          "code_offset": 8553052,
+          "name": "setCloseDelegate$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$CloseDelegate;)V"
+        },
+        {
+          "method_id": 51615,
+          "method_id_offset": 1334616,
+          "access_flags": 17,
+          "code_offset": 8553076,
+          "name": "setOnViewTouchListener",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$OnViewTouchListener;)V"
+        },
+        {
+          "method_id": 51616,
+          "method_id_offset": 1334624,
+          "access_flags": 17,
+          "code_offset": 8553100,
+          "name": "setOnViewTouchListener$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$OnViewTouchListener;)V"
+        },
+        {
+          "method_id": 51617,
+          "method_id_offset": 1334632,
+          "access_flags": 17,
+          "code_offset": 8553124,
+          "name": "setOrientation",
+          "descriptor": "(I)V"
+        },
+        {
+          "method_id": 51618,
+          "method_id_offset": 1334640,
+          "access_flags": 17,
+          "code_offset": 8553156,
+          "name": "setOrientationDelegate",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$OrientationDelegate;)V"
+        },
+        {
+          "method_id": 51619,
+          "method_id_offset": 1334648,
+          "access_flags": 17,
+          "code_offset": 8553180,
+          "name": "setOrientationDelegate$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget$OrientationDelegate;)V"
+        },
+        {
+          "method_id": 51620,
+          "method_id_offset": 1334656,
+          "access_flags": 17,
+          "code_offset": 8553204,
+          "name": "showWebsite",
+          "descriptor": "(Ljava/lang/String;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/presenter/MRAIDPresenter;",
+      "superclass_descriptor": "Ljava/lang/Object;",
+      "interface_descriptors": [
+        "Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;",
+        "Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;"
+      ],
+      "class_def_offset": 1517784,
+      "class_access_flags": 17,
+      "dex": "classes6.dex",
+      "dex_sha256": "4011152c6c274ef19cca863150ccbca342c17b41d58eedb5ac468dfefd381a74",
+      "source_file": "sources/com/vungle/ads/internal/presenter/MRAIDPresenter.java",
+      "source_sha256": "77d404b5ff1639cc555e0bbafcf1dc8bad61f9b5836b5e96149988f29177a62d",
+      "methods": [
+        {
+          "method_id": 53037,
+          "method_id_offset": 1213632,
+          "access_flags": 65544,
+          "code_offset": 8205432,
+          "name": "<clinit>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53038,
+          "method_id_offset": 1213640,
+          "access_flags": 65537,
+          "code_offset": 8205532,
+          "name": "<init>",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;Lcom/vungle/ads/internal/model/AdPayload;Lcom/vungle/ads/internal/model/Placement;Lcom/vungle/ads/internal/ui/VungleWebClient;Ljava/util/concurrent/Executor;Lcom/vungle/ads/internal/omsdk/OMTracker;Lcom/vungle/ads/internal/platform/Platform;)V"
+        },
+        {
+          "method_id": 53039,
+          "method_id_offset": 1213648,
+          "access_flags": 4105,
+          "code_offset": 8205924,
+          "name": "a",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53040,
+          "method_id_offset": 1213656,
+          "access_flags": 4121,
+          "code_offset": 8205948,
+          "name": "access$getAdWidget$p",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)Lcom/vungle/ads/internal/ui/view/MRAIDAdWidget;"
+        },
+        {
+          "method_id": 53041,
+          "method_id_offset": 1213664,
+          "access_flags": 4121,
+          "code_offset": 8205972,
+          "name": "access$getAdvertisement$p",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)Lcom/vungle/ads/internal/model/AdPayload;"
+        },
+        {
+          "method_id": 53042,
+          "method_id_offset": 1213672,
+          "access_flags": 4121,
+          "code_offset": 8205996,
+          "name": "access$getEventMap$cp",
+          "descriptor": "()Ljava/util/Map;"
+        },
+        {
+          "method_id": 53043,
+          "method_id_offset": 1213680,
+          "access_flags": 4121,
+          "code_offset": 8206020,
+          "name": "access$getLogEntry",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)Lcom/vungle/ads/internal/util/LogEntry;"
+        },
+        {
+          "method_id": 53044,
+          "method_id_offset": 1213688,
+          "access_flags": 4121,
+          "code_offset": 8206048,
+          "name": "access$getTpatSender",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)Lcom/vungle/ads/internal/network/TpatSender;"
+        },
+        {
+          "method_id": 53045,
+          "method_id_offset": 1213696,
+          "access_flags": 4121,
+          "code_offset": 8206076,
+          "name": "access$handleWebViewException",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;Lcom/vungle/ads/VungleError;ZLjava/lang/String;)V"
+        },
+        {
+          "method_id": 53046,
+          "method_id_offset": 1213704,
+          "access_flags": 4121,
+          "code_offset": 8206100,
+          "name": "access$reportErrorAndCloseAd",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;Lcom/vungle/ads/VungleError;)V"
+        },
+        {
+          "method_id": 53047,
+          "method_id_offset": 1213712,
+          "access_flags": 4105,
+          "code_offset": 8206124,
+          "name": "b",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;JJ)V"
+        },
+        {
+          "method_id": 53048,
+          "method_id_offset": 1213720,
+          "access_flags": 4105,
+          "code_offset": 8206148,
+          "name": "c",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53049,
+          "method_id_offset": 1213728,
+          "access_flags": 18,
+          "code_offset": 8206172,
+          "name": "closeView",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53050,
+          "method_id_offset": 1213736,
+          "access_flags": 4105,
+          "code_offset": 8206384,
+          "name": "d",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53052,
+          "method_id_offset": 1213752,
+          "access_flags": 4105,
+          "code_offset": 8206408,
+          "name": "e",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53054,
+          "method_id_offset": 1213768,
+          "access_flags": 4105,
+          "code_offset": 8206432,
+          "name": "getAdStartTime$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53056,
+          "method_id_offset": 1213784,
+          "access_flags": 4105,
+          "code_offset": 8206452,
+          "name": "getBackEnabled$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53058,
+          "method_id_offset": 1213800,
+          "access_flags": 4105,
+          "code_offset": 8206472,
+          "name": "getBus$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53060,
+          "method_id_offset": 1213816,
+          "access_flags": 4105,
+          "code_offset": 8206492,
+          "name": "getClickCoordinateTracker$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53062,
+          "method_id_offset": 1213832,
+          "access_flags": 4105,
+          "code_offset": 8206512,
+          "name": "getHeartbeatEnabled$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53064,
+          "method_id_offset": 1213848,
+          "access_flags": 4105,
+          "code_offset": 8206532,
+          "name": "getLastUserInteractionTimestamp$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53065,
+          "method_id_offset": 1213856,
+          "access_flags": 18,
+          "code_offset": 8206552,
+          "name": "getLogEntry",
+          "descriptor": "()Lcom/vungle/ads/internal/util/LogEntry;"
+        },
+        {
+          "method_id": 53066,
+          "method_id_offset": 1213864,
+          "access_flags": 18,
+          "code_offset": 8206588,
+          "name": "getPathProvider",
+          "descriptor": "()Lcom/vungle/ads/internal/util/PathProvider;"
+        },
+        {
+          "method_id": 53067,
+          "method_id_offset": 1213872,
+          "access_flags": 18,
+          "code_offset": 8206624,
+          "name": "getScheduler",
+          "descriptor": "()Lcom/vungle/ads/internal/util/HandlerScheduler;"
+        },
+        {
+          "method_id": 53068,
+          "method_id_offset": 1213880,
+          "access_flags": 18,
+          "code_offset": 8206660,
+          "name": "getSignalManager",
+          "descriptor": "()Lcom/vungle/ads/internal/signals/SignalManager;"
+        },
+        {
+          "method_id": 53070,
+          "method_id_offset": 1213896,
+          "access_flags": 4105,
+          "code_offset": 8206696,
+          "name": "getSuspendableTimer$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53071,
+          "method_id_offset": 1213904,
+          "access_flags": 18,
+          "code_offset": 8206716,
+          "name": "getTpatSender",
+          "descriptor": "()Lcom/vungle/ads/internal/network/TpatSender;"
+        },
+        {
+          "method_id": 53073,
+          "method_id_offset": 1213920,
+          "access_flags": 4105,
+          "code_offset": 8206752,
+          "name": "getUserId$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53075,
+          "method_id_offset": 1213936,
+          "access_flags": 4105,
+          "code_offset": 8206772,
+          "name": "getVideoLength$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53077,
+          "method_id_offset": 1213952,
+          "access_flags": 18,
+          "code_offset": 8206792,
+          "name": "getVungleApiClient",
+          "descriptor": "()Lcom/vungle/ads/internal/network/VungleApiClient;"
+        },
+        {
+          "method_id": 53079,
+          "method_id_offset": 1213968,
+          "access_flags": 18,
+          "code_offset": 8206828,
+          "name": "handleWebViewException",
+          "descriptor": "(Lcom/vungle/ads/VungleError;ZLjava/lang/String;)V"
+        },
+        {
+          "method_id": 53080,
+          "method_id_offset": 1213976,
+          "access_flags": 4105,
+          "code_offset": 8206968,
+          "name": "handleWebViewException$default",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;Lcom/vungle/ads/VungleError;ZLjava/lang/String;ILjava/lang/Object;)V"
+        },
+        {
+          "method_id": 53082,
+          "method_id_offset": 1213992,
+          "access_flags": 4105,
+          "code_offset": 8207004,
+          "name": "isDestroying$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53083,
+          "method_id_offset": 1214000,
+          "access_flags": 18,
+          "code_offset": 8207024,
+          "name": "loadMraidAd",
+          "descriptor": "()Lcom/vungle/ads/VungleError;"
+        },
+        {
+          "method_id": 53084,
+          "method_id_offset": 1214008,
+          "access_flags": 18,
+          "code_offset": 8207220,
+          "name": "makeBusError",
+          "descriptor": "(Lcom/vungle/ads/VungleError;)V"
+        },
+        {
+          "method_id": 53091,
+          "method_id_offset": 1214064,
+          "access_flags": 26,
+          "code_offset": 8207264,
+          "name": "prepare$lambda-14",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53093,
+          "method_id_offset": 1214080,
+          "access_flags": 26,
+          "code_offset": 8207300,
+          "name": "processCommand$lambda-10",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53094,
+          "method_id_offset": 1214088,
+          "access_flags": 26,
+          "code_offset": 8207344,
+          "name": "processCommand$lambda-11",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;JJ)V"
+        },
+        {
+          "method_id": 53095,
+          "method_id_offset": 1214096,
+          "access_flags": 26,
+          "code_offset": 8207384,
+          "name": "processCommand$lambda-5",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53096,
+          "method_id_offset": 1214104,
+          "access_flags": 26,
+          "code_offset": 8207424,
+          "name": "processCommand$lambda-9",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/MRAIDPresenter;)V"
+        },
+        {
+          "method_id": 53097,
+          "method_id_offset": 1214112,
+          "access_flags": 18,
+          "code_offset": 8207632,
+          "name": "reportErrorAndCloseAd",
+          "descriptor": "(Lcom/vungle/ads/VungleError;)V"
+        },
+        {
+          "method_id": 53111,
+          "method_id_offset": 1214224,
+          "access_flags": 18,
+          "code_offset": 8207684,
+          "name": "triggerEventMetricForTpat",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 53051,
+          "method_id_offset": 1213744,
+          "access_flags": 17,
+          "code_offset": 8207756,
+          "name": "detach",
+          "descriptor": "(I)V"
+        },
+        {
+          "method_id": 53053,
+          "method_id_offset": 1213760,
+          "access_flags": 17,
+          "code_offset": 8207952,
+          "name": "getAdStartTime$vungle_ads_release",
+          "descriptor": "()Ljava/lang/Long;"
+        },
+        {
+          "method_id": 53055,
+          "method_id_offset": 1213776,
+          "access_flags": 17,
+          "code_offset": 8207976,
+          "name": "getBackEnabled$vungle_ads_release",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 53057,
+          "method_id_offset": 1213792,
+          "access_flags": 17,
+          "code_offset": 8208000,
+          "name": "getBus",
+          "descriptor": "()Lcom/vungle/ads/internal/presenter/AdEventListener;"
+        },
+        {
+          "method_id": 53059,
+          "method_id_offset": 1213808,
+          "access_flags": 17,
+          "code_offset": 8208024,
+          "name": "getClickCoordinateTracker$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/ClickCoordinateTracker;"
+        },
+        {
+          "method_id": 53061,
+          "method_id_offset": 1213824,
+          "access_flags": 17,
+          "code_offset": 8208060,
+          "name": "getHeartbeatEnabled$vungle_ads_release",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 53063,
+          "method_id_offset": 1213840,
+          "access_flags": 17,
+          "code_offset": 8208084,
+          "name": "getLastUserInteractionTimestamp$vungle_ads_release",
+          "descriptor": "()J"
+        },
+        {
+          "method_id": 53069,
+          "method_id_offset": 1213888,
+          "access_flags": 17,
+          "code_offset": 8208108,
+          "name": "getSuspendableTimer$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/util/SuspendableTimer;"
+        },
+        {
+          "method_id": 53072,
+          "method_id_offset": 1213912,
+          "access_flags": 17,
+          "code_offset": 8208144,
+          "name": "getUserId$vungle_ads_release",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 53074,
+          "method_id_offset": 1213928,
+          "access_flags": 17,
+          "code_offset": 8208168,
+          "name": "getVideoLength$vungle_ads_release",
+          "descriptor": "()J"
+        },
+        {
+          "method_id": 53076,
+          "method_id_offset": 1213944,
+          "access_flags": 17,
+          "code_offset": 8208192,
+          "name": "getViewStatus",
+          "descriptor": "()Ljava/lang/Long;"
+        },
+        {
+          "method_id": 53078,
+          "method_id_offset": 1213960,
+          "access_flags": 17,
+          "code_offset": 8208236,
+          "name": "handleExit",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53081,
+          "method_id_offset": 1213984,
+          "access_flags": 17,
+          "code_offset": 8208276,
+          "name": "isDestroying$vungle_ads_release",
+          "descriptor": "()Ljava/util/concurrent/atomic/AtomicBoolean;"
+        },
+        {
+          "method_id": 53085,
+          "method_id_offset": 1214016,
+          "access_flags": 1,
+          "code_offset": 8208300,
+          "name": "onReceivedError",
+          "descriptor": "(Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 53086,
+          "method_id_offset": 1214024,
+          "access_flags": 1,
+          "code_offset": 8208348,
+          "name": "onRenderProcessUnresponsive",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+        },
+        {
+          "method_id": 53087,
+          "method_id_offset": 1214032,
+          "access_flags": 17,
+          "code_offset": 8208396,
+          "name": "onViewConfigurationChanged",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53088,
+          "method_id_offset": 1214040,
+          "access_flags": 17,
+          "code_offset": 8208428,
+          "name": "onViewTouched",
+          "descriptor": "(Landroid/view/MotionEvent;)V"
+        },
+        {
+          "method_id": 53089,
+          "method_id_offset": 1214048,
+          "access_flags": 1,
+          "code_offset": 8208496,
+          "name": "onWebRenderingProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/Boolean;)Z"
+        },
+        {
+          "method_id": 53090,
+          "method_id_offset": 1214056,
+          "access_flags": 17,
+          "code_offset": 8208588,
+          "name": "prepare",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53092,
+          "method_id_offset": 1214072,
+          "access_flags": 1,
+          "code_offset": 8209232,
+          "name": "processCommand",
+          "descriptor": "(Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Z"
+        },
+        {
+          "method_id": 53098,
+          "method_id_offset": 1214120,
+          "access_flags": 17,
+          "code_offset": 8212180,
+          "name": "setAdStartTime$vungle_ads_release",
+          "descriptor": "(Ljava/lang/Long;)V"
+        },
+        {
+          "method_id": 53099,
+          "method_id_offset": 1214128,
+          "access_flags": 17,
+          "code_offset": 8212204,
+          "name": "setAdVisibility",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 53100,
+          "method_id_offset": 1214136,
+          "access_flags": 17,
+          "code_offset": 8212232,
+          "name": "setBackEnabled$vungle_ads_release",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 53101,
+          "method_id_offset": 1214144,
+          "access_flags": 17,
+          "code_offset": 8212256,
+          "name": "setBus",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/AdEventListener;)V"
+        },
+        {
+          "method_id": 53102,
+          "method_id_offset": 1214152,
+          "access_flags": 17,
+          "code_offset": 8212280,
+          "name": "setEventListener",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/AdEventListener;)V"
+        },
+        {
+          "method_id": 53103,
+          "method_id_offset": 1214160,
+          "access_flags": 17,
+          "code_offset": 8212304,
+          "name": "setHeartbeatEnabled$vungle_ads_release",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 53104,
+          "method_id_offset": 1214168,
+          "access_flags": 17,
+          "code_offset": 8212328,
+          "name": "setLastUserInteractionTimestamp$vungle_ads_release",
+          "descriptor": "(J)V"
+        },
+        {
+          "method_id": 53105,
+          "method_id_offset": 1214176,
+          "access_flags": 17,
+          "code_offset": 8212352,
+          "name": "setPresenterDelegate$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/presenter/PresenterDelegate;)V"
+        },
+        {
+          "method_id": 53106,
+          "method_id_offset": 1214184,
+          "access_flags": 17,
+          "code_offset": 8212376,
+          "name": "setUserId$vungle_ads_release",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 53107,
+          "method_id_offset": 1214192,
+          "access_flags": 17,
+          "code_offset": 8212400,
+          "name": "setVideoLength$vungle_ads_release",
+          "descriptor": "(J)V"
+        },
+        {
+          "method_id": 53108,
+          "method_id_offset": 1214200,
+          "access_flags": 17,
+          "code_offset": 8212424,
+          "name": "shouldBlockAutoRedirect$vungle_ads_release",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 53109,
+          "method_id_offset": 1214208,
+          "access_flags": 17,
+          "code_offset": 8212512,
+          "name": "start",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 53110,
+          "method_id_offset": 1214216,
+          "access_flags": 17,
+          "code_offset": 8212568,
+          "name": "stop",
+          "descriptor": "()V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/ui/VungleWebClient$VungleWebViewRenderProcessClient;",
+      "superclass_descriptor": "Landroid/webkit/WebViewRenderProcessClient;",
+      "interface_descriptors": [],
+      "class_def_offset": 1587060,
+      "class_access_flags": 17,
+      "dex": "classes8.dex",
+      "dex_sha256": "4bf6ff4bb092fd47e4c5846b26a975b26834e162b84a00b8d74a4a94dc6b57f2",
+      "source_file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "source_sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af",
+      "methods": [
+        {
+          "method_id": 52213,
+          "method_id_offset": 1254412,
+          "access_flags": 65537,
+          "code_offset": 8669536,
+          "name": "<init>",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;)V"
+        },
+        {
+          "method_id": 52214,
+          "method_id_offset": 1254420,
+          "access_flags": 1,
+          "code_offset": 8669564,
+          "name": "onRenderProcessResponsive",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+        },
+        {
+          "method_id": 52215,
+          "method_id_offset": 1254428,
+          "access_flags": 1,
+          "code_offset": 8669592,
+          "name": "onRenderProcessUnresponsive",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    },
+    {
+      "class_descriptor": "Lcom/vungle/ads/internal/ui/VungleWebClient;",
+      "superclass_descriptor": "Landroid/webkit/WebViewClient;",
+      "interface_descriptors": [
+        "Lcom/vungle/ads/internal/ui/view/WebViewAPI;"
+      ],
+      "class_def_offset": 1587092,
+      "class_access_flags": 17,
+      "dex": "classes8.dex",
+      "dex_sha256": "4bf6ff4bb092fd47e4c5846b26a975b26834e162b84a00b8d74a4a94dc6b57f2",
+      "source_file": "sources/com/vungle/ads/internal/ui/VungleWebClient.java",
+      "source_sha256": "b3f922fd3c28212cabd16645e37bd5de282e394b725b06160fe770f46a3691af",
+      "methods": [
+        {
+          "method_id": 52216,
+          "method_id_offset": 1254436,
+          "access_flags": 65544,
+          "code_offset": 8669736,
+          "name": "<clinit>",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52217,
+          "method_id_offset": 1254444,
+          "access_flags": 65537,
+          "code_offset": 8669772,
+          "name": "<init>",
+          "descriptor": "(Lcom/vungle/ads/internal/model/AdPayload;Lcom/vungle/ads/internal/model/Placement;Ljava/util/concurrent/ExecutorService;Lcom/vungle/ads/internal/platform/Platform;Lcom/vungle/ads/internal/presenter/PreloadDelegate;Ljava/lang/Long;)V"
+        },
+        {
+          "method_id": 52218,
+          "method_id_offset": 1254452,
+          "access_flags": 69633,
+          "code_offset": 8669924,
+          "name": "<init>",
+          "descriptor": "(Lcom/vungle/ads/internal/model/AdPayload;Lcom/vungle/ads/internal/model/Placement;Ljava/util/concurrent/ExecutorService;Lcom/vungle/ads/internal/platform/Platform;Lcom/vungle/ads/internal/presenter/PreloadDelegate;Ljava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V"
+        },
+        {
+          "method_id": 52219,
+          "method_id_offset": 1254460,
+          "access_flags": 4105,
+          "code_offset": 8670000,
+          "name": "a",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52220,
+          "method_id_offset": 1254468,
+          "access_flags": 4105,
+          "code_offset": 8670024,
+          "name": "b",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52221,
+          "method_id_offset": 1254476,
+          "access_flags": 4105,
+          "code_offset": 8670048,
+          "name": "c",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52222,
+          "method_id_offset": 1254484,
+          "access_flags": 4105,
+          "code_offset": 8670072,
+          "name": "d",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52223,
+          "method_id_offset": 1254492,
+          "access_flags": 4105,
+          "code_offset": 8670096,
+          "name": "e",
+          "descriptor": "(ZLcom/vungle/ads/internal/ui/VungleWebClient;)V"
+        },
+        {
+          "method_id": 52224,
+          "method_id_offset": 1254500,
+          "access_flags": 4105,
+          "code_offset": 8670120,
+          "name": "f",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52225,
+          "method_id_offset": 1254508,
+          "access_flags": 4105,
+          "code_offset": 8670144,
+          "name": "g",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52227,
+          "method_id_offset": 1254524,
+          "access_flags": 4105,
+          "code_offset": 8670168,
+          "name": "getCollectConsent$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52229,
+          "method_id_offset": 1254540,
+          "access_flags": 4105,
+          "code_offset": 8670188,
+          "name": "getErrorHandler$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52231,
+          "method_id_offset": 1254556,
+          "access_flags": 4105,
+          "code_offset": 8670208,
+          "name": "getGdprAccept$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52233,
+          "method_id_offset": 1254572,
+          "access_flags": 4105,
+          "code_offset": 8670228,
+          "name": "getGdprBody$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52235,
+          "method_id_offset": 1254588,
+          "access_flags": 4105,
+          "code_offset": 8670248,
+          "name": "getGdprDeny$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52237,
+          "method_id_offset": 1254604,
+          "access_flags": 4105,
+          "code_offset": 8670268,
+          "name": "getGdprTitle$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52240,
+          "method_id_offset": 1254628,
+          "access_flags": 4105,
+          "code_offset": 8670288,
+          "name": "getLoadedWebView$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52242,
+          "method_id_offset": 1254644,
+          "access_flags": 4105,
+          "code_offset": 8670308,
+          "name": "getMraidDelegate$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52244,
+          "method_id_offset": 1254660,
+          "access_flags": 4105,
+          "code_offset": 8670328,
+          "name": "getReady$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52246,
+          "method_id_offset": 1254676,
+          "access_flags": 4105,
+          "code_offset": 8670348,
+          "name": "getWebViewObserver$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52247,
+          "method_id_offset": 1254684,
+          "access_flags": 4105,
+          "code_offset": 8670368,
+          "name": "h",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52248,
+          "method_id_offset": 1254692,
+          "access_flags": 18,
+          "code_offset": 8670392,
+          "name": "handleWebViewError",
+          "descriptor": "(Ljava/lang/String;Ljava/lang/String;Z)V"
+        },
+        {
+          "method_id": 52249,
+          "method_id_offset": 1254700,
+          "access_flags": 4105,
+          "code_offset": 8670436,
+          "name": "i",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52250,
+          "method_id_offset": 1254708,
+          "access_flags": 18,
+          "code_offset": 8670460,
+          "name": "isCriticalAsset",
+          "descriptor": "(Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 52252,
+          "method_id_offset": 1254724,
+          "access_flags": 4105,
+          "code_offset": 8670508,
+          "name": "isViewable$vungle_ads_release$annotations",
+          "descriptor": "()V"
+        },
+        {
+          "method_id": 52253,
+          "method_id_offset": 1254732,
+          "access_flags": 4105,
+          "code_offset": 8670528,
+          "name": "j",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52254,
+          "method_id_offset": 1254740,
+          "access_flags": 4105,
+          "code_offset": 8670552,
+          "name": "k",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52257,
+          "method_id_offset": 1254764,
+          "access_flags": 26,
+          "code_offset": 8670576,
+          "name": "notifyPropertiesChange$lambda-25",
+          "descriptor": "(ZLcom/vungle/ads/internal/ui/VungleWebClient;)V"
+        },
+        {
+          "method_id": 52258,
+          "method_id_offset": 1254772,
+          "access_flags": 26,
+          "code_offset": 8670996,
+          "name": "notifyPropertiesChange$lambda-25$lambda-24",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52268,
+          "method_id_offset": 1254852,
+          "access_flags": 18,
+          "code_offset": 8671048,
+          "name": "runJavascriptOnWebView",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52291,
+          "method_id_offset": 1255036,
+          "access_flags": 26,
+          "code_offset": 8671208,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-10",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52292,
+          "method_id_offset": 1255044,
+          "access_flags": 26,
+          "code_offset": 8671272,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-10$lambda-9",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52293,
+          "method_id_offset": 1255052,
+          "access_flags": 26,
+          "code_offset": 8671312,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-11",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52294,
+          "method_id_offset": 1255060,
+          "access_flags": 26,
+          "code_offset": 8671352,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-15$lambda-14",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52295,
+          "method_id_offset": 1255068,
+          "access_flags": 26,
+          "code_offset": 8671444,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-15$lambda-14$lambda-13",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52296,
+          "method_id_offset": 1255076,
+          "access_flags": 26,
+          "code_offset": 8671484,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-6",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52297,
+          "method_id_offset": 1255084,
+          "access_flags": 26,
+          "code_offset": 8671584,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-6$lambda-5",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52298,
+          "method_id_offset": 1255092,
+          "access_flags": 26,
+          "code_offset": 8671628,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-8",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52299,
+          "method_id_offset": 1255100,
+          "access_flags": 26,
+          "code_offset": 8671692,
+          "name": "shouldOverrideUrlLoading$lambda-16$lambda-8$lambda-7",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/VungleWebClient;Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52226,
+          "method_id_offset": 1254516,
+          "access_flags": 17,
+          "code_offset": 8671732,
+          "name": "getCollectConsent$vungle_ads_release",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 52228,
+          "method_id_offset": 1254532,
+          "access_flags": 17,
+          "code_offset": 8671756,
+          "name": "getErrorHandler$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;"
+        },
+        {
+          "method_id": 52230,
+          "method_id_offset": 1254548,
+          "access_flags": 17,
+          "code_offset": 8671780,
+          "name": "getGdprAccept$vungle_ads_release",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 52232,
+          "method_id_offset": 1254564,
+          "access_flags": 17,
+          "code_offset": 8671804,
+          "name": "getGdprBody$vungle_ads_release",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 52234,
+          "method_id_offset": 1254580,
+          "access_flags": 17,
+          "code_offset": 8671828,
+          "name": "getGdprDeny$vungle_ads_release",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 52236,
+          "method_id_offset": 1254596,
+          "access_flags": 17,
+          "code_offset": 8671852,
+          "name": "getGdprTitle$vungle_ads_release",
+          "descriptor": "()Ljava/lang/String;"
+        },
+        {
+          "method_id": 52238,
+          "method_id_offset": 1254612,
+          "access_flags": 17,
+          "code_offset": 8671876,
+          "name": "getHandler$vungle_ads_release",
+          "descriptor": "()Landroid/os/Handler;"
+        },
+        {
+          "method_id": 52239,
+          "method_id_offset": 1254620,
+          "access_flags": 17,
+          "code_offset": 8671900,
+          "name": "getLoadedWebView$vungle_ads_release",
+          "descriptor": "()Landroid/webkit/WebView;"
+        },
+        {
+          "method_id": 52241,
+          "method_id_offset": 1254636,
+          "access_flags": 17,
+          "code_offset": 8671924,
+          "name": "getMraidDelegate$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;"
+        },
+        {
+          "method_id": 52243,
+          "method_id_offset": 1254652,
+          "access_flags": 17,
+          "code_offset": 8671948,
+          "name": "getReady$vungle_ads_release",
+          "descriptor": "()Z"
+        },
+        {
+          "method_id": 52245,
+          "method_id_offset": 1254668,
+          "access_flags": 17,
+          "code_offset": 8671972,
+          "name": "getWebViewObserver$vungle_ads_release",
+          "descriptor": "()Lcom/vungle/ads/internal/omsdk/WebViewObserver;"
+        },
+        {
+          "method_id": 52251,
+          "method_id_offset": 1254716,
+          "access_flags": 17,
+          "code_offset": 8671996,
+          "name": "isViewable$vungle_ads_release",
+          "descriptor": "()Ljava/lang/Boolean;"
+        },
+        {
+          "method_id": 52255,
+          "method_id_offset": 1254748,
+          "access_flags": 17,
+          "code_offset": 8672020,
+          "name": "notifyDiskAvailableSize",
+          "descriptor": "(JJ)V"
+        },
+        {
+          "method_id": 52256,
+          "method_id_offset": 1254756,
+          "access_flags": 1,
+          "code_offset": 8672096,
+          "name": "notifyPropertiesChange",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 52259,
+          "method_id_offset": 1254780,
+          "access_flags": 17,
+          "code_offset": 8672136,
+          "name": "notifySilentModeChange",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 52260,
+          "method_id_offset": 1254788,
+          "access_flags": 1,
+          "code_offset": 8672248,
+          "name": "onLoadResource",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52261,
+          "method_id_offset": 1254796,
+          "access_flags": 1,
+          "code_offset": 8672284,
+          "name": "onPageFinished",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52262,
+          "method_id_offset": 1254804,
+          "access_flags": 1,
+          "code_offset": 8672400,
+          "name": "onPageStarted",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;Landroid/graphics/Bitmap;)V"
+        },
+        {
+          "method_id": 52263,
+          "method_id_offset": 1254812,
+          "access_flags": 1,
+          "code_offset": 8672436,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52264,
+          "method_id_offset": 1254820,
+          "access_flags": 1,
+          "code_offset": 8672484,
+          "name": "onReceivedError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 52265,
+          "method_id_offset": 1254828,
+          "access_flags": 1,
+          "code_offset": 8672532,
+          "name": "onReceivedHttpError",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceResponse;)V"
+        },
+        {
+          "method_id": 52266,
+          "method_id_offset": 1254836,
+          "access_flags": 1,
+          "code_offset": 8672736,
+          "name": "onRenderProcessGone",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/RenderProcessGoneDetail;)Z"
+        },
+        {
+          "method_id": 52267,
+          "method_id_offset": 1254844,
+          "access_flags": 17,
+          "code_offset": 8672988,
+          "name": "parseRange$vungle_ads_release",
+          "descriptor": "(Ljava/lang/String;J)Lkotlin/Pair;"
+        },
+        {
+          "method_id": 52269,
+          "method_id_offset": 1254860,
+          "access_flags": 1,
+          "code_offset": 8673260,
+          "name": "safedk_VungleWebClient_onReceivedError_a84058a98d6f31e02ab86ec168a4c161",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;Landroid/webkit/WebResourceError;)V"
+        },
+        {
+          "method_id": 52270,
+          "method_id_offset": 1254868,
+          "access_flags": 1,
+          "code_offset": 8673456,
+          "name": "safedk_VungleWebClient_onReceivedError_b75d46f59d3c255bf15d937c49583423",
+          "descriptor": "(Landroid/webkit/WebView;ILjava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52271,
+          "method_id_offset": 1254876,
+          "access_flags": 1,
+          "code_offset": 8673500,
+          "name": "safedk_VungleWebClient_shouldInterceptRequest_0add75f4a1a96fc4bfeddb3a64e7131d",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 52272,
+          "method_id_offset": 1254884,
+          "access_flags": 1,
+          "code_offset": 8674672,
+          "name": "safedk_VungleWebClient_shouldOverrideUrlLoading_11f193c49fc5d521699217c7324e1efb",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        },
+        {
+          "method_id": 52273,
+          "method_id_offset": 1254892,
+          "access_flags": 1,
+          "code_offset": 8675432,
+          "name": "setAdVisibility",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 52274,
+          "method_id_offset": 1254900,
+          "access_flags": 17,
+          "code_offset": 8675472,
+          "name": "setCollectConsent$vungle_ads_release",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 52275,
+          "method_id_offset": 1254908,
+          "access_flags": 1,
+          "code_offset": 8675496,
+          "name": "setConsentStatus",
+          "descriptor": "(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52276,
+          "method_id_offset": 1254916,
+          "access_flags": 1,
+          "code_offset": 8675536,
+          "name": "setErrorHandler",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;)V"
+        },
+        {
+          "method_id": 52277,
+          "method_id_offset": 1254924,
+          "access_flags": 17,
+          "code_offset": 8675568,
+          "name": "setErrorHandler$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$WebClientErrorHandler;)V"
+        },
+        {
+          "method_id": 52278,
+          "method_id_offset": 1254932,
+          "access_flags": 17,
+          "code_offset": 8675592,
+          "name": "setGdprAccept$vungle_ads_release",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52279,
+          "method_id_offset": 1254940,
+          "access_flags": 17,
+          "code_offset": 8675616,
+          "name": "setGdprBody$vungle_ads_release",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52280,
+          "method_id_offset": 1254948,
+          "access_flags": 17,
+          "code_offset": 8675640,
+          "name": "setGdprDeny$vungle_ads_release",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52281,
+          "method_id_offset": 1254956,
+          "access_flags": 17,
+          "code_offset": 8675664,
+          "name": "setGdprTitle$vungle_ads_release",
+          "descriptor": "(Ljava/lang/String;)V"
+        },
+        {
+          "method_id": 52282,
+          "method_id_offset": 1254964,
+          "access_flags": 17,
+          "code_offset": 8675688,
+          "name": "setLoadedWebView$vungle_ads_release",
+          "descriptor": "(Landroid/webkit/WebView;)V"
+        },
+        {
+          "method_id": 52283,
+          "method_id_offset": 1254972,
+          "access_flags": 1,
+          "code_offset": 8675712,
+          "name": "setMraidDelegate",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;)V"
+        },
+        {
+          "method_id": 52284,
+          "method_id_offset": 1254980,
+          "access_flags": 17,
+          "code_offset": 8675736,
+          "name": "setMraidDelegate$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/ui/view/WebViewAPI$MraidDelegate;)V"
+        },
+        {
+          "method_id": 52285,
+          "method_id_offset": 1254988,
+          "access_flags": 17,
+          "code_offset": 8675760,
+          "name": "setReady$vungle_ads_release",
+          "descriptor": "(Z)V"
+        },
+        {
+          "method_id": 52286,
+          "method_id_offset": 1254996,
+          "access_flags": 17,
+          "code_offset": 8675784,
+          "name": "setViewable$vungle_ads_release",
+          "descriptor": "(Ljava/lang/Boolean;)V"
+        },
+        {
+          "method_id": 52287,
+          "method_id_offset": 1255004,
+          "access_flags": 1,
+          "code_offset": 8675808,
+          "name": "setWebViewObserver",
+          "descriptor": "(Lcom/vungle/ads/internal/omsdk/WebViewObserver;)V"
+        },
+        {
+          "method_id": 52288,
+          "method_id_offset": 1255012,
+          "access_flags": 17,
+          "code_offset": 8675832,
+          "name": "setWebViewObserver$vungle_ads_release",
+          "descriptor": "(Lcom/vungle/ads/internal/omsdk/WebViewObserver;)V"
+        },
+        {
+          "method_id": 52289,
+          "method_id_offset": 1255020,
+          "access_flags": 1,
+          "code_offset": 8675856,
+          "name": "shouldInterceptRequest",
+          "descriptor": "(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;"
+        },
+        {
+          "method_id": 52290,
+          "method_id_offset": 1255028,
+          "access_flags": 1,
+          "code_offset": 8675912,
+          "name": "shouldOverrideUrlLoading",
+          "descriptor": "(Landroid/webkit/WebView;Ljava/lang/String;)Z"
+        }
+      ],
+      "member_scope": "all encoded declared methods including constructors/helpers; source explicitly separates installed compatible members"
+    }
+  ]
+}

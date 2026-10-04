@@ -1,0 +1,42 @@
+{
+  "scope": "One further writer necessary-condition prefilter on top of previous isolated three-class snapshot; not a release or acceptance measurement.",
+  "base_jar_sha256": "893801996f1b4822fdeb79c006544527e071a2b381d743c913025cb03ec2f22a",
+  "override_source_sha256": {
+    "CapabilityEngine.java": "1782f1217415931b7a157e7fb653cc107434d1cd2b38c69c81d1452727529957",
+    "ConstructorCaptures.java": "b60760669e0e96ed0053309627c2f082d7c78cafe254111a25bda8799009e587",
+    "ReflectionProtocols.java": "326c8ff1b99dd4e6a049073e61cf2e434aacc43c4e412861e63369c7f41d7c72"
+  },
+  "runs": [
+    {
+      "app": "news",
+      "log_path": "test/runs/generic-v14-writer-prefilter-news.log",
+      "log_sha256": "e4881ae017005cfeca2c6a7fd4fb3b6c230567cd5c097cfa2a3c47bd64bf9740",
+      "cpus": "32-39",
+      "heap_gib": 16,
+      "active_processor_count": 8,
+      "index_seconds": 52.8945581,
+      "bootstrap_wall_seconds": 0.042036349,
+      "bootstrap_cpu_seconds": 0.039994672,
+      "diagnostics": "[application_bootstrap:com.tencent.news.system.TNApplication:analysis_seconds=0.035285279, application_bootstrap:com.tencent.news.system.TNApplication:contexts=9:static_heap=0, application_bootstrap:com.tencent.news.system.TNApplication:array_update_order_unresolved:Lcom/tencent/tinker/loader/app/TinkerApplication;-><clinit>()V@1|static]"
+    },
+    {
+      "app": "ctrip",
+      "log_path": "test/runs/generic-v14-writer-prefilter-ctrip.log",
+      "log_sha256": "ce3b4a98c24a47ff9cef060e85e16fd01f5ce77d17bceab73525a0698ca59d85",
+      "cpus": "48-55",
+      "heap_gib": 16,
+      "active_processor_count": 8,
+      "index_seconds": 38.12682914,
+      "bootstrap_wall_seconds": 1.015941485,
+      "bootstrap_cpu_seconds": 1.006999657,
+      "diagnostics": "[application_bootstrap:ctrip.base.component.CtripBaseApplication:analysis_seconds=1.002526638, application_bootstrap:ctrip.base.component.CtripBaseApplication:contexts=10:static_heap=0, application_bootstrap:ctrip.base.component.CtripBaseApplication:application_bootstrap_static_closure_budget, application_bootstrap:ctrip.base.component.CtripBaseApplication:application_bootstrap_time_budget, application_bootstrap:ctrip.base.component.CtripBaseApplication:static_reflection_reachability_deadline]"
+    }
+  ],
+  "regression_test": {
+    "command": "java -Xmx8g -XX:ActiveProcessorCount=8 -cp test/runs/generic-v14-writer-prefilter-classes:test/runs/generic-v14-writer-prefilter-tests:test/runs/generic-v13.jar org.example.CapabilitySelfTest",
+    "scope": "All tests from frozen v13 source compiled against isolated override. Does not include later v14 tests.",
+    "exit_code": 0,
+    "log_sha256": "02c2770f90aa910c5d1073c7908004ec0420b05ee086187aa7b0503f29f884f6"
+  },
+  "interpretation": "News9 contexts, Ctrip10; both static_heap0. Increased startup traversal is not capability recall evidence."
+}

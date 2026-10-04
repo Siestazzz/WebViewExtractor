@@ -1,0 +1,65 @@
+{
+  "scope": "Isolated bootstrap only. Frozen v13 baseline versus three-class development override, not frozen v14 acceptance. Disjoint CPU sets; concurrent diagnostic runs, no cached APK analysis reuse. No Activity traversal.",
+  "base_jar_sha256": "893801996f1b4822fdeb79c006544527e071a2b381d743c913025cb03ec2f22a",
+  "override_source_sha256": {
+    "CapabilityEngine.java": "1782f1217415931b7a157e7fb653cc107434d1cd2b38c69c81d1452727529957",
+    "ConstructorCaptures.java": "b60760669e0e96ed0053309627c2f082d7c78cafe254111a25bda8799009e587",
+    "ReflectionProtocols.java": "e5543212f1569c983e35e2a3c112d0d47cb40056658859fe038610eb3f787817"
+  },
+  "probe_sha256": "661898ca8f6cfc27201d40a05393d265e9510322fa4e9a3eaf370535171d12ab",
+  "runs": [
+    {
+      "app": "news",
+      "variant": "baseline",
+      "log_path": "test/runs/generic-v14-reflection-baseline-news.log",
+      "log_sha256": "746df906610ed69bee3c451afd3d4b79c65ae9b91136fe38b45c26cd64b70cb7",
+      "cpus": "40-47",
+      "heap_gib": 16,
+      "active_processor_count": 8,
+      "index_seconds": 53.19022392,
+      "bootstrap_wall_seconds": 11.917546815,
+      "bootstrap_cpu_seconds": 11.50032783,
+      "diagnostics": "[application_bootstrap:com.tencent.news.system.TNApplication:analysis_seconds=11.91048044, application_bootstrap:com.tencent.news.system.TNApplication:contexts=1:static_heap=0, application_bootstrap:com.tencent.news.system.TNApplication:application_bootstrap_static_closure_budget, application_bootstrap:com.tencent.news.system.TNApplication:application_bootstrap_time_budget, application_bootstrap:com.tencent.news.system.TNApplication:static_reflection_reachability_deadline]"
+    },
+    {
+      "app": "news",
+      "variant": "deadline",
+      "log_path": "test/runs/generic-v14-reflection-deadline-news.log",
+      "log_sha256": "10ff812bf047ec9873911a52e9ffdfceef70657af4cce51f40269ccd9397349b",
+      "cpus": "32-39",
+      "heap_gib": 16,
+      "active_processor_count": 8,
+      "index_seconds": 52.9800218,
+      "bootstrap_wall_seconds": 1.015472684,
+      "bootstrap_cpu_seconds": 1.00981411,
+      "diagnostics": "[application_bootstrap:com.tencent.news.system.TNApplication:analysis_seconds=1.004049658, application_bootstrap:com.tencent.news.system.TNApplication:contexts=1:static_heap=0, application_bootstrap:com.tencent.news.system.TNApplication:application_bootstrap_static_closure_budget, application_bootstrap:com.tencent.news.system.TNApplication:application_bootstrap_time_budget, application_bootstrap:com.tencent.news.system.TNApplication:static_reflection_reachability_deadline]"
+    },
+    {
+      "app": "ctrip",
+      "variant": "baseline",
+      "log_path": "test/runs/generic-v14-reflection-baseline-ctrip.log",
+      "log_sha256": "3f4fd5767f42c7bc9abb105a5c5d86aea8d922f05dbe8017565e86b5b63f300b",
+      "cpus": "56-63",
+      "heap_gib": 16,
+      "active_processor_count": 8,
+      "index_seconds": 37.570367833,
+      "bootstrap_wall_seconds": 20.629742272,
+      "bootstrap_cpu_seconds": 20.17761965,
+      "diagnostics": "[application_bootstrap:ctrip.base.component.CtripBaseApplication:analysis_seconds=20.623026322, application_bootstrap:ctrip.base.component.CtripBaseApplication:contexts=1:static_heap=0, application_bootstrap:ctrip.base.component.CtripBaseApplication:application_bootstrap_static_closure_budget, application_bootstrap:ctrip.base.component.CtripBaseApplication:application_bootstrap_time_budget, application_bootstrap:ctrip.base.component.CtripBaseApplication:static_reflection_reachability_deadline]"
+    },
+    {
+      "app": "ctrip",
+      "variant": "deadline",
+      "log_path": "test/runs/generic-v14-reflection-deadline-ctrip.log",
+      "log_sha256": "929659c5e83dc586d1d6d951f80061b25db64d3e1e7817ce91069ff5180d2117",
+      "cpus": "48-55",
+      "heap_gib": 16,
+      "active_processor_count": 8,
+      "index_seconds": 38.119912767,
+      "bootstrap_wall_seconds": 1.037528458,
+      "bootstrap_cpu_seconds": 1.029580527,
+      "diagnostics": "[application_bootstrap:ctrip.base.component.CtripBaseApplication:analysis_seconds=1.025055584, application_bootstrap:ctrip.base.component.CtripBaseApplication:contexts=1:static_heap=0, application_bootstrap:ctrip.base.component.CtripBaseApplication:application_bootstrap_static_closure_budget, application_bootstrap:ctrip.base.component.CtripBaseApplication:application_bootstrap_time_budget, application_bootstrap:ctrip.base.component.CtripBaseApplication:static_reflection_reachability_deadline]"
+    }
+  ],
+  "interpretation": "Deadline is now approximately respected on both APKs, but all four runs retain one context and zero static heap. No recall gain or complete initialization is established."
+}

@@ -117,7 +117,7 @@ final class CapabilityIndex {
                 if(i instanceof ReferenceInstruction r&&r.getReference() instanceof MethodReference target && i.getOpcode().name.startsWith("invoke-")){
                     refs.add(key(target));
                     if(kind(target)!=null)seeds.add(id);
-                    if(fragmentFactory(key(target))||pagerInstall(key(target)))componentProtocols.add(id);
+                    if(fragmentFactory(key(target))||pagerInstall(key(target))||FragmentTransactions.operation(key(target)))componentProtocols.add(id);
                     if(!i.getOpcode().name.startsWith("invoke-static")&&!i.getOpcode().name.startsWith("invoke-super")&&!i.getOpcode().name.startsWith("invoke-direct")&&(standardClientReference(target)||sourceClientCallback&&shape(m).equals(shape(target))))clientDelegations.add(id);
                 }
             }}catch(RuntimeException ex){diagnostics.add("method_index_failed:"+id+":"+ex.getClass().getSimpleName());}

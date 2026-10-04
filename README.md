@@ -23,7 +23,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
 
 ## 当前状态
 
-最近完成十 App 实测的版本为 generic v13；四个新增样本使用补丁版。十个进程正常结束（约 44～590 秒），新增实际 Application 初始化与有限静态反射，但同一核验集的三类能力命中数与 v12 相同，严格验收为 0/10。初始化局部预算超限及构造捕获、Fragment 委托遗漏继续修复。详见 [v13 结果](docs/validation/GENERIC_V13.md) 和 [严格验收口径](docs/validation/acceptance/README.md)。
+最近完成十 App 实测的版本为 generic v14；全部在约 55～593 秒内结束，但 Fragment 安装判定错误地拒绝 APK 内的 AndroidX 框架实现，导致多个 App 显著回退，严格验收仍为 0/10。v15 正在修复并将重新实测。详见 [v14 结果与回退原因](docs/validation/GENERIC_V14.md) 和 [严格验收口径](docs/validation/acceptance/README.md)。
 
 APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。文档里的 `test/runs/...` 是本地实验产物；克隆后需自行构建并提供 APK。
 

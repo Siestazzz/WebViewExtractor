@@ -1,0 +1,119 @@
+{
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "holdout_read": false,
+  "deep_audit_complete": false,
+  "activities": [
+    "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity"
+  ],
+  "findings": [
+    {
+      "mechanism": "actual registered JSBridge object differs from builder/business bridge",
+      "chain": "tfO.uOO(jHN) obtains retainednativegetWebView; cm/nO builder sets actual dpw.uOO subclass of Wza and name ToutiaoJSBridge; cm constructor calls abstractuOO.uOO(nO,mjj), Wza.JOE sets JP/name thenvirtual da(); dpw.uOO.da dispatches adexpress manager; manager selects retainedkrg or creates newkrg(wza), passes krg not Wza/tfO to actual PangleNetworkBridge.onAddedJavascriptInterface. Registeredkrg.invokeMethod(String) annotated method delegates WeakReference<Wza>.invokeMethod. tfO annotations alone are not evidence of native tfO registration.",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/core/tfO.java",
+          "line": 1067,
+          "text": "com.bytedance.sdk.component.uOO.cm JOE2 = com.bytedance.sdk.component.uOO.cm.uOO(webView).uOO(new com.bytedance.sdk.openadsdk.dpw.uOO()).uOO(\"ToutiaoJSBridge\").uOO(new com.bytedance.sdk.component.uOO.hsE() { // from class: com.bytedance.sdk.openadsdk.core.tfO.1",
+          "sha256": "c4c8ee312ab94bd0bda0f1b9a2c2957d1987d5d0ef93bf860871c96b1abbc77d"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/uOO/cm.java",
+          "line": 52,
+          "text": "this.JOE.uOO(nOVar, (mjj) null);",
+          "sha256": "c27c1a8e328125ae27ce4972188eada51f3005f276d14eb8ff4cea17c4694fc1"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/uOO/Wza.java",
+          "line": 24,
+          "text": "this.JP = nOVar.uOO;",
+          "sha256": "48c56e43913e2a539ea99656f388835a8eeb2f04fd4223470bc367892b075340"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/uOO/Wza.java",
+          "line": 29,
+          "text": "da();",
+          "sha256": "48c56e43913e2a539ea99656f388835a8eeb2f04fd4223470bc367892b075340"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/dpw/uOO.java",
+          "line": 11,
+          "text": "UeU.uOO().uOO(this.JP, this, ((Wza) this).fTI);",
+          "sha256": "29f03be9ae09007c29caf6a0e2fcfcb670120bca340144bc70bde1f54823f05d"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/adexpress/UeU/UeU.java",
+          "line": 320,
+          "text": "krgVar = new krg(wza);",
+          "sha256": "509105fedee7f9a168128015e2dd1866e290a6182867e7523d598e96af754f60"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/adexpress/UeU/UeU.java",
+          "line": 323,
+          "text": "PangleNetworkBridge.onAddedJavascriptInterface(webView, krgVar, str);",
+          "sha256": "509105fedee7f9a168128015e2dd1866e290a6182867e7523d598e96af754f60"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/adexpress/UeU/krg.java",
+          "line": 12,
+          "text": "public void invokeMethod(String str) {",
+          "sha256": "628fd9c4950169be2d80c3f7eac2faa7209a5eee9ba9a170e15e7b9ff9979be2"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/adexpress/UeU/krg.java",
+          "line": 17,
+          "text": "this.uOO.get().invokeMethod(str);",
+          "sha256": "628fd9c4950169be2d80c3f7eac2faa7209a5eee9ba9a170e15e7b9ff9979be2"
+        }
+      ]
+    },
+    {
+      "mechanism": "URL dependent observed JavaScript setting",
+      "chain": "jHN URL load helper selects false if scheme file, true otherwise; preserve both observations with nonemptyURL/settingsnonnull guards instead of final-state-only true.",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 277,
+          "text": "private void setJavaScriptEnabled(String str) {",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 284,
+          "text": "settings.setJavaScriptEnabled(false);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        },
+        {
+          "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+          "line": 286,
+          "text": "settings.setJavaScriptEnabled(true);",
+          "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+        }
+      ]
+    },
+    {
+      "mechanism": "ancestor surface closed",
+      "chain": "TTBaseLandingPageActivity adds only touch analytics and elapsed lifecycle state, no additional nativeWebView capability mutation. TTBaseActivity source surface reused prior direct host proof.",
+      "evidence": [
+        {
+          "file": "sources/com/bytedance/sdk/openadsdk/activity/TTBaseLandingPageActivity.java",
+          "line": 9,
+          "text": "public class TTBaseLandingPageActivity extends TTBaseActivity {",
+          "sha256": "adcafeb4856c4d0659a76f01686c54b803a320b7c6eb864d1bdd55e93c373e67"
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "Actual host-specific configuration helpers and URI load conditions",
+    "InstalledClient SWs forwarding vs unforwarded onLoadResource, effective inherited signatures and SDK nonstandard delegate surfaces",
+    "Actual touch/scroll/download listener installs and helper lifecycle replacement surface",
+    "DEX member comparison for actual bridge/clients; then append canonical facts and mark only closed categories"
+  ],
+  "added_fact_count": 4,
+  "canonical_fact_count": 551,
+  "dex_member_proof": "jhn-two-host-installed-members-source-dex.json"
+}

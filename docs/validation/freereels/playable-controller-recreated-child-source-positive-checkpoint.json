@@ -1,0 +1,91 @@
+{
+  "activity": "com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity",
+  "apk_sha256": "8c022d3feec4e3699d27230d46c2e65cd8e32a1b8c2e223ab47d204a2b6bf080",
+  "reviewer": "GPT-6.1 Sol",
+  "source_first": true,
+  "report_read": false,
+  "deep_audit_complete": false,
+  "host_evidence": [
+    {
+      "file": "resources/AndroidManifest.xml",
+      "line": 1177,
+      "text": "android:name=\"com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity\"",
+      "sha256": "aff4017c4e875e338104f304098c3990607946d6e709f730665ee91fe20d1fb3"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTPlayableLandingPageActivity.java",
+      "line": 193,
+      "text": "setContentView(dpw());",
+      "sha256": "9216f2dd71c9d2388ee795f096cfb5fd4d1709232e379df717cf8978871af01c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/activity/TTPlayableLandingPageActivity.java",
+      "line": 315,
+      "text": "this.Tp = new com.bytedance.sdk.openadsdk.Qq.uOO.uOO(this.vAX, this.Wza, this.JxH, this.sfx, daVar, true);",
+      "sha256": "9216f2dd71c9d2388ee795f096cfb5fd4d1709232e379df717cf8978871af01c"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/Qq/uOO/uOO.java",
+      "line": 96,
+      "text": "uOO(frameLayout);",
+      "sha256": "5e4396964784a156c9cea96fdf4dbb4613d60be726891136d6b5736ab8ac902e"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/Qq/uOO/uOO.java",
+      "line": 379,
+      "text": "com.bytedance.sdk.component.JP.jHN jhn = new com.bytedance.sdk.component.JP.jHN(this.JOE);",
+      "sha256": "5e4396964784a156c9cea96fdf4dbb4613d60be726891136d6b5736ab8ac902e"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/Qq/uOO/uOO.java",
+      "line": 380,
+      "text": "this.uOO = jhn;",
+      "sha256": "5e4396964784a156c9cea96fdf4dbb4613d60be726891136d6b5736ab8ac902e"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/Qq/uOO/uOO.java",
+      "line": 381,
+      "text": "jhn.UeU();",
+      "sha256": "5e4396964784a156c9cea96fdf4dbb4613d60be726891136d6b5736ab8ac902e"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "line": 329,
+      "text": "this.tu = uOO(this.gW, 0);",
+      "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/component/JP/jHN.java",
+      "line": 495,
+      "text": "addView(this.tu, new FrameLayout.LayoutParams(-1, -1));",
+      "sha256": "c0db1fb97b2b40d865f00c81a34f781b281a7d70469637ef3a5944d398578eea"
+    },
+    {
+      "file": "sources/com/bytedance/sdk/openadsdk/Qq/uOO/uOO.java",
+      "line": 389,
+      "text": "frameLayout.addView(this.uOO, new FrameLayout.LayoutParams(-1, -1));",
+      "sha256": "5e4396964784a156c9cea96fdf4dbb4613d60be726891136d6b5736ab8ac902e"
+    }
+  ],
+  "facts_added": 18,
+  "creation": "Activity onCreate setContentView(dpw root); dpw creates retainedTp controller with same root, controller constructor directlycreates jHN thenimmediate UeU nativechildrecreation before attachingcontainer toroot. Reusefinalchildprovider source, twoactualnativeinstance ctor observations. Activity private jHN field neverassignednonnull andonDestroy null-check does notclose actualcontroller native field; do not use that orphanfield for ownership.",
+  "categories": {
+    "bridge": {
+      "status": "partial",
+      "reason": "ActualtfO JSB builder/controller fTIPlayablehandler installation still require full member/receiver surface"
+    },
+    "setting": {
+      "status": "partial",
+      "reason": "18 explicit initialcalls bound; later controller/fTI call surface pending"
+    },
+    "callback": {
+      "status": "partial",
+      "reason": "Actualcontroller SWs ownsClient$5/Chrome$6 before helpers; fTI callbacktyped contracts andfullinstalled wrapper/member forwarding pending"
+    }
+  },
+  "unresolved_source_surface": [
+    "Controller fTI playable SDK bridge and lifecycle namespace",
+    "Actual installed Clients+typed SDKdelegate complete signatures",
+    "Later configuration and cleanup/recovery actualretained child"
+  ]
+}

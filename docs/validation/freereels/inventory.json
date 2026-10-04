@@ -20,6 +20,8 @@
     "com.applovin.sdk.AppLovinWebViewActivity",
     "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
     "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity",
+    "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity",
     "com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity",
     "com.dramawave.feature.web.WebPageActivity",
     "com.fyber.ads.ofw.OfferWallActivity",
@@ -36,7 +38,7 @@
     "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
     "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
   ],
-  "canonical_fact_count": 547,
+  "canonical_fact_count": 752,
   "acceptance": "unproven",
   "scope_note": "Whole Manifest and lexical entry inventory is not whole-source validation; host chains pending",
   "holdout_status": "pending independent source selection",
@@ -61,13 +63,17 @@
     "sdk_custom_view_constructor": [
       "com.smartdigimkt.sdk.basead.ui.web.WebLandPageActivity",
       "com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity",
-      "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity"
+      "com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity",
+      "com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity"
     ],
     "sdk_reflective_module_factory": [
       "com.unity3d.services.ads.adunit.AdUnitActivity",
       "com.unity3d.services.ads.adunit.AdUnitTransparentActivity",
       "com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity",
       "com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+    ],
+    "sdk_retained_controller_recreated_webview": [
+      "com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity"
     ]
   },
   "source_audit_scope": "source-first deep subset; whole Manifest and lexical entries inventoried, not fully verified",
