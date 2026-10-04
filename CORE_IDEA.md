@@ -1,6 +1,6 @@
 # WebView 能力提取的当前核心思路
 
-当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文对应两轮调度实现；旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
+当前默认流程以 Activity 为宿主，追踪 WebView 对象及其 Bridge、Settings 和 Client/回调绑定。本文的基本对象传播和两轮调度仍适用；当前 generic v2 另增加具体能力任务有界优先调度、常量 switch 细化和严格标准回调签名，见 [当前迭代结果](docs/validation/GENERIC_V2.md)。旧版类关系图仍通过 `--legacy` 保留，历史说明见 [旧版设计文档](docs/LEGACY_CORE_IDEA.md)。
 
 需要逐步理解传播算法和精度边界，可继续阅读 [分析原理教程](docs/ANALYSIS_TUTORIAL.md)。
 
@@ -73,6 +73,6 @@ second.setWebViewClient(new PageClient());
 - `capabilities.compact.json`：格式化的三层列表，仅展示签名、Settings 参数和各层统计，保留覆盖元数据。
 - `activity_coverage`：区分未开始、初扫/待深入、截止中断、遍历结束、内部预算耗尽。遍历结束不等于能力完整。
 
-最近六 App 并行测试中，全部 Activity 在约 19～58 秒内获得初扫；西瓜和 FreeReels 仍未在截止前完成深入分析。三个已有累计核验集未出现新增遗漏，但新增候选的整体误报率尚未核验，质量总验收没有通过。
+历史 scheduler v3 六 App 调度测试见下方链接。当前 generic v2 已测试十 App，仍有多个 App 在截止前未完成深入分析；去掉私有适配后部分历史命中下降，通用修复又补回部分事实。整体误报率未核验，不能声称质量总验收通过。
 
 实现细节、测试、实际结果和残留问题见 [两轮调度记录](docs/validation/SCHEDULER_V3.md)、[能力分析说明](docs/CAPABILITY_ANALYSIS.md) 和 [迭代总账](docs/validation/ITERATIONS.md)。使用命令见 [USAGE.md](USAGE.md)。

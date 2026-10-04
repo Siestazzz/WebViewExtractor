@@ -56,3 +56,11 @@ interruption are separate quantities. Candidates/provisional facts count toward 
 recall and emitted-host ownership evaluation. Increased output counts alone prove neither recall
 nor precision. Current all-output ownership/capability precision is still unverified; historical
 ownership rates must not be copied onto the scheduler output.
+
+## Generic-rule policy and four added patched samples (2026-10-04)
+
+The user explicitly superseded the pressure to reach recall targets with a stronger implementation constraint: no App-private signature/name adapters, even if quality targets are missed. Public SDK contracts and generic structural/data-flow rules remain permitted. QNRouter was removed; historical evidence is retained. Four new samples (txws, sohuvideo, fanqiexiaoshuo, breaking-news) use the user-selected patched APKs, verified against predecompiled hashes. Earlier six regression hashes remain unchanged. Breaking News is base-only scope.
+
+Source review for this extension uses GPT-6.1 Sol as requested. Current new-App facts cover small independently sourced groups plus explicitly labeled report-guided expansions; they do not satisfy the old 30-positive-host minimum, sealed holdouts, all-output precision, or three isolated repeats. Lower recall is allowed by the user, but uncertainty and unverified precision must still be reported. No denominator changes or deleted failures may be used to conceal regressions.
+
+Final viewing artifacts are sorted `capabilities.compact.json` and `capabilities.counts.json`; detailed reports remain local for validation. Rows sort by Bridge, callback, then Settings counts descending. Counts include candidates and are not verified runtime object counts.

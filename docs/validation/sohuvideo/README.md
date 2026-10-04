@@ -10,3 +10,9 @@ Core binding: WebViewActivity instantiates WebViewFragment and binds it to its c
 
 Raw source-first rows are preserved in `canonical-source-first-raw.jsonl`; after first scoring, registration/enum/dynamic fields were normalized for scorer revision 5 without removing facts. Dynamic value matching checks argument presence and cannot establish exact expression identity.
 The 58 FarmExercise factory/inherited-bridge follow-up rows are separate in `canonical-additional-report-guided.jsonl` and explicitly marked report-guided; they are not a blind holdout.
+
+Expanded follow-up: 169 report-guided rows, 4 total confirmed positive Activities, 262 combined source rows. The original canonical set remains unchanged. Additional rows have their own scoring file. Remaining major framework groups are unknown rather than exhaustively negative.
+
+Latest follow-up totals 215 rows (308 combined rows), six capability-positive Activities plus Facebook dialog ownership-only (seven hosts reviewed). Advertising group has two separately proved host chains; its 46 shared settings/bridge/WebViewClient facts all match generic-v1. Whole-APK coverage, other SDK group minimums and exact-instance precision remain unproven. Five emitted noncore hosts were spot-checked: three correct conditional ownerships, two unresolved QQ-share dialog paths.
+
+Generic-v2 final re-evaluation used the unchanged source-first and report-guided oracles: no previously matched fact lost and no new canonical match gained. See `generic-v2-comparison.md` and `generic-v1-v2-*-delta.json`. Sohu core/Farm/Pgc remain deadline-interrupted; txws retains all 168 row matches. This does not establish protocol acceptance.

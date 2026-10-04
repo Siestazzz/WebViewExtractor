@@ -1,8 +1,15 @@
 # 验证资料索引与当前状态
 
-当前默认实现为 **scheduler v3**。六 App 初扫/深入调度、格式化精简报告及对应回归测试已完成；**能力质量总验收尚未通过**。本页是导航，具体证据保留在各版本文件中。
+当前默认实现为 **generic v2**：移除 App 私有适配，收紧标准回调签名，增加有界优先调度及常量 switch 细化。十个 App 已运行，四个新增样本均为用户指定补丁版。能力质量总验收仍未通过。
 
-## 当前记录
+- [generic v1](GENERIC_V1.md)：私有适配删除、排序/数量报告、十 App 初轮。
+- [generic v2](GENERIC_V2.md)：通用分支修复、最终十 App 结果、事实重放与限制。
+- [当前样本](generic-ten-samples.json)、[实测](generic-v2-summary.json)、[报告结构验证](generic-v2-structure.json)、[交付文件哈希](generic-v2-delivery.json)。
+- 新样本证据：[微视](txws/README.md)、[搜狐](sohuvideo/README.md)、[番茄](fanqiexiaoshuo/README.md)、[Breaking News](breaking-news/README.md)。审计模型为 GPT-6.1 Sol。
+
+以下保留 scheduler v3 历史导航，不应把旧版误报/召回率当成当前版本结论。
+
+## scheduler v3 历史记录
 
 | 内容 | 文件 |
 |---|---|
@@ -17,7 +24,7 @@
 | 历史迭代 | [ITERATIONS.md](ITERATIONS.md) |
 | 框架/能力缺口与当前调度限制 | [OPEN_GAPS.json](OPEN_GAPS.json) |
 
-## 如何理解当前结果
+## 如何理解 scheduler v3 结果
 
 六 App 均在约 19～58 秒完成全部 Activity 的初扫，包含索引时间。初扫并不代表确认有没有 WebView，更不代表能力完整。最终西瓜有 344 个、FreeReels 有 105 个 Activity 待深入；新闻、芒果、携程分别有 2、18、3 个宿主触及内部上下文上限。
 

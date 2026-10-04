@@ -21,7 +21,7 @@ final class DexFlow {
     final Map<String,Summary> cache=new HashMap<>();
     record Refinement(List<V> probes,List<V> values,Summary summary) {}
     final Map<String,List<Refinement>> refinements=new HashMap<>();
-    final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>();
+    final Set<String> refinable=new HashSet<>(), checkedRefinement=new HashSet<>(), reportedRefinementBudget=new HashSet<>();
     final long deadline;
     int decoded,refined;
     DexFlow(CapabilityIndex i,long deadline){idx=i;this.deadline=deadline;}
@@ -47,15 +47,18 @@ final class DexFlow {
         Summary base=summary(m);if(!base.branched())return base;
         String key=CapabilityIndex.key(m);
         if(checkedRefinement.add(key)){
-            int count=0;boolean typeGuard=false;
-            for(Instruction instruction:m.getImplementation().getInstructions()){count++;if(instruction.getOpcode()==org.jf.dexlib2.Opcode.INSTANCE_OF)typeGuard=true;}
-            if(typeGuard&&count<=500)refinable.add(key);
+            int count=0;boolean contextualGuard=false;
+            for(Instruction instruction:m.getImplementation().getInstructions()){count++;if(Set.of(org.jf.dexlib2.Opcode.INSTANCE_OF,org.jf.dexlib2.Opcode.PACKED_SWITCH,org.jf.dexlib2.Opcode.SPARSE_SWITCH).contains(instruction.getOpcode()))contextualGuard=true;}
+            if(contextualGuard&&count<=500)refinable.add(key);
         }
         if(!refinable.contains(key))return base;
         List<Refinement> variants=refinements.computeIfAbsent(key,k->new ArrayList<>());
         for(Refinement variant:variants){boolean matches=true;for(int i=0;i<variant.probes.size();i++)if(!Objects.equals(resolver.apply(variant.probes.get(i)),variant.values.get(i))){matches=false;break;}if(matches)return variant.summary;}
         // Retain the conservative summary when specialization would exceed its budget.
-        if(variants.size()>=16)return base;
+        if(variants.size()>=16){
+            if(reportedRefinementBudget.add(key))idx.diagnostics.add("summary_refinement_budget:"+key);
+            return base;
+        }
         List<V> probes=new ArrayList<>(),values=new ArrayList<>();
         refined++;Summary result=decode(m,v->{V resolved=resolver.apply(v);probes.add(v);values.add(resolved);return resolved;});
         variants.add(new Refinement(List.copyOf(probes),List.copyOf(values),result));return result;
@@ -148,7 +151,17 @@ final class DexFlow {
                 Boolean decision=condition(op,left,right);Integer p=positions.get(at+jump.getCodeOffset());if(!Boolean.FALSE.equals(decision)&&p!=null)next.add(p);if(!Boolean.TRUE.equals(decision)&&pc+1<ins.size())next.add(pc+1);
             }
             else if((op.equals("packed-switch")||op.equals("sparse-switch"))&&in instanceof OffsetInstruction jump){
-                branched=true;Integer payload=positions.get(at+jump.getCodeOffset());if(payload!=null&&ins.get(payload) instanceof SwitchPayload sw)for(var e:sw.getSwitchElements()){Integer p=positions.get(at+e.getOffset());if(p!=null)next.add(p);}if(pc+1<ins.size())next.add(pc+1);
+                branched=true;Long selector=number(resolver.apply(s.getOrDefault(a,UNKNOWN)));
+                // A union/unknown selector keeps every arm. Only an exact int can rule arms out.
+                if(selector!=null&&(selector<Integer.MIN_VALUE||selector>Integer.MAX_VALUE))selector=null;
+                boolean matched=false;Integer payload=positions.get(at+jump.getCodeOffset());
+                if(payload!=null&&ins.get(payload) instanceof SwitchPayload sw)for(var e:sw.getSwitchElements()){
+                    if(selector==null||selector.longValue()==e.getKey()){
+                        Integer p=positions.get(at+e.getOffset());if(p!=null)next.add(p);
+                        if(selector!=null)matched=true;
+                    }
+                }
+                if((selector==null||!matched)&&pc+1<ins.size())next.add(pc+1);
             }else if(in.getOpcode().canContinue()&&pc+1<ins.size())next.add(pc+1);
             for(int p:next)if(merge(states,p,s))work.add(p);
             for(int p:handlers.getOrDefault(pc,List.of())){branched=true;if(merge(states,p,before))work.add(p);}

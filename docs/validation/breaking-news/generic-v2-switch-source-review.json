@@ -1,0 +1,44 @@
+{
+  "reviewer": "GPT-6.1 Sol",
+  "mode": "read-only independent source review",
+  "files": [
+    {
+      "file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/src/main/java/org/example/DexFlow.java",
+      "sha256": "79c70012ae7e740f06f178c3bb62bf416923ef894bb52773d417a334561ac9b4"
+    },
+    {
+      "file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/src/main/java/org/example/CapabilityEngine.java",
+      "sha256": "1f02b660ef22ab0d2dd00bd3a1a8db9a9803ee25c80097d6fb8c51dd8cf4bc7a"
+    },
+    {
+      "file": "/home/d3008/phy/workspace/WebViewGPT/webview-extractor/src/test/java/org/example/SwitchOwnershipFixture.java",
+      "sha256": "32fd4a98f67bfbcf472967f82233a00a8cf85af4ad4afd4c8313b09a8237d265"
+    }
+  ],
+  "findings": [
+    {
+      "status": "supported",
+      "claim": "packed/sparse switch chooses exact signed-int selector matching arm, adds default only when unmatched; unknown/union/out-of-int range retains all arms",
+      "evidence": "DexFlow.java:153-165"
+    },
+    {
+      "status": "supported",
+      "claim": "guardValue resolves observed heap fields only when declared final; mutable guard fields remain unknown",
+      "evidence": "CapabilityEngine.java:760-771"
+    },
+    {
+      "status": "supported",
+      "claim": "fixture covers constructor Runnable ownership, direct param packed/sparse, default, unknown, mutable, weak final union, catches and refinement budget",
+      "evidence": "SwitchOwnershipFixture.java"
+    },
+    {
+      "status": "coverage_limit",
+      "claim": "No App-specific condition found; no newly confirmed unsound narrowing in inspected code. Review is not a proof of all heap object identities or arbitrary nested selector computation."
+    },
+    {
+      "status": "conservative_limit",
+      "claim": "Methods over500 instructions or more16 contextual variants use original all-arm summary; this can retain ownership noise and is documented diagnostic, not fixed precision."
+    }
+  ],
+  "test_execution": "not rerun by reviewer; read test assertions only"
+}

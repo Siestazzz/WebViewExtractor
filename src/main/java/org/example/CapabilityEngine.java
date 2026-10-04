@@ -173,6 +173,8 @@ final class CapabilityEngine {
         for(String activity:roots){ActivityState s=states.get(activity);Map<String,Object> row=new LinkedHashMap<>();row.put("activity",activity);
             row.put("status",s==null?"not_started":s.done?(s.limited?"budget_exhausted":"traversal_finished"):System.nanoTime()>=deadline?"deadline_interrupted":s.initialPass?"pending_deep_analysis":"initial_analysis");
             row.put("phase",s==null?0:s.phase+1);row.put("contexts_processed",s==null?0:s.jobs);row.put("pending_contexts",s==null||s.host==null?0:s.host.queue.size());row.put("analysis_seconds",s==null?0:s.nanos/1e9);row.put("slices",s==null?0:s.slices);
+            row.put("pending_priority_contexts",s==null||s.host==null?0:s.host.queue.prioritySize());
+            row.put("pending_ordinary_contexts",s==null||s.host==null?0:s.host.queue.ordinarySize());
             row.put("discarded_contexts",s==null?0:s.discardedContexts);row.put("phase_contexts",s==null?List.of(0,0):List.of(s.phaseJobs[0],s.phaseJobs[1]));
             row.put("tracked_xml_consumers",s==null?0:s.host==null?s.terminalXmlConsumers:s.host.xmlConsumers.size());
             row.put("tracked_deferred_fields",s==null?0:s.host==null?s.terminalDeferredFields:s.host.deferredFields.size());
@@ -658,7 +660,41 @@ final class CapabilityEngine {
         if(path.contains("[earlier evidence steps omitted]"))h.gaps.add("evidence_path_truncated");
         if(h.queue.size()>6000){h.gaps.add("queue_budget");return;}
         h.pending.add(context);
-        h.queue.add(new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate));
+        Job job=new Job(m,args,extend(path,CapabilityIndex.key(m)),candidate);
+        h.queue.add(job,concreteCapabilitySeed(h,job));
+    }
+    boolean concreteCapabilitySeed(Host h,Job job){
+        if(!idx.seeds.contains(CapabilityIndex.key(job.method))||System.nanoTime()>=deadline)return false;
+        // This is a scheduling hint only: no factory evaluation, allocation, or field inference.
+        try{
+            for(Call call:flow.summary(job.method).calls()){
+                if(call.isStatic()||call.args().isEmpty()||kind(call.method())==null)continue;
+                if(concretePriorityReceiver(priorityBinding(call.args().get(0),job,h,0)))return true;
+            }
+        }catch(RuntimeException ex){
+            // Scheduling preference must never turn a decode failure into a host failure.
+            h.gaps.add("priority_hint_failed:"+CapabilityIndex.key(job.method)+":"+ex.getClass().getSimpleName());
+        }
+        return false;
+    }
+    V priorityBinding(V value,Job job,Host h,int depth){
+        if(depth>6)return UNKNOWN;
+        if(value.kind().equals("param")){int i=Integer.parseInt(value.id());return i<job.args.size()?priorityBinding(job.args.get(i),job,h,depth+1):UNKNOWN;}
+        if(value.kind().equals("cast")&&!value.args().isEmpty())return priorityBinding(value.args().get(0),job,h,depth+1);
+        if(value.kind().equals("union")){V result=null;for(V choice:alternatives(value))result=union(result,priorityBinding(choice,job,h,depth+1));return result==null?UNKNOWN:result;}
+        if(value.kind().equals("field")&&!value.args().isEmpty()){
+            V result=null;for(V receiver:alternatives(priorityBinding(value.args().get(0),job,h,depth+1))){
+                V stored=h.heap.get(heapKey(value.id(),receiver));if(stored!=null)result=union(result,priorityBinding(stored,job,h,depth+1));
+            }return result==null?UNKNOWN:result;
+        }
+        if(value.kind().equals("settings")&&!value.args().isEmpty())return priorityBinding(value.args().get(0),job,h,depth+1);
+        return value;
+    }
+    boolean concretePriorityReceiver(V receiver){
+        // A concrete branch earns preference; unknown branches retain all original semantics.
+        for(V concrete:alternatives(receiver))if(Set.of("object","new","view").contains(concrete.kind())&&
+            (idx.webview(concrete.type())||idx.settings(concrete.type())))return true;
+        return false;
     }
     static List<V> specializeReceiver(List<V> args,V receiver){
         V original=args.get(0);return args.stream().map(v->v.equals(original)?receiver:v).toList();

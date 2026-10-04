@@ -1,0 +1,9 @@
+# Generic-v2 switch selector 独立源码审查
+
+只读DexFlow、CapabilityEngine.guardValue与SwitchOwnershipFixture，文件hash见JSON。未改生产、未重跑fixture。
+
+实现只对literal number/boolean且signed-int范围内的精确selector选择packed/sparse分支；未匹配时保留default；unknown/union/越界保留全部分支。所有catch边继续保留。guardValue仅用final字段的已观察heap值，mutable字段保持unknown，weak union不作单值选择。
+
+Fixture断言覆盖构造字段Runnable归属、安全case/桥case/default、参数packed/sparse、unknown、mutable、weak union、exception边和16变体预算回退。所读代码未发现App特判，也未确认新引入的不健全裁剪。但没有证明整个heap对象身份系统、所有嵌套selector计算或动态生命周期。
+
+明确精度限制：含guard方法超过500条指令不细化；上下文变体达到16后使用保守基础summary，可能继续保留错误归属候选。预算诊断测试已有覆盖。这些限制不能由本次fixture通过推定解决。

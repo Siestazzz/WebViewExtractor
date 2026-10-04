@@ -1,0 +1,7 @@
+# Generic-v2 最终归属复核
+
+summary已包含Breaking News，exit0，最终report仍partial。三条先前wrong的FreeData桥均不再输出；三个宿主均无其他bridge或message_bridge替代路径。PreviewActivity已不在输出，HiddenActivity和SignInHubActivity各剩6条setting/WebView operation。JSONL保留最终report/summary/jar/APK hash、全部剩余site/证据路径与旧源码反证。
+
+残留未解决：Hidden6条为previous_phase_provisional；SignIn6条非provisional。其链仍从Fragment.performDestroyView或markState→o.b→rb2.run跨到newsfeed case3、AppLovin case8/default分支。标准Fragment lifecycle owner构造tag=2应只进入case2，因此这些归属仍不能证明。当前链未携带owner具体构造身份，不能只因FreeData消失就宣称整个宿主归属已正确；未发现rb2的summary_refinement_budget诊断，具体为何降为保守selector仍需追踪owner receiver。
+
+冻结累计事实重评Breaking32/32与Fanqie49/49均candidate-inclusive匹配，missing0；多数binding为candidate，不能当所有输出正确的证据。JSON评分分别为generic-v2-final.json。没有整体误报率结论。

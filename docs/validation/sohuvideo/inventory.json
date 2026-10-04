@@ -1076,7 +1076,7 @@
       "name": "com.sohu.sohuvideo.ui.WebViewActivity",
       "tag": "activity",
       "exported": "true",
-      "status": "source_supported_core_host",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -1090,7 +1090,7 @@
       "name": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
       "tag": "activity",
       "exported": "false",
-      "status": "not_yet_reviewed",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -1545,7 +1545,7 @@
       "name": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
       "tag": "activity",
       "exported": "false",
-      "status": "not_yet_reviewed",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -2392,7 +2392,7 @@
       "name": "com.sohu.passport.core.WebViewActivity",
       "tag": "activity",
       "exported": null,
-      "status": "source_supported_core_host",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -2872,8 +2872,13 @@
   "input_variant": "patched; explicitly selected by user",
   "supersedes_origin_inventory": true,
   "positive_hosts_reviewed": [
+    "com.facebook.FacebookActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
     "com.sohu.passport.core.WebViewActivity",
-    "com.sohu.sohuvideo.ui.WebViewActivity"
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity"
   ],
   "canonical_fact_count": 93,
   "canonical_kind_counts": {
@@ -3274,10 +3279,54 @@
     "Full dynamic plugin dispatch membership and all third-party framework hosts not exhaustively verified.",
     "Inherited client methods beyond recorded app declarations not exhaustively checked.",
     "No final holdout, per-stratum minimum, precision audit or performance acceptance completed.",
-    "FarmExercise settings/bridge path verified in separate additional set; its full concrete client override callbacks not yet canonical."
+    "FarmExercise settings/bridge path verified in separate additional set; its full concrete client override callbacks not yet canonical.",
+    "No exhaustive inventory classification across all major SDK/framework groups; 30-positive-host protocol threshold not met."
   ],
   "raw_source_first_file": "canonical-source-first-raw.jsonl",
   "normalized_source_first_file": "canonical-facts.jsonl",
   "additional_report_guided_file": "canonical-additional-report-guided.jsonl",
-  "additional_report_guided_rows": 58
+  "additional_report_guided_rows": 215,
+  "combined_fact_rows": 308,
+  "reviewed_host_groups": [
+    {
+      "group": "VideoEnabledWebView Fragment and virtual factory overrides",
+      "positive_activities": [
+        "com.sohu.sohuvideo.ui.WebViewActivity",
+        "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+        "com.sohu.sohuvideo.ui.WebViewPgcActivity"
+      ]
+    },
+    {
+      "group": "passport direct platform WebView",
+      "positive_activities": [
+        "com.sohu.passport.core.WebViewActivity"
+      ],
+      "coverage_gap": "one positive only; not >=2 group requirement"
+    },
+    {
+      "group": "Sohu advertising custom layout/view wrappers",
+      "positive_activities": [
+        "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+        "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity"
+      ],
+      "scope": "host binding and shared constructor settings/Android bridge/WebViewClient facts canonical; full Chrome wrapper/delegate membership not exhaustive"
+    }
+  ],
+  "ownership_spotcheck": {
+    "file": "generic-v1-ownership-spotcheck.jsonl",
+    "checked": 5,
+    "correct": 3,
+    "wrong": 0,
+    "unresolved": 2,
+    "emitted_hosts": 299,
+    "is_all_output_precision_estimate": false
+  },
+  "canonical_capability_hosts": [
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuAdActivity",
+    "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+    "com.sohu.passport.core.WebViewActivity",
+    "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+    "com.sohu.sohuvideo.ui.WebViewActivity",
+    "com.sohu.sohuvideo.ui.WebViewPgcActivity"
+  ]
 }

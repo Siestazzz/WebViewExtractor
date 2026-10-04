@@ -1,0 +1,5 @@
+# Generic-v1 宿主归属抽样
+
+选3个非核心输出Activity，各抽样一条能力。UgcEditorActivity的allow-file-access设置归属correct；FusionEditorActivity的z1$e client归属correct（条件编辑模式）；ImmersiveNaActivity的dialog client归属unresolved：源码用ActivityRecordManager.currentActivity作构造Context，不能证明与this相同。
+
+JSONL保存APK/report/source hash、源码位置、报告site与链。仅对所选能力判断，不推定整体Activity所有能力正确或错误，不估算整体误报率。进程结束但报告status仍partial；未知资源分支/Context身份保持未知。

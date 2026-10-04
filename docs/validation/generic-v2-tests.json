@@ -1,0 +1,13 @@
+{
+  "command": "./gradlew capabilitySelfTest compactReportTest shadowJar",
+  "result": "PASS",
+  "jar_sha256": "c5ea8b032bda750fb8b31b012cf34db13c456fd7586309aca4989511caf5c1dd",
+  "fixtures": [
+    "ContextPriorityFixture",
+    "SwitchOwnershipFixture",
+    "existing capabilitySelfTest suite",
+    "CompactReportTest"
+  ],
+  "negative_reproduction": "SwitchOwnershipFixture fails against frozen generic-v1.jar; see local test/runs/generic-v2-switch-repro.log",
+  "note": "Specific fixture coverage is not a proof of complete static-analysis soundness or full APK precision."
+}

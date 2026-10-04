@@ -1,6 +1,6 @@
 # Activity capability analysis
 
-Current implementation: scheduler v3. Start with [USAGE](../USAGE.md) for commands,
+Current implementation: generic v2 on the resumable scheduler. See [latest iteration](validation/GENERIC_V2.md) for ten-App measurements and limits. Start with [USAGE](../USAGE.md) for commands,
 [core design](../CORE_IDEA.md) for the current/legacy distinction, and the
 [validation index](validation/README.md) for measured results. This document describes
 capability semantics, not an acceptance claim.
@@ -39,7 +39,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 -jar build/libs/webview_extractor-1.0-SN
 ```
 
 `capabilities.json`, pretty-printed `capabilities.compact.json` and `capabilities.counts.json` are each atomically
-replaced during analysis and supervisor finalization; they are not a transactional pair.
+replaced during analysis and supervisor finalization; they are not a cross-file transaction.
 The compact report retains class/member signatures, Settings parameters, coverage metadata and
 per-level counts. Counts include candidates and sum per-WebView entries; Bridge counts are
 exposed signatures/class fallbacks, not registration names or runtime object counts.

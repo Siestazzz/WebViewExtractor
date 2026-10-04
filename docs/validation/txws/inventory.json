@@ -684,14 +684,14 @@
       "name": "com.tencent.oscar.module.webview.WebviewBaseActivity",
       "tag": "activity",
       "exported": "false",
-      "status": "source_supported_core_host",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
       "name": "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
       "tag": "activity",
       "exported": "false",
-      "status": "source_supported_core_host",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -705,7 +705,7 @@
       "name": "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity",
       "tag": "activity",
       "exported": "false",
-      "status": "source_supported_core_host",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -796,7 +796,7 @@
       "name": "com.tencent.oscar.module.webview.BrowserMainActivity",
       "tag": "activity",
       "exported": "false",
-      "status": "not_yet_reviewed",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -1412,7 +1412,7 @@
       "name": "com.tencent.wework.api.view.H5Activity",
       "tag": "activity",
       "exported": "false",
-      "status": "not_yet_reviewed",
+      "status": "source_supported_positive_host",
       "target_activity": null
     },
     {
@@ -1745,9 +1745,11 @@
   "input_variant": "patched; explicitly selected by user",
   "supersedes_origin_inventory": true,
   "positive_hosts_reviewed": [
+    "com.tencent.oscar.module.webview.BrowserMainActivity",
     "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
     "com.tencent.oscar.module.webview.WebviewBaseActivity",
-    "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity"
+    "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity",
+    "com.tencent.wework.api.view.H5Activity"
   ],
   "canonical_fact_count": 99,
   "canonical_kind_counts": {
@@ -2179,8 +2181,29 @@
     "JADX completed with errors; affected bodies must be treated unknown.",
     "Full dynamic plugin dispatch membership and all third-party framework hosts not exhaustively verified.",
     "Inherited client methods beyond recorded app declarations not exhaustively checked.",
-    "No final holdout, per-stratum minimum, precision audit or performance acceptance completed."
+    "No final holdout, per-stratum minimum, precision audit or performance acceptance completed.",
+    "No exhaustive inventory classification across all major SDK/framework groups; 30-positive-host protocol threshold not met."
   ],
   "raw_source_first_file": "canonical-source-first-raw.jsonl",
-  "normalized_source_first_file": "canonical-facts.jsonl"
+  "normalized_source_first_file": "canonical-facts.jsonl",
+  "additional_report_guided_rows": 69,
+  "additional_report_guided_file": "canonical-additional-report-guided.jsonl",
+  "combined_fact_rows": 168,
+  "reviewed_host_groups": [
+    {
+      "group": "X5 Fragment wrapper",
+      "positive_activities": [
+        "com.tencent.oscar.module.webview.WebviewBaseActivity",
+        "com.tencent.oscar.module.webview.MainProcessWebviewActivity",
+        "com.tencent.oscar.module.webview.notify.NotifyDialogWebViewActivity"
+      ]
+    },
+    {
+      "group": "platform direct/data-binding wrapper",
+      "positive_activities": [
+        "com.tencent.oscar.module.webview.BrowserMainActivity",
+        "com.tencent.wework.api.view.H5Activity"
+      ]
+    }
+  ]
 }

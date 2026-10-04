@@ -23,7 +23,7 @@ java -Xmx16g -XX:ActiveProcessorCount=8 \
 
 ## 当前状态
 
-六 App 两轮调度测试已完成，全部初扫约 19～58 秒；西瓜和 FreeReels 的深入分析仍未完成，其他部分宿主也触及内部上限。能力质量总验收尚未通过。候选/初扫/遍历结束均不证明运行时执行或能力无遗漏，退出码 0 也可能对应 `partial` 报告。
+当前为通用规则第二轮版本，已移除私有适配并测试十个 App（四个新增样本使用补丁版）。十份报告约 46～594 秒产出，但均为 partial。修复了三条已核验的错误 Bridge 归属，芒果累计核验集新增命中 14 条 Bridge 事实；搜狐核心链仍大量漏检，整体误报率与完整性未验收。详见 [本轮结果](docs/validation/GENERIC_V2.md)。
 
 APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。文档里的 `test/runs/...` 是本地实验产物；克隆后需自行构建并提供 APK。
 
@@ -34,6 +34,7 @@ APK、完整反编译文件、构建 JAR 和完整运行报告不在 Git 中。�
 - [分析原理教程](docs/ANALYSIS_TUTORIAL.md)：对象传播、能力绑定、上下文敏感性、通用规则与私有适配。
 - [能力与报告语义](docs/CAPABILITY_ANALYSIS.md)：绑定、覆盖、候选和评估边界。
 - [验证资料索引](docs/validation/README.md)：当前结果、历史记录和已知问题。
-- [两轮调度最终记录](docs/validation/SCHEDULER_V3.md)：实现、六 App 结果、独立复核及限制。
+- [通用规则第二轮结果](docs/validation/GENERIC_V2.md)：十 App 实测、累计事实重放、残留问题和精简报告。
+- [历史两轮调度记录](docs/validation/SCHEDULER_V3.md)：scheduler v3 的六 App 结果和限制。
 
 旧版类关系图入口保留为 `--legacy`，不用于当前能力质量验收。

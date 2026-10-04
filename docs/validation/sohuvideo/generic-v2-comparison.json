@@ -1,0 +1,127 @@
+{
+  "completion_evidence": {
+    "file": "test/runs/generic-v2/summary.json",
+    "package": "com.sohu.sohuvideo",
+    "seconds": 593.8415988832712,
+    "exit_code": 0
+  },
+  "source_first_metrics": {
+    "setting": {
+      "expected": 26,
+      "matched": 9,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.34615384615384615,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 36,
+      "matched": 0,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 29,
+      "matched": 3,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.10344827586206896,
+      "explicit_recall": 0.0
+    }
+  },
+  "additional_metrics": {
+    "setting": {
+      "expected": 62,
+      "matched": 28,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.45161290322580644,
+      "explicit_recall": 0.0
+    },
+    "bridge": {
+      "expected": 79,
+      "matched": 6,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.0759493670886076,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 70,
+      "matched": 14,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.2,
+      "explicit_recall": 0.0
+    }
+  },
+  "source_first_semantic_changes": [],
+  "additional_semantic_changes": [],
+  "core_host_coverage": [
+    {
+      "activity": "com.sohu.sohuvideo.ui.FarmExerciseActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 2861,
+      "pending_contexts": 3810,
+      "analysis_seconds": 1.826976792,
+      "slices": 32,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 3810,
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        2861,
+        0
+      ],
+      "tracked_xml_consumers": 119,
+      "tracked_deferred_fields": 683,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000212014
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 2796,
+      "pending_contexts": 3247,
+      "analysis_seconds": 1.822307601,
+      "slices": 32,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 3247,
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        2796,
+        0
+      ],
+      "tracked_xml_consumers": 91,
+      "tracked_deferred_fields": 645,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.000193572
+    },
+    {
+      "activity": "com.sohu.sohuvideo.ui.WebViewPgcActivity",
+      "status": "deadline_interrupted",
+      "phase": 1,
+      "contexts_processed": 2832,
+      "pending_contexts": 3242,
+      "analysis_seconds": 1.889653787,
+      "slices": 32,
+      "pending_priority_contexts": 0,
+      "pending_ordinary_contexts": 3242,
+      "discarded_contexts": 0,
+      "phase_contexts": [
+        2832,
+        0
+      ],
+      "tracked_xml_consumers": 91,
+      "tracked_deferred_fields": 644,
+      "provisional_facts": 0,
+      "checkpoint_seconds": 0.108872474
+    }
+  ],
+  "canonical_sha256": "3755b3b137af45f8c4d6b4a4fcec683c4ac0ee364a75ac1d8cde13184577ba32",
+  "additional_oracle_sha256": "01f891d3967ccc46ec0f5b8c71e2f2df76ef3f0744bcb4b3cec92cf3ef061107",
+  "verdict": "No added or lost canonical matches; core/Farm/Pgc omitted paths remain deadline-interrupted, not established propagation defects. Acceptance unproven."
+}

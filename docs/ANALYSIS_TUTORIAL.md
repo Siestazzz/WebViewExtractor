@@ -4,7 +4,7 @@
 
 版本基准：`a91b113`，默认引擎为 scheduler v3；本文新增时没有修改分析代码。后续代码变化应同步更新规则和边界。旧入口 `--legacy` 不在本文范围内，见 [旧版设计](LEGACY_CORE_IDEA.md)。默认流程直接使用 dexlib2，不启动全 APK Soot 分析；按需 Soot 回退尚未实现。
 
-> 版本更新：下文保留 `a91b113` 的实现教学基线。后续 generic rules 迭代已删除第 8 节中的 QNRouter 私有适配，并收紧第 7 节标准 Client 回调到公开 SDK 家族、完整签名及非 private/static 方法。该适配和名称筛选的描述仅用于理解历史版本，当前差异见 [通用规则调整](validation/GENERIC_RULES_V1.md)。
+> 版本更新：下文保留 `a91b113` 的实现教学基线。后续 generic rules 迭代已删除第 8 节中的 QNRouter 私有适配，并收紧第 7 节标准 Client 回调到公开 SDK 家族、完整签名及非 private/static 方法。该适配和名称筛选的描述仅用于理解历史版本，第二轮还增加了已知常量 switch 的有限摘要细化，以及具体接收对象能力任务的有界优先调度。当前差异见 [通用规则调整](validation/GENERIC_RULES_V1.md) 和 [第二轮记录](validation/GENERIC_V2.md)。
 
 ## 阅读路线
 

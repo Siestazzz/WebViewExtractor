@@ -7,3 +7,5 @@ The first evaluation showed 15 unscorable oracle rows. These were scoring-schema
 Reusable source patterns exercised: Activity inheritance with super lifecycle call, Activity -> Fragment binding, cached custom X5 WebView, anonymous Chrome subclass inheriting onJsPrompt, and inherited WebViewClient overloads.
 
 Unreviewed surfaces include prompt-driven plugin endpoint membership, Hippy, popup/dialog ownership and SDK framework paths. Their presence in source search inventory is not evidence for assigning capabilities to every Activity.
+
+The source-verified platform follow-up group adds BrowserMainActivity and WeWork H5Activity (69 rows: 29 settings, 40 callbacks). All 69 match generic-v1, including the forwarding FixSigTrapClientWrapper callbacks. This expands the total to five hosts/168 rows, still below protocol acceptance scope.

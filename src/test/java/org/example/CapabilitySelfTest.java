@@ -27,6 +27,8 @@ public final class CapabilitySelfTest {
  public static void main(String[] args)throws Exception {
   PhaseRetentionFixture.run();
   SchedulerIsolationFixture.run();
+  ContextPriorityFixture.run();
+  SwitchOwnershipFixture.run();
   var helper=method(H,"configure",List.of(W,B),9,4,List.of(
    invoke(Opcode.INVOKE_VIRTUAL,W,"getSettings",List.of(),S,2),new ImmutableInstruction11x(Opcode.MOVE_RESULT_OBJECT,0),
    new ImmutableInstruction11n(Opcode.CONST_4,1,1),invoke(Opcode.INVOKE_VIRTUAL,S,"setJavaScriptEnabled",List.of("Z"),"V",0,1),
@@ -587,7 +589,22 @@ public final class CapabilitySelfTest {
   idx.byClass.put("test.Client",List.of(valid,overload,wrongFamily,wrongReturn));
   var engine=new CapabilityEngine(idx,new ApkInventory(),System.nanoTime()+20_000_000_000L);
   check(engine.callbackMembers("test.Client").size()==1,"Callback report included same-name non-contract methods");
-
+  String privateClient="Ltest/PrivateClient;";
+  var privateCallback=method(privateClient,"onPageFinished",List.of(W,"Ljava/lang/String;"),2,3,List.of(end()),false);
+  idx.classes.put("test.PrivateClient",clazz(privateClient,"Landroid/webkit/WebViewClient;",privateCallback));
+  idx.byClass.put("test.PrivateClient",List.of(privateCallback));
+  check(!idx.standardClientCallback("test.PrivateClient",privateCallback),"Private same-signature method accepted as virtual callback");
+  check(engine.callbackMembers("test.PrivateClient").isEmpty(),"Callback report included private same-signature method");
+  var staticCallback=method(client,"onPageFinished",List.of(W,"Ljava/lang/String;"),9,2,List.of(end()),false);
+  check(!idx.standardClientCallback("test.Client",staticCallback),"Static same-signature method accepted as virtual callback");
+  String sdkContract="android.webkit.WebChromeClient";
+  var privateDeclaration=method("Landroid/webkit/WebChromeClient;","openFileChooser",List.of("Landroid/webkit/ValueCallback;"),2,2,List.of(end()),false);
+  var publicChooser=method(chrome,"openFileChooser",List.of("Landroid/webkit/ValueCallback;"),1,2,List.of(end()),false);
+  idx.byClass.put(sdkContract,List.of(privateDeclaration));
+  check(!idx.standardClientCallback("test.Chrome",publicChooser),"Private SDK declaration treated as virtual framework contract");
+  var publicDeclaration=method("Landroid/webkit/WebChromeClient;","openFileChooser",List.of("Landroid/webkit/ValueCallback;"),1,2,List.of(end()),false);
+  idx.byClass.put(sdkContract,List.of(publicDeclaration));
+  check(idx.standardClientCallback("test.Chrome",publicChooser),"Public SDK declaration rejected as framework contract");
  }
 
  static void installedProviderFixture()throws Exception {

@@ -49,3 +49,14 @@ python3 scripts/evaluate.py --report test/runs/generic-v1/com.tencent.news/capab
 ```
 
 Frozen jars and APKs are local ignored artifacts. Rebuild from this iteration's source to reproduce; sample manifests record exact inputs. Final user delivery is the sorted compact and counts-only JSON; detailed reports remain available locally for evidence replay.
+
+## New patched-App final replay (small audited subsets)
+
+| App | Settings | Bridge | Callbacks |
+|---|---:|---:|---:|
+| txws | 39/39 | not sampled | 60/60 |
+| sohuvideo | 9/26 | 0/36 | 3/29 |
+| fanqiexiaoshuo | 21/21 | 12/12 | 16/16 |
+| breaking-news | 14/14 | 10/10 | 8/8 |
+
+These canonical sets include explicitly labeled report-guided expansions for Fanqie/Breaking News. Txws has no Bridge expectation in this core set, so its Bridge quality is unmeasured, not 100%. Sohu still has many pending contexts; missing facts cannot by themselves distinguish time budget from unsupported propagation. Supplemental report-guided facts for Txws/Sohu are scored separately and must not be discarded.

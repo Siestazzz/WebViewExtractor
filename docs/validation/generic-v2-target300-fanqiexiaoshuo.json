@@ -1,0 +1,256 @@
+{
+  "oracle_sha256": "9813641d5d6c1589561e2949aeaac6f224d8b6c2e2a1e0ef63450936e4e4ab68",
+  "report_sha256": "cc62cdeb6603307669187d3cd1904d79077c1c46e28664843694e85bec43b56f",
+  "unassigned_oracle_facts": 0,
+  "oracle_file": "docs/validation/fanqiexiaoshuo/generic-evaluation-facts.jsonl",
+  "apk_sha256": "0273a075d7835d7d0d3367f06b717266aefbb7a428975b1cf7e6874c6b557b9f",
+  "report_status": "partial",
+  "metrics": {
+    "setting": {
+      "expected": 21,
+      "matched": 21,
+      "explicit_matched": 5,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.23809523809523808
+    },
+    "bridge": {
+      "expected": 12,
+      "matched": 0,
+      "explicit_matched": 0,
+      "unscorable": 0,
+      "recall": 0.0,
+      "explicit_recall": 0.0
+    },
+    "callback": {
+      "expected": 16,
+      "matched": 16,
+      "explicit_matched": 5,
+      "unscorable": 0,
+      "recall": 1.0,
+      "explicit_recall": 0.3125
+    }
+  },
+  "missing": [
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "bridge",
+      "name": "__globalProps",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getGlobalProps",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getGlobalProps()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getNativeAbResult",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getNativeAbResult()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getOfflineEmoji",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getOfflineEmoji()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getOfflineImages",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getOfflineImages()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.WebViewActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView",
+          "com.dragon.read.hybrid.webview.e",
+          "com.dragon.read.hybrid.webview.d"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getPreloadData",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getPreloadData()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView"
+        ]
+      },
+      "kind": "bridge",
+      "name": "__globalProps",
+      "signature": null,
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getGlobalProps",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getGlobalProps()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getNativeAbResult",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getNativeAbResult()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getOfflineEmoji",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getOfflineEmoji()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getOfflineImages",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getOfflineImages()Ljava/lang/String;",
+      "reason": "not_matched"
+    },
+    {
+      "activity": "com.dragon.read.hybrid.webview.ExternalWebActivity",
+      "webview": null,
+      "webview_constraint": {
+        "types": [
+          "com.dragon.read.hybrid.webview.ReadingWebView"
+        ]
+      },
+      "kind": "bridge_method",
+      "name": "getPreloadData",
+      "signature": "Lcom/dragon/read/hybrid/webview/GlobalProps;->getPreloadData()Ljava/lang/String;",
+      "reason": "not_matched"
+    }
+  ],
+  "emitted_activities": 46,
+  "acceptance": "unproven",
+  "note": "Deduplicated candidate-inclusive recall, enforcing explicit source WebView type constraints where provided. Unconstrained facts remain Activity-level matches and cannot establish WebView binding acceptance. Unknown targets remain unresolved misses. Type constraints and registration-only matches do not prove exact instance identity or endpoint completeness.",
+  "scoring_version": 5,
+  "webview_constraint_coverage": {
+    "expected": 49,
+    "with_source_type_constraint": 49,
+    "activity_only": 0,
+    "exact_instance_identity_verified": false
+  },
+  "positive_host_recall": {
+    "expected": 3,
+    "matched": 3,
+    "missing": [],
+    "recall": 1.0
+  },
+  "duplicate_oracle_rows": 0,
+  "capability_granularity": {
+    "setting": {
+      "expected": 21,
+      "matched": 21,
+      "recall": 1.0
+    },
+    "bridge_registration": {
+      "expected": 2,
+      "matched": 0,
+      "recall": 0.0
+    },
+    "bridge_member": {
+      "expected": 10,
+      "matched": 0,
+      "recall": 0.0
+    },
+    "callback_member": {
+      "expected": 16,
+      "matched": 16,
+      "recall": 1.0
+    }
+  },
+  "unknown_target_surfaces": [],
+  "unconfirmed_source_facts": [],
+  "binding_identity_verified": false,
+  "activity_ownership": {
+    "counts": {
+      "unreviewed": 46
+    },
+    "emitted": 46,
+    "wrong": 0,
+    "uncertain_or_unreviewed": 46,
+    "conservative_error_upper_bound": 1.0
+  },
+  "capability_precision": "Requires independent bound-object review; positive fact recall alone does not measure false capability associations."
+}

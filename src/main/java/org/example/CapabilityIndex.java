@@ -357,14 +357,15 @@ final class CapabilityIndex {
     }
     // Public client contracts require both the client family and the complete DEX shape.
     boolean standardClientCallback(String type,Method method){
-        if((method.getAccessFlags()&8)!=0)return false;
+        // Private/direct and static methods do not override virtual client callbacks.
+        if((method.getAccessFlags()&(2|8))!=0)return false;
         String shape=shape(method);
         for(String prefix:List.of("android.webkit.","com.tencent.smtt.sdk.")){
             for(String family:List.of("WebViewClient","WebChromeClient")){
                 String contract=prefix+family;
                 if(!subtype(type,contract))continue;
                 // Prefer the actual SDK declarations when the APK includes them.
-                if(byClass.getOrDefault(contract,List.of()).stream().anyMatch(m->shape(m).equals(shape)&&(m.getAccessFlags()&8)==0&&CapabilityEngine.CALLBACKS.contains(m.getName())))return true;
+                if(byClass.getOrDefault(contract,List.of()).stream().anyMatch(m->shape(m).equals(shape)&&(m.getAccessFlags()&(2|8))==0&&CapabilityEngine.CALLBACKS.contains(m.getName())))return true;
                 String descriptorPrefix="L"+prefix.replace('.', '/');
                 if((family.equals("WebViewClient")?VIEW_CLIENT_SHAPES:CHROME_CLIENT_SHAPES).stream().anyMatch(publicShape->publicShape.replace("Landroid/webkit/",descriptorPrefix).equals(shape)))return true;
             }
