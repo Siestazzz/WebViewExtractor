@@ -1,0 +1,53 @@
+{
+  "scope": "capability_precision",
+  "report_sha256": "5c20795aa1ce5187c9743936f24f86ec998d344b3762b71eaace84c0cacaf5c4",
+  "apk_sha256": "07780de1d6d08e62da19fc2a98eaa4f53796cf7d3f02d8c0bebb02f3b3aa07a2",
+  "activity": "com.sohu.app.ads.sdk.common.widget.webview.SohuVideoDetailPageActivity",
+  "activity_host_verdict": "valid",
+  "verdict": "wrong",
+  "source_evidence": [
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 130,
+      "text": "    private WriteHandlingWebViewClient getWebViewClientDelegate(boolean webviewIntercept) {",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 134,
+      "text": "        return new WriteHandlingWebViewClient(this);",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 515,
+      "text": "    public SohuWebView(Context context, AttributeSet attr) {",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuWebView.java",
+      "line": 522,
+      "text": "        init(false);",
+      "sha256": "0e6fc17daf06c7c14e3a69584fc6eb0e700718acd1c76e2d1be180d18e02582c"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+      "line": 29,
+      "text": "    public SohuProgressWebView(Context context) {",
+      "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+    },
+    {
+      "file": "sources/com/sohu/app/ads/sdk/common/widget/webview/SohuProgressWebView.java",
+      "line": 30,
+      "text": "        this(context, false);",
+      "sha256": "0ecf57405bd8c84e31f44498096477655172ea8e6a89e30a2067d865ee3a94e8"
+    }
+  ],
+  "wrong_report_facts": [],
+  "minimal_structure": "XML constructor calls configure(false); alternate Boolean constructor calls configure(flag); configure only registers bridge if flag true. Unknown helper-entry flag cannot justify bridge on actual XML receiver.",
+  "source_rejected_gold": "shared-sdk-surface-source-rejected-v6.json",
+  "note": "False-positive capability, not invalid Activity ownership; frozen six disputed gold rows remain unchanged.",
+  "v6_v7_wrong_receiver_ids_unchanged": true,
+  "v8_if_fix_source_case_result": "source_case_false_positives_removed",
+  "v7_wrong_receiver_count": 2
+}
